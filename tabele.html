@@ -1,0 +1,110 @@
+<html>
+
+<head>
+<title>Tabele</title>
+</head>
+
+<body>
+
+<h1>Primeri tabela</h1>
+<h3>Jednostavna tabela:</h3>
+<table>
+<tr>
+  <td>1</td>
+  <td>2</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>5</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>8</td>
+  <td>9</td>
+</tr>
+</table>
+<h3>Tabela sa oznacenim redovima i kolonama:</h3>
+<table>
+  <tr>
+    <th></th>
+    <th scope="col">kolona 1</th>
+	<th scope="col">kolona 2</th>
+	<th scope="col">kolona 3</th>
+  </tr>
+  <tr>
+    <th scope="row">red 1</th>
+    <td>jedan</td>
+	<td>dva</td>
+	<td>tri</td>
+  </tr>
+  <tr>
+    <th scope="row">red 2</th>
+    <td>pet</td>
+	<td>sest</td>
+	<td>sedam</td>
+  </tr>
+  <tr>
+  </tr>
+</table>
+<h3>Tabela gde se redovi/kolone prosiruju u vise redova/kolona</h3>
+<table border=1>
+<tbody>
+  <tr>
+    <td>1</td>
+	<td>2</td>
+	<td>3</td>
+	<td>5</td>
+  </tr>
+  <tr>
+    <td rowspan="2">4</td>
+	<td colspan="2" rowspan="2">5</td>
+	<td>3</td>
+  </tr>
+  <tr>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>2</td>
+	<td>8</td>
+    <td>9</td>
+	<td>4</td>
+  </tr>
+</tbody>
+</table>
+<b>Napomena:</b><i>Tabela ne treba da koristi <q>border</q> atribut, ovo je samo zbog prikaza 
+elemenata tabele uradjeno.</i>
+<h3>Kompletna tabela sa zaglavljem, futerom i bodijem</h3>
+<table>
+  <thead>
+  </thead>
+  <tbody>
+    <tr>
+	  <td>223</td>
+	  <td>234</td>
+	  <td>4</td>
+	</tr>
+	<tr>
+	  <td>343334</td>
+	  <td>3928</td>
+	  <td>988</td>
+	</tr>
+	<tr>
+	  <td>56</td>
+	  <td>23</td>
+	  <td>1</td>
+	</tr>
+	<tr>
+	  <td>2</td>
+	  <td>8</td>
+	  <td>83839</td>
+	</tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
+</body>
+
+</html>
