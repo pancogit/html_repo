@@ -73,11 +73,18 @@
   </tr>
 </tbody>
 </table>
-<b>Napomena:</b><i>Tabela ne treba da koristi <q>border</q> atribut, ovo je samo zbog prikaza 
+<p>
+<b>Napomena:</b><i> Tabela ne treba da koristi <q>border</q> atribut, ovo je samo zbog prikaza 
 elemenata tabele uradjeno.</i>
+</p>
 <h3>Kompletna tabela sa zaglavljem, futerom i bodijem</h3>
 <table>
   <thead>
+    <tr>
+	  <th scope="col">kolona 1</th>
+	  <th scope="col">kolona 2</th>
+	  <th scope="col">kolona 3</th>
+	</tr>
   </thead>
   <tbody>
     <tr>
@@ -102,8 +109,165 @@ elemenata tabele uradjeno.</i>
 	</tr>
   </tbody>
   <tfoot>
+    <tr>
+      <td></td>
+	  <td></td>
+	  <td>Kraj u futeru</td>
+	</tr>
   </tfoot>
+  <!-- 
+    Ovaj deo tabele cemo prosiriti da bismo videli kada se stampa stranica da
+    se thead elementi ispisuju na svakoj stampanoj strani
+   -->
+   <tbody>
+     <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+	 <tr>
+	   <td>1</td>
+	   <td>2</td>
+	   <td>3</td>
+	 </tr>
+	 <tr>
+	   <td>4</td>
+	   <td>5</td>
+	   <td>6</td>
+	 </tr>
+	 <tr>
+	   <td>7</td>
+	   <td>8</td>
+	   <td>9</td>
+	 </tr>
+   </tbody>
 </table>
+<p>
+<b>Napomena:</b><i> Kada se koristi <q>thread</q> element unutar <q>table</q> elementa,
+onda ukoliko se tabela prostire na vise stampanih strana, onda ce se na
+svakoj strani prikazati sadrzaj <q>thead</q> elementa. Ovo je korisno ukoliko imamo
+prve kolone koje hocemo da prikazujemo uvek na svakoj stampanoj strani tabele.</i>
+</p>
+<p>
+<b>Napomena:</b><i> Ukoliko hocete da vidite kako se tabela ispisuje u vise stampanih
+stranica, kliknite desni klik, pa <b><q>Print</q></b> i onda cete videti prikaz tabele i razlog
+zasto se koriste elementi <q>thead</q> i <q>tfoot</q> odvojeno od <q>tbody</q> elementa.</i>
+</p>
 
 </body>
 
