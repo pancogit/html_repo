@@ -7,14 +7,71 @@
 <body>
 
 <h1>Primeri formi</h1>
-<h2>Forma</h2>
+<h2>Osnovna forma</h2>
 <form method="get">
+  <hr />
+  <p>Jedno polje:
+    <input type="text" name="polje1" maxlength="50" />
+  </p>
+  <p>Drugo polje:
+    <input type="text" name="polje2" maxlength="30" />
+  </p>
+  <p>Tekstualno polje sa vec definisanom vrednoscu: <input type="text" value="Polje" /></p>
+  <hr />
+  <p>Ovo je sad primer polja sa vise redova.</p>
+  <textarea name="komentar">Unesi neki tekst ovde...</textarea>
+  <hr />
+  <p>Izaberi svoj omiljeni muzicki zanr:<br />
+  <input type="radio" name="zanr" value="narodno" checked="checked" />Narodnjaci
+  <input type="radio" name="zanr" value="dzez" />Dzez
+  <input type="radio" name="zanr" value="pop" />Pop
+  <input type="radio" name="zanr" value="rok" />Rok
+  </p>
+  <p><b>Napomena:</b> <i>Ukoliko je atribut <q>name</q> isti za sve radio dugmice,
+  onda ce selekcija jednog da deselektuje ostale iz grupe. Ukoliko su svi radio dugmici
+  razlicitog <q>name</q> atributa, onda ce moci svi da se selektuju, sto nije dobro.
+  Zato treba dugmice iz istog pitanja postaviti sa istim imenima.</i></p>
+  <hr />
+  <p>Izaberi omiljeni sajt:<br />
+  <input type="checkbox" name="sajt" value="youtube" checked="checked" />Youtube
+  <input type="checkbox" name="sajt" value="google" />Google
+  <input type="checkbox" name="sajt" value="novosti" />Novosti
+  </p>
+  <hr />
+  <p>Izaberi opciju iz padajuce liste:</p>
+  <select name="lista1">
+    <option value="komp">Kompjuter</option>
+	<option value="lap">Laptop</option>
+	<option value="mek" selected="selected">Mekintos</option>
+  </select>
+  <br /><br />
+  <p>Koji automobil volis?</p>
+  <select name="lista2" multiple size="5">
+    <option value="audi">Audi</option>
+	<option value="skoda">Skoda</option>
+	<option value="golf" selected="selected">Golf</option>
+	<option value="bmw">BMW</option>
+	<option value="pezo" selected="selected">Pezo</option>
+  </select>
+  <p><b>Napomena:</b><i> Pritegni <q>ctrl</q> da selektujes vise od jednog.</i></p>
+  <input type="submit" name="prijava1" value="Posalji osnovnu formu" />
+  <hr />
+</form>
+
+<br />
+<h2>Forma sa osetljivim podacima</h2>
+<form method="post">
+  <hr />
   <p>Korisnicko ime:
     <input type="text" name="ime" maxlength="50" />
   </p>
   <p>Lozinka:
     <input type="password" name="loz" maxlength="30" />
   </p>
+  <hr />
+  <p>Upload fajla:</p>
+  <input type="file" name="aploud"/>
+  <hr />
 </form>
 
 </body>
