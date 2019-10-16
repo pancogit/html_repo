@@ -70,8 +70,43 @@
   </p>
   <hr />
   <p>Upload fajla:</p>
-  <input type="file" name="aploud"/>
+  <p><input type="file" name="aploud"/></p>
+  <p><input type="image" name="prijava2" src="slike/pritisni.png" width="169" height="60" /></p>
+  <p><button name="dugme1"><img src="slike/vrh.png" width="20" height="30" />Pritisni dugme</button></p>
+  <input type="hidden" name="skriveno_polje" value="forma_sa_osetljivim_podacima"/>
   <hr />
+  <p>Izaberi omiljenu boju:<br />
+  <input type="radio" name="boja" value="plava" id="plava_boja" checked="checked" />Plava<br />
+  <input type="radio" name="boja" value="crna" id="crna_boja" />Crna<br />
+  <input type="radio" name="boja" value="crvena" id="crvena_boja" />Crvena<br />
+  <input type="radio" name="boja" value="zuta" id="zuta_boja" />Zuta<br />
+  <label for="plava_boja">Ovde klikni za plavu boju</label><br />
+  <label for="crna_boja">Ovde klikni za crnu boju</label><br />
+  <label for="crvena_boja">Ovde klikni za crvenu boju</label><br />
+  <label for="zuta_boja">Ovde klikni za zutu boju</label>
+  </p>
+  <p>Izaberi omiljeni dan:<br />
+  <label><input type="radio" name="dan" value="pon" checked="checked"/>Ponedeljak</label><br />
+  <label><input type="radio" name="dan" value="uto" />Utorak</label><br />
+  <label><input type="radio" name="dan" value="sre" />Sreda</label><br />
+  <label><input type="radio" name="dan" value="cet" />Cetvrtak</label><br />
+  <label><input type="radio" name="dan" value="pet" checked="checked" />Petak</label><br />
+  <label><input type="radio" name="dan" value="sub" />Subota</label><br />
+  <label><input type="radio" name="dan" value="ned" />Nedelja</label>
+  </p>
+  <hr />
+</form>
+
+<h2>Forma sa grupisanim elementima</h2>
+<form method="get">
+<fieldset>
+  <label>Imejl<br />
+  <input type="text" name="imejl" /></label><br />
+  <label>Mobilni<br />
+  <input type="text" name="Mobilni" /></label></br />
+  <label>Fiksni<br />
+  <input type="text" name="fiksni" /></label><br />
+</fieldset>
 </form>
 
 </body>
