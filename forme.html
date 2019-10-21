@@ -8,7 +8,7 @@
 
 <h1>Primeri formi</h1>
 <h2>Osnovna forma</h2>
-<form method="get">
+<form action="http://www.example.com/nesto.php" method="get">
   <hr />
   <p>Jedno polje:
     <input type="text" name="polje1" maxlength="50" />
@@ -100,13 +100,87 @@
 <h2>Forma sa grupisanim elementima</h2>
 <form method="get">
 <fieldset>
+  <legend>Osnovni podaci</legend>
   <label>Imejl<br />
   <input type="text" name="imejl" /></label><br />
   <label>Mobilni<br />
-  <input type="text" name="Mobilni" /></label></br />
+  <input type="text" name="Mobilni" /></label><br />
   <label>Fiksni<br />
-  <input type="text" name="fiksni" /></label><br />
+  <input type="text" name="fiksni" /></label>
+  <p><input type="submit" name="dugme2" value="Posalji podatke" /></p>
 </fieldset>
+</form>
+
+<h2>Forma sa HTML5 validacijom</h2>
+<form method="get">
+  <hr />
+  <label>Ime: <input type="text" name="ime_valid" required="required" /></label><br />
+  <label>Lozinka: <input type="text" name="lozinka_valid" required="required" /></label>
+  <input type="submit" name="prijava3" value="HTML5 Validacija" />
+  <hr />
+</form>
+
+<h2>Jos neki novi elementi HTML5 forme</h2>
+<form method="get">
+  <hr />
+  <label>Izaberi datum: <input type="date" name="datum" /></label>
+  <p>Unesi imejl adresu:<br />
+  <input type="email" name="imejl_unos" />
+  </p>
+  <p>Unesi URL neke stranice:<br />
+  <input type="url" name="url_unos" />
+  </p>
+  <p>Pretrazi:<br />
+  <input type="search" name="pretrazi_unos" placeholder="Unesi sta pretrazujes" />
+  </p>
+  <input type="submit" name="dugme3" value="Posalji formu" />
+  <hr />
+</form>
+
+<br />
+<h2>Primer forme</h2>
+<form action="http://www.example.com/ucitaj_formu.php" method="get" >
+  <fieldset>
+    <legend>Vasi podaci:</legend>
+	<label>Ime: <input type="text" name="ime_forma" /></label><br />
+	<label>Imejl: <input type="email" name="imejl_forma" /></label>
+  </fieldset>
+  <br />
+  <fieldset>
+    <legend>Vas utisak:</legend>
+	<p>
+	  <label for="id_forma">Kako ste culi za nas:</label>
+	  <select id="id_forma" name="lista_forma" >
+	    <option value="google">Google</option>
+		<option value="prijatelji">Prijatelji</option>
+		<option value="reklama" selected="selected">Reklama</option>
+		<option value="novine">Novine</option>
+		<option value="drugo">Drugo</option>
+	  </select>
+	</p>
+	<p>Da li cete da posetite nas sajt ponovo?<br />
+	  <label>
+	    <input type="radio" id="da_forma" name="poseta_forma" />Da
+	  </label>
+	  <label>
+	    <input type="radio" id="ne_forma" name="poseta_forma" />Ne
+	  </label>
+	  <label>
+	    <input type="radio" id="mozda_forma" name="poseta_forma" />Mozda
+	  </label>
+	</p>
+	<p>
+	  <label for="komentar_id_forma">Vas komentar:</label><br />
+	  <textarea id="komentar_id_forma" name="komentar_forma" rows="5" cols="30"></textarea>
+	</p>
+	<p>
+	  <label>
+	    <input type="checkbox" name="prijava_forma" checked="checked" />
+	    Prijavi me na mejling listu.
+	  </label><br />
+	  <input type="submit" name="posalji_forma" value="Posalji formu" />
+	</p>
+  </fieldset>
 </form>
 
 </body>
