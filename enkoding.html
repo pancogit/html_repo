@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<title>Enkoding stranice</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>Primer enkodirane stranice</h1>
+	<p>Ova stranica je enkodirana tako da je u utf-8 formatu.
+	Postoji nekoliko koraka koji su bitni da bi stranica bila enkodirana skroz u utf-8 formatu.
+	</p>
+	<p>Koraci su sledeci:</p>
+	<ol>
+		<li>Napravi fajl sa ekstenzijom .html. Moze i druga ekstencija
+		ako hoces da napravis obican fajl koji nije web stranica.</li>
+		<li>Onda sacuvaj fajl sa Save as... i pored save-a imaces Encoding i stavi
+		da bude <b>UTF-8</b>. Obican notepad ce ovakav fajl sacuvati kao UTF-8 BOM (Byte Order Mark),
+		ali to ne znaci nista za UTF-8 format, zato sto je redosled bajtova vazan za UTF-16 format.
+		Ukoliko hoces da fajl bude sacuvas bas kao UTF-8 bez BOM-a, onda otvori Notepad++
+		i u padajucem meniju Encoding izaberi opciju <q><b>Encode in UTF-8</b></q> umesto 
+		<q>Encode in UTF-8-BOM</q>. Sada mozes da koristis sve karaktere iz sveta
+		ukljucujuli i srpsku cirilicu.</li>
+		<li>Sada kada si formatirao fajl kao UTF-8, ostalo je jos da kazes
+		pretrazivacu da tvoja stranica koristi UTF-8 ukoliko si napravio .html
+		stranicu. Ovo se radi dodavanjem <i>meta</i> tag-a sa atributom <b>charset</b>.
+		Ovaj atribut se stavlja u <i>head</i> element kao i drugi <i>meta</i> tag-ovi.
+			<ul>
+				<li>meta charset=<q>utf-8</q></li>
+			</ul>
+		</li>
+		<li>Radi pretrazivaca potrebno je i definisati <b>lang</b> atribut koji moze da 
+		stoji u bilo kom html elementu (paragrafu, itd...), ali uglavnom se stavlja
+		u <i>html</i> element. Pretrazivac koristi <i>lang</i> atribut kao oznaku 
+		na kom je jeziku napisana web stranica. Mi mozemo da stavimo srpski jezik, a da
+		ga ne koristimo, sve zavisi kako je enkodiran fajl (to smo u prethodnom koraku objasnili).
+    	Primer koriscenja:
+			<ul>
+				<li>html lang=<q>sr-RS</q></li>
+			</ul>
+		Kao sto vidimo, lang atribut koristi dva neka dela: <i>sr</i> sa crticom - izmedju i <i>RS</i>.
+		Prvi deo <i>sr</i> oznacava da je u pitanju srpski jezik, dok drugi deo
+		oznacen posle crtice -, tj. <i>RS</i> oznacava drzavu u kojoj se prica navedeni jezik
+		(srpski jezik), a to je Republika Srbija u nasem slucaju. Zato postoje ova dva dela.
+		</li>
+	</ol>
+	
+	<p>Ova stranica je enkodirana na ovaj nacin, tako da mozes da vidis sadrzaj ove stranice
+	i da vidim source kako je napisana.
+	</p>
+	<p>Zahvaljujuci ovome, sada mozemo da koristimo bilo koje karaktere iz celog sveta (UTF-8),
+	pa cemo sada to pokazati na cirilici:
+	</p>
+	<h2>Наслов на ћирилици</h2>
+	<p>Ово је део написан на српској ћирилици. Фајл је сачуван као UTF-8, тако да може
+	да се користи ћирилица сада. А и претраживач ће ово да препозна као ћирилицу због
+	такова које смо навели горе.
+	</p>
+	
+</body>
+
+</html>
