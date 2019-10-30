@@ -3,8 +3,8 @@
 <html lang="sr-RS">
 
 <head>
+    <meta charset="utf-8" />
 	<title>Enkoding stranice</title>
-	<meta charset="utf-8" />
 </head>
 
 <body>
@@ -27,6 +27,11 @@
 		pretrazivacu da tvoja stranica koristi UTF-8 ukoliko si napravio .html
 		stranicu. Ovo se radi dodavanjem <i>meta</i> tag-a sa atributom <b>charset</b>.
 		Ovaj atribut se stavlja u <i>head</i> element kao i drugi <i>meta</i> tag-ovi.
+		Valjalo bi da prvi element unutar <i>head</i> elementa bude bas ovaj <i>meta charset</i> element,
+		da bi pretrazivac odmah prepoznao set karaktera kao <i>utf-8</i> i da na osnovu toga opet krene
+		iz pocetka da ucitava stranicu posmatrajuci njene stringove u formatu karakter set-a kao <i>utf-8</i>.
+		Sto pre pretrazivac <q>sazna</q> za set karaktera neke stranice, to bolje. Zato treba odmah na pocetku <i>head</i>
+		elementa staviti ovaj <i>meta</i> tag.
 			<ul>
 				<li>meta charset=<q>utf-8</q></li>
 			</ul>

@@ -4,14 +4,17 @@
 
 <head>
 	<title>Dodatak html</title>
+	<meta name="description" content="Ova stranica je sa dodacima html-a." />
+	<meta name="keywords" content="div, spam, iframe" />
+	<meta name="author" content="Pancica" />
+	<meta http-equiv="pragma" content="no-cache" />
 </head>
 
 <body>
 
-<h1>Jos neki dodatni primeri</h1>
-
-<h2>Grupisanje teksta i elemenata unutar bloka</h2>
 <div id="heder_blok">
+<h1>Jos neki dodatni primeri</h1>
+<h2>Grupisanje teksta i elemenata unutar bloka</h2>
   <img src="slike/heder2.jpg" alt="logo slika" />
   <ul>
     <li><a href="#">Pocetna</a></li>
@@ -20,6 +23,8 @@
 	<li><a href="dodatak.html">Kontakt</a></li>
   </ul>
 </div> <!-- kraj heder bloka -->
+
+<div id="glavni_sadrzaj_stranice_blok">
 
 <h2> Grupisanje teksta i elemenata u liniji</h2>
 <p>Takodje moze da se grupise tekst za zajedno sa elementima unutar iste linije.
@@ -90,12 +95,18 @@ vimeo i druge sajtove koji pustaju multimedije.</i>
   frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
 </iframe>
 
+</div> <!-- kraj bloka sa glavnim sadrzajem stranice -->
+
 <h2>Escape karakteri ili entiteti</h2>
 <p>Ovo je primer koriscenja escape karaktera ili entiteta:</p>
 <p>
 &copy; Pancica autorska prava
 <br />
 &trade; Marka Panculjak
+<br />
+&#169; Autorska prava na drugi nacin napisana
+<br />
+Jos neki entiteti: &#97; &#8704; &forall; &sum; &Gamma; &#247; &lt;html lang="sr-RS"&gt;
 </p>
 
 </body>
