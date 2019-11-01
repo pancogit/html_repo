@@ -1,0 +1,188 @@
+<html>
+
+<head>
+<title>Forme</title>
+</head>
+
+<body>
+
+<h1>Primeri formi</h1>
+<h2>Osnovna forma</h2>
+<form action="http://www.example.com/nesto.php" method="get">
+  <hr />
+  <p>Jedno polje:
+    <input type="text" name="polje1" maxlength="50" />
+  </p>
+  <p>Drugo polje:
+    <input type="text" name="polje2" maxlength="30" />
+  </p>
+  <p>Tekstualno polje sa vec definisanom vrednoscu: <input type="text" value="Polje" /></p>
+  <hr />
+  <p>Ovo je sad primer polja sa vise redova.</p>
+  <textarea name="komentar">Unesi neki tekst ovde...</textarea>
+  <hr />
+  <p>Izaberi svoj omiljeni muzicki zanr:<br />
+  <input type="radio" name="zanr" value="narodno" checked="checked" />Narodnjaci
+  <input type="radio" name="zanr" value="dzez" />Dzez
+  <input type="radio" name="zanr" value="pop" />Pop
+  <input type="radio" name="zanr" value="rok" />Rok
+  </p>
+  <p><b>Napomena:</b> <i>Ukoliko je atribut <q>name</q> isti za sve radio dugmice,
+  onda ce selekcija jednog da deselektuje ostale iz grupe. Ukoliko su svi radio dugmici
+  razlicitog <q>name</q> atributa, onda ce moci svi da se selektuju, sto nije dobro.
+  Zato treba dugmice iz istog pitanja postaviti sa istim imenima.</i></p>
+  <hr />
+  <p>Izaberi omiljeni sajt:<br />
+  <input type="checkbox" name="sajt" value="youtube" checked="checked" />Youtube
+  <input type="checkbox" name="sajt" value="google" />Google
+  <input type="checkbox" name="sajt" value="novosti" />Novosti
+  </p>
+  <hr />
+  <p>Izaberi opciju iz padajuce liste:</p>
+  <select name="lista1">
+    <option value="komp">Kompjuter</option>
+	<option value="lap">Laptop</option>
+	<option value="mek" selected="selected">Mekintos</option>
+  </select>
+  <br /><br />
+  <p>Koji automobil volis?</p>
+  <select name="lista2" multiple size="5">
+    <option value="audi">Audi</option>
+	<option value="skoda">Skoda</option>
+	<option value="golf" selected="selected">Golf</option>
+	<option value="bmw">BMW</option>
+	<option value="pezo" selected="selected">Pezo</option>
+  </select>
+  <p><b>Napomena:</b><i> Pritegni <q>ctrl</q> da selektujes vise od jednog.</i></p>
+  <input type="submit" name="prijava1" value="Posalji osnovnu formu" />
+  <hr />
+</form>
+
+<br />
+<h2>Forma sa osetljivim podacima</h2>
+<form method="post">
+  <hr />
+  <p>Korisnicko ime:
+    <input type="text" name="ime" maxlength="50" />
+  </p>
+  <p>Lozinka:
+    <input type="password" name="loz" maxlength="30" />
+  </p>
+  <hr />
+  <p>Upload fajla:</p>
+  <p><input type="file" name="aploud"/></p>
+  <p><input type="image" name="prijava2" src="slike/pritisni.png" width="169" height="60" alt="slika_apload_fajla"/></p>
+  <p><button name="dugme1"><img src="slike/vrh.png" width="20" height="30" alt="strelica_dugme" />Pritisni dugme</button></p>
+  <input type="hidden" name="skriveno_polje" value="forma_sa_osetljivim_podacima"/>
+  <hr />
+  <p>Izaberi omiljenu boju:<br />
+  <input type="radio" name="boja" value="plava" id="plava_boja" checked="checked" />Plava<br />
+  <input type="radio" name="boja" value="crna" id="crna_boja" />Crna<br />
+  <input type="radio" name="boja" value="crvena" id="crvena_boja" />Crvena<br />
+  <input type="radio" name="boja" value="zuta" id="zuta_boja" />Zuta<br />
+  <label for="plava_boja">Ovde klikni za plavu boju</label><br />
+  <label for="crna_boja">Ovde klikni za crnu boju</label><br />
+  <label for="crvena_boja">Ovde klikni za crvenu boju</label><br />
+  <label for="zuta_boja">Ovde klikni za zutu boju</label>
+  </p>
+  <p>Izaberi omiljeni dan:<br />
+  <label><input type="radio" name="dan" value="pon" checked="checked"/>Ponedeljak</label><br />
+  <label><input type="radio" name="dan" value="uto" />Utorak</label><br />
+  <label><input type="radio" name="dan" value="sre" />Sreda</label><br />
+  <label><input type="radio" name="dan" value="cet" />Cetvrtak</label><br />
+  <label><input type="radio" name="dan" value="pet" checked="checked" />Petak</label><br />
+  <label><input type="radio" name="dan" value="sub" />Subota</label><br />
+  <label><input type="radio" name="dan" value="ned" />Nedelja</label>
+  </p>
+  <hr />
+</form>
+
+<h2>Forma sa grupisanim elementima</h2>
+<form method="get">
+<fieldset>
+  <legend>Osnovni podaci</legend>
+  <label>Imejl<br />
+  <input type="text" name="imejl" /></label><br />
+  <label>Mobilni<br />
+  <input type="text" name="Mobilni" /></label><br />
+  <label>Fiksni<br />
+  <input type="text" name="fiksni" /></label>
+  <p><input type="submit" name="dugme2" value="Posalji podatke" /></p>
+</fieldset>
+</form>
+
+<h2>Forma sa HTML5 validacijom</h2>
+<form method="get">
+  <hr />
+  <label>Ime: <input type="text" name="ime_valid" required="required" /></label><br />
+  <label>Lozinka: <input type="text" name="lozinka_valid" required="required" /></label>
+  <input type="submit" name="prijava3" value="HTML5 Validacija" />
+  <hr />
+</form>
+
+<h2>Jos neki novi elementi HTML5 forme</h2>
+<form method="get">
+  <hr />
+  <label>Izaberi datum: <input type="date" name="datum" /></label>
+  <p>Unesi imejl adresu:<br />
+  <input type="email" name="imejl_unos" />
+  </p>
+  <p>Unesi URL neke stranice:<br />
+  <input type="url" name="url_unos" />
+  </p>
+  <p>Pretrazi:<br />
+  <input type="search" name="pretrazi_unos" placeholder="Unesi sta pretrazujes" />
+  </p>
+  <input type="submit" name="dugme3" value="Posalji formu" />
+  <hr />
+</form>
+
+<br />
+<h2>Primer forme</h2>
+<form action="http://www.example.com/ucitaj_formu.php" method="get" >
+  <fieldset>
+    <legend>Vasi podaci:</legend>
+	<label>Ime: <input type="text" name="ime_forma" /></label><br />
+	<label>Imejl: <input type="email" name="imejl_forma" /></label>
+  </fieldset>
+  <br />
+  <fieldset>
+    <legend>Vas utisak:</legend>
+	<p>
+	  <label for="id_forma">Kako ste culi za nas:</label>
+	  <select id="id_forma" name="lista_forma" >
+	    <option value="google">Google</option>
+		<option value="prijatelji">Prijatelji</option>
+		<option value="reklama" selected="selected">Reklama</option>
+		<option value="novine">Novine</option>
+		<option value="drugo">Drugo</option>
+	  </select>
+	</p>
+	<p>Da li cete da posetite nas sajt ponovo?<br />
+	  <label>
+	    <input type="radio" name="poseta_forma" value="da" />Da
+	  </label>
+	  <label>
+	    <input type="radio" name="poseta_forma" value="ne" />Ne
+	  </label>
+	  <label>
+	    <input type="radio" name="poseta_forma" value="mozda" />Mozda
+	  </label>
+	</p>
+	<p>
+	  <label for="komentar_id_forma">Vas komentar:</label><br />
+	  <textarea id="komentar_id_forma" name="komentar_forma" rows="5" cols="30"></textarea>
+	</p>
+	<p>
+	  <label>
+	    <input type="checkbox" name="prijava_forma" checked="checked" />
+	    Prijavi me na mejling listu.
+	  </label><br />
+	  <input type="submit" name="posalji_forma" value="Posalji formu" />
+	</p>
+  </fieldset>
+</form>
+
+</body>
+
+</html>
