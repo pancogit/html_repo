@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Audio i video</title>
+</head>
+
+<body>
+
+	<h1>Primeri za multimedije (audio, video)</h1>
+	
+	<h2>Video</h2>
+	<p>Video snimak u dobrom mp4 formatu:</p>
+	<video
+		src="video/video.mp4"
+		width="700"
+		height="400"
+		controls="controls"
+		poster="slike/video_1.jpg"
+		preload="auto">
+		<p>Video snimak prirode. Ovaj tekst se vidi ukoliko browser ne podrzava
+		html5 video element.</p>
+	</video>
+	<p>Sada da probamo da pustimo video snimak formatu koji nije podrzan, npr. avi</p>
+	<video
+		src="video/planeta.avi"
+		width="480"
+		height="270"
+		controls="controls">
+		<p>Ovo je snimak rotiranja planete. Ovaj tekst se vidi ukoliko browser ne podrzava
+		html5 video element.</p>
+	</video>
+	<p>Video snimak u mov formatu:</p>
+	<video
+		src="video/planeta.mov"
+		width="480"
+		height="270"
+		controls="controls"
+		poster="slike/video_2.jpg"
+		preload="none">
+		<p>Ovo je snimak rotiranja planete. Ovaj tekst se vidi ukoliko browser ne podrzava
+		html5 video element.</p>
+	</video>
+	<p>Sada cemo da prikazemo video u snimak u vise formata:</p>
+	<video
+		width="480"
+		height="270"
+		controls="controls"
+		poster="slike/video_2.jpg">
+		<source src="video/planeta.ogg" type="video/ogg" />
+	    <source src="video/planeta.mp4" type="video/mp4" />
+		<source src="video/planeta.mov" type="video/mp4" />
+		<p>Ovo je snimak rotiranja planete. Ovaj tekst se vidi ukoliko browser ne podrzava
+		html5 video element.</p>	
+	</video>
+	<p>Snimak meduza u webm formatu:</p>
+	<video
+		width="700"
+		height="400"
+		src="video/jellyfish.webm"
+		controls="controls"
+		poster="slike/video_4.jpg">
+		<p>Ovo je snimak meduza u moru.</p>
+	</video>
+	<p>Evo jos jednog snimka prirode:</p>
+	<video
+		width="700"
+		height="400"
+		controls="controls"
+		poster="slike/video_5.jpg">
+		<source src="video/Pexels_3.mp4" />
+		<p>Snimak prirode.</p>
+	</video>
+	<p><b>Napomena: </b><i>Ukoliko se sirina i duzina video snimka ne podese kako treba
+	moze da se dogodi da ce snimak biti spusten na dole previse. Zato treba postaviti
+	duzinu i sirinu video snimka da budu sto tacnije u odnosu na rezoluciju snimka,
+	tj. da budu u sto srazmernijem odnosu.</i></p>
+
+	<h2>Audio</h2>
+	<p>Ovo je primer audio snimka:</p>
+	<audio 
+		src="audio/01-Mogu-sve.mp3"
+		controls="controls">
+		<p>Pretrazivac ne podrzava html5 <i>audio</i> element.</p>
+	</audio>
+	<p>Sada jedan audio snimak u vise formata:</p>
+	<audio controls="controls">
+		<source src="audio/gs-16b-2c-44100hz.flac" type="audio/flac" />
+		<source src="audio/gs-16b-2c-44100hz.mp3"  type="audio/mpeg" />
+		<source src="audio/gs-16b-2c-44100hz.ogg"  type="audio/ogg" />
+		<source src="audio/gs-16b-2c-44100hz.wav"  type="audio/wav" />
+		<p>Pretrazivac ne podrzava html <i>audio</i> element.</p>
+	</audio>
+	
+	
+</body>
+
+</html>
