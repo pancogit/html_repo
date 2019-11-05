@@ -1,0 +1,40 @@
+p {
+	font-family: Calibri, Verdana, "Times New Roman", Arial;
+	color: blue;
+}
+
+h1, h2, h3 {
+	font-family: "Times New Roman";
+	color: #987654;
+}
+
+a {
+	font-family: "Comic Sans MS", "Times New Roman", "Ink Free";
+	color: orange;
+}
+
+* {
+	font-family: Arial;
+}
+
+#futer { background-color: white; }
+
+#futer { background-color: red; }
+
+body { background-color: #88cbfa; }
+
+body { background-color: #173b54; }
+
+p.zapis { background-color: #7a2020; }
+
+div.zapis { color: white; }
+
+h1+h2 { color: orange; }
+
+h2~ul { background-color: red; }
+
+p.prolece_paragraf { color: yellow !important; }
+p.prolece_paragraf { color: white; font-size: 125%; }
+p.prolece_paragraf { color: red; background-color: #0d2510; }
+
+h2+p { color: #b1a8a8; }
