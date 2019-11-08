@@ -1,0 +1,8 @@
+Ovde se nalazi open source fontovi koji su preuzeti
+sa interneta.
+
+Mogu da se koriste sa css $font-face {...src=...}.
+
+Linkovi:
+https://fonts.google.com/?category=Handwriting
+https://www.fontsquirrel.com/
