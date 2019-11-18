@@ -316,7 +316,7 @@ div[id="primer_tekst"] .furuna {
 	text-transform: uppercase
 }
 
-div#primer_tekst .furuna, div#primer_tekst .meso_istorija {
+div#primer_tekst .furuna, div#primer_tekst .meso_istorija, div#primer_tekst a {
 	font-weight: normal;
 }
 
@@ -333,6 +333,29 @@ div#primer_tekst a {
 	text-decoration: none;
 }
 
-div#primer_tekst > .autor {
-	
+div#primer_tekst p {
+	line-height: 1.4em;
+}
+
+div#primer_tekst .furuna {
+	letter-spacing: 0.2em;
+	word-spacing: 0.1em;
+}
+
+div#primer_tekst .furuna_uvod::first-line {
+	font-weight: bold;
+}
+
+/* selektuje poslednje paragraf dete unutar div-a */
+div#primer_tekst p:nth-last-child(1) {
+	font-style: italic;
+	text-align: right;
+}
+
+div#primer_tekst a:hover {
+	text-decoration: underline;
+}
+
+div#primer_tekst {
+	margin-bottom: 20px;
 }
