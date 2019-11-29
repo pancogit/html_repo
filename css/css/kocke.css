@@ -184,3 +184,151 @@ div#centriranje p:nth-of-type(2) {
 	margin: auto;
 	text-align: left;
 }
+
+
+/* displej i blok elementi */
+
+div#blok_displej li {
+	display: inline;
+	margin-right: 50px;
+}
+
+div#blok_displej h3 {
+	display: inline;
+}
+
+div#blok_displej .blok_div {
+	border-style: dashed;
+	border-color: yellow;
+	display: inline;
+}
+
+
+/* sakrivanje kocki */
+
+div#sakrivanje ul>li{
+	display: inline-block;
+	width: 200px;
+	background-color: yellow;
+	color: blue;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;
+}
+
+div#sakrivanje li.ne_prikazuj {
+	visibility: hidden;
+}
+
+div#sakrivanje .sakrij_sa_stranice {
+	display: none;
+}
+
+
+/* senke kocki */
+
+div#senke p:not(.uvod_senka) {
+	width: 100px;
+	height: 100px;
+	background-color: silver;
+	display: inline-block;
+	margin-right: 40px;
+}
+
+div#senke p.prva_senka { box-shadow: -7px -7px 0px 0px white; }
+div#senke p.druga_senka { box-shadow: 9px 8px 4px 0px white; }
+div#senke p.treca_senka { box-shadow: 10px 9px 7px 5px white; }
+div#senke p.cetvrta_senka { box-shadow: 0px 0px 7px 5px white; }
+div#senke p.peta_senka { box-shadow: inset 0px 0px 4px 5px white; }
+
+
+/* radijus kocki */
+
+div#radijus p {
+	border-style: solid;
+	border-color: #45ff45;
+	border-width: 2px;
+	padding: 20px;
+	width: 400px;
+	height: 100px;
+}
+
+/*
+	ovo ce izabrati drugo dete trenutnog okruzujuceg elementa tipa "p"
+	okruzujuci element p elementa je div#radijus
+	deca od elementa div#radijus su h2 i potom ostala p deca
+	div#radijus p:nth-child(1) ce selektovati h2 element
+	div#radijus p:nth-child(2) ce selektovati prvi p element
+	div#radijus p:nth-child(3) ce selektovati drugi p element ...
+	
+	sa druge strane
+	div#radijus p:nth-of-type(1) ce selektovati prvi p element i preskocice
+	h2 element, jer pretrazuje po tipu
+	sta god da se nadje pre p elementa, a da nije p element ce se ignorisati
+	u tome je razlika u odnosu na nth-child()
+	nth-of-type() pretrazuje elemente po tipu i preskace sve elemente koji nisu
+	zadatog tipa
+	u ovom slucaju div#radijus p:nth-of-type(2) ce u okviru div#radijus elementa
+	da se pretrazuju samo p elementi (preskacu se ostali elementi ako ih ima)
+	i selektovace se drugi paragraf tipa p u div#radijus elementu i taj paragraf
+	ne mora (ali moze) da bude drugo dete div#radijus elementa
+	ukoliko jeste bas drugo dete div#radijus elementa, onda nth-child() i 
+	nth-of-type() daju isti rezultat, u suprotnom se razlikuju
+	
+	primer:
+	
+	h2
+	p -> prvi paragraf
+	p -> drugi paragraf
+	p -> treci paragraf
+	
+	div#radijus p:nth-child(1): h2
+	div#radijus p:nth-child(2): p -> prvi paragraf
+	div#radijus p:nth-child(3): p -> drugi paragraf
+	div#radijus p:nth-child(4): p -> treci paragraf
+	
+	div#radijus p:nth-of-type(1): p -> prvi paragraf
+	div#radijus p:nth-of-type(2): p -> drugi paragraf
+	div#radijus p:nth-of-type(3): p -> treci paragraf
+	div#radijus p:nth-of-type(4): nece nista da selektuje, jer ne postoji
+	                              cetvrti paragraf tipa p unutar div-a
+	
+*/
+div#radijus p:nth-child(2) {
+	border-radius: 20px;
+}
+
+div#radijus p:nth-of-type(2) {
+	border-radius: 40px;
+	border-color: #ffbe00;
+}
+
+div#radijus p:nth-of-type(1) {
+	background-color: brown;
+	border-top-right-radius: 150px 100px;
+	border-top-left-radius: 50px 200px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+
+/*
+	ovo moze da se napisa na dva nacina:
+	ili da se izabere cetvrto dete div#radijus elementa, a to je treci
+	pargraf
+	ili da se izabere treci paragraf unutar div#radijus elementa, 
+	ali ne mora da bude trece dete (u ovom drugom slucaju se preskacu
+	svi elementi koji nisu tipa p, a to je h2 u nasem slucaju, dok se
+	u nth-child() i h2 racuna)
+*/
+
+/* prvi nacin */
+div#radijus p:nth-child(4) {
+	border-radius: 100%;
+}
+
+/* drugi nacin */
+div#radijus p:nth-of-type(3) {
+	border-radius: 50%;
+	border-radius: 100%;
+}
