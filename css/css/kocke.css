@@ -11,6 +11,7 @@ body {
 	border-style: dashed;
 	border-color: #edff00;
 	border-width: 4px;
+	margin-top: 20px;
 }
 
 a {
@@ -150,10 +151,10 @@ div#padding p {
 	width: 350px;
 	border-style: solid;
 	border-color: #00f400;
+	padding: 10px;
 }
 
-div#padding p.padding_prvi { padding: none; }
-div#padding p.padding_drugi { padding: 10px; }
+div#padding p.padding_prvi { padding: unset; }
 
 
 /* jos primeri margina */
@@ -331,4 +332,58 @@ div#radijus p:nth-child(4) {
 div#radijus p:nth-of-type(3) {
 	border-radius: 50%;
 	border-radius: 100%;
+}
+
+
+/* vezba iz knjige */
+
+div#vezba {
+	background-color: white;
+	color: black;
+	border-style: double;
+	border-width: 4px;
+	min-width: 675px;
+	max-width: 1000px;
+}
+
+div#sadrzaj {
+	margin: 0 auto;
+	width: 600px;
+}
+
+div#heder {
+	margin: 20px auto;
+	width: 150px;
+}
+
+div#sadrzaj ul {
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	padding: 15px;
+}
+
+div#sadrzaj ul>li {
+	display: inline;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-right: 20px;
+}
+
+div#sadrzaj ul>li>a {
+	color: black;
+	text-decoration: none;
+}
+
+div#sadrzaj a:hover, div#sadrzaj a.pocetna {
+	color: orange;
+}
+
+div#sadrzaj a:active, div#sadrzaj a.pocetna {
+	font-weight: bold;
+}
+
+div#sadrzaj p {
+	text-align: center;
 }
