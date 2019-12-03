@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Liste, tabele i forme CSS</title>
+	<link href="css/liste_tabele_forme.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<h1>Liste, tabele i forme</h1>
+	
+	<div id="liste">
+		<h2>Primeri lista</h2>
+		<h3>Radni dani</h3>
+		<ol>
+			<li>Ponedeljak
+				<ol class="ponedeljak">
+					<li>Ovo je prvi dan u nedelji</li>
+					<li>Mnogi ne vole ovaj dan</li>
+				</ol>
+			</li>
+			<li>Utorak
+				<ol class="utorak">
+					<li>Ovo je drugi dan u nedelji</li>
+					<li>On dolazi posle ponedeljka</li>
+					<li>Utorak je nekom lep dan, a nekom nije</li>
+				</ol>
+			</li>
+			<li>Sreda</li>
+			<li>Cetvrtak</li>
+			<li>Petak</li>
+		</ol>
+		<h3>Vrsta sporta</h3>
+		<ul>
+			<li>Kosarka</li>
+			<li>Fudbal</li>
+			<li>Plivanje</li>
+			<li>Trcanje</li>
+		</ul>
+		<h3>Vrste voca</h3>
+		<ul class="voce">
+			<li>Jabuka</li>
+			<li>Banana</li>
+			<li>Kruska</li>
+			<li>Maslina</li>
+		</ul>
+		<div id="markeri">
+			<p>Marker elemenata liste (tacka, broj, itd) moze da se
+			   ispisuje i unutar kocke u kojoj se nalazi. Inace, podrazumevano
+			   ovi markeri se ispisuju izvan kocke elemenata liste.
+			</p>
+			<ul>
+				<li>Jednog lepog dana je pao sneg. Stanovnici toga grada
+				    nisu ocekivali da ce sneg uopste da padne, iako je bilo
+					vreme za zimu. Oni su brzo trcali prevozom da bi dosli
+					kuci da se ugreju, jer nisu poneli jaknu.
+				</li>
+				<li>Poceli su zemljotresi da potresaju celu planetu. Tektonske
+				    ploce su pocele da podilaze jedna ispod druge i tako
+					su prouzrokovale zemljotrese. Neki stanovnici su se zalili
+					kako im se u stanu sve trese. To je trajalo jedne rane zore
+					oko sat i po vremena.
+				</li>
+			</ul>
+			<p>Ovo je primer podrazumevanog polozaja markera elemenata liste
+			   izvan kocke elemenata liste:
+			</p>
+			<ol>
+				<li>Jednog lepog dana je pao sneg. Stanovnici toga grada
+				    nisu ocekivali da ce sneg uopste da padne, iako je bilo
+					vreme za zimu. Oni su brzo trcali prevozom da bi dosli
+					kuci da se ugreju, jer nisu poneli jaknu.
+				</li>
+				<li>Poceli su zemljotresi da potresaju celu planetu. Tektonske
+				    ploce su pocele da podilaze jedna ispod druge i tako
+					su prouzrokovale zemljotrese. Neki stanovnici su se zalili
+					kako im se u stanu sve trese. To je trajalo jedne rane zore
+					oko sat i po vremena.
+				</li>
+			</ol>
+		</div> <!-- markeri -->
+		<div>
+			<p>Evo jednog primera kako liste mogu da se menjaju jednim propertijem:</p>
+			<ul>
+				<li>Dobar dan. Ovo je predstava o fudbalskom timu koji je uspeo
+				    da postane prvak sveta davne '91. godine. Imali su crvenu
+					zastavu i igrali su kao studenti. Inace, veoma talentovana
+					ekipa mladica koji su uspeli svakog da pobede.
+				</li>
+				<li>Plivanje je jako dobar sport. Razvija sve vrste misica, kao
+				    i srce. Dobar je kardio sport i trosi mnogo kalorija. Plivanje
+					isteze ledja i prsljenove i opusta misice ledja. Mnogi ne vole
+					da idu do dolakih bazena, pa da se raspremaju, ali inace da je
+					bazen blizu, isli bi svaki moguci dan da mogu.
+				</li>
+			</ul>
+		</div>
+	</div><!-- liste -->
+	
+	<div id="brojaci">
+		<h2>Primeri brojaca</h2>
+		<p>Brojaci mogu da se koriste ne samo na elementima liste, vec i na
+		   ostalim elementima:
+		</p>
+		<div id="prvi_brojac">
+			<p>Ovo je prvi paragraf.</p>
+			<p>Ovo je drugi paragraf.</p>
+			<p>Ovo je treci paragraf.</p>
+			<p>Ovo je cetvrti paragraf.</p>
+		</div> <!-- prvi_brojac -->
+		<p>Moze da se broji od bilo kog broja i sa bilo kojim korakom 
+		   inkrementiranja:
+		</p>
+		<div id="drugi_brojac">
+			<h3>Jedan naslov</h3>
+			<h3>Drugi naslov</h3>
+			<h3>Neki tamo naslov</h3>
+			<p>More</p>
+			<p>Plaza</p>
+			<p>Priroda</p>
+		</div> <!-- drugi_brojac -->
+		<p>Brojaci mogu da se ugnezdavaju kao na primer u sekcijama,
+		   podsekcijama i slicno:
+		</p>
+		<div id="treci_brojac">
+			<h1>Prica o biljkama</h1>
+			<h2>Uvod</h2>
+			<h2>Odrzavanje</h2>
+			<h3>Livade</h3>
+			<h3>Pasnjaci</h3>
+			<h2>Higijena</h2>
+			<h3>Dezinfekcija</h3>
+			<h3>Dezinsekcija</h3>
+			<h3>Deoterizacija</h3>
+			<h1>Jos neka prica</h1>
+			<h2>Prica o necemu</h2>
+			<h2>Prica o maslacku</h2>
+			<h3>Zuta boja cveta</h3>
+			<h3>Zelena boja stabljike</h3>
+		</div> <!-- treci_brojac -->
+	</div> <!-- brojaci -->
+	
+	<div id="futer">
+		<p>Vrati se na <a href="index.html">glavnu css</a> stranu.</p>
+		<p>Vrati se na <a href="../index.html">glavnu html</a> stranu.</p>
+	</div> <!-- futer -->
+	
+</body>
+
+</html>

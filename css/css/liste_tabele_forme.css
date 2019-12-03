@@ -1,0 +1,159 @@
+body {
+	font-family: Georgia, "Times New Roman", serif;
+	padding: 10px;
+}
+
+#futer {
+	padding: inherit;
+	background-color: blue;
+	color: white;
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#futer a {
+	color: #ffac00;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+
+/* primeri lista */
+
+div#liste ul {
+	list-style-type: circle;
+}
+
+div#liste ol {
+	list-style-type: lower-roman;
+}
+
+div#liste .ponedeljak {
+	list-style-type: lower-greek;
+}
+
+div#liste .utorak {
+	list-style-type: none;
+}
+
+div#liste .voce {
+	list-style-image: url("../../slike/vrh.png");
+}
+
+div#liste .voce>li {
+	margin-top: 10px;
+}
+
+div#markeri {
+	width: 400px;
+}
+
+div#markeri ul {
+	list-style-position: inside;
+}
+
+div#markeri ol {
+	list-style-position: outside;
+}
+
+div#markeri li {
+	margin-top: 10px;
+}
+
+div#liste div:last-of-type {
+	width: 500px;
+}
+
+div#liste div:last-of-type ul {
+	list-style: inside square;
+}
+
+div#liste div:last-of-type ul>li {
+	margin-top: 10px;
+}
+
+
+
+/* brojaci */
+
+div#prvi_brojac {
+	counter-reset: paragraf;
+}
+div#prvi_brojac>p {
+	counter-increment: paragraf;
+}
+
+div#prvi_brojac>p:before {
+	content: "Broj [" counter(paragraf) "]: ";
+}
+
+div#drugi_brojac {
+	counter-reset: naslov 20;
+	counter-reset: paragraf2 8;
+}
+
+div#drugi_brojac>h3 {
+	counter-increment: naslov 3;
+}
+
+div#drugi_brojac>h3::before {
+	content: "[" counter(naslov) "] : " counter(paragraf) " -> ";
+}
+
+div#drugi_brojac p {
+	counter-increment: paragraf2 -10;
+}
+
+div#drugi_brojac p::before {
+	content: "Broji unazad: " counter(paragraf2) " -> ";
+}
+
+/* 
+	format brojaca:
+	
+	glavni_naslov . sekcija . podsekcija 
+*/
+
+div#treci_brojac {
+	/* 
+		moze samo jedan counter-reset da postoji unutar nekog bloka
+		inace ce se izvrsiti samo poslednji napisan counter-reset,
+		dok ce ostali biti override-ovani
+		ne moze da se napise u istom bloku:
+		counter-reset: prvi
+		counter-reset: drugi
+		...
+		nego mora da postoji samo jedan counter-reset unutar bloka:
+		counter-reset: prvi drugi  ...
+	*/
+	counter-reset: glavni_naslov sekcija podsekcija;
+}
+
+div#treci_brojac h1 {
+	counter-increment: glavni_naslov;
+	counter-reset: sekcija podsekcija;
+}
+
+div#treci_brojac h1::before {
+	content: counter(glavni_naslov) ". ";
+}
+
+div#treci_brojac h2 {
+	counter-increment: sekcija;
+	counter-reset: podsekcija;
+}
+
+div#treci_brojac h2::before {
+	content: counter(glavni_naslov) "." counter(sekcija) ". ";
+}
+
+div#treci_brojac h3 {
+	counter-increment: podsekcija;
+}
+
+div#treci_brojac h3::before {
+	content: counter(glavni_naslov) "." counter(sekcija) "." counter(podsekcija) ". ";
+}
