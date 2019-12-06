@@ -13,7 +13,7 @@
 	<h1>Liste, tabele i forme</h1>
 	
 	<div id="liste">
-		<h2>Primeri lista</h2>
+		<h2 class="naslovi">Primeri lista</h2>
 		<h3>Radni dani</h3>
 		<ol>
 			<li>Ponedeljak
@@ -101,7 +101,7 @@
 	</div><!-- liste -->
 	
 	<div id="brojaci">
-		<h2>Primeri brojaca</h2>
+		<h2 class="naslovi">Primeri brojaca</h2>
 		<p>Brojaci mogu da se koriste ne samo na elementima liste, vec i na
 		   ostalim elementima:
 		</p>
@@ -141,7 +141,180 @@
 			<h3>Zuta boja cveta</h3>
 			<h3>Zelena boja stabljike</h3>
 		</div> <!-- treci_brojac -->
+		<p>Moguce je brojati ne samo brojevima, nego bilo kojim tipom
+		   koji se koriste u listama (malo slovo, veliko slovo, rimski brojevi...).
+		   Mi cemo ovde koristiti za prvi nivo velika slova (A, B, ...),
+		   za drugi nivo ugnezdenja obicne brojeve (1, 2, ...),
+		   a za treci nivo rimske brojeve (i, ii, iii, ...):
+		</p>
+		<div id="cetvrti_brojac">
+			<h1>Prica o biljkama</h1>
+			<h2>Uvod</h2>
+			<h2>Odrzavanje</h2>
+			<h3>Livade</h3>
+			<h3>Pasnjaci</h3>
+			<h2>Higijena</h2>
+			<h3>Dezinfekcija</h3>
+			<h3>Dezinsekcija</h3>
+			<h3>Deoterizacija</h3>
+			<h1>Jos neka prica</h1>
+			<h2>Prica o necemu</h2>
+			<h2>Prica o maslacku</h2>
+			<h3>Zuta boja cveta</h3>
+			<h3>Zelena boja stabljike</h3>
+		</div> <!-- cetvrti_brojac -->
+		<p id="p_ugnjezdavanje">Kada postoji mnogo ugnezdenja, onda nije prakticno da se broji.
+		   Na primer ukoliko imamo listu ugnezdenja do 50, onda nam treba
+		   50 brojaca za svaki nivo ugnezdenja. Plus dodatno moramo da vodimo
+		   racuna kada smo koji brojac povecali, kada smo koji resetovali
+		   i slicno. To onda znatno usloznjava stvari i ima previse koda
+		   koji pravi brlog. Zbog ovoga, postoji posebna css metoda koja
+		   automatski postavlja brojac kada se dodje do novog ugnezdenja,
+		   tako sto kreira novu instancu istog brojaca za svaki nivo ugnezdenja.
+		   To znaci da ako imamo 50 nivoa ugnezdenja, napravimo samo jedan
+		   brojac i onda ce on automatski da se kreira kao nova instanca
+		   sa svakim novim ugnezdenjem. Na ovaj nacin imamo deklarisan samo
+		   jedan brojac, koji ce se automatski kreirati sa svakim novim ugnezdenjem
+		   i to mnogo uproscava kod.
+		<p>
+		<div id="peti_brojac">
+			<ol>
+				<li>Lista
+					<ol>
+						<li>Tipovi liste</li>
+						<li>Elementi liste kao slike</li>
+						<li>Pozicija markera liste</li>
+						<li>Uprosceni izgled liste</li>
+						<li>Raspored liste</li>
+					</ol>
+				</li>
+				<li>Generisani sadrzaj
+					<ol>
+						<li>Ubacivanje generisanog sadrzaja
+							<ol>
+								<li>Generisanje sadrzaja i <q>ran</q> sadrzaj</li>
+							</ol>
+						</li>
+						<li>Definisanje sadrzaja
+							<ol>
+								<li>Menjanje vrednosti atributa</li>
+								<li>Generisane izreke</li>
+							</ol>
+						</li>
+						<li>Brojaci
+							<ol>
+								<li>Resetovanje i inkrementiranje</li>
+								<li>Koriscenje brojaca</li>
+								<li>Brojaci i opseg vazenja</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>Zakljucak</li>
+			</ol>
+		</div> <!-- peti_brojac -->
 	</div> <!-- brojaci -->
+	
+	<div id="tabele">
+		<h2 class="naslovi">Primeri tabela</h2>
+		<h2>Prvoklasna aukcija</h2>
+		<table class="aukcija">
+			<tr>
+				<th>Autor</th>
+				<th>Naziv</th>
+				<th class="cena">Rezervisana cena</th>
+				<th class="cena">Trentna ponuda</th>
+			</tr>
+			<tr>
+				<td>Milan Jankovic</td>
+				<td>Zlatna knjiga</td>
+				<td class="cena">2,000.00 &euro;</td>
+				<td class="cena">2,642.50 &euro;</td>
+			</tr>
+			<tr>
+				<td>Stefan Jakovljevic</td>
+				<td>Luster</td>
+				<td class="cena"></td>
+				<td class="cena">5,867.00 &euro;</td>
+			</tr>
+			<tr>
+				<td>Nikola Ilic</td>
+				<td>Casovnik</td>
+				<td class="cena">1,250.00 &euro;</td>
+				<td class="cena">8,500.35 &euro;</td>
+			</tr>
+			<tr>
+				<td>Jovan Brkic</td>
+				<td>Atlas sveta</td>
+				<td class="cena"></td>
+				<td class="cena">1031.72 &euro;</td>
+			</tr>
+		</table>
+		<p>Moguce je sakriti linije oko elemenata tabele, ukoliko
+		   oni postoje i ukoliko oni nisu spojeni.
+		</p>
+		<table class="tabela2">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td></td>
+			</tr>
+		</table>
+		<table class="tabela3">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td></td>
+			</tr>
+		</table>
+		<p>Podrazumeveno pretrazivaci stavljaju mali razmak od 2 piksela
+		   izmedju elemenata tabele. Ovaj razmak moze da se promeni, da
+		   se poveca ili smanji ili moze skroz da se ukloni, pa da elementi
+		   tabele budu spojeni kao sto je normalni prikaz tabele.
+		</p>
+		<table class="tabela4">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<table class="tabela5">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<p>Ukoliko se razmak izmedju elemenata tabele postavi na nulu,
+		   onda ce mesto gde se spajaju elementi tabele imati dvostruko
+		   vecu debljinu. Ukoliko hocemo da stavimo razmak nula izmedju
+		   elemenata tabele, onda treba da postavimo horizantalni i vertikalni
+		   razmak izmedju elemenata tabele kao sto smo to u prethodnom primeru uradili.
+		</p>
+		<table class="tabela6">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+	</div> <!-- tabele -->
 	
 	<div id="futer">
 		<p>Vrati se na <a href="index.html">glavnu css</a> stranu.</p>

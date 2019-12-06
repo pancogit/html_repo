@@ -20,6 +20,18 @@ a {
 	letter-spacing: 0.1em;
 }
 
+.naslovi {
+	color: blue;
+	border-style: solid;
+	padding: 10px;
+	width: 400px;
+	background-color: silver;
+}
+
+.naslovi:hover {
+	background-color: white;
+}
+
 
 /* primeri lista */
 
@@ -92,7 +104,7 @@ div#prvi_brojac>p:before {
 
 div#drugi_brojac {
 	counter-reset: naslov 20;
-	counter-reset: paragraf2 8;
+	counter-reset: paragraf2 18;
 }
 
 div#drugi_brojac>h3 {
@@ -156,4 +168,192 @@ div#treci_brojac h3 {
 
 div#treci_brojac h3::before {
 	content: counter(glavni_naslov) "." counter(sekcija) "." counter(podsekcija) ". ";
+}
+
+
+
+div#cetvrti_brojac {
+	counter-reset: glavni_naslov sekcija podsekcija;
+}
+
+div#cetvrti_brojac h1 {
+	counter-increment: glavni_naslov;
+	counter-reset: sekcija podsekcija;
+}
+
+div#cetvrti_brojac h1::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) ". ";
+}
+
+div#cetvrti_brojac h2 {
+	counter-increment: sekcija;
+	counter-reset: podsekcija;
+}
+
+div#cetvrti_brojac h2::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) "." counter(sekcija) ". ";
+}
+
+div#cetvrti_brojac h3 {
+	counter-increment: podsekcija;
+}
+
+div#cetvrti_brojac h3::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) "." counter(sekcija) "." 
+	         counter(podsekcija, lower-roman) ". ";
+}
+
+
+p#p_ugnjezdavanje {
+	border-style: dashed;
+	border-width: 4px;
+	border-color: orange;
+	padding: 8px;
+	width: 500px;
+	line-height: 1.3em;
+}
+
+
+/*
+	pri svakom kreiranju ol napravi po jednu istancu brojaca
+	sa imenom ugnezdeni_brojac
+	tako da koliko imamo ugnezdenih ol elemenata, toliko cemo
+	imati instanci brojaca
+	kada ispisujemo brojac sa counters(brojac, string) ili
+	counters(brojac, string, list-style-type), onda se ispisuju
+	sve instance brojaca sa zadatim imenom kao prvi argument
+	razdvojeni medjusobno stringom kao drugi argumtent counters-a
+	zbog ovoga nam je dovoljno da definisemo samo jedan brojac,
+	a sve ostale njegove instance ce da se automatski kreiraju
+	prilokom novog ugnezdenja
+*/
+div#peti_brojac ol {
+	list-style-type: none;
+	counter-reset: ugnezdeni_brojac;
+}
+
+div#peti_brojac li::before {
+	/*
+		instance brojaca ugnezdeni_brojac se ispisuju rekurzivno
+		jedna za drugom na kraju svakog se dodaje zadati string "."
+		i tek kada se sve instance brojaca ispisu, tek onda se
+		ispisuje string posle counters() f-je, a to je ": " u nasem
+		slucaju
+	*/
+	content: counters(ugnezdeni_brojac, ".") ": ";
+}
+
+div#peti_brojac li {
+	counter-increment: ugnezdeni_brojac;
+}
+
+
+
+
+/* tabele */
+
+table.aukcija {
+	width: 700px;
+}
+
+table.aukcija th {
+	text-align: left;
+	text-transform: uppercase;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	border-top-color: silver;
+	letter-spacing: 0.1em;
+	padding: 5px;
+}
+
+table.aukcija td {
+	padding: 5px;
+}
+
+table.aukcija .cena {
+	text-align: right;
+}
+
+table.aukcija tr:nth-child(even) {
+	background-color: silver;
+}
+
+/* 
+	da bi se videla boja kada se prelazi misem, mora da
+	se :hover pseudoklasa nalazi posle bojenja tr:nth-child(even)
+*/
+table.aukcija tr:hover {
+	background-color: #e8e8e8;
+}
+
+
+table.tabela2 {
+	empty-cells: show;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+table.tabela2 td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: blue;
+	padding: 10px;
+}
+
+table.tabela3 {
+	empty-cells: hide;
+	display: inline-block;
+}
+
+table.tabela3 td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: blue;
+	padding: 10px;
+}
+
+table.tabela4 {
+	border-collapse: separate;
+	
+	/* 
+		ako zadamo samo jednu vrednost, onda je to
+		razmak isti i horizontalno i vertikalno
+		ako zadamo dve vrednosti, onda je to prva
+		vrednost horizontalni razmak a druga vrednost
+		je vertikalni razmak izmedju elemenata tabele
+	*/
+	border-spacing: 5px 15px;
+	
+	display: inline-block;
+	margin-right: 15px;
+}
+
+table.tabela4 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
+}
+
+table.tabela5 {
+	border-collapse: collapse;
+	display: inline-block;
+}
+
+table.tabela5 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
+}
+
+table.tabela6 {
+	border-spacing: 0px;
+}
+
+table.tabela6 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
 }
