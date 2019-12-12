@@ -26,6 +26,7 @@ a {
 	padding: 10px;
 	width: 400px;
 	background-color: silver;
+	border-radius: 10px;
 }
 
 .naslovi:hover {
@@ -356,4 +357,429 @@ table.tabela6 td {
 	padding: 10px;
 	border-style: solid;
 	background-color: #6ba6ff;
+}
+
+
+table.tabela7 {
+	border-collapse: collapse;
+	width: 600px;
+}
+
+table.tabela7 th,
+table.tabela7 td {
+	padding: 10px;
+	text-align: left;
+}
+
+table.tabela7 tr {
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+}
+
+table.tabela8 {
+	border-collapse: separate;
+	width: 600px;
+	
+	/* lejout za width properti */
+	table-layout: auto;
+	table-layout: fixed;
+	
+	border-spacing: 5px;
+}
+
+table.tabela8 th,
+table.tabela8 td {
+	padding: 10px;
+	text-align: left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+}
+
+
+table.tabela9 {
+	border-collapse: collapse;
+	width: 150px;
+	background-color: orange;
+}
+
+table.tabela9 td {
+	padding: 10px;
+	border-style: dashed;
+	border-width: 5px;
+	border-color: red;
+}
+
+table.tabela9 td:nth-of-type(2) {
+	background-color: silver;
+}
+
+table.tabela9 tr:nth-child(2) {
+	background-color: blue;
+}
+
+
+table.tabela10 {
+	table-layout: auto;
+	border-collapse: collapse;
+	width: 700px;
+}
+
+table.tabela10 td {
+	border-style: solid;
+	border-width: 2px;
+	padding: 10px;
+}
+
+table.tabela10 #zima {
+	width: 300px;
+}
+
+table.tabela10 #zirafe {
+	width: 250px;
+}
+
+table.tabela10 #detelina {
+	width: 50px;
+	height: 200px;
+	vertical-align: top;
+}
+
+table.tabela10 #detelina>div {
+	border-style: dashed;
+	border-color: red;
+	border-width: 2px;
+}
+
+
+
+/* putanje do elemenata stranice (za forme uglavnom) */
+
+div#putanje {
+	padding: 10px;
+	border-style: dashed;
+	border-color: #8d5050;
+	border-width: 3px;
+	border-radius: 15px;
+	width: 200px;
+	background-color: orange;
+	box-shadow: 7px 5px 14px 2px #4d4103;
+}
+
+div#putanje a {
+	font-weight: bold;
+	color: white;
+}
+
+div#putanje a:hover {
+	color: blue;
+}
+
+
+/* forme */
+
+form#forma1 {
+	width: 400px;
+	border-style: solid;
+	border-color: silver;
+	border-width: 1px;
+	padding: 20px;
+}
+
+form#forma1 * {
+	margin-bottom: 10px;
+	font: inherit;
+}
+
+/* 
+	stavi polja levo kao kocke iste duzine i onda ce
+	elementi forme koji se nalaze desno biti uravnjati
+	u liniji vertikalno
+	moramo isto izgled da promenimo u inline-block da
+	bismo mogli da podesimo duzinu kocke, a da pri tom
+	ne predjemo u novi red (kao na primer sa block elementima)
+ */
+form#forma1 .forma1_levo {
+	width: 200px;
+	display: inline-block;
+}
+
+form#forma1 #selekt_id {
+	padding: 2px;
+}
+
+form#forma1 #posalji_id {
+	border-radius: 10px;
+	outline: none;
+}
+
+form#forma1 #prostor_id {
+	resize: none;
+	width: 184px;
+	height: 65px;
+	
+	/* 
+		da bi se textarea pomerila na gore u odnosu na labelu,
+		tj. da labela i textarea budu iscrtane u istoj liniji
+	*/
+	vertical-align: top;
+}
+
+form#forma1 #posalji_id:hover {
+	background-color: silver;
+	color: white;
+}
+
+input, textarea {
+	padding: 5px;
+}
+
+
+form#forma2 input {
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	background-color: hsla(0, 0%, 95%, 1);
+	border-color: silver;
+	border-width: 1px;
+	background-position-x: 5px;
+	background-position-y: 4px;
+	background-size: 12px;
+	
+	/*
+		posto smo stavili sliku unutar input-a kao pozadinu
+		na pocetku input-a, onda treba da povecamo padding
+		sa leve strane input-a da bismo kucali desno od slike,
+		a ne preko slike
+	*/
+	padding-left: 25px;
+}
+
+form#forma2 input:hover {
+	background-color: #2c4784;
+	
+	/* ako je tekst vec unet, onda kada se predje bolje se vidi */
+	color: white;
+}
+
+form#forma2 input:focus {
+	background-color: #d4d4d4;
+	background-color: hsla(0, 0%, 83%, 1);
+	border-color: black;
+	border-width: 2px;
+	outline: none;
+	
+	/* moramo da definisemo boju, inace ce :hover color da ga pregazi */
+	color: black;
+}
+
+form#forma2 #forma2_unos1,
+form#forma2 #forma2_unos2,
+form#forma2 #forma2_unos3 {
+	background-image: url("../../slike/vrh.png");
+	background-repeat: no-repeat;
+}
+
+form#forma3 input[type="submit"] {
+	border-radius: 5px;
+	background-color: #18ddbe;
+	outline: none;
+	text-shadow: 1px 1px 4px;
+	letter-spacing: 0.1em;
+	border-bottom-width: 3px;
+	color: #525252;
+	border-color: #3eead0;
+	border-color: hsla(171, 80%, 58%, 1);
+}
+form#forma3 input[type="submit"]:hover {
+	border-top-width: 3px;
+	border-bottom-width: 2px;
+	color: black;
+	background-color: #15c1a7;
+}
+
+
+form#forma4 fieldset {
+	width: 310px;
+	padding: 20px;
+	border-color: #ffffff;
+	border-width: 2px;
+	border-radius: 10px;
+	color: brown;
+	color: #904848;
+	
+	/* sve elemente unutar fieldset-a pomeri u desno */
+	text-align: right;
+}
+
+form#forma4 fieldset input {
+	margin-bottom: 20px;
+	outline: none;
+}
+
+form#forma4 legend {
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	background-color: #ebebeb;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 3px;
+	box-shadow: 2px 3px 3px silver;
+	
+	/* vrati legendu u levo */
+	text-align: left;
+}
+
+form#forma4 input[type="submit"] {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 8px;
+	background-color: #904848;
+	color: #d4d5c2;
+}
+
+form#forma4 #ime_id,
+form#forma4 #imejl_id {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 250px;
+}
+
+
+
+form#forma5 div {
+	margin-bottom: 20px;
+	width: 260px;
+}
+
+form#forma5 .forma5_levo {
+	text-align: right;
+	
+	/* 
+		ili moze samo da se uradi float u levo, i da 
+		se podesi duzina:
+		
+		float: left; width: 50px;
+		
+		ovo ce isto da radi kao ovo, zato sto element
+		koji se pomera sa float trazi width properti,
+		da bi znao koliko mesta da zauzme
+		kada se koristi float, ne mora da se display
+		menja u inline-block/block
+	*/
+	width: 50px;
+	display: inline-block;
+	
+	padding-right: 10px;
+}
+
+form#forma5 .forma_5_submit {
+	text-align: right;
+}
+
+form#forma5 input[type="submit"] {
+	border-radius: 20px;
+	outline: none;
+}
+
+
+
+/* kursori */
+
+div#kursor .kursor {
+	width: 300px;
+	padding: 10px;
+	border-style: dashed;
+	border-color: orange;
+	border-width: 3px;
+	background-color: blue;
+	color: white;
+}
+
+div#kursor p:nth-of-type(2) {
+	cursor: move;
+}
+
+div#kursor p:nth-of-type(3) {
+	cursor: grab;
+}
+
+div#kursor p:nth-of-type(4) {
+	cursor: not-allowed;
+}
+
+div#kursor p:nth-of-type(5) {
+	cursor: pointer;
+}
+
+div#kursor p:nth-of-type(6) {
+	cursor: progress;
+}
+
+div#kursor p:nth-of-type(7) {
+	cursor: wait;
+}
+
+div#kursor p:nth-of-type(8) {
+	cursor: help;
+}
+
+
+
+/* primer iz knjige */
+
+div#primer {
+	color: #6d6262;
+	color: rgba(109, 98, 98, 1);
+}
+
+div#primer ul {
+	list-style-type: none;
+	list-style-image: url("../../slike/plus.png");
+}
+
+div#primer li {
+	margin-bottom: 10px;
+}
+
+div#primer table {
+	table-layout: fixed;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-collapse: collapse;
+}
+
+div#primer th, div#primer td {
+	padding: 10px;
+	background-color: #d3e2fd;
+	text-align: left;
+	border-width: 2px;
+	border-style: solid;
+	border-color: silver;
+}
+
+div#primer tr:first-of-type>th {
+	background-color: #4f8ef7;
+	color: white;
+}
+
+div#primer tr:first-of-type>th:first-child {
+	border-top-left-radius: 8px;
+}
+
+div#primer tr:first-of-type>th:last-child {
+	border-top-right-radius: 8px;
+}
+
+div#primer tr:first-of-type {
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	border-bottom-color: #0b5fef;
 }
