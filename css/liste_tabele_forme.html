@@ -521,7 +521,7 @@
 	</div><!-- kursor -->
 	
 	<div id="primer">
-		<h2 class="naslovi">Primer</h3>
+		<h2 class="naslovi">Primer</h2>
 		<h1>Dogadjaji iz knjizevnosti</h1>
 		<p>Prikazacemo Vam zakazane dogadjaje i tribine iz knjizevnosti
 		   za predstojecu godinu.
@@ -533,59 +533,64 @@
 			<li>Licna i stvaralacka knjizevnost</li>
 		</ul>
 		<table>
-			<tr>
-				<th></th>
-				<th>Mladenovac</th>
-				<th>Cacak</th>
-				<th>Herceg Novi</th>
-			</tr>
-			<tr>
-				<th>Perspektiva i knjizevnost</th>
-				<td>Subota, 4. februar 2020. godine, od 11-2 popodne</td>
-				<td>Subota, 3. mart 2020. godine, od 11-2 popodne</td>
-				<td>Subota, 17. mart 2020. godine, od 11-2 popodne</td>
-			</tr>
-			<tr>
-				<th>Moderna knjizevnost</th>
-				<td>Subota, 7. april 2020. godine, od 11-1 popodne</td>
-				<td>Subota, 5. maj 2020. godine, od 11-1 popodne</td>
-				<td>Subota, 19. maj 2020. godine, od 11-1 popodne</td>
-			</tr>
-			<tr>
-				<th>Licna i stvaralacka knjizevnost</th>
-				<td>Subota, 9. jun 2020. godine, od 11-2 popodne</td>
-				<td>Subota, 7. jul 2020. godine, od 11-2 popodne</td>
-				<td>Subota, 21. jul 2020. godine, od 11-2 popodne</td>
-			</tr>
-			<tr>
-				<th>Knjizevnost i umetnost</th>
-				<td>Subota, 4. avgust 2020. godine, od 11-4 popodne</td>
-				<td>Subota, 8. septembar 2020. godine, od 11-4 popodne</td>
-				<td>Subota, 15. septembar 2020. godine, od 11-4 popodne</td>
-			</tr>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Mladenovac</th>
+					<th>Cacak</th>
+					<th>Herceg Novi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Perspektiva i knjizevnost</th>
+					<td>Subota, 4. februar 2020.<br /> od 11-2 popodne</td>
+					<td>Subota, 3. mart 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 17. mart 2020.<br />od 11-2 popodne</td>
+				</tr>
+				<tr>
+					<th>Moderna knjizevnost</th>
+					<td>Subota, 7. april 2020.<br />od 11-1 popodne</td>
+					<td>Subota, 5. maj 2020.<br />od 11-1 popodne</td>
+					<td>Subota, 19. maj 2020.<br />od 11-1 popodne</td>
+				</tr>
+				<tr>
+					<th>Licna i stvaralacka knjizevnost</th>
+					<td>Subota, 9. jun 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 7. jul 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 21. jul 2020.<br />od 11-2 popodne</td>
+				</tr>
+				<tr>
+					<th>Knjizevnost i umetnost</th>
+					<td>Subota, 4. avgust 2020.<br />od 11-4 popodne</td>
+					<td>Subota, 8. septembar 2020.<br />od 11-4 popodne</td>
+					<td>Subota, 15. septembar 2020.<br />od 11-4 popodne</td>
+				</tr>
+			</tbody>
 		</table>
 		<form id="forma6" method="get" action="https://www.example.com/registracija.php">
 			<fieldset>
 				<legend>Rezervisite svoje mesto</legend>
-				<label for="forma6_ime_id">Vase ime:</label>
+				<label for="forma6_ime_id" class="forma6_levo">Vase ime:</label>
 				<input type="text" name="forma6_ime" id="forma6_ime_id" />
 				<br />
-				<label for="forma6_imejl_id">Vasa imejl adresa:</label>
+				<label for="forma6_imejl_id" class="forma6_levo">Vasa imejl adresa:</label>
 				<input type="email" name="forma6_imejl" id="forma6_imejl_id" />
-				<br />
-				<label for="forma6_sel_id">Vasa najbliza lokacija:</label>
+				<hr />
+				<label for="forma6_sel_id" class="forma6_levo">Vasa najbliza lokacija:</label>
 				<select name="forma6_sel" id="forma6_sel_id">
 					<option value="mladenovac">Mladenovac</option>
 					<option value="cacak">Cacak</option>
 					<option value="herceg-novi">Herceg Novi</option>
 				</select>
-				<br />
-				<span>Da li ste clan drustva knjizevnika?</span>
+				<hr />
+				<span class="forma6_levo">Da li ste clan drustva knjizevnika?</span>
 				<input type="radio" name="forma6_da_ne" id="forma6_da_id" value="da"/>
 				<label for="forma6_da_id">Da</label>
 				<input type="radio" name="forma6_da_ne" id="forma6_ne_id" value="ne" />
 				<label for="forma6_ne_id">Ne</label>
-				<br />
+				<hr />
+				<span class="forma6_levo"></span>
 				<input type="submit" name="forma6_dugme" value="Rezervisi" />
 			</fieldset>
 		</form>

@@ -746,40 +746,122 @@ div#primer ul {
 }
 
 div#primer li {
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
+	line-height: 2em;
 }
 
 div#primer table {
 	table-layout: fixed;
+	width: 920px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border-collapse: collapse;
 }
 
-div#primer th, div#primer td {
+div#primer table * {
 	padding: 10px;
-	background-color: #d3e2fd;
 	text-align: left;
-	border-width: 2px;
+}
+
+div#primer thead {
+	background-color: #4f8ef7;
+	color: white;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #023180;
+}
+
+
+div#primer thead th {
+	border-style: solid;
+	border-color: #99beff;
+	border-width: 1px;
+	text-align: center;
+}
+
+div#primer thead th:first-child {
+	border-top-left-radius: 8px;
+}
+
+div#primer thead th:last-child {
+	border-top-right-radius: 8px;
+}
+
+
+div#primer tbody th, 
+div#primer tbody td {
+	border-width: 1px;
 	border-style: solid;
 	border-color: silver;
 }
 
-div#primer tr:first-of-type>th {
-	background-color: #4f8ef7;
-	color: white;
+div#primer tbody tr:nth-child(odd) {
+	background-color: #d3e2fd;
+	background-color: hsla(219, 91%, 91%, 1);
 }
 
-div#primer tr:first-of-type>th:first-child {
-	border-top-left-radius: 8px;
+div#primer tbody tr:nth-child(even) {
+	background-color: #e7effe;
+	background-color: hsla(219, 91%, 95%, 1);
 }
 
-div#primer tr:first-of-type>th:last-child {
-	border-top-right-radius: 8px;
+div#primer fieldset {
+	width: 470px;
 }
 
-div#primer tr:first-of-type {
-	border-bottom-width: 3px;
-	border-bottom-style: solid;
-	border-bottom-color: #0b5fef;
+div#primer .forma6_levo {
+	/* 
+		kada se uradi float, element automatski moze da ima width,
+		ne mora da se menja display u ovom slucaju
+		za float je cak i potrebno da se definise width
+	*/
+	float: left;
+	width: 280px;
+}
+
+div#primer fieldset * {
+	margin-bottom: 10px;
+}
+
+div#primer hr {
+	visibility: hidden;
+}
+
+div#primer #forma6_sel_id {
+	padding: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 5px;
+	background-color: #e8e8e8;
+}
+
+div#primer form input[type="text"]:hover,
+div#primer form input[type="email"]:hover,
+div#primer form input[type="text"]:focus,
+div#primer form input[type="email"]:focus {
+	background-color: #d3e2fd;
+	border-color: blue;
+	border-width: 2px;
+}
+
+div#primer form input[type="submit"] {
+	border: none;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	outline: none;
+	background-color: brown;
+	background-color: hsla(0, 59%, 41%, 1);
+	font-weight: bold;
+	color: #e3e3e3;
+}
+
+div#primer form input[type="submit"]:hover {
+	background-color: #cb3434;
+	background-color: hsla(0, 59%, 50%, 1);
+}
+
+div#primer form input[type="submit"]:active {
+	background-color: #8e2525;
+	background-color: hsla(0, 59%, 35%, 1);
 }
