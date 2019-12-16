@@ -419,6 +419,67 @@
 				</td>
 			</tr>
 		</table>
+		<h2>Tabele i zakrivljene linije</h2>
+		<p>Kada koristimo <ins><b><i>border-radius</i></b></ins>, moguce je koristiti
+		   na svim elementima izuzev nad elementima tabela.<br />Kako onda zaobliti ivice tabele?
+		</p>
+		<p>Tabela se prikazuje na dva nacina:</p>
+		<ol>
+			<li>tabela sa razdvojenim elementima tabele <i>(separate)</i></li>
+			<li>tabela za spojenim elementima tabele <i>(collapse)</i></li>
+		</ol>
+		<p>Prvi slucaj je podrazumevani slucaj i kod takve tabele svi elementi se posmatraju
+		   kao zasebni elementi, a ne kao celina. Zbog toga je moguce da se iskrive pojedinacne
+		   ivice tabele u ovom slucaju, jer su elementi zasebni.
+		</p>
+		<table class="tabela11">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<table class="tabela12">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<table class="tabela13">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<p>U drugom slucaju tabele, elementi tabele su spojeni i ne posmatraju se vise sami
+		   za sebe. Bas zato nije moguce zaobliti ivice bilo kog elementa tabele.
+		</p>
+		<table class="tabela14">
+			<tr>
+				<td>jedan</td>
+				<td>dva</td>
+			</tr>
+			<tr>
+				<td>tri</td>
+				<td>cetiri</td>
+			</tr>
+		</table>
+		<p>Kao sto se vidi, nismo uspeli da zaoblimo nijednu ivicu tabele, jer to ne moze
+		   u ovom slucaju. Cak ni pozadinska boja tabele se nije zaoblila, vec samo pozadinska
+		   boja prvog elementa u prvom redu tabele, ali to nije ono sto smo zeleli da uradimo,
+		   jer su i dalje linije tabele ostane netaknute.
+		</p>
 	</div> <!-- tabele -->
 	
 	<div id="forme">

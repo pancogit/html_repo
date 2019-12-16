@@ -453,6 +453,95 @@ table.tabela10 #detelina>div {
 }
 
 
+table.tabela11 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	border-spacing: 15px;
+	margin-bottom: 10px;
+}
+
+table.tabela11 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+	
+	/* za tabelu ciji su elementi razdvojeni, moguce je zaobliti bilo koju ivicu */
+	border-radius: 20px;
+}
+
+table.tabela12 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	margin-bottom: 10px;
+}
+
+table.tabela12 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+}
+
+table.tabela12 tr:nth-of-type(1)>td:first-child {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-top-left-radius: 10px;
+	background-color: blue;
+	color: white;
+}
+
+table.tabela13 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	
+	/* 
+		razmak izmedju elemenata tabele je nula i to izgleda kao
+		da su elementi tabele spojeni, a u stvari su razdvojeni
+	*/
+	border-spacing: 0px;
+	margin-bottom: 10px;
+	border: 3px solid blue;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+table.tabela13 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: red;
+}
+
+table.tabela13 tr:first-child td:first-child{
+	border-top-left-radius: 10px;
+}
+
+table.tabela13 tr:nth-child(2) td:last-child{
+	border-bottom-right-radius: 10px;
+}
+
+table.tabela14 {
+	/* spojeni su elementi tabele i onda NE MOGU da se iskrive */
+	border-collapse: collapse;
+	background-color: orange;
+}
+
+table.tabela14 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: green;
+	
+	/* nije moguce iskriviti ivice za ovaj model tabele */
+	border-radius: 35px;
+}
+
+table.tabela14 tr:nth-of-type(1)>td:first-child {
+	/* nije moguce iskriviti ivice za ovaj model tabele */
+	border-radius: 35px;
+	background-color: blue;
+}
+
 
 /* putanje do elemenata stranice (za forme uglavnom) */
 
@@ -755,10 +844,30 @@ div#primer table {
 	width: 920px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	border-collapse: collapse;
+	
+	/*
+		ukoliko linije tabele sastavimo da budu spojene (collapse),
+		onda cemo imati problem sa menjanjem pojedinacnih celija tabele
+		npr. ako hocemo da zakrivimo (border-radius) krajnje ivice
+		tabele, to necemo moci da uradimo ako su linije tabele
+		spojene, vec samo ako su razdvojene (separate)
+		kada su razdvojene linije tabele, onda se svaka celija tabele
+		posmatra posebno za sebe i onda je moguce pojedinacnu
+		celiju izmeniti, u suprotnom je to nemoguce jer cemo imati
+	    ivicu celije koja nije zakrivljena, a pozadinska boja ce biti
+		zakrivljena
+		ako hocemo da izgledaju celije kao spojene, onda treba razmak
+		izmedju celija da postavimo da bude nula
+		u spec-u pise da border-radius se koristi za sve elemente izuzev
+		za internet elemente tabela (zato mora da razdvojimo elemente tabela)
+	*/
+/*	border-collapse: collapse;   */
+	border-collapse: separate;
+	border-spacing: 0px;
 }
 
-div#primer table * {
+div#primer table th,
+div#primer table td {
 	padding: 10px;
 	text-align: left;
 }
@@ -766,9 +875,6 @@ div#primer table * {
 div#primer thead {
 	background-color: #4f8ef7;
 	color: white;
-	border-bottom-width: 2px;
-	border-bottom-style: solid;
-	border-bottom-color: #023180;
 }
 
 
@@ -777,6 +883,17 @@ div#primer thead th {
 	border-color: #99beff;
 	border-width: 1px;
 	text-align: center;
+	letter-spacing: 0.1em;
+	text-shadow: 4px 4px 3px #0a3586;
+	
+	/*
+		zato sto su nam celije razdvojene, onda moramo pojedinacno
+		da podesimo donju liniju, jer donja linija za thread ili tr
+		ne postoji u ovom modelu tabele
+	*/
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #023180;
 }
 
 div#primer thead th:first-child {
@@ -807,6 +924,11 @@ div#primer tbody tr:nth-child(even) {
 
 div#primer fieldset {
 	width: 470px;
+	background-color: #f2f4fa;
+}
+
+div#primer legend {
+	font-style: italic;
 }
 
 div#primer .forma6_levo {
@@ -859,6 +981,8 @@ div#primer form input[type="submit"] {
 div#primer form input[type="submit"]:hover {
 	background-color: #cb3434;
 	background-color: hsla(0, 59%, 50%, 1);
+	cursor: pointer;
+	color: white;
 }
 
 div#primer form input[type="submit"]:active {
