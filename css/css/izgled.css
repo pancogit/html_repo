@@ -1,0 +1,269 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+	background-color: #1a2749;
+	color: #e6f2ff;
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #00ff1f;
+	font-weight: bold;
+}
+
+div#glavni_futer {
+	background-color: #a15d5d;
+	padding: inherit;
+	margin-top: 20px;
+}
+
+h3 {
+	text-decoration: underline;
+	color: orange;
+	letter-spacing: 0.1em;
+}
+
+
+/* pozicioniranje */
+
+div#pozicija1 * {
+	position: static;
+}
+
+.pozicioniranje h2 {
+	padding: 5px;
+	background-color: blue;
+}
+
+.pozicioniranje p {
+	width: 450px;
+}
+
+div#pozicija2 p:nth-of-type(2) {
+	position: relative;
+	top: 10px; /* ubaci ofset sa vrha */
+	left: 100px; /* ubaci ofset sa leve strane */
+}
+
+div#pozicija3 h2 {
+	position: absolute;
+	left: 500px; /* pomeri u levo za zadati ofset */
+	top: 1050px;  /* ofset odozdo u odnosu na pocetak stranice */
+	width: 250px;
+}
+
+div#pozicija4 {
+	/*
+		postavimo ovaj div da bude pozicioniran i onda ce
+		heder unutar njega koji je isto pozicioniran biti pozicioniran
+		u odnosu na njega
+		u suprotnom, div#pozicija4 h2 bi bio pozicioniran
+		apsolutno u odnosu na prvi pozicioniran element koji ga sadrzi
+		a to je body, jer ne postoji nijedan drugi koji je
+		pozicioniran
+	*/
+	position: relative; /* blok konternjer za pozicionirane elemente */
+}
+
+div#pozicija4 h2 {
+	position: absolute;
+	/* 
+		pozicioniraj se 0px od vrha u odnosu na prvi element
+		koji te okruzuje i koji je isto pozicioniran
+		ako nijedan element nije pozicioniran, onda se racuna
+		u odnosu na body element
+	*/
+	top: 0px;
+	right: 100px;
+	width: 500px;
+}
+
+div#pozicija5 h2 {
+	position: fixed;
+	
+	/* da ne bi setao po ekranu */
+	position: static;
+	
+	top: 200px; /* fiksiraj u odnosu na gornju ivicu stranice */
+	left: 0px;
+	
+	/* 
+		kada je pozicija fiksirana, onda se sirina kocke resetuje
+		na najmanju mogucu vrednost, cisto toliko da stane tekst
+	*/
+	width: 500px;
+	width: 100%;  /* celom duzinom ekrana se prikazuje */
+	background-color: orange;
+	color: blue;
+	border-radius: 20px;
+}
+
+div#pozicija6 {
+	/* konternjer za pozicionirane elemente sa ofsetima (=0) */
+	position: relative;
+}
+
+div#pozicija6 p:not(.uvod) {
+	padding: 10px;
+}
+
+div#pozicija6 p:nth-of-type(2) {
+	background-color: green;
+	z-index: 10; /* najmanji prioritet */
+	position: relative;
+}
+
+div#pozicija6 p:nth-of-type(3) {
+	background-color: orange;
+	z-index: 20;
+	position: absolute;
+	top: 100px;
+	left: 300px;
+}
+
+div#pozicija6 p:nth-of-type(4) {
+	background-color: #348df3;
+	z-index: 30; /* najvisi prioritet */
+	position: absolute;
+	top: 150px;
+	left: 420px;
+}
+
+
+/* isplivavanje */
+
+div#plivanje1 p {
+	width: 700px;
+}
+
+div#plivanje1 blockquote {
+	float: right;
+	width: 150px;
+	font-style: italic;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding: 5px;
+	font-size: 130%;
+	font-family: Georgia, serif;
+
+	/* da se uravnja u istoj liniiji sa paragrafom */
+	margin-top: 0px;
+	
+	/* smanji margine da izraz lepse izgleda */
+	margin-right: 0px;
+	margin-left: 10px;
+}
+
+/* 
+	da bi izreka bila unutar paragrafa, 
+	moramo da podesimo sirinu div-a 
+*/
+div#plivanje1 {
+	width: 700px;
+}
+
+div#plivanje2, div#plivanje3,
+div#plivanje4 {
+	width: 800px;
+	overflow: auto; /* css bag, float-ovane elemente ubaci u div */
+}
+
+div#plivanje2 p, div#plivanje3 p,
+div#plivanje4 p:not(.plivanje4_uvod) {
+	width: 150px;
+	background-color: #505050;
+	float: left;
+	margin-right: 10px;
+	padding: 5px;
+}
+
+/* ponisti plivanje elementa na levoj strani */
+div#plivanje3 .ponisti_plivanje {
+	clear: left;
+}
+
+div#plivanje4_roditelj {
+	border-style: solid;
+	border-width: 2px;
+	border-color: green;
+	padding: 10px;
+	
+	/*
+		ovaj element sadrzi sve elemente koji su plivajuci
+		ima css bag koji prikazuje kao da elementi nisu u njemu
+		ako su svi ti elementi unutar njega plivajuci
+		ovaj bag se resava tako sto se postavi overflow za
+		element roditelj koji sadrzi sve plivajuce elemente
+	*/
+	overflow: auto;
+}
+
+div#plivanje5_kolona1 {
+	width: 700px;
+	float: left;
+	margin: 20px;
+}
+
+div#plivanje5_kolona2 {
+	width: 200px;
+	float: left;
+	margin: 20px;
+}
+
+div#plivanje5 {
+	overflow: auto; /* stavi div-ove unutar ovog div-a (css bag) */
+}
+
+div#plivanje6_kolona1,
+div#plivanje6_kolona2,
+div#plivanje6_kolona3 {
+	width: 300px;
+	margin: 20px;
+	float: left;
+}
+
+div#plivanje6 {
+	overflow: auto;
+}
+
+
+/* izgled stranice */
+
+div#fiksiran_izgled_okvir {
+	width: 1000px;
+}
+
+div#fiksiran_izgled_okvir div:not(#fiksiran_izgled_heder):not(#fiksiran_izgled_sadrzaj) {
+	background-color: #7b7474;
+}
+
+div#fiksiran_izgled_okvir div {
+	padding: 10px;
+	text-align: center;
+	margin: 20px;
+}
+
+div#fiskiran_izgled_nav a {
+	text-decoration: underline;
+	color: white;
+}
+
+div#fiskiran_izgled_nav li {
+	display: inline;
+	margin-right: 10px;
+}
+
+div#fiksiran_izgled_kol1,
+div#fiksiran_izgled_kol2,
+div#fiksiran_izgled_kol3 {
+	float: left;
+	width: 250px;
+/*	width: 26%; */
+}
+
+div#fiksiran_izgled_futer {
+	/* nemoj da ovaj div pliva u levo zajedno sa kolonama */
+	clear: left;
+}
