@@ -1,0 +1,48 @@
+/*
+	ovaj fajl je namenjen za modularno koriscenje izgled.css fajla
+	stranica izgled.html koristi css fajl izgled.css
+	div#css_fajlovi_okvir je div koji se uredjuje ovim fajlom
+*/
+
+div#css_fajlovi_okvir {
+	background-color: white;
+	color: #734c4c;
+	color: hsla(0, 20%, 37%, 1);
+	border-color: #b9b2b2;
+	border-color: hsla(0, 5%, 71%, 1);
+}
+
+div#css_fajlovi_spoljni_okvir {
+	background-color: white;
+}
+
+div#css_fajlovi_okvir table thead {
+	background-color: #4168e4;
+	background-color: hsla(226, 75%, 57%, 1);
+	color: white;
+}
+
+div#css_fajlovi_okvir table tbody tr {
+	background-color: #89c0f5;
+	background-color: hsla(209, 84%, 75%, 1);
+}
+
+div#css_fajlovi_okvir h4 {
+	color: #4168e4;
+	color: hsla(226, 75%, 57%, 1);
+}
+
+div#css_fajlovi_okvir table th,
+div#css_fajlovi_okvir table td {
+	border-color: #839fd4;
+	border-color: hsla(219, 49%, 67%, 1);
+}
+
+/* 
+	koristimo pojedinacne elemente tabele
+	zato sto je tabela formata sa razdvojenim elementima 
+*/
+div#css_fajlovi_okvir table thead th {
+	border-bottom-color: #0f2685;
+	border-bottom-color: hsla(228, 80%, 29%, 1);
+}

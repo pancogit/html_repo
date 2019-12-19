@@ -1,3 +1,15 @@
+/* 
+	css fajlovi (modularnost)
+
+	@import css fajlova iz ovog fajla mora da se napise 
+	pre bilo kog pravila, na pocetku fajla, inace se nece
+	ukljuciti fajlovi 
+*/
+@import url("izgled_tabele.css");
+@import url("izgled_slova.css");
+@import url("izgled_boje.css");
+
+
 body {
 	font-family: "Times New Roman", Times, serif;
 	background-color: #1a2749;
@@ -232,17 +244,18 @@ div#plivanje6 {
 /* izgled stranice */
 
 div#fiksiran_izgled_okvir {
-	width: 1000px;
-}
-
-div#fiksiran_izgled_okvir div:not(#fiksiran_izgled_heder):not(#fiksiran_izgled_sadrzaj) {
-	background-color: #7b7474;
-}
-
-div#fiksiran_izgled_okvir div {
-	padding: 10px;
+	/*
+		300*3 (za kolone: prva, druga, treca) +
+		10*2*3 (padding [levi, desni] za kolone) +
+		10*2*3 (margine [leva, desna] za kolone)
+		= 1020
+	*/
+	width: 1020px;
+	
+	/* centriraj kocku na sredinu ekrana */
+	margin: 0 auto;
+	
 	text-align: center;
-	margin: 20px;
 }
 
 div#fiskiran_izgled_nav a {
@@ -259,11 +272,224 @@ div#fiksiran_izgled_kol1,
 div#fiksiran_izgled_kol2,
 div#fiksiran_izgled_kol3 {
 	float: left;
-	width: 250px;
-/*	width: 26%; */
+	width: 300px;
 }
 
 div#fiksiran_izgled_futer {
-	/* nemoj da ovaj div pliva u levo zajedno sa kolonama */
-	clear: left;
+	clear: left; /* prekini float u levo posle tri kolone */
+}
+
+div#fiksiran_izgled_okvir .fiskiran_izgled_poz {
+	background-color: #7b7474;
+	padding: 10px;
+	margin: 10px;
+}
+
+div#fiksiran_izgled_sadrzaj {
+	/* na sadrzaj stranice stavi overflow da bi sve stalo - css bag */
+	overflow: auto;
+}
+
+
+div#tecni_izgled_okvir {
+	/* 
+		da bi se stranica razvlacila i skupljala u odnosu na body, 
+		moramo da stavimo procente za duzine umesto piksela
+	*/
+	width: 90%;
+	
+	min-width: 180px;
+	max-width: 1200px;
+	max-width: 3000px;
+	
+	margin: 0 auto; /* centriraj na sredinu */
+	text-align: center;
+}
+
+div#tecni_izgled_okvir a {
+	text-decoration: underline;
+	color: white;
+}
+
+div#tecni_izgled_nav li {
+	display: inline-block;
+	width: 100px;
+}
+
+div#tecni_izgled_kol1,
+div#tecni_izgled_kol2,
+div#tecni_izgled_kol3 {
+	float: left; /* poredjaj ih u kolone jedan za drugim u levo */
+	margin: 1%;
+	padding: 1%;
+	background-color: #7b7474;
+	height: 150px;
+	
+	/* 
+		tri kolone 87.9% u odnosu na kontejner (#tecni_izgled_sadrzaj) 
+		+ 4*3=12% za margine i padding = 99.9%
+	*/
+	width: 29.3%; 
+}
+
+div#tecni_izgled_fun {
+	height: 150px;
+}
+
+div#tecni_izgled_nav,
+div#tecni_izgled_fun,
+div#fiksiran_izgled_futer {
+	padding: 1%;
+	margin: 1%;
+	background-color: #7b7474;
+}
+
+div#tecni_izgled_sadrzaj {
+	overflow: auto; /* da sadrzi sve div-ove - css bag */
+}
+
+
+div#mrezni_izgled1, div#mrezni_izgled2, div#mrezni_izgled3 {
+	/* 940 piksela + 10*2 (margine leva i desna) */
+	width: 960px;
+	overflow: auto;
+}
+
+div#mrezni_izgled1 div,
+div#mrezni_izgled2 div,
+div#mrezni_izgled3 div {
+	margin: 10px;
+	text-align: center;
+	height: 150px;
+	
+	/* sve div-ove slozi jedan uz drugi sa leve strane */
+	float: left;
+	background-color: blue;
+}
+
+div#mrezni_izgled1 div:nth-of-type(1)  { width: 940px; }
+div#mrezni_izgled1 div:nth-of-type(2)  { width: 460px; }
+div#mrezni_izgled1 div:nth-of-type(3)  { width: 460px; }
+div#mrezni_izgled1 div:nth-of-type(4)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(5)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(6)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(7)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(8)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(9)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(10) { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(11) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(12) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(13) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(14) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(15) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(16) { width: 140px; }
+
+div#mrezni_izgled2 div:nth-of-type(1)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(2)  { width: 620px; }
+div#mrezni_izgled2 div:nth-of-type(3)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(4)  { width: 700px; }
+div#mrezni_izgled2 div:nth-of-type(5)  { width: 460px; }
+div#mrezni_izgled2 div:nth-of-type(6)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(7)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(8)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(9)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(10) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(11) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(12) { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(13) { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(14) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(15) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(16) { width: 140px; }
+
+div#mrezni_izgled3 div:nth-of-type(1)  { width: 940px; }
+div#mrezni_izgled3 div:nth-of-type(2)  { width: 940px; height: auto; }
+div#mrezni_izgled3 div:nth-of-type(3)  { width: 940px; }
+div#mrezni_izgled3 div:nth-of-type(4)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(5)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(6)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(7)  { width: 940px; height: auto; }
+
+
+/* 
+	css fajlovi (modularnost)
+	
+	u fajlovima ("izgled_tabele.css"); ("izgled_slova.css"); ("izgled_boje.css");
+	koji su ukljuceni na pocetku ovog fajla se nalaze css delovi za
+	pojedinacne stvari (boje, slova i tabele)
+	ostatak css-a ce se napisati u ovom fajlu koji su vezani za opste
+	stvari na ovom delu strane
+*/
+
+div#css_fajlovi_okvir {
+	padding: 30px;
+	border-style: solid;
+	border-width: 2px;
+	
+	/* razdvoji unutrasnji okvir od spoljnjeg da bi se videla linija */
+	margin: 30px;
+}
+
+div#css_fajlovi_spoljni_okvir {
+	/* 
+		bez padding-a se nece videti gornja i donja margina 
+		za okvir  div#css_fajlovi_okvir 
+	*/
+	padding: 10px;
+	
+	/* da tabela ne ispadne iz spoljnjeg okvira */
+	min-width: 575px;
+	max-width: 1200px;
+}
+
+div#css_fajlovi_okvir .css_fajlovi_obavestenje {
+	margin-bottom: 0px;
+}
+
+div#css_fajlovi_okvir h4 {
+	margin-top: 0px;
+}
+
+div#css_fajlovi_okvir hr {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+/* primer iz knjige */
+
+div#primer_spoljni_okvir {
+	background-color: #564e4e;
+	background-color: hsla(0, 5%, 32%, 1);
+	color: #f2f2f2;
+	color: hsla(0, 1%, 95%, 1);
+}
+
+div#primer_okvir {
+	width: 960px; /* fiksiraj duzinu na 960px */
+	margin: 0 auto; /* centriraj stranicu na sredinu */
+}
+
+div#primer_okvir h1, div#primer_okvir h4 {
+	color: #adb5aa;
+	color: hsla(108, 7%, 69%, 1);
+}
+
+div#primer_okvir a {
+	color: #bdc4bb;
+	color: hsla(108, 7%, 75%, 1);
+}
+
+div#primer_nav ul li {
+	display: inline;
+	padding: 5px;
+}
+
+div#primer_nav {
+	width: 370px;
+	float: right;
+}
+
+div#primer_logo {
+	width: 218px; /* ista kao sirina slike logo-a */
+	float: left; /* mora i logo i navigacija da plivaju */
 }

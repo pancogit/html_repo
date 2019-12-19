@@ -1,0 +1,44 @@
+/*
+	ovaj fajl je namenjen za modularno koriscenje izgled.css fajla
+	stranica izgled.html koristi css fajl izgled.css
+	div#css_fajlovi_okvir je div koji se uredjuje ovim fajlom
+*/
+
+div#css_fajlovi_okvir table {
+	width: 450px;
+	table-layout: fixed;
+	
+	/* 
+		da bismo zaoblili ivice tabele, to moramo da uradimo
+		nad pojedinacnim elementima tabele (th, td), sto znaci
+		da tabela mora da bude sa elementima koji su razdvojeni
+		inace, ako su elementi tabele spojeni, onda necemo moci
+		da zaoblimo pojedinacne elemente tabele
+		
+		da bismo primakli elemente tabele jedan uz drugi u ovom
+		modelu tabele (sa razdvojenim elementima), moramo da
+		postavimo razmak izmedju njih na nulu
+	*/
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+div#css_fajlovi_okvir table th,
+div#css_fajlovi_okvir table td {
+	border-style: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+div#css_fajlovi_okvir table thead th:first-child {
+	border-top-left-radius: 5px;
+}
+
+div#css_fajlovi_okvir table thead th:last-child {
+	border-top-right-radius: 5px;
+}
+
+div#css_fajlovi_okvir table thead th {
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+}

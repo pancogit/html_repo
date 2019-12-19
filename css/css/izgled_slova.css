@@ -1,0 +1,20 @@
+/*
+	ovaj fajl je namenjen za modularno koriscenje izgled.css fajla
+	stranica izgled.html koristi css fajl izgled.css
+	div#css_fajlovi_okvir je div koji se uredjuje ovim fajlom
+*/
+
+div#css_fajlovi_okvir .css_fajlovi_obavestenje {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	word-spacing: 0.1em;
+}
+
+div#css_fajlovi_okvir table thead th {
+	text-shadow: 2px -2px 5px black;
+}
+
+div#css_fajlovi_okvir th, 
+div#css_fajlovi_okvir td {
+	text-align: left;
+}

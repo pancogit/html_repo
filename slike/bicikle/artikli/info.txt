@@ -1,0 +1,7 @@
+sirina slike je 220px za slike 1-2, 2-2, 3-2, ..., 16-2
+visina nije mogla da se podesi da bude svugde ista,
+ali zato moze to da se uradi u html-u
+visina slika treba da bude 125px
+ove slike se nalaze u samom sadrzaju stranice, gde se
+nalaze artikli sa ovim slikama ispod kojih se nalaze
+linkovi ka tekstovima vezanih za ove slike
