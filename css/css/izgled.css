@@ -74,7 +74,7 @@ div#pozicija4 {
 		a to je body, jer ne postoji nijedan drugi koji je
 		pozicioniran
 	*/
-	position: relative; /* blok konternjer za pozicionirane elemente */
+	position: relative; /* blok konterner za pozicionirane elemente */
 }
 
 div#pozicija4 h2 {
@@ -111,7 +111,7 @@ div#pozicija5 h2 {
 }
 
 div#pozicija6 {
-	/* konternjer za pozicionirane elemente sa ofsetima (=0) */
+	/* konterner za pozicionirane elemente sa ofsetima (=0) */
 	position: relative;
 }
 
@@ -225,7 +225,15 @@ div#plivanje5_kolona2 {
 }
 
 div#plivanje5 {
-	overflow: auto; /* stavi div-ove unutar ovog div-a (css bag) */
+	/* 
+		stavi div-ove unutar ovog div-a (css bag)
+		ovaj bag je poznat i zove se clearfix
+		desava se da ponekad kada se smanjuje sirina prozora
+		da se pojavi skrol polje ispod div-a
+		da bi se ovaj skrol sakrio, bolje je staviti overflow
+		na vrednost hidden
+	*/
+	overflow: hidden; 
 }
 
 div#plivanje6_kolona1,
@@ -338,7 +346,7 @@ div#tecni_izgled_fun {
 
 div#tecni_izgled_nav,
 div#tecni_izgled_fun,
-div#fiksiran_izgled_futer {
+div#tecni_izgled_futer {
 	padding: 1%;
 	margin: 1%;
 	background-color: #7b7474;
@@ -457,21 +465,100 @@ div#css_fajlovi_okvir hr {
 
 /* primer iz knjige */
 
+/* ovo imitira body, posto ne pravimo na posebnoj stranici ovaj primer */
 div#primer_spoljni_okvir {
 	background-color: #564e4e;
 	background-color: hsla(0, 5%, 32%, 1);
 	color: #f2f2f2;
 	color: hsla(0, 1%, 95%, 1);
+	
+	/*
+		moramo da definisemo sirinu za ovaj omotac da bude jednaka
+		minimalnoj sirini stranice, jer u suprotnom ako smanjujemo prozor,
+		sadrzaj stranice ce ispadati iz ovog omotaca
+		dodacemo jos 20px (po 10px sa strane) za slucaj da se smanji sirina
+		prozora na minimum (960px + 20px = 980px)
+		u tom slucaju ce se lepse videti stranica
+	*/
+	min-width: 980px;
+}
+
+div#primer_heder,
+div#primer_sadrzaj,
+div#primer_futer {
+	width: 960px; /* fiksiraj duzinu na 960px */
+	margin: 0 auto; /* centriraj na sredinu stranice */
+}
+
+div#primer_futer_poz,
+div#primer_heder_poz {
+	background-color: black;
+	background-color: #0d0c0c80;
+	background-color: hsla(0, 5%, 5%, 0.75); /* 0.75 za transparentnost */
+	height: 100px;
+
+	/* moze da se centrira vertikalno sa padding-om */
+	padding-top: 40px;
+}
+
+div#primer_heder_poz {
+	/* 
+		fiksiraj meni na vrh stranice u odnosu na konterner div#primer_okvir
+		zato sto nije posebna stranica napravljena za ovaj primer, vec je primer
+		u okviru stranice, ne moze da se koristi fiksno pozicioniranje, zato sto
+		ce da pozicionira u odnosu na pocetak prozora, a pocetak prozora su
+		prethodni primeri i onda nece izgledati kao da je pozicioniran za ovaj primer
+		zato za ovakvu situaciju treba koristiti sticky (zalepljeno) pozicioniranje,
+		jer ono ce da pozicionira element u okviru kontejnera i nece da ide dalje
+	
+	    ovo moze, ali samo ukoliko je ovo jedini primer na strani:
+		position: fixed; 
+	*/
+	position: sticky;
+	top: 0px;
+	
+	/*
+		nema drugih pozicioniranih elemenata unutar stranice,
+		tako da ne mora z-index, ali stavicemo za svaki slucaj
+	*/
+	z-index: 50;
+	
+	/* 
+		sirina celom duzinom okruzujuceg kontejner elementa,
+		inace ce biti duzine dovoljne samo da stane sadrzaj 
+	*/
+	width: 100%;
+}
+
+div#primer_uvod {
+	/* pomeri na dole kutiju da je ne prekrije heder na pocetku */
+	padding-top: 150px;
+	
+	background-image: url("../../slike/bicikle/transparent/bicikla_transparent_1.png");
+	background-size: 640px;
+	background-repeat: no-repeat;
+	
+	background-position-x: 0px;
+	background-position-y: 100px;
+	
+	/* ili jos bolje resenje */
+	background-position-x: left;
+	background-position-y: bottom;
 }
 
 div#primer_okvir {
-	width: 960px; /* fiksiraj duzinu na 960px */
-	margin: 0 auto; /* centriraj stranicu na sredinu */
+	/* kontejner za div#primer_heder_poz */
+	position: relative;
+}
+
+div#primer_futer {
+	text-align: center; /* horizontalno centriraj tekst futera */
 }
 
 div#primer_okvir h1, div#primer_okvir h4 {
 	color: #adb5aa;
 	color: hsla(108, 7%, 69%, 1);
+	text-transform: uppercase;
 }
 
 div#primer_okvir a {
@@ -479,9 +566,29 @@ div#primer_okvir a {
 	color: hsla(108, 7%, 75%, 1);
 }
 
+div#primer_okvir a:hover {
+	color: white;
+}
+
+div#primer_okvir hr {
+	border-color: #adb5aa;
+	border-color: hsla(108, 7%, 69%, 1);
+}
+
+div#primer_okvir .hr_razmak {
+	border-width: 2px;
+}
+
 div#primer_nav ul li {
 	display: inline;
-	padding: 5px;
+}
+
+div#primer_nav ul li::after {
+	content: " /";
+}
+
+div#primer_nav ul li:last-child::after {
+	content: none; /* ponisti / posle poslednjeg linka u navigaciji */
 }
 
 div#primer_nav {
@@ -492,4 +599,45 @@ div#primer_nav {
 div#primer_logo {
 	width: 218px; /* ista kao sirina slike logo-a */
 	float: left; /* mora i logo i navigacija da plivaju */
+	
+	/* moramo da postavimo visinu za ovaj div, posto nista nema unutar njega */
+	height: 65px; /* ista kao visina slike logo-a */
+	background-image: url("../../slike/bicikle/logo/bicikla_logo_tekst_transparent.png");
+	background-repeat: no-repeat;
+}
+
+div#primer_heder {
+	overflow: hidden; /* clearfix, bolje hidden da se ne vidi skrol */
+}
+
+div#primer_uvod img {
+	float: left;
+}
+
+div#primer_uvod_naslovna {
+	float: right; /* moglo je i u levo jer zauzima prostor do kraja reda */
+	width: 300px; /* uklopi sirinu da stane pored slike */
+}
+
+div#primer_uvod {
+	overflow: hidden; /* clearfix */
+}
+
+div#primer_artikli div {
+	width: 220px;
+	float: left;
+	margin: 10px;
+}
+
+/*
+	sada treba da se ponisti plivanje u levo (float)
+	posle svake cetvrtog artikla na stranici, da bi bili
+	lepo poravnati u redove, cetiri po cetiri artikla
+*/
+div#primer_artikli div:nth-of-type(4n + 1) {
+	clear: left; /* ponisti plivanje u levo */
+}
+
+div#primer_artikli {
+	overflow: hidden; /* clearfix */
 }

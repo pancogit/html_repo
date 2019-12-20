@@ -6,7 +6,7 @@
 	<meta charset="utf-8" />
 	<title>Izgled stranice CSS</title>
 	<link href="css/izgled.css" type="text/css" rel="stylesheet" />
-<head>
+</head>
 
 <body>
 
@@ -517,9 +517,9 @@
 						<p>Treca kolona</p>
 					</div><!-- tecni_izgled_kol3 -->
 				</div><!-- tecni_izgled_sadrzaj -->
-				<div id="fiksiran_izgled_futer">
+				<div id="tecni_izgled_futer">
 					<p>&copy; Sva prava zadrzana 2019</p>
-				</div><!-- fiksiran_izgled_futer -->
+				</div><!-- tecni_izgled_futer -->
 			</div><!-- tecni_izgled_okvir -->
 		</div><!-- tecni_izgled -->
 		
@@ -641,46 +641,58 @@
 		</p>
 		<div id="primer_spoljni_okvir">
 			<div id="primer_okvir">
-				<div id="primer_heder">
-					<div id="primer_logo">
-						<img src="../slike/bicikle/logo/bicikla_logo_tekst_transparent.png"
-							 alt="Vozi brze - moderni biciklisticki magazin"
-							 width="218" height="65" />
-					</div><!-- primer_logo -->
-					<div id="primer_nav">
-						<ul>
-							<li><a href="#primer_okvir">pocetna</a></li>
-							<li><a href="#primer_okvir">novosti</a></li>
-							<li><a href="#primer_okvir">arhive</a></li>
-							<li><a href="#primer_okvir">o nama</a></li>
-							<li><a href="#primer_okvir">kontakt</a></li>
-						</ul>
-					</div><!-- primer_nav -->
-				</div><!-- primer_heder -->
+				<div id="primer_heder_poz">
+					<div id="primer_heder">
+						<div id="primer_logo">
+						<!--
+							Ovo je sada reseno pomocu pozadinske slike u css-u
+							
+							<img src="../slike/bicikle/logo/bicikla_logo_tekst_transparent.png"
+								 alt="Vozi brze - moderni biciklisticki magazin"
+								 width="218" height="65" />
+						-->
+						</div><!-- primer_logo -->
+						<div id="primer_nav">
+							<ul>
+								<li><a href="#primer_okvir">pocetna</a></li>
+								<li><a href="#primer_okvir">novosti</a></li>
+								<li><a href="#primer_okvir">arhive</a></li>
+								<li><a href="#primer_okvir">o nama</a></li>
+								<li><a href="#primer_okvir">kontakt</a></li>
+							</ul>
+						</div><!-- primer_nav -->
+					</div><!-- primer_heder -->
+				</div><!-- primer_heder_poz -->
 				
 				<div id="primer_sadrzaj">
 					<div id="primer_uvod">
+					<!--
+						Ovo je sada reseno pomocu pozadinske slike u css-u
+						
 						<img src="../slike/bicikle/transparent/bicikla_transparent_1.png"
 							 alt="Naslovna slika za bicikle"
 							 width="640" height="345" />
-						<h1>Stabilna oprema jednom za svagda</h1>
-						<h4>16 april 2019.</h4>
-						<p>Nase bicikle imaju jednostavan dizajn vrhunskog kvaliteta.
-						   Bez preteranih crteza i detalja, kao i nepotrebnih glomaznih
-						   delova, lepota nasih bicikala je bas u toj jednostavnosti.
-						   Bicikle u raznim bojama, sa ramovima srednje velicine,
-						   sa pravim volanom i jednostavnim menjacima ce Vas oduseviti.
-						   Sve sto je na Vama jeste da se provozate ulicama grada.
-						</p>
-						<p>Ukoliko zelite sami da napravite neku biciklu, nasi ramovi
-						   su pravo resenje za Vas. Isporucuju se u tri velicine,
-						   dve razlicite boje, i garantuju savrsenu stabilnost.
-						   <br />
-						   <a href="#primer_uvod">Nastavite da citate...</a>
-						</p>
+					-->
+						<div id="primer_uvod_naslovna">
+							<h1>Stabilna oprema jednom za svagda</h1>
+							<h4>16 april 2019.</h4>
+							<p>Nase bicikle imaju jednostavan dizajn vrhunskog kvaliteta.
+							   Bez preteranih crteza i detalja, kao i nepotrebnih glomaznih
+							   delova, lepota nasih bicikala je bas u toj jednostavnosti.
+							   Bicikle u raznim bojama, sa ramovima srednje velicine,
+							   sa pravim volanom i jednostavnim menjacima ce Vas oduseviti.
+							   Sve sto je na Vama jeste da se provozate ulicama grada.
+							</p>
+							<p>Ukoliko zelite sami da napravite neku biciklu, nasi ramovi
+							   su pravo resenje za Vas. Isporucuju se u tri velicine,
+							   dve razlicite boje, i garantuju savrsenu stabilnost.
+							   <br />
+							   <a href="#primer_uvod">Nastavite da citate...</a>
+							</p>
+						</div><!-- primer_uvod_naslovna -->
 					</div><!-- primer_uvod -->
 					
-					<hr />
+					<hr class="hr_razmak" />
 					
 					<div id="primer_artikli">
 						<h1>Jos tema</h1>
@@ -964,10 +976,12 @@
 					</div><!-- primer_artikli -->
 				</div><!-- primer_sadrzaj -->
 				
-				<div id="primer_futer">
-					<p>&copy; Biciklisticka inovacija - Sva prava zadrzana 
-					   1985-2019</p>
-				</div><!-- primer_futer -->
+				<div id="primer_futer_poz">
+					<div id="primer_futer">
+						<p>&copy; Biciklisticka inovacija - Sva prava zadrzana 
+						   1985-2019</p>
+					</div><!-- primer_futer -->
+				</div><!-- primer_futer_poz -->
 			</div><!-- primer_okvir -->
 		</div><!-- primer_spoljni_okvir -->
 	</div><!-- primer -->
