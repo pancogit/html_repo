@@ -1,3 +1,415 @@
 body {
-	background-color: blue;
+	font-family: Verdana, Arial, sans-serif;
+	background-color: silver;
+}
+
+a {
+	text-decoration: none;
+	color: #5790e0;
+	color: hsla(215, 69%, 61%, 1);
+}
+
+/* omotac stranice */
+
+div#stranica_omotac {
+	/* 
+		postavi minimalnu sirinu stranice da ne ispadnu elementi izvan div-ova
+		kada se smanjuje sirina stranice
+	*/
+	min-width: 1200px; 
+}
+
+/* heder */
+
+/* heder - naslov */
+
+div#heder_naslov_omotac {
+	background-color: white;
+}
+
+div#heder_naslov {
+	position: relative; /* kontejner za div#heder_naslov_logo */
+	margin: 0 auto; /* centriraj na sredinu strane */
+	width: 1200px; /* fiskiraj sirinu */
+	padding: 5px;
+}
+
+div#heder_naslov p {
+	padding-left: 230px; /* pomeri tekst u levo da bi stao logo */
+}
+
+div#heder_naslov span#heder_us {
+	color: #bb0000;
+	color: hsla(0, 100%, 37%, 1);
+	font-size: 150%;
+}
+
+div#heder_naslov span#heder_ant {
+	font-size: 220%;
+}
+
+div#heder_naslov p a {
+	/*
+		mora da se ponasa kao block element, da bi mogao cela kocka 
+		da se klikne; u suprotnom, moci ce da se klikne samo gde se nalazi tekst
+	*/
+	display: inline-block;
+	width: 330px; /* podesi sirinu polja koje se klikce */
+	padding: 10px;
+	color: #0522b4;
+	color: hsla(230, 95%, 36%, 1);
+}
+
+div#heder_naslov_logo {
+	background-image: url("../../../../slike/zadaci/primer1/U.S.Antarctic_Program_logo.png");
+	background-repeat: no-repeat;
+	background-size: 200px;
+	width: 200px;
+	height: 200px; /* uskladi velicinu sa velicinom pozadinske slike */
+	position: absolute;
+	top: 10px;
+	left: 15px;
+}
+
+
+/* heder - meni */
+
+div#heder_meni_omotac {
+	background-color: #5790e0;
+	background-color: hsla(215, 69%, 61%, 1);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-color: #bcd7fc;
+	border-color: hsla(215, 91%, 86%, 1);
+}
+
+div#heder_meni {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#heder_meni a {
+	color: white;
+	/* prikazi kao blok, da bi cela kocka mogla da se klikne */
+	display: inline-block;
+	width: 150px;
+	padding: 20px 0px;
+}
+
+div#heder_meni ul {
+	list-style-type: none;
+	padding: 0px;
+	text-align: center;
+	margin: 0px;
+}
+
+div#heder_meni ul li {
+	display: inline-block;
+	width: 150px;
+}
+
+div#heder_meni ul li:not(#quick_links) {
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #bcd7fc;
+	border-left-color: hsla(215, 91%, 86%, 1);
+}
+
+div#heder_meni_lista {
+	width: 467px;
+	float: right;
+	padding-right: 220px; /* pomeri za sirinu poslednjeg linka */
+}
+
+div#heder_meni_lista li#quick_links {
+	background-color: #eac111;
+	background-color: hsla(49, 86%, 49%, 1);
+	border-style: solid;
+	border-color: #dbdf0e;
+	border-color: hsla(61, 88%, 46%, 1);
+	border-width: 1px;
+	font-weight: bold;
+	border-radius: 7px;
+	height: 67px;
+	position: absolute;
+	top: 138px;
+	width: 220px;
+}
+
+div#heder_meni_lista li#quick_links a {
+	width: 220px;
+	padding-top: 25px;
+	padding-bottom: 22px;
+}
+
+/* heder - pretraga */
+
+div#heder_kraj {
+	background-color: #0522b4;
+	background-color: hsla(230, 95%, 36%, 1);
+	color: white;
+}
+
+div#heder_kraj_pretraga_omotac {
+	overflow: hidden; /* clearfix bag */
+	padding: 10px;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+div#heder_kraj_pretraga {
+	float: right;
+	width: 450px;
+}
+
+div#heder_kraj_pretraga input {
+	padding: 8px;
+	width: 220px;
+	outline: none;
+}
+
+div#heder_kraj_pretraga input[type="search"] {
+	border-bottom-left-radius: 10px;
+	padding-left: 14px;
+}
+
+div#heder_kraj_pretraga input[type="submit"] {
+	border-bottom-right-radius: 10px;
+	color: white;
+	background-color: #5790e0;
+	background-color: hsla(215, 69%, 61%, 1);
+	border-color: #82ade8;
+	border-color: hsla(215, 69%, 71%, 1);
+}
+
+div#heder_kraj_poz {
+	background-image: url("../../../../slike/zadaci/primer1/heder.jpg");
+	height: 260px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	/* centriraj sliku da se prikaze sredisnji deo slike */
+	background-position: center;
+}
+
+div#heder_kraj_poz_logo_omotac {
+	height: 260px;
+	width: 1200px;
+	margin: 0 auto;
+	position: relative; /* kontejner za div#heder_kraj_poz_logo */
+}
+
+div#heder_kraj_poz_logo {
+	background-image: url("../../../../slike/zadaci/primer1/nsf-logo-lg.png");
+	background-size: 100px;
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	bottom: 0px;
+}
+
+div#heder_dobrodosli {
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
+}
+
+div#heder_dobrodosli p {
+	margin: 0;
+}
+
+
+/* sadrzaj */
+
+div#sadrzaj {
+	margin-top: 20px;
+}
+
+div#sadrzaj_omotac {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix bag */
+	position: relative; /* kontejner za div#sadrzaj_levo */
+	
+	/* 
+		postavi razmak do ivice kocke da bi div#sadrzaj_levo
+		mogao da se pozicionira pri dnu omotaca
+		na ovaj nacin ce div#sadrzaj_levo biti ispod desnog div-a
+		za ovu vrednost padding-a
+	*/
+	padding-bottom: 55px;
+}
+
+div#sadrzaj_levo {
+	float: left;
+	width: 300px;
+	background-color: white;
+	padding: 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 50px;
+	box-shadow: 0px 2px 5px black;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	position: absolute; /* pozicioniraj ga od vrha do dna sadrzaja */
+	bottom: 8px;
+	top: 0px;
+	z-index: 10; /* postavi ga iznad div#sadrzaj_dole */
+}
+
+div#sadrzaj_desno {
+	float: right;
+	width: 800px;
+	background-color: white;
+	padding: 20px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-color: #5790e0;
+	border-color: hsla(215, 69%, 61%, 1);
+	border-style: solid;
+	border-width: 1px;
+}
+
+div#sadrzaj_desno_kol1 {
+	float: left;
+	width: 600px;
+}
+
+div#sadrzaj_desno_kol2 {
+}
+
+
+/* donji deo sadrzaja pri dnu stranice, pre futera */
+
+div#sadrzaj {
+	position: relative; /* kontejner za div#sadrzaj_dole */
+}
+
+div#sadrzaj_dole {
+	background-color: #5790e0;
+	background-color: hsla(215, 69%, 61%, 1);
+	position: absolute;
+	bottom: 0px;
+	padding: 10px 0px;
+	
+	/* neka se razvuce preko celog ekrana zbog pozicioniranja */
+	width: 100%;
+	z-index: 0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #2466c2;
+	border-top-color: hsla(215, 69%, 45%, 1);
+}
+
+div#sadrzaj_dole_icon_omotac {
+	margin: 0 auto;
+	width: 1200px;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#sadrzaj_dole_icon {
+	float: right;
+}
+
+div#sadrzaj_dole_icon a {
+	margin: 0px 10px;
+}
+
+
+/* futer */
+
+div#futer {
+	background-color: #2466c2;
+	background-color: hsla(215, 69%, 45%, 1);
+}
+
+div#futer_link {
+	margin: 0 auto;
+	width: 1200px;
+	padding: 10px;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#futer_nsf {
+	float: left;
+	width: 150px;
+	margin-left: 50px;
+}
+
+div#futer_contact_us {
+	float: left;
+	width: 230px;
+	margin: 0 50px;
+}
+
+div#futer_site_info {
+	float: left;
+	width: 230px;
+	margin: 0 50px;
+}
+
+div#futer_help_links {
+	float: left;
+	width: 230px;
+	margin: 0 50px;
+}
+
+div#futer_link h4 {
+	padding-bottom: 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 1.5px;
+	border-bottom-color: #7eaae7;
+	border-bottom-color: hsla(215, 69%, 70%, 1);
+	color: #7eaae7;
+	color: hsla(215, 69%, 70%, 1);
+}
+
+div#futer_link ul {
+	padding: 0px;
+	list-style-type: none; /* ukloni generisani sadrzaj za elemente liste */
+}
+
+div#futer_link a {
+	color: white;
+	font-size: 80%; /* smanji malo slova za linkove */
+}
+
+div#futer_nsf img:nth-of-type(2) {
+	margin-top: 30px;
+	background-color: white;
+	border-style: solid;
+	border-color: black;
+	border-width: 1.5px;
+	border-radius: 5px;
+}
+
+div#futer_dole {
+	background-color: #3c79cd;
+	background-color: hsla(215, 59%, 52%, 1);
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #689be3;
+	border-top-color: hsla(215, 69%, 65%, 1);
+}
+
+div#futer_dole_tekst {
+	margin: 0 auto;
+	width: 1200px;
+	text-align: center;
+	color: white;
+	font-size: 80%;
+	padding: 10px;
+}
+
+div#futer_dole_tekst p {
+	margin: 0px;
+}
+
+div#futer_dole_tekst span {
+	font-weight: bold;
 }
