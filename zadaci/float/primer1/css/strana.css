@@ -169,6 +169,7 @@ div#heder_kraj_pretraga input {
 	padding: 8px;
 	width: 220px;
 	outline: none;
+	font-size: 1em;
 }
 
 div#heder_kraj_pretraga input[type="search"] {
@@ -244,11 +245,12 @@ div#sadrzaj_omotac {
 	padding-bottom: 55px;
 }
 
+/* leva strana sadrzaja */
+
 div#sadrzaj_levo {
 	float: left;
-	width: 300px;
+	width: 340px;
 	background-color: white;
-	padding: 20px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 50px;
@@ -261,6 +263,235 @@ div#sadrzaj_levo {
 	top: 0px;
 	z-index: 10; /* postavi ga iznad div#sadrzaj_dole */
 }
+
+span.usap {
+	text-transform: uppercase;
+}
+
+div#sadrzaj_levo img#sadrzaj_levo_logo_usap {
+	float: left;
+	/* sirina slike je vec zadata u html-u */
+}
+
+div#sadrzaj_levo_usap_tekst {
+	width: 190px;
+	float: left;
+	padding-left: 10px;
+}
+
+div#sadrzaj_levo_usap_tekst h1 {
+	font-size: 1.5em;
+	text-transform: uppercase;
+	color: #060686;
+	color: hsla(240, 91%, 27%, 1);
+}
+
+div#sadrzaj_levo_usap {
+	overflow: hidden; /* clearfix bag */
+	background-color: #ebf2ff;
+	background-color: hsla(217, 100%, 96%, 1);
+	
+	/* 
+		da ne bi pozadinska slika prekrila zaobljene ivice okruzujuce kocke,
+		moramo da iskrivimo i ovu kocku po gornjim ivicama
+	*/
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 20px;
+}
+
+div#sadrzaj_levo_usap * {
+	margin: 0px;
+}
+
+div#sadrzaj_levo_usap p {
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #339de9;
+	color: hsla(205, 81%, 56%, 1);
+}
+
+/* lista menija sa leve strane */
+
+div#sadrzaj_levo ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 
+	moramo da ukrasimo link unutar elementa liste, 
+	da bi mogao da se klikne ceo prostor unutar elementa liste
+	treba prosiriti link ka ivicama elementa liste (li)
+*/
+div#sadrzaj_levo li:not(#li_about_the_program_meni) a {
+	border-top-style: solid;
+	border-top-width: 1.4px;
+	border-color: #8a898e;
+	border-color: hsla(252, 2%, 55%, 1);
+	display: inline-block; /* da mu podesimo sirinu zbog kliktanja */
+	width: 300px;
+	font-weight: bold;
+	color: #2650c6;
+	color: hsla(224, 68%, 46%, 1);
+	background-color: #cbddf6;
+	background-color: hsla(215, 69%, 88%, 1);
+	padding-right: 40px;
+}
+
+div#sadrzaj_levo li#li_about_the_program_meni > a {
+	border-top-style: solid;
+	border-top-width: 1.4px;
+	border-color: #8a898e;
+	border-color: hsla(252, 2%, 55%, 1);
+	display: inline-block; /* da mu podesimo sirinu zbog kliktanja */
+	width: 300px;
+	font-weight: bold;
+	color: #2650c6;
+	color: hsla(224, 68%, 46%, 1);
+	background-color: #cbddf6;
+	background-color: hsla(215, 69%, 88%, 1);
+	padding-right: 40px;
+}
+
+div#sadrzaj_levo li:last-child a {
+	border-bottom-style: solid;
+	border-bottom-width: 1.4px;
+}
+
+div#sadrzaj_levo span.levo_meni_ukras {
+	display: inline-block; /* podesi sirinu i visinu, ponasaj se kao block element */
+	width: 15px;
+	height: 70px;
+	background-color: #dde8f9;
+	background-color: hsla(215, 69%, 92%, 1);
+	margin-right: 15px;
+	
+	/* vertikalno centriraj u odnosu na tekst pored */
+	vertical-align: middle;
+}
+
+/* postavi zutu liniju u levom meniju */
+div#sadrzaj_levo li:first-child span.levo_meni_ukras {
+	background-color: #f8d16d;
+	background-color: hsla(43, 91%, 70%, 1);
+}
+
+div#sadrzaj_levo li:last-child {
+	box-shadow: 0px 1px 6px black;
+}
+
+/* podmeni sa leve strane */
+
+div#sadrzaj_levo li#li_about_the_program_meni {
+	/* povecaj visinu ovog kontejnera, da bi stao podmeni unutra */
+	height: 425px;
+}
+
+div#sadrzaj_levo div#div_about_the_program_meni {
+	/* kontejner za div#sadrzaj_levo li#li_about_the_program_meni div */
+	position: relative;
+	height: 353px;
+}
+
+div#div_about_the_program_meni span.levo_podmeni_ukras {
+	/* 
+		pozicioniraj u odnosu na kontejner 
+		div#sadrzaj_levo div#div_about_the_program_meni
+	*/
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	
+	width: 20px;
+	background-color: #f8d16d;
+	background-color: hsla(43, 91%, 70%, 1);
+	
+	/* stavi traku da bude ispod podmenija */
+	z-index: 0;
+}
+
+div#sadrzaj_levo div#div_about_the_program_meni div {
+	width: 335px;
+	border-top-style: double;
+	border-top-width: 2px;
+	border-left-style: solid;
+	border-left-width: 0.5px;
+	border-color: silver;
+	
+	/* 
+		pozicioniraj ga gore-dole-desno o u odnosu na kontejner 
+		div#sadrzaj_levo div#div_about_the_program_meni 
+	*/
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	
+	/* stavi iznad zute trake */
+	z-index: 10;
+	
+	/* postavi pozadinu da bi prekrio zutu traku */
+	background-color: white;
+}
+
+li#li_about_the_program_meni div p {
+	margin: 0px;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div#div_about_the_program_meni p a {
+	/* da bismo podesili da se klikce celom duzinom i sirinom */
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 9px;
+}
+
+li#li_about_the_program_meni div p:last-child {
+	border-bottom-style: none; /* skloni donju liniju sa poslednjeg paragrafa */
+}
+
+/* sadrzaj sa leve strane ispod menija */
+
+div#sadrzaj_levo > h4 {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #908c8c;
+	color: hsla(0, 2%, 56%, 1);
+	
+	/* centriraj na sredinu */
+	width: 200px;
+	width: max-content;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div#sadrzaj_levo > p {
+	padding-left: 15px;
+}
+
+div#sadrzaj_levo div#sadrzaj_levo_icon {
+	width: 200px;
+	margin: 0 auto;
+}
+
+div#sadrzaj_levo div#sadrzaj_levo_icon a {
+	/*
+		podrazumevano link se prikazuje kao inline
+		zato nece moci da obuhvati celu img sliku i zbog toga se
+		nece videti sve margine
+		zbog ovoga cemo promeniti da se ponasa kao blok, ali da bude inline
+		i onda ce link obuhvatiti celu img sliku i videce se margine
+	*/
+	margin: 3px;
+	display: inline-block;
+}
+
+/* desna strana sadrzaja */
 
 div#sadrzaj_desno {
 	float: right;
@@ -275,12 +506,124 @@ div#sadrzaj_desno {
 	border-width: 1px;
 }
 
-div#sadrzaj_desno_kol1 {
-	float: left;
-	width: 600px;
+/* naslovna vest na desnoj strani */
+div#sadrzaj_desno_poz {
+	height: 450px;
+	background-image: url("../../../../slike/zadaci/primer1/cycle.jpg");
+	background-size: 790px 450px;
+	background-repeat: no-repeat;
+	border-style: solid;
+	border-width: 5px;
+	border-color: #a9c6ef;
+	border-color: hsla(215, 69%, 80%, 1);
+	
+	/* kontejner za div#sadrzaj_desno_poz_tekst */
+	position: relative;
 }
 
+div#sadrzaj_desno_poz_tekst {
+	padding: 15px;
+	width: 320px;
+	
+	/* pozicioniraj u odnosu na kontejner div#sadrzaj_desno_poz */
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	
+	/* postavi transparentnu pozadinu iza teksta */
+	background-color: #2f3951cc;
+	background-color: hsla(221, 27%, 25%, 0.8);
+	box-shadow: 1px 1px 1px black;
+}
+
+div#sadrzaj_desno_poz_tekst {
+	color: white;
+}
+
+div#sadrzaj_desno_poz_tekst h3,
+div#sadrzaj_desno_poz_tekst span[id="sadrzaj_desno_poz_tekst_vesti"],
+div#sadrzaj_desno_poz_tekst a {
+	color: #f6c13c;
+	color: hsla(43, 91%, 60%, 1);
+	font-weight: bold;
+}
+
+div#sadrzaj_desno_poz_tekst span[id="sadrzaj_desno_poz_tekst_vesti"] {
+	font-weight: unset;
+}
+
+div#sadrzaj_desno_poz_tekst span[id="sadrzaj_desno_poz_tekst_datum"] {
+	font-style: italic;
+}
+
+div#sadrzaj_desno_poz_tekst h3 {
+	margin-top: 0px;
+}
+
+/* naslovi na desnoj strani */
+
+div#sadrzaj_desno h1 {
+	color: #2650c6;
+	color: hsla(224, 68%, 46%, 1);
+	border-bottom-style: double;
+	border-bottom-width: 4px;
+	border-bottom-color: #2650c6;
+	border-bottom-color: hsla(224, 68%, 46%, 1);
+}
+
+div#sadrzaj_desno h2 {
+	text-transform: uppercase;
+	color: #908c8c;
+	color: hsla(0, 2%, 56%, 1);
+	font-size: 1.2em; /* smanji malo slova */
+}
+
+/* prva kolona na desnoj strani */
+
+div#sadrzaj_desno_kol1 {
+	float: left;
+	width: 550px;
+}
+
+div#sadrzaj_desno_kol1_uzivo img {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #a9c6ef;
+	border-color: hsla(215, 69%, 80%, 1);
+}
+
+div#sadrzaj_desno_kol1_uzivo {
+	/* kontejner za div#sadrzaj_desno_kol1_uzivo select */
+	position: relative;
+}
+
+div#sadrzaj_desno_kol1_uzivo select {
+	/* 
+		pomeri ga ka slici u odnosu na kontejner 
+		div#sadrzaj_desno_kol1_uzivo 
+		pomeri levo-dole
+	*/
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	
+	padding: 10px;
+	padding-left: 20px;
+	border-radius: 5px;
+	width: 85%;
+	outline: none;
+}
+
+div#sadrzaj_desno_kol1 h3 {
+	font-weight: normal;
+}
+
+/* druga kolona na desnoj strani */
+
 div#sadrzaj_desno_kol2 {
+	float: right;
+	width: 200px;
 }
 
 
