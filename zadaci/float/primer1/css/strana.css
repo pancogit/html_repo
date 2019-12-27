@@ -188,15 +188,27 @@ div#heder_kraj_pretraga input[type="submit"] {
 
 div#heder_kraj_poz {
 	background-image: url("../../../../slike/zadaci/primer1/heder.jpg");
+	
+	/*
 	height: 260px;
 	background-size: 100%;
+	*/
+	
+	height: 750px;
+	background-size: cover;
+	
 	background-repeat: no-repeat;
 	/* centriraj sliku da se prikaze sredisnji deo slike */
 	background-position: center;
 }
 
 div#heder_kraj_poz_logo_omotac {
+	/*
 	height: 260px;
+	*/
+	
+	height: 750px;
+	
 	width: 1200px;
 	margin: 0 auto;
 	position: relative; /* kontejner za div#heder_kraj_poz_logo */
@@ -619,11 +631,169 @@ div#sadrzaj_desno_kol1 h3 {
 	font-weight: normal;
 }
 
+div#sadrzaj_desno_kol1 a#link_nsf_seeks::after {
+	content: " " url("../../../../slike/zadaci/primer1/kutija-1.png");
+}
+
+div.nsf_vest {
+	text-align: center;
+	width: 140px;
+	background-color: #8195d5;
+	background-color: hsla(226, 50%, 67%, 1);
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: #8195d5;
+	border-color: hsla(226, 50%, 67%, 1);
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	float: left;
+	margin-right: 20px;
+}
+
+div.nsf_vest div.nsf_vest_logo_poz {
+	background-color: #c7f1ff;
+	background-color: hsla(195, 100%, 89%, 1);
+}
+
+div.nsf_vest p {
+	margin: 0;
+	padding: 10px 0;
+	color: white;
+	text-transform: uppercase;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+div#sadrzaj_desno_kol1 h3 {
+	margin: 0px;
+}
+
+div#sadrzaj_desno_kol1 p:not(div.nsf_vest p) {
+	margin-top: 9px;
+	line-height: 1.5em;
+}
+
+div#sadrzaj_desno_kol1 hr {
+	margin-bottom: 30px;
+	margin-top: 30px;; /* da budu iste sirine i gornja i donja */
+}
+
+/* dugmici u prvoj koloni na desnoj strani */
+
+div.sadrzaj_desno_dugme {
+	font-weight: bold;
+	font-size: 90%;
+	text-transform: uppercase;
+	background-color: #449bff;
+	background-color: hsla(212, 100%, 63%, 1);
+	box-shadow: 2px 3px 3px gray;
+	text-shadow: 2px 3px 9px gray;
+	border-radius: 3px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #99c9ff;
+	border-color: hsla(212, 100%, 80%, 1);
+}
+
+div.sadrzaj_desno_dugme a {
+	color: white;
+	display: inline-block; /* da se ponasa kao blok, da se ceo klikce */
+}
+
+div#sadrzaj_desno_dugme_1 {
+	float: left;
+	width: 250px;
+	height: 48px;
+	text-align: center;
+}
+
+div#sadrzaj_desno_dugme_1:hover {
+	background-color: #005fcc;
+	background-color: hsla(212, 100%, 40%, 1);
+}
+
+div#sadrzaj_desno_dugme_1 a {
+	padding-left: 33px; /* prosiri polje za kliktanje do kraja kocke */
+	padding-right: 33px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+div#sadrzaj_desno_dugme_2 {
+	float: right;
+	width: 190px;
+	height: 48px;
+}
+
+div#sadrzaj_desno_dugme_2:hover {
+	background-color: #005fcc;
+	background-color: hsla(212, 100%, 40%, 1);
+}
+
+div#sadrzaj_desno_dugme_2 span {
+	display: inline-block;
+	text-align: center;
+}
+
+div#sadrzaj_desno_dugme_2 img {
+	/* 
+		s obzirom da su istoj liniji, moci ce da se 
+		vertikalno centrira slika u odnosu na tekst 
+	*/
+	vertical-align: middle;
+}
+
+div#sadrzaj_desno_dugme_2 span.subscribe_slika {
+	background-color: orange;
+	background-color: #ffbb3f;
+	background-color: hsla(39, 100%, 62%, 1);
+	
+	/* 
+		zbog pozadinske boje, moramo da iskrivimo malo kocku da bi se
+		uklopila sa zaobljenim linijama dugmica div.sadrzaj_desno_dugme
+	*/
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 13.5px;
+	padding-bottom: 12.5px;
+	
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: #a4a4a4;
+	border-right-color: hsla(0, 0%, 64%, 1);
+}
+
+div#sadrzaj_desno_dugme_2 span.subscribe_tekst {
+	padding-left: 15px;
+}
+
 /* druga kolona na desnoj strani */
 
 div#sadrzaj_desno_kol2 {
 	float: right;
 	width: 200px;
+}
+
+div#sadrzaj_desno_kol2 ul {
+	padding: 20px;
+	list-style-image: url("../../../../slike/zadaci/primer1/strelica2.png");
+}
+
+div#sadrzaj_desno_kol2 a#link_jazz_day::after {
+	content: " " url("../../../../slike/zadaci/primer1/kutija-1.png");
+}
+
+div#sadrzaj_desno_kol2 ul li:last-child a::after {
+	content: " " url("../../../../slike/zadaci/primer1/kutija-1.png");
+}
+
+div#sadrzaj_desno_kol2 ul li:nth-child(1) a::after,
+div#sadrzaj_desno_kol2 ul li:nth-child(2) a::after,
+div#sadrzaj_desno_kol2 ul li:nth-child(3) a::after {
+	content: " " url("../../../../slike/zadaci/primer1/pdf3-1.png");
 }
 
 
