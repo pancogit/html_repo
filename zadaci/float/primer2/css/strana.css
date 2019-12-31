@@ -1,3 +1,357 @@
 body {
-	background-color: blue;
+	font-family: "Times New Roman", Times, Georgia, serif;
+	
+	/* 
+		skloni margine sa body-a, da bi se videle lepo boje u hederu
+		bez krajeva sa belim linijama
+	*/
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* heder */
+
+div#heder {
+	color: white;
+	min-width: 1300px;
+}
+
+div#heder a {
+	color: white;
+}
+
+/* heder - meni */
+
+div#heder_meni {
+	background-color: #1a50db;
+	background-color: hsla(223, 79%, 48%, 1);
+	overflow: hidden; /* clearfix bag */
+}
+
+div#heder_meni_levo {
+	overflow: hidden; /* clearfix bag */
+	float: left;
+}
+
+div#heder_meni_levo_logo {
+	width: 100px;
+	height: 100px;
+	background-image: url("../../../../slike/zadaci/primer2/pvft_logo.jpg");
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	float: left;
+	margin-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div#heder_meni_levo_logo a {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+
+div#heder_meni_levo span {
+	display: inline-block;
+}
+
+div#heder_meni_levo span a {
+	display: inline-block;
+	margin-top: 10px;
+	width: 140px;
+	text-align: center;
+	font-size: 120%;
+	padding: 40px 0;
+}
+
+div#heder_meni_desno {
+	float: right;
+}
+
+div#heder_meni_desno ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block; /* da ostane lupa u istom redu */
+}
+
+div#heder_meni_desno ul li {
+	display: inline-block;
+}
+
+div#heder_meni_desno ul li a {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 52px;
+	padding-bottom: 50px;
+}
+
+div#heder_meni_desno ul li a:hover {
+	color: orange;
+	background-color: #1b54e4;
+	background-color: hsla(223, 79%, 50%, 1);
+}
+
+div#heder_meni_desno a#heder_meni_desno_more img {
+	vertical-align: middle;
+}
+
+div#heder_meni_desno a#heder_meni_desno_more span {
+	margin-left: 3px;
+}
+
+div#heder_meni_desno a#heder_lupa {
+	display: inline-block;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+/* heder - padajuci meni */
+
+div#heder_meni_desno div.podmeni ul li {
+	display: block;
+}
+
+div#heder_meni_desno div.podmeni ul li a {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100px;
+}
+
+div#heder_meni_desno div.podmeni {
+	display: none; /* podrazumevano sakrij padajuci meni */
+	
+	/*
+		samo pozicioniraj kocku sa padajucom listom bez ofseta
+		i bice postavljena tacno ispod elementa liste kako i treba da bude
+		ako se postavi ofset, onda ce biti pomeren u odnosu na kontejner,
+		tj. u odnosu na body sto ne zelimo sad da radimo
+	*/
+	position: absolute;
+	
+	background-color: #1a50db80;
+	background-color: hsla(223, 79%, 48%, 0.5);
+}
+
+/*
+	svaki element glavne liste ce otkriti svoj podmeni i nijedan drugi,
+	jer se samo jedan podmeni nalazi u svakom elementu glavne liste
+*/
+div#heder_meni_desno li:hover div.podmeni {
+	display: block; /* otkrij padajuci meni prelaskom preko kontejnera liste */
+}
+
+/* podmeni drugog nivoa */
+div.podmeni_2nivo {
+	display: none; /* sakrij ga podrazumevano */
+	position: absolute;
+	background-color: #1a50db80;
+	background-color: hsla(223, 79%, 48%, 0.5);
+}
+
+/* strelica koja se nalazi u podmenijima */
+span.strelica_podmeni {
+	display: inline-block;
+	margin-left: 40px; /* pomeri je desno do kraja elementa liste */
+}
+
+/* donja crtica za glavni meni */
+span.meni_crtica {
+	display: block; /* prikazi u novom redu, ispod meni teksta */
+	background-color: white;
+	width: 100%; /* sirina kao duzina meni teksta */
+	height: 5px;
+	position: relative;
+	top: 10px; /* pomeri ga relativno u odnosu na trenutno mesto na dole */
+	
+	/*
+		ovo ce samo da sakrije element, ali nece da skloni prostor koji taj
+		element zauzima, sto je jako dobro, zato sto nam nece smanjivati
+		visinu trake za meni, vec ce traka ostati iste visine
+	*/
+	visibility: hidden;
+}
+
+/*
+	prikazi crticu kada se predje misem preko glavnom menija
+	ostali podmeniji nece prikazivati ovu crticu zato sto oni ne sadrze
+	span.meni_crtica element
+*/
+div#heder_meni_desno li:hover span.meni_crtica {
+	/* otkrij element kada se predje misem preko glavnom menija */
+	visibility: visible;
+}
+
+/*
+	kada u podmeniju primaknemo misem na element liste,
+	onda otkri podmeni drugog nivoa ukoliko on postoji
+*/
+div.podmeni li:hover div.podmeni_2nivo {
+	display: block; /* otkrij padajuci meni prelaskom preko kontejnera liste */
+	
+	/* 
+		s obzirom da je div.podmeni vec pozicioniran, 
+		onda ce se pozicionirati u odnosu na njega 
+	*/
+	top: 0px;
+	left: 120px;
+}
+
+/* heder - pozadina */
+
+div#heder_poz {
+	padding: 5px;
+	height: 500px;
+	background-image: url("../../../../slike/zadaci/primer2/heder_slika2.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div#heder_poz_naslov {
+	width: 500px;
+	margin: 0 auto; /* centriraj na sredinu */
+	text-align: center;
+	margin-top: 200px;
+	text-transform: uppercase;
+}
+
+div#heder_poz_naslov .heder_naslov {
+	font-weight: bold;
+	font-size: 480%;
+	margin-bottom: 30px;
+}
+
+div#heder_poz_naslov .heder_podnaslov {
+	font-size: 120%;
+}
+
+
+/* sadrzaj strane */
+
+div#sadrzaj {
+	width: 1200px;
+	margin: 0 auto; /* centriraj na sredinu */
+	overflow: hidden; /* clearfix css */
+}
+
+/* sadrzaj strane - leva strana */
+
+div#sadrzaj_levo {
+	width: 650px;
+	float: left;
+}
+
+div#sadrzaj_levo span.nysut {
+	text-decoration: underline;
+}
+
+div#sadrzaj_levo p.purpose {
+	font-weight: bold;
+}
+
+div#sadrzaj h2 {
+	text-align: center;
+}
+
+/* sadrzaj strane - desna strana */
+
+div#sadrzaj_desno {
+	width: 450px;
+	float: right;
+}
+
+div#sadrzaj_desno h2 {
+	color: #185edd;
+	color: hsla(219, 80%, 48%, 1);
+}
+
+div#sadrzaj_desno_event {
+	height: 250px;
+	overflow: scroll;
+	overflow: auto;
+	border-style: solid;
+	border-color: silver;
+	border-width: 1px;
+}
+
+/* heder kalendara */
+
+div#sadrzaj_desno_event_heder button {
+	border-top-left-radius: 5px;
+	outline: none;
+	margin: 2px;
+}
+
+div#sadrzaj_desno_event_heder img {
+	/* vertikalno uravnjaj sliku sa ostatkom teksta */
+	vertical-align: middle;
+}
+
+div#sadrzaj_desno_event_heder a.event_strelica {
+	display: inline-block;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+div#sadrzaj_desno_event_heder select,
+div#sadrzaj_desno_event_heder select option {
+	font-weight: bold;
+	border: none;
+	outline: none;
+}
+
+div#sadrzaj_desno_event_heder a.event_week,
+div#sadrzaj_desno_event_heder a.event_month {
+	display: inline-block;
+	width: 50px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+/* sadrzaj kalendara */
+
+div#sadrzaj_desno_event_vesti_omotac {
+	background-color: silver;
+	background-color: #dbdbdb;
+	background-color: hsla(0, 0%, 86%, 1);
+	padding: 10px;
+}
+
+div#sadrzaj_desno_event a {
+	color: #1271d2;
+	color: hsla(210, 84%, 45%, 1);
+}
+
+div#sadrzaj_desno_event_vesti {
+	width: 405px;
+}
+
+div#sadrzaj_desno_event_vesti p:nth-child(2n) {
+	background-color: white;
+}
+
+div#sadrzaj_desno_event_vesti p:nth-child(2n + 1) {
+	background-color: #ebebeb;
+	background-color: hsla(0, 0%, 92%, 1);
+	font-weight: bold;
+}
+
+div#sadrzaj_desno_event_vesti p {
+	margin: 0px;
+	padding-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* da uravnjamo desnu stranu kolone vertikalno */
+div#sadrzaj_desno_event_vesti span.levo_event {
+	display: inline-block;
+	width: 80px;
 }

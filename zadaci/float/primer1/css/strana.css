@@ -1,6 +1,9 @@
 body {
 	font-family: Verdana, Arial, sans-serif;
 	background-color: silver;
+	
+	/* skloni margine okolo da bi se boje hedera i futera lepo videle */
+	margin: 0px;
 }
 
 a {
@@ -668,7 +671,7 @@ div#sadrzaj_desno_kol1 h3 {
 	margin: 0px;
 }
 
-div#sadrzaj_desno_kol1 p:not(div.nsf_vest p) {
+div#sadrzaj_desno_kol1 p:not(.nsf_vest_datum) {
 	margin-top: 9px;
 	line-height: 1.5em;
 }
