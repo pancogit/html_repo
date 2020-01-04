@@ -1,10 +1,356 @@
 body {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
 	font-family: Georgai, Times, "Times New Roman", serif;
-	background-color: silver;
+	background-color: #f2f2f2;
+	background-color: hsla(0, 0%, 95%, 1);
 	margin: 0px;
 }
 
 a {
 	text-decoration: none;
+	color: #0089ff;
+	color: hsla(208, 100%, 50%, 1);
+}
+
+/* heder */
+
+div#heder {
+	background-color: white;
+	width: 1500px;
+	margin: 0 auto;
+	padding: 5px;
+	overflow: hidden; /* clearfix bag */
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #e3e3e3;
+	border-color: hsla(0, 0%, 89%, 1);
+	border-width: 2.5px;
+}
+
+div#heder_logo {
+	width: 200px;
+	height: 50px;
+	background-image: url("../../../../slike/zadaci/primer3/telegraph_logo.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	float: left;
+}
+
+div#heder_logo a {
+	display: inline-block; /* da moze da se klikce kao blok */
+	width: 200px;
+	height: 50px;
+}
+
+div#heder p#heder_datum {
+	float: left;
+	color: silver;
+	margin-left: 10px;
+}
+
+span.granicnik {
+	margin-right: 10px;
+}
+
+div#heder p#heder_login {
+	float: right;
+	margin-right: 10px;
+}
+
+/* meni */
+
+div#meni {
+	background-color: #010f4c;
+	background-color: hsla(229, 97%, 15%, 1);
+	border-bottom-style: solid;
+	border-width: 3px;
+	border-color: #4cc4ff;
+	border-color: hsla(200, 100%, 65%, 1);
+}
+
+div#meni_omotac {
+	width: 1500px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#meni_omotac p#meni_logo {
+	font-size: 350%;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 50px;
+	float: left;
+}
+
+div#meni_omotac span#meni_logo_telegraph {
+	color: white;
+}
+
+div#meni_omotac ul {
+	list-style-type: none;
+	padding: 0px;
+	float: left;
+	margin: 0px;
+}
+
+div#meni_omotac ul li {
+	display: inline-block;
+}
+
+div#meni_omotac ul li a {
+	text-transform: uppercase;
+	display: inline-block;
+	color: white;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 36px;
+}
+
+div#meni_omotac ul li a:hover {
+	background-color: #33a0ff;
+	background-color: hsla(208, 100%, 60%, 1);
+}
+
+div#meni_omotac p#meni_join {
+	float: right;
+	margin-right: 80px;
+}
+
+div#meni_omotac p#meni_join a {
+	color: white;
+	font-weight: bold;
+	font-size: 130%;
+	background-color: #0088ff;
+	background-color: hsla(208, 100%, 50%, 1);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 9px black;
+}
+
+/* stranica */
+
+div#stranica {
+	width: 1500px;
+	background-color: white;
+	margin: 0 auto;
+	padding: 5px;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #e3e3e3;
+	border-color: hsla(0, 0%, 89%, 1);
+	border-width: 2.5px;
+	color: #5f5656;
+	color: hsla(0, 5%, 35%, 1);
+}
+
+div#stranica h2.naslov_sekcija {
+	background-color: #010f4c;
+	background-color: hsla(229, 97%, 15%, 1);
+	color: white;
+	font-style: italic;
+	width: 170px;
+	width: max-content; /* da zauzme mesta samo za tekst */
+	text-align: center;
+	padding: 5px;
+	margin-top: 0px; /* skloni marginu zbog linije okruzujeg div-a */
+}
+
+/* 
+	da iscrtamo liniju iznad naslova u svakoj sekciji
+	zato smo iskoristili poseban div oko naslova
+*/
+div#stranica div.div_naslov_sekcija {
+	border-top-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+}
+
+div#highlights {
+	width: 980px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 50px;
+	margin-top: 15px;
+	margin-left: 10px;
+	border-right-style: solid;
+	border-right-width: 5px;
+	border-right-color: #e8e7e7;
+	border-right-color: hsla(0, 2%, 91%, 1);
+	padding-right: 20px;
+}
+
+div#highlights img {
+	float: right;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+}
+
+div#highlights_levo {
+	width: 310px;
+	float: left;
+}
+
+div#highlights_levo h3 {
+	text-transform: uppercase;
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: normal;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+div#highlights_levo h1 {
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+	font-weight: normal;
+	margin: 0px;
+}
+
+div#highlights_levo p {
+	margin-top: 10px;
+}
+
+div#highlights_dole {
+	clear: both; /* ponisti plivanje i sa leve i sa desne strane */
+}
+
+div#highlights p.highlights_kartice {
+	display: inline-block; /* prikazi u istom redu, ali kao blokove */
+	width: 308px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+	padding: 5px;
+	margin: 0px;
+	background-color: #cce7ff;
+	background-color: hsla(208, 100%, 90%, 1);
+	padding-bottom: 40px;
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+}
+
+div#highlights p.highlights_kartice span.highlights_kartice_naslov {
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 6px;
+	font-size: 110%;
+}
+
+div#highlights p.highlights_kartice span:not(.highlights_kartice_naslov) {
+	font-size: 150%;
+}
+
+div#highlights p.highlights_kartice:hover {
+	background-color: #052766;
+	background-color: hsla(219, 91%, 21%, 1);
+}
+
+div#highlights p.highlights_kartice:hover span.highlights_kartice_naslov {
+	color: #4180f6;
+	color: hsla(219, 91%, 61%, 1);
+	font-weight: bold;
+}
+
+div#highlights p.highlights_kartice:hover span:not(.highlights_kartice_naslov) {
+	color: white;
+	font-weight: bold;
+}
+
+div#comments {
+	width: 460px;
+	overflow: overlay; /* ovaj overflow ne prikazuje celu liniju do kraja */
+	overflow: scroll; 
+	overflow: auto; /* clearfix */
+	height: 540px;
+	margin-top: 15px;
+	margin-right: 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div#comments span.comments_autor {
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: bold;
+}
+
+div#comments div:not(.div_naslov_sekcija) {
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: silver;
+}
+
+div#posts {
+	width: 900px;
+	clear: left; /* ocisti float u levo da ne vazi za ovaj blok */
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: silver;
+	padding-right: 20px;
+}
+
+div#posts span.posts_author {
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: bold;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: silver;
+	padding-right: 10px;
+	margin-right: 5px;
+}
+
+div#posts div:not(.div_naslov_sekcija) > p:first-child {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: silver;
+	padding-top: 5px;
+	margin-bottom: 10px;
+}
+
+div#posts div:not(.div_naslov_sekcija) h2 {
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+	font-weight: normal;
+	font-size: 180%;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+div#posts img[alt="slika korisnika"] {
+	float: left;
+	margin-right: 10px;
+}
+
+div#posts img[alt="slika za komentar"] {
+	vertical-align: middle;
+	vertical-align: bottom;
+	margin-right: 5px;
+	background-color: silver;
+}
+
+/* web hosting */
+
+div#web_hosting_alert {
+	position: sticky;
+	bottom: 10px;
+	left: 1800px;
+	width: 400px;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting3.jpg");
+	background-repeat: no-repeat;
+	color: white;
+	padding: 40px;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 60px;
 }
