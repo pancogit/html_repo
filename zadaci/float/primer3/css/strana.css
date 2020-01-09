@@ -1,6 +1,6 @@
 body {
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	font-family: Georgai, Times, "Times New Roman", serif;
+	font-family: Georgia, Times, "Times New Roman", serif;
 	background-color: #f2f2f2;
 	background-color: hsla(0, 0%, 95%, 1);
 	margin: 0px;
@@ -66,6 +66,9 @@ div#meni {
 	border-width: 3px;
 	border-color: #4cc4ff;
 	border-color: hsla(200, 100%, 65%, 1);
+	
+	/* nemoj da smanjujes obojenu traku vise od sirine hedera ukljucujuci padding i border */
+	min-width: 1515px;
 }
 
 div#meni_omotac {
@@ -147,6 +150,7 @@ div#stranica {
 	border-width: 2.5px;
 	color: #5f5656;
 	color: hsla(0, 5%, 35%, 1);
+	overflow: hidden; /* clearfix */
 }
 
 div#stranica h2.naslov_sekcija {
@@ -176,7 +180,7 @@ div#highlights {
 	width: 980px;
 	float: left;
 	margin-right: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 	margin-top: 15px;
 	margin-left: 10px;
 	border-right-style: solid;
@@ -221,22 +225,33 @@ div#highlights_levo p {
 
 div#highlights_dole {
 	clear: both; /* ponisti plivanje i sa leve i sa desne strane */
+	overflow: hidden; /* clearfix */
 }
 
 div#highlights p.highlights_kartice {
 	display: inline-block; /* prikazi u istom redu, ali kao blokove */
-	width: 308px;
+	width: 314px;
+	float: left; /* poredjaj paragraf jedan uz drugi */
 	border-style: solid;
 	border-width: 2px;
 	border-color: #99cfff;
 	border-color: hsla(208, 100%, 80%, 1);
 	padding: 5px;
 	margin: 0px;
+	margin-top: 2px; /* pomeri malo dole u odnosu na sliku */
 	background-color: #cce7ff;
 	background-color: hsla(208, 100%, 90%, 1);
 	padding-bottom: 40px;
 	color: #073a96;
 	color: hsla(219, 91%, 31%, 1);
+}
+
+div#highlights p.highlights_kartice:nth-child(1) {
+	border-right-style: none; /* skloni liniju sa desne strane, da se ne duplira */
+}
+
+div#highlights p.highlights_kartice:nth-child(2) {
+	border-right-style: none;
 }
 
 div#highlights p.highlights_kartice span.highlights_kartice_naslov {
@@ -267,7 +282,7 @@ div#highlights p.highlights_kartice:hover span:not(.highlights_kartice_naslov) {
 }
 
 div#comments {
-	width: 460px;
+	width: 455px;
 	overflow: overlay; /* ovaj overflow ne prikazuje celu liniju do kraja */
 	overflow: scroll; 
 	overflow: auto; /* clearfix */
@@ -293,11 +308,14 @@ div#comments div:not(.div_naslov_sekcija) {
 
 div#posts {
 	width: 900px;
-	clear: left; /* ocisti float u levo da ne vazi za ovaj blok */
+	float: left;
 	border-right-style: solid;
 	border-right-width: 1px;
-	border-right-color: silver;
+	border-right-color: #e8e7e7;
+	border-right-color: hsla(0, 2%, 91%, 1);
 	padding-right: 20px;
+	margin-left: 10px;
+	margin-right: 15px;
 }
 
 div#posts span.posts_author {
@@ -314,7 +332,8 @@ div#posts span.posts_author {
 div#posts div:not(.div_naslov_sekcija) > p:first-child {
 	border-top-style: solid;
 	border-top-width: 1px;
-	border-top-color: silver;
+	border-top-color: #e8e7e7;
+	border-top-color: hsla(0, 2%, 91%, 1);
 	padding-top: 5px;
 	margin-bottom: 10px;
 }
@@ -343,14 +362,161 @@ div#posts img[alt="slika za komentar"] {
 /* web hosting */
 
 div#web_hosting_alert {
-	position: sticky;
-	bottom: 10px;
-	left: 1800px;
-	width: 400px;
-	background-image: url("../../../../slike/zadaci/primer3/web_hosting3.jpg");
+	width: 545px;
+	float: left;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting1.jpg");
 	background-repeat: no-repeat;
+	background-size: 250%; /* zumiraj sliku, da bi se tekst bolje video */
 	color: white;
-	padding: 40px;
 	border-bottom-left-radius: 60px;
 	border-bottom-right-radius: 60px;
+	overflow: hidden; /* clearfix */
+}
+
+div#web_hosting_alert_x {
+	background-color: #dadada;
+	background-color: hsla(0, 0%, 85%, 1);
+	float: right;
+	height: 19px;
+}
+
+div#web_hosting_alert_x a {
+	display: inline-block; /* prikazi kao blok */
+	padding: 2px;
+	width: 15px;
+	height: 15px;
+}
+
+div#web_hosting_sadrzaj {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 15px;
+	margin-right: 25px;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#web_hosting_sadrzaj h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.4em;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+div#web_hosting_sadrzaj .web_host_naslov {
+	font-weight: bold;
+}
+
+div#web_hosting_sadrzaj h3 {
+	text-align: center;
+	width: 310px;
+	width: max-content;
+	background-color: #065a06;
+	background-color: hsla(120, 88%, 19%, 1);
+	margin: 0 auto;
+	padding: 2px 5px;
+}
+
+div#web_hosting_sadrzaj ul#web_hosting_lista {
+	float: left;
+	width: 250px;
+	font-family: monospace;
+	font-size: 1.8em;
+	list-style-image: url("../../../../slike/zadaci/primer3/web_hosting_strelica2.png");
+}
+
+div#web_hosting_sadrzaj ul#web_hosting_lista ul {
+	list-style-image: url("../../../../slike/zadaci/primer3/web_hosting_plus2.png");
+}
+
+div#web_host_promo {
+	float: right;
+	width: 180px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 25px;
+}
+
+div#web_host_promo p:first-child {
+	background-color: green;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding: 10px;
+	margin-bottom: 0px;
+	width: 152px; /* smanji malo sirinu kocke */
+	margin: 0 auto; /* centriraj paragraf */
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-width: 2px;
+	border-color: #007500;
+	border-color: hsla(120, 100%, 23%, 1);
+}
+
+div#web_host_promo p:nth-child(2) {
+	background-color: orange;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 0px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ea9800;
+	border-color: hsla(39, 100%, 46%, 1);
+}
+
+/* futer */
+
+div#futer {
+	background-color: black;
+	color: white;
+	min-width: 1515px; /* minimalna sirina pozadine futera */
+}
+
+div#futer_omotac {
+	width: 1500px;
+	margin: 0 auto;
+	padding: 10px;
+	overflow: hidden; /* clearfix */
+}
+
+div#futer_omotac div.futer_div {
+	float: left;
+	width: 160px;
+	margin-right: 100px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+div#futer_omotac div.futer_div h3 {
+	border-bottom-style: solid;
+	border-bottom-color: blue;
+	border-bottom-width: 2px;
+	padding-bottom: 3px;
+}
+
+div#futer_omotac div.futer_div ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+div#futer_omotac div.futer_div ul li {
+	margin-bottom: 3px;
+}
+
+div#futer_omotac div.futer_div ul li a:hover {
+	color: green;
+}
+
+div#futer_info {
+	overflow: hidden; /* clearfix */
+	width: 1100px;
+	margin: 0 auto; /* centiraj */
+}
+
+div#futer_omotac p#futer_copy {
+	clear: left; /* ponisti float za levu stranu */
+	text-align: center;
 }
