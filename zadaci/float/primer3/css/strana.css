@@ -283,7 +283,6 @@ div#highlights p.highlights_kartice:hover span:not(.highlights_kartice_naslov) {
 
 div#comments {
 	width: 455px;
-	overflow: overlay; /* ovaj overflow ne prikazuje celu liniju do kraja */
 	overflow: scroll; 
 	overflow: auto; /* clearfix */
 	height: 540px;

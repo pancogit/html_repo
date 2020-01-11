@@ -3,7 +3,8 @@
 div#stranica div#stranica_about {
 	width: 500px;
 	padding: 5px;
-	margin-left: 15px;
+	margin-left: 5px;
+	margin-bottom: 20px;
 }
 
 div#stranica div#stranica_about h1 {
