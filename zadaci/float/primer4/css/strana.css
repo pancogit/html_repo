@@ -205,6 +205,7 @@ div.sadrzaj_kol_1_events {
 	padding-left: 10px;
 	padding-right: 5px;
 	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 div.sadrzaj_kol_1_events_kalendar {
@@ -286,6 +287,10 @@ div.sadrzaj .add {
 	margin-left: 15px;
 }
 
+div.sadrzaj_kol_1_groups {
+	padding-bottom: 5px;
+}
+
 div.sadrzaj_kol_1_groups h3 {
 	margin-left: 10px;
 	margin-top: 5px;
@@ -328,6 +333,121 @@ div.sadrzaj_kol_1_groups_deo p.groups_members a {
 	display: inline-block; /* da bismo ga pomerili marginom malo u levo */
 	margin-left: 8px;
 }
+
+
+/* sadrzaj - prva kolona */
+
+div.sadrzaj_kol_2_welcome {
+	overflow: hidden; /* clearfix bag */
+}
+
+div.sadrzaj_kol_2_welcome h2.sadrzaj_kol_2_welcome_naslov1 {
+	text-transform: uppercase;
+	letter-spacing: -0.12em; /* primakni slova malo jedno uz drugo */
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: #ededed;
+	border-color: hsla(0, 0%, 93%, 1);
+	width: 120px; /* za ms explorer i edge */
+	width: max-content; /* za mozilu */
+	width: fit-content; /* za google chrome */
+	padding: 0px 5px;
+	float: left;
+	margin-left: 40px;
+}
+
+div.sadrzaj_kol_2_welcome h2.sadrzaj_kol_2_welcome_naslov2 {
+	float: left;
+	width: 260px; /* za ms explorer i edge */
+	width: max-content; /* za google chrome i mozilu */
+	margin-left: 50px;
+	font-size: 1.7em;
+	font-weight: normal;
+}
+
+div.sadrzaj_kol_2_welcome p {
+	clear: left; /* ponisti float u levo za paragraf */
+	text-align: center;
+	padding-left: 50px;
+	padding-right: 30px;
+}
+
+div.sadrzaj_kol_2_welcome_slike {
+	float: right;
+	margin-bottom: 30px;
+	margin-right: 30px;
+}
+
+div.sadrzaj_kol_2_welcome_slike a {
+	display: inline-block;
+	background-color: silver;
+	padding-top: 3px;
+}
+
+div.sadrzaj_kol_2_photo_share {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+div.sadrzaj_kol_2_photo_share h3 {
+	padding-left: 5px;
+	margin-bottom: 10px;
+}
+
+div.sadrzaj_kol_2_photo_share_slika {
+	background-color: black;
+	padding: 30px 0px; /* napravi razmak gore i dole da se vidi crna pozadina */
+	margin: 1px; /* napravi razmak izmedju linija okruzujuceg div-a */
+}
+
+div.sadrzaj_kol_2_photo_share_slika_omotac {
+	background-color: white;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #e1dfdf;
+	border-color: hsla(0, 3%, 88%, 1);
+	margin-right: 10px;
+}
+
+div.sadrzaj_kol_2_photo_share a.sadrzaj_kol_2_photo_share_view {
+	float: right;
+}
+
+div.sadrzaj_kol_2_videos {
+	padding-left: 10px;
+	padding-top: 5px;
+	overflow: hidden;  /* clearfix bag */
+}
+
+div.sadrzaj_kol_2_videos_slike {
+	float: left;
+	width: 200px;
+	text-align: center;
+	margin: 10px;
+}
+
+div.sadrzaj_kol_2_videos_slike a {
+	display: inline-block;
+}
+
+/* 
+	posle svakog treceg elementa ponisti float u levo
+	da bi se elementi rasporedili u redovima jedan ispod drugog
+*/
+div.sadrzaj_kol_2_videos_slike:nth-of-type(3n + 1) {
+	clear: left;
+}
+
+a.sadrzaj_kol_2_videos_slike_youtube {
+	border-style: solid;
+	border-width: 1.5px;
+	border-color: #dcdcdc;
+	border-color: hsla(0, 0%, 86%, 1);
+}
+
+/* sadrzaj - treca kolona */
 
 
 /* futer */
