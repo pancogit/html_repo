@@ -335,7 +335,7 @@ div.sadrzaj_kol_1_groups_deo p.groups_members a {
 }
 
 
-/* sadrzaj - prva kolona */
+/* sadrzaj - druga kolona */
 
 div.sadrzaj_kol_2_welcome {
 	overflow: hidden; /* clearfix bag */
@@ -370,6 +370,8 @@ div.sadrzaj_kol_2_welcome p {
 	text-align: center;
 	padding-left: 50px;
 	padding-right: 30px;
+	color: #575353;
+	color: hsla(0, 2%, 33%, 1);
 }
 
 div.sadrzaj_kol_2_welcome_slike {
@@ -447,8 +449,157 @@ a.sadrzaj_kol_2_videos_slike_youtube {
 	border-color: hsla(0, 0%, 86%, 1);
 }
 
+
 /* sadrzaj - treca kolona */
 
+div.sadrzaj_kol_3_welcome {
+	text-align: center;
+	margin-bottom: 20px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #5f5f5f;
+	border-color: hsla(0, 0%, 37%, 1);
+	color: #777474;
+	color: hsla(0, 1%, 46%, 1);
+}
+
+div.sadrzaj_kol_3_welcome_gore {
+	padding: 5px 90px;
+	margin: 0px 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #514f4f;
+	border-bottom-color: hsla(0, 1%, 31%, 1);
+	font-size: 80%;
+	font-size: 0.8em;
+}
+
+a.sadrzaj_kol_3_welcome_gore_sign_up {
+	font-size: 130%;
+	font-size: 1.3em;
+}
+
+div.sadrzaj_kol_3_welcome_gore p:nth-of-type(2) {
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+
+div.sadrzaj_kol_3_welcome_gore p:nth-of-type(1) {
+	margin-bottom: 7px;
+}
+
+p.sadrzaj_kol_3_welcome_sign_in {
+	font-size: 65%;
+	font-size: 0.65em;
+}
+
+div.sadrzaj_kol_3_welcome_icon {
+	margin-bottom: 5px;
+}
+
+div.sadrzaj_kol_3_welcome_icon a {
+	display: inline-block;  /* da se klikce cela slika u linku */
+	height: 20px; /* da visina linka bude ista kao i slike unutar linka */
+	margin-right: 5px;
+}
+
+div.sadrzaj_kol_3_blogs_news {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+div.sadrzaj_kol_3_blogs_news_deo {
+	/* stavljan minimalni razmak cisto da obuhvati margine elemenata unutar div-a */
+	padding: 1px;
+	margin-bottom: 5px;
+}
+
+a.sadrzaj_kol_3_blogs_news_deo_slika {
+	display: inline-block;
+	background-color: silver;
+	padding: 0px 5px;
+	float: left;
+	width: 50px;
+}
+
+p.sadrzaj_kol_3_blogs_news_deo_naslov {
+	line-height: 1.5em; /* povecaj razmak izmedju redova u naslovu */
+	margin-left: 70px; /* da bi sigurno bili udaljeni od slike */
+	margin-top: 0px;
+	margin-bottom: 7px;
+}
+
+p.sadrzaj_kol_3_blogs_news_deo_komentar {
+	margin-top: 0px;
+	margin-left: 77px; /* uvuci sa marginom tekst */
+	color: #8e8888;
+	color: hsla(0, 3%, 55%, 1);
+	font-size: 70%;
+	font-size: 0.7em;
+	line-height: 1.5em; /* povecaj malo razmak izmedju redova */
+}
+
+a.sadrzaj_kol_3_blogs_news_deo_komentar_slika {
+	display: inline-block; /* da se klikce cela slika unutar ovog linka */
+	vertical-align: top; /* vertikalno pomeri sliku u odnosu na tekst */
+	height: 15px; /* podesi visinu istu kao visinu slike unutar linka */
+}
+
+a.sadrzaj_kol_3_blogs_news_deo_komentar_thumb {
+	margin-left: 10px; /* pomeri malo u odnosu comments */
+}
+
+a.sadrzaj_kol_3_blogs_news_view {
+	float: right;
+}
+
+div.sadrzaj_kol_3_follow_icon a {
+	display: inline-block; /* da se klikce ceo prostor oko slike */
+	height: 80px; /* da visina linka bude ista kao i slike */
+	margin-right: 10px;
+}
+
+div.sadrzaj_kol_3_follow {
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 5px;
+	margin-bottom: 30px;
+}
+
+div.sadrzaj_kol_3_know {
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+}
+
+p.sadrzaj_kol_3_know_box {
+	margin-top: 20px;
+	margin-left: 35px;
+	background-color: #319731;
+	background-color: hsla(120, 51%, 39%, 1);
+	color: #f1f1f1;
+	color: hsla(0, 0%, 95%, 1);
+	font-size: 150%;
+	font-size: 1.5em;
+	
+	/* 
+		da bi se kocka bila tacne duzine kao i duzina 
+		teksta (ovo mozemo da koristimo umesto podesavanja width propertija) 
+	*/
+	display: inline-block;
+}
+
+p.sadrzaj_kol_3_know_box span {
+	display: inline-block;
+	margin-top: 15px;
+	background-color: #49ca49;
+	background-color: hsla(120, 55%, 54%, 1);
+	padding-left: 2px;
+	padding-right: 1px;
+}
 
 /* futer */
 
