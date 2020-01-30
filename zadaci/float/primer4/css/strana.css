@@ -14,6 +14,12 @@ a {
 
 div.heder {
 	background-image: url("../../../../slike/zadaci/primer4/design_bristol_silhouette_g.jpg");
+	
+	/*
+		podesi minimalnu sirinu div-a da se obojeni deo ne smanjuje
+		u odnosu na sadrzaj unutar div-a
+	*/
+	min-width: 1350px;
 }
 
 div.heder_omotac {
@@ -611,6 +617,12 @@ div.futer {
 	border-top-width: 2px;
 	border-top-color: #53943d;
 	border-top-color: hsla(105, 42%, 41%, 1);
+	
+	/*
+		podesi minimalnu sirinu div-a da se obojeni deo ne smanjuje
+		u odnosu na sadrzaj unutar div-a
+	*/
+	min-width: 1350px;
 }
 
 div.futer_omotac {
