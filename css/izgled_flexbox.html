@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8">
+	<title>Izgled stranice (Flexbox) CSS</title>
+	<link href="css/izgled_flexbox.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<h1>Izgled stranice - Flexbox</h1>
+	
+	<h2>Osnove flexbox-a</h2>
+	
+	<div class="flex_primer1">
+		<div class="flex_primer1_prvi">
+			<p>flex element sa<br />dva malo duza reda</p>
+			<span>flex element</span>
+			<p>flex element</p>
+		</div><!-- flex_primer1_prvi -->
+		<span>Ovaj deo je van prvog flexbox-a.</span>
+		<div class="flex_primer1_drugi">
+			<span>flex element sa<br />dva malo duza reda</span>
+			<span>flex element</span>
+			<p>flex element</p>
+			<div><p>a</p><p>b</p><p>c</p></div>
+		</div><!-- flex_primer1_drugi -->
+		<span>Ovaj deo je van drugog flexbox-a.</span>
+	</div><!-- flex_primer1 -->
+	<p>Oba bloka su postala flex kontejneri. Prvi se posmatra kao da je blok, a drugi
+	   kao da je u istom redu. U drugom flex kontejneru se nalazi kocka(a b c) ciji elementi
+	   nisu flex elementi, zato sto nisu direktna deca flex kontejnera. Ali ako stavimo
+	   da ta kocka isto bude flex kontejner, onda ce unutar nje da se redjaju flex
+	   elementi. Kada se nesto definise kao flex kontejner (omotac), onda se sve nalazi
+	   unutar tog flex kontejnera. Ovo vazi za margine koje su ispadale ranije iz kocki,
+	   pa su morali da se dodaju razmaci i slicno da margine ne ispadaju napolje itd. Sa
+	   flexbox-om ovo vise nije moguce i sve sto se nalazi unutar flex kontejnera ne moze
+	   da izadje napolje. To znaci da ako imamo unutar nekog flex kontejnera paragraf
+	   sa marginama, te margine paragrafa nece izaci izvan flex kontejnera, vec ce biti
+	   uz flex kontejner i samim tim sadrzaj paragrafa ce se uvuci unutar flex kontejnera.
+	</p>
+	
+	<div class="flex_primer2" id="flex_primer2_id">
+		<div class="flex_primer2_nav">
+			<a href="#flex_primer2_id">Home</a>
+			<a href="#flex_primer2_id">About</a>
+			<a href="#flex_primer2_id">Blog</a>
+			<a href="#flex_primer2_id">Careers</a>
+			<a href="#flex_primer2_id">Contact Us</a>
+		</div><!-- flex_primer2_nav -->
+		<p>Podrazumevani razmaci izmedju linkova koji su postojali (iako margine nisu
+		   postojale podrazumevano), sada sa flexbox-om to ne postoji. Svi elementi su
+		   jedan uz drugi, bez ikakvih razmaka, tako da razmaci mogu dodatno da se dodaju
+		   sa marginama i slicno i nema vise potrebe hakovati ovaj problem sa <q>nevidljivim</q>
+		   razmacima.
+		</p>
+	</div><!-- flex_primer2 -->
+	
+	<h2>Flex kontejneri</h2>
+	
+	<div class="flex_primer3">
+		<p>Pravac rasporedjivanja elemenata unutar flex kontejnera moze da se promeni.
+		</p>
+		<p>Sa leva na desno (podrazumevano):</p>
+		<ol class="flex_primer3_lista1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+		<p>Sa desna na levo:</p>
+		<ol class="flex_primer3_lista2">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+		<p>Gore-dole:</p>
+		<ol class="flex_primer3_lista3">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+		<p>Dole-gore:</p>
+		<ol class="flex_primer3_lista4">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ol>
+	</div><!-- flex_primer3 -->
+	
+	<div class="flex_primer4" id="flex_primer4_id">
+		<p>Primer menija vertikalno:</p>
+		<ul>
+			<li><a href="#flex_primer4_id">Home</a></li>
+			<li><a href="#flex_primer4_id">About</a></li>
+			<li><a href="#flex_primer4_id">Blog</a></li>
+			<li><a href="#flex_primer4_id">Careers</a></li>
+			<li><a href="#flex_primer4_id">Contact Us</a></li>
+		</ul>
+		<p>Kao sto se vidi imamo dva flex kontejnera. Prvi je sama lista, gde su elementi
+		   liste flex elementi koji su rasporedjeni u kolone kako treba sirinom cele kolone.
+		   Na ovaj nacin imamo linkove unutar elemenata liste koji nisu flex elementi i oni
+		   ce zauzeti prostora samo koliko ima je dovoljno da zauzmu tekst, tj. nece biti
+		   celom sirinom. Zato cemo staviti da pojedinacni elementi liste budu isto flex
+		   kontejneri i onda ce direktni linkovi unutar njih biti flex elementi koji ce
+		   se rasporediti celom sirinom kolone.
+		</p>
+	</div><!-- flex_primer4 -->
+	
+	<p>Primer izgleda cele stranice koriscenjem flex-a:</p>
+	<div class="flex_primer5" id="flex_primer5_id">
+		<div class="flex_primer5_heder">
+			<h1>Moja naslovna strana!</h1>
+		</div><!-- flex_primer5_heder -->
+		
+		<div class="flex_primer5_meni">
+			<ul>
+				<li><a href="#flex_primer5_id">Home</a></li>
+				<li><a href="#flex_primer5_id">About</a></li>
+				<li><a href="#flex_primer5_id">Blog</a></li>
+				<li><a href="#flex_primer5_id">Careers</a></li>
+				<li><a href="#flex_primer5_id">Contact Us</a></li>
+			</ul>
+		</div><!-- flex_primer5_meni -->
+		
+		<div class="flex_primer5_sadrzaj">
+			<div class="flex_primer5_sadrzaj_kol">
+				<img src="../slike/slika_7_cvece.jpg" alt="slika za primer" width="200" height="88" />
+				<p>Ovo je neko dobar sadrzaj koji se nalazi na stranici.</p>
+				<input type="button" name="flex_primer5_sadrzaj_kol_dugme" value="Idi negde" />
+			</div><!-- flex_primer5_sadrzaj_kol -->
+			
+			<div class="flex_primer5_sadrzaj_kol">
+				<img src="../slike/slika_1_cvece.jpg" alt="slika za primer" width="200" height="133" />
+				<p>Ovo je kocka sa vise sadrzaja nego prethodna, ali manje nego sledeca.</p>
+				<input type="button" name="flex_primer5_sadrzaj_kol_dugme" value="Klikni" />
+			</div><!-- flex_primer5_sadrzaj_kol -->
+			
+			<div class="flex_primer5_sadrzaj_kol">
+				<img src="../slike/slika_3_cvece.jpg" alt="slika za primer" width="200" height="141" />
+				<p>Ovde vec imamo jako puno sadrzaja koji moze da raste, i sve moze da bude
+				   iste velicine ako koristis flexbox. Cak iako ima mnogo teksta, on ce da se
+				   uravnja vertikalno u liniju sa ostalim elementima.
+				</p>
+				<input type="button" name="flex_primer5_sadrzaj_kol_dugme" value="Uradi nesto" />
+			</div><!-- flex_primer5_sadrzaj_kol -->
+		</div><!-- flex_primer5_sadrzaj -->
+		
+		<div class="flex_primer5_futer">
+			<p>Copyright &copy; 2018</p>
+		</div><!-- flex_primer5_futer -->
+	</div><!-- flex_primer5 -->
+	
+	<div class="flex_primer6">
+		<p>Moguce je da flex elementi zauzmu vise redova ukoliko
+		   ne mogu da stanu u jednom redu. Takodje flex elementi mogu da zauzmu
+		   i vise kolona ukoliko ima je pravac podesen kao kolone.
+		</p>
+		<p>Flex elementi koji su rasporedjeni po redovima:</p>
+		<div class="flex_primer6_red">
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+		</div><!-- flex_primer6_red -->
+			
+		<p>Flex elementi koji su rasporedjeni po kolonama:</p>
+		<div class="flex_primer6_kol">
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>BB</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+		</div><!-- flex_primer6_kol -->
+	</div><!-- flex_primer6 -->
+	
+	<div class="flex_primer7">
+		<p>Flex elementi se redjaju po redovima/kolonama i od njihovih visina/sirina zavisi
+		   visina/sirina pojedinacnih redova/kolona. To znaci da ako u jednom redu postoji
+		   neki flex element koji je vece visine nego ostali, ceo taj red ce biti te visine
+		   i sledeci red ce biti ispod tog reda. Isto vazi i za kolone.
+		</p>
+		<p>Postoji komanda koja je precica za flex pravac i flex okretanje: <i>flex-flow</i>.</p>
+		<p>Primeri za redove:</p>
+		<div class="flex_primer7_red">
+			<div>
+				<p>A</p>
+				<p>Banana</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>Banana</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+		</div><!-- flex_primer7_red -->
+		
+		<p>Primeri za kolone:</p>
+		<div class="flex_primer7_kol">
+			<div>
+				<p>A</p>
+				<p>Banana</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+			<div>
+				<p>A</p>
+				<p>Banana</p>
+				<p>CCC</p>
+				<p>DDDD</p>
+				<p>EEEEE</p>
+				<p>FFFFFF</p>
+				<p>GGGGGGG</p>
+				<p>HHHHHHHH</p>
+				<p>IIIIIIIII</p>
+				<p>JJJJJJJJJJ</p>
+			</div>
+		</div><!-- flex_primer7_kol -->
+	</div><!-- flex_primer7 -->
+	
+	<h2>Raspored flex elemenata</h2>
+	<h3>Rasporedjivanje po glavnoj osi</h3>
+	<p>Flex elementi mogu da se rasporedjuju na vise nacina. Moze da se vrsi rasporedjivanje
+	   pojedinacnih flex redova/kolona kao i njihovih elemenata.
+	</p>
+	
+	<p>Rasporedjivanje pojedinacnih redova:</p>
+	<div class="flex_primer8">
+		<p>Rasporedi u levo:</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+		<p>Rasporedi u desno:</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+		<p>Centriraj:</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+		<p>Razmak izmedju flex elemenata je isti, izuzev prvog i poslednjeg elementa
+		   gde nemamo razmak pri pocetku/kraju:
+		</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+		<p>Razmak izmedju flex elemenata je isti, izuzev prvog i poslednjeg elementa
+		   gde je razmak duplo manji pri pocetku/kraju u odnosu na razmak izmedju flex elemenata.<br />
+		   PS: Ako uzmemo da spojimo krajeve pocetka i kraja, dobicemo jedan kruzni bafer
+		   gde je razmak izmedju svakog elementa isti.
+		</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+		<p>Rasporedi izmedju SVIH flex elemenata je isti, ukljucujuci prvi i poslednji
+		   element pri pocetku/kraju:
+		</p>
+		<div>
+			<p>A</p>
+			<p>BBB</p>
+			<p>CCCCCCC</p>
+		</div>
+	</div><!-- flex_primer8 -->
+	
+	<p>Primer rasporedjivanja flex elemenata za menije:</p>
+	<div class="flex_primer9" id="flex_primer9_id">
+		<p>Primer pisanja sa levo na desno:</p>
+		<div class="flex_primer9_levo_desno">
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+		</div><!-- flex_primer9_levo_desno -->
+		
+		<p>Primer pisanja sa desna na levo:</p>
+		<div class="flex_primer9_desno_levo">
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+			<ul>
+				<li><a href="#flex_primer9_id">Home</a></li>
+				<li><a href="#flex_primer9_id">About</a></li>
+				<li><a href="#flex_primer9_id">Blog</a></li>
+				<li><a href="#flex_primer9_id">Careers</a></li>
+				<li><a href="#flex_primer9_id">Contact Us</a></li>
+			</ul>
+		</div><!-- flex_primer9_desno_levo -->
+	</div><!-- flex_primer9 -->
+	
+	<h3>Rasporedjivanje po sporednoj osi</h3>
+	<p>Flex elementi unutar flex kontejnera mogu da se rasporedjuju i po sporednoj osi,
+	   tj. po osi koja nije glavna za flex kontejner. Princip je isti kao gore
+	   navedeno rasporedjivanje po glavnoj osi.
+	</p>
+	
+	<div class="flex_primer10">
+		<p>Rasporedjivanje ukoliko su flex elementi poredjani po redovima:</p>
+		<div class="flex_primer10_red">
+			<div>
+				<p>Jedan</p>
+				<p>Dva Dva</p>
+				<p>Tri Tri Tri</p>
+				<p>Cetiri Cetiri Cetiri Cetiri</p>
+				<p>Pet Pet Pet Pet Pet</p>
+			</div>
+			<div>
+				<p>Jedan</p>
+				<p>Dva Dva</p>
+				<p>Tri Tri Tri</p>
+				<p>Cetiri Cetiri Cetiri Cetiri</p>
+				<p>Pet Pet Pet Pet Pet</p>
+			</div>
+			<div>
+				<p>Jedan</p>
+				<p>Dva Dva</p>
+				<p>Tri Tri Tri</p>
+				<p>Cetiri Cetiri Cetiri Cetiri</p>
+				<p>Pet Pet Pet Pet Pet</p>
+			</div>
+			<div>
+				<p>Jedan</p>
+				<p>Dva Dva</p>
+				<p>Tri Tri Tri</p>
+				<p>Cetiri Cetiri Cetiri Cetiri</p>
+				<p>Pet Pet Pet Pet Pet</p>
+			</div>
+			<div>
+				<p>Jedan</p>
+				<p>Dva Dva</p>
+				<p>Tri Tri Tri</p>
+				<p>Cetiri Cetiri Cetiri Cetiri</p>
+				<p>Pet Pet Pet Pet Pet</p>
+			</div>
+		</div><!-- flex_primer10_red -->
+		
+		<p>Rasporedjivanje ukoliko su flex elementi poredjani po kolonama:</p>
+		<div class="flex_primer10_kol">
+			<div>
+				<p>1</p>
+				<p>2 2 2 2</p>
+				<p>3 3 3 3 3 3 3 3 3</p>
+				<p>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+				<p>5 5 5 5 5</p>
+			</div>
+			<div>
+				<p>1</p>
+				<p>2 2 2 2</p>
+				<p>3 3 3 3 3 3 3 3 3</p>
+				<p>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+				<p>5 5 5 5 5</p>
+			</div>
+			<div>
+				<p>1</p>
+				<p>2 2 2 2</p>
+				<p>3 3 3 3 3 3 3 3 3</p>
+				<p>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+				<p>5 5 5 5 5</p>
+			</div>
+			<div>
+				<p>1</p>
+				<p>2 2 2 2</p>
+				<p>3 3 3 3 3 3 3 3 3</p>
+				<p>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+				<p>5 5 5 5 5</p>
+			</div>
+			<div>
+				<p>1</p>
+				<p>2 2 2 2</p>
+				<p>3 3 3 3 3 3 3 3 3</p>
+				<p>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</p>
+				<p>5 5 5 5 5</p>
+			</div>
+		</div><!-- flex_primer10_kol -->
+	</div><!-- flex_primer10 -->
+	
+	<div class="futer">
+		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>
+		<p>Vrati se na glavnu <a href="../index.html">html</a> stranu.</p>
+	</div><!-- futer -->
+
+</body>
+
+</html>
