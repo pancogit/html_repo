@@ -462,6 +462,9 @@ div.flex_primer10_kol div p {
 	border-color: black;
 	margin: 10px;
 	padding: 10px;
+	
+	/* smanji sirinu paragrafa da bi se razlikovale visine */
+	width: 40px;
 }
 
 div.flex_primer10_red div {
@@ -472,27 +475,22 @@ div.flex_primer10_red div {
 
 div.flex_primer10_red div p:nth-of-type(1) {
 	font-size: 100%;
-	height: 20px;
 }
 
 div.flex_primer10_red div p:nth-of-type(2) {
 	font-size: 90%;
-	height: 40px;
 }
 
 div.flex_primer10_red div p:nth-of-type(3) {
 	font-size: 80%;
-	height: 60px;
 }
 
 div.flex_primer10_red div p:nth-of-type(4) {
 	font-size: 70%;
-	height: 80px;
 }
 
 div.flex_primer10_red div p:nth-of-type(5) {
 	font-size: 60%;
-	height: 100px;
 }
 
 div.flex_primer10_red div:nth-of-type(1) {
@@ -515,11 +513,6 @@ div.flex_primer10_red div:nth-of-type(5) {
 	align-items: stretch; /* pomeranje po sporednoj osi */
 }
 
-/* da bi se video gornji stretch efekat, moramo da resetujemo visine paragrafa */
-div.flex_primer10_red div:nth-of-type(5) p {
-	height: auto;
-}
-
 div.flex_primer10_kol div {
 	display: flex;
 	flex-direction: column;
@@ -529,7 +522,16 @@ div.flex_primer10_kol div {
 }
 
 div.flex_primer10_kol div p {
-	width: 50px;
+	/*
+		moramo da vratimo sirinu na podrazumevanu vrednost, zato sto
+		necemo videti efekte na kolonama (kao npr. stretch) ukoliko je
+		sirina paragrafa fiksirana
+		
+		isto vazi i kada su flex elementi poredjani u redove, ako fiksiramo
+		visine tih paragrafa, onda se nece videti efekti nad flex redovima
+		(kao npr. stretch)
+	*/
+	width: auto;
 }
 
 div.flex_primer10_kol div:nth-of-type(1) {
@@ -552,6 +554,799 @@ div.flex_primer10_kol div:nth-of-type(5) {
 	align-items: stretch; /* pomeranje po sporednoj osi */
 }
 
+/* primer 11 */
+
+div.flex_primer11 div {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	
+	/* flex kontejner */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+div.flex_primer11 div p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 0px;
+	width: 60px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+div.flex_primer11 div p:nth-of-type(3),  /* slovo C */
+div.flex_primer11 div p:nth-of-type(8) { /* slovo H */
+	margin-top: 10px;
+}
+
+div.flex_primer11 div p:nth-of-type(4),  /* slovo D */
+div.flex_primer11 div p:nth-of-type(9) { /* slovo I */
+	margin-top: 20px;
+}
+
+div.flex_primer11 div p:nth-of-type(10) { /* slovo J */
+	font-size: 3em;
+}
+
+/* primer 12 */
+
+div.flex_primer12 {
+	margin: 20px 0px;
+}
+
+div.flex_primer12 div {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+}
+
+div.flex_primer12 div p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 0px;
+}
+
+div.flex_primer12 div:nth-of-type(1) {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+div.flex_primer12 div:nth-of-type(1) p {
+	width: 50px;
+	margin: 5px;
+}
+
+div.flex_primer12 div:nth-of-type(1) p:nth-of-type(3) { /* slovo C */
+	margin-top: 30px;
+}
+
+div.flex_primer12 div:nth-of-type(1) p:nth-of-type(4) { /* slovo D */
+	margin-bottom: 40px;
+}
+
+div.flex_primer12 div:nth-of-type(2) {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+div.flex_primer12 div:nth-of-type(2) p {
+	margin: 5px;
+}
+div.flex_primer12 div:nth-of-type(2) p:nth-of-type(3) { /* slovo C */
+	margin-left: 30px;
+}
+
+div.flex_primer12 div:nth-of-type(2) p:nth-of-type(4) { /* slovo D */
+	margin-right: 40px;
+}
+
+/* primer 13 */
+
+div.flex_primer13 div {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 10px 0px;
+}
+
+div.flex_primer13 div p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 0px;
+	width: 70px;
+}
+
+div.flex_primer13 div p:nth-of-type(3),  /* slovo C */
+div.flex_primer13 div p:nth-of-type(8) { /* slovo H */
+	margin-top: 10px;
+}
+
+div.flex_primer13 div p:nth-of-type(4),  /* slovo D */
+div.flex_primer13 div p:nth-of-type(9) { /* slovo I */
+	margin-top: 20px;
+}
+
+div.flex_primer13 div p:nth-of-type(10) { /* slovo J */
+	font-size: 3em;
+}
+
+div.flex_primer13 div:nth-of-type(1) {
+	align-items: flex-start;
+}
+
+div.flex_primer13 div:nth-of-type(2) {
+	align-items: flex-end;
+}
+
+div.flex_primer13 div:nth-of-type(3) {
+	align-items: center;
+}
+
+div.flex_primer13 div:nth-of-type(4) {
+	align-items: baseline;
+}
+
+/* primer 14 */
+
+div.flex_primer14 div {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin: 10px 0px;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+div.flex_primer14 div p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 5px;
+}
+
+div.flex_primer14 div p:nth-of-type(1) {
+	font-size: 120%;
+	width: 50px;
+}
+
+div.flex_primer14 div p:nth-of-type(2) {
+	font-size: 110%;
+	width: 50px;
+	background-color: #80cd8f;
+}
+
+div.flex_primer14 div p:nth-of-type(3) {
+	font-size: 100%;
+	width: 30px;
+}
+
+div.flex_primer14 div p:nth-of-type(4) {
+	font-size: 90%;
+	width: 50px;
+}
+
+div.flex_primer14 div p:nth-of-type(5) {
+	font-size: 80%;
+	width: 20px;
+}
+
+/* pomeri drugi flex element na razlicite nacine */
+div.flex_primer14 div:nth-of-type(1) p:nth-of-type(2) {
+	align-self: flex-start;
+}
+
+div.flex_primer14 div:nth-of-type(2) p:nth-of-type(2) {
+	align-self: flex-end;
+}
+
+div.flex_primer14 div:nth-of-type(3) p:nth-of-type(2) {
+	align-self: baseline;
+}
+
+div.flex_primer14 div:nth-of-type(4) p:nth-of-type(2) {
+	align-self: center;
+}
+
+div.flex_primer14 div:nth-of-type(5) p:nth-of-type(2) {
+	align-self: auto; /* isti efekat kao stretch */
+	align-self: stretch;
+}
+
+/* primer 15 */
+
+div.flex_primer15 div {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin: 10px 0px;
+	height: 300px;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+div.flex_primer15 div p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 0px;
+}
+
+div.flex_primer15 div:nth-of-type(1) {
+	align-content: flex-start;
+}
+
+div.flex_primer15 div:nth-of-type(2) {
+	align-content: flex-end;
+}
+
+div.flex_primer15 div:nth-of-type(3) {
+	align-content: center;
+}
+
+div.flex_primer15 div:nth-of-type(4) {
+	align-content: space-between;
+}
+
+div.flex_primer15 div:nth-of-type(5) {
+	align-content: space-around;
+}
+
+div.flex_primer15 div:nth-of-type(6) {
+	align-content: space-evenly;
+}
+
+div.flex_primer15 div:nth-of-type(7) {
+	align-content: stretch;
+}
+
+/* primer 15a */
+
+div.flex_primer15a_red {
+	display: flex;
+	flex-direction: row; /* ovo je podrazumevano, ali nema veze */
+	flex-wrap: wrap;
+	height: 300px; /* zbog wrap efekta */
+}
+
+div.flex_primer15a_kol {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 400px; /* da bi se video efekat automatskih margina */
+}
+
+div.flex_primer15a_red,
+div.flex_primer15a_kol {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div.flex_primer15a_red h2,
+div.flex_primer15a_kol h2 {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+div.flex_primer15a_red:nth-of-type(1) h2:nth-of-type(1) {
+	margin-right: auto;
+}
+
+div.flex_primer15a_red:nth-of-type(2) h2:nth-of-type(3) {
+	margin-left: auto;
+}
+
+div.flex_primer15a_red:nth-of-type(3) h2:nth-of-type(3) {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.flex_primer15a_red:nth-of-type(4) h2:nth-of-type(4) {
+	margin-left: auto;
+}
+
+/*
+	ovi dole selektori nece da rade zato sto nisu lepo napisani
+	kada kazemo div.flex_primer15a_kol:nth-of-type(1), onda mi trazimo
+	prvi element (nth-of-type(1)) koji je klase .flex_primer15a_kol,
+	a to je div element unutar div.flex_primer15a
+	i kada odemo u div.flex_primer15a i pogledamo njegov prvi div:
+	
+	<p>Primer za flex kontejner ciji su flex elementi u pravcu redova:</p>
+	<div class="flex_primer15a_red">
+		...
+	</div>
+	
+	videcemo da je njegov prvi div sa klasom .flex_primer15a_red
+	to nije isto sto i klasa .flex_primer15a_kol
+	zbog toga se nece selektovati ovaj div i nista se nece desiti
+	
+	pravilno bi bilo napisati: div.flex_primer15a_kol:nth-of-type(5)
+	
+	ovo je tacno zato sto smo izabrali element tipa div koji je peti
+	po redu unutar nekog bloka (a taj blok je div.flex_primer15a)
+	i koji ima klasu .flex_primer15a_kol
+	
+	znaci da se prvo gleda kog je tipa ono sto hocemo da selektujemo,
+	onda se ide do tog elementa sa zadatim rednim brojem i onda se tek
+	na kraju eventualno proverava da li je klasa odgovarajuca za selektovani
+	element
+	ako nismo zadali klasu, onda ce sigurno da se selektuje, ali ako smo zadali
+	klasu onda ce se i klasa tog elementa proveriti i ako se ne podudara
+	onda se element nece selektovati
+*/
+/*
+div.flex_primer15a_kol:nth-of-type(1) h2:nth-of-type(1) {
+	margin-top: auto;
+}
+
+div.flex_primer15a_kol:nth-of-type(2) h2:nth-of-type(3) {
+	margin-left: auto;
+}
+
+div.flex_primer15a_kol:nth-of-type(3) h2:nth-of-type(3) {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.flex_primer15a_kol:nth-of-type(4) h2:nth-of-type(4) {
+	margin-left: auto;
+}
+*/
+
+/* 
+	ovi selektori rade kako treba
+	oni selektuju elemente (peti, sesti, sedmi i osmi) po redu unutar nekog
+	okruzujuceg bloka (div.flex_primer15a u nasem slucaju) tipa div
+	a koji imaju klasu .flex_primer15a_kol
+	
+	cak i da nismo zadali div.flex_primer15a_kol, opet bi se pretrazivalo
+	po tipu div-a, zato sto bi pretrazivac to prepoznao na osnovu zadate klase,
+	kao sto je prikazano u poslednja dva primera:
+	.flex_primer15a_kol:nth-of-type(7)
+	.flex_primer15a_kol:nth-of-type(8)
+*/
+div.flex_primer15a_kol:nth-of-type(5) h2:nth-of-type(1) {
+	margin-top: auto;
+}
+
+div.flex_primer15a_kol:nth-of-type(6) h2:nth-of-type(3) {
+	margin-bottom: auto;
+}
+
+.flex_primer15a_kol:nth-of-type(7) h2:nth-of-type(3) {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.flex_primer15a_kol:nth-of-type(8) h2:nth-of-type(4),
+.flex_primer15a_kol:nth-of-type(8) h2:nth-of-type(1) {
+	margin-bottom: auto;
+}
+
+.flex_primer15a_kol:nth-child(10) {
+	background-color: blue;
+}
+
+/*
+	razdvoj grupisane div-ove tako da su pomereni jedan u levu,
+	jedan u desnu stranu
+*/
+div.flex_primer15a_red:nth-of-type(9) {
+	justify-content: space-between;
+}
+
+/*
+	moramo dodatno da podesimo grupisane div-ove da budu flex kontejneri
+	da bi elementi unutar tih grupisanih div-ova bili flex elementi
+*/
+div.flex_primer15a_red:nth-of-type(9) div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/* primer 16 */
+
+div.flex_primer16 {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin: 10px 0px;
+	
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+div.flex_primer16 p {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 5px;
+	padding: 5px;
+}
+
+/* primer 17 */
+
+div.flex_primer17 ul {
+	display: flex; /* red je podrazumevani pravac za flex */
+	list-style-type: none;
+	padding: 0px;
+}
+
+/* primer 18 */
+
+div.flex_primer18_1 {
+	display: flex;
+}
+
+div.flex_primer18_1 img {
+	float: right;
+}
+
+/* anonimni flex element nece biti selektovan */
+div.flex_primer18_1 * {
+	border-style: solid;
+	border-width: 5px;
+	border-color: blue;
+}
+
+div.flex_primer18_2 {
+	display: flex;
+	align-items: center;
+}
+
+/* anonimni flex element nece biti selektovan */
+div.flex_primer18_2 * {
+	border-style: solid;
+	border-width: 5px;
+	border-color: blue;
+}
+
+/* primer 19 */
+
+/*
+	sada cemo da definisacemo boje za flex kontejner i flex elemente
+	da ne ponavljamo stalno iznova
+	flex kontejner ce podrazumevano rasporedjivati flex elemente po glavnoj osi
+	ovo ce moci kasnije da se promeni sa ponovnim definisanjem unutar div-a za 
+	zadati primer
+*/
+
+.flex_kontejner {
+	background-color: #dcdcdc;
+	border-style: dashed;
+	border-width: 1px;
+	border-color: black;
+	margin: 10px 0px;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flex_element {
+	background-color: silver;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin: 5px;
+	padding: 5px;
+}
+
+div.flex_primer19 {
+	width: 750px;
+}
+
+div.flex_primer19 .flex_element {
+	width: 100px;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex-grow: 1;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(1) {
+	flex-grow: 1;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(2) {
+	flex-grow: 1;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(3) {
+	flex-grow: 3;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(1) {
+	flex-grow: 0.5;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(2) {
+	flex-grow: 0.5;
+}
+
+div.flex_primer19 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(3) {
+	flex-grow: 1.5;
+}
+
+/* primer 20 */
+
+div.flex_primer20 {
+	width: 750px;
+}
+
+div.flex_primer20 .flex_element {
+	width: 100px; /* drugi flex element cemo da redefinisemo */
+}
+
+/* redefinisi drugi flex element */
+div.flex_primer20 .flex_element:nth-of-type(2) {
+	width: 250px;
+}
+
+div.flex_primer20 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1) {
+	flex-grow: 1;
+}
+
+div.flex_primer20 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2) {
+	flex-grow: 1;
+}
+
+div.flex_primer20 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex-grow: 3;
+}
+
+/* primer 21 */
+
+div.flex_primer21 {
+	width: 750px;
+}
+
+div.flex_primer21 .flex_element {
+	width: 100px;
+}
+
+/* sada cemo ovo da uradimo sve pomocu zajednicke flex komande */
+
+div.flex_primer21 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(1),
+div.flex_primer21 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(2),
+div.flex_primer21 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(3) {
+	flex: 0 1 auto; /* podrazumevane vrednosti za rast, suzavanje i bazu */
+	flex: 0 1 0%;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1),
+div.flex_primer21 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2) {
+	flex: 0 1 auto; /* podrazumevane vrednosti za rast, suzavanje i bazu */
+	flex: 0 1 0%;
+	flex: 0;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex-grow: 1;
+	flex: 1 1 auto;
+	flex: 1 1 0%;
+	flex: 1;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(1),
+div.flex_primer21 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(2) {
+	flex-grow: 1;
+	flex: 1 1 auto;
+	flex: 1 1 0%;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(3) {
+	flex-grow: 3;
+	flex: 3 1 auto;
+	flex: 3 1 0%;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(1),
+div.flex_primer21 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(2) {
+	flex-grow: 0.5;
+	flex: 0.5 1 auto;
+	flex: 0.5 1 0%;
+}
+
+div.flex_primer21 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(3) {
+	flex-grow: 1.5;
+	flex: 1.5 1 auto;
+	flex: 1.5 1 0%;
+}
+
+/* primer 22 */
+
+div.flex_primer22 {
+	width: 750px;
+}
+
+div.flex_primer22 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisanje za ovaj primer */
+}
+
+div.flex_primer22 .flex_element {
+	width: 300px;
+	
+	/*
+		ponisticemo suzavanje za flex elemente, a za odredjene 
+		cemo postaviti naknadno
+	*/
+	flex-shrink: 0;
+}
+
+div.flex_primer22 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3),
+div.flex_primer22 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(1),
+div.flex_primer22 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(2) {
+	flex-shrink: 1;
+}
+
+div.flex_primer22 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(3) {
+	flex-shrink: 3;
+}
+
+div.flex_primer22 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(1),
+div.flex_primer22 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(2) {
+	flex-shrink: 1;
+	flex: 0 1 auto; /* napisano zajedno sa podrazumevanim vrednostima */
+}
+
+div.flex_primer22 .flex_kontejner:nth-of-type(4) .flex_element:nth-of-type(3) {
+	flex-shrink: 3;
+	flex: 0 3 auto; /* napisano zajedno sa podrazumevanim vrednostima */
+}
+
+/* primer 23 */
+
+div.flex_primer23 {
+	width: 750px;
+}
+
+div.flex_primer23 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisanje za ovaj primer */
+}
+
+div.flex_primer23 .flex_element {
+	width: 300px;
+}
+
+div.flex_primer23 .flex_element:nth-of-type(1),
+div.flex_primer23 .flex_element:nth-of-type(2) {
+	flex-shrink: 1;
+	flex: 0 1 auto; /* napisano zajedno sa podrazumevanim vrednostima */
+}
+
+div.flex_primer23 .flex_element:nth-of-type(3) {
+	flex-shrink: 3;
+	flex: 0 3 auto; /* napisano zajedno sa podrazumevanim vrednostima */
+}
+
+/* primer 24 */
+
+div.flex_primer24 {
+	width: 750px;
+}
+
+div.flex_primer24 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisanje za ovaj primer */
+}
+
+div.flex_primer24 .flex_element:nth-of-type(1) {
+	width: 250px;
+	flex: 0 1 auto;
+}
+
+div.flex_primer24 .flex_element:nth-of-type(2) {
+	width: 500px;
+	flex: 0 1 auto;
+}
+
+div.flex_primer24 .flex_element:nth-of-type(3) {
+	width: 250px;
+	flex: 0 3 auto;
+}
+
+/* primer 25 */
+
+div.flex_primer25 {
+	display: flex;
+	flex-direction: column;
+}
+
+div.flex_primer25_heder {
+	display: flex;
+	justify-content: center; /* centriraj po glavnoj osi */
+	align-items: center; /* centriraj po sporednoj osi */
+	
+	height: 100px;
+	font-size: 2em;
+	color: silver;
+	background-color: #3c3c3c;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div.flex_primer25_sadrzaj {
+	display: flex;
+}
+
+div.flex_primer25_sadrzaj_levo {
+	background-color: black;
+	
+	/* najmanja moguca sirina kutije prilikom smanjivanja prozora */
+	min-width: 150px; 
+	
+	/* osnova mu je 200px (sirina width), i suzavanje mu je omoguceno */
+	flex: 0 1 200px;
+}
+
+div.flex_primer25_sadrzaj_levo ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+div.flex_primer25_sadrzaj_levo * {
+	color: white;
+}
+
+/*
+	neka svaki element liste bude poseban flex kontejner i neka
+	njegovi flex elementi (linkovi) budu po koloni rasporedjeni
+*/
+div.flex_primer25_sadrzaj_levo li {
+	display: flex;
+	flex-direction: column;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div.flex_primer25_sadrzaj_levo a {
+	padding: 10px;
+	text-align: center;
+	
+}
+
+div.flex_primer25_sadrzaj_levo a:hover {
+	background-color: gray;
+}
 
 /* futer */
 

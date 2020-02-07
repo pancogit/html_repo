@@ -424,6 +424,9 @@
 	</p>
 	
 	<div class="flex_primer10">
+		<p>Prilikom rasporedjivanja elemenata po redovima, ne smemo da fiksiramo visine
+		   flex elemenata, jer se nece videti efekti nad redovima (kao npr. stretch).
+		</p>
 		<p>Rasporedjivanje ukoliko su flex elementi poredjani po redovima:</p>
 		<div class="flex_primer10_red">
 			<div>
@@ -463,6 +466,9 @@
 			</div>
 		</div><!-- flex_primer10_red -->
 		
+		<p>Prilikom rasporedjivanja elemenata po kolonama, ne smemo da fiksiramo sirine
+		   flex elemenata, jer se nece videti efekti nad kolonama (kao npr. stretch).
+		</p>
 		<p>Rasporedjivanje ukoliko su flex elementi poredjani po kolonama:</p>
 		<div class="flex_primer10_kol">
 			<div>
@@ -502,6 +508,611 @@
 			</div>
 		</div><!-- flex_primer10_kol -->
 	</div><!-- flex_primer10 -->
+	
+	<h4>Flex elementi i margine</h4>
+	<p>Ukoliko postoje margine, onda ce flex elementi biti centrirani zajedno sa marginama,
+	   tj. margine ce isto da ulaze u racunicu prilikom trazenja sredine flex elementa.
+	</p>
+	<p>Primeri sa marginama:</p>
+	<div class="flex_primer11">
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+	</div><!-- flex_primer11 -->
+	
+	<div class="flex_primer12">
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE</p>
+		</div>
+	</div><!-- flex_primer12 -->
+	
+	<p>Jos primera pomeranja flex elemenata po sporednoj osi gde postoje flex
+	   elementi sa marginama:
+	</p>
+	<div class="flex_primer13">
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<p>Takodje je moguce uravnjati flex elemente u odnosu na baznu liniju slova:</p>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+	</div><!-- flex_primer13 -->
+	
+	<h4>Rasporedjivanje pojedinacnih flex elemenata unutar flex kontejnera</h4>
+	<p>Flex kontejner moze da podesi kako ce da se flex redovi/kolone rasporedjuju,
+	   kakve ce razmake da ima, itd. Kada podesimo kako ce se flex elementi unutar
+	   flex redova/kolona rasporedjivati, onda ce se svi ti flex elementi rasporedjivati
+	   na isti nacin. Da bi napravili izuzetak od ovog pravila, moguce je rasporediti
+	   pojedinacne flex elemente naknadno kako hocemo. Ovo vazi za rasporedjivanje flex
+	   elemenata na sporednoj osi.
+	</p>
+	<div class="flex_primer14">
+		<div>
+			<p>Jedan</p>
+			<p>Dva Dva</p>
+			<p>Tri Tri Tri</p>
+			<p>Cetiri Cetiri Cetiri Cetiri</p>
+			<p>Pet Pet Pet Pet Pet</p>
+		</div>
+		<div>
+			<p>Jedan</p>
+			<p>Dva Dva</p>
+			<p>Tri Tri Tri</p>
+			<p>Cetiri Cetiri Cetiri Cetiri</p>
+			<p>Pet Pet Pet Pet Pet</p>
+		</div>
+		<div>
+			<p>Jedan</p>
+			<p>Dva Dva</p>
+			<p>Tri Tri Tri</p>
+			<p>Cetiri Cetiri Cetiri Cetiri</p>
+			<p>Pet Pet Pet Pet Pet</p>
+		</div>
+		<div>
+			<p>Jedan</p>
+			<p>Dva Dva</p>
+			<p>Tri Tri Tri</p>
+			<p>Cetiri Cetiri Cetiri Cetiri</p>
+			<p>Pet Pet Pet Pet Pet</p>
+		</div>
+		<div>
+			<p>Jedan</p>
+			<p>Dva Dva</p>
+			<p>Tri Tri Tri</p>
+			<p>Cetiri Cetiri Cetiri Cetiri</p>
+			<p>Pet Pet Pet Pet Pet</p>
+		</div>
+	</div><!-- flex_primer14 -->
+	
+	<h4>Rasporedjivanje flex linija po sporenoj osi</h4>
+	<p>Videli smo kako je moguce pomerati flex elemente unutar reda/kolone, tj. unutar jedne
+	   flex linije. Sada cemo videti kako da pomeramo flex linije unutar flex kontejnera.
+	   Te flex linije mogu biti redovi ili kolone, zavisno u kom pravcu se rasporedjuju
+	   flex elementi.
+	</p>
+	<p><b>Podsetnik:</b> Probaj da menjas sirinu prozora da bi video efekat.</p>
+	<div class="flex_primer15">
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+		<div>
+			<p>A</p>
+			<p>BB BB</p>
+			<p>CCC CCC CCC</p>
+			<p>DDDD DDDD DDDD DDDD</p>
+			<p>EEEEE EEEEE EEEEE EEEEE EEEEE</p>
+			<p>FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF FFFFFF</p>
+			<p>GGGGG GGGGG GGGGG GGGGG GGGGG</p>
+			<p>HHHH HHHH HHHH HHHH</p>
+			<p>III III III</p>
+			<p>JJ JJ</p>
+			<p>K</p>
+		</div>
+	</div><!-- flex_primer15 -->
+	
+	<h3>Rasporedjivanje pojedinacnih flex elemenata po glavnoj osi pomocu margina</h3>
+	<p>Videli smo kako je moguce pomerati pojedinacne flex elemente po sporednoj osi.
+	   Svaka sporedna osa ima svoju flex liniju unutar koje se moze pojedinacni flex
+	   element pomerati. Problem je kako to uraditi na glavoj osi, posto nema posebna
+	   komanda za to. Prema css specifikaciji za flexbox ovo je moguce uraditi pomogu
+	   margina. Margine se ponasaju isto kao i kod obicnih elemenata koji nisu flex
+	   elemente sa jednim izuzetkom.
+	</p>
+	<p>Ako postavimo levu marginu za neki obican element da bude automatska, onda ce 
+	   taj element da se pomeri skroz u desno koliko moze. Ovo je moguce uraditi ukoliko
+	   je kocka fiksirana na neku sirinu, inace nece imati efekta i zauzece ceo red.
+	</p>
+	<h2 style="margin-left: auto; width: 200px;">Obican element</h2>
+	<h2 style="margin-right: auto; width: 200px;">Obican element</h2>
+	<h2 style="margin-left: auto; margin-right: auto; width: 200px;">Obican element</h2>
+	<p>Za obicne elemente, postavljanje gornje ili donje margine na automatsku nista
+	   se ne dobija, vec ce samo da se obrise gornja ili donja margina:
+	</p>
+	<h2 style="margin-top: auto; width: 200px;">Obican element</h2>
+	<h2 style="margin-bottom: auto; width: 200px;">Obican element</h2>
+	<p>Videli smo da obicni elementi mogu da se pomeraju levo ili desno sa automatskom
+	   marginom ili da se centriraju na sredinu horizontalno (levo i desno da budu 
+	   automatske margine), ali ne mogu da se pomeraju vertikalno sa gornjom ili donjom
+	   marginom, vec se te automatske margine postavljaju na nulu. Ovo nije slucaj sa flex
+	   elementima. Unutar flex kontejnera svi flex elementi mogu da se pomeraju levo-desno,
+	   gore-dole sa automatskim marginama, sto moze da posluzi u slucajevima kada hocemo
+	   da pojedine flex elemente pomerimo u odredjenom pravcu, da li to bilo po glavnoj osi
+	   ili sporednoj. S obzirom da vec imamo komandu za pomeranje pojedinacnih flex elemenata
+	   po sporednoj osi, u tom slucaju necemo koristiti automatske margine, vec samo
+	   za pomeranje po glavnoj osi, jer ta komanda ne postoji. Takodje ako imamo jedan jedini
+	   element unutar flex kontejnera, onda mozemo da ga centriramo i po glavnoj i po sporednoj
+	   osi, tako da nam ni tada ne trebaju automatske margine iako bi mogli da ih koristimo.
+	</p>
+	<p>Evo primera kako se pojedinacni flex elementi mogu pomerati untuar flex kontejnera 
+	   po glavnoj osi pomocu automatskih margina:
+	</p>
+	<div class="flex_primer15a">
+		<p>Primer za flex kontejner ciji su flex elementi u pravcu redova:</p>
+		<div class="flex_primer15a_red">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_red -->
+		<div class="flex_primer15a_red">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_red -->
+		<div class="flex_primer15a_red">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_red -->
+		<div class="flex_primer15a_red">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_red -->
+		<p>Primer za flex kontejner ciji su flex elementi u pravcu kolona:</p>
+		<div class="flex_primer15a_kol">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_kol -->
+		<div class="flex_primer15a_kol">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_kol -->
+		<div class="flex_primer15a_kol">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_kol -->
+		<div class="flex_primer15a_kol">
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+			<h2>Flex element</h2>
+		</div><!-- flex_primer15a_kol -->
+		<p>Ovo je isto moguce postignuti grupisanjem delova koje zelimo da razdvojimo 
+		   u odvojene sekcije i onda te sekcije pomerati po glavnoj osi sa vec postojecom
+		   flex komandom. U tom slucaju ne bismo koristili automatske margine. 
+		   Evo primera za flex kontejner ciji su flex elementi u pravcu redova:
+		</p>
+		<div class="flex_primer15a_red">
+			<div><!-- prvi flex element koji je grupisan -->
+				<h2>Flex element</h2>
+				<h2>Flex element</h2>
+				<h2>Flex element</h2>
+			</div>
+			<div><!-- drugi flex element koji je grupisan -->
+				<h2>Flex element</h2>
+			</div>
+		</div><!-- flex_primer15a_red -->
+	</div><!-- flex_primer15a -->
+	<p>Prilikom pomeranja ovih flex elemenata kada se prozor smanjuje, onda ce i automatske
+	   margine da se smanjuju automatski, zato sto nisu fiksirane i samim tim ce taj flex
+	   element koji se pomera automatskom marginom da bude responzivan kako se kaze. Tako
+	   da ovaj nacin je dobar za koriscenje za pomeranje po glavnoj osi pojedinacnih flex
+	   elemenata.
+	</p>
+	
+	<h2>Flex elementi</h2>
+	<p>Sada cemo videti kako se koriste flex elementi pojedinacno.</p>
+	
+	<div class="flex_primer16">
+		<p>F</p>
+		<p>L</p>
+		<p>E</p>
+		<p>X</p>
+		<p>' '</p>
+		<p>E</p>
+		<p>L</p>
+		<p>E</p>
+		<p>M</p>
+		<p>E</p>
+		<p>N</p>
+		<p>T</p>
+		<p>I</p>
+	</div><!-- flex_primer16 -->
+	
+	<p>Unutar flex kontejnera, izmedju flex elemenata se ignorisu razmaci i blanko znaci:</p>
+	<p style="display: flex">
+		<strong>Flex elementi:</strong> su bas ono <em>&lt;br&gt; brzo resenje</em>.
+	</p>
+	
+	<div class="flex_primer17" id="flex_primer17_id">
+		<ul>
+			<li><a href="#flex_primer17">Link 1</a></li>  <!-- razmaci se ignorisu unutar flex kontejnera -->
+			<li><a href="#flex_primer17">Link 2</a></li>  
+			<li><a href="#flex_primer17">Link 3</a></li>  
+			<li><a href="#flex_primer17">Link 4</a></li>  
+			<li><a href="#flex_primer17">Link 5</a></li>  
+			<li><a href="#flex_primer17">Link 6</a></li>  
+			<li><a href="#flex_primer17">Link 7</a></li>  
+		</ul>
+	</div><!-- flex_primer17 -->
+	
+	<div class="flex_primer18">
+		<p>Plivanje elemenata (<i>float</i>) nema efekta na flex elemente:</p>
+		<div class="flex_primer18_1">
+			<!-- ovaj komentar je ignorisan za flex kontejner -->
+			<h1>Naslov</h1>
+			
+			<!-- razmaci, blanko znaci, tabovi i novi redovi su ignorisani za flex kontejner -->
+			<img src="../slike/heder2.jpg" alt="slika za primer" width="500" height="166"/>  
+			Ovo je neki tekst koji ce postati anonimni flex element
+		</div><!-- flex_primer18_1 -->
+		<p>Evo jos jednog primera gde su uravnjati flex elementi po sporednoj osi:</p>
+		<div class="flex_primer18_2" id="flex_primer18_2_id">
+			<!-- ovaj komentar je ignorisan za flex kontejner -->
+			<h1>Naslov</h1>
+			
+			<!-- razmaci, blanko znaci, tabovi i novi redovi su ignorisani za flex kontejner -->
+			<img src="../slike/heder2.jpg" alt="slika za primer" width="500" height="166"/>  
+			Ovo je neki tekst <a href="#flex_primer18_2_id">koji ima link u sebi</a> i jos
+            dodatnog teksta koji je anoniman
+		</div><!-- flex_primer18_2 -->
+	</div><!-- flex_primer18 -->
+	
+	<h3>Osobine flex elemenata</h3>
+	<h4>Rast flex elemenata</h4>
+	
+	<p>Pogledajmo primer za rast flex elemenata gde su elementi sirine 100px:</p>
+	<div class="flex_primer19">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 1</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 3</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0.5</p>
+			<p class="flex_element">flex rast: 0.5</p>
+			<p class="flex_element">flex rast: 1.5</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer19 -->
+	
+	<p>Drugi primer za rast flex elemenata gde su elementi sirine 100px, 250px, 100px:</p>
+	<div class="flex_primer20">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0; sirina: 250px;</p>
+			<p class="flex_element">flex rast: 0</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 3</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer20 -->
+	
+	<p>Vratimo se na prvi primer za flex rast da vidimo kako se komanda <i>flex</i> 
+	   koristi zajedno sa ostalim komandama unutar nje:
+	</p>
+	<div class="flex_primer21">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 0</p>
+			<p class="flex_element">flex rast: 1</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 1</p>
+			<p class="flex_element">flex rast: 3</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex rast: 0.5</p>
+			<p class="flex_element">flex rast: 0.5</p>
+			<p class="flex_element">flex rast: 1.5</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer21 -->
+	<p>Za razliku od prvog primera, ovde je baza flex elemenata smanjena, zbog
+	   cega se vise prostora rasporedjuje flex elementima. U prvom primeru samo prostor
+	   koji je bio nepopunjen se rasporedjivao flex elementima. U ovom primeru
+	   kada je promenjena baza flex elemenata, onda se slobodan nepopunjen prostor povecao
+	   (ili moze da se smanji zavisno kolika je baza) i zbog toga je vise prostora
+	   rasporedjeno flex elementima, tako da je flex element sa najvecim rastom sada
+	   jos veci.
+	</p>
+	
+	<h4>Suzavanje flex elemenata</h4>
+	<p>Evo primera suzavanja flex elemenata. Ovo se desava u suprotnom smeru od rasta
+	   flex elemenata. Podrazumevana vrednost za suzavanje flex elemenata je postavljena da
+	   moze flex element da se suzava uvek. Zato ce flex elementi koji su sirine 300px
+	   biti manji od 300px ako ne mogu da stanu u kontejner od 750px, jer je flex suzavanje
+	   postavljeno na pozitivnu vrednost podrazumevano. Zbog ovoga, moramo da postavimo
+	   flex suzavanje na nulu da bismo ponistili ovo ponasanje. Samim tim, ukoliko je sirina
+	   flex elementa postavljena na 300px i ako je flex suzavanje ponisteno (na nuli), onda
+	   ce flex elementi uvek biti 300px sirine. U suprotnom, dogodice se suzavanje elemenata
+	   koliko je to potrebno da ne bi ispali iz flex kontejnera.
+	</p>
+	<p>Ukoliko je na flex kontejneru postavljeno da moze da prebacuje flex elemente u novi
+	   red, onda efekat flex suzavanja se nece na pocetku videti, vec samo kada se flex
+	   kontejner dovoljno smanji da ivice kontejnera krecu da smanjuju kocku flex elementa
+	   koji je podesen da moze da se suzava.
+	</p>
+	<div class="flex_primer22">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex suzavanje: 0</p>
+			<p class="flex_element">flex suzavanje: 0</p>
+			<p class="flex_element">flex suzavanje: 0</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex suzavanje: 0</p>
+			<p class="flex_element">flex suzavanje: 0</p>
+			<p class="flex_element">flex suzavanje: 1</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 3</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 3</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer22 -->
+	
+	<p>Ukoliko element ne moze da se suzava, zato sto sadrzi sliku fiksne velicine,
+	   onda flex suzavanje nece biti moguce. Suzavanje je moguce samo do one mere
+	   koliko sadrzaj kocke moze da stane. Ako imamo samo tekst u kocki, onda sve dok
+	   suzavanje ne dodje do minimalne sirine kocke dokle moze da stane tekst, suzavanje
+	   ce ici. Isto vazi i za fiksne elemente kao sto su slike. Ukoliko se flex element
+	   smanji do sirine slike koju sadrzi, tu ce stati sa suzavanjem.
+	</p>
+	<div class="flex_primer23">
+		<div class="flex_kontejner">
+			<p class="flex_element">
+				<img src="../slike/heder2.jpg" alt="slika za primer" width="280" height="93"/>
+				flex suzavanje: 1
+			</p>
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 3</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">
+				<img src="../slike/heder2.jpg" alt="slika za primer" width="250" height="83"/>
+				flex suzavanje: 1
+			</p>
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 3</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer23 -->
+	
+	<p>Ako flex elementi nisu iste sirine, onda se u racunicu suzavanja uzima i
+	   sirina flex elemenata.
+	</p>
+	<div class="flex_primer24">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex suzavanje: 1</p>
+			<p class="flex_element">flex suzavanje: 1; sirina 500px</p>
+			<p class="flex_element">flex suzavanje: 3</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer24 -->
+	
+	<h5>Responzivnost i suzavanje flex elemenata</h5>
+	<div class="flex_primer25" id="flex_primer25_id">
+		<div class="flex_primer25_heder">
+			<p>Ovo je primer hedera</p>
+		</div><!-- flex_primer25_heder -->
+		<div class="flex_primer25_sadrzaj">
+			<div class="flex_primer25_sadrzaj_levo">
+				<ul>
+					<li><a href="#flex_primer25_id">Home</a></li>
+					<li><a href="#flex_primer25_id">About</a></li>
+					<li><a href="#flex_primer25_id">Blog</a></li>
+					<li><a href="#flex_primer25_id">Careers</a></li>
+					<li><a href="#flex_primer25_id">Contact Us</a></li>
+				</ul>
+			</div><!-- flex_primer25_sadrzaj_levo -->
+			<div class="flex_primer25_sadrzaj_sredina">
+				<h2>Evo ga jedan naslov</h2>
+				<p>Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				</p>
+			</div><!-- flex_primer25_sadrzaj_sredina -->
+			<div class="flex_primer25_sadrzaj_desno">
+				<h3>Naslov sa desne strane</h3>
+				<p>Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				</p>
+			</div><!-- flex_primer25_sadrzaj_desno -->
+		</div><!-- flex_primer25_sadrzaj -->
+		<div class="flex_primer25_futer">
+			<p>&copy; by flex primer</p>
+		</div><!-- flex_primer25_futer -->
+	</div><!-- flex_primer25 -->
+	
+	<h4>Osnova (baza) flex elemenata</h4>
 	
 	<div class="futer">
 		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>
