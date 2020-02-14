@@ -1301,17 +1301,24 @@ div.flex_primer25_heder {
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: silver;
+	
+	/* minimalna sirina kocke kao i sredina strane */
+	min-width: 250px;
 }
 
 div.flex_primer25_sadrzaj {
 	display: flex;
+	flex-wrap: wrap; /* omoguci prebacivanje u novi red */
 }
 
 div.flex_primer25_sadrzaj_levo {
 	background-color: black;
 	
 	/* najmanja moguca sirina kutije prilikom smanjivanja prozora */
-	min-width: 150px; 
+	min-width: 150px;
+	
+	/* da bude responzivno kao i sadrzaj ispobaj ovo */
+	flex: 1 1 200px;
 	
 	/* osnova mu je 200px (sirina width), i suzavanje mu je omoguceno */
 	flex: 0 1 200px;
@@ -1347,6 +1354,235 @@ div.flex_primer25_sadrzaj_levo a {
 div.flex_primer25_sadrzaj_levo a:hover {
 	background-color: gray;
 }
+
+div.flex_primer25_sadrzaj_sredina {
+	padding: 10px;
+	background-color: #d8d8ca;
+	
+	/*
+		da se povecava (1), da se suzava (2) duplo brze nego leva i desna strana,
+		i da mu osnova (baza) bude 600px pre suzavanja/povecavanja
+	*/
+	flex: 1 2 600px;
+	
+	/* minimalna sirina kocke 250px, jer imamo unutrasnji razmak 2*10px */
+	min-width: 230px;
+}
+
+div.flex_primer25_sadrzaj_desno {
+	padding: 10px;
+	background-color: white;
+	
+	/* da bude responzivno kao i sadrzaj ispobaj ovo */
+	flex: 1 1 180px;
+	
+	/*
+		da se ne povecava (0), da se smanjuje (1) istom brzinom kao i leva strana,
+		i da mu osnova (baza) bude 200px pre smanjivanja
+		imamo razmak 2*10px + 180px = 200px
+	*/
+	flex: 0 1 180px;
+	
+	/* minimalna sirina kocke */
+	min-width: 150px;
+}
+
+div.flex_primer25_futer {
+	background-color: #1a1a1a;
+	color: white;
+	
+	/* minimalna sirina, isto kao za sredinu strane i heder */
+	min-width: 250px;
+	
+	display: flex; /* postavi da bude flex kontejner, da bi centrirao sadrzaj */
+	justify-content: center;
+	align-items: center;
+}
+
+/* primer 26 */
+
+div.flex_primer26 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisemo */
+}
+
+div.flex_primer26 .flex_element {
+	/* sadrzajna flex baza */
+	flex-basis: content; /* za mozilu i ms edge */
+	flex-basis: auto; /* za chrome */
+	width: auto;
+}
+
+div.flex_primer26 .flex_kontejner:nth-of-type(3) .flex_element {
+	flex-shrink: 0; /* iskljuci suzavanje na ovom flex kontejneru */
+}
+
+/* primer 27 */
+
+div.flex_primer27 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisemo */
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(1) .flex_element {
+	flex-basis: auto; /* automatska flex baza */
+	width: auto;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 100px;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 150px;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 200px;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(1) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 2000px;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(2) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 3000px;
+}
+
+div.flex_primer27 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(3) {
+	flex-basis: auto; /* automatska flex baza */
+	width: 4000px;
+}
+
+/* primer 28 */
+
+div.flex_primer28 {
+	width: 540px;
+}
+
+div.flex_primer28 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisi */
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(1) {
+	width: 100px;
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(2) {
+	width: 200px;
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(3) {
+	width: 300px;
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1) {
+	width: 200px;
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2) {
+	width: 400px;
+}
+
+div.flex_primer28 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	width: 200px;
+}
+
+/* primer 29 */
+
+div.flex_primer29 {
+	width: 540px;
+}
+
+div.flex_primer29 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisi */
+}
+
+div.flex_primer29 .flex_element:nth-of-type(1) {
+	width: 100px;
+	flex-basis: 200px; /* ima prioritet */
+}
+
+div.flex_primer29 .flex_element:nth-of-type(2) {
+	width: 200px;
+	flex-basis: 300px; /* ima prioritet */
+}
+
+div.flex_primer29 .flex_element:nth-of-type(3) {
+	width: 300px;
+	flex-basis: 100px; /* ima prioritet */
+}
+
+
+/* primer 30 */
+
+div.flex_primer30 {
+	width: 540px;
+}
+
+div.flex_primer30 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisi */
+}
+
+div.flex_primer30 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(1),
+div.flex_primer30 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(2),
+div.flex_primer30 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(3),
+div.flex_primer30 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1),
+div.flex_primer30 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2),
+div.flex_primer30 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(2) {
+	width: auto;
+	flex-basis: auto;
+}
+
+div.flex_primer30 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex-basis: 100%;
+}
+
+div.flex_primer30 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(1) {
+	flex-basis: 70%;
+}
+
+div.flex_primer30 .flex_kontejner:nth-of-type(3) .flex_element:nth-of-type(3) {
+	flex-basis: 80%;
+}
+
+/* primer 31 */
+
+div.flex_primer31 {
+	width: 540px;
+}
+
+div.flex_primer31 .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisi */
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(1) {
+	flex: 2 1 auto;
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(2) {
+	flex: 1 1 auto;
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(1) .flex_element:nth-of-type(3) {
+	flex: 3 1 auto;
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(1) {
+	flex: 2 1 0%; /* postavi flex bazu na nulu */
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(2) {
+	flex: 1 1 0%; /* postavi flex bazu na nulu */
+}
+
+div.flex_primer31 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
+	flex: 3 1 0%; /* postavi flex bazu na nulu */
+}
+
 
 /* futer */
 

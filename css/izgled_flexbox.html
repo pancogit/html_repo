@@ -1114,6 +1114,131 @@
 	
 	<h4>Osnova (baza) flex elemenata</h4>
 	
+	<p>Flex osnova (baza) je velicina flex elementa pre nego sto se element rasiri
+	   ili skupi. To je pocetna velicina flex elementa.
+	</p>
+	<p>Flex baza moze se racunati na vise nacina. Primer sadrzajne flex baze:</p>
+	<div class="flex_primer26">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: sadrzaj</p>
+			<p class="flex_element">flex baza: sadrzaj</p>
+			<p class="flex_element">flex baza: sadrzaj</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element"><b>flex baza: sadrzaj</b> je postavljen sa par reci</p>
+			<p class="flex_element">Ovo je <b>flex baza: sadrzaj</b> i <b>pozadinska boja
+				rgba(0, 0, 0, 0.2)</b> sa dosta dodatnog teksta, za razliku od ostalih flex
+				elemenata koji zauzimaju samo par redova.
+			</p>
+			<p class="flex_element">Ovo je takodje jedan <b>flex baza: sadrzaj</b> sa srednjom
+				duzinom teksta.
+			</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element"><b>flex baza: sadrzaj</b> je postavljen sa par reci</p>
+			<p class="flex_element">Ovo je <b>flex baza: sadrzaj</b> i <b>pozadinska boja
+				rgba(0, 0, 0, 0.2)</b> sa dosta dodatnog teksta, za razliku od ostalih flex
+				elemenata koji zauzimaju samo par redova.
+			</p>
+			<p class="flex_element">Ovo je takodje jedan <b>flex baza: sadrzaj</b> sa srednjom
+				duzinom teksta.
+			</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer26 -->
+	<p>U prvom i trecem primeru sirina baze je sirina sadrzaja samog flex elementa. U trecem primeru
+	   sadzaj je u jednoj liniji, jer je iskljuceno suzavanje flex elementa. U drugom primeru je
+	   suzavanje flex elementa omoguceno, pa je sirina flex baze dosta manja i nije kao u prvom
+	   i trecem primeru jednaka sadrzaju flex elementa.
+	</p>
+	
+	<p>Primer automatske flex baze:</p>
+	<div class="flex_primer27">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: automatska; sirina: automatska;</p>
+			<p class="flex_element">flex baza: automatska; sirina: automatska;</p>
+			<p class="flex_element">flex baza: automatska; sirina: automatska;</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: automatska; sirina: 100px;</p>
+			<p class="flex_element">flex baza: automatska; sirina: 150px;</p>
+			<p class="flex_element">flex baza: automatska; sirina: 200px;</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: automatska; sirina: 2000px;</p>
+			<p class="flex_element">flex baza: automatska; sirina: 3000px;</p>
+			<p class="flex_element">flex baza: automatska; sirina: 4000px;</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer27 -->
+	
+	<p>Podrazumevana vrednost za flex bazu je automatska vrednost. Ukoliko nije postavljena,
+	   onda se gleda definisana vrednost za sirinu (visinu) flex elementa. Primer podrazumevane
+	   vrednosti za flex bazu:
+	</p>
+	<div class="flex_primer28">
+		<div class="flex_kontejner">
+			<p class="flex_element">sirina: 100px</p>
+			<p class="flex_element">sirina: 200px</p>
+			<p class="flex_element">sirina: 300px</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">sirina: 200px</p>
+			<p class="flex_element">sirina: 400px</p>
+			<p class="flex_element">sirina: 200px</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer28 -->
+	
+	<p>Ukoliko imamo duzine za flex bazu zadate preko flex osnove i preko sirine (visine)
+	   flex elementa, uvek ima prioritet flex osnova. Primer:
+	</p>
+	<div class="flex_primer29">
+		<div class="flex_kontejner">
+			<p class="flex_element">sirina: 100px; flex baza: 200px</p>
+			<p class="flex_element">sirina: 200px; flex baza: 300px</p>
+			<p class="flex_element">sirina: 300px; flex baza: 100px</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer29 -->
+	
+	<p>Flex baza moze da bude izrazena i u procentima. Taj procenat je u odnosu na flex
+	   kontejner. Ukoliko je na primer flex element sa flex bazom 50%, to znaci da mu je
+	   flex baza jednaka sirini 50% od sirine flex kontejnera u kome se nalazi. To znaci
+	   da ce se on suzavati ako ne moze da stane u flex kontejner, kao i njegovi susedni
+	   flex elementi. Primer:</p>
+	<div class="flex_primer30">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: automatska</p>
+			<p class="flex_element">flex baza: automatska</p>
+			<p class="flex_element">flex baza: automatska</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: automatska</p>
+			<p class="flex_element">flex baza: automatska</p>
+			<p class="flex_element">flex baza: 100%</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex baza: 70%</p>
+			<p class="flex_element">flex baza: automatska</p>
+			<p class="flex_element">flex baza: 80%</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer30 -->
+	
+	<p>Flex baza moze takodje imati i nula vrednost. Ukoliko flex baza ima nula vrednost,
+	   onda se sirina flex elementa racuna u odnosu na sirinu celog flex kontejnera.
+	   U ovom slucaju ceo flex kontejner je prostor za raspodelu izmedju flex elemenata
+	   koji imaju bazu jednaku nuli. Primer:
+	</p>
+	<div class="flex_primer31">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex: 2 1 automatska</p>
+			<p class="flex_element">flex: 1 1 automatska</p>
+			<p class="flex_element">flex: 3 1 automatska</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex: 2 1 0%</p>
+			<p class="flex_element">flex: 1 1 0%</p>
+			<p class="flex_element">flex: 3 1 0%</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer31 -->
+	
 	<div class="futer">
 		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>
 		<p>Vrati se na glavnu <a href="../index.html">html</a> stranu.</p>
