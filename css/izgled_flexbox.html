@@ -1239,6 +1239,462 @@
 		</div><!-- flex_kontejner -->
 	</div><!-- flex_primer31 -->
 	
+	<h3>Flex precica</h3>
+	
+	<p>Postoji vise primena flex precice. Najcesce se koriste ove cetiri:</p>
+	<ol>
+		<li><i>inicijalni flex</i></li>
+		<li><i>automatski flex</i></li>
+		<li><i>iskljuceni flex</i></li>
+		<li><i>numericki flex</i></li>
+	</ol>
+	<p>Pokazacemo sada sva cetiri primera pojedinacno u nastavku.</p>
+	<p>Inicijalni flex:</p>
+	<div class="flex_primer32 flex_precica_primer">
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer32 -->
+	<p>Podrazumevana vrednost za flex parametre su da se flex elementi suzavaju, da ne rastu i da
+	   im je flex baza postavljena na automatsku vrednost.
+	   U prvom i trecem slucaju, sirina flex kontejnera je ogranicena, tako da se elementi suzavaju.
+	   U trecem primeru je baza podesena da bude 50px i zato se elementi podjednako suzavaju za 
+	   razliku od prvog primera. U drugom i cetvrtom primeru flex elementi staju celom sirinom u flex
+	   kontejner, jedino je razlika sto u cetvrtom primeru flex elementi su fiksirani na 50px sirine.
+	</p>
+	
+	<p>Sada primer za automatski flex:</p>
+	<div class="flex_primer33 flex_precica_primer">
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer33 -->
+	<p>Isto kao i gore, prvi i treci flex kontejner su ograniceni sirinom i zbog toga se flex
+	   elementi suzavaju, dok su u drugom i cetvrtom primeru sirine flex kontejnera neogranicene,
+	   tako da ce elementi da rastu kako raste flex kontejner. Automatska vrednost za flex precicu
+	   znaci da ce flex elementi moci da se sire, da se suzavaju i flex baza ce da im bude automatske
+	   sirine. Jedina razlika u odnosu na prvi primer jeste u tome sto se u drugom i cetvrtom flex
+	   kontejneru flex elementi sire, tj. rastu do kraja ivica flex kontejnera i rastu podjednako.
+	   U cetvrtom primeru flex elementi rastu podjednako isto i krajnje sirine su im iste, zato sto
+	   im je flex baza postavljena na 50px i zato su iste sirine. U drugom primeru flex elementi
+	   nisu krajnje iste sirine, zato sto su im pocetne sirine razlicite, jer je flex baza automatska,
+	   pa su pocetne sirine tih flex elemenata jednake pocetnoj sirini sadrzaja koji staje u te
+	   flex elemente.
+	</p>
+	
+	<p>Sada primer za flex precicu koja je iskljucena:</p>
+	<div class="flex_primer34 flex_precica_primer">
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer34 -->
+	<p>Kada sa flex precicom iskljucimo sve flex osobine, onda dobijamo flex elemente koji ne mogu da rastu,
+	   koji ne mogu da se suzavaju i cija je flex baza automatske sirine, samo onoliko koliko tekst moze da
+	   stane. Na kraju dobijamo za sva cetiri slucaja flex elemente koji nisu nimalo porasli, niti se 
+	   suzili, vec su sirine kao njihov sadrzaj (tekst). Svi flex elementi su iste sirine, izuzev flex
+	   elemenata u trecem i cetvrtom slucaju koji su 50px, jer je njihova sirina postavljena na 50px,
+	   pa je flex baza u tom slucaju 50px. U prvom i trecem slucaju flex elementi ispadaju iz okvira flex
+	   kontejnera, dok u drugom i cetvrtom slucaju to inicijalno nije tako, ali ukoliko smanjujemo prozor,
+	   onda ce i oni da ispadnu iz okvira flex kontejnera, jer flex prebacivanje u novi red nije ukljuceno.
+	   Sirine flex kontejnera u prvom i trecem slucaju su fiksirane.
+	</p>
+	
+	<p>I na kraju primer numericke flex precice:</p>
+	<div class="flex_primer35 flex_precica_primer">
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">A</p>
+			<p class="flex_element">B B</p>
+			<p class="flex_element">C C C</p>
+			<p class="flex_element">D D D D</p>
+			<p class="flex_element">E E E E E</p>
+			<p class="flex_element">F F F F</p>
+			<p class="flex_element">G G G</p>
+			<p class="flex_element">H H</p>
+			<p class="flex_element">I</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer35 -->
+	<p>Kada se postavi flex precica da bude na numericku vrednost, onda ce flex baza da bude postavljena
+	   na nulu, sto znaci da ce ceo flex kontejner, cela njegova sirina da bude prostor za rasporedjivanje
+	   slobodnog prostora izmedju flex elemenata. Zatim ce rast flex elemenata da bude jednak toj zadatoj
+	   numerickoj vrednosti, sto znaci da ce svi flex elementi biti iste sirine, zato sto im je koeficijent
+	   za rast postavljen na istu numericku vrednost i krajnje sirine flex elemenata ce isto biti iste
+	   zato sto su im flex baze iste, tj. one su nula, pa ce ceo flex kontejner da se rasporedilo podjednako.
+	   U drugom i cetvrtom slucaju flex elementi su vece sirine, ali to je zato sto ima flex kontejneri nisu
+	   ograniceni kao u prvom i trecem slucaju i zato su oni veci, vise rastu, jer imaju vise raspolozivog prostora.
+	   U prvom i trecem slucaju krajnje sirine flex elemenata su iste, zato sto su im baze jednake. Iako smo
+	   postavili sirinu flex elemenata u trecem i cetvrtom primeru na fiksne vrednosti, one ce biti ponistene
+	   sa flex bazom, jer ona ima prioritet na pocetnom sirinom flex elemenata.
+	   Takodje flex suzavanje je omoguceno, ali je na jedinicu postavljeno, a ne na zadatu numericku vrednost.
+	   Ovo suzavanje nece imati uopste efekta, tako da mozemo racunati da se elementi nece suzavati, vec ce
+	   samo da rastu. Ovo se desava zato sto je flex baza postavljena na nulu i zbog toga pocetne sirine flex
+	   elemenata ce biti nula piksela i zato ce flex elementi uvek da rastu, jer koliki god da je flex kontejner,
+	   da li rasiren ili suzen, uvek ce ceo prostor flex kontejnera da se ravnomerno rasporedi na flex
+	   elemente i onda dobijamo samo efekat rasta, a ne suzavanja.
+	</p>
+	
+	<p>Evo jos jednog primera za numericki flex:</p>
+	<div class="flex_primer36 flex_precica_primer">
+		<div class="flex_kontejner">
+			<p class="flex_element">flex: 0</p>
+			<p class="flex_element">flex: 1</p>
+			<p class="flex_element">flex: 2</p>
+			<p class="flex_element">flex: 3</p>
+			<p class="flex_element">flex: 4</p>
+			<p class="flex_element">flex: 5</p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element"></p>
+			<p class="flex_element"></p>
+			<p class="flex_element"></p>
+			<p class="flex_element"></p>
+			<p class="flex_element"></p>
+			<p class="flex_element"></p>
+		</div><!-- flex_kontejner -->
+		<div class="flex_kontejner">
+			<p class="flex_element">flex: 0</p>
+			<p class="flex_element">flex: 1</p>
+			<p class="flex_element">flex: 2</p>
+			<p class="flex_element">flex: 3</p>
+			<p class="flex_element">flex: 4</p>
+			<p class="flex_element">flex: 5</p>
+		</div><!-- flex_kontejner -->
+	</div><!-- flex_primer36 -->
+	<p>U prvom i drugom slucaju sirina flex kontejnera je ogranicena. Numericka flex precica je postavljena
+	   na vrednosti 0, 1, 2, 3, 4 i 5, tim redosledom, kao sto je napisani unutar flex elemenata. To znaci
+	   da ce flex elementi da rastu razlicitom sirinom zato sto su im faktori za rast razliciti. Baza im je nula,
+	   zbog numerickog flex-a, pa zato se ceo kontejner rasporedjuje kao slobodan prostor, sto smo gore i
+	   pokazali. Razlika izmedju prvog i drugog slucaja je u tome sto im je sadrzaj drugaciji, u drugom slucaju
+	   nemamo nikakav sadrzaj, pa je sirina flex elemenata jednaka rastu flex elemanta. U prvom slucaju
+	   sirina flex elemenata je jednaka rastu flex elemenata, ali minimalna sirina flex elementa je jednaka
+	   sadrzaju sadrzaja unutar tog flex elementa. Jer flex element moze biti najmanji koliki je njegov sadrzaj,
+	   ne moze manje od toga da bude. U trecem slucaju flex elementi rastu razlicitim sirinama kao i u prethodna
+	   dva slucaja, ali je razlika u tome sto ce vise da narastu jer nije ogranicena sirina flex kontejnera.
+	</p>
+	
+	<h3>Redosled flex elemenata</h3>
+	<p>Redosled flex elemenata se moze promeniti. Podrazumevana vrednost za redosled flex elemenata je nula.
+	   Ukoliko se vrednost za redosled nekog flex elementa promeni, onda taj flex element pripada toj
+	   grupi redosleda. Npr. mozemo da imamo nekoliko elemenata sa redosledom 2, nekoliko sa redosledom -1,
+	   i ostali flex elementi sa podrazumevanim redosledom 0. Prvo ce se prikazivati flex elementi u grupi
+	   sa redosledom -1, zatim oni sa 0, pa na kraju oni sa 2. Grupe se sortirane prikazuju, dok se unutar
+	   grupe elementi prikazuju po redosledu pojavljivanja u html dokumentu.
+	</p>
+	<p>Sada cemo pokazati nekoliko primera.</p>
+	<div class="flex_primer37" id="flex_primer37_id">
+		<p>Pogledajmo prvo primer liste koja je flex kontejner bez markera za liste:</p>
+		<ul class="flex_kontejner">
+			<li class="flex_element"><a href="#flex_primer37_id">1</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">2</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">3</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">4</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">5</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">6</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">7</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">8</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">9</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">10</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">11</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">12</a></li>
+		</ul>
+		<p>Ukoliko sesti element ima najvecu vrednost za redosled flex elemenata, onda ce se
+		   on prikazati na kraju liste. Isto tako i za sedmi element, ako ima najmanju vrednost
+		   za redosled flex elemenata, onda ce biti prikazan na pocetku liste:
+		</p>
+		<ul class="flex_kontejner">
+			<li class="flex_element"><a href="#flex_primer37_id">1</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">2</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">3</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">4</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">5</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">6</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">7</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">8</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">9</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">10</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">11</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">12</a></li>
+		</ul>
+		<p>Kao sto vidimo u ovom primeru, jedna grupa flex elemenata se prikazuju na pocetku,
+		   dok se druga grupa flex elemenata prikazuje na kraju. Ostali flex elementi koji nemaju
+		   zadatu vrednost za redosled, imace podrazumevanu vrednost 0, tj. bicu u grupi flex
+		   elemenata sa vrednoscu 0 za redosled:
+		</p>
+		<ul class="flex_kontejner">
+			<li class="flex_element"><a href="#flex_primer37_id">1</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">2</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">3</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">4</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">5</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">6</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">7</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">8</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">9</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">10</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">11</a></li>
+			<li class="flex_element"><a href="#flex_primer37_id">12</a></li>
+		</ul>
+		<p>Za sve ove primere smo videli da imamo jednu te istu listu. U html dokumentu to je jedna ista
+		   lista, jer je redosled identican. Jedina je razlika sto se elementi ne prikazuju na stranici
+		   po istom redosledu, vec po razlicitom, zato sto su vrednosti za redosled flex elemenata promenjene.
+		   Liste sadrze linkove i kada se tabulacijom krecemo, onda vidimo redosled kao iz html dokumenta.
+		   Redosled je promenjen na stranici, ali je u html dokumentu ostao isti. Na ovaj nacin se samo
+		   menja prikaz flex elemenata, ne stvarni redosled u html dokumentu. Kada se tabulacijom krecemo
+		   preko ovih linkova unutar liste, onda se vidi da se postuje redosled iz html dokumenta, a ne
+		   redosled koji je prikazan na strani. Redosled flex elemenata sluzi samo za drugaciji redosled
+		   prikazivanja na strani.
+		</p>
+		<p>Ove tabulacije su dobre za navigacione menije, gde imamo glavni meni,
+		   pa onda neki podmeni i tako dalje. U slucaju responzivnog menija, onda ce se prikazivati prvo
+		   glavni meni, pa podmeni unutar pojedinacnog glavnog menija i tako dalje.
+		   Kada idemo tabulacijom preko responzivnog menija, onda mozemo da idemo preko glavnog menija,
+		   pa preko podmenija i tako dalje. Ovo se postize menjanjem redosleda flex elemenata da se prikazuju
+		   na stranici drugacije, dok se tabulacijom prelazi na drugaciji nacin definisan u samom html-u.
+		   Na primer, glavni meni moze da ima vrednost za redosled 1, podmeniji da imaju vrednost za redosled
+		   2, itd. Onda u html dokumentu prikazemo prvo glavni meni, pa tek onda podmeni, i tako kada
+		   budemo isli tabulacijom, imacemo situaciju da idemo prvo kroz glavni meni, pa tek onda kroz
+		   podmeni, dok ce se na strani prikazati drugaciji redosled: ici ce prvo glavni meni, pa ceo
+		   njegov podmeni, pa onda drugi glavni meni, pa onda njegov podmeni itd.
+		   Ovu primeru cemo prikazati u sledecim primerima.
+		</p>
+	</div><!-- flex_primer37 -->
+	
+	<h4>Tabulacije i redosled flex elemenata</h4>
+	
+	<div class="flex_primer38" id="flex_primer38_id">
+		<ul>
+			<li><a href="#flex_primer38_id">Home</a></li>
+			<li><a href="#flex_primer38_id">About</a></li>
+			<li class="flex_primer38_aktivan"><a href="#flex_primer38_id">Blog</a></li>
+			<li><a href="#flex_primer38_id">Careers</a></li>
+			<li><a href="#flex_primer38_id">Contact Us</a></li>
+		</ul>
+	</div><!-- flex_primer38 -->
+	<p>Kao sto vidimo u ovom primeru, tabulacijom se krecemo drugacije u odnosu na prikazani redosled
+	   flex elemenata na stranici. To je zato sto za treci flex element promenili vrednost za redosled,
+	   i on se sada prvi prikazuje.
+	</p>
+	<p>Pogledajmo sada primer sa responzivnom stranicom koju smo vec uradili ranije:</p>
+	<div class="flex_primer25 flex_primer39" id="flex_primer25_id">
+		<div class="flex_primer25_heder">
+			<p>Ovo je primer hedera</p>
+		</div><!-- flex_primer25_heder -->
+		<div class="flex_primer25_sadrzaj">
+			<div class="flex_primer25_sadrzaj_levo">
+				<ul>
+					<li><a href="#flex_primer25_id">Home</a></li>
+					<li><a href="#flex_primer25_id">About</a></li>
+					<li><a href="#flex_primer25_id">Blog</a></li>
+					<li><a href="#flex_primer25_id">Careers</a></li>
+					<li><a href="#flex_primer25_id">Contact Us</a></li>
+				</ul>
+			</div><!-- flex_primer25_sadrzaj_levo -->
+			<div class="flex_primer25_sadrzaj_sredina">
+				<h2>Evo ga jedan naslov</h2>
+				<p>Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				   Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst. Ovo je neki tekst.
+				</p>
+			</div><!-- flex_primer25_sadrzaj_sredina -->
+			<div class="flex_primer25_sadrzaj_desno">
+				<h3>Naslov sa desne strane</h3>
+				<p>Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				   Ovo je tekst sa desne strane. Ovo je tekst sa desne strane.
+				</p>
+			</div><!-- flex_primer25_sadrzaj_desno -->
+		</div><!-- flex_primer25_sadrzaj -->
+		<div class="flex_primer25_futer">
+			<p>&copy; by flex primer</p>
+		</div><!-- flex_primer25_futer -->
+	</div><!-- flex_primer25 -->
+	<p>Redosled delova sadrzaja stranice se moze promeniti preko redosleda flex elemenata.
+	   Ovo je jako korisno kada je potrebno da se menja raspored flex elemenata kod stranica za
+	   mobilne telefone.
+	</p>
+	
+	<p>Pogledajmo jos primer za glavni meni i podmeni i primer koriscenja tabulacije i redosleda
+	   flex elemenata:
+	</p>
+	<div class="flex_primer40" id="flex_primer40_id">
+		<ul>
+			<!-- glavni meni -->
+			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Home</a></li>
+			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">About</a></li>
+			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Blog</a></li>
+			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Careers</a></li>
+			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Contact Us</a></li>
+			<!-- podmeni glavnog menija -->
+			<li class="flex_primer40_about"><a href="#flex_primer40_id">About Us</a></li>  <!-- za glavni meni About -->
+			<li class="flex_primer40_about"><a href="#flex_primer40_id">Our Story</a></li> <!-- za glavni meni About -->
+			<li class="flex_primer40_blog"><a href="#flex_primer40_id">Blog 1</a></li>    <!-- za glavni meni Blog -->
+			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Join Us</a></li>   <!-- za glavni meni Careers -->
+			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Send CV</a></li>   <!-- za glavni meni Careers -->
+			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Motivation Letter</a></li> <!-- za glavni meni Careers -->
+			<li class="flex_primer40_contact_us"><a href="#flex_primer40_id">Phone Numbers</a></li> <!-- za glavni meni Contact Us -->
+		</ul>
+	</div><!-- flex_primer40 -->
+	
 	<div class="futer">
 		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>
 		<p>Vrati se na glavnu <a href="../index.html">html</a> stranu.</p>

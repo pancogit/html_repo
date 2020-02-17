@@ -1583,6 +1583,213 @@ div.flex_primer31 .flex_kontejner:nth-of-type(2) .flex_element:nth-of-type(3) {
 	flex: 3 1 0%; /* postavi flex bazu na nulu */
 }
 
+/* primer 32 */
+
+/* 
+	koristi vec definisanu klasu .flex_precica_primer da ne ponavljamo
+	za sva cetiri primera jedno isto
+	ovo vazi i za donje selektore koji selektuju flex kontejner i flex elemente
+*/
+div.flex_precica_primer .flex_kontejner {
+	flex-wrap: nowrap; /* redefinisi prebacivanje u novi red */
+	text-align: center;
+}
+
+div.flex_precica_primer .flex_element {
+	padding: 2px; /* redefinisi razmak za ovaj primer */
+	margin: 2px; /* redefinisi margine za ovaj primer */
+}
+
+div.flex_primer32 .flex_element {	
+	/* postavi podrazumevani flex za sve flex elemente */
+	flex: 0 1 auto;
+	flex: initial;
+}
+
+div.flex_precica_primer .flex_kontejner:nth-of-type(1),
+div.flex_precica_primer .flex_kontejner:nth-of-type(3) {
+	width: 340px;
+}
+
+div.flex_precica_primer .flex_kontejner:nth-of-type(3) .flex_element,
+div.flex_precica_primer .flex_kontejner:nth-of-type(4) .flex_element {
+	width: 50px;
+}
+
+/* primer 33 */
+
+div.flex_primer33 .flex_element {	
+	/* postavi podrazumevani flex za sve flex elemente */
+	flex: 1 1 auto;
+	flex: auto;
+}
+
+/* primer 34 */
+
+div.flex_primer34 .flex_element {	
+	/* postavi podrazumevani flex za sve flex elemente */
+	flex: 0 0 auto;
+	flex: none;
+}
+
+/* primer 35 */
+
+div.flex_primer35 .flex_element {	
+	/* postavi podrazumevani flex za sve flex elemente */
+	flex: 3 1 0%;
+	flex: 3;
+}
+
+/* primer 36 */
+
+div.flex_primer36 .flex_element {	
+	/* postavi podrazumevani flex za sve flex elemente */
+	flex: 3 1 0%;
+	flex: 3;
+}
+
+div.flex_primer36 .flex_kontejner:nth-of-type(1),
+div.flex_primer36 .flex_kontejner:nth-of-type(2) {
+	width: 340px;
+}
+
+div.flex_primer36 .flex_kontejner:nth-of-type(3) {
+	width: auto; /* redefinisi sirinu na podrazumevanu vrednost */
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(1) {
+	flex: 0 1 0%;
+	flex: 0;
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(2) {
+	flex: 1 1 0%;
+	flex: 1;
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(3) {
+	flex: 2 1 0%;
+	flex: 2;
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(4) {
+	flex: 3 1 0%;
+	flex: 3;
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(5) {
+	flex: 4 1 0%;
+	flex: 4;
+}
+
+div.flex_primer36 .flex_kontejner .flex_element:nth-of-type(6) {
+	flex: 5 1 0%;
+	flex: 5;
+}
+
+/* primer 37 */
+
+div.flex_primer37 ul {
+	display: inline-flex;
+	list-style-type: none;
+	padding: 0px;
+}
+
+/* prikazi sesti flex element na kraju */
+div.flex_primer37 ul:nth-of-type(2) li:nth-of-type(6) {
+	order: 1;
+}
+
+/* prikazi sedmi flex element na pocetku */
+div.flex_primer37 ul:nth-of-type(2) li:nth-of-type(7) {
+	order: -1;
+}
+
+/* prikazi ovu grupi flex elemenata na kraju */
+div.flex_primer37 ul:nth-of-type(3) li:nth-of-type(3n - 1) {
+	order: 3;
+	background-color: #7bd9f7;
+}
+
+/* prikazi ovu grupu flex elemenata na pocetku */
+div.flex_primer37 ul:nth-of-type(3) li:nth-of-type(3n + 1) {
+	order: -1;
+	background-color: #3a9aff;
+}
+
+/* primer 38 */
+
+div.flex_primer38 ul {
+	display: flex; /* flex kontejner */
+	list-style-type: none;
+	padding: 0px;
+	justify-content: flex-end; /* uravnjaj flex elemente na kraju flex kontejnera */
+	flex-wrap: wrap;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div.flex_primer38 ul li {
+	margin: 5px;
+	margin-bottom: 0px;
+}
+
+div.flex_primer38 ul li a {
+	display: inline-block;
+	padding: 5px 15px;
+	color: black;
+	background-color: #c4c4c4;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+div.flex_primer38 ul li a:hover {
+	background-color: #888686;
+	text-decoration: underline;
+}
+
+li.flex_primer38_aktivan {
+	order: -1;
+}
+
+/* primer 39 */
+
+div.flex_primer39 .flex_primer25_sadrzaj_levo {
+	order: 3;
+}
+
+div.flex_primer39 .flex_primer25_sadrzaj_sredina {
+	order: 1;
+}
+
+div.flex_primer39 .flex_primer25_sadrzaj_desno {
+	order: 2;
+}
+
+/* primer 40 */
+
+div.flex_primer40 ul {
+	padding: 0px;
+	list-style-type: none;
+	display: flex; /* flex kontejner za listu */
+	flex-direction: column;
+	width: 300px;
+}
+
+div.flex_primer40 ul li {
+	display: flex; /* flex kontejner za linkove */
+	flex-direction: column;
+}
+
+div.flex_primer40 ul li a {
+	color: white;
+	padding: 5px;
+}
+
+div.flex_primer40 .flex_primer40_glavni_meni a {
+	background-color: gray;
+}
 
 /* futer */
 
