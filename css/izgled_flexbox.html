@@ -1630,18 +1630,18 @@
 	   i on se sada prvi prikazuje.
 	</p>
 	<p>Pogledajmo sada primer sa responzivnom stranicom koju smo vec uradili ranije:</p>
-	<div class="flex_primer25 flex_primer39" id="flex_primer25_id">
+	<div class="flex_primer25 flex_primer39" id="flex_primer39_id">
 		<div class="flex_primer25_heder">
 			<p>Ovo je primer hedera</p>
 		</div><!-- flex_primer25_heder -->
 		<div class="flex_primer25_sadrzaj">
 			<div class="flex_primer25_sadrzaj_levo">
 				<ul>
-					<li><a href="#flex_primer25_id">Home</a></li>
-					<li><a href="#flex_primer25_id">About</a></li>
-					<li><a href="#flex_primer25_id">Blog</a></li>
-					<li><a href="#flex_primer25_id">Careers</a></li>
-					<li><a href="#flex_primer25_id">Contact Us</a></li>
+					<li><a href="#flex_primer39_id">Home</a></li>
+					<li><a href="#flex_primer39_id">About</a></li>
+					<li><a href="#flex_primer39_id">Blog</a></li>
+					<li><a href="#flex_primer39_id">Careers</a></li>
+					<li><a href="#flex_primer39_id">Contact Us</a></li>
 				</ul>
 			</div><!-- flex_primer25_sadrzaj_levo -->
 			<div class="flex_primer25_sadrzaj_sredina">
@@ -1679,21 +1679,52 @@
 	<div class="flex_primer40" id="flex_primer40_id">
 		<ul>
 			<!-- glavni meni -->
-			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Home</a></li>
-			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">About</a></li>
-			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Blog</a></li>
-			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Careers</a></li>
-			<li class="flex_primer40_glavni_meni"><a href="#flex_primer40_id">Contact Us</a></li>
+			<li class="flex_primer40_glavni_meni flex_primer40_home">
+				<a href="#flex_primer40_id">Home</a>
+			</li>
+			<li class="flex_primer40_glavni_meni flex_primer40_about">
+				<a href="#flex_primer40_id">About</a>
+			</li>
+			<li class="flex_primer40_glavni_meni flex_primer40_blog">
+				<a href="#flex_primer40_id">Blog</a>
+			</li>
+			<li class="flex_primer40_glavni_meni flex_primer40_careers">
+				<a href="#flex_primer40_id">Careers</a>
+			</li>
+			<li class="flex_primer40_glavni_meni flex_primer40_contact_us">
+				<a href="#flex_primer40_id">Contact Us</a>
+			</li>
 			<!-- podmeni glavnog menija -->
-			<li class="flex_primer40_about"><a href="#flex_primer40_id">About Us</a></li>  <!-- za glavni meni About -->
-			<li class="flex_primer40_about"><a href="#flex_primer40_id">Our Story</a></li> <!-- za glavni meni About -->
-			<li class="flex_primer40_blog"><a href="#flex_primer40_id">Blog 1</a></li>    <!-- za glavni meni Blog -->
-			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Join Us</a></li>   <!-- za glavni meni Careers -->
-			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Send CV</a></li>   <!-- za glavni meni Careers -->
-			<li class="flex_primer40_careers"><a href="#flex_primer40_id">Motivation Letter</a></li> <!-- za glavni meni Careers -->
-			<li class="flex_primer40_contact_us"><a href="#flex_primer40_id">Phone Numbers</a></li> <!-- za glavni meni Contact Us -->
+			<li class="flex_primer40_podmeni flex_primer40_pod_about">
+				<a href="#flex_primer40_id">About Us</a> <!-- za glavni meni About -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_about">
+				<a href="#flex_primer40_id">Our Story</a> <!-- za glavni meni About -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_blog">
+				<a href="#flex_primer40_id">Blog 1</a> <!-- za glavni meni Blog -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_careers">
+				<a href="#flex_primer40_id">Join Us</a> <!-- za glavni meni Careers -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_careers">
+				<a href="#flex_primer40_id">Send CV</a> <!-- za glavni meni Careers -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_careers">
+				<a href="#flex_primer40_id">Motivation Letter</a> <!-- za glavni meni Careers -->
+			</li>
+			<li class="flex_primer40_podmeni flex_primer40_pod_contact_us">
+				<a href="#flex_primer40_id">Phone Numbers</a> <!-- za glavni meni Contact Us -->
+			</li>
 		</ul>
 	</div><!-- flex_primer40 -->
+	<p>Kao sto vidimo, redosled u html dokumentu i na stranici nije isti. Na stranici smo promenili
+	   redosled prikazivanja flex elemenata pomocu redosleda za flex elemente, ali oni su i dalje u
+	   html dokumentu po istom redosledu. Prilikom prelaskom preko linkova liste tabulacijom, vidi
+	   se pravi redosled kao iz html dokumenta. Dodate su takodje pseudo klase za aktivni link i za fokus
+	   linka da bi se prikazala debela crvena isprekidana linija kada se prelazi tabulacijom preko
+	   linkova, cisto pokazno zbog ovog primera.
+	</p>
 	
 	<div class="futer">
 		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>

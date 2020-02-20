@@ -1787,9 +1787,74 @@ div.flex_primer40 ul li a {
 	padding: 5px;
 }
 
-div.flex_primer40 .flex_primer40_glavni_meni a {
-	background-color: gray;
+div.flex_primer40 ul li a:focus {
+	/* 
+		dodaj debelu crvenu liniju kada se prelazi tabulacijom preko linkova 
+		cisto da se jasno vidi zbog ovog primera 
+	*/
+	outline-color: red;
+	outline-width: 5px;
+	outline-style: dotted;
 }
+
+div.flex_primer40 ul li a:active {
+	outline: none;
+}
+
+div.flex_primer40 .flex_primer40_glavni_meni a {
+	background-color: black;
+}
+
+div.flex_primer40 .flex_primer40_podmeni a {
+	background-color: gray;
+	font-size: 80%;
+	padding-left: 10px; /* dodaj razmak da izgleda kao podmeni */
+}
+
+/*
+	pomocu raspredjivanja (order) mozemo da prikazemo na stranici drugacijim redosledom
+	flex elemente unutar flex kontejnera
+	ali ako koristimo tabulaciju prilikom prelazenja sa jednog linka na drugi, raspored
+	ce biti kao u html dokumentu
+*/
+
+/* za svaki element u glavnoj meniju, prikazi njegov podmeni ako ga ima */
+li.flex_primer40_home {
+	order: 1;
+}
+
+li.flex_primer40_about {
+	order: 2;
+}
+
+li.flex_primer40_pod_about {
+	order: 3;
+}
+
+li.flex_primer40_blog {
+	order: 4;
+}
+
+li.flex_primer40_pod_blog {
+	order: 5;
+}
+
+li.flex_primer40_careers {
+	order: 6;
+}
+
+li.flex_primer40_pod_careers {
+	order: 7;
+}
+
+li.flex_primer40_contact_us {
+	order: 8;
+}
+
+li.flex_primer40_pod_contact_us {
+	order: 9;
+}
+
 
 /* futer */
 

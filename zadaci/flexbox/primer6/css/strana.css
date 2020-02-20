@@ -1,0 +1,44 @@
+body {
+	font-family: Arial, Verdana, sans-serif;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+div.strana {
+	/* napravi flex kontejner i poredjaj u kolonu sve elemente */
+	display: flex;
+	flex-direction: column;
+}
+
+/* heder */
+
+div.heder {
+	display: flex;
+	flex-direction: column;
+}
+
+div.heder_poz {
+	background-image: url("../../../../slike/zadaci/primer6/heder3a.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+	height: 150px;
+}
+
+div.heder_omotac {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+/* meni */
+
+
+/* sadrzaj */
+
+
+
+/* futer */
