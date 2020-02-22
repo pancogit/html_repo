@@ -15,11 +15,6 @@ div.strana {
 
 /* heder */
 
-div.heder {
-	display: flex;
-	flex-direction: column;
-}
-
 div.heder_poz {
 	background-image: url("../../../../slike/zadaci/primer6/heder3a.jpg");
 	background-repeat: no-repeat;
@@ -29,12 +24,94 @@ div.heder_poz {
 }
 
 div.heder_omotac {
+	display: flex; /* flex kontejner i poredjaj u red elemente */
+	flex-wrap: wrap; /* postavi da mogu da se elementi prebace u novi red da bude responzivno */
+	justify-content: space-between; /* postavi elemente do leve i desne ivice i razdvoji ih*/
+	
+	/* podesi maksimalnu sirinu za kocku */
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
+div.heder_omotac_pretraga p.heder_omotac_pretraga_login {
+	margin-bottom: 10px;
+}
+
+div.heder_omotac_pretraga p.heder_omotac_pretraga_login a {
+	color: black;
+	font-weight: bold;
+}
+
+div.heder_omotac_pretraga {
+	margin-top: 50px;
+}
+
+div.heder_omotac_pretraga input {
+	padding: 2px;
+	padding-left: 4px;
+	width: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1.2px;
+	
+	/* dodaj donju marginu da se odvoji od dugmeta kada se smanji prozor */
+	margin-bottom: 5px;
+}
+
+div.heder_omotac_pretraga button {
+	background-color: black;
+	color: white;
+	border-style: solid; /* promeni liniju oko dugmeta i oboji u crno */
+	border-color: black;
+	outline: none;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+div.heder_omotac_logo {
+	font-weight: bold;
+	text-align: center; /* centriraj tekst u kocki */
+	font-style: italic;
+}
+
+div.heder_omotac_logo p.heder_omotac_logo_p {
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+div.heder_omotac_logo p.heder_omotac_logo_p a {
+	/* 
+		prikazuj link kao blok da bismo mogli span-ove da prikazemo isto kao blokove
+		i da drugom span-u postavimo negativnu marginu na gore
+	*/
+	display: block;
+	color: black;
+}
+
+div.heder_omotac_logo p.heder_omotac_logo_p a span {
+	display: block;
+	font-size: 3em; /* povecaj slova tri puta od normalne velicine */
+}
+
+/* pomeri malo drugi span sa ispisom godine na gore */
+div.heder_omotac_logo p.heder_omotac_logo_p a span:nth-of-type(2) {
+	margin-top: -10px;
+	font-size: 2.3em; /* smanji font za godinu */
+}
 
 /* meni */
+
+div.meni_omotac {
+	max-width: 1200px; /* postavi maksimalnu sirinu istu kao za heder */
+	margin: 0 auto; /* centriraj na sredinu */
+}
+
+div.meni_omotac ul {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px;
+	list-style-type: none;
+}
 
 
 /* sadrzaj */
