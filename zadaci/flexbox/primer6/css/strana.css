@@ -7,15 +7,9 @@ a {
 	text-decoration: none;
 }
 
-div.strana {
-	/* napravi flex kontejner i poredjaj u kolonu sve elemente */
-	display: flex;
-	flex-direction: column;
-}
-
 /* heder */
 
-div.heder_poz {
+div.heder {
 	background-image: url("../../../../slike/zadaci/primer6/heder3a.jpg");
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -23,30 +17,39 @@ div.heder_poz {
 	height: 150px;
 }
 
-div.heder_omotac {
+/* strana */
+
+div.strana {
+	max-width: 1200px; /* postavi maksimalnu sirinu strane */
+	margin: 0px auto;  /* centriraj sadrzaj strane na sredinu */
+	
+	/* podesi sadrzaj strane da bude lepo uravnat u koloni jedan ispod drugog */
+	display: flex;
+	flex-direction: column;
+}
+
+/* login */
+
+div.login_omotac {
 	display: flex; /* flex kontejner i poredjaj u red elemente */
 	flex-wrap: wrap; /* postavi da mogu da se elementi prebace u novi red da bude responzivno */
 	justify-content: space-between; /* postavi elemente do leve i desne ivice i razdvoji ih*/
-	
-	/* podesi maksimalnu sirinu za kocku */
-	max-width: 1200px;
-	margin: 0 auto;
 }
 
-div.heder_omotac_pretraga p.heder_omotac_pretraga_login {
+div.login_omotac_pretraga p.login_omotac_pretraga_login {
 	margin-bottom: 10px;
 }
 
-div.heder_omotac_pretraga p.heder_omotac_pretraga_login a {
+div.login_omotac_pretraga p.login_omotac_pretraga_login a {
 	color: black;
 	font-weight: bold;
 }
 
-div.heder_omotac_pretraga {
+div.login_omotac_pretraga {
 	margin-top: 50px;
 }
 
-div.heder_omotac_pretraga input {
+div.login_omotac_pretraga input {
 	padding: 2px;
 	padding-left: 4px;
 	width: 200px;
@@ -58,7 +61,7 @@ div.heder_omotac_pretraga input {
 	margin-bottom: 5px;
 }
 
-div.heder_omotac_pretraga button {
+div.login_omotac_pretraga button {
 	background-color: black;
 	color: white;
 	border-style: solid; /* promeni liniju oko dugmeta i oboji u crno */
@@ -68,18 +71,18 @@ div.heder_omotac_pretraga button {
 	padding-right: 2px;
 }
 
-div.heder_omotac_logo {
+div.login_omotac_logo {
 	font-weight: bold;
 	text-align: center; /* centriraj tekst u kocki */
 	font-style: italic;
 }
 
-div.heder_omotac_logo p.heder_omotac_logo_p {
+div.login_omotac_logo p.login_omotac_logo_p {
 	margin-top: 20px;
 	margin-bottom: 40px;
 }
 
-div.heder_omotac_logo p.heder_omotac_logo_p a {
+div.login_omotac_logo p.login_omotac_logo_p a {
 	/* 
 		prikazuj link kao blok da bismo mogli span-ove da prikazemo isto kao blokove
 		i da drugom span-u postavimo negativnu marginu na gore
@@ -88,33 +91,249 @@ div.heder_omotac_logo p.heder_omotac_logo_p a {
 	color: black;
 }
 
-div.heder_omotac_logo p.heder_omotac_logo_p a span {
+div.login_omotac_logo p.login_omotac_logo_p a span {
 	display: block;
 	font-size: 3em; /* povecaj slova tri puta od normalne velicine */
 }
 
 /* pomeri malo drugi span sa ispisom godine na gore */
-div.heder_omotac_logo p.heder_omotac_logo_p a span:nth-of-type(2) {
+div.login_omotac_logo p.login_omotac_logo_p a span:nth-of-type(2) {
 	margin-top: -10px;
 	font-size: 2.3em; /* smanji font za godinu */
 }
 
 /* meni */
 
-div.meni_omotac {
-	max-width: 1200px; /* postavi maksimalnu sirinu istu kao za heder */
-	margin: 0 auto; /* centriraj na sredinu */
-}
-
-div.meni_omotac ul {
+div.meni ul {
+	/* poredjaj flex elemente u red i omoguci prebacivanje u novi red */
 	display: flex;
 	flex-wrap: wrap;
+	
 	padding: 0px;
 	list-style-type: none;
 }
 
+div.meni ul li {
+	/* 
+		postavi za svaki flex element da bude iste velicine, tj. da baza bude ista
+		i da moze da se razvuce do kraja kocke
+	*/
+	flex: 1 1 120px;
+	
+}
+
+div.meni ul li {
+	margin-left: 2px;
+}
+
+div.meni ul li a {
+	/* postavi flex kontejner i rasporedi flex elemente u kolonu jedan ispod drugog */
+	display: flex;
+	flex-direction: column;
+	
+	color: black;
+	font-weight: bold;
+}
+
+div.meni .meni_traka_gore {
+	height: 8px;
+}
+
+div.meni .meni_traka_dole {
+	height: 5px;
+}
+
+div.meni .meni_sadrzaj {
+	height: 50px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+div.meni li.meni_home span {
+	background-color: #a0a0a0;
+}
+
+div.meni li.meni_home .meni_sadrzaj {
+	background-color: #efecec;
+}
+
+div.meni li.meni_visit span {
+	background-color: #dc1616;
+}
+
+div.meni li.meni_visit .meni_sadrzaj {
+	background-color: #ffe0e0;
+}
+
+div.meni li.meni_business span {
+	background-color: purple;
+}
+
+div.meni li.meni_business .meni_sadrzaj {
+	background-color: #ffe6ff;
+}
+
+div.meni li.meni_training span {
+	background-color: #212190;
+}
+
+div.meni li.meni_training .meni_sadrzaj {
+	background-color: #e3e8fb;
+}
+
+div.meni li.meni_children span {
+	background-color: #02bde2;
+}
+
+div.meni li.meni_children .meni_sadrzaj {
+	background-color: #e9fbff;
+}
+
+div.meni li.meni_paralympics span {
+	background-color: #88c15a;
+}
+
+div.meni li.meni_paralympics .meni_sadrzaj {
+	background-color: #e7ffd3;
+}
+
+div.meni li.meni_how_to_be span {
+	background-color: #f7e22b;
+}
+
+div.meni li.meni_how_to_be .meni_sadrzaj {
+	background-color: #fffce4;
+}
+
+div.meni li.meni_volunteering span {
+	background-color: #e26d10;
+}
+
+div.meni li.meni_volunteering .meni_sadrzaj {
+	background-color: #ffeee1;
+}
+
 
 /* sadrzaj */
+
+div.sadrzaj {
+	/* postavi flex kontejner i da bude kolone u red poredjane jedna uz drugu */
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* postavi prvu i trecu kolonu da budu iste flex baze i omoguci rast i suzavanje */
+div.sadrzaj_k1,
+div.sadrzaj_k3 {
+	flex: 1 1 200px;
+}
+
+/* za drugu kolonu isto kao gore, samo da bude sira flex baza za duplo i vise */
+div.sadrzaj_k2 {
+	flex: 1 1 500px;
+	
+	/* dodaj margine sa leve i desne strane da se napravi razmak izmedju kolona */
+	margin: 0px 16px;
+}
+
+div.sadrzaj_k1_vest {
+	margin-bottom: 16px;
+	background-color: #adadad; /* oboji razmak izmedju slike i teksta kao pozadinu */
+}
+
+/* 
+	za slike za vesti postavi u css-u sirinu na 100% kontejnera, a to je div kontejner,
+	da bi se slika smanjivala kako se prozor smanjuje
+	zbog html validacije, ovo nije moguce staviti kao vrednost atributa za sirinu u html-u,
+	jer ne prima procente, vec samo zadate sirine (npr. pikseli), ali moze u css-u
+	visina slike neka bude automatska, tj. da se proporcijalno originalnoj visini izracuna
+*/
+div.sadrzaj_k1_vest img {
+	width: 100%;
+	height: auto;
+}
+
+/* postavi link da bude flex kontejner i rasporedi u kolonu flex elemente */
+div.sadrzaj_k1_vest a {
+	display: flex;
+	flex-direction: column;
+}
+
+div.sadrzaj_k1_vest a span {
+	padding: 10px;
+	margin-top: 1.5px; /* stavi mali razmak iznad teksta */
+	color: white;
+	font-weight: bold;
+	border-style: solid;
+	border-width: 2px;
+}
+
+div.sadrzaj_k1_vest:nth-of-type(1) a span {
+	background-color: hsla(240, 72%, 38%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(240, 72%, 30%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(2) a span {
+	background-color: hsla(0, 74%, 53%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(0, 74%, 45%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(3) a span {
+	background-color: hsla(0, 0%, 52%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(0, 0%, 44%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(4) a span {
+	background-color: hsla(125, 52%, 40%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(125, 52%, 32%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(5) a span {
+	background-color: hsla(22, 52%, 40%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(22, 52%, 32%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(6) a span {
+	background-color: hsla(58, 41%, 47%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(58, 41%, 39%, 1);
+}
+
+div.sadrzaj_k1_vest:nth-of-type(7) a span {
+	background-color: hsla(188, 56%, 44%, 1);
+	
+	/* oboji malo tamnije linije oko kocke */
+	border-color: hsla(188, 56%, 36%, 1);
+}
+
+
+div.sadrzaj_k2_welcome {
+	position: relative; /* kontejner za pozicioniranje teksta unutar div-a */
+	margin-bottom: 16px;
+}
+
+/* isto kao i za slike u prvoj koloni, postavi maksimalnu sirinu do div kontejnera */
+div.sadrzaj_k2_welcome img {
+	width: 100%;
+	height: auto;
+}
+
+div.sadrzaj_k2_welcome_tekst {
+	position: absolute;
+	top: 0;
+}
+
 
 
 
