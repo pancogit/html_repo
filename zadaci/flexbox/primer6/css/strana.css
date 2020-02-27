@@ -144,7 +144,11 @@ div.meni .meni_traka_dole {
 }
 
 div.meni .meni_sadrzaj {
-	height: 50px;
+	/* 
+		visina mora da bude malo veca ako se prozor smanji na minimum,
+		da ne bi ispao tekst iz okvira, jer je fiksirana visina flex elementa
+	*/
+	height: 80px;
 	padding-top: 10px;
 	padding-left: 10px;
 }
@@ -236,6 +240,9 @@ div.sadrzaj_k2 {
 	margin: 0px 16px;
 }
 
+
+/* sadrzaj - prva kolona */
+
 div.sadrzaj_k1_vest {
 	margin-bottom: 16px;
 	background-color: #adadad; /* oboji razmak izmedju slike i teksta kao pozadinu */
@@ -318,22 +325,75 @@ div.sadrzaj_k1_vest:nth-of-type(7) a span {
 }
 
 
+/* sadrzaj - druga kolona */
+
 div.sadrzaj_k2_welcome {
 	position: relative; /* kontejner za pozicioniranje teksta unutar div-a */
 	margin-bottom: 16px;
+	
+	/* 
+		postavi pozadinsku sliku i isto kao i za slike u prvoj koloni, postavi maksimalnu 
+		sirinu do div kontejnera
+		visinu nemoj da stavis da bude automatska zato sto sadrzi tekst i kada se prozor
+		smanji na jako malu sirinu, onda ce tekst da ispadne iz okvira div-a i pozadinske slike
+		zato sto ce se visina slike smanjiti srazmerno na jaku malu visinu (jer je sirina mala isto)
+	*/
+	background-image: url("../../../../slike/zadaci/primer6/k2_welcome.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	height: 350px;
 }
 
 /* isto kao i za slike u prvoj koloni, postavi maksimalnu sirinu do div kontejnera */
+/*
 div.sadrzaj_k2_welcome img {
 	width: 100%;
 	height: auto;
 }
+*/
 
 div.sadrzaj_k2_welcome_tekst {
+	/* apsolutno pozicioniraj gore i celom sirinom u odnosu na div kontejner */
 	position: absolute;
 	top: 0;
+	width: 100%;
 }
 
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey,
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_opportunities {
+	text-align: right; /* pomeri tekst uz desnu ivicu kontejnera */
+}
+
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_opportunities {
+	width: 40%; /* postavi da bude blizu sirine pola kontejnera */
+	margin-left: 5%; /* pomeri malo od leve ivice kontejnera */
+	color: #3d3d3d;
+	color: #2c2b2b;
+}
+
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey {
+	margin-right: 5%; /* pomeri malo od desne ivice kontejnera */
+	font-style: italic;
+	font-weight: bold;
+}
+
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_wel {
+	font-size: 1.7em;
+	color: #353535;
+}
+
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_surr {
+	display: inline-block;  /* da bi mogao da ga menjas kao kocku, promeni izgled */
+    vertical-align: top;  /* vertikalno pomeri da bude tekst u odnosu na njega na vrhu */
+    text-align: center;
+	font-size: 2em;
+	color: black;
+}
+
+
+
+
+/* sadrzaj - treca kolona */
 
 
 
