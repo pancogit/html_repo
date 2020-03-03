@@ -12,15 +12,17 @@ a {
 div.heder {
 	background-image: url("../../../../slike/zadaci/primer6/heder3a.jpg");
 	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: top;
+	background-size: cover; /* pozadinska slika da prekrije celu sirinu i visinu, kolika god da je */
+	background-position: center top; /* pozicioniraj sliku na sredinu-gore */
 	height: 150px;
+	min-width: 240px; /* minimalna sirina kao za stranu */
 }
 
 /* strana */
 
 div.strana {
 	max-width: 1200px; /* postavi maksimalnu sirinu strane */
+	min-width: 240px; /* postavi minimalnu sirinu strane */
 	margin: 0px auto;  /* centriraj sadrzaj strane na sredinu */
 	
 	/* podesi sadrzaj strane da bude lepo uravnat u koloni jedan ispod drugog */
@@ -65,7 +67,7 @@ div.login_omotac_pretraga button {
 	background-color: black;
 	color: white;
 	border-style: solid; /* promeni liniju oko dugmeta i oboji u crno */
-	border-color: black;
+	border-color: #040404;
 	outline: none;
 	padding-left: 2px;
 	padding-right: 2px;
@@ -238,6 +240,8 @@ div.sadrzaj_k2 {
 	
 	/* dodaj margine sa leve i desne strane da se napravi razmak izmedju kolona */
 	margin: 0px 16px;
+	/* dodaj donju marginu izmedju druge i trece kolone kada se prozor smanji zbog responzivnosti */
+	margin-bottom: 5%; 
 }
 
 
@@ -340,7 +344,8 @@ div.sadrzaj_k2_welcome {
 	*/
 	background-image: url("../../../../slike/zadaci/primer6/k2_welcome.jpg");
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover; /* prekrij celu povrsinu div-a (i sirinu i visinu) */
+	background-position: center top; /* pozicioniraj sliku na centar po x osi i na vrh po y */
 	height: 350px;
 }
 
@@ -362,19 +367,19 @@ div.sadrzaj_k2_welcome_tekst {
 div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey,
 div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_opportunities {
 	text-align: right; /* pomeri tekst uz desnu ivicu kontejnera */
+	font-weight: bold;
+	color: #353535;
 }
 
 div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_opportunities {
-	width: 40%; /* postavi da bude blizu sirine pola kontejnera */
+	width: 45%; /* postavi da bude blizu sirine pola kontejnera */
 	margin-left: 5%; /* pomeri malo od leve ivice kontejnera */
-	color: #3d3d3d;
-	color: #2c2b2b;
+	color: black; /* crna boja se mnogo bolje vidi na jako malim ekranima */
 }
 
 div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey {
 	margin-right: 5%; /* pomeri malo od desne ivice kontejnera */
 	font-style: italic;
-	font-weight: bold;
 }
 
 div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_wel {
@@ -382,19 +387,206 @@ div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_w
 	color: #353535;
 }
 
-div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_surr {
-	display: inline-block;  /* da bi mogao da ga menjas kao kocku, promeni izgled */
-    vertical-align: top;  /* vertikalno pomeri da bude tekst u odnosu na njega na vrhu */
-    text-align: center;
-	font-size: 2em;
-	color: black;
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_surr_mesto {
+	font-size: 2.5em;
+	color: #1d1d1d;
 }
 
+div.sadrzaj_k2_welcome_tekst p.sadrzaj_k2_welcome_tekst_surrey span.sadrzaj_k2_welcome_tekst_surrey_surr_god {
+	display: block; /* da moze da mu se dodaju margine kao da je kocka */
+	font-size: 1.9em;
+	color: #1d1d1d;
+	margin-right: 30px;
+	margin-top: -10px;
+}
 
+div.sadrzaj_k2_deo {
+	display: flex;
+	flex-direction: column;
+}
+
+div.sadrzaj_k2_deo h4 {
+	display: flex; /* stavi da bude flex kontejner, da linkovi budu celom sirinom za kliktanje */
+	flex-direction: column;
+	margin: 5px 0px; /* smanji malo margine gore-dole */
+}
+
+div.sadrzaj_k2_deo a {
+	display: inline-block; /* ponasaj se kao blok da bismo stavili razmake i gore-dole */
+	color: black;
+	padding: 4px 10px;
+}
+
+div.sadrzaj_k2_deo a:hover {
+	background-color: #717171;
+	color: white;
+}
+
+div.sadrzaj_k2_deo h4.sadrzaj_k2_deo_glavni {
+	background-color: #d0d0d0;
+}
 
 
 /* sadrzaj - treca kolona */
 
+div.sadrzaj_k3 {
+	display: flex; /* treca kolona neka bude flex kontejner */
+	flex-direction: column;
+}
 
+div.sadrzaj_k3_deo {
+	background-color: #ececec;
+	margin-bottom: 5%; /* postavi margine relativno zbog responzivnosti */
+}
+
+div.sadrzaj_k3_deo h3.sadrzaj_k3_naslov {
+	background-color: #d0d0d0;
+	margin-top: 0px; /* skloni gornju marginu */
+	padding: 2% 5%;
+	font-size: 1em; /* smanji malo slova za naslov */
+}
+
+div.sadrzaj_k3_deo a {
+	font-weight: bold;
+	color: hsla(240, 74%, 43%, 1);
+}
+
+div.sadrzaj_k3_deo p {
+	padding: 0 5%;
+	line-height: 1.4em; /* povecaj razmak izmedju linija paragrafa */
+}
+
+div.sadrzaj_k3_deo  p.sadrzaj_k3_deo_read {
+	margin-bottom: 0px;
+}
+
+div.sadrzaj_k3_deo  p.sadrzaj_k3_deo_sign {
+	margin-top: 1%;
+}
 
 /* futer */
+
+div.futer {
+	min-width: 240px; /* minimalna sirina futera ista kao za heder i sadrzaj */
+	background-color: #4c4c4c;
+	background-color: #236c53;
+	color: white;
+}
+
+div.futer a {
+	color: white;
+}
+
+/* ovo je fiksiran deo futera koji je na centru */
+div.futer_centar {
+	max-width: 1200px; /* maksimalna sirina je ista kao za sadrzaj */
+	margin: 0 auto; /* centriraj na sredinu */
+	padding: 1% 0;
+}
+
+/* 
+	napravi razmak sa marginama u odnosu na centriran futer da ne bismo morali da racunamo
+	padding za ovaj div u odnosu na maksimalnu sirinu centriranog futera
+	na ovaj nacin sadrzaj u futeru nece ispasti izvan maksimalne sirine stranice, jer koristimo
+	margine umesto padding-a
+*/
+div.futer_omotac {
+	margin: 3%;
+}
+
+div.futer_omotac_surrey {
+	display: flex;  /* rasporedi elemente u flex kontejner */
+	flex-wrap: wrap; /* omoguci prelazak u novi red */
+}
+
+div.futer_omotac_surrey_elem {
+	/* omoguci da se flex elementi suzavaju, rastu i da imaju pocetnu vrednost za bazu 250px */
+	flex: 1 1 250px;
+	
+	/* razdvoj elemente kada se prozor suzava */
+	margin-bottom: 5%;
+}
+
+div.futer_omotac_surrey_elem a {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+div.futer_omotac_surrey_elem span.futer_omotac_surrey_elem_naslov {
+	font-weight: bold;
+	margin-bottom: 0.4em;
+}
+
+div.futer_omotac_surrey_elem span.futer_omotac_surrey_elem_podnaslov {
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+div.futer_omotac_surrey_elem {
+	border-right-style: solid;
+	border-right-width: 0.5px;
+	border-right-color: #b4b4b4;
+}
+
+/* sa poslednjeg flex elementa skini desnu liniju */
+div.futer_omotac_surrey_elem:last-of-type {
+	border-right-style: none;
+}
+
+div.futer_omotac_link {
+	display: flex; /* flex kontejner za elemente sa listom */
+	flex-wrap: wrap;
+}
+
+div.futer_omotac_link_lista {
+	flex: 1 1 250px; /* omoguci rast, suzavanje i postavi flex bazu na 250px */
+	margin-right: 2%; /* razdvoj malo liste */
+}
+
+div.futer_omotac_link_lista h3 {
+	font-weight: normal;
+}
+
+div.futer_omotac_link_lista ul {
+	padding: 0px;
+	list-style-type: none; /* ukloni markere sa elemenata liste */
+	line-height: 1.8em; /* napravi razmak izmedju linija, tj. redova liste */
+}
+
+div.futer_omotac_link_lista ul li {
+	/* da bi linkovi unutar elemenata liste celom sirinom mogli da se klikcu */
+	display: flex;
+	flex-direction: column;
+	font-size: 0.9em;
+}
+
+div.futer_omotac_link_lista ul li a:hover {
+	text-decoration: underline;
+}
+
+div.futer_omotac p.futer_omotac_copy {
+	text-align: center;
+	line-height: 1.5em;
+	font-size: 0.9em;
+	margin-bottom: 0.3em;
+}
+
+div.futer_omotac p.futer_omotac_privacy {
+	display: flex; /* flex kontejner */
+	justify-content: center; /* centriraj sadrzaj flex kontejnera */
+	font-size: 0.9em;
+	margin-top: 0px;
+}
+
+div.futer_omotac p.futer_omotac_privacy span a {
+	border-right-style: solid;
+	border-right-width: 1px;
+	padding-right: 0.3em;
+	margin-right: 0.3em;
+}
+
+/* sa poslednjeg span elementa skini liniju sa desne strane */
+div.futer_omotac p.futer_omotac_privacy span:last-of-type a {
+	border-right-style: none;
+}
