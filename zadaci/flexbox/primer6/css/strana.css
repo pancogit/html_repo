@@ -590,3 +590,17 @@ div.futer_omotac p.futer_omotac_privacy span a {
 div.futer_omotac p.futer_omotac_privacy span:last-of-type a {
 	border-right-style: none;
 }
+
+div.futer_omotac p.futer_omotac_ikonice {
+	text-align: center;
+}
+
+div.futer_omotac p.futer_omotac_ikonice a {
+	font-size: 2em;
+	display: inline-block;
+	margin-right: 0.2em;
+}
+
+div.futer_omotac p.futer_omotac_ikonice a:hover {
+	color: #ecbf40;
+}

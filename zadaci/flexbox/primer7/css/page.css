@@ -1,0 +1,244 @@
+body {
+	/* define custom elements */
+	--base-color: #564c4c;
+	--blue-color: #1c6edf;
+	--background-color: #f3f3f3;
+	
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--base-color);
+}
+
+a {
+	text-decoration: none;
+}
+
+/* reset style agent stylesheet default coloring for active link */
+a:active {
+	color: unset;
+}
+
+/* header */
+
+div.header {
+	display: flex;
+	flex-direction: column;
+}
+
+div.header_sign_search {
+	/* align just this flex item along cross axis */
+	align-self: flex-end;
+	
+	/* push flex element against left side - alternative to align-self */
+	/* margin-left: auto; */
+	
+	margin-top: 2em; /* margin relative to font size of element */
+	margin-bottom: 1em;
+}
+
+div.header_sign_search a {
+	display: inline-block;
+	background-color: var(--blue-color);
+	border-radius: 50%; /* draw circle */
+	color: white;
+	padding: 0.5em; /* put padding between circle and image */
+}
+
+div.header_sign_search a:first-child {
+	margin-right: 0.5em;
+}
+
+div.header_sign_search a i {
+	font-size: 1em;
+}
+
+div.header_logo_menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 2em;
+}
+
+div.header_sign_search,
+div.header_logo_menu {
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+div.header_logo_menu ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+div.header_logo_menu ul li {
+	display: flex; /* to set links to outer edge of list item */
+	margin-right: 1em;
+}
+
+div.header_logo_menu ul li a {
+	padding: 0.5em;
+}
+
+div.header_logo_menu ul li a {
+	color: var(--base-color);
+}
+
+div.header_logo_menu a.header_logo_menu_main {
+	font-weight: bold; /* main menu items set to bold font */
+}
+
+div.header_background {
+	background-image: url("../../../../slike/zadaci/primer7/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center; /* center along both axes x and y */
+	background-size: cover; /* cover all area of div with good ratio proportions */
+}
+
+div.header_background div.content {
+	/* set top and bottom margins to better see background picture */
+	margin-top: 10%;
+	margin-bottom: 10%;
+	
+	display: flex; /* flex container */
+	flex-direction: column;
+	
+	padding: 1em;
+}
+
+div.header_chapter {
+	/*
+		flex items are flexed in column, and width can't be set via flex-basis
+		in this case it would set height with flex-basis
+	*/
+	width: 50%;
+	
+	background-color: #e8ece8;
+	padding: 1.5em;
+	padding-bottom: 0.5em;
+}
+
+div.header_chapter h1 {
+	margin: 0;
+	color: var(--blue-color);
+	font-size: 1.2em;
+	line-height: 1.5em;
+}
+
+div.header_chapter p {
+	margin-bottom: 0;
+	font-size: 0.85em;
+	line-height: 1.7em;
+}
+
+div.header_tabs {
+	width: 100%;
+}
+
+div.header_tabs ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	background-color: #505050;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+div.header_tabs ul li a {
+	display: inline-block; /* display like block elements because of top-bottom paddings */
+	color: var(--background-color);
+	padding: 1.5em;
+}
+
+div.header_tabs ul li:not(.header_tabs_active) a:hover {
+	background-color: #707070;
+}
+
+/* for active tab, put white background and blue font */
+div.header_tabs ul li.header_tabs_active a {
+	background-color: white;
+	color: var(--blue-color);
+}
+
+div.header_tabs div.header_tabs_search {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: white;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+
+
+
+.header_tabs_search input.header_tabs_search_location_image {
+	background-image: url("../../../../font/fontawesome-free-5.12.1-web/svgs/solid/map-marker-alt.svg");
+	background-repeat: no-repeat;
+}
+
+.header_tabs_search input.header_tabs_search_provider_image {
+	background-image: url("../../../../font/fontawesome-free-5.12.1-web/svgs/solid/search.svg");
+	background-repeat: no-repeat;
+}
+
+
+
+
+/* page content */
+
+/* centered content of page should be the same for all parts of page */
+.content {
+	max-width: 1200px;
+	margin: 0 auto; /* center on page */
+}
+
+div.content_cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div.content_news {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+/* footer */
+
+div.footer {
+	display: flex;
+	flex-direction: column;
+}
+
+div.footer_links {
+	background-color: #e4e4e4;
+}
+
+div.footer_links_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+div.footer_copy {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #8d8d8d;
+	background-color: #2c2c2c;
+	background-color: #070707;
+}
+
+div.footer_copy * {
+	color: white;
+}
+
+div.footer_copy_content {
+	margin: 0 auto;
+	max-width: 1200px;
+}
