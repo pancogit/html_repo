@@ -3,10 +3,15 @@ body {
 	--base-color: #564c4c;
 	--blue-color: #1c6edf;
 	--background-color: #f3f3f3;
+	--background-color: hsla(0, 0%, 95%, 0.6); /* add some opacity */
+	--button-color: #ffdf1e;
+	--button-color-hover: #f7d717;
 	
 	font-family: Georgia, "Times New Roman", Times, serif;
 	margin: 0;
+	background-color: #f3f3f3; /* fallback for internet explorer */
 	background-color: var(--background-color);
+	color: #564c4c; /* fallback for internet explorer */
 	color: var(--base-color);
 }
 
@@ -39,6 +44,7 @@ div.header_sign_search {
 
 div.header_sign_search a {
 	display: inline-block;
+	background-color: #1c6edf; /* fallback for internet explorer */
 	background-color: var(--blue-color);
 	border-radius: 50%; /* draw circle */
 	color: white;
@@ -84,6 +90,7 @@ div.header_logo_menu ul li a {
 }
 
 div.header_logo_menu ul li a {
+	color: #564c4c; /* fallback for internet explorer */
 	color: var(--base-color);
 }
 
@@ -123,6 +130,7 @@ div.header_chapter {
 
 div.header_chapter h1 {
 	margin: 0;
+	color: #1c6edf; /* fallback for internet explorer */
 	color: var(--blue-color);
 	font-size: 1.2em;
 	line-height: 1.5em;
@@ -151,7 +159,7 @@ div.header_tabs ul {
 
 div.header_tabs ul li a {
 	display: inline-block; /* display like block elements because of top-bottom paddings */
-	color: var(--background-color);
+	color: #f3f3f3;
 	padding: 1.5em;
 }
 
@@ -162,6 +170,7 @@ div.header_tabs ul li:not(.header_tabs_active) a:hover {
 /* for active tab, put white background and blue font */
 div.header_tabs ul li.header_tabs_active a {
 	background-color: white;
+	color: #1c6edf; /* fallback for internet explorer */
 	color: var(--blue-color);
 }
 
@@ -175,20 +184,101 @@ div.header_tabs div.header_tabs_search {
 	padding-top: 1em;
 }
 
+/*
+	simulate something like grid, but this should be solved with grid layour
+	because flexbox is used there, this will be temporarily solution
+	other elements next to this div will have bottom margins to align elements
+	in first row like grid
+	in second row will be just link for location
+*/
+div.header_tabs_search_current_location {
+	display: flex;
+	flex-direction: column;
+	margin-right: auto; /* push button to the right edge of container */
+}
 
+div.header_tabs_search input.header_tabs_search_provider_image {
+	margin-bottom: 5%; /* fallback in percentages */
+	margin-bottom: 2em; /* bottom margin is relative to element font */
+}
 
+div.header_tabs_search input {
+	outline: none;
+	border-top-style: none;
+	border-left-style: none;
+	border-right-style: none;
+	border-bottom-width: 1px;
+	border-bottom-color: #d7d7d7;
+	padding-left: 1.8em;
+	padding-bottom: 0.5em;
+	
+}
 
-.header_tabs_search input.header_tabs_search_location_image {
+div.header_tabs_search input.header_tabs_search_location_image {
 	background-image: url("../../../../font/fontawesome-free-5.12.1-web/svgs/solid/map-marker-alt.svg");
 	background-repeat: no-repeat;
+	background-size: 1em; /* background image should be smaller, just not to hit bottom border */
 }
 
-.header_tabs_search input.header_tabs_search_provider_image {
+div.header_tabs_search input.header_tabs_search_provider_image {
 	background-image: url("../../../../font/fontawesome-free-5.12.1-web/svgs/solid/search.svg");
 	background-repeat: no-repeat;
+	margin-right: 2em;
+	background-size: 1.2em; /* background image should be smaller, just not to hit bottom border */
 }
 
+div.header_tabs_search_current_location a {
+	margin-top: 0.5em;
+	text-decoration: underline;
+	color: #1c6edf; /* fallback for internet explorer */
+	color: var(--blue-color);
+	font-size: 0.85em;
+}
 
+div.header_tabs_search_current_location a:hover {
+	text-decoration: none;
+}
+
+div.header_tabs_search button.button {
+	color: #564c4c; /* fallback for internet explorer */
+	color: var(--base-color);
+	font-weight: bold;
+	outline: none;
+	background-color: #ffdf1e; /* fallback for internet explorer */
+	background-color: var(--button-color);
+	border: none;
+	border-top-left-radius: 12% 50%;
+	border-bottom-left-radius: 12% 50%;
+	border-top-right-radius: 12% 50%;
+	border-bottom-right-radius: 12% 50%;
+	padding: 0.8em 4em;
+	margin-left: 0.2em; /* put small space and separate button and div for small screen sizes */
+	
+	margin-bottom: 2.3%; /* fallback in percentages */
+	margin-bottom: 0.5em; /* bottom margin is relative to element font */
+	margin-top: 0.5em; /* add margin for responsive site, when button is under div for location */
+	font-size: 0.8em;
+}
+
+div.header_tabs_search button.button:hover {
+	background-color: #f7d717; /* fallback for internet explorer */
+	background-color: var(--button-color-hover);
+}
+
+/* set flex basis of two input elements to be the same and with maximum width */
+div.header_tabs_search input.header_tabs_search_provider_image,
+div.header_tabs_search div.header_tabs_search_current_location {
+	flex: 1 1 20%; /* set flex element grow, shrink factor and flex basis */
+	max-width: 30%; /* maximum width should be 30% of flex container */
+	
+	/*
+		minimum width is set to pixels, because percentages in this case are always smaller
+		and smaller as screen size is resized
+		because of this, line wrapping will be when those flex elements reach minimum width
+		of 150 pixels
+	*/
+	min-width: 150px;
+}
 
 
 /* page content */
@@ -199,14 +289,140 @@ div.header_tabs div.header_tabs_search {
 	margin: 0 auto; /* center on page */
 }
 
+body div.content {
+	padding: 0.2em;
+}
+
 div.content_cards {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around; /* flex item with equal space on main axis */
+	margin-top: 3em;
+	margin-bottom: 1em;
+}
+
+div.content_cards a.content_cards_link {
+	flex: 0 1 11em;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: white;
+	text-align: center;
+}
+
+div.content_cards a.content_cards_link:hover {
+	box-shadow: 4px 4px 11px silver;
+	box-shadow: 0.4em 0.4em 0.7em silver;
+}
+
+div.content_cards a.content_cards_link h4 {
+	font-size: 0.7em;
+	color: #1c6edf; /* fallback for internet explorer */
+	color: var(--blue-color);
+}
+
+div.content_cards div.content_cards_item {
+	padding: 0.5em;
+}
+
+div.content_cards div.content_cards_item i.icon {
+	background-color: #1c6edf; /* fallback for internet explorer */
+	background-color: var(--blue-color);
+	color: white;
+	padding: 0.5em;
+	border-radius: 50%;
+	font-size: 1em;
 }
 
 div.content_news {
 	display: flex;
 	flex-wrap: wrap;
+	margin-bottom: 2em;
+	justify-content: space-around;
+}
+
+div.content_news div.content_news_item {
+	/*
+		there is much better to not use percentages, because content will shrink as much as can,
+		which means that some elements (like buttons) might change their height, which will not
+		be proportional to other boxes with content
+		shrinking is always as much as possible and because percentages are used, then it will
+		shrink to it's minimum size, which is not good in all cases
+		if flex basis is set to em, then flex elements will wrap when shrinking reach flex basis width
+	*/
+	flex: 1 1 20%;
+	flex: 1 1 15em;
+	
+	background-color: white;
+	margin: 0.8em;
+	padding: 1em;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+/* put box shadow just for content articles, not for Recent News box */
+div.content_news div.content_news_article:hover {
+	box-shadow: 4px 4px 11px silver;
+	box-shadow: 0.4em 0.4em 0.7em silver;
+}
+
+div.content_news div.content_news_item p {
+	line-height: 1.6em;
+	margin-top: 0; /* remove top margin for paragraphs for better readability */
+}
+
+div.content_news div.content_news_item p.content_news_item_day {
+	/* just for this box override bottom margin for days print */
+	margin-bottom: 0;
+	
+	/* put font to be smaller */
+	font-size: 0.85em;
+}
+
+div.content_news div.content_news_item p.content_news_item_link a {
+	color: #1c6edf; /* fallback for internet explorer */
+	color: var(--blue-color);
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+div.content_news div.content_news_item h3 {
+	margin-top: 0;
+}
+
+div.content_news div.content_news_item a.button {
+	color: #564c4c; /* fallback for internet explorer */
+	color: var(--base-color);
+	font-weight: bold;
+	margin-bottom: 1em;
+	
+	outline: none;
+	background-color: #ffdf1e; /* fallback for internet explorer */
+	background-color: var(--button-color);
+	border: none;
+	border-top-left-radius: 12% 50%;
+	border-bottom-left-radius: 12% 50%;
+	border-top-right-radius: 12% 50%;
+	border-bottom-right-radius: 12% 50%;
+	padding: 0.8em 2em;
+	
+	/* put auto margins to move flex item on both main and cross axis */
+	margin-top: auto; /* push flex element to bottom of box */
+	margin-right: auto; /* push flex element against right edge of box */
+}
+
+div.content_news div.content_news_item a.button:hover {
+	background-color: #f7d717; /* fallback for internet explorer */
+	background-color: var(--button-color-hover);
+}
+
+
+/* minimum width of page */
+
+div.header, body div.content, div.footer {
+	min-width: 320px; /* minimum width for mobile */
 }
 
 
@@ -224,21 +440,132 @@ div.footer_links {
 div.footer_links_wrapper {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 1.8em;
 }
+
+div.footer_links_item {
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+	flex: 1 1 12em; /* flex item to grow, shrink and with same basis */
+}
+
+div.footer_links_item h4 {
+	color: #1c6edf; /* fallback for internet explorer */
+	color: var(--blue-color);
+	margin-bottom: 0.5em;
+}
+
+div.footer_links_item a {
+	color: #564c4c; /* fallback for internet explorer */
+	color: var(--base-color);
+	text-decoration: underline;
+}
+
+div.footer_links_item ul {
+	padding: 0;
+	list-style-type: none; /* remove list bullets */
+	margin-top: 0;
+}
+
+div.footer_links_item ul li {
+	line-height: 1.8em;
+}
+
+div.footer_links_item ul li.footer_links_item_cir_centennial a {
+	text-decoration: none; /* override link decoration only for this list item */
+}
+
+div.footer_links_item ul li.footer_links_item_cir_centennial a:hover {
+	text-decoration: underline; /* override link decoration only for this list item */
+}
+
+div.footer_links_item div.footer_links_item_social a {
+	text-decoration: none;
+	display: inline-block; /* change display to hold social icon block */
+	margin-right: 0.2em;
+	font-size: 2em;
+	height: 1em;
+}
+
+div.footer_links_item div.footer_links_item_social a:nth-of-type(1):hover {
+	color: #2360b4;
+}
+
+div.footer_links_item div.footer_links_item_social a:nth-of-type(2):hover {
+	color: #237fb4;
+}
+
+div.footer_links_item div.footer_links_item_social a:nth-of-type(3):hover {
+	color: #e42121;
+}
+
 
 div.footer_copy {
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #8d8d8d;
-	background-color: #2c2c2c;
 	background-color: #070707;
+	background-color: #2c2c2c;
+	font-size: 0.8em; /* set font for footer copyright a little smaller */
 }
 
 div.footer_copy * {
 	color: white;
 }
 
-div.footer_copy_content {
-	margin: 0 auto;
-	max-width: 1200px;
+div.footer_copy div.content {
+	padding-left: 0.8em;
+	padding-bottom: 1em;
+}
+
+div.footer_copy a {
+	text-decoration: underline;
+}
+
+div.footer_copy ul {
+	display: flex; /* flex container for list items */
+	flex-wrap: wrap;
+	list-style-type: none;
+	padding: 0;
+}
+
+div.footer_copy ul li {
+	border-right-style: solid;
+	border-right-width: 1px;
+
+	padding-right: 2em;
+	margin-right: 2em;
+	line-height: 1.7em;
+}
+
+/*
+div.footer_copy ul li::after {
+	content: "|";
+}
+*/
+
+div.footer_copy ul li:last-child {
+	border-right-style: none;
+}
+
+div.footer_copy p.footer_copy_lang {
+	line-height: 1.6em;
+	margin: 1.5em 0;
+}
+
+div.footer_copy p.footer_copy_lang a::after {
+	content: " | ";
+}
+
+div.footer_copy p.footer_copy_lang a:last-of-type::after {
+	content: "";   /* remove last link marker */
+}
+
+div.footer_copy div.footer_copy_logo {
+	padding: 0.1em 0; /* set very small padding to hangle paragraph margins inside div */
+}
+
+div.footer_copy div.footer_copy_logo p {
+	margin-top: 0.5em;
 }
