@@ -421,7 +421,7 @@ div.content_news div.content_news_item a.button:hover {
 
 /* minimum width of page */
 
-div.header, body div.content, div.footer {
+div.page {
 	min-width: 320px; /* minimum width for mobile */
 }
 
@@ -531,35 +531,50 @@ div.footer_copy ul {
 }
 
 div.footer_copy ul li {
-	border-right-style: solid;
-	border-right-width: 1px;
-
-	padding-right: 2em;
-	margin-right: 2em;
 	line-height: 1.7em;
 }
 
-/*
 div.footer_copy ul li::after {
 	content: "|";
+	
+	/*
+		put margins to this pseudo element to separate links from each other
+		but this should be done outside of links itself to not link lines
+		this is the reason why this pseudo element is set after list item, not after link
+		put left and right margins to separator "|"
+	*/
+	margin: 0 2em;
 }
-*/
 
-div.footer_copy ul li:last-child {
-	border-right-style: none;
+/* override pseudo element content for last element in list */
+div.footer_copy ul li:last-child::after {
+	content: "";
 }
 
-div.footer_copy p.footer_copy_lang {
+div.footer_copy div.footer_copy_lang {
 	line-height: 1.6em;
 	margin: 1.5em 0;
 }
 
-div.footer_copy p.footer_copy_lang a::after {
-	content: " | ";
+/* display list elements in the same line as text */
+div.footer_copy div.footer_copy_lang ul {
+	display: inline;
+	margin: 0;
 }
 
-div.footer_copy p.footer_copy_lang a:last-of-type::after {
-	content: "";   /* remove last link marker */
+div.footer_copy div.footer_copy_lang ul li {
+	display: inline;
+}
+
+div.footer_copy div.footer_copy_lang ul li::after {
+	content: "|";
+	margin-left: 0.3em;
+	margin-right: 0; /* put zero margin because of generated whitespace for list elements */
+}
+
+/* override pseudo element content for last element in list */
+div.footer_copy div.footer_copy_lang ul li:last-child::after {
+	content: "";
 }
 
 div.footer_copy div.footer_copy_logo {

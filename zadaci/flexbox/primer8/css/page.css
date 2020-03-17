@@ -1,0 +1,178 @@
+body {
+	font-family: Arial, Calibri, Verdana, Helvetica, sans-serif;
+	margin: 0;
+	
+	--nhs-color: #295abf;
+	--blue-color: #2294de;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:active {
+	color: unset;
+}
+
+/* page */
+.page {
+	min-width: 20em;
+}
+
+/* default content centered horizontaly */
+.content {
+	max-width: 75em; /* maximum width */
+	margin: 0 auto; /* center on screen */
+	padding: 1em;  /* add padding to every centered content on page */
+}
+
+/* header */
+
+header div.content a.header-nhs-logo {
+	display: inline-block;
+	height: 2.5em;
+}
+
+header div.header-search-wrapper {
+	display: flex; /* flex container */
+	flex-wrap: wrap;
+	justify-content: space-between; /* align items on main axis horizontaly */
+	align-items: flex-end; /* align items along cross axis verticaly */
+	margin-top: 0.2em;
+}
+
+header div.header-search-wrapper section {
+	margin-right: 1em;
+}
+
+header div.header-search-wrapper section h1,
+header div.header-search-wrapper section h3 {
+	margin: 0;
+}
+
+header div.header-search-wrapper section h3 {
+	color: #295abf;
+	color: var(--nhs-color);
+}
+
+header div.header-search-wrapper div.header-search {
+	display: flex;
+	flex-wrap: nowrap; /* don't wrap, input and button should be in the same row */
+}
+
+header div.header-search-wrapper div.header-search input {
+	width: 20em;
+	outline: none;
+	border-style: none;
+	background-color: #dbefff;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+header div.header-search-wrapper div.header-search button {
+	background-color: #295abf;
+	background-color: var(--nhs-color);
+	color: white;
+	padding: 0.5em;
+	outline: none;
+	border-style: none;
+}
+
+header div.header-tab {
+	background-color: #2294de;
+	background-color: var(--blue-color);
+	margin-top: 1.2em;
+}
+
+header div.header-tab div.content {
+	display: flex; /* flex container */
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 0; /* remove bottom padding for header tabs */
+}
+
+header div.header-tab div.content ul {
+	display: flex; /* flex container */
+	flex-wrap: wrap;
+	
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	
+}
+
+header div.header-tab div.content ul li {
+	margin-right: 0.5em;
+	margin-right: 0;
+}
+
+header div.header-tab div.content ul li a {
+	display: inline-block; /* change to display like block to add block paddings top-bottom */
+	padding: 1em;
+	color: white;
+	background-color: #5a138a;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+header div.header-tab div.content a.header-tab-active {
+	background-color: white;
+	color: #2294de;
+	color: var(--blue-color);
+}
+
+header div.header-tab div.content h2 {
+	margin: 0;
+	color: white;
+	font-weight: normal;
+	margin-right: 0.5em;
+	
+	/* 
+		align verticaly just this flex item along cross axis
+		because padding is set for centered content .content,
+		it is best to align at the beginning of cross axis
+		when aligning items, padding matters, so just content will align,
+		not padding
+		this is the reason why flex-start is set instead of center
+	*/
+	align-self: flex-start;
+}
+
+/* media blocks for responsive design */
+
+/* media block for tablets */
+@media only screen and (max-width: 48em) {
+	header h2.header-tab-child-first {
+		display: none; /* don't display for tablets or smaller screens */
+	}
+}
+
+@media only screen and (max-width: 51.375em) {
+	header div.header-search {
+		margin-top: 1em;
+	}
+	
+	header div.header-tab {
+		margin-top: 0;
+	}
+}
+
+
+/* navigation */
+
+
+
+
+
+/* main content */
+
+main div.main-top-image img {
+	width: 100%; /* fallback for IE */
+	max-width: 100%; /* set maximum width of picture and to resize to div container width */
+}
+
+
+
+
+/* footer */
+

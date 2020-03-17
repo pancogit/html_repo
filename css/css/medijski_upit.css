@@ -1,0 +1,73 @@
+body {
+	background-color: red;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* za digitalne ekrane */
+@media only screen {
+	body {
+		background-color: #9ec2d9;
+	}
+}
+
+/* za stampane materijale, papire */
+@media only print {
+	body {
+		background-color: yellow;
+	}
+}
+
+/* za audio zvukove i screen read-ere */
+@media only speech {
+}
+
+
+@media only screen and (min-width: 500px) {
+	body {
+		background-color: blue;
+	}
+}
+
+@media only screen and (min-device-width: 500px) {
+	p {
+		color: black;
+	}
+}
+
+@media only screen and (min-width: 40em) {
+	body {
+		background-color: white;
+	}
+}
+
+@media only screen and (min-device-width: 900px) and (max-device-width: 1000px) {
+	body {
+		background-color: orange;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+	body {
+		background-color: cyan;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1500px) {
+	p {
+		font-size: 3em;
+	}
+}
+
+
+div.futer {
+	padding: 1%;
+	background-color: orange;
+}
+
+div.futer a {
+	font-weight: bold;
+	color: blue;
+}
