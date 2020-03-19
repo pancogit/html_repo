@@ -4,6 +4,10 @@ body {
 	
 	--nhs-color: #295abf;
 	--blue-color: #2294de;
+	--purple-color: #5a138a;
+	--pink-color: #ef29a0;
+	--orange-color: #fc4e0c;
+	--green-color: #3aa22a;
 }
 
 a {
@@ -111,6 +115,7 @@ header div.header-tab div.content ul li a {
 	padding: 1em;
 	color: white;
 	background-color: #5a138a;
+	background-color: var(--purple-color);
 	font-weight: bold;
 	font-size: 0.85em;
 }
@@ -160,16 +165,407 @@ header div.header-tab div.content h2 {
 
 /* navigation */
 
+nav.navigation div.content {
+	/* 
+		flex container for classic menu and hamburger menu 
+		
+		this line makes problem with IE, without flex on IE is working
+		but on other browsers it's working good
+	*/
+	display: flex;
+	
+	align-items: center; /* center hamburger menu */
+	
+	padding: 0; /* redefine content paddings for menu link items */
+}
 
+nav.navigation div.content ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: center; /* center text for flex items */
+}
+
+nav.navigation div.content ul li {
+	display: flex; /* flex container for links (to not calculate paddings) */
+	
+	/* set flex item to grow, shrink and with the same flex basis except for home fa icon */
+	flex: 1 1 10%;
+}
+
+/* set common color for navigation menu list items */
+nav.navigation div.content ul li a:hover {
+	border-bottom-color: #42d0fb;
+	color: #1d428b;
+}
+
+nav.navigation div.content ul li:first-child a:hover {
+	border-bottom-color: #295abf;
+	border-bottom-color: var(--nhs-color);
+}
+
+nav.navigation div.content ul li:nth-of-type(3) a:hover {
+	border-bottom-color: #5a138a;
+	border-bottom-color: var(--purple-color);
+}
+
+nav.navigation div.content ul li:nth-of-type(4) a:hover {
+	border-bottom-color: #ef29a0;
+	border-bottom-color: var(--pink-color);
+}
+
+nav.navigation div.content ul li:nth-of-type(5) a:hover {
+	border-bottom-color: #fc4e0c;
+	border-bottom-color: var(--orange-color);
+}
+
+nav.navigation div.content ul li.navigation-home {
+	/* 
+		set flex item to grow, shrink and with the same flex basis except for home fa icon 
+		set flex basis for font awesome home page icon half size of other flex elements
+	*/
+	flex: 1 1 5%;
+	
+	font-size: 1.5em;
+}
+
+nav.navigation div.content ul li a {
+	padding: 1em;
+	font-weight: bold;
+	color: #295abf;
+	color: var(--nhs-color);
+	
+	/* flex item should grow or shrink to whole container size 
+	  (flex basis = 0% -> get whole container space) 
+	*/
+	flex: 1 1 0%;
+	flex: 1;
+	
+	/*
+		links containst span's
+		links should be flex container to align flex items (span) both horizontaly and verticaly
+		this couldn't be done with list items, because than links height will be cropped verticaly
+	*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	border-bottom-style: solid;
+	border-bottom-width: 0.35rem; /* not in ems, but in rems to be relative to root element (html) */
+	border-bottom-color: white; /* hide border when not hovered */
+}
+
+nav.navigation div.content div.navigation-hamburger {
+	font-size: 2.5em;
+	display: none; /* hide hamburger menu */
+}
+
+nav.navigation div.content div.navigation-hamburger a {
+	color: #295abf;
+	color: var(--nhs-color); /* set color for hamburger menu */
+}
+
+/* height of classic and hamburger menu should be the same */
+nav.navigation div.content ul,
+nav.navigation div.content div.navigation-hamburger {
+	height: 6rem;
+}
+
+
+/* media blocks for responsive design */
+
+@media only screen and (max-width: 67em) {
+	nav.navigation div.content ul {
+		display: none; /* hide navigation menu */
+	}
+	
+	nav.navigation div.content div.navigation-hamburger {
+		display: flex; /* show hamburger menu as flex container */
+		margin-left: auto; /* push menu to right edge of flex container */
+		margin-right: 0.5em;
+		align-items: center; /* verticaly align hamburger menu */
+	}
+}
 
 
 
 /* main content */
 
-main div.main-top-image img {
-	width: 100%; /* fallback for IE */
-	max-width: 100%; /* set maximum width of picture and to resize to div container width */
+main {
+	background-color: #d4eefd;
 }
+
+main div.content {
+	background-color: white;
+}
+
+main div.main-top-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main div.main-top-wrapper div.main-top {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 1 1 75%;
+	margin-right: 0.5em;
+	margin-bottom: 8em;
+}
+
+main div.main-top-wrapper nav.main-nav {
+	flex: 1 1 20%;
+}
+
+main div.main-top-image {
+	flex: 1 1 35%;
+}
+
+main div.main-top-image {
+	background-image: url("../../../../slike/zadaci/primer8/nhs-hospital-2-small.jpg");
+	background-size: cover;
+}
+
+main section.main-top-links {
+	flex: 1 1 55%;
+	
+	background-color: #5a138a;
+	background-color: var(--purple-color);
+	color: white;
+	padding: 1.5em;
+}
+
+main section.main-top-links .main-top-links-heading {
+	margin-top: 0;
+	margin-bottom: 0.7em;
+}
+
+main section.main-top-links .main-top-links-subheading {
+	margin-top: 0;
+}
+
+main section.main-top-links a {
+	color: white;
+}
+
+main section.main-top-links ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+main section.main-top-links ul li {
+	margin-bottom: 0.8em;
+}
+
+main section.main-top-links ul li a::after {
+	content: " >";
+	color: #2294de;
+	color: var(--blue-color);
+	font-size: 0.8em;
+	margin-left: 0.4em;
+}
+
+main nav.main-nav ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+main nav.main-nav ul li {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0.5em;
+}
+
+main nav.main-nav ul li a {
+	padding: 1.5em 1em;
+	border-radius: 0.5em;
+	color: white;
+	background-color: blue;
+	font-size: 0.85em;
+	outline: none; /* when tabulation is used, don't show outline */
+}
+
+main nav.main-nav ul li a:hover {
+	text-decoration: underline;
+	color: #e8f1cd;
+}
+
+main nav.main-nav ul li:nth-of-type(1) a {
+	background-color: #5a138a;
+	background-color: var(--purple-color);
+}
+
+main nav.main-nav ul li:nth-of-type(2) a {
+	background-color: #ef29a0;
+	background-color: var(--pink-color);
+}
+
+main nav.main-nav ul li:nth-of-type(3) a {
+	background-color: #fc4e0c;
+	background-color: var(--orange-color);
+}
+
+main nav.main-nav ul li:nth-of-type(4) a {
+	background-color: #2294de;
+	background-color: var(--blue-color);
+}
+
+main nav.main-nav ul li:nth-of-type(5) a {
+	background-color: #3aa22a;
+	background-color: var(--green-color);
+}
+
+main nav.main-nav ul li:nth-of-type(6) a {
+	background-color: #2f2f2f;
+}
+
+/* for all list items except for active and pause list item bellow */
+main nav.main-nav ul li {
+	margin-right: 0.5em; 
+}
+
+main nav.main-nav ul li.main-nav-active,
+main nav.main-nav ul li.main-nav-pause {
+	margin-right: 0; /* remove right margin for active list item */
+}
+
+main nav.main-nav ul li.main-nav-pause a {
+	border-radius: 0;
+	border-radius: unset; /* reset border radius for pause link */
+	margin-left: auto; /* push link flex item to the right edge of flex container */
+	
+	/* override padding for pause link to be smaller */
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+}
+
+
+/* media blocks for responsive web design */
+
+@media only screen and (max-width: 43em) {
+	main nav.main-nav {
+		display: none;
+	}
+	
+	main div.main-top-wrapper div.main-top {
+		margin-bottom: 0;
+		margin-right: 0; /* remove right margin to fill up remaining space */
+	}
+}
+
+@media only screen and (max-width: 34em) {
+	main div.main-top-image {
+		display: none; /* hide image */
+	}
+}
+
+
+/* sections of page */
+
+main div.main-section-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between; /* remaining space equal between flex items */
+	
+	margin-top: 1em;
+	
+	/* to fill up sections space from left-right margins */
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+}
+
+main div.main-section-wrapper section {
+	flex: 0 1 14em;
+	flex: 1 1 14em;
+	margin: 0.5em;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+main div.main-section-wrapper section.main-section-wrapper-news {
+	flex: 0 1 42em;
+	flex: 1 1 42em;
+	flex: 1 1 45em; /* it looks better with this flex base */
+}
+
+main div.main-section-wrapper section h4 {
+	background-color: #2294de;
+	background-color: var(--blue-color);
+	color: white;
+	padding: 1em;
+	margin: 0;
+}
+
+main div.main-section-wrapper div.main-section-wrapper-content {
+	padding: 1em;
+	padding-top: 1.3em;
+	border-style: solid;
+	border-width: 0.05em;
+	border-color: #dfdfdf;
+	border-top-style: none; /* remove top border, other keep */
+	height: 100%; /* flex section content to whole height of section */
+}
+	
+main div.main-section-wrapper section p {
+	font-size: 0.9em;
+	margin-top: 0;
+}
+
+main div.main-section-wrapper section ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+main div.main-section-wrapper section ul li {
+	margin-bottom: 0.8em;
+}
+
+main div.main-section-wrapper section ul li a {
+	color: #226dde;
+	color: #006dcc;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+main div.main-section-wrapper section ul li a::after {
+	content: " >";
+	font-size: 0.75rem; /* relative to the root element (html) */
+	margin-left: 0.2em;
+}
+
+main div.main-section-wrapper section.main-section-wrapper-find-us 
+div.main-section-wrapper-content img {
+	width: 100%; /* fallback for IE */
+	max-width: 100%; /* make picture full width of div container */
+}
+
+main div.main-section-wrapper section.main-section-wrapper-news 
+div.main-section-wrapper-content ul {
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+main div.main-section-wrapper section.main-section-wrapper-news 
+div.main-section-wrapper-content ul a {
+	color: #5a138a;
+	color: var(--purple-color);
+	font-size: 1.1rem; /* relative to the root element (html), not parent element */
+}
+
+
+/* media blocks for responsive design */
+
+@media only screen and (min-width: 20em) and (max-width: 27em) {
+	main div.main-section-wrapper section ul li a {
+		font-size: 0.9em; /* set links size better for readability on very small screens */
+	}
+}
+
 
 
 
