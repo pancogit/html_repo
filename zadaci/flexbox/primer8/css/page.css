@@ -18,6 +18,11 @@ a:active {
 	color: unset;
 }
 
+/* fallback for IE */
+main, nav, footer, header, section { 
+	display: block; 
+}
+
 /* page */
 .page {
 	min-width: 20em;
@@ -177,6 +182,23 @@ nav.navigation div.content {
 	align-items: center; /* center hamburger menu */
 	
 	padding: 0; /* redefine content paddings for menu link items */
+}
+
+/* fallback for internet explorer */
+@media only screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+	nav.navigation div.content {
+	/* 
+		flex container for classic menu and hamburger menu 
+		
+		this line makes problem with IE, without flex on IE is working
+		but on other browsers it's working good
+	*/
+	display: block;
+	
+	align-items: center; /* center hamburger menu */
+	
+	padding: 0; /* redefine content paddings for menu link items */
+}
 }
 
 nav.navigation div.content ul {
@@ -514,6 +536,7 @@ main div.main-section-wrapper div.main-section-wrapper-content {
 main div.main-section-wrapper section p {
 	font-size: 0.9em;
 	margin-top: 0;
+	line-height: 1.3em;
 }
 
 main div.main-section-wrapper section ul {
@@ -557,6 +580,68 @@ div.main-section-wrapper-content ul a {
 	font-size: 1.1rem; /* relative to the root element (html), not parent element */
 }
 
+div.main-section-wrapper section.main-section-wrapper-our-community ul {
+	margin-top: 0;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community ul li {
+	display: flex;
+	padding: 0.8em 0.5em;
+	background-color: #efefef;
+	line-height: 1.3em;
+}
+
+/* override after links content with pseudo element */
+div.main-section-wrapper section.main-section-wrapper-our-community a::after {
+	content: "";
+	content: none;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community a {
+	color: #1c459a;
+	display: block;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+a.main-section-wrapper-content-social {
+	display: inline-block;
+	font-size: 2.5em;
+	margin-top: 0.1em;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+ul li:nth-of-type(1) a.main-section-wrapper-content-social:hover {
+	color: #1e51af;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+ul li:nth-of-type(2) a.main-section-wrapper-content-social:hover {
+	color: #4cc1f9;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+ul li:nth-of-type(3) a.main-section-wrapper-content-social:hover {
+	color: #e02121;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+ul li:nth-of-type(4) a.main-section-wrapper-content-social:hover {
+	color: red;
+}
+
+div.main-section-wrapper section.main-section-wrapper-our-community 
+ul li:nth-of-type(5) a.main-section-wrapper-content-social:hover {
+	color: #3e80c3;
+}
+
+
+div.main-section-wrapper section.main-section-wrapper-our-community
+ul li div:first-child {
+	flex: 0 0 3em; /* set flex basis for all social icon the same */
+	text-align: center; /* align social icon to the center of div flex item */
+	margin-right: 0.4em;
+}
+
 
 /* media blocks for responsive design */
 
@@ -566,9 +651,64 @@ div.main-section-wrapper-content ul a {
 	}
 }
 
-
+@media only screen and (min-width: 20em) and (max-width: 48em) {
+	main div.main-section-wrapper section.main-section-wrapper-news 
+	div.main-section-wrapper-content ul a {
+		font-size: 0.95rem; /* set link size little smaller on smaller screens */
+	}
+}
 
 
 
 /* footer */
 
+footer {
+	background-color: #dcdcdc;
+	background-color: #c9d3da;
+	background-color: #d3dadf;
+	border-top-style: solid;
+	border-top-width: 0.25em;
+	border-top-color: #295abf;
+	border-top-color: var(--nhs-color);
+}
+
+footer div.content {
+	display: flex;
+	flex-wrap: wrap;
+	
+	/* spread flex items with equal space between flex elements */
+	justify-content: space-between; 
+	
+	/* override left padding to align with other text on page */
+	padding-left: 2em; 
+	padding-right: 2em;
+	padding-top: 2em;
+}
+
+footer a, footer p {
+	color: #4e4e4e;
+}
+
+footer a {
+	text-decoration: underline;
+}
+
+footer p {
+	margin-top: 0.35em;
+}
+
+footer a:hover {
+	text-decoration: none;
+	color: #181818;
+}
+
+footer ul {
+	padding: 0;
+	margin-top: 0;
+	margin-right: 2em;
+	list-style-type: none;
+}
+
+footer ul li {
+	line-height: 1.8em;
+}
