@@ -1,5 +1,5 @@
 body {
-    font-family: serif;
+    font-family: "Times New Roman", Times, serif;
     margin: 0;
 }
 
@@ -9,4 +9,502 @@ a {
 
 a:active {
     color: unset;
+}
+
+/* centered content of page */
+.content {
+    max-width: 70em;
+    margin: 0 auto; /* center on page */
+    padding: 1em 0.5em;
+}
+
+/* header */
+
+header div.header-links {
+    border-bottom-style: solid;
+    border-bottom-width: 0.05em;
+    border-bottom-color: #e8e8e8;
+}
+
+header div.header-links div.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+header div.header-links div.header-links-left {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+header div.header-links div.header-links-left a {
+    display: inline-block;
+    text-decoration: underline;
+    color: #676767;
+    padding: 0.1em 0.5em;
+    border-right-style: solid;
+    border-right-width: 0.05em;
+    border-right-color: #c7c7c7;
+}
+
+header div.header-links div.header-links-left a:first-child {
+    padding: 0.5em;
+    background-color: #e68b14;
+    color: white;
+    border-radius: 0.2em;
+    border-right: unset;
+}
+
+header div.header-links div.header-links-right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header div.header-links div.header-links-right select {
+    border: none; /* remove all borders */
+    color: #5d5d5d;
+    outline: none;
+    background-image: url("../../../../slike/zadaci/primer9/google-plus-64.png");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 0.3rem;
+
+    padding: 0.5rem 0.3rem; /* relative to root element (html) */
+    padding-left: 1.5rem;
+    margin-right: 1.3rem;
+    margin-bottom: 1rem;
+    border-style: solid;
+    border-width: 0.05rem;
+    border-color: #e8e8e8;
+}
+
+header div.header-links div.header-links-right-a {
+    display: flex; /* to align height of links with div container */
+    margin-right: 1.3em;
+    margin-bottom: 1em;
+}
+
+header div.header-links div.header-links-right-a a {
+    display: inline-block;
+    width: 1.3em;
+    text-align: center;
+    color: #1470e2;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: #e8e8e8;
+    margin-right: 0.2em;
+    padding: 0.5em;
+}
+
+header div.header-links div.header-links-search {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: #e8e8e8;
+    border-radius: 0.2em;
+    width: 16em;
+}
+
+header div.header-links div.header-links-search input {
+    border: none;
+    outline: none;
+    flex: 1 1 10em;
+    margin-right: 0.5em;
+}
+
+header div.header-links div.header-links-search a {
+    color: #cacaca;
+}
+
+div.header-tabs {
+    border-bottom-style: solid;
+    border-bottom-width: 0.3em;
+    border-bottom-color: #2567bf;
+}
+
+a.header-tabs-hamburger-menu {
+    display: inline-block;
+    font-size: 2rem;
+    color: #2567bf;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+div.header-tabs div.content {
+    display: flex;
+    justify-content: space-between; /* align horizontaly */
+    align-items: flex-end; /* align verticaly */
+    padding-bottom: 0;
+}
+
+div.header-tabs ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    flex: 0 1 50%; /* don't grow, just shrink */
+}
+
+div.header-tabs ul li {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 0.3em;
+}
+
+div.header-tabs ul li a {
+    padding: 1em;
+    height: 100%;
+    background-color: #ececec;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    font-weight: bold;
+    box-shadow: 3px -3px 6px #bfbfbf;
+}
+
+div.header-tabs ul li a:hover {
+    background-color: #e2e2e2;
+}
+
+div.header-tabs ul li.header-tabs-active a {
+    background-color: #2567bf;
+    color: white;
+}
+
+div.header-tabs ul li:first-child a i {
+    margin-right: 0.3em;
+}
+
+div.header-tabs ul li:nth-of-type(2) a {
+    color: #077100;
+}
+
+div.header-tabs ul li:nth-of-type(3) a {
+    color: #0e269a;
+}
+
+div.header-tabs ul li:nth-of-type(2) a:hover,
+div.header-tabs ul li:nth-of-type(3) a:hover {
+    color: black;
+}
+
+div.header-tabs div.header-tabs-nhs {
+    flex: 0 1 30%; /* don't grow, just shrink */
+    text-align: right;
+}
+
+div.header-tabs div.header-tabs-nhs a {
+    display: inline-block;
+}
+
+div.header-tabs div.header-tabs-nhs h1 {
+    color: black;
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 1.5rem;
+}
+
+div.header-tabs div.header-tabs-nhs h4 {
+    color: #2567bf;
+    margin-top: 0.2rem;
+}
+
+header nav {
+    background-color: #f3f3f3;
+    border-bottom-style: solid;
+    border-bottom-width: 0.05em;
+    border-bottom-color: #d7d7d7;
+    border-bottom-color: #e4e4e4;
+}
+
+header nav div.content {
+    display: flex;
+    padding: 0;
+}
+
+header nav div.content ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0.5em;
+    margin: 0;
+}
+
+header nav div.content ul li {
+    display: flex;
+    border-right-style: solid;
+    border-right-width: 0.05em;
+    border-right-color: #d7d7d7;
+    border-right-color: #e4e4e4;
+}
+
+header nav div.content ul li a {
+    padding: 1em;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+/* set background color for homepage */
+header nav div.content ul li:first-child a {
+    background-color: #d7d7d7;
+    background-color: #e4e4e4;
+}
+
+header nav div.content ul li a:hover {
+    background-color: #e4e4e4;
+}
+
+/* set colors for last item - help item */
+header nav div.content ul li:last-child a {
+    background-color: #e68b14;
+    color: white;
+}
+
+header nav div.content ul li:last-child a:hover {
+    background-color: #e28317;
+}
+
+header nav div.content ul li:last-child a i {
+    margin-right: 0.5em;
+}
+
+header nav div.content ul li a i {
+    vertical-align: middle; /* vertical align cup for submenu */
+}
+
+header nav div.content a.nav-hamburger-menu {
+    display: none;
+    color: black;
+    font-size: 1.8rem;
+    margin: 0.5rem;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 62rem) { /* 992 px */
+    /* hide menus and show hamburger menus */
+    div.header-tabs ul,  div.header-tabs div.header-tabs-nhs {
+        display: none;
+    }
+
+    div.header-tabs a.header-tabs-hamburger-menu {
+        display: block; /* show hamburger menu */
+    }
+
+    header nav div.content ul {
+        display: none;
+    }
+
+    header nav div.content a.nav-hamburger-menu {
+        display: inline-block; /* show hamburger menu */
+    }
+
+    header nav div.content {
+        justify-content: flex-end; /* push hamburger menu to the right */
+    }
+}
+
+header div.header-slides {
+    background-image: url("../../../../slike/zadaci/primer9/header-background-white-4.jpg");
+    background-size: cover;
+    border-bottom-style: solid;
+    border-bottom-width: 0.4em;
+    border-bottom-color: #e4e4e4;
+}
+
+header div.header-slides div.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* verticaly align text */
+    padding: 0; /* set padding just for flex item with text, not for flex item with picture */
+}
+
+header div.header-slides div.header-slides-image {
+    flex: 1 1 30%;
+    min-width: 13rem; /* set minimum width for flex item */
+    background-image: url("../../../../slike/zadaci/primer9/header-background-picture-2.jpg");
+    background-size: cover;
+    background-position: center bottom;
+}
+
+header div.header-slides section {
+    flex: 1 1 55%;
+    padding: 1em 0.5em; /* set padding only for flex item with text, not for flex item with picture */
+    color: #0054c4;
+}
+
+/* media block for responsive web design */
+@media only screen and (min-width: 20rem) { /* 320 px */
+    header div.header-slides div.header-slides-image {
+        height: 18.5rem; /* 296px: set height for background image */
+    }
+}
+
+header div.header-slides section h2 {
+    margin-top: 0;
+}
+
+header div.header-slides section p {
+    line-height: 1.4rem;
+    font-size: 1.1rem;
+}
+
+header div.header-slides section a.header-slides-button {
+    display: inline-block; /* top add top-bottom properties: paddings... */
+    background-color: #2567bf;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    text-decoration: underline;
+}
+
+header div.header-slides section a.header-slides-button:hover {
+    text-decoration: none;
+}
+
+header div.header-slides section div.header-slides-dots {
+    text-align: right;
+    margin-top: 1em;
+}
+
+header div.header-slides section div.header-slides-dots a {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #cecece;
+}
+
+header div.header-slides section div.header-slides-dots .header-slides-dots-active {
+    color: #2567bf;
+}
+
+header div.header-cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* align flex items on main axis */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header div.header-cards ul li {
+    flex: 1 1 33%; /* each flex item is 1/3 length of flex line */
+
+    /* flex container for links, to spread links up to whole width of list item */
+    display: flex;
+    flex-direction: column;
+}
+
+header div.header-cards ul li a {
+    text-align: center; /* align text in the center of list item */
+    height: 100%; /* get full height of list item */
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #929292;
+    padding: 0.2rem 2rem;
+    border-right-style: solid;
+    border-right-width: 0.05rem;
+    border-right-color: #929292;
+}
+
+/* remove border from last list item link */
+header div.header-cards ul li:last-child a {
+    border-right-style: none;
+}
+
+header div.header-cards ul li a:hover {
+    color: #737373;
+}
+
+header div.header-cards ul li.header-cards-active a {
+    color: #2567bf;
+}
+
+header div.header-cards ul li.header-cards-active a:hover {
+    color: #2c7ae2;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 26.5625rem) { /* 425px */
+    header div.header-cards ul li {
+        flex: 1 1 100%; /* each flex item on each flex line for small screens*/
+    }
+
+    /* remove borders from links when links are on each individual line */
+    header div.header-cards ul li a {
+        border-right-style: none;
+
+        /* increase top-bottom paddings */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+header div.header-cards-menu {
+    background-color: #2567bf;
+}
+
+header div.header-cards-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header div.header-cards-menu ul li {
+    flex: 1 1 20%; /* each list item 1/4 of flex line */
+
+    /* 
+        set minimum width of flex item to now shrink too much,
+        because in that case text will not look good
+    */
+    min-width: 9rem; /* 144px */
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+
+    /* flex container for links to spread links to full list item width */
+    display: flex;
+    flex-direction: column;
+
+    border-right-style: solid;
+    border-right-width: 0.05rem;
+    border-right-color: white;
+}
+
+/* remove border from last list item */
+header div.header-cards-menu ul li:last-child {
+    border-right-style: none;
+}
+
+header div.header-cards-menu ul li a {
+    height: 100%; /* get full height of list item */
+    color: white;
+    text-align: center;
+    padding: 0.5rem 2rem;
+}
+
+header div.header-cards-menu ul li a:hover {
+    color: #a3ddff;
+}
+
+header div.header-cards-menu ul li i {
+    font-size: 3rem; /* increase font icons size */
+}
+
+header div.header-cards-menu ul li h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 26.5625rem) { /* 425px */
+    header div.header-cards-menu ul li {
+        flex: 1 1 100%; /* each flex item on each flex line for small screens*/
+        border-right-style: none;
+    }
 }

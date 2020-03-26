@@ -29,22 +29,20 @@
                     </div><!-- header-links-left -->
 
                     <div class="header-links-right">
-                        <div class="header-links-right-select">
-                            <label for="header-links-language-id">
-                                <img src="../../../../slike/zadaci/primer9/google-plus-16.png"
-                                    alt="google-plus-icon" width="16" height="16" />
-                                <span>Select Language</span>
-                            </label>
-                            <select name="header-links-language" id="header-links-language-id">
-                                <option value="english">English</option>
-                                <option value="english">Serbian</option>
-                                <option value="english">Bosnian</option>
-                                <option value="english">Italian</option>
-                            </select>
-                        </div><!-- header-links-right-select -->
-                        <a href="index.html">A</a>
-                        <a href="index.html">A<span>-</span></a>
-                        <a href="index.html">A+</a>
+                        <select name="header-links-language" id="header-links-language-id">
+                            <option value="language" selected="selected" disabled="disabled">
+                                Select Language
+                            </option>
+                            <option value="english">English</option>
+                            <option value="english">Serbian</option>
+                            <option value="english">Bosnian</option>
+                            <option value="english">Italian</option>
+                        </select>
+                        <div class="header-links-right-a">
+                            <a href="index.html">A-</a>
+                            <a href="index.html">A</a>
+                            <a href="index.html">A+</a>
+                        </div><!-- header-links-right-a -->
                         <div class="header-links-search">
                             <input type="search" name="header-links-search-input" 
                                    placeholder="Search services or for help..." />
@@ -57,18 +55,25 @@
             <div class="header-tabs">
                 <div class="content">
                     <ul>
-                        <li><a href="index.html">Our Trust</a></li>
+                        <li class="header-tabs-active">
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span>Our Trust</span>
+                            </a>
+                        </li>
                         <li><a href="index.html">Recovery College</a></li>
                         <li><a href="index.html">Health Professionals</a></li>
                     </ul>
                     <div class="header-tabs-nhs">
                         <a href="index.html">
-                            <img src="../../../../slike/zadaci/primer9/nhs-logo-small.png"
-                                 alt="nhs-logo" width="100" height="40" />
-                            <h1>South West London and St George's Mental Health</h1>
+                            <img src="../../../../slike/zadaci/primer9/nhs-logo-small-200.png" alt="nhs-logo" width="100" height="40" />
+                            <h1>South West London and<br />St George's Mental Health</h1>
                             <h4>NHS Trust</h4>
                         </a>
                     </div><!-- header-tabs-nhs -->
+                    <a href="index.html" class="header-tabs-hamburger-menu">
+                        <i class="fas fa-bars"></i>
+                    </a><!-- header-tabs-hamburger-menu -->
                 </div><!-- content -->
             </div><!-- header-tabs -->
             
@@ -76,18 +81,20 @@
                 <div class="content">
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">Patients and careers</a></li>
-                        <li><a href="index.html">Our services</a></li>
-                        <li><a href="index.html">News and events</a></li>
-                        <li><a href="index.html">About us</a></li>
-                        <li><a href="index.html">Contact us</a></li>
+                        <li><a href="index.html">Patients and careers <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">Our services <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">News and events <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">About us <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">Contact us <i class="fas fa-angle-down"></i></a></li>
                         <li><a href="index.html">
                                 <i class="fas fa-bars"></i>
                                 <span>I need help now</span>
                             </a>
                         </li>
                     </ul>
-                    <a href="index.html"><i class="fas fa-bars"></i></a>
+                    <a href="index.html" class="nav-hamburger-menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
                 </div><!-- content -->
             </nav>
 
@@ -95,8 +102,9 @@
                 <!-- there is background image behind header slides -->
 
                 <div class="content">
-                    <img src="../../../../slike/zadaci/primer9/header-background-picture-2.jpg"
-                         alt="header-background-picture" width="250" height="166" />
+                    <div class="header-slides-image">
+                        <!-- there is centered background image for hospital -->
+                    </div><!-- header-slides-image -->
                     <section>
                         <h2>Estate Modernisation: two new hospitals</h2>
                         <p>Find out more about our exciting multi-million pound programme to invest
@@ -105,7 +113,9 @@
                         </p>
                         <a href="index.html" class="header-slides-button">Find out more</a>
                         <div class="header-slides-dots">
-                            <a href="index.html"><i class="fas fa-circle"></i></a>
+                            <a href="index.html" class="header-slides-dots-active">
+                                <i class="fas fa-circle"></i>
+                            </a>
                             <a href="index.html"><i class="fas fa-circle"></i></a>
                             <a href="index.html"><i class="fas fa-circle"></i></a>
                         </div><!-- header-slides-dots -->
@@ -118,7 +128,9 @@
                     <ul>
                         <li><a href="index.html">Your Trust</a></li>
                         <li><a href="index.html">Your Care</a></li>
-                        <li><a href="index.html">Your Opportunity</a></li>
+                        <li class="header-cards-active">
+                            <a href="index.html">Your Opportunity</a>
+                        </li>
                     </ul>
                 </div><!-- content -->
             </div><!-- header-cards -->
