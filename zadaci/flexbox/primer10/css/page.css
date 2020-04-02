@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: unset;
+}
+
+/* page wrapper */
+div.page-wrapper {
+    min-width: 20rem; /* 320px */
+}
+
+/* centered content of page */
+.content {
+    max-width: 75rem; /* 1200px */
+    margin: 0 auto; /* center content on page */
+    padding: 1rem 0.5rem;
+}
+
+/* header */
+
+header a.header-link-wrapper {
+    display: inline-block; /* display like inline, not to whole width */
+}
+
+header div.header-wrapper {
+    display: flex;
+}
+
+header div.header-logo {
+    margin-right: 3rem;
+}
+
+header div.header-text {
+    margin-top: 1rem;
+}
+
+header div.header-text h1 {
+    color: black;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+header div.header-text h2 {
+    color: #2452c7;
+    margin: 0;
+}
+
+@media only screen and (max-width: 48rem) { /* 768px */
+    header div.header-logo {
+        margin-right: 1.5rem;
+    }
+
+    header div.header-logo img {
+        width: 7rem;
+        height: auto; /* automaticaly resize picture with right proportions */
+    }
+
+    header div.header-text img {
+        width: 7rem;
+        height: auto;
+    }
+
+    header div.header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    header div.header-text h2 {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 24rem) { /* 384px */
+    header div.header-text h1 {
+        font-size: 1.1rem;
+    }
+}
+
+/* main navigation menu */
+
+nav.main-menu {
+    padding: 0;
+    background-color: #2679bb;
+
+    /* container for positioned element nav.main-menu div.main-menu-yellow-track */
+    position: relative;
+}
+
+nav.main-menu ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav.main-menu ul li {
+    padding: 1.5rem 0.7rem;
+}
+
+nav.main-menu ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+nav.main-menu ul li.main-menu-home a {
+    text-decoration: underline;
+}
+
+nav.main-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+nav.main-menu div.main-menu-hamburger {
+    font-size: 2.5rem;
+    padding: 1rem;
+    display: none; /* hide hamburger menu by default */
+}
+
+nav.main-menu div.main-menu-hamburger a {
+    color: white;
+}
+
+nav.main-menu div.main-menu-yellow-track {
+    /* set position relative to nav.main-menu */
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0.7rem;
+    width: 80%;
+    background-color: #f4fc38;
+}
+
+@media only screen and (max-width: 75rem) {
+    nav.main-menu div.main-menu-yellow-track, nav.main-menu ul {
+        display: none;
+    }
+
+    nav.main-menu div.main-menu-hamburger {
+        display: block; /* show hamburger menu */
+    }
+}
