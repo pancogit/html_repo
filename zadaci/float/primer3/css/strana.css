@@ -1,0 +1,521 @@
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	background-color: #f2f2f2;
+	background-color: hsla(0, 0%, 95%, 1);
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #0089ff;
+	color: hsla(208, 100%, 50%, 1);
+}
+
+/* heder */
+
+div#heder {
+	background-color: white;
+	width: 1500px;
+	margin: 0 auto;
+	padding: 5px;
+	overflow: hidden; /* clearfix bag */
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #e3e3e3;
+	border-color: hsla(0, 0%, 89%, 1);
+	border-width: 2.5px;
+}
+
+div#heder_logo {
+	width: 200px;
+	height: 50px;
+	background-image: url("../../../../slike/zadaci/primer3/telegraph_logo.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	float: left;
+}
+
+div#heder_logo a {
+	display: inline-block; /* da moze da se klikce kao blok */
+	width: 200px;
+	height: 50px;
+}
+
+div#heder p#heder_datum {
+	float: left;
+	color: silver;
+	margin-left: 10px;
+}
+
+span.granicnik {
+	margin-right: 10px;
+}
+
+div#heder p#heder_login {
+	float: right;
+	margin-right: 10px;
+}
+
+/* meni */
+
+div#meni {
+	background-color: #010f4c;
+	background-color: hsla(229, 97%, 15%, 1);
+	border-bottom-style: solid;
+	border-width: 3px;
+	border-color: #4cc4ff;
+	border-color: hsla(200, 100%, 65%, 1);
+	
+	/* nemoj da smanjujes obojenu traku vise od sirine hedera ukljucujuci padding i border */
+	min-width: 1515px;
+}
+
+div#meni_omotac {
+	width: 1500px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#meni_omotac p#meni_logo {
+	font-size: 350%;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 50px;
+	float: left;
+}
+
+div#meni_omotac span#meni_logo_telegraph {
+	color: white;
+}
+
+div#meni_omotac ul {
+	list-style-type: none;
+	padding: 0px;
+	float: left;
+	margin: 0px;
+}
+
+div#meni_omotac ul li {
+	display: inline-block;
+}
+
+div#meni_omotac ul li a {
+	text-transform: uppercase;
+	display: inline-block;
+	color: white;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 36px;
+}
+
+div#meni_omotac ul li a:hover {
+	background-color: #33a0ff;
+	background-color: hsla(208, 100%, 60%, 1);
+}
+
+div#meni_omotac p#meni_join {
+	float: right;
+	margin-right: 80px;
+}
+
+div#meni_omotac p#meni_join a {
+	color: white;
+	font-weight: bold;
+	font-size: 130%;
+	background-color: #0088ff;
+	background-color: hsla(208, 100%, 50%, 1);
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 9px black;
+}
+
+/* stranica */
+
+div#stranica {
+	width: 1500px;
+	background-color: white;
+	margin: 0 auto;
+	padding: 5px;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #e3e3e3;
+	border-color: hsla(0, 0%, 89%, 1);
+	border-width: 2.5px;
+	color: #5f5656;
+	color: hsla(0, 5%, 35%, 1);
+	overflow: hidden; /* clearfix */
+}
+
+div#stranica h2.naslov_sekcija {
+	background-color: #010f4c;
+	background-color: hsla(229, 97%, 15%, 1);
+	color: white;
+	font-style: italic;
+	width: 170px;
+	width: max-content; /* da zauzme mesta samo za tekst */
+	text-align: center;
+	padding: 5px;
+	margin-top: 0px; /* skloni marginu zbog linije okruzujeg div-a */
+}
+
+/* 
+	da iscrtamo liniju iznad naslova u svakoj sekciji
+	zato smo iskoristili poseban div oko naslova
+*/
+div#stranica div.div_naslov_sekcija {
+	border-top-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+}
+
+div#highlights {
+	width: 980px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 25px;
+	margin-top: 15px;
+	margin-left: 10px;
+	border-right-style: solid;
+	border-right-width: 5px;
+	border-right-color: #e8e7e7;
+	border-right-color: hsla(0, 2%, 91%, 1);
+	padding-right: 20px;
+}
+
+div#highlights img {
+	float: right;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+}
+
+div#highlights_levo {
+	width: 310px;
+	float: left;
+}
+
+div#highlights_levo h3 {
+	text-transform: uppercase;
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: normal;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+div#highlights_levo h1 {
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+	font-weight: normal;
+	margin: 0px;
+}
+
+div#highlights_levo p {
+	margin-top: 10px;
+}
+
+div#highlights_dole {
+	clear: both; /* ponisti plivanje i sa leve i sa desne strane */
+	overflow: hidden; /* clearfix */
+}
+
+div#highlights p.highlights_kartice {
+	display: inline-block; /* prikazi u istom redu, ali kao blokove */
+	width: 314px;
+	float: left; /* poredjaj paragraf jedan uz drugi */
+	border-style: solid;
+	border-width: 2px;
+	border-color: #99cfff;
+	border-color: hsla(208, 100%, 80%, 1);
+	padding: 5px;
+	margin: 0px;
+	margin-top: 2px; /* pomeri malo dole u odnosu na sliku */
+	background-color: #cce7ff;
+	background-color: hsla(208, 100%, 90%, 1);
+	padding-bottom: 40px;
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+}
+
+div#highlights p.highlights_kartice:nth-child(1) {
+	border-right-style: none; /* skloni liniju sa desne strane, da se ne duplira */
+}
+
+div#highlights p.highlights_kartice:nth-child(2) {
+	border-right-style: none;
+}
+
+div#highlights p.highlights_kartice span.highlights_kartice_naslov {
+	text-transform: uppercase;
+	display: inline-block;
+	margin-bottom: 6px;
+	font-size: 110%;
+}
+
+div#highlights p.highlights_kartice span:not(.highlights_kartice_naslov) {
+	font-size: 150%;
+}
+
+div#highlights p.highlights_kartice:hover {
+	background-color: #052766;
+	background-color: hsla(219, 91%, 21%, 1);
+}
+
+div#highlights p.highlights_kartice:hover span.highlights_kartice_naslov {
+	color: #4180f6;
+	color: hsla(219, 91%, 61%, 1);
+	font-weight: bold;
+}
+
+div#highlights p.highlights_kartice:hover span:not(.highlights_kartice_naslov) {
+	color: white;
+	font-weight: bold;
+}
+
+div#comments {
+	width: 455px;
+	overflow: scroll; 
+	overflow: auto; /* clearfix */
+	height: 540px;
+	margin-top: 15px;
+	margin-right: 10px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: silver;
+}
+
+div#comments span.comments_autor {
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: bold;
+}
+
+div#comments div:not(.div_naslov_sekcija) {
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: silver;
+}
+
+div#posts {
+	width: 900px;
+	float: left;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #e8e7e7;
+	border-right-color: hsla(0, 2%, 91%, 1);
+	padding-right: 20px;
+	margin-left: 10px;
+	margin-right: 15px;
+}
+
+div#posts span.posts_author {
+	color: #d00000;
+	color: hsla(0, 100%, 41%, 1);
+	font-weight: bold;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: silver;
+	padding-right: 10px;
+	margin-right: 5px;
+}
+
+div#posts div:not(.div_naslov_sekcija) > p:first-child {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #e8e7e7;
+	border-top-color: hsla(0, 2%, 91%, 1);
+	padding-top: 5px;
+	margin-bottom: 10px;
+}
+
+div#posts div:not(.div_naslov_sekcija) h2 {
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+	font-weight: normal;
+	font-size: 180%;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+div#posts img[alt="slika korisnika"] {
+	float: left;
+	margin-right: 10px;
+}
+
+div#posts img[alt="slika za komentar"] {
+	vertical-align: middle;
+	vertical-align: bottom;
+	margin-right: 5px;
+	background-color: silver;
+}
+
+/* web hosting */
+
+div#web_hosting_alert {
+	width: 545px;
+	float: left;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting1.jpg");
+	background-repeat: no-repeat;
+	background-size: 250%; /* zumiraj sliku, da bi se tekst bolje video */
+	color: white;
+	border-bottom-left-radius: 60px;
+	border-bottom-right-radius: 60px;
+	overflow: hidden; /* clearfix */
+}
+
+div#web_hosting_alert_x {
+	background-color: #dadada;
+	background-color: hsla(0, 0%, 85%, 1);
+	float: right;
+	height: 19px;
+}
+
+div#web_hosting_alert_x a {
+	display: inline-block; /* prikazi kao blok */
+	padding: 2px;
+	width: 15px;
+	height: 15px;
+}
+
+div#web_hosting_sadrzaj {
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 15px;
+	margin-right: 25px;
+	overflow: hidden; /* clearfix bag */
+}
+
+div#web_hosting_sadrzaj h1 {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.4em;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+div#web_hosting_sadrzaj .web_host_naslov {
+	font-weight: bold;
+}
+
+div#web_hosting_sadrzaj h3 {
+	text-align: center;
+	width: 310px;
+	width: max-content;
+	background-color: #065a06;
+	background-color: hsla(120, 88%, 19%, 1);
+	margin: 0 auto;
+	padding: 2px 5px;
+}
+
+div#web_hosting_sadrzaj ul#web_hosting_lista {
+	float: left;
+	width: 250px;
+	font-family: monospace;
+	font-size: 1.8em;
+	list-style-image: url("../../../../slike/zadaci/primer3/web_hosting_strelica2.png");
+}
+
+div#web_hosting_sadrzaj ul#web_hosting_lista ul {
+	list-style-image: url("../../../../slike/zadaci/primer3/web_hosting_plus2.png");
+}
+
+div#web_host_promo {
+	float: right;
+	width: 180px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 25px;
+}
+
+div#web_host_promo p:first-child {
+	background-color: green;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding: 10px;
+	margin-bottom: 0px;
+	width: 152px; /* smanji malo sirinu kocke */
+	margin: 0 auto; /* centriraj paragraf */
+	border-top-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-width: 2px;
+	border-color: #007500;
+	border-color: hsla(120, 100%, 23%, 1);
+}
+
+div#web_host_promo p:nth-child(2) {
+	background-color: orange;
+	border-radius: 3px;
+	padding: 10px;
+	margin-top: 0px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #ea9800;
+	border-color: hsla(39, 100%, 46%, 1);
+}
+
+/* futer */
+
+div#futer {
+	background-color: black;
+	color: white;
+	min-width: 1515px; /* minimalna sirina pozadine futera */
+}
+
+div#futer_omotac {
+	width: 1500px;
+	margin: 0 auto;
+	padding: 10px;
+	overflow: hidden; /* clearfix */
+}
+
+div#futer_omotac div.futer_div {
+	float: left;
+	width: 160px;
+	margin-right: 100px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+div#futer_omotac div.futer_div h3 {
+	border-bottom-style: solid;
+	border-bottom-color: blue;
+	border-bottom-width: 2px;
+	padding-bottom: 3px;
+}
+
+div#futer_omotac div.futer_div ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+div#futer_omotac div.futer_div ul li {
+	margin-bottom: 3px;
+}
+
+div#futer_omotac div.futer_div ul li a:hover {
+	color: green;
+}
+
+div#futer_info {
+	overflow: hidden; /* clearfix */
+	width: 1100px;
+	margin: 0 auto; /* centiraj */
+}
+
+div#futer_omotac p#futer_copy {
+	clear: left; /* ponisti float za levu stranu */
+	text-align: center;
+}

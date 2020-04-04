@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Zadaci flexbox primer 9</title>
+
+    <!-- for responsive design -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+    <!-- use minified css file -->
+    <link href="../css/page.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- link font awesome font icons -->
+    <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="page">
+        
+        <header>
+            <div class="header-links">
+                <div class="content">
+                    <div class="header-links-left">
+                        <a href="index.html">Our Charity</a>
+                        <a href="index.html">Careers</a>
+                        <a href="index.html">Find Us</a>
+                    </div><!-- header-links-left -->
+
+                    <div class="header-links-right">
+                        <select name="header-links-language" id="header-links-language-id">
+                            <option value="language" selected="selected" disabled="disabled">
+                                Select Language
+                            </option>
+                            <option value="english">English</option>
+                            <option value="english">Serbian</option>
+                            <option value="english">Bosnian</option>
+                            <option value="english">Italian</option>
+                        </select>
+                        <div class="header-links-right-a">
+                            <a href="index.html">A-</a>
+                            <a href="index.html">A</a>
+                            <a href="index.html">A+</a>
+                        </div><!-- header-links-right-a -->
+                        <div class="header-links-search">
+                            <input type="search" name="header-links-search-input" 
+                                   placeholder="Search services or for help..." />
+                            <a href="index.html"><i class="fas fa-search"></i></a>
+                        </div><!-- header-links-search -->
+                    </div><!-- header-links-right -->
+                </div><!-- content -->
+            </div><!-- header-links -->
+
+            <div class="header-tabs">
+                <div class="content">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                                <span>Our Trust</span>
+                            </a>
+                        </li>
+                        <li class="header-tabs-active">
+                            <a href="recovery-college.html">Recovery College</a>
+                        </li>
+                        <li><a href="health-professionals.html">Health Professionals</a></li>
+                    </ul>
+                    <div class="header-tabs-nhs">
+                        <a href="index.html">
+                            <img src="../../../../slike/zadaci/primer9/nhs-logo-small-200.png" alt="nhs-logo" width="100" height="40" />
+                            <h1>South West London and<br />St George's Mental Health</h1>
+                            <h4>NHS Trust</h4>
+                        </a>
+                    </div><!-- header-tabs-nhs -->
+                    <a href="index.html" class="header-tabs-hamburger-menu">
+                        <i class="fas fa-bars"></i>
+                    </a><!-- header-tabs-hamburger-menu -->
+                </div><!-- content -->
+            </div><!-- header-tabs -->
+            
+            <nav>
+                <div class="content">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Patients and careers <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">Our services <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">News and events <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">About us <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">Contact us <i class="fas fa-angle-down"></i></a></li>
+                        <li><a href="index.html">
+                                <i class="fas fa-bars"></i>
+                                <span>I need help now</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="index.html" class="nav-hamburger-menu">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div><!-- content -->
+            </nav>
+
+            <div class="header-slides">
+                <!-- there is background image behind header slides -->
+
+                <div class="content">
+                    <div class="header-slides-image">
+                        <!-- there is centered background image for hospital -->
+                    </div><!-- header-slides-image -->
+                    <section>
+                        <h2>Estate Modernisation: two new hospitals</h2>
+                        <p>Find out more about our exciting multi-million pound programme to invest
+                           in our facilities which will create first class mental health care services
+                           for our patients.
+                        </p>
+                        <a href="index.html" class="header-slides-button">Find out more</a>
+                        <div class="header-slides-dots">
+                            <a href="index.html" class="header-slides-dots-active">
+                                <i class="fas fa-circle"></i>
+                            </a>
+                            <a href="index.html"><i class="fas fa-circle"></i></a>
+                            <a href="index.html"><i class="fas fa-circle"></i></a>
+                        </div><!-- header-slides-dots -->
+                    </section>
+                </div><!-- content -->
+            </div><!-- header-slides -->
+
+            <div class="header-cards">
+                <div class="content">
+                    <ul>
+                        <li><a href="index.html">Your Trust</a></li>
+                        <li><a href="index.html">Your Care</a></li>
+                        <li class="header-cards-active">
+                            <a href="index.html">Your Opportunity</a>
+                        </li>
+                    </ul>
+                </div><!-- content -->
+            </div><!-- header-cards -->
+
+            <div class="header-cards-menu">
+                <div class="content">
+                    <ul>
+                        <li><a href="index.html">
+                                <i class="far fa-address-card"></i>
+                                <h3>Get involved</h3>
+                            </a>
+                        </li>
+                        <li><a href="index.html">
+                                <i class="far fa-user"></i>
+                                <h3>Become a member</h3>
+                            </a>
+                        </li>
+                        <li><a href="index.html">
+                                <i class="fas fa-ribbon"></i>
+                                <h3>Work with us</h3>
+                            </a>
+                        </li>
+                        <li><a href="index.html">
+                                <i class="far fa-hand-paper"></i>
+                                <h3>Trackling Stigma</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- content -->
+            </div><!-- header-cards-menu -->
+        </header>
+
+        <main id="main_id">
+            <div class="content">
+                <section class="main-latest-news">
+                    <h2>Latest News</h2>
+                    <div class="main-content">
+                        <article>
+                            <div class="main-latest-news-left">
+                                <a href="#main_id">
+                                    <h3>South London NHS collaboration to manage budgets
+                                        and provision of mental health care for your people
+                                    </h3>
+                                </a>
+                                <p>The South London Mental Health and Community Partnership
+                                    (SLMHCP) has been awarded a contract to manage the budgets
+                                    and care for specialist child...
+                                </p>
+                            </div><!-- main-latest-news-left -->
+                            <img src="../../../../slike/zadaci/primer9/latest-news-1a.jpg" 
+                                 alt="latest-news-picture" width="100" height="55" />
+                        </article>
+
+                        <article>
+                            <div class="main-latest-news-left">
+                                <a href="#main_id">
+                                    <h3>Richmond residents encouraged to help shape mental
+                                        health services
+                                    </h3>
+                                </a>
+                                <p>An innovative partnership of eight local NHS and Community
+                                   organisations is working with service users and careers to
+                                   develop mental health and...
+                                </p>
+                            </div><!-- main-latest-news-left -->
+                            <img src="../../../../slike/zadaci/primer9/latest-news-2.jpg" 
+                                 alt="latest-news-picture" width="100" height="55" />
+                        </article>
+                        <a href="#main_id" class="main-latest-news-read-more">Read more</a>
+                    </div><!-- main-content -->
+                </section>
+
+                <section class="main-contact-us">
+                    <h2>Ways to Contact Us</h2>
+                    <div class="main-content">
+                        <a href="#main_id">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>How to find us</span>
+                        </a>
+                        <a href="#main_id">
+                            <!-- <i class="far fa-map"></i> -->
+                            <i class="fas fa-map"></i>
+                            <span>A-Z of services</span>
+                        </a>
+                        <a href="#main_id">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Contact centre - 020 3513 5000</span>
+                        </a>
+                        <a href="#main_id">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>PALS line - 020 3513 6150</span>
+                        </a>
+                        <a href="#main_id">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Support line - 0800 028 8000</span>
+                        </a>
+                        <a href="#main_id">
+                            <i class="fas fa-book"></i>
+                            <span>Patient Information</span>
+                        </a>
+                    </div><!-- main-content -->
+                </section>
+            </div><!-- content -->
+        </main>
+
+        <footer id="footer-id">
+            <div class="footer-list-wrapper">
+                <div class="content">
+                    <section>
+                        <h2>Patients and careers</h2>
+                        <ul>
+                            <li><a href="#footer-id">A-Z of services</a></li>
+                            <li><a href="#footer-id">Patient Information</a></li>
+                            <li><a href="#footer-id">Patient experience</a></li>
+                            <li><a href="#footer-id">Careers resources</a></li>
+                            <li><a href="#footer-id">Support in a crisis</a></li>
+                            <li><a href="#footer-id">Get involved</a></li>
+                            <li><a href="#footer-id">Share your views</a></li>
+                        </ul>
+                    </section>
+            
+                    <section>
+                        <h2>Advice and support</h2>
+                        <ul>
+                            <li><a href="#footer-id">About us</a></li>
+                            <li><a href="#footer-id">A-Z of conditions</a></li>
+                            <li><a href="#footer-id">Advice and support</a></li>
+                            <li><a href="#footer-id">Advocacy services</a></li>
+                            <li><a href="#footer-id">What is recovery</a></li>
+                            <li><a href="#footer-id">Your appointment</a></li>
+                            <li><a href="#footer-id">Jargon buster</a></li>
+                        </ul>
+                    </section>
+            
+                    <section>
+                        <h2>Join us</h2>
+                        <ul>
+                            <li><a href="#footer-id">Becoming a member</a></li>
+                            <li><a href="#footer-id">Staff benefits</a></li>
+                            <li><a href="#footer-id">Patient Quality Forum</a></li>
+                            <li><a href="#footer-id">Volunteering</a></li>
+                            <li><a href="#footer-id">Work experience</a></li>
+                            <li><a href="#footer-id">Vacancies</a></li>
+                            <li><a href="#footer-id">Our charity</a></li>
+                        </ul>
+                    </section>
+            
+                    <div class="footer-care-quality">
+                        <a href="#footer-id" class="footer-care-quality-logo-link">
+                            <img src="../../../../slike/zadaci/primer9/care-quality-commission-1.png"
+                                alt="care-quality-commission-logo" width="120" height="38" />
+                        </a>
+                        <p>South West London and St Geroge's Mental Health NHS Trust</p>
+                        <p class="footer-care-quality-cqc-rating">CQC overall rating</p>
+                        <a href="#footer-id" class="footer-care-quality-good-link">Good</a>
+                        <p>5 June 2017</p>
+                        <a href="#footer-id" class="footer-care-quality-report">See the report</a>
+                    </div><!-- footer-care-quality -->
+                </div><!-- content -->
+            </div><!-- footer-list-wrapper -->
+
+            <div class="footer-links-wrapper">
+                <div class="footer-links">
+                    <div class="content">
+                        <div class="footer-links-content-left">
+                            <ul>
+                                <li><a href="#footer-id">Home</a></li>
+                                <li><a href="#footer-id">Accessibility</a></li>
+                                <li><a href="#footer-id">Cookies Policy</a></li>
+                                <li><a href="#footer-id">Privacy Notice</a></li>
+                                <li><a href="#footer-id">Sitemap</a></li>
+                            </ul>
+                            <p>&copy; 2016 South West London and St George's Mental Health NHS Trust</p>
+                        </div><!-- footer-links-content-left -->
+
+                        <div class="footer-links-content-right">
+                            <a href="#footer-id">
+                                <i class="far fa-handshake"></i>
+                                <span>Respectful</span>
+                            </a>
+                            <a href="#footer-id">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <span>Open</span>
+                            </a>
+                            <a href="#footer-id">
+                                <i class="fas fa-users"></i>
+                                <span>Collaborative</span>
+                            </a>
+                            <a href="#footer-id">
+                                <i class="fas fa-child"></i>
+                                <span>Compassionate</span>
+                            </a>
+                            <a href="#footer-id">
+                                <i class="fas fa-cog"></i>
+                                <span>Consistent</span>
+                            </a>
+                        </div><!-- footer-links-content-right -->
+                    </div><!-- content -->
+                </div><!-- footer-links" -->
+            </div><!-- footer-links-wrapper" -->
+        </footer>
+    </div><!-- page -->
+
+</body>
+
+</html>

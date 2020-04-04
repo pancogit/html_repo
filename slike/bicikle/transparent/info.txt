@@ -1,0 +1,11 @@
+sirina 640 px za slike 1-2, 2-2, 3-2, 4-2, 5-2
+to je 2/3 od 960 piksela
+960 piksela je sirina stranice
+
+transparentne slike moraju biti sacuvane u formatu png
+da bi se prikazivale transparentno
+inace, ako nisu u png formatu, vec su u jpg na primer,
+onda ce se prikazivati sivo-bela pozadina iza slike
+
+transparentne slike moraju da se izvezu kao transparentne,
+inace opet nece se prikazati transparentno

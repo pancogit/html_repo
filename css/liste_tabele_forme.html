@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Liste, tabele i forme CSS</title>
+	<link href="css/liste_tabele_forme.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<h1>Liste, tabele i forme</h1>
+	
+	<div id="putanje">
+		<h3>Putanje</h3>
+		<p>Idi na <a href="#dno">dno</a> stranice.</p>
+		<p>Idi na <a href="#forma1">formu 1</a>.</p>
+		<p>Idi na <a href="#forma2">formu 2</a>.</p>
+		<p>Idi na <a href="#forma3">formu 3</a>.</p>
+		<p>Idi na <a href="#forma4">formu 4</a>.</p>
+		<p>Idi na <a href="#forma5">formu 5</a>.</p>
+		<p>Idi na <a href="#forma6">formu 6</a>.</p>
+	</div><!-- putanje -->
+	
+	<div id="liste">
+		<h2 class="naslovi">Primeri lista</h2>
+		<h3>Radni dani</h3>
+		<ol>
+			<li>Ponedeljak
+				<ol class="ponedeljak">
+					<li>Ovo je prvi dan u nedelji</li>
+					<li>Mnogi ne vole ovaj dan</li>
+				</ol>
+			</li>
+			<li>Utorak
+				<ol class="utorak">
+					<li>Ovo je drugi dan u nedelji</li>
+					<li>On dolazi posle ponedeljka</li>
+					<li>Utorak je nekom lep dan, a nekom nije</li>
+				</ol>
+			</li>
+			<li>Sreda</li>
+			<li>Cetvrtak</li>
+			<li>Petak</li>
+		</ol>
+		<h3>Vrsta sporta</h3>
+		<ul>
+			<li>Kosarka</li>
+			<li>Fudbal</li>
+			<li>Plivanje</li>
+			<li>Trcanje</li>
+		</ul>
+		<h3>Vrste voca</h3>
+		<ul class="voce">
+			<li>Jabuka</li>
+			<li>Banana</li>
+			<li>Kruska</li>
+			<li>Maslina</li>
+		</ul>
+		<div id="markeri">
+			<p>Marker elemenata liste (tacka, broj, itd) moze da se
+			   ispisuje i unutar kocke u kojoj se nalazi. Inace, podrazumevano
+			   ovi markeri se ispisuju izvan kocke elemenata liste.
+			</p>
+			<ul>
+				<li>Jednog lepog dana je pao sneg. Stanovnici toga grada
+				    nisu ocekivali da ce sneg uopste da padne, iako je bilo
+					vreme za zimu. Oni su brzo trcali prevozom da bi dosli
+					kuci da se ugreju, jer nisu poneli jaknu.
+				</li>
+				<li>Poceli su zemljotresi da potresaju celu planetu. Tektonske
+				    ploce su pocele da podilaze jedna ispod druge i tako
+					su prouzrokovale zemljotrese. Neki stanovnici su se zalili
+					kako im se u stanu sve trese. To je trajalo jedne rane zore
+					oko sat i po vremena.
+				</li>
+			</ul>
+			<p>Ovo je primer podrazumevanog polozaja markera elemenata liste
+			   izvan kocke elemenata liste:
+			</p>
+			<ol>
+				<li>Jednog lepog dana je pao sneg. Stanovnici toga grada
+				    nisu ocekivali da ce sneg uopste da padne, iako je bilo
+					vreme za zimu. Oni su brzo trcali prevozom da bi dosli
+					kuci da se ugreju, jer nisu poneli jaknu.
+				</li>
+				<li>Poceli su zemljotresi da potresaju celu planetu. Tektonske
+				    ploce su pocele da podilaze jedna ispod druge i tako
+					su prouzrokovale zemljotrese. Neki stanovnici su se zalili
+					kako im se u stanu sve trese. To je trajalo jedne rane zore
+					oko sat i po vremena.
+				</li>
+			</ol>
+		</div> <!-- markeri -->
+		<div>
+			<p>Evo jednog primera kako liste mogu da se menjaju jednim propertijem:</p>
+			<ul>
+				<li>Dobar dan. Ovo je predstava o fudbalskom timu koji je uspeo
+				    da postane prvak sveta davne '91. godine. Imali su crvenu
+					zastavu i igrali su kao studenti. Inace, veoma talentovana
+					ekipa mladica koji su uspeli svakog da pobede.
+				</li>
+				<li>Plivanje je jako dobar sport. Razvija sve vrste misica, kao
+				    i srce. Dobar je kardio sport i trosi mnogo kalorija. Plivanje
+					isteze ledja i prsljenove i opusta misice ledja. Mnogi ne vole
+					da idu do dolakih bazena, pa da se raspremaju, ali inace da je
+					bazen blizu, isli bi svaki moguci dan da mogu.
+				</li>
+			</ul>
+		</div>
+	</div><!-- liste -->
+	
+	<div id="brojaci">
+		<h2 class="naslovi">Primeri brojaca</h2>
+		<p>Brojaci mogu da se koriste ne samo na elementima liste, vec i na
+		   ostalim elementima:
+		</p>
+		<div id="prvi_brojac">
+			<p>Ovo je prvi paragraf.</p>
+			<p>Ovo je drugi paragraf.</p>
+			<p>Ovo je treci paragraf.</p>
+			<p>Ovo je cetvrti paragraf.</p>
+		</div> <!-- prvi_brojac -->
+		<p>Moze da se broji od bilo kog broja i sa bilo kojim korakom 
+		   inkrementiranja:
+		</p>
+		<div id="drugi_brojac">
+			<h3>Jedan naslov</h3>
+			<h3>Drugi naslov</h3>
+			<h3>Neki tamo naslov</h3>
+			<p>More</p>
+			<p>Plaza</p>
+			<p>Priroda</p>
+		</div> <!-- drugi_brojac -->
+		<p>Brojaci mogu da se ugnezdavaju kao na primer u sekcijama,
+		   podsekcijama i slicno:
+		</p>
+		<div id="treci_brojac">
+			<h1>Prica o biljkama</h1>
+			<h2>Uvod</h2>
+			<h2>Odrzavanje</h2>
+			<h3>Livade</h3>
+			<h3>Pasnjaci</h3>
+			<h2>Higijena</h2>
+			<h3>Dezinfekcija</h3>
+			<h3>Dezinsekcija</h3>
+			<h3>Deoterizacija</h3>
+			<h1>Jos neka prica</h1>
+			<h2>Prica o necemu</h2>
+			<h2>Prica o maslacku</h2>
+			<h3>Zuta boja cveta</h3>
+			<h3>Zelena boja stabljike</h3>
+		</div> <!-- treci_brojac -->
+		<p>Moguce je brojati ne samo brojevima, nego bilo kojim tipom
+		   koji se koriste u listama (malo slovo, veliko slovo, rimski brojevi...).
+		   Mi cemo ovde koristiti za prvi nivo velika slova (A, B, ...),
+		   za drugi nivo ugnezdenja obicne brojeve (1, 2, ...),
+		   a za treci nivo rimske brojeve (i, ii, iii, ...):
+		</p>
+		<div id="cetvrti_brojac">
+			<h1>Prica o biljkama</h1>
+			<h2>Uvod</h2>
+			<h2>Odrzavanje</h2>
+			<h3>Livade</h3>
+			<h3>Pasnjaci</h3>
+			<h2>Higijena</h2>
+			<h3>Dezinfekcija</h3>
+			<h3>Dezinsekcija</h3>
+			<h3>Deoterizacija</h3>
+			<h1>Jos neka prica</h1>
+			<h2>Prica o necemu</h2>
+			<h2>Prica o maslacku</h2>
+			<h3>Zuta boja cveta</h3>
+			<h3>Zelena boja stabljike</h3>
+		</div> <!-- cetvrti_brojac -->
+		<p id="p_ugnjezdavanje">Kada postoji mnogo ugnezdenja, onda nije prakticno da se broji.
+		   Na primer ukoliko imamo listu ugnezdenja do 50, onda nam treba
+		   50 brojaca za svaki nivo ugnezdenja. Plus dodatno moramo da vodimo
+		   racuna kada smo koji brojac povecali, kada smo koji resetovali
+		   i slicno. To onda znatno usloznjava stvari i ima previse koda
+		   koji pravi brlog. Zbog ovoga, postoji posebna css metoda koja
+		   automatski postavlja brojac kada se dodje do novog ugnezdenja,
+		   tako sto kreira novu instancu istog brojaca za svaki nivo ugnezdenja.
+		   To znaci da ako imamo 50 nivoa ugnezdenja, napravimo samo jedan
+		   brojac i onda ce on automatski da se kreira kao nova instanca
+		   sa svakim novim ugnezdenjem. Na ovaj nacin imamo deklarisan samo
+		   jedan brojac, koji ce se automatski kreirati sa svakim novim ugnezdenjem
+		   i to mnogo uproscava kod.
+		<p>
+		<div id="peti_brojac">
+			<ol>
+				<li>Lista
+					<ol>
+						<li>Tipovi liste</li>
+						<li>Elementi liste kao slike</li>
+						<li>Pozicija markera liste</li>
+						<li>Uprosceni izgled liste</li>
+						<li>Raspored liste</li>
+					</ol>
+				</li>
+				<li>Generisani sadrzaj
+					<ol>
+						<li>Ubacivanje generisanog sadrzaja
+							<ol>
+								<li>Generisanje sadrzaja i <q>ran</q> sadrzaj</li>
+							</ol>
+						</li>
+						<li>Definisanje sadrzaja
+							<ol>
+								<li>Menjanje vrednosti atributa</li>
+								<li>Generisane izreke</li>
+							</ol>
+						</li>
+						<li>Brojaci
+							<ol>
+								<li>Resetovanje i inkrementiranje</li>
+								<li>Koriscenje brojaca</li>
+								<li>Brojaci i opseg vazenja</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>Zakljucak</li>
+			</ol>
+		</div> <!-- peti_brojac -->
+	</div> <!-- brojaci -->
+	
+	<div id="tabele">
+		<h2 class="naslovi">Primeri tabela</h2>
+		<h2>Prvoklasna aukcija</h2>
+		<table class="aukcija">
+			<tr>
+				<th>Autor</th>
+				<th>Naziv</th>
+				<th class="cena">Rezervisana cena</th>
+				<th class="cena">Trentna ponuda</th>
+			</tr>
+			<tr>
+				<td>Milan Jankovic</td>
+				<td>Zlatna knjiga</td>
+				<td class="cena">2,000.00 &euro;</td>
+				<td class="cena">2,642.50 &euro;</td>
+			</tr>
+			<tr>
+				<td>Stefan Jakovljevic</td>
+				<td>Luster</td>
+				<td class="cena"></td>
+				<td class="cena">5,867.00 &euro;</td>
+			</tr>
+			<tr>
+				<td>Nikola Ilic</td>
+				<td>Casovnik</td>
+				<td class="cena">1,250.00 &euro;</td>
+				<td class="cena">8,500.35 &euro;</td>
+			</tr>
+			<tr>
+				<td>Jovan Brkic</td>
+				<td>Atlas sveta</td>
+				<td class="cena"></td>
+				<td class="cena">1031.72 &euro;</td>
+			</tr>
+		</table>
+		<p>Moguce je sakriti linije oko elemenata tabele, ukoliko
+		   oni postoje i ukoliko oni nisu spojeni.
+		</p>
+		<table class="tabela2">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td></td>
+			</tr>
+		</table>
+		<table class="tabela3">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td></td>
+			</tr>
+		</table>
+		<p>Podrazumeveno pretrazivaci stavljaju mali razmak od 2 piksela
+		   izmedju elemenata tabele. Ovaj razmak moze da se promeni, da
+		   se poveca ili smanji ili moze skroz da se ukloni, pa da elementi
+		   tabele budu spojeni kao sto je normalni prikaz tabele.
+		</p>
+		<table class="tabela4">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<table class="tabela5">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<p>Ukoliko se razmak izmedju elemenata tabele postavi na nulu,
+		   onda ce mesto gde se spajaju elementi tabele imati dvostruko
+		   vecu debljinu. Ukoliko hocemo da stavimo razmak nula izmedju
+		   elemenata tabele, onda treba da postavimo horizantalni i vertikalni
+		   razmak izmedju elemenata tabele kao sto smo to u prethodnom primeru uradili.
+		</p>
+		<table class="tabela6">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4</td>
+			</tr>
+		</table>
+		<p>Ukoliko tabele imaju razdvojene celije, onda je nemoguce definisati
+		   liniju sa red tabele ili za kolonu tabele, zato sto one nisu fizicki
+		   spojene, vec su razdvojene. Zbog toga mozemo u ovom slucaju da samo
+		   definisemo linije za pojedinacne celije tabele. Ukoliko su celije 
+		   tabele sastavljene, onda mozemo da definisemo linije za redove i kolone.
+		   Naravno, u ovom slucaju je isto moguce definisati linije i za
+		   pojedinacne celije.
+		</p>
+		<table class="tabela7">
+			<tr>
+				<th>Ime</th>
+				<th>Prezime</th>
+				<th>Broj karte</th>
+				<th>Destinacija</th>
+				<th>Cena</th>
+			</tr>
+			<tr>
+				<td>Stefan</td>
+				<td>Milosevic</td>
+				<td>448900267</td>
+				<td>Portoriko</td>
+				<td>1200 &euro;</td>
+			</tr>
+			<tr>
+				<td>Jovan</td>
+				<td>Micic</td>
+				<td>928456025</td>
+				<td>Madrid</td>
+				<td>600 &euro;</td>
+			</tr>
+		</table>
+		<table class="tabela8">
+			<tr>
+				<th>Ime</th>
+				<th>Prezime</th>
+				<th>Broj karte</th>
+				<th>Destinacija</th>
+				<th>Cena</th>
+			</tr>
+			<tr>
+				<td>Stefan</td>
+				<td>Milosevic</td>
+				<td>448900267</td>
+				<td>Portoriko</td>
+				<td>1200 &euro;</td>
+			</tr>
+			<tr>
+				<td>Jovan</td>
+				<td>Micic</td>
+				<td>928456025</td>
+				<td>Madrid</td>
+				<td>600 &euro;</td>
+			</tr>
+		</table>
+		<p>Tabele se iscrtavaju u slojevima. Na dnu je sam okvir tabele,
+		   zatim idu grupe kolona, pa same kolone, pa grupe redova, pa
+		   redovi, pa na kraju se crtaju pojedinacne celije. Najveci prioritet
+		   imaju celije tabele koje su na vrhu, dok najmanji ima okvir 
+		   tabele koji je na dnu.
+		</p>
+		<table class="tabela9">
+			<tr>
+				<td>jedan</td>
+				<td>dva</td>
+			</tr>
+			<tr>
+				<td>tri</td>
+				<td>cetiri</td>
+			</tr>
+			<tr>
+				<td>pet</td>
+				<td>sest</td>
+			</tr>
+		</table>
+		<p>Moguce je definisati razlicite duzine i visine celija.
+		   Takodje je moguce kako horizontalno, tako i vertikalno
+		   pomeranje teksta unutar pojedinacnih celija tabele.
+		</p>
+		<table class="tabela10">
+			<tr>
+				<td>leto</td>
+				<td id="zima">zima</td>
+				<td>jesen</td>
+				<td>dzungla</td>
+			</tr>
+			<tr>
+				<td id="zirafe">zirafe</td>
+				<td>psi</td>
+				<td>karanfili</td>
+				<td id="detelina">
+					<div>detelina</div>
+				</td>
+			</tr>
+		</table>
+		<h2>Tabele i zakrivljene linije</h2>
+		<p>Kada koristimo <ins><b><i>border-radius</i></b></ins>, moguce je koristiti
+		   na svim elementima izuzev nad elementima tabela.<br />Kako onda zaobliti ivice tabele?
+		</p>
+		<p>Tabela se prikazuje na dva nacina:</p>
+		<ol>
+			<li>tabela sa razdvojenim elementima tabele <i>(separate)</i></li>
+			<li>tabela za spojenim elementima tabele <i>(collapse)</i></li>
+		</ol>
+		<p>Prvi slucaj je podrazumevani slucaj i kod takve tabele svi elementi se posmatraju
+		   kao zasebni elementi, a ne kao celina. Zbog toga je moguce da se iskrive pojedinacne
+		   ivice tabele u ovom slucaju, jer su elementi zasebni.
+		</p>
+		<table class="tabela11">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<table class="tabela12">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<table class="tabela13">
+			<tr>
+				<td>prvi</td>
+				<td>drugi</td>
+			</tr>
+			<tr>
+				<td>treci</td>
+				<td>cetvrti</td>
+			</tr>
+		</table>
+		<p>U drugom slucaju tabele, elementi tabele su spojeni i ne posmatraju se vise sami
+		   za sebe. Bas zato nije moguce zaobliti ivice bilo kog elementa tabele.
+		</p>
+		<table class="tabela14">
+			<tr>
+				<td>jedan</td>
+				<td>dva</td>
+			</tr>
+			<tr>
+				<td>tri</td>
+				<td>cetiri</td>
+			</tr>
+		</table>
+		<p>Kao sto se vidi, nismo uspeli da zaoblimo nijednu ivicu tabele, jer to ne moze
+		   u ovom slucaju. Cak ni pozadinska boja tabele se nije zaoblila, vec samo pozadinska
+		   boja prvog elementa u prvom redu tabele, ali to nije ono sto smo zeleli da uradimo,
+		   jer su i dalje linije tabele ostane netaknute.
+		</p>
+	</div> <!-- tabele -->
+	
+	<div id="forme">
+		<h2 class="naslovi">Primeri formi</h2>
+		<form id="forma1" method="get" action="https://www.example.com/forma1.php">
+			<label for="unos_id" class="forma1_levo">Tekstualni unos: </label>
+			<input type="text" name="unos" id="unos_id" />
+			<br />
+			<label for="sifra_id" class="forma1_levo">Sifra: </label>
+			<input type="password" name="sifra" id="sifra_id" />
+			<br />
+			<label for="prostor_id" class="forma1_levo">Tekstualni prostor: </label>
+			<textarea name="prostor" id="prostor_id"></textarea>
+			<br />
+			<label for="selekt_id" class="forma1_levo">Selekciono polje: </label>
+			<select name="selekt" id="selekt_id">
+				<option value="opcija1">Opcija 1</option>
+				<option value="opcija2">Opcija 2</option>
+				<option value="opcija3">Opcija 3</option>
+				<option value="opcija4">Opcija 4</option>
+			</select>
+			<br />
+			<span class="forma1_levo">Radio dugmici: </span>
+			<input type="radio" name="dugmici" id="dugme1_id" value="dugme1" />
+			<label for="dugme1_id">Dugme 1</label>
+			<input type="radio" name="dugmici" id="dugme2_id" value="dugme2" />
+			<label for="dugme2_id">Dugme 2</label>
+			<br />
+			<span class="forma1_levo"></span>
+			<input type="checkbox" name="cek" id="cek_id" value="cek" />
+			<label for="cek_id">Cekiraj</label>
+			<br />
+			<input type="submit" name="posalji" value="Posalji formu" id="posalji_id"/>
+		</form>
+		<p><b>Napomena:</b> Morali smo textarea element da vertikalno pomerimo ka
+			vrhu da bi zajedno sa svojom labelom bio iscrtan u istoj liniji. U suprotnom,
+			labela bi bila ispisana pri dnu textarea elementa.
+		</p>
+		<form id="forma2">
+			<input type="text" name="unos1" id="forma2_unos1" placeholder="Prijavite se..."/>
+			<br />
+			<input type="text" name="unos2" id="forma2_unos2" placeholder="Prijavite se..."/>
+			<br />
+			<input type="text" name="unos3" id="forma2_unos3" placeholder="Prijavite se..."/>
+		</form>
+		<p><b>Napomena:</b> Kao sto se i vidi, postoji slika kao pozadina unutar input-a.
+		    Slika je postavljena kao pozadina i to sa leve strane input-a. Da ne bismo
+			pisali tekst preko slike, postavili smo padding sa leve strane na malo vecu
+			vrednost, dovoljnu da se ne pise preko slike.
+		</p>
+		<form id="forma3" method="get">
+			<input type="submit" name="registracija" value="Registruj se"/>
+		</form>
+		<br />
+		<form id="forma4" method="get" action="https://www.example.com/novine.php">
+			<fieldset>
+				<legend>Novine</legend>
+				<label for="ime_id">Ime: </label>
+				<input type="text" name="ime" id="ime_id" required="required"/>
+				<label for="imejl_id">Imejl: </label>
+				<input type="email" name="imejl" id="imejl_id" required="required"/>
+				<input type="submit" name="dugme4" id="dugme4_id" value="Prijavi se"/>
+			</fieldset>
+		</form>
+		<br />
+		<form id="forma5" method="get" action="https://www.example.com/unesi.php">
+		    <div>
+				<label for="forma5_ime_id" class="forma5_levo">Ime:</label>
+				<input type="text" name="forma5_ime" id="forma5_ime_id" />
+			</div>
+			<div>
+				<label for="forma5_imejl_id" class="forma5_levo">Imejl:</label>
+				<input type="email" name="forma5_imejl" id="forma5_imejl_id" />
+			</div>
+			<div>
+				<span class="forma5_levo">Pol:</span>
+				<input type="radio" name="forma5_p" id="forma5_m_id" value="musko" />
+				<label for="forma5_m_id">Musko</label>
+				<input type="radio" name="forma5_p" id="forma5_z_id" value="zensko" />
+				<label for="forma5_z_id">Zensko</label>
+			</div>
+			<div class="forma_5_submit">
+				<input type="submit" name="forma5_dugme" value="Registruj se" />
+			</div>
+		</form>
+	</div><!-- forme -->
+	
+	<div id="kursor">
+		<h2 class="naslovi">Kursor</h2>
+		<p>Kursor moze da se menja isto u css-u. Postoje razne vrste kursora.
+		   Evo nekih primera:
+		</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+		<p class="kursor">Primakni misem da vidis kursor.</p>
+	</div><!-- kursor -->
+	
+	<div id="primer">
+		<h2 class="naslovi">Primer</h2>
+		<h1>Dogadjaji iz knjizevnosti</h1>
+		<p>Prikazacemo Vam zakazane dogadjaje i tribine iz knjizevnosti
+		   za predstojecu godinu.
+		</p>
+		<p>Sledeci dogadjaji su besplatni za clanove drustva knjizevnika:</p>
+		<ul>
+			<li>Perspektiva i knjizevnost</li>
+			<li>Moderna knjizevnost</li>
+			<li>Licna i stvaralacka knjizevnost</li>
+		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Mladenovac</th>
+					<th>Cacak</th>
+					<th>Herceg Novi</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Perspektiva i knjizevnost</th>
+					<td>Subota, 4. februar 2020.<br /> od 11-2 popodne</td>
+					<td>Subota, 3. mart 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 17. mart 2020.<br />od 11-2 popodne</td>
+				</tr>
+				<tr>
+					<th>Moderna knjizevnost</th>
+					<td>Subota, 7. april 2020.<br />od 11-1 popodne</td>
+					<td>Subota, 5. maj 2020.<br />od 11-1 popodne</td>
+					<td>Subota, 19. maj 2020.<br />od 11-1 popodne</td>
+				</tr>
+				<tr>
+					<th>Licna i stvaralacka knjizevnost</th>
+					<td>Subota, 9. jun 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 7. jul 2020.<br />od 11-2 popodne</td>
+					<td>Subota, 21. jul 2020.<br />od 11-2 popodne</td>
+				</tr>
+				<tr>
+					<th>Knjizevnost i umetnost</th>
+					<td>Subota, 4. avgust 2020.<br />od 11-4 popodne</td>
+					<td>Subota, 8. septembar 2020.<br />od 11-4 popodne</td>
+					<td>Subota, 15. septembar 2020.<br />od 11-4 popodne</td>
+				</tr>
+			</tbody>
+		</table>
+		<form id="forma6" method="get" action="https://www.example.com/registracija.php">
+			<fieldset>
+				<legend>Rezervisite svoje mesto</legend>
+				<label for="forma6_ime_id" class="forma6_levo">Vase ime:</label>
+				<input type="text" name="forma6_ime" id="forma6_ime_id" />
+				<br />
+				<label for="forma6_imejl_id" class="forma6_levo">Vasa imejl adresa:</label>
+				<input type="email" name="forma6_imejl" id="forma6_imejl_id" />
+				<hr />
+				<label for="forma6_sel_id" class="forma6_levo">Vasa najbliza lokacija:</label>
+				<select name="forma6_sel" id="forma6_sel_id">
+					<option value="mladenovac">Mladenovac</option>
+					<option value="cacak">Cacak</option>
+					<option value="herceg-novi">Herceg Novi</option>
+				</select>
+				<hr />
+				<span class="forma6_levo">Da li ste clan drustva knjizevnika?</span>
+				<input type="radio" name="forma6_da_ne" id="forma6_da_id" value="da"/>
+				<label for="forma6_da_id">Da</label>
+				<input type="radio" name="forma6_da_ne" id="forma6_ne_id" value="ne" />
+				<label for="forma6_ne_id">Ne</label>
+				<hr />
+				<span class="forma6_levo"></span>
+				<input type="submit" name="forma6_dugme" value="Rezervisi" />
+			</fieldset>
+		</form>
+	</div><!-- primer -->
+	
+	<div id="futer">
+		<p>Vrati se na <a href="index.html">glavnu css</a> stranu.</p>
+		<p>Vrati se na <a href="../index.html">glavnu html</a> stranu.</p>
+	</div> <!-- futer -->
+	
+	<div id="dno"></div><!-- dno stranice -->
+	
+</body>
+
+</html>

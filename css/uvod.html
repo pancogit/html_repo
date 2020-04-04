@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Uvod CSS</title>
+	<link href="css/uvod.css" type="text/css" rel="stylesheet" />
+	<style>
+		#futer { background-color: #00ffb3; }
+
+		ul>li>a { color: red; }
+		ul>li a { color: white; }
+		ul li>a { color: #fff368; }
+		ul a { color: black }
+		
+		ul>li { color: #02ff88; }
+		
+		div.nasledjivanje_div {
+			background-color: #323012;
+			border: 3px dashed #0041ff;
+			border-width: 7px;
+			border-color: red;
+			border-style: ridge;
+			padding: 10px;
+		}
+		
+		#krompiri_h_id {
+			border-width: 2px;
+			border-style: inherit;
+			border-color: inherit;
+			padding: inherit;
+		}
+
+	</style>
+</head>
+
+<body>
+	<h1 id="vrh">Uvod</h1>
+	
+	<h2>Naslov</h2>
+	<p>Prvi pocetni paragraf.</p>
+	
+	<h3>Podnaslov</h3>
+	<p>Ovo je deo u podnaslovu. Ovo moze da se stilise pomocu css-a.</p>
+	
+	<h2 id="novi_naslov">Novi naslov</h2>
+	<p id="uvod_paragraf">Ovaj cemo paragraf da napisemo kao uvodni paragraf. Nesto je napisano kao uvod.
+	Napolju je jako toplo iako je kraj proleca.</p>
+	<p>Jedva cekamo da idemo na more da se kupamo.</p>
+	<p>Koja ti je bila omiljena tema iz html-a?</p>
+	<ul>
+		<li><a href="../recepti.html">Recepti</a></li>
+		<li><a href="../link.html">Linkovi</a></li>
+		<li><a href="../slike.html">Slike</a></li>
+		<li><a href="../tabele.html">Tabele</a></li>
+		<li><a href="../forme.html">Forme</a></li>
+		<li><a href="../dodatak.html">Dodaci html-a</a></li>
+		<li><a href="../enkoding.html">Enkoding</a></li>
+		<li><a href="../audio_video.html">Audio/video</a></li>
+	</ul>
+	
+	<p class="zapis">Ova stranicu je napisao <a href="mailto:panca@pancovsky.com">Pancovsky Panca</a>
+	za <a href="https://www.example.com/bozidarski">Bozidarskog Bozu</a>.
+	</p>
+	<div class="zapis">Ovo je jos jedan zapis.</div>
+	
+	<h2>Prolece je blizu</h2>
+	<p class="prolece_paragraf">Prolazi nam zima i doci ce nam jos malo prolece. 
+	Skupljacemo lisce i trcacemo po livadi.</p>
+	
+	<div class="nasledjivanje_div">
+		<h2 id="krompiri_h_id">Krompiri</h2>
+		<p>Postoji nekoliko vrsta krompira koji se proizvode.</p>
+		<p>Neki od tih vrsta krompira su: batat slatki krompir, beli, crveni.</p>
+	</div>
+	
+	<div id="futer" class="futerski">
+		<hr />
+		<p>Vrati se na <a href="#vrh">vrh</a> stranice.</p>
+		<p><a href="index.html">Pocetna css strana</a></p>
+		<p><a href="../index.html">Pocetna html strana</a></p>
+		<hr />
+	</div>
+	
+</body>
+
+</html>

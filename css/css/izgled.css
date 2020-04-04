@@ -1,0 +1,643 @@
+/* 
+	css fajlovi (modularnost)
+
+	@import css fajlova iz ovog fajla mora da se napise 
+	pre bilo kog pravila, na pocetku fajla, inace se nece
+	ukljuciti fajlovi 
+*/
+@import url("izgled_tabele.css");
+@import url("izgled_slova.css");
+@import url("izgled_boje.css");
+
+
+body {
+	font-family: "Times New Roman", Times, serif;
+	background-color: #1a2749;
+	color: #e6f2ff;
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #00ff1f;
+	font-weight: bold;
+}
+
+div#glavni_futer {
+	background-color: #a15d5d;
+	padding: inherit;
+	margin-top: 20px;
+}
+
+h3 {
+	text-decoration: underline;
+	color: orange;
+	letter-spacing: 0.1em;
+}
+
+
+/* pozicioniranje */
+
+div#pozicija1 * {
+	position: static;
+}
+
+.pozicioniranje h2 {
+	padding: 5px;
+	background-color: blue;
+}
+
+.pozicioniranje p {
+	width: 450px;
+}
+
+div#pozicija2 p:nth-of-type(2) {
+	position: relative;
+	top: 10px; /* ubaci ofset sa vrha */
+	left: 100px; /* ubaci ofset sa leve strane */
+}
+
+div#pozicija3 h2 {
+	position: absolute;
+	left: 500px; /* pomeri u levo za zadati ofset */
+	top: 1050px;  /* ofset odozdo u odnosu na pocetak stranice */
+	width: 250px;
+}
+
+div#pozicija4 {
+	/*
+		postavimo ovaj div da bude pozicioniran i onda ce
+		heder unutar njega koji je isto pozicioniran biti pozicioniran
+		u odnosu na njega
+		u suprotnom, div#pozicija4 h2 bi bio pozicioniran
+		apsolutno u odnosu na prvi pozicioniran element koji ga sadrzi
+		a to je body, jer ne postoji nijedan drugi koji je
+		pozicioniran
+	*/
+	position: relative; /* blok konterner za pozicionirane elemente */
+}
+
+div#pozicija4 h2 {
+	position: absolute;
+	/* 
+		pozicioniraj se 0px od vrha u odnosu na prvi element
+		koji te okruzuje i koji je isto pozicioniran
+		ako nijedan element nije pozicioniran, onda se racuna
+		u odnosu na body element
+	*/
+	top: 0px;
+	right: 100px;
+	width: 500px;
+}
+
+div#pozicija5 h2 {
+	position: fixed;
+	
+	/* da ne bi setao po ekranu */
+	position: static;
+	
+	top: 200px; /* fiksiraj u odnosu na gornju ivicu stranice */
+	left: 0px;
+	
+	/* 
+		kada je pozicija fiksirana, onda se sirina kocke resetuje
+		na najmanju mogucu vrednost, cisto toliko da stane tekst
+	*/
+	width: 500px;
+	width: 100%;  /* celom duzinom ekrana se prikazuje */
+	background-color: orange;
+	color: blue;
+	border-radius: 20px;
+}
+
+div#pozicija6 {
+	/* konterner za pozicionirane elemente sa ofsetima (=0) */
+	position: relative;
+}
+
+div#pozicija6 p:not(.uvod) {
+	padding: 10px;
+}
+
+div#pozicija6 p:nth-of-type(2) {
+	background-color: green;
+	z-index: 10; /* najmanji prioritet */
+	position: relative;
+}
+
+div#pozicija6 p:nth-of-type(3) {
+	background-color: orange;
+	z-index: 20;
+	position: absolute;
+	top: 100px;
+	left: 300px;
+}
+
+div#pozicija6 p:nth-of-type(4) {
+	background-color: #348df3;
+	z-index: 30; /* najvisi prioritet */
+	position: absolute;
+	top: 150px;
+	left: 420px;
+}
+
+
+/* isplivavanje */
+
+div#plivanje1 p {
+	width: 700px;
+}
+
+div#plivanje1 blockquote {
+	float: right;
+	width: 150px;
+	font-style: italic;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	padding: 5px;
+	font-size: 130%;
+	font-family: Georgia, serif;
+
+	/* da se uravnja u istoj liniiji sa paragrafom */
+	margin-top: 0px;
+	
+	/* smanji margine da izraz lepse izgleda */
+	margin-right: 0px;
+	margin-left: 10px;
+}
+
+/* 
+	da bi izreka bila unutar paragrafa, 
+	moramo da podesimo sirinu div-a 
+*/
+div#plivanje1 {
+	width: 700px;
+}
+
+div#plivanje2, div#plivanje3,
+div#plivanje4 {
+	width: 800px;
+	overflow: auto; /* css bag, float-ovane elemente ubaci u div */
+}
+
+div#plivanje2 p, div#plivanje3 p,
+div#plivanje4 p:not(.plivanje4_uvod) {
+	width: 150px;
+	background-color: #505050;
+	float: left;
+	margin-right: 10px;
+	padding: 5px;
+}
+
+/* ponisti plivanje elementa na levoj strani */
+div#plivanje3 .ponisti_plivanje {
+	clear: left;
+}
+
+div#plivanje4_roditelj {
+	border-style: solid;
+	border-width: 2px;
+	border-color: green;
+	padding: 10px;
+	
+	/*
+		ovaj element sadrzi sve elemente koji su plivajuci
+		ima css bag koji prikazuje kao da elementi nisu u njemu
+		ako su svi ti elementi unutar njega plivajuci
+		ovaj bag se resava tako sto se postavi overflow za
+		element roditelj koji sadrzi sve plivajuce elemente
+	*/
+	overflow: auto;
+}
+
+div#plivanje5_kolona1 {
+	width: 700px;
+	float: left;
+	margin: 20px;
+}
+
+div#plivanje5_kolona2 {
+	width: 200px;
+	float: left;
+	margin: 20px;
+}
+
+div#plivanje5 {
+	/* 
+		stavi div-ove unutar ovog div-a (css bag)
+		ovaj bag je poznat i zove se clearfix
+		desava se da ponekad kada se smanjuje sirina prozora
+		da se pojavi skrol polje ispod div-a
+		da bi se ovaj skrol sakrio, bolje je staviti overflow
+		na vrednost hidden
+	*/
+	overflow: hidden; 
+}
+
+div#plivanje6_kolona1,
+div#plivanje6_kolona2,
+div#plivanje6_kolona3 {
+	width: 300px;
+	margin: 20px;
+	float: left;
+}
+
+div#plivanje6 {
+	overflow: auto;
+}
+
+
+/* izgled stranice */
+
+div#fiksiran_izgled_okvir {
+	/*
+		300*3 (za kolone: prva, druga, treca) +
+		10*2*3 (padding [levi, desni] za kolone) +
+		10*2*3 (margine [leva, desna] za kolone)
+		= 1020
+	*/
+	width: 1020px;
+	
+	/* centriraj kocku na sredinu ekrana */
+	margin: 0 auto;
+	
+	text-align: center;
+}
+
+div#fiskiran_izgled_nav a {
+	text-decoration: underline;
+	color: white;
+}
+
+div#fiskiran_izgled_nav li {
+	display: inline;
+	margin-right: 10px;
+}
+
+div#fiksiran_izgled_kol1,
+div#fiksiran_izgled_kol2,
+div#fiksiran_izgled_kol3 {
+	float: left;
+	width: 300px;
+}
+
+div#fiksiran_izgled_futer {
+	clear: left; /* prekini float u levo posle tri kolone */
+}
+
+div#fiksiran_izgled_okvir .fiskiran_izgled_poz {
+	background-color: #7b7474;
+	padding: 10px;
+	margin: 10px;
+}
+
+div#fiksiran_izgled_sadrzaj {
+	/* na sadrzaj stranice stavi overflow da bi sve stalo - css bag */
+	overflow: auto;
+}
+
+
+div#tecni_izgled_okvir {
+	/* 
+		da bi se stranica razvlacila i skupljala u odnosu na body, 
+		moramo da stavimo procente za duzine umesto piksela
+	*/
+	width: 90%;
+	
+	min-width: 180px;
+	max-width: 1200px;
+	max-width: 3000px;
+	
+	margin: 0 auto; /* centriraj na sredinu */
+	text-align: center;
+}
+
+div#tecni_izgled_okvir a {
+	text-decoration: underline;
+	color: white;
+}
+
+div#tecni_izgled_nav li {
+	display: inline-block;
+	width: 100px;
+}
+
+div#tecni_izgled_kol1,
+div#tecni_izgled_kol2,
+div#tecni_izgled_kol3 {
+	float: left; /* poredjaj ih u kolone jedan za drugim u levo */
+	margin: 1%;
+	padding: 1%;
+	background-color: #7b7474;
+	height: 150px;
+	
+	/* 
+		tri kolone 87.9% u odnosu na kontejner (#tecni_izgled_sadrzaj) 
+		+ 4*3=12% za margine i padding = 99.9%
+	*/
+	width: 29.3%; 
+}
+
+div#tecni_izgled_fun {
+	height: 150px;
+}
+
+div#tecni_izgled_nav,
+div#tecni_izgled_fun,
+div#tecni_izgled_futer {
+	padding: 1%;
+	margin: 1%;
+	background-color: #7b7474;
+}
+
+div#tecni_izgled_sadrzaj {
+	overflow: auto; /* da sadrzi sve div-ove - css bag */
+}
+
+
+div#mrezni_izgled1, div#mrezni_izgled2, div#mrezni_izgled3 {
+	/* 940 piksela + 10*2 (margine leva i desna) */
+	width: 960px;
+	overflow: auto;
+}
+
+div#mrezni_izgled1 div,
+div#mrezni_izgled2 div,
+div#mrezni_izgled3 div {
+	margin: 10px;
+	text-align: center;
+	height: 150px;
+	
+	/* sve div-ove slozi jedan uz drugi sa leve strane */
+	float: left;
+	background-color: blue;
+}
+
+div#mrezni_izgled1 div:nth-of-type(1)  { width: 940px; }
+div#mrezni_izgled1 div:nth-of-type(2)  { width: 460px; }
+div#mrezni_izgled1 div:nth-of-type(3)  { width: 460px; }
+div#mrezni_izgled1 div:nth-of-type(4)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(5)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(6)  { width: 300px; }
+div#mrezni_izgled1 div:nth-of-type(7)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(8)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(9)  { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(10) { width: 220px; }
+div#mrezni_izgled1 div:nth-of-type(11) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(12) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(13) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(14) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(15) { width: 140px; }
+div#mrezni_izgled1 div:nth-of-type(16) { width: 140px; }
+
+div#mrezni_izgled2 div:nth-of-type(1)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(2)  { width: 620px; }
+div#mrezni_izgled2 div:nth-of-type(3)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(4)  { width: 700px; }
+div#mrezni_izgled2 div:nth-of-type(5)  { width: 460px; }
+div#mrezni_izgled2 div:nth-of-type(6)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(7)  { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(8)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(9)  { width: 300px; }
+div#mrezni_izgled2 div:nth-of-type(10) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(11) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(12) { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(13) { width: 220px; }
+div#mrezni_izgled2 div:nth-of-type(14) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(15) { width: 140px; }
+div#mrezni_izgled2 div:nth-of-type(16) { width: 140px; }
+
+div#mrezni_izgled3 div:nth-of-type(1)  { width: 940px; }
+div#mrezni_izgled3 div:nth-of-type(2)  { width: 940px; height: auto; }
+div#mrezni_izgled3 div:nth-of-type(3)  { width: 940px; }
+div#mrezni_izgled3 div:nth-of-type(4)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(5)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(6)  { width: 300px; }
+div#mrezni_izgled3 div:nth-of-type(7)  { width: 940px; height: auto; }
+
+
+/* 
+	css fajlovi (modularnost)
+	
+	u fajlovima ("izgled_tabele.css"); ("izgled_slova.css"); ("izgled_boje.css");
+	koji su ukljuceni na pocetku ovog fajla se nalaze css delovi za
+	pojedinacne stvari (boje, slova i tabele)
+	ostatak css-a ce se napisati u ovom fajlu koji su vezani za opste
+	stvari na ovom delu strane
+*/
+
+div#css_fajlovi_okvir {
+	padding: 30px;
+	border-style: solid;
+	border-width: 2px;
+	
+	/* razdvoji unutrasnji okvir od spoljnjeg da bi se videla linija */
+	margin: 30px;
+}
+
+div#css_fajlovi_spoljni_okvir {
+	/* 
+		bez padding-a se nece videti gornja i donja margina 
+		za okvir  div#css_fajlovi_okvir 
+	*/
+	padding: 10px;
+	
+	/* da tabela ne ispadne iz spoljnjeg okvira */
+	min-width: 575px;
+	max-width: 1200px;
+}
+
+div#css_fajlovi_okvir .css_fajlovi_obavestenje {
+	margin-bottom: 0px;
+}
+
+div#css_fajlovi_okvir h4 {
+	margin-top: 0px;
+}
+
+div#css_fajlovi_okvir hr {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+/* primer iz knjige */
+
+/* ovo imitira body, posto ne pravimo na posebnoj stranici ovaj primer */
+div#primer_spoljni_okvir {
+	background-color: #564e4e;
+	background-color: hsla(0, 5%, 32%, 1);
+	color: #f2f2f2;
+	color: hsla(0, 1%, 95%, 1);
+	
+	/*
+		moramo da definisemo sirinu za ovaj omotac da bude jednaka
+		minimalnoj sirini stranice, jer u suprotnom ako smanjujemo prozor,
+		sadrzaj stranice ce ispadati iz ovog omotaca
+		dodacemo jos 20px (po 10px sa strane) za slucaj da se smanji sirina
+		prozora na minimum (960px + 20px = 980px)
+		u tom slucaju ce se lepse videti stranica
+	*/
+	min-width: 980px;
+}
+
+div#primer_heder,
+div#primer_sadrzaj,
+div#primer_futer {
+	width: 960px; /* fiksiraj duzinu na 960px */
+	margin: 0 auto; /* centriraj na sredinu stranice */
+}
+
+div#primer_futer_poz,
+div#primer_heder_poz {
+	background-color: black;
+	background-color: #0d0c0c80;
+	background-color: hsla(0, 5%, 5%, 0.75); /* 0.75 za transparentnost */
+	height: 100px;
+
+	/* moze da se centrira vertikalno sa padding-om */
+	padding-top: 40px;
+}
+
+div#primer_heder_poz {
+	/* 
+		fiksiraj meni na vrh stranice u odnosu na konterner div#primer_okvir
+		zato sto nije posebna stranica napravljena za ovaj primer, vec je primer
+		u okviru stranice, ne moze da se koristi fiksno pozicioniranje, zato sto
+		ce da pozicionira u odnosu na pocetak prozora, a pocetak prozora su
+		prethodni primeri i onda nece izgledati kao da je pozicioniran za ovaj primer
+		zato za ovakvu situaciju treba koristiti sticky (zalepljeno) pozicioniranje,
+		jer ono ce da pozicionira element u okviru kontejnera i nece da ide dalje
+	
+	    ovo moze, ali samo ukoliko je ovo jedini primer na strani:
+		position: fixed; 
+	*/
+	position: sticky;
+	top: 0px;
+	
+	/*
+		nema drugih pozicioniranih elemenata unutar stranice,
+		tako da ne mora z-index, ali stavicemo za svaki slucaj
+	*/
+	z-index: 50;
+	
+	/* 
+		sirina celom duzinom okruzujuceg kontejner elementa,
+		inace ce biti duzine dovoljne samo da stane sadrzaj 
+	*/
+	width: 100%;
+}
+
+div#primer_uvod {
+	/* pomeri na dole kutiju da je ne prekrije heder na pocetku */
+	padding-top: 150px;
+	
+	background-image: url("../../slike/bicikle/transparent/bicikla_transparent_1.png");
+	background-size: 640px;
+	background-repeat: no-repeat;
+	
+	background-position-x: 0px;
+	background-position-y: 100px;
+	
+	/* ili jos bolje resenje */
+	background-position-x: left;
+	background-position-y: bottom;
+}
+
+div#primer_okvir {
+	/* kontejner za div#primer_heder_poz */
+	position: relative;
+}
+
+div#primer_futer {
+	text-align: center; /* horizontalno centriraj tekst futera */
+}
+
+div#primer_okvir h1, div#primer_okvir h4 {
+	color: #adb5aa;
+	color: hsla(108, 7%, 69%, 1);
+	text-transform: uppercase;
+}
+
+div#primer_okvir a {
+	color: #bdc4bb;
+	color: hsla(108, 7%, 75%, 1);
+}
+
+div#primer_okvir a:hover {
+	color: white;
+}
+
+div#primer_okvir hr {
+	border-color: #adb5aa;
+	border-color: hsla(108, 7%, 69%, 1);
+}
+
+div#primer_okvir .hr_razmak {
+	border-width: 2px;
+}
+
+div#primer_nav ul li {
+	display: inline;
+}
+
+div#primer_nav ul li::after {
+	content: " /";
+}
+
+div#primer_nav ul li:last-child::after {
+	content: none; /* ponisti / posle poslednjeg linka u navigaciji */
+}
+
+div#primer_nav {
+	width: 370px;
+	float: right;
+}
+
+div#primer_logo {
+	width: 218px; /* ista kao sirina slike logo-a */
+	float: left; /* mora i logo i navigacija da plivaju */
+	
+	/* moramo da postavimo visinu za ovaj div, posto nista nema unutar njega */
+	height: 65px; /* ista kao visina slike logo-a */
+	background-image: url("../../slike/bicikle/logo/bicikla_logo_tekst_transparent.png");
+	background-repeat: no-repeat;
+}
+
+div#primer_heder {
+	overflow: hidden; /* clearfix, bolje hidden da se ne vidi skrol */
+}
+
+div#primer_uvod img {
+	float: left;
+}
+
+div#primer_uvod_naslovna {
+	float: right; /* moglo je i u levo jer zauzima prostor do kraja reda */
+	width: 300px; /* uklopi sirinu da stane pored slike */
+}
+
+div#primer_uvod {
+	overflow: hidden; /* clearfix */
+}
+
+div#primer_artikli div {
+	width: 220px;
+	float: left;
+	margin: 10px;
+}
+
+/*
+	sada treba da se ponisti plivanje u levo (float)
+	posle svake cetvrtog artikla na stranici, da bi bili
+	lepo poravnati u redove, cetiri po cetiri artikla
+*/
+div#primer_artikli div:nth-of-type(4n + 1) {
+	clear: left; /* ponisti plivanje u levo */
+}
+
+div#primer_artikli {
+	overflow: hidden; /* clearfix */
+}

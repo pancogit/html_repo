@@ -1,0 +1,4 @@
+ovaj logo sa tekstom koji je transparentan stoji
+u hederu stranice
+sirina je oko 218px, a sirina oko 65 piksela
+transparentni tekst je napravljen u paint 3d-u na windows 10

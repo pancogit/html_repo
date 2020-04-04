@@ -1,0 +1,23 @@
+body {
+	background-color: #adffb4;
+	background-color: hsla(125, 100%, 84%, 1);
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/* futer */
+
+div.futer {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: orange;
+	color: white;
+}
+
+div.futer a {
+	color: blue;
+	font-weight: bold;
+}

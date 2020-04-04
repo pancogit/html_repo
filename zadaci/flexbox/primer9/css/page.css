@@ -1,0 +1,906 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: unset;
+}
+
+/* centered content of page */
+.content {
+    max-width: 70em;
+    margin: 0 auto; /* center on page */
+    padding: 1em 0.5em;
+}
+
+/* header */
+
+header div.header-links {
+    border-bottom-style: solid;
+    border-bottom-width: 0.05em;
+    border-bottom-color: #e8e8e8;
+}
+
+header div.header-links div.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+header div.header-links div.header-links-left {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+header div.header-links div.header-links-left a {
+    display: inline-block;
+    text-decoration: underline;
+    color: #676767;
+    padding: 0.1em 0.5em;
+    border-right-style: solid;
+    border-right-width: 0.05em;
+    border-right-color: #c7c7c7;
+}
+
+header div.header-links div.header-links-left a:first-child {
+    padding: 0.5em;
+    background-color: #e68b14;
+    color: white;
+    border-radius: 0.2em;
+    border-right: unset;
+}
+
+header div.header-links div.header-links-right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header div.header-links div.header-links-right select {
+    border: none; /* remove all borders */
+    color: #5d5d5d;
+    outline: none;
+    background-image: url("../../../../slike/zadaci/primer9/google-plus-64.png");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 0.3rem;
+
+    padding: 0.5rem 0.3rem; /* relative to root element (html) */
+    padding-left: 1.5rem;
+    margin-right: 1.3rem;
+    margin-bottom: 1rem;
+    border-style: solid;
+    border-width: 0.05rem;
+    border-color: #e8e8e8;
+}
+
+header div.header-links div.header-links-right-a {
+    display: flex; /* to align height of links with div container */
+    margin-right: 1.3em;
+    margin-bottom: 1em;
+}
+
+header div.header-links div.header-links-right-a a {
+    display: inline-block;
+    width: 1.3em;
+    text-align: center;
+    color: #1470e2;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: #e8e8e8;
+    margin-right: 0.2em;
+    padding: 0.5em;
+}
+
+header div.header-links div.header-links-search {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-style: solid;
+    border-width: 0.05em;
+    border-color: #e8e8e8;
+    border-radius: 0.2em;
+    width: 16em;
+}
+
+header div.header-links div.header-links-search input {
+    border: none;
+    outline: none;
+    flex: 1 1 10em;
+    margin-right: 0.5em;
+}
+
+header div.header-links div.header-links-search a {
+    color: #cacaca;
+}
+
+div.header-tabs {
+    border-bottom-style: solid;
+    border-bottom-width: 0.3em;
+    border-bottom-color: #2567bf;
+}
+
+a.header-tabs-hamburger-menu {
+    display: inline-block;
+    font-size: 2rem;
+    color: #2567bf;
+    margin-bottom: 0.5rem;
+    display: none;
+}
+
+div.header-tabs div.content {
+    display: flex;
+    justify-content: space-between; /* align horizontaly */
+    align-items: flex-end; /* align verticaly */
+    padding-bottom: 0;
+}
+
+div.header-tabs ul {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    flex: 0 1 50%; /* don't grow, just shrink */
+}
+
+div.header-tabs ul li {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 0.3em;
+}
+
+div.header-tabs ul li a {
+    padding: 1em;
+    height: 100%;
+    background-color: #ececec;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    font-weight: bold;
+    box-shadow: 3px -3px 6px #bfbfbf;
+}
+
+div.header-tabs ul li a:hover {
+    background-color: #e2e2e2;
+}
+
+div.header-tabs ul li:first-child a i {
+    margin-right: 0.3em;
+}
+
+div.header-tabs ul li:nth-of-type(1) a {
+    color: #2378c1;
+}
+
+div.header-tabs ul li:nth-of-type(2) a {
+    color: #077100;
+}
+
+div.header-tabs ul li:nth-of-type(3) a {
+    color: #0e269a;
+}
+
+div.header-tabs ul li a:hover {
+    color: black;
+}
+
+/* add header at the beginning to increase selector specificity */
+header div.header-tabs ul li.header-tabs-active a {
+    background-color: #2567bf;
+    color: white;
+}
+
+div.header-tabs div.header-tabs-nhs {
+    flex: 0 1 30%; /* don't grow, just shrink */
+    text-align: right;
+}
+
+div.header-tabs div.header-tabs-nhs a {
+    display: inline-block;
+}
+
+div.header-tabs div.header-tabs-nhs h1 {
+    color: black;
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 1.5rem;
+}
+
+div.header-tabs div.header-tabs-nhs h4 {
+    color: #2567bf;
+    margin-top: 0.2rem;
+}
+
+header nav {
+    background-color: #f3f3f3;
+    border-bottom-style: solid;
+    border-bottom-width: 0.05em;
+    border-bottom-color: #d7d7d7;
+    border-bottom-color: #e4e4e4;
+}
+
+header nav div.content {
+    display: flex;
+    padding: 0;
+}
+
+header nav div.content ul {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0.5em;
+    margin: 0;
+}
+
+header nav div.content ul li {
+    display: flex;
+    border-right-style: solid;
+    border-right-width: 0.05em;
+    border-right-color: #d7d7d7;
+    border-right-color: #e4e4e4;
+}
+
+header nav div.content ul li a {
+    padding: 1em;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+/* set background color for homepage */
+header nav div.content ul li:first-child a {
+    background-color: #d7d7d7;
+    background-color: #e4e4e4;
+}
+
+header nav div.content ul li a:hover {
+    background-color: #e4e4e4;
+}
+
+/* set colors for last item - help item */
+header nav div.content ul li:last-child a {
+    background-color: #e68b14;
+    color: white;
+}
+
+header nav div.content ul li:last-child a:hover {
+    background-color: #e28317;
+}
+
+header nav div.content ul li:last-child a i {
+    margin-right: 0.5em;
+}
+
+header nav div.content ul li a i {
+    vertical-align: middle; /* vertical align cup for submenu */
+}
+
+header nav div.content a.nav-hamburger-menu {
+    display: none;
+    color: black;
+    font-size: 1.8rem;
+    margin: 0.5rem;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 62rem) { /* 992 px */
+    /* hide menus and show hamburger menus */
+    div.header-tabs ul,  div.header-tabs div.header-tabs-nhs {
+        display: none;
+    }
+
+    div.header-tabs a.header-tabs-hamburger-menu {
+        display: block; /* show hamburger menu */
+    }
+
+    header nav div.content ul {
+        display: none;
+    }
+
+    header nav div.content a.nav-hamburger-menu {
+        display: inline-block; /* show hamburger menu */
+    }
+
+    header nav div.content {
+        justify-content: flex-end; /* push hamburger menu to the right */
+    }
+}
+
+header div.header-slides {
+    background-image: url("../../../../slike/zadaci/primer9/header-background-white-4.jpg");
+    background-size: cover;
+    border-bottom-style: solid;
+    border-bottom-width: 0.4em;
+    border-bottom-color: #e4e4e4;
+}
+
+header div.header-slides div.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* verticaly align text */
+    padding: 0; /* set padding just for flex item with text, not for flex item with picture */
+}
+
+header div.header-slides div.header-slides-image {
+    flex: 1 1 30%;
+    min-width: 13rem; /* set minimum width for flex item */
+    background-image: url("../../../../slike/zadaci/primer9/header-background-picture-2.jpg");
+    background-size: cover;
+    background-position: center bottom;
+}
+
+header div.header-slides section {
+    flex: 1 1 55%;
+    padding: 1em 0.5em; /* set padding only for flex item with text, not for flex item with picture */
+    color: #0054c4;
+}
+
+/* media block for responsive web design */
+@media only screen and (min-width: 20rem) { /* 320 px */
+    header div.header-slides div.header-slides-image {
+        height: 18.5rem; /* 296px: set height for background image */
+    }
+}
+
+header div.header-slides section h2 {
+    margin-top: 0;
+}
+
+header div.header-slides section p {
+    line-height: 1.4rem;
+    font-size: 1.1rem;
+}
+
+header div.header-slides section a.header-slides-button {
+    display: inline-block; /* top add top-bottom properties: paddings... */
+    background-color: #2567bf;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    text-decoration: underline;
+}
+
+header div.header-slides section a.header-slides-button:hover {
+    text-decoration: none;
+}
+
+header div.header-slides section div.header-slides-dots {
+    text-align: right;
+    margin-top: 1em;
+}
+
+header div.header-slides section div.header-slides-dots a {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: #cecece;
+}
+
+header div.header-slides section div.header-slides-dots .header-slides-dots-active {
+    color: #2567bf;
+}
+
+header div.header-cards ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* align flex items on main axis */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header div.header-cards ul li {
+    flex: 1 1 33%; /* each flex item is 1/3 length of flex line */
+
+    /* flex container for links, to spread links up to whole width of list item */
+    display: flex;
+    flex-direction: column;
+}
+
+header div.header-cards ul li a {
+    text-align: center; /* align text in the center of list item */
+    height: 100%; /* get full height of list item */
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #929292;
+    padding: 0.2rem 2rem;
+    border-right-style: solid;
+    border-right-width: 0.05rem;
+    border-right-color: #929292;
+}
+
+/* remove border from last list item link */
+header div.header-cards ul li:last-child a {
+    border-right-style: none;
+}
+
+header div.header-cards ul li a:hover {
+    color: #737373;
+}
+
+header div.header-cards ul li.header-cards-active a {
+    color: #2567bf;
+}
+
+header div.header-cards ul li.header-cards-active a:hover {
+    color: #2c7ae2;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 26.5625rem) { /* 425px */
+    header div.header-cards ul li {
+        flex: 1 1 100%; /* each flex item on each flex line for small screens*/
+    }
+
+    /* remove borders from links when links are on each individual line */
+    header div.header-cards ul li a {
+        border-right-style: none;
+
+        /* increase top-bottom paddings */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+header div.header-cards-menu {
+    background-color: #2567bf;
+}
+
+header div.header-cards-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header div.header-cards-menu ul li {
+    flex: 1 1 20%; /* each list item 1/4 of flex line */
+
+    /* 
+        set minimum width of flex item to now shrink too much,
+        because in that case text will not look good
+    */
+    min-width: 9rem; /* 144px */
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+
+    /* flex container for links to spread links to full list item width */
+    display: flex;
+    flex-direction: column;
+
+    border-right-style: solid;
+    border-right-width: 0.05rem;
+    border-right-color: white;
+}
+
+/* remove border from last list item */
+header div.header-cards-menu ul li:last-child {
+    border-right-style: none;
+}
+
+header div.header-cards-menu ul li a {
+    height: 100%; /* get full height of list item */
+    color: white;
+    text-align: center;
+    padding: 0.5rem 2rem;
+}
+
+header div.header-cards-menu ul li a:hover {
+    color: #a3ddff;
+}
+
+header div.header-cards-menu ul li i {
+    font-size: 3rem; /* increase font icons size */
+}
+
+header div.header-cards-menu ul li h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* media block for responsive design */
+@media only screen and (max-width: 26.5625rem) { /* 425px */
+    header div.header-cards-menu ul li {
+        flex: 1 1 100%; /* each flex item on each flex line for small screens*/
+        border-right-style: none;
+    }
+}
+
+
+/* page content */
+
+/* internet explorer fix */
+main, section, article, nav, header, footer {
+    display: block;
+}
+
+main {
+    background-color: #efefef;
+    border-bottom-style: solid;
+    border-bottom-width: 0.4em;
+    border-bottom-color: #e4e4e4;
+}
+
+main div.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+
+main section {
+    flex: 1 1 45%; /* allow some space for margins, paddings */
+    margin-right: 1rem;
+    min-width: 25rem; /* 400px */
+
+    /*
+        content of sections contains headers and content
+        content can vary in height caused by text length
+        because it is better to align those section content verticaly
+        sections should be flex containers in column direction
+        and flex items with content should be set with flex grow
+        parameter set to allow content to grow to same height size
+    */
+    display: flex;
+    flex-direction: column;
+}
+
+/* remove right margins from sections on page when flex elements wrapped */
+@media only screen and (max-width: 48rem) { /* 768px tablet screen size */
+    main section {
+        margin-right: 0;
+    }
+}
+
+
+main section h2 {
+    color: #2567bf;
+}
+
+/* set left margin for section headers when screen touch beginning of header text */
+@media only screen and (max-width: 72rem) { /* 1152px */
+    main section h2 {
+        margin-left: 0.5rem;
+    }
+}
+
+main section div.main-content {
+    display: flex;
+    flex-direction: column;
+
+    /* set section content to grow until full height */
+    flex: 1 0 auto;
+
+    background-color: white;
+    padding: 0 0.5rem;
+}
+
+main section div.main-content article {
+    display: flex;
+    padding-top: 1rem; /* add top padding for each article */
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: #ececec;;
+}
+
+main section article div.main-latest-news-left {
+    margin-right: 1rem;
+}
+
+main section article a {
+    display: inline-block;
+    color: #2567bf;
+    text-decoration: underline;
+}
+
+main section article a:hover {
+    text-decoration: none;
+}
+
+main section article h3 {
+    margin: 0;
+}
+
+main section a.main-latest-news-read-more {
+    align-self: flex-end; /* align just this flex item to the right */
+    display: inline-block; /* for top-bottom block like properties */
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.17rem;
+    text-decoration: underline;
+    color: #2567bf;
+}
+
+main section a.main-latest-news-read-more:hover {
+    text-decoration: none;
+}
+
+main section article img {
+    /* don't grow, shrink and set flex basis to auto (predefined picture width) */
+    flex: 0 0 auto;
+}
+
+/*
+    on left section of page content inside articles change order of text
+    and image and change layout to flex column
+*/
+@media only screen and (max-width: 32rem) { /* 512px */
+    main section div.main-content article {
+        display: flex;
+        flex-direction: column; /* change layout to flex column */
+    }
+
+    /* change order of article text and image: set image order first */
+    main section div.main-content article img {
+        order: -1;
+        margin-bottom: 0.5rem;
+
+        /* 
+            set height of picture to maximum width of container and reset height
+            to be proportionaly to width of picture
+        */
+        width: 100%;
+        height: auto;
+    }
+
+    /*
+        set minimum width of section to from 24rem to 20rem (320px),
+        because on smallest screen (320px) it should not be larger than that
+    */
+    main section {
+        min-width: 20rem; /* 320px -> to match minimum screen size */
+    }
+}
+
+main section.main-contact-us div.main-content a {
+    color: #2567bf;
+    font-weight: bold;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom-style: solid;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: #ececec;
+}
+
+main section.main-contact-us div.main-content a:hover {
+    color: #1c55a0;
+}
+
+/* remove bottom border from last link */
+main section.main-contact-us div.main-content a:last-child {
+    border-bottom-style: none;
+}
+
+main section.main-contact-us div.main-content a i {
+    font-size: 2rem;
+    width: 2.25rem; /* 36px fix icons to largest one to verticaly align with text */
+    margin-right: 0.5rem;
+    vertical-align: middle; /* vertical align icons with remaining text */
+}
+
+
+/* footer */
+
+footer div.footer-list-wrapper {
+    background-color: #f7f7f7;
+}
+
+footer div.footer-list-wrapper div.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 2rem; /* increase top padding */
+}
+
+footer div.footer-list-wrapper section a {
+    color: #2567bf;
+}
+
+footer div.footer-list-wrapper section,
+footer div.footer-list-wrapper div.footer-care-quality {
+    flex: 1 1 18%;
+    min-width: 15rem; /* 240px minimum width */
+}
+
+footer div.footer-list-wrapper section {
+    margin-bottom: 2rem;
+    color: #2567bf;
+}
+
+footer div.footer-list-wrapper section h2 {
+    margin-top: 0;
+    display: inline-block; /* headers should have bottom line just to width of text */
+    border-bottom-style: solid;
+    border-bottom-width: 0.05rem;
+    border-bottom-color: #e3e3e3;
+}
+
+footer div.footer-list-wrapper section ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 1.8rem;
+}
+
+footer div.footer-list-wrapper section ul li a:hover {
+    color: black;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality {
+    border-style: solid;
+    border-width: 0.2rem;
+    border-color: white;
+    background-color: #f5f5f5;
+    padding: 1rem 0.5rem;
+
+    /*
+        because of padding, this should be border-box, not
+        content-box, to be the same width as sections
+    */
+    box-sizing: border-box;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality a.footer-care-quality-logo-link {
+    display: inline-block;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality p.footer-care-quality-cqc-rating {
+    font-weight: bold;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality a.footer-care-quality-good-link {
+    display: inline-block; /* to add top-bottom paddings */
+    color: white;
+    background-color: #358e2c;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality a.footer-care-quality-good-link:hover {
+    background-color: #42b036;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality a.footer-care-quality-report {
+    display: inline-block;
+    font-weight: bold;
+    color: purple;
+    padding: 0.3rem 0.5rem;
+    border-style: solid;
+    border-width: 0.05rem;
+    border-color: #d1d1d1;
+    border-radius: 0.2rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem #b4b4b4;
+}
+
+footer div.footer-list-wrapper div.footer-care-quality a.footer-care-quality-report::after {
+    content: " >";
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+footer div.footer-links-wrapper {
+    border-top-style: solid;
+    border-top-width: 0.5rem;
+    border-top-color: #2567bf;
+    color: white;
+}
+
+footer div.footer-links-wrapper a {
+    color: white;
+}
+
+footer div.footer-links {
+    border-top-style: solid;
+    border-top-width: 0.5rem;
+    border-top-color: white;
+    background-color: #2567bf;
+}
+
+footer div.footer-links div.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 1.8rem;
+}
+
+footer div.footer-links-content-left {
+    margin-right: 3rem;
+    font-size: 0.9rem;
+}
+
+footer div.footer-links-content-left ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* align flex items on main axis */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    list-style-type: none;
+}
+
+footer div.footer-links-content-left p {
+    margin-bottom: 1.5rem;
+}
+
+footer div.footer-links-content-left ul li {
+    margin-right: 1rem;
+}
+
+footer div.footer-links-content-left ul li:last-child {
+    margin-right: 0;
+}
+
+footer div.footer-links-content-left ul li a {
+    text-decoration: underline;
+}
+
+footer div.footer-links-content-left ul li a:hover {
+    text-decoration: none;
+}
+
+footer div.footer-links-content-right a {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+footer div.footer-links-content-right a i {
+    font-size: 1.2rem;
+    color: #2567bf;
+    background-color: white;
+    border-radius: 50%; /* draw circle with background color */
+    padding: 0.5rem;
+    margin-right: 0.2rem;
+
+    /* set width to be the same for all font icons */
+    width: 1.5rem; /* 24px */
+    
+    /* font icons are not the same default size, center them */
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer div.footer-links-content-right a span {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* reverse colors for font icons */
+footer div.footer-links-content-right a i:hover {
+    color: white;
+    background-color: #2567bf;
+}
+
+@media only screen and (min-width: 20rem) and (max-width: 40rem) {
+    footer div.footer-links-content-left ul {
+        display: flex;
+        flex-direction: column; /* display flex items in column for mobile screens */
+        line-height: 1.5rem;
+    }
+
+    footer div.footer-links-content-right {
+        display: flex;
+        flex-direction: column; /* display flex items in column for mobile screens */
+    }
+
+    footer div.footer-links-content-right a {
+        margin-bottom: 1rem;
+    }
+
+    /* display left and right part of footer links in column */
+    footer div.footer-links div.content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+div.page {
+    min-width: 20rem; /* minimum width of page */
+}

@@ -1,0 +1,17 @@
+/* stranica */
+
+div#stranica div#stranica_about {
+	width: 500px;
+	padding: 5px;
+	margin-left: 5px;
+	margin-bottom: 20px;
+}
+
+div#stranica div#stranica_about h1 {
+	color: #073a96;
+	color: hsla(219, 91%, 31%, 1);
+}
+
+div#stranica div#stranica_about p.stranica_about_reg {
+	font-style: italic;
+}

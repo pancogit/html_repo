@@ -1,0 +1,361 @@
+body {
+    font-family: Calibri, Arial, sans-serif;
+	background-color: #2b5634;
+	padding: 5px;
+	color: #dfff00;
+	font-size: 16px;
+}
+
+div#futercic {
+	background-color: #69b241;
+	padding: inherit;
+	color: blue;
+}
+
+h1, h2 {
+	font-family: Arial, Verdana, sans-serif;
+	color: white;
+}
+
+p.pisac {
+	font-family: Courier, "Courier New", monospace;
+}
+
+h1 {
+	font-size: 250%;
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+/* 
+	moze da se definise font koji ne postoji instaliran na lokalnom kompjuteru 
+	preuzeli smo nekoliko fontova sa interneta u folderu fontovi/ i ukljucicemo
+	ih pomocu @font-face
+	pomocu @font-face samo definisemo novi font koji nije instaliran,
+	dok kasnije taj novi definisani font iz @font-face koristimo normalno kao
+	i svaki drugi font unutar html elemenata...
+	
+	PUTANJA (src) MORA DA BUDE TACNA DA BI SE UCITAO FAJL FONTA
+	UKOLIKO SE UNESE RELATIVNA PUTANJA, ONDA SE RACUNA OD FOLDERA U KOME SE
+	NALAZIMO (html_repo/css/css/ je trenutni folder ovog .css fajla)
+	OVO ZNACI DA SVI FONTOVI MORAJU BITI UNUTAR (html_repo/css/css/) FOLDERA
+	NPR. (html_repo/css/css/fontovi/...)
+	
+	izgleda da mora da se kao relativna putanja unese prvo tacka . pa onda ostatak
+	putanje da bi se gledalo relativno, a ne apsolutno:
+	./fontovi/...
+	putanja ./ oznacava trenutni folder u kome se nalazimo
+	
+	ukoliko se prosledi samo src: url bez formata to ce raditi, ali pretrazivac
+	ce morati da sam shvati koji je format sto oduzima vreme
+	ukoliko stavimo src: url format i omasimo tacan format, onda nam se nece 
+	ucitati fajl fonta uopste (to moramo da pazimo)
+*/
+@font-face {
+	/* definicija novog fonta */
+	/* nalaze se u lokalnom folderu fontovi/ */
+	font-family: 'novi_font_1';
+	src: url('./fontovi/google/Nanum_Brush_Script/NanumBrushScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	/* ime fonta koje cemo posle koristiti */
+	font-family: 'novi_font_2'; 
+	/* putanja do fajla sa fontom */
+	src: url('./fontovi/google/Reenie_Beanie/ReenieBeanie-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'novi_font_3';
+	src: url('./fontovi/google/Rouge_Script/RougeScript-Regular.ttf') format("truetype");
+}
+
+@font-face {
+	/* moze da se koriste i dvostruki navodnici umesto jednostrukih */
+	font-family: "novi_font_4";
+	src: url("./fontovi/google/Sacramento/Sacramento-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "novi_font_5";
+	src: url("./fontovi/google/Stalemate/Stalemate-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: 'novi_font_6_1';
+	src: url('./fontovi/fontsquirrel/3dumb/2Dumb.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'novi_font_6_2';
+	src: url('./fontovi/fontsquirrel/3dumb/3Dumb.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'novi_font_7';
+	src: url('./fontovi/fontsquirrel/flavors/Flavors-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'novi_font_8';
+	src: url('./fontovi/fontsquirrel/SeasideResortNF/SEASRN__.ttf') format('truetype');
+}
+
+h1 { font-family: novi_font_6_2, sans-serif; }
+h2 { font-family: novi_font_8, sans-serif; }
+
+
+p.pisac {
+	font-weight: normal;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h2#igrac_h {
+	font-family: Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+h3#igrac_h3 {
+	font-family: Arial, Verdana, sans-serif;
+	color: red;
+	text-transform: lowercase;
+}
+p.o_igracu {
+	text-transform: capitalize;
+}
+
+/* ukloni liniju ispod link-a */
+a { text-decoration: none; }
+
+h3#igrac_h3 { text-decoration: underline; }
+
+p.o_igracu {
+	line-height: 1.5em;
+}
+
+p.o_vremenu {
+	letter-spacing: 0.2em;
+	word-spacing: 0.5em;
+}
+
+p.jos_o_vremenu {
+	font-size: 0.7em;
+}
+
+h1 {
+	letter-spacing: 0.2em;
+}
+
+h2 {
+	letter-spacing: 0.3em;
+	word-spacing: 0.2em;
+}
+
+h2#vreme_h, p.o_vremenu {
+	text-align: center;
+}
+
+p.jos_o_vremenu {
+	text-align: right;
+}
+
+p.o_vocu {
+	text-align: justify;
+}
+
+div#psi_d {
+	background-color: white;
+	color: #c65800;
+	padding: 15px;
+}
+
+h2#zivotinje_h {
+	color: blue;
+}
+
+/* 
+	vertical-align property ima efekta samo za inline elemente
+	za blok elemente nema efekta uopste izuzev za celije tabela
+	koristi se za slike, span i ostale inline elemente
+*/
+
+#mali_pas { vertical-align: text-bottom }
+#veci_pas { vertical-align: middle; }
+#najveci_pas { vertical-align: text-top }
+
+
+/* 
+	moze da se tekst uvuce i u negativnu stranu, tako sto ce da ispadne
+	iz okvira vidljivosti
+*/
+p.o_pticama {
+	text-indent: 2em;
+	text-shadow: 9px 4px 7px #52ff00;
+}
+
+
+/* pseudoelementi */
+p.o_pticama::first-letter {
+	font-size: 2em;
+}
+
+p.o_pticama::first-line {
+	font-weight: bold;
+}
+
+a { color: #00f8ff; }
+
+
+/* 
+	pseudoklase : redosled je bitan da bismo postigli zeljeni efekat
+	npr. ako se stavi :hover pre :link i :visited, onda se nece videti
+	promena kada se predje misem preko nekog linka, zato sto ce
+	:link i :visited da override-uju :hover pseudo klasu
+	zbog toga je redosled bitan:
+	1) :link
+	2) :visited
+	3) :hover
+	4) :focus
+	5) :active
+	
+	dok nista ne radimo, aktivirani su za linkove :link i :visited 
+	(oni su najnizeg prioriteta)
+	kada primaknemo misem na link ili neki element onda se aktivira :hover
+	kada se nalazimo u fokusu (kucamo u input-u), onda :focus
+	kada kliknemo i otpustimo aktivira se :active
+	
+	redosled je bitan, zato sto ako npr. uzmemo i stavimo :hover pre :link
+	i :visited, to znaci da veci prioritet imaju :link i :visited, jer su
+	kasnije napisani u css fajlu, a to znaci da kada predjemo misem preko
+	elementa, nece se nista desiti, jer ga :link i :visited preklapaju (override)
+	isto vazi i za :hover i :active
+	ako dodje :active pre :hover-a, onda kada primaknemo mis na element
+	aktivirace se :hover, ali ako kliknemo, nece se aktivirati :activ, zato sto
+	ga preklapa :hover, jer je kasnije napisan
+*/
+
+
+/* kada neki link nije posecen */
+a:link {
+	color: red;
+}
+
+/* kada se poseti neki link */
+a:visited {
+	color: black;
+}
+
+/* kada se predje misem preko elementa */
+a:hover { 
+	color: #00ff4a;
+	text-decoration: underline;
+}
+
+/* 
+	kada je element u fokusu, npr. dok kucamo u input elementu
+	ili dok prelazimo linkove sa tab-om
+*/
+a:focus {
+	color: blue;
+}
+
+/* kada je kliknemo na neki element, pa pre nego sto otpustimo klik */
+a:active {
+	color: white;
+}
+
+
+input {
+	border: 2px solid #7d461e;
+	padding: 5px 10px 5px 10px;
+	color: white;
+}
+
+input.prijava {
+	background-color: #7d461e;
+}
+
+input.prijava:hover {
+	background-color: chocolate;
+}
+
+input.prijava:active {
+	background-color: #664833;
+}
+
+
+
+input.imejl {
+	color: #0a8814;
+}
+
+input.imejl:focus {
+	color: blue;
+}
+
+
+/* primer iz knjige */
+
+div#primer_tekst {
+	font-family: Verdana, Helvetica, Arial, Calibri, sans-serif;
+	padding: 15px;
+	color: #b18216;
+	background-color: white;
+}
+
+div#primer_tekst h1, div#primer_tekst h2 {
+	font-family: inherit;
+	color: #5776ff; /* fallback */
+	color: hsla(229, 100%, 67%, 1);
+}
+
+div[id="primer_tekst"] .furuna {
+	text-transform: uppercase
+}
+
+div#primer_tekst .furuna, div#primer_tekst .meso_istorija, div#primer_tekst a {
+	font-weight: normal;
+}
+
+div#primer_tekst .meso_istorija, div[id=primer_tekst] h1 {
+	letter-spacing: normal;
+}
+
+div#primer_tekst h1 {
+	text-shadow: 1px 1px 7px black;
+}
+
+div#primer_tekst a {
+	color: #5776ff;
+	text-decoration: none;
+}
+
+div#primer_tekst p {
+	line-height: 1.4em;
+}
+
+div#primer_tekst .furuna {
+	letter-spacing: 0.2em;
+	word-spacing: 0.1em;
+}
+
+div#primer_tekst .furuna_uvod::first-line {
+	font-weight: bold;
+}
+
+/* selektuje poslednje paragraf dete unutar div-a */
+div#primer_tekst p:nth-last-child(1) {
+	font-style: italic;
+	text-align: right;
+}
+
+div#primer_tekst a:hover {
+	text-decoration: underline;
+}
+
+div#primer_tekst {
+	margin-bottom: 20px;
+}

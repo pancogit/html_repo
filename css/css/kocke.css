@@ -1,0 +1,389 @@
+body {
+	background-color: blue;
+	color: white;
+	font-family: Courier, "Courier New", monospace;
+	padding: 10px;
+}
+
+#futer {
+	padding: inherit;
+	background-color: #004099;
+	border-style: dashed;
+	border-color: #edff00;
+	border-width: 4px;
+	margin-top: 20px;
+}
+
+a {
+	color: #1cff00;
+	text-decoration: none;
+}
+
+.kocka1 {
+	width: 500px;
+	height: 300px;
+	background-color: #0077ff;
+}
+
+.kocka1 p {
+	width: 80%; 
+	height: 70%;
+	background-color: #00beff;
+}
+
+.tabela_cveca th {
+	text-align: left;
+	color: #f0bc00; /* fallback */
+	color: hsla(47, 100%, 47%, 1);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+td.cena {
+	vertical-align: top;
+}
+
+td.opis {
+	text-align: left;
+	min-width: 400px;
+	max-width: 600px;
+	padding: 5px;
+}
+
+div#min_max_vis h3 {
+	color: #eeff00;
+	border-bottom: 1.5px solid;
+}
+
+div#min_max_vis p {
+	line-height: 1.4em;
+	min-height: 20px;
+	max-height: 100px;
+	overflow: scroll;
+}
+
+/* margine */
+
+.margine div {
+	border: 1px solid orange;
+	width: 400px;
+	padding: 10px;
+}
+
+div:nth-of-type(4) div {
+	border: 1px orange solid;
+	width: 350px;
+	margin-bottom: 20px;
+}
+
+
+/* linije */
+
+div.linije p:nth-of-type(2) {
+	border-width: 1px;
+	border-style: solid;
+}
+
+div.linije p:nth-of-type(3) {
+	border-width: thick;
+	border-style: solid;
+}
+
+div.linije p:nth-of-type(4) {
+	border-top-width: 1px;
+	border-left-width: 4px;
+	border-right-width: 4px;
+	border-bottom-width: 12px;
+	border-style: solid;
+}
+
+div.linije p:not(.uvod) {
+	padding: 10px;
+	width: 300px;
+    border-color: black;
+}
+
+
+/* razne vrste linija */
+
+div#vrste_linija p { 
+	width: 500px;
+	border-width: 5px;
+}
+
+div#vrste_linija p:nth-of-type(1) { border-style: solid; }
+div#vrste_linija p:nth-of-type(2) { border-style: dotted; }
+div#vrste_linija p:nth-of-type(3) { border-style: dashed; }
+div#vrste_linija p:nth-of-type(4) { border-style: double; }
+div#vrste_linija p:nth-of-type(5) { border-style: groove; }
+div#vrste_linija p:nth-of-type(6) { border-style: inset; }
+div#vrste_linija p:nth-of-type(7) { border-style: ridge; }
+div#vrste_linija p:nth-of-type(8) { border-style: outset; }
+
+
+/* boje linija */
+
+div#boje_linija p {
+	width: 250px;
+	border-width: 8px;
+	border-style: solid;
+}
+
+div#boje_linija p:nth-of-type(1) {
+	border-color: #597ef9;
+}
+
+div#boje_linija p:nth-of-type(2) {
+	border-left-color: #597ef9;
+	border-right-color: black;
+	border-top-color: yellow;
+	border-bottom-color: red;
+}
+
+div#boje_linija p:nth-of-type(3) {
+	border: 3px dashed orange;
+}
+	
+
+/* padding */
+
+div#padding p {
+	width: 350px;
+	border-style: solid;
+	border-color: #00f400;
+	padding: 10px;
+}
+
+div#padding p.padding_prvi { padding: unset; }
+
+
+/* jos primeri margina */
+
+div#margine_jos p {
+	width: 300px;
+	border-style: solid;
+	border-color: #fff900;
+	padding: 10px;
+}
+
+div#margine_jos p:nth-last-of-type(1) {
+	margin: 20px;
+}
+
+
+/* centriranje kocki */
+
+div#centriranje p {
+	width: 500px;
+	border-width: 10px;
+	border-style: solid;
+	padding: 30px;
+	text-align: center;
+}
+
+div#centriranje p:nth-of-type(2) {
+	margin: auto;
+	text-align: left;
+}
+
+
+/* displej i blok elementi */
+
+div#blok_displej li {
+	display: inline;
+	margin-right: 50px;
+}
+
+div#blok_displej h3 {
+	display: inline;
+}
+
+div#blok_displej .blok_div {
+	border-style: dashed;
+	border-color: yellow;
+	display: inline;
+}
+
+
+/* sakrivanje kocki */
+
+div#sakrivanje ul>li{
+	display: inline-block;
+	width: 200px;
+	background-color: yellow;
+	color: blue;
+	padding: 5px;
+	margin: 2px;
+	font-weight: bold;
+}
+
+div#sakrivanje li.ne_prikazuj {
+	visibility: hidden;
+}
+
+div#sakrivanje .sakrij_sa_stranice {
+	display: none;
+}
+
+
+/* senke kocki */
+
+div#senke p:not(.uvod_senka) {
+	width: 100px;
+	height: 100px;
+	background-color: silver;
+	display: inline-block;
+	margin-right: 40px;
+}
+
+div#senke p.prva_senka { box-shadow: -7px -7px 0px 0px white; }
+div#senke p.druga_senka { box-shadow: 9px 8px 4px 0px white; }
+div#senke p.treca_senka { box-shadow: 10px 9px 7px 5px white; }
+div#senke p.cetvrta_senka { box-shadow: 0px 0px 7px 5px white; }
+div#senke p.peta_senka { box-shadow: inset 0px 0px 4px 5px white; }
+
+
+/* radijus kocki */
+
+div#radijus p {
+	border-style: solid;
+	border-color: #45ff45;
+	border-width: 2px;
+	padding: 20px;
+	width: 400px;
+	height: 100px;
+}
+
+/*
+	ovo ce izabrati drugo dete trenutnog okruzujuceg elementa tipa "p"
+	okruzujuci element p elementa je div#radijus
+	deca od elementa div#radijus su h2 i potom ostala p deca
+	div#radijus p:nth-child(1) ce selektovati h2 element
+	div#radijus p:nth-child(2) ce selektovati prvi p element
+	div#radijus p:nth-child(3) ce selektovati drugi p element ...
+	
+	sa druge strane
+	div#radijus p:nth-of-type(1) ce selektovati prvi p element i preskocice
+	h2 element, jer pretrazuje po tipu
+	sta god da se nadje pre p elementa, a da nije p element ce se ignorisati
+	u tome je razlika u odnosu na nth-child()
+	nth-of-type() pretrazuje elemente po tipu i preskace sve elemente koji nisu
+	zadatog tipa
+	u ovom slucaju div#radijus p:nth-of-type(2) ce u okviru div#radijus elementa
+	da se pretrazuju samo p elementi (preskacu se ostali elementi ako ih ima)
+	i selektovace se drugi paragraf tipa p u div#radijus elementu i taj paragraf
+	ne mora (ali moze) da bude drugo dete div#radijus elementa
+	ukoliko jeste bas drugo dete div#radijus elementa, onda nth-child() i 
+	nth-of-type() daju isti rezultat, u suprotnom se razlikuju
+	
+	primer:
+	
+	h2
+	p -> prvi paragraf
+	p -> drugi paragraf
+	p -> treci paragraf
+	
+	div#radijus p:nth-child(1): h2
+	div#radijus p:nth-child(2): p -> prvi paragraf
+	div#radijus p:nth-child(3): p -> drugi paragraf
+	div#radijus p:nth-child(4): p -> treci paragraf
+	
+	div#radijus p:nth-of-type(1): p -> prvi paragraf
+	div#radijus p:nth-of-type(2): p -> drugi paragraf
+	div#radijus p:nth-of-type(3): p -> treci paragraf
+	div#radijus p:nth-of-type(4): nece nista da selektuje, jer ne postoji
+	                              cetvrti paragraf tipa p unutar div-a
+	
+*/
+div#radijus p:nth-child(2) {
+	border-radius: 20px;
+}
+
+div#radijus p:nth-of-type(2) {
+	border-radius: 40px;
+	border-color: #ffbe00;
+}
+
+div#radijus p:nth-of-type(1) {
+	background-color: brown;
+	border-top-right-radius: 150px 100px;
+	border-top-left-radius: 50px 200px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+
+/*
+	ovo moze da se napisa na dva nacina:
+	ili da se izabere cetvrto dete div#radijus elementa, a to je treci
+	pargraf
+	ili da se izabere treci paragraf unutar div#radijus elementa, 
+	ali ne mora da bude trece dete (u ovom drugom slucaju se preskacu
+	svi elementi koji nisu tipa p, a to je h2 u nasem slucaju, dok se
+	u nth-child() i h2 racuna)
+*/
+
+/* prvi nacin */
+div#radijus p:nth-child(4) {
+	border-radius: 100%;
+}
+
+/* drugi nacin */
+div#radijus p:nth-of-type(3) {
+	border-radius: 50%;
+	border-radius: 100%;
+}
+
+
+/* vezba iz knjige */
+
+div#vezba {
+	background-color: white;
+	color: black;
+	border-style: double;
+	border-width: 4px;
+	min-width: 675px;
+	max-width: 1000px;
+}
+
+div#sadrzaj {
+	margin: 0 auto;
+	width: 600px;
+}
+
+div#heder {
+	margin: 20px auto;
+	width: 150px;
+}
+
+div#sadrzaj ul {
+	border-top-width: 3px;
+	border-top-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+	padding: 15px;
+}
+
+div#sadrzaj ul>li {
+	display: inline;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-right: 20px;
+}
+
+div#sadrzaj ul>li>a {
+	color: black;
+	text-decoration: none;
+}
+
+div#sadrzaj a:hover, div#sadrzaj a.pocetna {
+	color: orange;
+}
+
+div#sadrzaj a:active, div#sadrzaj a.pocetna {
+	font-weight: bold;
+}
+
+div#sadrzaj p {
+	text-align: center;
+}

@@ -1,0 +1,180 @@
+/* ime boje */
+h1 {
+	color: darkcyan;
+}
+
+/* hex vrednost boje */
+h2 {
+	color: #971818;
+}
+
+/* rgb vrednost boje */
+p {
+	color: rgb(101, 101, 88);
+}
+
+/* definisanje familije fontova */
+body {
+	font-family: Calibri, sans-serif, Verdana, Arial;
+}
+
+/* podesi boje za zadati primer div-a */
+
+/*
+div#biografija_div {
+	background-color: gray;
+	padding: 20px;
+}
+*/
+div.klasa_okvira {
+	background-color: silver;
+	padding: 20px;
+}
+
+div#biografija_div h1 {
+	color: white;
+	background-color: blue;
+	padding: inherit;
+}
+
+div#biografija_div h2 {
+	color: white;
+	background-color: orange;
+	padding: inherit;
+}
+
+div#biografija_div p {
+	background-color: white;
+	padding: inherit;
+}
+
+/* podesi parametar za vidljivost (cetvrti parametar u rgba(...)) */
+div#biografija_div h2 {
+	background-color: rgba(255, 165, 0, 0.5);
+}
+
+/* moze vidiljivost da se podesi i preko css3 opacity property-a */
+div#biografija_div h1 {
+	opacity: 0.85;
+}
+
+div#biografija_div p {
+	/* zamenska (fallback) boja ako nije hsla podrzan unutar pretrazivaca */
+	background-color: rgb(255, 235, 238); 
+	background-color: hsla(350, 100%, 96%, 1);
+}
+
+
+
+
+/* podesavanje div-a za ph vrednost */
+/* 
+	"div.klasa_okvira { ... }" je vec definisan za gornji okvir, pa cemo da ga koristimo
+	i za ovaj okvir (padding...)
+*/
+div#ph_id h1 {
+	background-color: white;
+	padding: inherit;
+	color: #6e4e4e; /* fallback */
+	color: hsla(0, 17%, 37%, 1);
+}
+
+
+div#ph_id>p {
+	color: white;
+	padding: 5px;
+	
+	/* 
+		zato sto nam se paragrafi podrazumevano ispisuju sa marginom ispod i iznad,
+		moracemo da ih uklonimo da ne bismo imali razmake izmedju njih
+		to je zato sto hocemo da nam se paragrafi "zalepe" jedan za drugi da bismo
+		prikazali paragrafe kao trake za ph vrednost
+		uklonicemo margine sa svih strana sa opcijom "margin"
+	*/
+	margin: 0px;
+}
+
+/*
+	parametri H i S su fiksirani (HSL format boja), dok se samo L menja 
+	ovo je jako pogodno, zato sto se samo osvetljenje menja i kada se na prvi
+	pogled vidi jasno je o cemu se radi
+	ovo nije slucaj kod hex ili rgb(rgba) boja, jer nije vidljiva jasna razlika
+	izmedju nijansi boja, dok je to kod hsla boja lako uocljivo
+	definisana je ispod HSL boja i hex boja kao zamenska boja (fallback)
+	u slucaju da pretrazivac ne podrzava HSL boje
+*/
+
+p.cetrnaest {
+	background-color: #002a80; /* fallback */
+	background-color: hsla(220, 100%, 25%, 1); 
+}
+
+p.trinaest { 
+	background-color: #003bb3;
+	background-color: hsla(220, 100%, 35%, 1); 
+}
+
+p.dvanaest { 
+	background-color: #004ce6;
+	background-color: hsla(220, 100%, 45%, 1); 
+}
+
+p.jedanaest { 
+	background-color: #1a66ff;
+	background-color: hsla(220, 100%, 55%, 1); 
+}
+
+p.deset { 
+	background-color: #4d88ff;
+	background-color: hsla(220, 100%, 65%, 1); 
+}
+
+p.devet { 
+	background-color: #80aaff;
+	background-color: hsla(220, 100%, 75%, 1); 
+}
+
+p.osam { 
+	background-color: #b3ccff;
+	background-color: hsla(220, 100%, 85%, 1); 
+}
+
+p.sedam { 
+	background-color: #08ba11;
+	background-color: hsla(123, 92%, 38%, 1);
+}
+
+p.sest {
+	background-color: #ffb3b3;
+	background-color: hsla(0, 100%, 85%, 1);
+}
+
+p.pet {
+	background-color: #ff8080;
+	background-color: hsla(0, 100%, 75%, 1);
+}
+
+p.cetiri {
+	background-color: #ff4d4d;
+	background-color: hsla(0, 100%, 65%, 1);
+}
+
+p.tri {
+	background-color: #ff1a1a;
+	background-color: hsla(0, 100%, 55%, 1);
+}
+
+p.dva {
+	background-color: #e60000;
+	background-color: hsla(0, 100%, 45%, 1);
+}
+
+p.jedan {
+	background-color: #b30000;
+	background-color: hsla(0, 100%, 35%, 1);
+}
+
+p.nula {
+	background-color: #990000;
+	background-color: hsla(0, 100%, 25%, 1);
+}

@@ -1,0 +1,804 @@
+body {
+	margin: 0px;
+	font-family: Arial, Verdana, sans-serif;
+	font-family: "Times New Roman", Times, serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* heder */
+
+div.heder_omotac {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix */
+}
+
+div.heder_omotac_logo {
+	float: left;
+	width: 495px; /* da se ne menja sirina sa povecanjem rezolucije ekrana */
+	margin-left: 200px;
+	margin-top: 50px;
+	overflow: hidden; /* clearfix */
+}
+
+a.heder_omotac_logo_link {
+	float: left;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+div.heder_omotac_naslov {
+	float: left;
+	width: 280px;
+	color: #a4a3a3;
+	color: hsla(0, 1%, 64%, 1);
+}
+
+div.heder_omotac_naslov p:nth-of-type(1) {
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 80%;
+}
+
+div.heder_omotac_naslov p:nth-of-type(2) {
+	text-transform: uppercase;
+	color: #d81e1e;
+	color: hsla(0, 76%, 48%, 1);
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+div.heder_omotac_naslov p:nth-of-type(3) {
+	font-style: italic;
+	margin-top: 0px;
+}
+
+div.heder_omotac_naslov p:nth-of-type(3) span {
+	font-weight: bold;
+	color: #3e2b2b;
+	color: hsla(0, 18%, 21%, 1);
+}
+
+div.heder_omotac_login {
+	float: right;
+	margin-top: 15px;
+	text-align: center;
+}
+
+div.heder_omotac_login input {
+	background-color: #f0f0f0;
+	background-color: hsla(0, 0%, 94%, 1);
+	outline: none;
+	border-style: none;
+	padding: 5px;
+}
+
+div.heder_omotac_login input[type="text"],
+div.heder_omotac_login input[type="password"] {
+	width: 140px;
+}
+
+div.heder_omotac_login a.heder_omotac_login_link {
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 4px 15px;
+	background-color: #575757;
+	background-color: hsla(0, 0%, 34%, 1);
+	margin-left: 10px;
+}
+
+div.heder_omotac_login a.heder_omotac_join_link {
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 4px 15px;
+	background-color: #13b4e7;
+	background-color: hsla(194, 85%, 49%, 1);
+	margin-right: 10px;
+}
+
+div.heder_omotac_login p {
+	font-size: 70%;
+}
+
+div.heder_omotac_login p span.heder_omotac_login_forgot {
+	color: #75c526;
+	color: hsla(90, 68%, 46%, 1);
+	font-weight: bold;
+}
+
+div.heder_omotac_login input#heder_checkbox_id {
+	/* vertikalno poravnjaj sa ostatkom teksta */
+	vertical-align: middle;
+}
+
+div.heder_omotac_social {
+	/*
+		prvo ponisti float za levo i desno, da se ne primakne uz prethodna dva div-a,
+		pa onda pomeri blok u desno sa float 
+	*/
+	clear: both;
+	float: right;
+	margin-top: 20px;
+	margin-bottom: 12px;
+}
+
+div.heder_omotac_social span {
+	font-size: 120%;
+	color: #4d4d4d;
+	color: hsla(0, 0%, 30%, 1);
+	margin-right: 10px;
+}
+
+div.heder_omotac_social a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a5a5a5;
+	border-color: hsla(0, 0%, 65%, 1);
+	
+	/* vertikalno poravnaj linkove sa tekstom levo */
+	vertical-align: bottom;
+}
+
+div.heder_omotac_social a {
+	background-repeat: no-repeat;
+	background-size: 100% 100%; /* sirina i visina iste kao i sam link */
+}
+
+div.heder_omotac_social a:nth-of-type(1) {
+	background-image: url("../../../../slike/zadaci/primer5/social_tumblr.png");
+}
+
+div.heder_omotac_social a:nth-of-type(1):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_tumblr2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(2) {
+	background-image: url("../../../../slike/zadaci/primer5/social_facebook.png");
+}
+
+div.heder_omotac_social a:nth-of-type(2):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_facebook2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(3) {
+	background-image: url("../../../../slike/zadaci/primer5/social_linkedin.png");
+}
+
+div.heder_omotac_social a:nth-of-type(3):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_linkedin2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(4) {
+	background-image: url("../../../../slike/zadaci/primer5/social_youtube.png");
+}
+
+div.heder_omotac_social a:nth-of-type(4):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_youtube2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(5) {
+	background-image: url("../../../../slike/zadaci/primer5/social_google.png");
+}
+
+div.heder_omotac_social a:nth-of-type(5):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_google2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(6) {
+	background-image: url("../../../../slike/zadaci/primer5/social_flickr.png");
+}
+
+div.heder_omotac_social a:nth-of-type(6):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_flickr2.png");
+}
+
+div.heder_omotac_social a:nth-of-type(7) {
+	background-image: url("../../../../slike/zadaci/primer5/social_rss.png");
+	margin-right: 10px;
+}
+
+div.heder_omotac_social a:nth-of-type(7):hover {
+	background-image: url("../../../../slike/zadaci/primer5/social_rss2.png");
+}
+
+/* meni */
+
+div.meni {
+	background-color: #d0d0d0;
+	background-color: hsla(0, 0%, 82%, 1);
+	/* 
+		da se ne smanjuje obojena traka manje od sirine stranice
+		stavljena je malo veca duzina zato da bi se videla lupa za pretragu lepo
+		sa desne strane menija
+	*/
+	min-width: 1213px;
+}
+
+div.meni_omotac {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden; /* clearfix */
+}
+
+div.meni_omotac ul {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	
+	/*
+		sirina liste u pikselima je 782px
+		kada se prebaci na neki ekran sa vecom rezolucijom, ovaj broj poraste
+		na 950px i zbog toga desna strana sa pretragom u meniju predje u novi
+		red
+		zbog toga je fiksirana sirina liste i onda kada se poveca rezolucija,
+		desni deo menija ce sigurno ostati u istom redu, samo ce neki elementi
+		liste da predju u novi red, jer je sirina postala veca
+	*/
+	width: 785px;
+}
+
+div.meni_omotac ul li {
+	display: inline-block;
+}
+
+div.meni_omotac ul li a {
+	padding: 7px 28px; /* da moze da se klikce celom visinom trake menija */
+	
+	/*
+		ako ne stavimo da se ponasa kao blok element, onda ce padding ispasti
+		iz okvira linka
+	*/
+	display: inline-block;
+	
+	color: #515050;
+	color: hsla(0, 1%, 32%, 1);
+	font-weight: bold;
+}
+
+div.meni_omotac ul li a:hover {
+	color: white;
+	background-color: #55555f;
+	background-color: hsla(240, 6%, 35%, 1);
+}
+
+div.meni_omotac_search {
+	float: right;
+	padding-top: 4px; /* da malo pomerimo na dole polja za pretragu */
+}
+
+div.meni_omotac_search input[type="search"] {
+	background-color: #e8e8de;
+	background-color: hsla(60, 19%, 89%, 1);
+	outline: none;
+	width: 130px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	
+	/* 
+		podrazumene linije za input su okrenute ka unutra i boja je crna,
+		i debljina je 2px
+		sad cemo to da promenimo ovde
+	*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: silver;
+}
+
+/* pseudoelement za chrome i mozilu za placeholder na input-u */
+div.meni_omotac_search input[type="search"]::placeholder {
+	font-style: italic;
+}
+
+div.meni_omotac_search select {
+	padding-top: 2px;
+	padding-bottom: 1.2px;
+	outline: none;
+}
+
+/*
+	bolje je vertikalno pomerati sliku a ne link u odnosu na tekst,
+	jer ukoliko link koji sadrzi sliku nije podesen kao blok (inline-block, block),
+	onda se nece pomeriti link sa slikom u odnosu na ostatak teksta
+	ovo ce mozda raditi u google chrome-u, ali nece u firefox-u, ie, edge-u ...
+*/
+div.meni_omotac_search img {
+	vertical-align: middle;
+}
+
+div.meni_omotac_search a {
+	display: inline-block;
+}
+
+/* sadrzaj */
+
+div.sadrzaj {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 25px;
+	padding-left: 4px;
+	padding-right: 10px;
+	padding-bottom: 30px;
+	background-color: #f1f1f1;
+	background-color: hsla(0, 0%, 95%, 1);
+	overflow: hidden; /* clearfix */
+}
+
+/* sadrzaj - leva strana */
+
+div.sadrzaj_levo {
+	float: left;
+	width: 895px;
+}
+
+div.sadrzaj_levo_red {
+	overflow: hidden; /* clearfix */
+	margin-bottom: 20px;
+	padding-top: 20px;
+	border-top-style: solid;
+	border-top-width: 3.3px;
+	border-top-color: #cccccc;
+	border-top-color: hsla(0, 0%, 80%, 1);
+}
+
+div.sadrzaj_levo_vest {
+	float: left;
+	width: 285px;
+	height: 300px;
+	background-color: white;
+}
+
+/* u svakom redu napravi razmak posle prve kolone */
+div.sadrzaj_levo_vest:nth-of-type(1) {
+	margin-right: 20px;
+}
+
+/* u svakom redu napravi razmak posle druge kolone */
+div.sadrzaj_levo_vest:nth-of-type(2) {
+	margin-right: 20px;
+}
+
+div.sadrzaj_levo_red:first-of-type {
+	/* 
+		gornja margina za prvi red ne postoji, kao sto je to stavljeno za 
+		ostale redove -> div.sadrzaj_levo_red
+	*/
+	margin-top: 0px;
+	
+	/* isto vazi i za gornju liniju */
+	border-top-style: none;
+	
+	/* isto vazi i za gornji padding */
+	padding-top: 0px;
+}
+
+div.sadrzaj_levo_vest_omotac {
+	margin: 15px;
+	height: 270px; /* visina ista sa marginama kao i visina okruzujuceg div-a */
+	
+	/* kontejner za elemente koji su unutra fiksni (vrsta vesti i nalepnica) */
+	position: relative;
+}
+
+div.sadrzaj_levo_vest div.sadrzaj_levo_vest_omotac {
+	background-repeat: no-repeat;
+	
+	/* horizontalno neka bude sirine kao i div, a vertikalno koliko moze */
+	background-size: 100%;
+}
+
+div#sadrzaj_vest_01 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest1.jpg");
+}
+
+div#sadrzaj_vest_02 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest2.png");
+}
+
+div#sadrzaj_vest_03 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest3.png");
+}
+
+div#sadrzaj_vest_04 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest4.jpg");
+}
+
+div#sadrzaj_vest_05 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest5.jpg");
+}
+
+div#sadrzaj_vest_06 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest6.jpg");
+}
+
+/* ovaj deo se ponavlja */
+div#sadrzaj_vest_07 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest1.jpg");
+}
+
+div#sadrzaj_vest_08 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest2.png");
+}
+
+div#sadrzaj_vest_09 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest3.png");
+}
+
+div#sadrzaj_vest_10 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest4.jpg");
+}
+
+div#sadrzaj_vest_11 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest5.jpg");
+}
+
+div#sadrzaj_vest_12 div.sadrzaj_levo_vest_omotac {
+	background-image: url("../../../../slike/zadaci/primer5/vest6.jpg");
+}
+
+div.sadrzaj_levo_vest_omotac p.sadrzaj_levo_vest_omotac_vrsta {
+	position: absolute; /* kontejner je div.sadrzaj_levo_vest_omotac */
+	right: 0px;
+	top: 0px; /* pozicioniraj gore-desno */
+	margin: 0px;
+	
+	/* pozadina treba da bude malo transparentna */
+	background-color: #00000080;
+	background-color: hsla(0, 0%, 0%, 0.5);
+	color: white;
+	
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-transform: uppercase;
+	font-size: 90%;
+}
+
+
+div.sadrzaj_levo_vest_omotac_nalepnica {
+	/* 
+		kontejner za ovaj element je div.sadrzaj_levo_vest_omotac
+		
+		ovaj element je kontejner za paragraf p.sadrzaj_levo_vest_omotac_nalepnica_autor
+	*/
+	position: absolute;
+	bottom: 0px; /* pozicioniraj se dole (levo-desno) */
+	left: 0px;
+	right: 0px;
+	
+	height: 160px;
+}
+
+/* vesti u neparnom redu imaju jednu pozadinsku boju za nalepnicu pri dnu vesti */
+div.sadrzaj_levo_red:nth-of-type(2n + 1) div.sadrzaj_levo_vest_omotac_nalepnica {
+	background-color: #1ea1e6;
+	background-color: hsla(201, 80%, 51%, 1);
+	color: #2b5f34;
+	color: hsla(130, 38%, 27%, 1);
+}
+
+/* vesti u parnom redu imaju drugu pozadinsku boju za nalepnicu pri dnu vesti */
+div.sadrzaj_levo_red:nth-of-type(2n) div.sadrzaj_levo_vest_omotac_nalepnica {
+	background-color: #ade8ff;
+	background-color: hsla(197, 100%, 84%, 1);
+	color: #794747;
+	color: hsla(0, 26%, 38%, 1);
+}
+
+/* linkovi u neparnim redovima unutar nalepnica pri dnu stranice */
+div.sadrzaj_levo_red:nth-of-type(2n + 1) div.sadrzaj_levo_vest_omotac_nalepnica a {
+	color: white;
+}
+
+/* linkovi u parnim redovima unutar nalepnica pri dnu stranice */
+div.sadrzaj_levo_red:nth-of-type(2n) div.sadrzaj_levo_vest_omotac_nalepnica a {
+	color: #008ee1;
+	color: hsla(202, 100%, 44%, 1);
+}
+
+div.sadrzaj_levo_vest_omotac_nalepnica p.sadrzaj_levo_vest_omotac_nalepnica_autor {
+	/* kontejner je okruzujuci div.sadrzaj_levo_vest_omotac_nalepnica */
+	position: absolute;
+	bottom: 0px; /* pozicioniraj dole (levo-desno) */
+	left: 0px;
+	right: 0px;
+}
+
+div.sadrzaj_levo_vest_omotac_nalepnica p.sadrzaj_levo_vest_omotac_nalepnica_naslov {
+	margin: 10px;
+	font-size: 130%;
+	font-size: 1.3em;
+}
+
+/* ovaj element je pozicioniran, zato moramo da ga pomeramo od ivice uz pomoc margina */
+div.sadrzaj_levo_vest_omotac_nalepnica p.sadrzaj_levo_vest_omotac_nalepnica_autor {
+	margin: 10px;
+	font-size: 80%;
+	font-size: 0.8em;
+}
+
+
+/* sadrzaj - desna strana */
+
+div.sadrzaj_desno {
+	float: right;
+	background-color: white;
+	
+	/* duzina je ista kao i duzina vesti sa leve strane - div.sadrzaj_levo_vest */
+	width: 285px;
+}
+
+div.sadrzaj_desno_vest {
+	margin: 15px;
+	margin-bottom: 30px;
+	padding-top: 5px; /* da margine naslova udju u div */
+	padding-bottom: 5px;
+	overflow: hidden;  /* clearfix */
+}
+
+div.sadrzaj_desno_vest a {
+	display: inline-block;
+}
+
+div.sadrzaj_desno_vest a.sadrzaj_desno_vest_naslov_link {
+	background-color: #41ce41;
+	background-color: hsla(120, 59%, 53%, 1);
+	border-radius: 5px;
+	padding: 10px;
+	height: 20px; /* ista visina kao i visina slike unutar linka */
+	float: left;
+	margin-right: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #31bf31;
+	border-color: hsla(120, 59%, 47%, 1);
+}
+
+div.sadrzaj_desno_vest h3.sadrzaj_desno_vest_naslov {
+	margin-top: 7px;
+	font-size: 130%;
+	font-size: 1.3em;
+	margin-bottom: 30px;
+}
+
+div.sadrzaj_desno_vest_01_poz {
+	padding: 15px;
+	padding-bottom: 10px;
+	background-image: url("../../../../slike/zadaci/primer5/meetup.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%; /* velicina slike da odgovara sirini i visini div-a */
+	overflow: hidden;  /* clearfix */
+}
+
+div.sadrzaj_desno_vest_01_poz h3 {
+	color: white;
+	font-size: 130%;
+	font-size: 1.3em;
+	line-height: 0.85em;
+	margin-left: 7px;
+}
+
+div.sadrzaj_desno_vest_01_poz p {
+	margin-left: 15px;
+	font-size: 90%;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	word-spacing: 0.1em;
+}
+
+div.sadrzaj_desno_vest_01_poz a.sadrzaj_desno_vest_01_poz_link {
+	color: white;
+	float: right;
+}
+
+div.sadrzaj_desno_vest_01_poz a.sadrzaj_desno_vest_01_poz_link img {
+	vertical-align: middle; /* vertikalno pomeri sliku u odnosu na tekst */
+	margin-right: 5px;
+	padding-bottom: 4px; /* podigni malo sliku na gore da bude uravnjata sa tekstom */
+}
+
+div.sadrzaj_desno_vest_01_poz a.sadrzaj_desno_vest_01_poz_link span {
+	font-size: 115%;
+	
+}
+
+div.sadrzaj_desno_vest_02_naslov {
+	overflow: hidden;  /* clearfix */
+	border-bottom-style: solid;
+	border-bottom-width: 5px;
+	border-bottom-color: #cfcece;
+	border-bottom-color: hsla(0, 1%, 81%, 1);
+	margin-bottom: 10px;
+}
+
+div.sadrzaj_desno_vest_02_naslov h3.sadrzaj_desno_vest_naslov {
+	margin-bottom: 20px;
+}
+
+div.sadrzaj_desno_vest a.sadrzaj_desno_vest_02_ramp_logo {
+	float: left;
+	margin-right: 10px;
+}
+
+div.sadrzaj_desno_vest_02_podnaslov {
+	/* ubaci mali razmak cisto da margine od naslova ne izadju van div-a */
+	padding: 1px 0px;
+	
+	float: left;
+}
+
+.ramp {
+	text-transform: uppercase;
+}
+
+div.sadrzaj_desno_vest_02_podnaslov p.ramp {
+	margin: 0px;
+	color: #55bd05;
+	color: hsla(94, 95%, 38%, 1);
+	font-size: 120%;
+	font-size: 1.2em;
+}
+
+div.sadrzaj_desno_vest_02_podnaslov p:nth-of-type(2) {
+	margin-top: 5px;
+}
+
+div.sadrzaj_desno_vest p {
+	clear: left;  /* ponisti float u levo od prethodnog div-a */
+}
+
+div.sadrzaj_desno_vest a.sadrzaj_desno_vest_02_like {
+	float: right;
+	background-color: #5f5f5f;
+	background-color: hsla(0, 0%, 37%, 1);
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 10px;
+	color: white;
+}
+
+div.sadrzaj_desno_vest a.sadrzaj_desno_vest_02_like img {
+	 /*
+		vertikalno centriraj sliku u odnosu na tekst (broj u nasem slucaju)
+		middle nam se ne uklapa, pa cemo staviti bottom
+	*/
+	vertical-align: bottom;
+	
+	margin-right: 10px;
+}
+
+
+/* futer */
+
+div.futer {
+	background-image: url("../../../../slike/zadaci/primer5/futer.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%; /* samo duz x-se rasiri sliku do kraja */
+	background-position-y: center; /* centriraj vertikalno pozadinsku sliku */
+	color: white;
+}
+
+div.futer_transparent {
+	background-color: #000000f2;
+	background-color: hsla(0, 0%, 0%, 0.95);
+	
+	/* 
+		podesi minimalnu sirinu kada se smanjuje prozor da ne ispadnu elementi
+		iz ovog div-a kao gore u slucaju boje trake za meni div.meni
+	*/
+	min-width: 1213px;
+}
+
+div.futer_omotac {
+	width: 1200px; /* ista kao sirina stranice */
+	margin: 0 auto;
+	padding-top: 50px;
+	overflow: hidden;  /* clearfix */
+}
+
+div.futer_omotac img.futer_omotac_logo {
+	float: left;
+	margin-left: 20px;
+	margin-right: 100px;
+}
+
+div.futer_omotac div.futer_lista {
+	float: left;
+	width: 300px;
+	margin-right: 30px;
+}
+
+div.futer_omotac div.futer_lista h2 {
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+div.futer_omotac div.futer_lista ul {
+	padding: 0px;
+}
+
+div.futer_omotac div.futer_lista ul li {
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+
+div.futer_omotac div.futer_lista a {
+	display: inline-block;
+	color: #887c7c;
+	color: hsla(0, 5%, 51%, 1);
+	font-style: oblique;
+	font-style: italic;
+}
+
+div.futer_omotac div.futer_lista a:hover {
+	color: #e62323;
+	color: hsla(0, 80%, 52%, 1);
+}
+
+/* ubaci generisani sadrzaj pre pocetka linka i dodaj razmak posle slike */
+div.futer_omotac div.futer_lista a::before {
+	content: url("../../../../slike/zadaci/primer5/futer_desno_1b.png") " ";
+	
+	/* vertikalno centriraj sadrzaj sa slikom u odnosu na tekst ispred */
+	vertical-align: middle;
+}
+
+/* uvuci malo tekst */
+div.futer_omotac div.futer_lista a span {
+	margin-left: 10px;
+}
+
+
+div.futer_transparent_dole {
+	border-top-style: solid;
+	border-top-width: 0.1px;
+	border-top-color: #362b2b;
+	border-top-color: hsla(0, 11%, 19%, 1);
+	text-transform: uppercase;
+	font-size: 80%;
+	font-size: 0.8em;
+	word-spacing: 0.1em;
+}
+
+div.futer_transparent_dole_omotac {
+	width: 1200px;
+	margin: 0px auto;
+	overflow: hidden;  /* clearfix */
+}
+
+div.futer_transparent_dole_omotac p.futer_transparent_dole_omotac_copy {
+	float: left;
+	color: #e6cbcb;
+	color: hsla(0, 35%, 85%, 1);
+}
+
+div.futer_transparent_dole_omotac p {
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+div.futer_transparent_dole_omotac p.futer_transparent_dole_omotac_dizajn {
+	float: right;
+}
+
+div.futer_transparent_dole_omotac p.futer_transparent_dole_omotac_dizajn img {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+div.futer_transparent_dole_omotac p.futer_transparent_dole_omotac_dizajn a {
+	color: white;
+	display: inline-block; /* da bude ista visina slike i teksta */
+}

@@ -1,0 +1,66 @@
+/* stranica */
+
+div#stranica_grupe {
+	padding: 10px;
+	overflow: hidden; /* clearfix */
+	margin-bottom: 30px;
+}
+
+div#stranica_grupe div.stranica_grupe_omot {
+	float: left;
+	width: 420px;
+	text-align: center;
+	font-size: 2em;
+	font-style: italic;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+div#stranica_grupe div.stranica_grupe_omot a {
+	display: inline-block; /* da se ponasa kao blok */
+	width: 100%;
+	padding: 120px 0px;
+	color: yellow;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(1) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting3.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(2) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting3.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(3) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting3.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(4) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting2.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(5) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting2.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(6) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting2.jpg");
+	background-size: 100% 100%;
+}
+
+div#stranica_grupe div.stranica_grupe_omot:nth-of-type(7) {
+	background-color: green;
+	background-image: url("../../../../slike/zadaci/primer3/web_hosting4.jpg");
+	background-size: 100% 100%;
+}

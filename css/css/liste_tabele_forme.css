@@ -1,0 +1,991 @@
+body {
+	font-family: Georgia, "Times New Roman", serif;
+	padding: 10px;
+}
+
+#futer {
+	padding: inherit;
+	background-color: blue;
+	color: white;
+	margin-top: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+#futer a {
+	color: #ffac00;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+}
+
+.naslovi {
+	color: blue;
+	border-style: solid;
+	padding: 10px;
+	width: 400px;
+	background-color: silver;
+	border-radius: 10px;
+}
+
+.naslovi:hover {
+	background-color: white;
+}
+
+
+/* primeri lista */
+
+div#liste ul {
+	list-style-type: circle;
+}
+
+div#liste ol {
+	list-style-type: lower-roman;
+}
+
+div#liste .ponedeljak {
+	list-style-type: lower-greek;
+}
+
+div#liste .utorak {
+	list-style-type: none;
+}
+
+div#liste .voce {
+	list-style-image: url("../../slike/vrh.png");
+}
+
+div#liste .voce>li {
+	margin-top: 10px;
+}
+
+div#markeri {
+	width: 400px;
+}
+
+div#markeri ul {
+	list-style-position: inside;
+}
+
+div#markeri ol {
+	list-style-position: outside;
+}
+
+div#markeri li {
+	margin-top: 10px;
+}
+
+div#liste div:last-of-type {
+	width: 500px;
+}
+
+div#liste div:last-of-type ul {
+	list-style: inside square;
+}
+
+div#liste div:last-of-type ul>li {
+	margin-top: 10px;
+}
+
+
+
+/* brojaci */
+
+div#prvi_brojac {
+	counter-reset: paragraf;
+}
+div#prvi_brojac>p {
+	counter-increment: paragraf;
+}
+
+div#prvi_brojac>p:before {
+	content: "Broj [" counter(paragraf) "]: ";
+}
+
+div#drugi_brojac {
+	counter-reset: naslov 20;
+	counter-reset: paragraf2 18;
+}
+
+div#drugi_brojac>h3 {
+	counter-increment: naslov 3;
+}
+
+div#drugi_brojac>h3::before {
+	content: "[" counter(naslov) "] : " counter(paragraf) " -> ";
+}
+
+div#drugi_brojac p {
+	counter-increment: paragraf2 -10;
+}
+
+div#drugi_brojac p::before {
+	content: "Broji unazad: " counter(paragraf2) " -> ";
+}
+
+/* 
+	format brojaca:
+	
+	glavni_naslov . sekcija . podsekcija 
+*/
+
+div#treci_brojac {
+	/* 
+		moze samo jedan counter-reset da postoji unutar nekog bloka
+		inace ce se izvrsiti samo poslednji napisan counter-reset,
+		dok ce ostali biti override-ovani
+		ne moze da se napise u istom bloku:
+		counter-reset: prvi
+		counter-reset: drugi
+		...
+		nego mora da postoji samo jedan counter-reset unutar bloka:
+		counter-reset: prvi drugi  ...
+	*/
+	counter-reset: glavni_naslov sekcija podsekcija;
+}
+
+div#treci_brojac h1 {
+	counter-increment: glavni_naslov;
+	counter-reset: sekcija podsekcija;
+}
+
+div#treci_brojac h1::before {
+	content: counter(glavni_naslov) ". ";
+}
+
+div#treci_brojac h2 {
+	counter-increment: sekcija;
+	counter-reset: podsekcija;
+}
+
+div#treci_brojac h2::before {
+	content: counter(glavni_naslov) "." counter(sekcija) ". ";
+}
+
+div#treci_brojac h3 {
+	counter-increment: podsekcija;
+}
+
+div#treci_brojac h3::before {
+	content: counter(glavni_naslov) "." counter(sekcija) "." counter(podsekcija) ". ";
+}
+
+
+
+div#cetvrti_brojac {
+	counter-reset: glavni_naslov sekcija podsekcija;
+}
+
+div#cetvrti_brojac h1 {
+	counter-increment: glavni_naslov;
+	counter-reset: sekcija podsekcija;
+}
+
+div#cetvrti_brojac h1::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) ". ";
+}
+
+div#cetvrti_brojac h2 {
+	counter-increment: sekcija;
+	counter-reset: podsekcija;
+}
+
+div#cetvrti_brojac h2::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) "." counter(sekcija) ". ";
+}
+
+div#cetvrti_brojac h3 {
+	counter-increment: podsekcija;
+}
+
+div#cetvrti_brojac h3::before {
+	/* koristi list-style-type kao drugi arguement f-je counter(...) */
+	content: counter(glavni_naslov, upper-alpha) "." counter(sekcija) "." 
+	         counter(podsekcija, lower-roman) ". ";
+}
+
+
+p#p_ugnjezdavanje {
+	border-style: dashed;
+	border-width: 4px;
+	border-color: orange;
+	padding: 8px;
+	width: 500px;
+	line-height: 1.3em;
+}
+
+
+/*
+	pri svakom kreiranju ol napravi po jednu istancu brojaca
+	sa imenom ugnezdeni_brojac
+	tako da koliko imamo ugnezdenih ol elemenata, toliko cemo
+	imati instanci brojaca
+	kada ispisujemo brojac sa counters(brojac, string) ili
+	counters(brojac, string, list-style-type), onda se ispisuju
+	sve instance brojaca sa zadatim imenom kao prvi argument
+	razdvojeni medjusobno stringom kao drugi argumtent counters-a
+	zbog ovoga nam je dovoljno da definisemo samo jedan brojac,
+	a sve ostale njegove instance ce da se automatski kreiraju
+	prilokom novog ugnezdenja
+*/
+div#peti_brojac ol {
+	list-style-type: none;
+	counter-reset: ugnezdeni_brojac;
+}
+
+div#peti_brojac li::before {
+	/*
+		instance brojaca ugnezdeni_brojac se ispisuju rekurzivno
+		jedna za drugom na kraju svakog se dodaje zadati string "."
+		i tek kada se sve instance brojaca ispisu, tek onda se
+		ispisuje string posle counters() f-je, a to je ": " u nasem
+		slucaju
+	*/
+	content: counters(ugnezdeni_brojac, ".") ": ";
+}
+
+div#peti_brojac li {
+	counter-increment: ugnezdeni_brojac;
+}
+
+
+
+
+/* tabele */
+
+table.aukcija {
+	width: 700px;
+}
+
+table.aukcija th {
+	text-align: left;
+	text-transform: uppercase;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	border-top-color: silver;
+	letter-spacing: 0.1em;
+	padding: 5px;
+}
+
+table.aukcija td {
+	padding: 5px;
+}
+
+table.aukcija .cena {
+	text-align: right;
+}
+
+table.aukcija tr:nth-child(even) {
+	background-color: silver;
+}
+
+/* 
+	da bi se videla boja kada se prelazi misem, mora da
+	se :hover pseudoklasa nalazi posle bojenja tr:nth-child(even)
+*/
+table.aukcija tr:hover {
+	background-color: #e8e8e8;
+}
+
+
+table.tabela2 {
+	empty-cells: show;
+	display: inline-block;
+	margin-right: 30px;
+}
+
+table.tabela2 td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: blue;
+	padding: 10px;
+}
+
+table.tabela3 {
+	empty-cells: hide;
+	display: inline-block;
+}
+
+table.tabela3 td {
+	border-style: solid;
+	border-width: 1px;
+	border-color: blue;
+	padding: 10px;
+}
+
+table.tabela4 {
+	border-collapse: separate;
+	
+	/* 
+		ako zadamo samo jednu vrednost, onda je to
+		razmak isti i horizontalno i vertikalno
+		ako zadamo dve vrednosti, onda je to prva
+		vrednost horizontalni razmak a druga vrednost
+		je vertikalni razmak izmedju elemenata tabele
+	*/
+	border-spacing: 5px 15px;
+	
+	display: inline-block;
+	margin-right: 15px;
+}
+
+table.tabela4 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
+}
+
+table.tabela5 {
+	border-collapse: collapse;
+	display: inline-block;
+}
+
+table.tabela5 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
+}
+
+table.tabela6 {
+	border-spacing: 0px;
+}
+
+table.tabela6 td {
+	padding: 10px;
+	border-style: solid;
+	background-color: #6ba6ff;
+}
+
+
+table.tabela7 {
+	border-collapse: collapse;
+	width: 600px;
+}
+
+table.tabela7 th,
+table.tabela7 td {
+	padding: 10px;
+	text-align: left;
+}
+
+table.tabela7 tr {
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+}
+
+table.tabela8 {
+	border-collapse: separate;
+	width: 600px;
+	
+	/* lejout za width properti */
+	table-layout: auto;
+	table-layout: fixed;
+	
+	border-spacing: 5px;
+}
+
+table.tabela8 th,
+table.tabela8 td {
+	padding: 10px;
+	text-align: left;
+	border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+}
+
+
+table.tabela9 {
+	border-collapse: collapse;
+	width: 150px;
+	background-color: orange;
+}
+
+table.tabela9 td {
+	padding: 10px;
+	border-style: dashed;
+	border-width: 5px;
+	border-color: red;
+}
+
+table.tabela9 td:nth-of-type(2) {
+	background-color: silver;
+}
+
+table.tabela9 tr:nth-child(2) {
+	background-color: blue;
+}
+
+
+table.tabela10 {
+	table-layout: auto;
+	border-collapse: collapse;
+	width: 700px;
+}
+
+table.tabela10 td {
+	border-style: solid;
+	border-width: 2px;
+	padding: 10px;
+}
+
+table.tabela10 #zima {
+	width: 300px;
+}
+
+table.tabela10 #zirafe {
+	width: 250px;
+}
+
+table.tabela10 #detelina {
+	width: 50px;
+	height: 200px;
+	vertical-align: top;
+}
+
+table.tabela10 #detelina>div {
+	border-style: dashed;
+	border-color: red;
+	border-width: 2px;
+}
+
+
+table.tabela11 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	border-spacing: 15px;
+	margin-bottom: 10px;
+}
+
+table.tabela11 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+	
+	/* za tabelu ciji su elementi razdvojeni, moguce je zaobliti bilo koju ivicu */
+	border-radius: 20px;
+}
+
+table.tabela12 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	margin-bottom: 10px;
+}
+
+table.tabela12 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: orange;
+}
+
+table.tabela12 tr:nth-of-type(1)>td:first-child {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-top-left-radius: 10px;
+	background-color: blue;
+	color: white;
+}
+
+table.tabela13 {
+	/* razdvojeni su elementi tabele i onda mogu da se iskrive */
+	border-collapse: separate;
+	
+	/* 
+		razmak izmedju elemenata tabele je nula i to izgleda kao
+		da su elementi tabele spojeni, a u stvari su razdvojeni
+	*/
+	border-spacing: 0px;
+	margin-bottom: 10px;
+	border: 3px solid blue;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+table.tabela13 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: red;
+}
+
+table.tabela13 tr:first-child td:first-child{
+	border-top-left-radius: 10px;
+}
+
+table.tabela13 tr:nth-child(2) td:last-child{
+	border-bottom-right-radius: 10px;
+}
+
+table.tabela14 {
+	/* spojeni su elementi tabele i onda NE MOGU da se iskrive */
+	border-collapse: collapse;
+	background-color: orange;
+}
+
+table.tabela14 td {
+	padding: 10px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: green;
+	
+	/* nije moguce iskriviti ivice za ovaj model tabele */
+	border-radius: 35px;
+}
+
+table.tabela14 tr:nth-of-type(1)>td:first-child {
+	/* nije moguce iskriviti ivice za ovaj model tabele */
+	border-radius: 35px;
+	background-color: blue;
+}
+
+
+/* putanje do elemenata stranice (za forme uglavnom) */
+
+div#putanje {
+	padding: 10px;
+	border-style: dashed;
+	border-color: #8d5050;
+	border-width: 3px;
+	border-radius: 15px;
+	width: 200px;
+	background-color: orange;
+	box-shadow: 7px 5px 14px 2px #4d4103;
+}
+
+div#putanje a {
+	font-weight: bold;
+	color: white;
+}
+
+div#putanje a:hover {
+	color: blue;
+}
+
+
+/* forme */
+
+form#forma1 {
+	width: 400px;
+	border-style: solid;
+	border-color: silver;
+	border-width: 1px;
+	padding: 20px;
+}
+
+form#forma1 * {
+	margin-bottom: 10px;
+	font: inherit;
+}
+
+/* 
+	stavi polja levo kao kocke iste duzine i onda ce
+	elementi forme koji se nalaze desno biti uravnjati
+	u liniji vertikalno
+	moramo isto izgled da promenimo u inline-block da
+	bismo mogli da podesimo duzinu kocke, a da pri tom
+	ne predjemo u novi red (kao na primer sa block elementima)
+ */
+form#forma1 .forma1_levo {
+	width: 200px;
+	display: inline-block;
+}
+
+form#forma1 #selekt_id {
+	padding: 2px;
+}
+
+form#forma1 #posalji_id {
+	border-radius: 10px;
+	outline: none;
+}
+
+form#forma1 #prostor_id {
+	resize: none;
+	width: 184px;
+	height: 65px;
+	
+	/* 
+		da bi se textarea pomerila na gore u odnosu na labelu,
+		tj. da labela i textarea budu iscrtane u istoj liniji
+	*/
+	vertical-align: top;
+}
+
+form#forma1 #posalji_id:hover {
+	background-color: silver;
+	color: white;
+}
+
+input, textarea {
+	padding: 5px;
+}
+
+
+form#forma2 input {
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	background-color: hsla(0, 0%, 95%, 1);
+	border-color: silver;
+	border-width: 1px;
+	background-position-x: 5px;
+	background-position-y: 4px;
+	background-size: 12px;
+	
+	/*
+		posto smo stavili sliku unutar input-a kao pozadinu
+		na pocetku input-a, onda treba da povecamo padding
+		sa leve strane input-a da bismo kucali desno od slike,
+		a ne preko slike
+	*/
+	padding-left: 25px;
+}
+
+form#forma2 input:hover {
+	background-color: #2c4784;
+	
+	/* ako je tekst vec unet, onda kada se predje bolje se vidi */
+	color: white;
+}
+
+form#forma2 input:focus {
+	background-color: #d4d4d4;
+	background-color: hsla(0, 0%, 83%, 1);
+	border-color: black;
+	border-width: 2px;
+	outline: none;
+	
+	/* moramo da definisemo boju, inace ce :hover color da ga pregazi */
+	color: black;
+}
+
+form#forma2 #forma2_unos1,
+form#forma2 #forma2_unos2,
+form#forma2 #forma2_unos3 {
+	background-image: url("../../slike/vrh.png");
+	background-repeat: no-repeat;
+}
+
+form#forma3 input[type="submit"] {
+	border-radius: 5px;
+	background-color: #18ddbe;
+	outline: none;
+	text-shadow: 1px 1px 4px;
+	letter-spacing: 0.1em;
+	border-bottom-width: 3px;
+	color: #525252;
+	border-color: #3eead0;
+	border-color: hsla(171, 80%, 58%, 1);
+}
+form#forma3 input[type="submit"]:hover {
+	border-top-width: 3px;
+	border-bottom-width: 2px;
+	color: black;
+	background-color: #15c1a7;
+}
+
+
+form#forma4 fieldset {
+	width: 310px;
+	padding: 20px;
+	border-color: #ffffff;
+	border-width: 2px;
+	border-radius: 10px;
+	color: brown;
+	color: #904848;
+	
+	/* sve elemente unutar fieldset-a pomeri u desno */
+	text-align: right;
+}
+
+form#forma4 fieldset input {
+	margin-bottom: 20px;
+	outline: none;
+}
+
+form#forma4 legend {
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	background-color: #ebebeb;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 3px;
+	box-shadow: 2px 3px 3px silver;
+	
+	/* vrati legendu u levo */
+	text-align: left;
+}
+
+form#forma4 input[type="submit"] {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-radius: 8px;
+	background-color: #904848;
+	color: #d4d5c2;
+}
+
+form#forma4 #ime_id,
+form#forma4 #imejl_id {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	width: 250px;
+}
+
+
+
+form#forma5 div {
+	margin-bottom: 20px;
+	width: 260px;
+}
+
+form#forma5 .forma5_levo {
+	text-align: right;
+	
+	/* 
+		ili moze samo da se uradi float u levo, i da 
+		se podesi duzina:
+		
+		float: left; width: 50px;
+		
+		ovo ce isto da radi kao ovo, zato sto element
+		koji se pomera sa float trazi width properti,
+		da bi znao koliko mesta da zauzme
+		kada se koristi float, ne mora da se display
+		menja u inline-block/block
+	*/
+	width: 50px;
+	display: inline-block;
+	
+	padding-right: 10px;
+}
+
+form#forma5 .forma_5_submit {
+	text-align: right;
+}
+
+form#forma5 input[type="submit"] {
+	border-radius: 20px;
+	outline: none;
+}
+
+
+
+/* kursori */
+
+div#kursor .kursor {
+	width: 300px;
+	padding: 10px;
+	border-style: dashed;
+	border-color: orange;
+	border-width: 3px;
+	background-color: blue;
+	color: white;
+}
+
+div#kursor p:nth-of-type(2) {
+	cursor: move;
+}
+
+div#kursor p:nth-of-type(3) {
+	cursor: grab;
+}
+
+div#kursor p:nth-of-type(4) {
+	cursor: not-allowed;
+}
+
+div#kursor p:nth-of-type(5) {
+	cursor: pointer;
+}
+
+div#kursor p:nth-of-type(6) {
+	cursor: progress;
+}
+
+div#kursor p:nth-of-type(7) {
+	cursor: wait;
+}
+
+div#kursor p:nth-of-type(8) {
+	cursor: help;
+}
+
+
+
+/* primer iz knjige */
+
+div#primer {
+	color: #6d6262;
+	color: rgba(109, 98, 98, 1);
+}
+
+div#primer ul {
+	list-style-type: none;
+	list-style-image: url("../../slike/plus.png");
+}
+
+div#primer li {
+	/* margin-bottom: 10px; */
+	line-height: 2em;
+}
+
+div#primer table {
+	table-layout: fixed;
+	width: 920px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	/*
+		ukoliko linije tabele sastavimo da budu spojene (collapse),
+		onda cemo imati problem sa menjanjem pojedinacnih celija tabele
+		npr. ako hocemo da zakrivimo (border-radius) krajnje ivice
+		tabele, to necemo moci da uradimo ako su linije tabele
+		spojene, vec samo ako su razdvojene (separate)
+		kada su razdvojene linije tabele, onda se svaka celija tabele
+		posmatra posebno za sebe i onda je moguce pojedinacnu
+		celiju izmeniti, u suprotnom je to nemoguce jer cemo imati
+	    ivicu celije koja nije zakrivljena, a pozadinska boja ce biti
+		zakrivljena
+		ako hocemo da izgledaju celije kao spojene, onda treba razmak
+		izmedju celija da postavimo da bude nula
+		u spec-u pise da border-radius se koristi za sve elemente izuzev
+		za internet elemente tabela (zato mora da razdvojimo elemente tabela)
+	*/
+/*	border-collapse: collapse;   */
+	border-collapse: separate;
+	border-spacing: 0px;
+}
+
+div#primer table th,
+div#primer table td {
+	padding: 10px;
+	text-align: left;
+}
+
+div#primer thead {
+	background-color: #4f8ef7;
+	color: white;
+}
+
+
+div#primer thead th {
+	border-style: solid;
+	border-color: #99beff;
+	border-width: 1px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	text-shadow: 4px 4px 3px #0a3586;
+	
+	/*
+		zato sto su nam celije razdvojene, onda moramo pojedinacno
+		da podesimo donju liniju, jer donja linija za thread ili tr
+		ne postoji u ovom modelu tabele
+	*/
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #023180;
+}
+
+div#primer thead th:first-child {
+	border-top-left-radius: 8px;
+}
+
+div#primer thead th:last-child {
+	border-top-right-radius: 8px;
+}
+
+
+div#primer tbody th, 
+div#primer tbody td {
+	border-width: 1px;
+	border-style: solid;
+	border-color: silver;
+}
+
+div#primer tbody tr:nth-child(odd) {
+	background-color: #d3e2fd;
+	background-color: hsla(219, 91%, 91%, 1);
+}
+
+div#primer tbody tr:nth-child(even) {
+	background-color: #e7effe;
+	background-color: hsla(219, 91%, 95%, 1);
+}
+
+div#primer fieldset {
+	width: 470px;
+	background-color: #f2f4fa;
+}
+
+div#primer legend {
+	font-style: italic;
+}
+
+div#primer .forma6_levo {
+	/* 
+		kada se uradi float, element automatski moze da ima width,
+		ne mora da se menja display u ovom slucaju
+		za float je cak i potrebno da se definise width
+	*/
+	float: left;
+	width: 280px;
+}
+
+div#primer fieldset * {
+	margin-bottom: 10px;
+}
+
+div#primer hr {
+	visibility: hidden;
+}
+
+div#primer #forma6_sel_id {
+	padding: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	border-radius: 5px;
+	background-color: #e8e8e8;
+}
+
+div#primer form input[type="text"]:hover,
+div#primer form input[type="email"]:hover,
+div#primer form input[type="text"]:focus,
+div#primer form input[type="email"]:focus {
+	background-color: #d3e2fd;
+	border-color: blue;
+	border-width: 2px;
+}
+
+div#primer form input[type="submit"] {
+	border: none;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	outline: none;
+	background-color: brown;
+	background-color: hsla(0, 59%, 41%, 1);
+	font-weight: bold;
+	color: #e3e3e3;
+}
+
+div#primer form input[type="submit"]:hover {
+	background-color: #cb3434;
+	background-color: hsla(0, 59%, 50%, 1);
+	cursor: pointer;
+	color: white;
+}
+
+div#primer form input[type="submit"]:active {
+	background-color: #8e2525;
+	background-color: hsla(0, 59%, 35%, 1);
+}

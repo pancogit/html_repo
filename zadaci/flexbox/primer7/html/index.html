@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8">
+	<title>Zadaci flexbox primer 7</title>
+	<link href="../css/page.css" type="text/css" rel="stylesheet" />
+	
+	<!-- define viewport for mobile devices -->
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+	
+	<!-- link to font awesome font icons -->
+	<link href="../../../../font/fontawesome-free-5.12.1-web/css/all.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="page">
+		<div class="header">
+			<div class="header_sign_search">
+				<a href="#"><i class="fas fa-user"></i></a>
+				<a href="#"><i class="fas fa-search"></i></a>
+			</div><!-- header_sign_search -->
+			<div class="header_logo_menu">
+				<a href="index.html">
+					<img src="../../../../slike/zadaci/primer7/logo_centura.svg"
+						 alt="logo centura" width="240" height="36" />
+				</a>
+				<ul>
+					<li><a href="care_and_health.html" class="header_logo_menu_main">Care & Health</a></li>
+					<li><a href="index.html" class="header_logo_menu_main">Find A Provider</a></li>
+					<li><a href="locations.html" class="header_logo_menu_main">Locations</a></li>
+					<li><a href="index.html">Patients & Families</a></li>
+					<li><a href="index.html">Classes & Events</a></li>
+				</ul>
+			</div><!-- header_logo_menu -->
+			<div class="header_background">
+				<!-- there should be placed background image for header -->
+				
+				<div class="content">
+					<div class="header_chapter">
+						<h1>Every community, every neighborhood, every life - whole and healthy.</h1>
+						<p>Centura Health is the largest health care ecosystem across Colorado and
+						   wide Kansas, on mission to support your whole health.
+						</p>
+					</div><!-- header_chapter -->
+					<div class="header_tabs">
+						<ul>
+							<li class="header_tabs_active"><a href="index.html">Providers</a></li>
+							<li><a href="locations.html">Locations</a></li>
+							<li><a href="care_and_health.html">Care & Health</a></li>
+						</ul>
+						<div class="header_tabs_search">
+							<input type="search" name="header_tabs_search_provider" 
+								   placeholder="Provider Name, Speciality or Practice"
+								   class="header_tabs_search_provider_image" />
+							<div class="header_tabs_search_current_location">
+								<input type="search" name="header_tabs_search_location" 
+									   placeholder="Location"
+									   class="header_tabs_search_location_image" />
+								<a href="index.html">Use current location</a>
+							</div><!-- header_tabs_search_current_location -->
+							<button class="button">Search</button>
+						</div><!-- header_tabs_search -->
+					</div><!-- header_tabs -->
+				</div><!-- content -->
+			</div><!-- header_background -->
+		</div><!-- header -->
+		
+		<div class="content">
+			<div class="content_cards" id="content_cards_id">
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-hospital icon"></i>
+							<h4>Our Hospitals</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-user-md icon"></i>
+							<h4>Find a Provider</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-user icon"></i>
+							<h4>MyCenturaHealth</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-dollar-sign icon"></i>
+							<h4>Pay Bills Online</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-camera-retro fa-spin icon"></i>
+							<h4>Careers</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+				<a href="#content_cards_id" class="content_cards_link">
+					<div class="content_cards_item_wrapper">
+						<div class="content_cards_item">
+							<i class="fas fa-hand-holding-heart fa-flip-horizontal icon"></i>
+							<h4>Give a Gift</h4>
+						</div><!-- content_cards_item -->
+					</div><!-- content_cards_item_wrapper -->
+				</a>
+			</div><!-- content_cards -->
+			
+			<div class="content_news" id="content_news_id">
+				<div class="content_news_item content_news_article">
+					<h3>Giving Back</h3>
+					<p>Helping others is at the heart of what we do at Centura Health.
+					   Over the last century, giving back is both a privilege and a perpetuation
+					   of the good we see all around us.
+					</p>
+					<a href="#content_news_id" class="button">Learn More</a>
+				</div><!-- content_news_item -->
+				<div class="content_news_item content_news_article">
+					<h3>Colorado EOLOA</h3>
+					<p>Understanding Centura Health's position on Colorado End-Of-Life Options Act.</p>
+					<a href="#content_news_id" class="button">Learn More</a>
+				</div><!-- content_news_item -->
+				<div class="content_news_item content_news_article">
+					<h3>Questions About Pricing?</h3>
+					<p>As you navigate levels of care and make the best decisions for your needs,
+					   we beleive in providing you access to meaningfull and reliable information
+					   about the quality and price of services across our system.
+					</p>
+					<a href="#content_news_id" class="button">More About Pricing</a>
+				</div><!-- content_news_item -->
+				<div class="content_news_item">
+					<h3>Recent News</h3>
+					<p class="content_news_item_day">February 26, 2020</p>
+					<p class="content_news_item_link">
+						<a href="#content_news_id">Centura Health - St. Catherine Masquerade
+							Ball Raising Mone...
+						</a>
+					</p>
+					<p class="content_news_item_day">February 21, 2020</p>
+					<p class="content_news_item_link">
+						<a href="#content_news_id">Mercy Regional Medical Center Named Top
+							Ranking Rural-Commun...
+						</a>
+					</p>
+					<p class="content_news_item_day">February 14, 2020</p>
+					<p class="content_news_item_link">
+						<a href="#content_news_id">Centura Health Announces University of
+							Denver Partnership
+						</a>
+					</p>
+					<p class="content_news_item_day">February 14, 2020</p>
+					<p class="content_news_item_link">
+						<a href="#content_news_id">Porter Adventist Hospital Named One of
+							Healthgrades' 2020 Am...
+						</a>
+					</p>
+					<a href="#content_news_id" class="button">All News</a>
+				</div><!-- content_news_item -->
+			</div><!-- content_news -->
+		</div><!-- content -->
+		
+		<div class="footer" id="footer_id">
+			<div class="footer_links">
+				<div class="content">
+					<div class="footer_links_wrapper">
+						<div class="footer_links_item">
+							<h4>Centura Health</h4>
+							<ul>
+								<li><a href="#footer_id">About Centura Health</a></li>
+								<li><a href="#footer_id">Out Network</a></li>
+								<li><a href="#footer_id">News</a></li>
+								<li><a href="#footer_id">Foundations</a></li>
+								<li><a href="#footer_id">Community Programs</a></li>
+							</ul>
+						</div><!-- footer_links_item -->
+						<div class="footer_links_item">
+							<h4>Resources</h4>
+							<ul>
+								<li><a href="#footer_id">Hospital Billing & Financial Services</a></li>
+								<li><a href="#footer_id">Fro Patients & Families</a></li>
+								<li><a href="#footer_id">For Providers</a></li>
+								<li><a href="#footer_id">Patient Portal</a></li>
+							</ul>
+						</div><!-- footer_links_item -->
+						<div class="footer_links_item">
+							<h4>Careers</h4>
+							<ul>
+								<li><a href="#footer_id">Join Our Team</a></li>
+								<li><a href="#footer_id">Existing Associates</a></li>
+								<li><a href="#footer_id">Education & Training</a></li>
+							</ul>
+						</div><!-- footer_links_item -->
+						<div class="footer_links_item">
+							<h4>Corporate Office</h4>
+							<ul>
+								<li class="footer_links_item_cir_centennial">
+									<a href="#footer_id">9100 E Mineral Cir Centennial, CO 80112</a>
+								</li>
+								<li><a href="#footer_id">Directory</a></li>
+							</ul>
+							<div class="footer_links_item_social">
+								<a href="https://www.facebook.com" target="_blank">
+									<i class="fab fa-facebook-square"></i>
+								</a>
+								<a href="https://www.twitter.com" target="_blank">
+									<i class="fab fa-twitter-square"></i>
+								</a>
+								<a href="https://www.instagram.com" target="_blank">
+									<i class="fab fa-instagram-square"></i>
+								</a>
+							</div><!-- footer_links_item_social -->
+						</div><!-- footer_links_item -->
+					</div><!-- footer_links_wrapper -->
+				</div><!-- content -->
+			</div><!-- footer_links -->
+			
+			<div class="footer_copy">
+				<div class="content">
+					<ul>
+						<li><a href="#footer_id">ADA Compliance</a></li>
+						<li><a href="#footer_id">Non Discrimination Statement</a></li>
+						<li><a href="#footer_id">Disclaimer</a></li>
+						<li><a href="#footer_id">Website Privacy & Security Policy</a></li>
+						<li><a href="#footer_id">Sitemap</a></li>
+					</ul>
+					<div class="footer_copy_lang">
+						<span>
+							Language Assistance Services. If you speak a language other than English,
+							assistance services, free of change are available to you in the following
+							languages:
+						</span>
+						<ul>
+							<li><a href="#footer_id">Espanol</a></li>
+							<li><a href="#footer_id">Deutsche</a></li>
+							<li><a href="#footer_id">Francais</a></li>
+							<li><a href="#footer_id">Tieng Viet</a></li>
+							<li><a href="#footer_id">Chinese</a></li>
+							<li><a href="#footer_id">Japanese</a></li>
+							<li><a href="#footer_id">Tagalog</a></li>
+							<li><a href="#footer_id">Indian</a></li>
+							<li><a href="#footer_id">Igbo asusu</a></li>
+							<li><a href="#footer_id">ede Yoruba</a></li>
+							<li><a href="#footer_id">Hmoob</a></li>
+							<li><a href="#footer_id">Soomaali</a></li>
+							<li><a href="#footer_id">Italian</a></li>
+							<li><a href="#footer_id">American</a></li>
+							<li><a href="#footer_id">Serbian</a></li>
+							<li><a href="#footer_id">Bosnian</a></li>
+							<li><a href="#footer_id">Croatian</a></li>
+							<li><a href="#footer_id">Shumadian</a></li>
+							<li><a href="#footer_id">Crno-gorian</a></li>
+							<li><a href="#footer_id">Montenigerian</a></li>
+						</ul>
+					</div><!-- footer_copy_lang -->
+					<div class="footer_copy_logo">
+						<img src="../../../../slike/zadaci/primer7/logo_centura.svg"
+							 alt="logo centura" width="200" height="30" />
+						<p>&copy; 2020 Centura Health</p>
+					</div><!-- footer_copy_logo -->
+				</div><!-- content -->
+			</div><!-- footer_copy -->
+		</div><!-- footer -->
+	</div><!-- page -->
+</body>
+
+</html>
