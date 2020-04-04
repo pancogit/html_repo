@@ -23,6 +23,11 @@ div.page-wrapper {
     padding: 1rem 0.5rem;
 }
 
+/* fallback for IE's */
+main, header, footer, section, article, nav, aside {
+    display: block;
+}
+
 /* header */
 
 header a.header-link-wrapper {
@@ -144,5 +149,462 @@ nav.main-menu div.main-menu-yellow-track {
 
     nav.main-menu div.main-menu-hamburger {
         display: block; /* show hamburger menu */
+    }
+}
+
+
+/* content of page */
+
+div.page-content {
+    padding: 0; /* reset paddings */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* left side of page */
+
+aside.page-left-side {
+    flex: 1 1 15%; /* set column of page to grow, shrink and with given flex basis */
+    min-width: 13rem;
+    background-color: #e5f7ff;
+}
+
+aside.page-left-side h2.page-left-side-heading {
+    margin: 0;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    color: white;
+    background-color: #209cec;
+}
+
+aside.page-left-side ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+aside.page-left-side ul li {
+    display: flex;
+    flex-direction: column;
+    border-bottom-style: solid;
+    border-bottom-width: 0.07rem;
+    border-bottom-color: #d1deee;
+}
+
+/* remove borders from headings and from last list item */
+aside.page-left-side ul li:first-child {
+    border-bottom-style: none;
+}
+
+aside.page-left-side ul li:last-child {
+    border-bottom-style: none;
+}
+
+aside.page-left-side ul li a {
+    padding: 0.7rem 1rem;
+}
+
+aside.page-left-side a {
+    color: #1e42a8;
+}
+
+aside.page-left-side a:hover {
+    text-decoration: underline;
+}
+
+section.page-left-side-board-meetings p {
+    padding: 1rem;
+    font-weight: bold;
+    line-height: 1.3rem;
+}
+
+nav.page-left-side-quick-links h2 {
+    text-transform: uppercase;
+}
+
+
+/* main content of page */
+
+main {
+    flex: 1 1 50%; /* set column of page to grow, shrink and with given flex basis */
+}
+
+main h2.main-yorkshire-news {
+    display: none; /* don't show by default */
+    padding: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    background-color: #273745;
+    color: white;
+}
+
+main div.main-choose-well-ad a {
+    display: block; /* spread link to the full width of div container */
+}
+
+main div.main-choose-well-ad a img {
+    width: 100%; /* full width of link container */
+    height: auto; /* automaticaly proportionaly set height */
+}
+
+main section.main-slides {
+    background-image: url("../../../../slike/zadaci/primer10/yorkshire-nature-2b.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top; /* x-center, y-top */
+    height: 28rem;
+    color: white;
+
+    /* container for p.main-slides-ad positioning */
+    position: relative;
+}
+
+main div.main-slides-heading {
+    padding: 2rem 1rem;
+}
+
+main div.main-slides-heading h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.7rem;
+}
+
+main div.main-slides-heading h2:nth-of-type(2) {
+    margin-left: 3.5%;
+}
+
+main div.main-slides-heading h2:nth-of-type(3) {
+    margin-left: 12.5%;
+}
+
+main div.main-slides-heading span.main-slides-yorkshire {
+    font-size: 3.5rem;
+}
+
+main div.main-slides-left-right-arrow {
+    display: flex;
+    justify-content: space-between; /* set links on edges of container */
+}
+
+main div.main-slides-left-right-arrow a {
+    font-size: 3rem;
+    padding: 0 1rem;
+    margin: 0 0.4rem;
+    color: #8e9aa7;
+    background-color: #167cc566;
+    background-color: hsla(205, 80%, 43%, 0.4);
+}
+
+main section.main-slides p.main-slides-ad {
+    position: absolute; /* position to the bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2679bb;
+    margin: 0;
+    padding: 1.5rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+main div.main-articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.3rem;
+}
+
+main div.main-articles article {
+    flex: 1 1 33%; /* create three columns with flex items and allow grow, shrink */
+
+    min-width: 12rem; /* 192px minimum width for article news */
+
+    /* set flex container to align paragraphs */
+    display: flex;
+    flex-direction: column;
+}
+
+main div.main-articles article a {
+    display: block;
+}
+
+main div.main-articles article a h3 {
+    margin: 0;
+    padding: 0.2rem;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1rem;
+}
+
+main div.main-articles article:nth-of-type(3n + 1) a h3 {
+    background-color: #209cec;
+}
+
+main div.main-articles article:nth-of-type(3n + 2) a h3 {
+    background-color: #58bd58;
+}
+
+main div.main-articles article:nth-of-type(3n + 3) a h3 {
+    background-color: #f2f100;
+    color: #808080;
+}
+
+main div.main-articles article a img {
+    width: 100%;
+    height: auto;
+}
+
+main div.main-articles article p {
+    flex: 1 1 auto; /* set paragraphs to grow up to available free space */
+    margin: 0;
+    padding: 0.5rem;
+    color: #707070;
+    border-right-style: solid;
+    border-right-width: 0.05rem;
+    border-right-color: silver;
+}
+
+
+/* right side of page */
+
+aside.page-right-side {
+    flex: 1 1 20%; /* set column of page to grow, shrink and with given flex basis */
+}
+
+aside.page-right-side div.page-right-side-google-search {
+    display: flex;
+    flex-wrap: nowrap; /* don't wrap input and search link */
+    padding: 1rem 0.5rem;
+    background-color: #209cec;
+    color: white;
+}
+
+aside.page-right-side div.page-right-side-google-search input {
+    padding-left: 4.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.4rem;
+    padding-top: 0.25rem;
+    margin-right: 0.5rem;
+    background-image: url("../../../../slike/zadaci/primer10/google-logo-b.png");
+    background-repeat: no-repeat;
+    background-size: 4rem;
+    background-position: left top;
+}
+
+aside.page-right-side div.page-right-side-google-search a.page-right-side-search {
+    font-size: 1.5rem;
+    color: white;
+}
+
+aside.page-right-side section.page-right-side-ambulance-call {
+    margin-top: 0.3rem;
+}
+
+aside.page-right-side section.page-right-side-ambulance-call
+h3.page-right-side-ambulance-call-heading {
+    margin: 0;
+    padding: 1.5rem;
+    background-color: #209cec;
+    color: white;
+}
+
+aside.page-right-side section.page-right-side-ambulance-call img {
+    width: 100%; /* stretch picture to full container size */
+    height: auto; /* automaticaly adjust height proporionaly to width */
+}
+
+aside.page-right-side section.page-right-side-ambulance-call a {
+    display: block;
+    padding: 1rem;
+    padding-left: 0.5rem;
+    background-color: #0f749b;
+    color: white;
+}
+
+aside.page-right-side section.page-right-side-ambulance-call a h3 {
+    margin: 0;
+}
+
+aside.page-right-side section.page-right-side-recent-news {
+    margin-top: 0.5rem;
+    background-color: #e5f7ff;
+    color: #727272;
+}
+aside.page-right-side section.page-right-side-recent-news
+h2.page-right-side-recent-news-heading {
+    margin: 0;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    color: white;
+    background-color: #0f749b;
+}
+
+aside.page-right-side section.page-right-side-recent-news article {
+    padding: 1rem;
+    border-bottom-style: solid;
+    border-bottom-width: 0.07rem;
+    border-bottom-color: #d1deee;
+}
+
+aside.page-right-side section.page-right-side-recent-news article
+p.page-right-side-recent-news-date {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+aside.page-right-side section.page-right-side-recent-news article h3 {
+    margin: 0;
+}
+
+aside.page-right-side section.page-right-side-recent-news article a {
+    font-weight: bold;
+    color: #2679bb;
+}
+
+
+/* footer */
+
+footer {
+    background-color: #1259c3;
+    color: white;
+}
+
+footer div.footer-yorkshire-social-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* spread flex elements */
+}
+
+footer div.footer-yorkshire-info {
+    flex: 0 1 45%;
+}
+
+footer div.footer-yorkshire-info p {
+    line-height: 1.4rem;
+}
+
+footer section.footer-social {
+    align-self: center; /* align flex item on cross axis verticaly */
+}
+
+footer section.footer-social h3 {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+footer section.footer-social a {
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+footer div.footer-wrapper ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* align to the end of line of flex container */
+    padding: 0;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    list-style-type: none;
+    line-height: 1.5rem;
+}
+
+footer div.footer-wrapper ul li {
+    margin-right: 1rem;
+}
+
+footer div.footer-wrapper ul li:last-child {
+    margin-right: 0;
+}
+
+footer div.footer-wrapper ul li a {
+    color: white;
+}
+
+footer div.footer-wrapper ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* set layout for different screen sizes */
+
+/* between 320px - 512px */
+@media only screen and (min-width: 20rem) and (max-width: 32rem) {
+    div.page-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main div.main-choose-well-ad {
+        display: none; /* don't show ad */
+    }
+
+    main section.main-slides {
+        display: none; /* don't show slides */
+    }
+
+    main h2.main-yorkshire-news {
+        display: block; /* show yorkshire news heading */
+    }
+
+    aside.page-right-side section.page-right-side-ambulance-call img {
+        display: none; /* don't show picture, it takes too much space */
+    }
+
+    footer div.footer-yorkshire-info {
+        flex: 1 1 100%; /* spread flex item to full width */
+    }
+
+    footer section.footer-social {
+        margin-left: auto; /* push flex element on right edge of main axis */
+    }
+}
+
+/* between 512px - 752px */
+@media only screen and (min-width: 32rem) and (max-width: 47rem) {
+    aside.page-right-side {
+        flex: 1 1 100%; /* single column for right aside */
+    }
+
+    main div.main-choose-well-ad {
+        display: none; /* don't show ad */
+    }
+
+    main section.main-slides {
+        display: none; /* don't show slides */
+    }
+
+    main h2.main-yorkshire-news {
+        margin-top: 0;
+        display: block; /* show yorkshire news heading */
+    }
+
+    aside.page-right-side section.page-right-side-ambulance-call img {
+        display: none; /* don't show picture, it takes too much space */
+    }
+
+    footer div.footer-yorkshire-info {
+        flex: 1 1 100%; /* spread flex item to full width */
+    }
+
+    footer section.footer-social {
+        margin-left: auto; /* push flex element on right edge of main axis */
+    }
+}
+
+/* between 752px - 1024px */
+@media only screen and (min-width: 47rem) and (max-width: 64rem) {
+    aside.page-right-side {
+        flex: 1 1 100%; /* single column for right aside */
+    }
+
+    aside.page-right-side section.page-right-side-ambulance-call img {
+        display: none; /* don't show picture, it takes too much space */
     }
 }
