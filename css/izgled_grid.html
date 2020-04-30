@@ -11,7 +11,557 @@
 <body>
 
 	<h1>Izgled stranice - Grid</h1>
-	
+	<h2>Pravljenje grid kontejnera</h2>
+	<p>Navescemo prvo primer kreiranja grid kontejnera:</p>
+	<div class="primer-1 grid">
+		<p>Ovo je element grid kontejnera.</p>
+		<span>Ovo je drugi element koji je inline.</span>
+	</div><!-- primer-1 -->
+
+	<div class="primer-2 grid">
+		<p>Ovo je element grid kontejnera koji je ujedno i grid kontejner.</p>
+		<span>Ovo je drugi element koji je inline.</span>
+	</div><!-- primer-2 -->
+
+	<p>Moguce je napraviti grid koji ce biti isto i inline:</p>
+	<div class="primer-3 grid">
+		<p>Unutar ovog paragrafa cemo staviti jedan grid koji ce biti inline.
+		   Ovo je primer tog grid-a: 
+		   <span>Ovo je inline grid koji se ponasa kao i drugi inline elementi.</span>
+		   Ostatak teksta u paragrafu se nastavlja u istom redu kao i inline grid,
+		   sto smo i ocekivali.
+		</p>
+	</div><!-- primer-3 -->
+
+	<h2>Osnovna grid terminologija</h2>
+	<p>Pogledajmo primer kreiranja osnovnog grid sablona:</p>
+	<div class="primer-4 grid">
+		Obavestenje! <b>Zapis:</b> Ovaj element je <span>grid kontejner</span>
+		sa nekoliko <span>grid elemenata</span> unutar njega.
+	</div><!-- primer-4 -->
+
+	<h2>Postavljanje grid linija</h2>
+	<p>Grid linije mogu na vise nacina da se postave. Pogledajmo primer grid linija
+	   koje su fiksirane sirine:
+	</p>
+	<div class="primer-5 grid">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+	</div><!-- primer-5 -->
+	<p>Takodje je moguce postaviti grid linije tako da budu fleksibilne sirine:</p>
+	<div class="primer-6 grid">
+		<div>1fr</div>
+		<div>1fr</div>
+		<div>1fr</div>
+		<div>1fr</div>
+	</div><!-- primer-6 -->
+	<div class="primer-7 grid">
+		<div>1fr</div>
+		<div>1fr</div>
+		<div>3fr</div>
+		<div>1fr</div>
+	</div><!-- primer-7 -->
+	<div class="primer-8 grid">
+		<div>15em</div>
+		<div>1fr</div>
+		<div>10%</div>
+	</div><!-- primer-8 -->
+	<div class="primer-9 grid">
+		<div>15em</div>
+		<div>4.5fr</div>
+		<div>3fr</div>
+		<div>10%</div>
+	</div><!-- primer-9 -->
+	<div class="primer-10 grid">
+		<div>15em</div>
+		<div>4.5fr</div>
+		<div>minmax(5em, 3fr)</div>
+		<div>10%</div>
+	</div><!-- primer-10 -->
+	<div class="primer-11 grid">
+		<div>15em</div>
+		<div>1fr</div>
+		<div>minmax(0, 500px)</div>
+		<div>10%</div>
+	</div><!-- primer-11 -->
+	<div class="primer-12 grid">
+		<div>15em</div>
+		<div>1fr</div>
+		<div>minmax(0, 500px)</div>
+		<div>10%</div>
+	</div><!-- primer-12 -->
+	<p>Redovi i kolone mogu da se podese da imaju visinu ili duzinu u zavisnosti od
+	   konkretnog sadrzaja. Mogu da imaju minimalnu velicinu ili maksimalnu u
+	   zavisnosti od sadrzaja. Evo par primera sa slikama fiksiranih velicina:
+	</p>
+	<div class="primer-13 grid">
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="20" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="100" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="120" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="80" height="80" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="90" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="100" height="110" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="70" height="70" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="30" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+	</div><!-- primer-13 -->
+	<div class="primer-14 grid">
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="20" height="20" />
+			<figcaption>Fensi slika</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="100" />
+			<figcaption>Siroka slika</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="120" height="40" />
+			<figcaption>Cirkularna slika sa izvrtanjem</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="80" height="80" />
+			<figcaption>Portret u zutoj boji</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="90" />
+			<figcaption>Jednostavna slika</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="100" height="110" />
+			<figcaption>Srednja slika</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="40" />
+			<figcaption>Velika slika</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+			<figcaption>Ovaj naslov je ostavljen prazan</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="70" height="70" />
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="30" height="20" />
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="50" />
+			<figcaption>Ovo je jedini naslov u ovom redu</figcaption>
+		</figure>
+		<figure>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+		</figure>
+	</div><!-- primer-14 -->
+	<p>Ako ogranicimo sirinu grid kontejnera, mozemo videti primere kako grid elementi ispadaju
+	   iz okvira grid kontejnera:
+	</p>
+	<div class="primer-15 grid">
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="20" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="100" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="120" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="80" height="80" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="90" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="100" height="110" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="70" height="70" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="30" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+	</div><!-- primer-15 -->
+	<p>U ovom slucaju se grid elementi preklapaju:</p>
+	<div class="primer-16 grid">
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="20" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="100" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="120" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="80" height="80" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="90" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="100" height="110" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="70" height="70" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="30" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+	</div><!-- primer-16 -->
+	<p>U ovom slucaju se ne preklapaju grid elementi, ali i dalje ispadaju iz okvira
+	   grid kontejnera, jer im je velicina zadata izmedju minimalne i maksimalne sirine
+	   sadrzaja:
+	</p>
+	<div class="primer-17 grid">
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="20" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="100" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="120" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="80" height="80" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="90" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="100" height="110" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="40" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="70" height="70" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="30" height="20" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="50" height="50" />
+		<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="40" height="50" />
+	</div><!-- primer-17 -->
+	<p>Moguce je takodje koristiti i neke druge css funkcije koje se koriste za grid.
+	   Sadrzaj grid elemenata je moguce podesavati pomocu takozvane funkcije za fit-ovanje.
+	   Za slucaje fit-ovanja sadrzaja, koristicemo jedinice za sirinu koje su relativne
+	   u odnosu na broj 0 za zadati font (<i>ch</i> jedinica). Jedan <i>ch</i> iznosi sirinu
+	   jednog karaktera broja 0 za zadati font. S obzirom da se to razlikuje od fonta do fonta,
+	   tj. broj 0 nije isto sto i sirina karaktera slova (<i>a, b, c...</i>) za svaki font,
+	   koristicemo <i>monospace</i> font, zato sto je bas kod <i>monospace</i>-a sirina
+	   fonta za broj 0 ista kao i za slova, pa cemo dobiti da je na primer za <i>50ch</i>
+	   sirine nekog grid elementa tacna duzina 50 karaktera, sto ne bi vazilo za druge
+	   font-ove.
+	</p>
+	<div class="primer-18 monospace-font grid">
+		<p>Kratak sadrzaj, do 30 karaktera.</p>
+		<p>Ovo je nesto duzi sadrzaj, koji ima negde malo vise od 50 karaktera.</p>
+		<p>Ovo je jos duzi sadrzaj teksta, koji se siri iznova i iznova i koji cini
+			da se tekst prelama iz jednog reda u drugi i raste do visine celog grid
+			reda i ukupno ima nedge preko 150 karaktera.
+		</p>
+	</div><!-- primer-18 -->
+	<div class="primer-19 monospace-font grid">
+		<p>Kratak sadrzaj, do 30 karaktera.</p>
+		<p>Ovo je nesto duzi sadrzaj, koji ima negde malo vise od 50 karaktera.</p>
+		<p>Ovo je jos duzi sadrzaj teksta, koji se siri iznova i iznova i koji cini
+			da se tekst prelama iz jednog reda u drugi i raste do visine celog grid
+			reda i ukupno ima nedge preko 150 karaktera.
+		</p>
+	</div><!-- primer-19 -->
+	<div class="primer-20 monospace-font grid">
+		<p>Kratak sadrzaj, do 30 karaktera.</p>
+		<p>Ovo je nesto duzi sadrzaj, koji ima negde malo vise od 50 karaktera.</p>
+		<p>Ovo je jos duzi sadrzaj teksta, koji se siri iznova i iznova i koji cini
+			da se tekst prelama iz jednog reda u drugi i raste do visine celog grid
+			reda i ukupno ima nedge preko 150 karaktera.
+		</p>
+	</div><!-- primer-20 -->
+	<div class="primer-21 monospace-font grid">
+		<p>Kratak sadrzaj, do 30 karaktera.</p>
+		<p>Ovo je nesto duzi sadrzaj, koji ima negde malo vise od 50 karaktera.</p>
+		<p>Ovo je jos duzi sadrzaj teksta, koji se siri iznova i iznova i koji cini
+			da se tekst prelama iz jednog reda u drugi i raste do visine celog grid
+			reda i ukupno ima nedge preko 150 karaktera.
+		</p>
+	</div><!-- primer-21 -->
+	<div class="primer-22 monospace-font grid">
+		<p>Kratak sadrzaj, do 30 karaktera.</p>
+		<p>
+			<img src="../slike/logo3.png" alt="slika logo-a za vezbu" width="500" height="auto" />
+			Ovo je nesto duzi sadrzaj, koji ima negde sada malo vise karaktera u odnosu
+			na prethodni primer, zato sto je dodata slika koja ogranicava minimalnu sirinu.
+		</p>
+		<p>Ovo je jos duzi sadrzaj teksta, koji se siri iznova i iznova i koji cini
+			da se tekst prelama iz jednog reda u drugi i raste do visine celog grid
+			reda i ukupno ima nedge preko 150 karaktera.
+		</p>
+	</div><!-- primer-22 -->
+	<p>Ukoliko imamo grid trake koje se ponavljaju, tj. iste su sirine, onda nije prakticno
+	   da za svaku liniju postavljamo istu vrednost mnogo puta. Da ne bismo ponavljali 20-30 puta
+	   istu stvar, postoji funkcija za ponavljanje gde postavimo koliko grid linija ponavljamo
+	   i na koju sirinu je postavljamo:
+	</p>
+	<div class="primer-23 grid">
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+	</div><!-- primer-23 -->
+	<div class="primer-24 grid">
+		<p>10em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+	</div><!-- primer-24 -->
+	<div class="primer-25 grid">
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+	</div><!-- primer-25 -->
+	<div class="primer-26 grid">
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+		<p>2em</p>
+		<p>1fr</p>
+		<p>1fr</p>
+		<p>2em</p>
+	</div><!-- primer-26 -->
+	<div class="primer-27 grid">
+		<p>1</p>
+		<p>2</p>
+		<p>1</p>
+		<p>1</p>
+		<p>2</p>
+		<p>1</p>
+		<p>1</p>
+		<p>2</p>
+		<p>1</p>
+		<p>1</p>
+		<p>2</p>
+		<p>1</p>
+	</div><!-- primer-27 -->
+	<div class="primer-28 grid">
+		<p>5em</p>
+		<p>5em</p>
+		<p>5em</p>
+	</div><!-- primer-28 -->
+	<p>Moguce je da se grid elementi ponavljaju, ali da se ne zada eksplicitan broj ponavljanja,
+	   vec da se ponavljaju sve dok ima slobodnog prostora u grid kontejneru koji nije popunjen.
+	   Treba primetiti da ukoliko grid elementi imaju margine i one ulaze u ukupnu racunicu
+	   visine zajedno sa sadrzajem, sto znaci da ako nam je 80px visina elementa, a imamo gornju
+	   i donju marginu za paragrafe po 16px (2*16px = 32px), to znaci da cemo imati sadrzaj visine
+	   48px, tako da je sadrzaj plus obe margine jednak 80px kao sto i treba da bude slucaj:
+	</p>
+	<div class="primer-29 primer-29-pattern grid">
+		<div>1</div>
+		<div>2</div>
+	</div><!-- primer-29 -->
+	<div class="primer-30 primer-29-pattern grid">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div><!-- primer-30 -->
+	<div class="primer-31 primer-29-pattern grid">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+	</div><!-- primer-31 -->
+	<div class="primer-32 grid">
+		<p>20em</p>
+		<p>20em</p>
+		<p>20em</p>
+		<p>2em</p>
+	</div><!-- primer-32 -->
+	<p>Pored vec objasnjenog nacina ponavljanja grid elemenata, moguce je definisati
+	   grid elemente koji ce da se ponavljaju sve dok ima slobodnog prostora po glavnoj
+	   osi (redu ili koloni), ali ukoliko neki grid element nema sadrzaj (prazan je),
+	   onda ce taj element biti prazan i broj ponavljanja bice dok ima zadatih grid elemenata,
+	   tj. nece se dodavati naknadno novi grid elementi koji nisu definisani ako ima prostora:
+	</p>
+	<div class="primer-33 grid">
+		<p>1</p>
+		<p>2</p>
+		<p></p>
+		<p>4</p>
+		<p>5</p>
+		<p></p>
+		<p>7</p>
+		<p></p>
+	</div><!-- primer-33 -->
+	<div class="primer-34 grid">
+		<p>1</p>
+		<p>2</p>
+		<p></p>
+		<p>4</p>
+		<p>5</p>
+		<p></p>
+		<p>7</p>
+		<p></p>
+	</div><!-- primer-34 -->
+	<p>Sledeca bitna stvar je <b>definisanje grid prostora</b>. Videcemo neke primere
+	   kako je moguce definsati grid prostore koristeci grid celije (elemente):
+	</p>
+	<div class="primer-35 grid">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div><!-- primer-35 -->
+	<div class="primer-36 grid">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div><!-- primer-36 -->
+	<div class="primer-37 grid">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div><!-- primer-37 -->
+	<div class="primer-38 grid">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div><!-- primer-38 -->
+	<div class="primer-39 grid">
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+		<p>1</p>
+	</div><!-- primer-39 -->
+
+	<h2>Pozicioniranje elemenata unutar grid strukture</h2>
+	<p>Moguce je elemente koji se nalaze unutar grid-a pozicionirati tacno na 
+	   zadate redove/kolone. Sada cemo da vidimo kako se to radi.
+	</p>
+	<p>Pogledajmo prvo primere povezivanja grid elemenata koristeci grid linije:</p>
+	<div class="primer-40 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+	</div><!-- primer-40 -->
+	<div class="primer-41 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+	</div><!-- primer-41 -->
+	<div class="primer-42 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="four">4</div>
+	</div><!-- primer-42 -->
+	<div class="primer-43 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+	</div><!-- primer-43 -->
+	<div class="primer-44 grid">
+		<div class="masthead">masthead</div>
+		<div class="sidebar">sidebar</div>
+		<div class="main">main</div>
+		<div class="navbar">navbar</div>
+		<div class="footer">footer</div>
+	</div><!-- primer-44 -->
+	<p>Mozemo i preko precice da definisemo pocetnu i krajnju grid liniju
+	   u samo jednom propertiju:
+	</p>
+	<div class="primer-45 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+	</div><!-- primer-45 -->
+	<div class="primer-46 grid">
+		<div class="header">header</div>
+		<div class="footer">footer</div>
+	</div><!-- primer-46 -->
+	<div class="primer-47 grid">
+		<div class="footer">footer</div>
+	</div><!-- primer-47 -->
+	<p>Moguce je takodje postaviti elemente unutar grid-a tako da one ispadaju iz
+	   okvira definisanog grid-a. U ovom slucaju, nove grid trake (redovi/kolone) ce 
+	   se napraviti da bi uokvirili elemente definisanog grid-a, zato sto svi elementi
+	   moraju biti unutar grid-a. Na ovaj nacin se implicitno kreiraju grid kolone/redovi
+	   i samim tim se implicitno kreira novi grid koji nastaje prosirenjem definisanog grid-a.
+	</p>
+	<div class="primer-48 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="four">4</div>
+		<div class="five">5</div>
+		<div class="six">6</div>
+		<div class="seven">7</div>
+	</div><!-- primer-48 -->
+	<div class="primer-49 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+		<div class="four">4</div>
+		<div class="five">5</div>
+	</div><!-- primer-49 -->
+	<p>Kao sto smo mogli da definisemo jednu grid liniju (red ili kolonu) u samo jednom
+	   propertiju, tako mozemo sa jednom precicom da definisemo i red i kolonu u isto
+	   vreme, tj. mozemo da definisemo grid prostor sa jednim propertijem:
+	</p>
+	<div class="primer-50 grid">
+		<div class="masthead">masthead</div>
+		<div class="sidebar">sidebar</div>
+		<div class="main">main</div>
+		<div class="navbar">navbar</div>
+		<div class="footer">footer</div>
+	</div><!-- primer-50 -->
+	<div class="primer-51 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+		<div class="three">3</div>
+	</div><!-- primer-51 -->
+	<p>Grid elementi mogu da se preklapaju ukoliko to zelimo. Uvek mozemo da
+	   postavimo grid elemente unutar grid-a tako da se preklapaju. Evo primera:
+	</p>
+	<div class="primer-52 grid">
+		<div class="one">1</div>
+		<div class="two">2</div>
+	</div><!-- primer-52 -->
+	<div class="primer-53 grid">
+		<div class="header">header</div>
+		<div class="sidebar">sidebar</div>
+		<div class="footer">footer</div>
+	</div><!-- primer-53 -->
+
+	<div class="ad">
+		<p>This is simple Ad example</p>
+	</div><!-- ad -->
+
 	<div class="futer">
 		<p>Vrati se na glavnu <a href="index.html">css</a> stranu.</p>
 		<p>Vrati se na glavnu <a href="../index.html">html</a> stranu.</p>

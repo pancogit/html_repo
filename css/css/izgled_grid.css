@@ -1,23 +1,667 @@
+/* page body */
 body {
-	background-color: #adffb4;
-	background-color: hsla(125, 100%, 84%, 1);
+  background-color: #adffb4;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
+/* page - chapter 1 */
+div.primer-1 {
+  display: grid;
+}
 
-/* futer */
+/* definisi pozadinu grid kontejnera za primere */
+.grid {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: silver;
+}
 
+div.primer-2 {
+  display: grid;
+}
+div.primer-2 p {
+  display: grid;
+}
+
+div.primer-3 {
+  display: grid;
+}
+div.primer-3 span {
+  display: inline-grid;
+  background-color: white;
+}
+
+/* page - chapter 2 */
+div.primer-4 {
+  display: grid;
+  grid-template-rows: 4rem;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* page - chapter 3 */
+div.primer-5 {
+  display: grid;
+  grid-template-rows: [start masterhead] 3em [content] calc(100% - 3em - 2em) [footer] 2em [row-end stop end];
+  grid-template-columns: [start col-1] 200px [col-2] 50% [col-3] 100px [col-end last end];
+  height: 200px;
+}
+
+div.primer-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+div.primer-7 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+}
+
+div.primer-8 {
+  display: grid;
+  grid-template-columns: 15em 1fr 10%;
+}
+
+div.primer-9 {
+  display: grid;
+  grid-template-columns: 15em 4.5fr 3fr 10%;
+}
+
+div.primer-10 {
+  display: grid;
+  grid-template-columns: 15em 4.5fr minmax(5em, 3fr) 10%;
+}
+
+div.primer-11 {
+  display: grid;
+  grid-template-columns: 15em 1fr minmax(0, 500px) 10%;
+}
+
+div.primer-12 {
+  display: grid;
+  grid-template-rows: 3em minmax(5em, 1fr) 2em;
+  grid-template-columns: 15em 1fr minmax(0, 500px) 10%;
+}
+
+div.primer-13, div.primer-14, div.primer-15 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
+}
+
+div.primer-16 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: minmax(0, max-content) minmax(0, max-content) minmax(0, max-content) minmax(0, max-content);
+}
+
+div.primer-15, div.primer-16, div.primer-17 {
+  width: 250px;
+}
+
+figure {
+  margin: 0.5rem;
+}
+
+div.primer-17 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
+}
+
+div.primer-18 {
+  display: grid;
+  grid-template-columns: 1fr fit-content(150px) 2fr;
+}
+
+div.primer-19 {
+  display: grid;
+  grid-template-columns: 2fr fit-content(50%) 1fr;
+}
+
+div.primer-20 {
+  display: grid;
+  grid-template-columns: fit-content(50ch);
+}
+
+div.primer-21, div.primer-22 {
+  display: grid;
+  grid-template-columns: fit-content(50ch) fit-content(50ch) fit-content(50ch);
+  width: 120ch;
+}
+
+.monospace-font {
+  font-family: monospace;
+}
+
+div.primer-23 {
+  display: grid;
+  grid-template-columns: repeat(10, 5em);
+}
+
+div.primer-24 {
+  display: grid;
+  grid-template-columns: 10em repeat(10, 5em);
+}
+
+div.primer-25 {
+  display: grid;
+  grid-template-columns: repeat(3, 2em 1fr 1fr);
+}
+
+div.primer-26 {
+  display: grid;
+  grid-template-columns: repeat(3, 2em 1fr 1fr) 2em;
+}
+
+div.primer-27 {
+  display: grid;
+  grid-template-columns: repeat(4, 10px [col-start] 250px [col-end] 10px);
+}
+
+div.primer-28 {
+  display: grid;
+  grid-template-columns: repeat(3, [top] 5em [bottom]);
+}
+
+div.primer-29-pattern {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, [top] 5em [bottom]);
+}
+
+div.primer-29 {
+  height: 11em;
+}
+
+div.primer-30 {
+  height: 18em;
+}
+
+div.primer-31 {
+  height: 21em;
+}
+
+div.primer-32 {
+  display: grid;
+  grid-template-columns: repeat(3, 20em) repeat(auto-fill, 2em);
+}
+
+div.primer-33 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 5em);
+}
+
+div.primer-34 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 5em);
+}
+
+div.primer-35 {
+  display: grid;
+  grid-template-areas: "h h h h" "l c c r" "l f f f";
+  display: grid;
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+
+div.primer-36 {
+  display: grid;
+  grid-template-rows: 40px 10em 3em 20px;
+  grid-template-columns: 1fr repeat(2, 20em) 1fr 1fr;
+  grid-template-areas: "header   header  header  header" "left     .       .....   right" "left     footer  footer  footer";
+}
+
+div.primer-37 {
+  display: grid;
+  grid-template-rows: 40px [content] 1fr 3em 20px;
+  grid-template-columns: [begin] 1fr repeat(2, 20em) 1fr 1fr;
+  grid-template-areas: "header   header  header  header" "left     ...     ...     right" "footer   footer  footer  footer";
+}
+
+div.primer-38 {
+  display: grid;
+  grid-template-rows: [header-start] 3em [header-end content-start] 1fr [content-end footer-start] 3em [footer-end];
+  grid-template-columns: [header-start footer-start] 1fr [content-start] 1fr [content-end] 1fr [header-end footer-end];
+}
+
+div.primer-39 {
+  display: grid;
+  grid-template-rows: 3em 1fr 3em;
+  grid-template-columns: 1fr [content-start] 1fr [content-end] 1fr;
+}
+
+/* page - chapter 4 */
+div.primer-40 {
+  display: grid;
+  grid-template-rows: repeat(5, 5em);
+  grid-template-columns: repeat(10, 5em);
+}
+div.primer-40 .one {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-color: red;
+}
+div.primer-40 .two {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-end: 10;
+  background-color: orange;
+}
+div.primer-40 .three {
+  grid-row-start: 4;
+  grid-column-start: 6;
+  background-color: yellow;
+}
+
+div.primer-41 {
+  display: grid;
+  grid-template-rows: repeat(5, 5em);
+  grid-template-columns: repeat(10, 5em);
+}
+div.primer-41 .one {
+  grid-row-start: 2;
+  grid-row-end: span 2;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-41 .two {
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-column-start: 5;
+  grid-column-end: span 5;
+  background-color: orange;
+}
+div.primer-41 .three {
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  grid-column-start: 6;
+  grid-column-end: span 1;
+  background-color: yellow;
+}
+
+div.primer-42 {
+  display: grid;
+  grid-template-rows: repeat(4, 2em);
+  grid-template-columns: repeat(5, 5em);
+}
+div.primer-42 .one {
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-42 .two {
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  background-color: orange;
+}
+div.primer-42 .three {
+  grid-row-start: 3;
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  background-color: yellow;
+}
+div.primer-42 .four {
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  grid-column-start: span 1;
+  grid-column-end: 5;
+  background-color: green;
+}
+
+div.primer-43 {
+  display: grid;
+  grid-template-rows: repeat(5, [R] 4em);
+  grid-template-columns: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em;
+}
+div.primer-43 .one {
+  grid-row-start: R 2;
+  grid-row-end: span 3;
+  grid-column-start: col-B;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-43 .two {
+  grid-row-start: R;
+  grid-row-end: span 2;
+  grid-column-start: col-A 3;
+  grid-column-end: span 2 col-A;
+  background-color: orange;
+}
+div.primer-43 .three {
+  grid-row-start: R 4;
+  grid-row-end: span 1;
+  grid-column-start: col-A 4;
+  grid-column-end: span 1;
+  background-color: yellow;
+}
+
+div.primer-44 {
+  display: grid;
+  grid-template-rows: repeat(3, 4em);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+div.primer-44 .masthead {
+  grid-row-start: header-start;
+  grid-row-end: header-end;
+  grid-column-start: header-start;
+  grid-column-end: header-end;
+  background-color: red;
+}
+div.primer-44 .sidebar {
+  grid-row-start: leftside;
+  grid-row-end: leftside;
+  grid-column-start: leftside;
+  grid-column-end: leftside;
+  background-color: orange;
+}
+div.primer-44 .main {
+  grid-row-start: content-start;
+  grid-row-end: span 1;
+  grid-column-start: content-start;
+  grid-column-end: span 2;
+  background-color: yellow;
+}
+div.primer-44 .navbar {
+  grid-row-start: content-start;
+  grid-row-end: span 1;
+  grid-column-start: rightside;
+  grid-column-end: rightside-end;
+  background-color: green;
+}
+div.primer-44 .footer {
+  grid-row-start: footer-start;
+  grid-row-end: footer-end;
+  grid-column-start: 2;
+  grid-column-end: footer;
+  background-color: blue;
+}
+
+div.primer-45 {
+  display: grid;
+  grid-template-rows: repeat(10, [R] 1.5em);
+  grid-template-columns: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em;
+}
+div.primer-45 .one {
+  grid-row: R 3/7;
+  grid-column: col-B/span 2;
+  background-color: red;
+}
+div.primer-45 .two {
+  grid-row: R/span 2 R;
+  grid-column: col-A 3/span 2 col-A;
+  background-color: orange;
+}
+div.primer-45 .three {
+  grid-row: 4 R/span 1;
+  grid-column: 4 col-A/span 1;
+  background-color: yellow;
+}
+
+div.primer-46 {
+  display: grid;
+  grid-template-rows: auto 5em auto;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "header header" "sidebar content" "footer footer";
+}
+div.primer-46 .header {
+  grid-row: header/header;
+  grid-column: header;
+  background-color: red;
+}
+div.primer-46 .footer {
+  grid-row: footer;
+  grid-column: footer-start/footer-end;
+  background-color: orange;
+}
+
+div.primer-47 {
+  display: grid;
+  grid-template-rows: 4em 5em [footer] 5em [footer] 4em;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "header header" "sidebar content" "footer footer" "legal legal";
+}
+div.primer-47 .footer {
+  grid-row: footer;
+  grid-column: footer;
+  background-color: orange;
+}
+
+div.primer-48 {
+  display: grid;
+  grid-template-rows: repeat(2, 2em);
+  grid-template-columns: repeat(6, 4em);
+}
+div.primer-48 .one {
+  grid-row: 1/4;
+  grid-column: 1 / 2;
+  background-color: red;
+}
+div.primer-48 .two {
+  grid-row: 3/span 2;
+  grid-column: 2/auto;
+  background-color: orange;
+}
+div.primer-48 .three {
+  grid-row: 1/span 2;
+  grid-column: 3;
+  background-color: yellow;
+}
+div.primer-48 .four {
+  grid-row: 1/span 4;
+  grid-column: 4;
+  background-color: green;
+}
+div.primer-48 .five {
+  grid-row: span 6/5;
+  grid-column: 5;
+  background-color: blue;
+}
+div.primer-48 .six {
+  grid-row: -1/span 3;
+  grid-column: 6;
+  background-color: purple;
+}
+div.primer-48 .seven {
+  grid-row: span 3/-1;
+  grid-column: 7;
+  background-color: black;
+  color: white;
+}
+
+div.primer-49 {
+  display: grid;
+  grid-template-rows: [begin] 5em [middle] 5em [end];
+  grid-template-columns: repeat(5, 5em);
+}
+div.primer-49 .one {
+  grid-row: middle/span 2;
+  grid-column: 1;
+  background-color: red;
+}
+div.primer-49 .two {
+  grid-row: middle/span 2;
+  grid-column: 2/auto;
+  background-color: orange;
+}
+div.primer-49 .three {
+  grid-row: begin/span 4;
+  grid-column: 3;
+  background-color: yellow;
+}
+div.primer-49 .four {
+  grid-row: span 3/end;
+  grid-column: 4;
+  background-color: green;
+}
+div.primer-49 .five {
+  grid-row: span 2/begin;
+  grid-column: 5;
+  background-color: blue;
+}
+
+div.primer-50 {
+  display: grid;
+  grid-template-rows: 200px 1fr 3em;
+  grid-template-columns: 20em 1fr 1fr 10em;
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+div.primer-50 .masthead {
+  grid-area: header;
+  background-color: red;
+}
+div.primer-50 .sidebar {
+  grid-area: leftside;
+  background-color: orange;
+}
+div.primer-50 .main {
+  grid-area: content;
+  background-color: yellow;
+}
+div.primer-50 .navbar {
+  grid-area: rightside;
+  background-color: green;
+}
+div.primer-50 .footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+div.primer-51 {
+  display: grid;
+  grid-template-rows: [row-1-start] 2em [row-1-end row-2-start] 5em [row-2-end];
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end];
+}
+div.primer-51 .one {
+  grid-area: row-1-start/col-2-start/row-1-end/col-2-end;
+  background-color: red;
+}
+div.primer-51 .two {
+  grid-area: row-2/col-1-start/row-2/col-2-end;
+  background-color: orange;
+}
+div.primer-51 .three {
+  grid-area: 1/1/2/2;
+  background-color: yellow;
+}
+
+div.primer-52 {
+  display: grid;
+  grid-template-rows: repeat(2, 5em);
+  grid-template-columns: repeat(2, 5em);
+}
+div.primer-52 .one {
+  grid-area: 1/1/2/3;
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+div.primer-52 .two {
+  grid-area: 1/2/3/3;
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+
+div.primer-53 {
+  display: grid;
+  grid-template-rows: 3em 10em 3em;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "header header" "sidebar .." "footer footer";
+}
+div.primer-53 .header {
+  grid-area: header;
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+div.primer-53 .sidebar {
+  grid-area: sidebar-start/sidebar-start/footer-end/sidebar-end;
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+div.primer-53 .footer {
+  grid-area: footer;
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.5rem;
+}
+
+/* page - chapter 5 */
+/* page - chapter 6 */
+/* page - chapter 7 */
+/* page - chapter 8 */
+/* page - chapter 9 */
+/* page - chapter 10 */
+/* ad example */
+.ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+  background-color: #1b45ae;
+  font-weight: bold;
+  color: white;
+  /* move ad out of screen and with hover move him transitionaly at original position */
+  position: absolute;
+  bottom: 0;
+  left: -9.5rem;
+  /* put small transition when hover is closed with mouse - out transition */
+  transition: 1s 0.2s;
+}
+.ad:hover {
+  left: 0;
+  bottom: 2rem;
+  /* put small transition on hover - in transition */
+  transition: 1s 0.2s;
+}
+.ad p {
+  margin: 0;
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+/* footer */
 div.futer {
-	margin-top: 20px;
-	padding: 10px;
-	background-color: orange;
-	color: white;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  /* make slow transition just for fun - transition from hovered to normal state */
+  transition: 5s 1s;
+}
+div.futer:hover {
+  background-color: #2cc42c;
+  margin-left: -20rem;
+  /* make slow transition just for fun */
+  transition: 5s 1s;
+}
+div.futer a {
+  color: blue;
+  font-weight: bold;
+  /* put small transition for this hover - transition from hovered to normal state */
+  transition: 0.5s 0.2s;
+}
+div.futer a:hover {
+  /* put small transition for this hover */
+  transition: 0.5s 0.2s;
+  padding: 0.5rem;
+  color: black;
+  background-color: white;
+  font-weight: bold;
 }
 
-div.futer a {
-	color: blue;
-	font-weight: bold;
-}
+/*# sourceMappingURL=izgled_grid.css.map */

@@ -1,0 +1,9 @@
+/* page - chapter 2 */
+
+@use '../global/mixins';
+
+div.primer-4 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $row-template: 4rem,
+                                      $column-template: repeat(7, 1fr));
+}

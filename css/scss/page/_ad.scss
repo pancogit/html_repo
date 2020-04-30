@@ -1,0 +1,36 @@
+/* ad example */
+
+@use '../global/variables';
+
+.ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: variables.$ad-size;
+    width: variables.$ad-size;
+    background-color: variables.$ad-background-color;
+    font-weight: bold;
+    color: variables.$white-color;
+
+    /* move ad out of screen and with hover move him transitionaly at original position */
+    position: absolute;
+    bottom: 0;
+    left: variables.$ad-left-position;
+
+    /* put small transition when hover is closed with mouse - out transition */
+    transition: 1s 0.2s;
+
+    &:hover {
+        left: 0;
+        bottom: 2rem;
+        /* put small transition on hover - in transition */
+        transition: 1s 0.2s;
+    }
+
+    p {
+        margin: 0;
+        width: variables.$ad-p-width;
+        text-align: center;
+        line-height: variables.$ad-line-height;
+    }
+}

@@ -1,0 +1,39 @@
+/* footer */
+
+@use '../global/variables';
+
+div.futer {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: variables.$orange-color;
+	color: variables.$white-color;
+
+	/* make slow transition just for fun - transition from hovered to normal state */
+	transition: 5s 1s;
+
+	&:hover {
+		background-color: variables.$footer-hover-background;
+		margin-left: -20rem;
+
+		/* make slow transition just for fun */
+		transition: 5s 1s;
+	}
+
+	a {
+		color: variables.$blue-color;
+		font-weight: bold;
+
+		/* put small transition for this hover - transition from hovered to normal state */
+		transition: 0.5s 0.2s;
+	
+		&:hover {
+			/* put small transition for this hover */
+			transition: 0.5s 0.2s;
+	
+			padding: 0.5rem;
+			color: variables.$black-color;
+			background-color: variables.$white-color;
+			font-weight: bold;
+		}
+	}
+}

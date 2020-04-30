@@ -1,0 +1,32 @@
+/* page - chapter 1 */
+
+@use '../global/variables';
+@use '../global/mixins';
+
+div.primer-1 {
+    @include mixins.set_grid_template($grid-kind: grid);
+}
+
+/* definisi pozadinu grid kontejnera za primere */
+.grid {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: variables.$silver-color;
+}
+
+div.primer-2 {
+    @include mixins.set_grid_template($grid-kind: grid);
+
+    p {
+        @include mixins.set_grid_template($grid-kind: grid);
+    }
+}
+
+div.primer-3 {
+    @include mixins.set_grid_template($grid-kind: grid);
+    
+    span {
+        @include mixins.set_grid_template($grid-kind: inline-grid);
+        background-color: variables.$white-color;
+    }
+}
