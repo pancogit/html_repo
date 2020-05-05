@@ -1,1 +1,96 @@
 /* page - chapter 10 */
+
+@use '../global/variables';
+@use '../global/mixins';
+
+div.primer-105 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(10, 1fr),
+                                      $row-template: repeat(10, 1fr));
+
+    width: 80%;
+    height: 20em;
+
+    .box01 {
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.5rem);
+        @include mixins.assign_to_grid($grid-row: 1 / span 4,
+                                       $grid-column: 1 / span 4);
+    }
+
+    .box02 {
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.5rem);
+        @include mixins.assign_to_grid($grid-row: 4 / span 4,
+                                       $grid-column: 4 / span 4);
+    }
+
+    .box03 {
+        @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.5rem);
+        @include mixins.assign_to_grid($grid-row: 7 / span 4,
+                                       $grid-column: 7 / span 4);
+    }
+
+    .box04 {
+        @include mixins.set_borders($border-color: variables.$green-color, $border-width: 0.5rem);
+        @include mixins.assign_to_grid($grid-row: 4 / span 7,
+                                       $grid-column: 3 / span 2);
+    }
+
+    .box05 {
+        @include mixins.set_borders($border-color: variables.$blue-color, $border-width: 0.5rem);
+        @include mixins.assign_to_grid($grid-row: 2 / span 3,
+                                       $grid-column: 4 / span 5);
+    }
+}
+
+div.primer-106 {
+    @extend .primer-105;
+
+    .box02 {
+        z-index: 2;
+    }
+}
+
+div.primer-107 {
+    @extend .primer-105;
+
+    .box02 {
+        order: 2;
+    }
+}
+
+div.primer-108 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(5, minmax(5em, 1fr)),
+                                      $row-template: 5em);
+
+    .box01 {
+        @include mixins.set_colors_font_w($background-color: variables.$red-color, 
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    .box02 {
+        @include mixins.set_colors_font_w($background-color: variables.$orange-color, 
+                                          $color: variables.$black-color,
+                                          $font-weight: bold);
+        order: 2;
+    }
+
+    .box03 {
+        @include mixins.set_colors_font_w($background-color: variables.$yellow-color, 
+                                          $color: variables.$black-color,
+                                          $font-weight: bold);
+    }
+
+    .box04 {
+        @include mixins.set_colors_font_w($background-color: variables.$green-color, 
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    .box05 {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color, 
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+}

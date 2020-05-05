@@ -1,1 +1,45 @@
 /* page - chapter 7 */
+
+@use '../global/variables';
+@use '../global/mixins';
+
+div.primer-70 {
+    @include mixins.set_grid_template();
+
+    grid: "header header  header  header" 3em
+          ".      content sidebar ."      1fr
+          "footer footer  footer  footer" 5em
+          / 2em 3fr minmax(10em, 1fr) 2em;
+}
+
+div.primer-71 {
+   @extend .primer-70;
+
+   @include mixins.set_grid_auto($grid-auto-flow: column dense);
+}
+
+div.primer-72 {
+    @include mixins.set_grid_template();
+
+    grid:              "header header  header  header" 3em
+          [main-start] ".      content sidebar ."      1fr [main-end]
+                       "footer footer  footer  footer" 5em [page-end]
+                       / 2em [a] 3fr [b] minmax(10em, 1fr) 2em;
+    .three {
+        background-color: blue;
+        color: white;
+        @include mixins.assign_to_grid($grid-area: main-start / a / main-end / b);
+    }
+ }
+
+ div.primer-73 {
+    @include mixins.set_grid_template();
+
+    grid: auto-flow 2em / minmax(1em, 3em);
+ }
+
+ div.primer-74 {
+    @extend .primer-73;
+
+    grid: 2em / auto-flow dense minmax(1em, 3em);
+ }

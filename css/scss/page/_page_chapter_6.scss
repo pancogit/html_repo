@@ -1,1 +1,109 @@
 /* page - chapter 6 */
+
+@use '../global/variables';
+@use '../global/mixins';
+@use 'page_chapter_5';
+
+div.primer-63 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(2, 80px),
+                                      $row-template: repeat(2, 80px));
+
+    .one {
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.2rem);
+    }
+
+    .two {
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.2rem);
+    }
+
+    .three {
+        @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.2rem);
+    }
+
+    .four {
+        @include mixins.set_borders($border-color: variables.$green-color, $border-width: 0.2rem);
+    }
+
+    .five {
+        @include mixins.set_borders($border-color: variables.$blue-color, $border-width: 0.2rem);
+    }
+
+    .six {
+        @include mixins.set_borders($border-color: variables.$purple-color, $border-width: 0.2rem);
+    }
+}
+
+div.primer-64 {
+    @extend .primer-63;
+
+    @include mixins.set_grid_auto($grid-auto-rows: 80px);
+}
+
+div.primer-65 {
+    @extend .primer-63;
+
+    width: 200px;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column);
+}
+
+div.primer-66 {
+    @extend .primer-65;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column, $grid-auto-columns: 80px);
+}
+
+div.primer-67 {
+    @extend .primer-59;
+
+    @include mixins.set_grid_auto($grid-auto-flow: row);
+}
+
+div.primer-68 {
+    @extend .primer-60;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column);
+}
+
+div.primer-69 {
+    max-width: 40rem;
+
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(auto-fit, minmax(5rem, 1fr)));
+
+    // height is of grid container is not specified, because we don't know how many rows
+    // container will have because of responsivity
+    // if height is not specified, then grid elements with 100% height will have height of zero
+    // because height of it's parent is zero (grid container height =0)
+    // height of grid container is not specified and there is not bottom grid container row line,
+    // but there are automatically created row lines which can be set to fixed value to add height
+    // to grid container
+    // for this purpose, it's added height to auto rows (grid-auto-rows) to alter grid container's height
+    @include mixins.set_grid_auto($grid-auto-flow: row dense,
+                                  $grid-auto-rows: 5em,
+                                  $grid-auto-columns: 5em);
+
+    img {
+        width: 100%; // maximize picture size
+        height: 100%;
+
+        // small image span one grid cell
+        &.small {
+            @include mixins.assign_to_grid($grid-row: auto / span 1,
+                                           $grid-column: auto / span 1);
+        }
+
+        // medium image spans 2 rows in grid, but single column cell
+        &.medium {
+            @include mixins.assign_to_grid($grid-row: auto / span 2,
+                                           $grid-column: auto);
+        }
+
+        // large image spans 2 rows/columns in grid
+        &.large {
+            @include mixins.assign_to_grid($grid-row: auto / span 2,
+                                           $grid-column: auto / span 2);
+        }
+    }
+}
