@@ -1,0 +1,29 @@
+/* body */
+
+@use '../global/colors';
+@use '../global/variables';
+
+body {
+	margin: 0;
+	font-family: variables.$font-family-1;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:active {
+	color: unset;
+}
+
+.content {
+	margin: 0 auto;
+	max-width: variables.$content-max-width;
+	padding: variables.$content-padding;
+}
+
+.wrapper {
+	min-width: variables.$wrapper-min-width;
+	background-color: colors.$green-color-1;
+	color: colors.$silver-color-1;
+}

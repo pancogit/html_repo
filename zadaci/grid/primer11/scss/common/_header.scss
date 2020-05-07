@@ -1,0 +1,178 @@
+/* header */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+div.header-top-track {
+    background-color: colors.$black-color-1;
+    text-align: right;
+
+    @include mixins.set_borders($border-bottom-style: solid,
+                                $border-bottom-color: colors.$border-color-1,
+                                $border-bottom-width: variables.$border-width-1);
+
+    a {
+        color: colors.$white-color;
+        margin-right: variables.$header-top-track-margin-right;
+        font-size: variables.$header-top-track-font-size;
+    }
+}
+
+section.header-nav-wrapper {
+    letter-spacing: variables.$letter-spacing-1;
+    text-transform: uppercase;
+
+    a {
+        color: colors.$white-color;
+    }
+
+    .content {
+        padding-bottom: 0;
+    }
+}
+
+div.header-nav {
+    @include mixins.set_grid_template($grid-template-columns: 30% 70%);
+    @include mixins.align_grid($align-items: center);
+
+    @media only screen and (max-width: variables.$media-size-1) {
+        @include mixins.set_grid_template($grid-template-columns: 1fr); // create single column with full width
+    }
+
+    ul {
+        @include mixins.remove_list_styles();
+        @include mixins.set_grid_template($grid-template-columns: repeat(5, variables.$col-width-2));
+
+        @include mixins.align_grid($justify-content: right, $align-self: end);
+        @include mixins.set_grid_gaps($column-gap: variables.$gap-size-1);
+
+        text-align: center;
+
+        @media only screen and (max-width: variables.$media-size-1) {
+            @include mixins.align_grid($justify-content: left);
+        }
+
+        @media only screen and (max-width: variables.$media-size-2) {
+            display: none; // hide this block for small screens
+        }
+
+        li.active {
+            a {
+                @include mixins.hover_on_main_menu();
+            }
+        }
+
+        a {
+            display: block; /* spread across list item full width */
+            font-weight: bold;
+            padding: variables.$padding-1;
+            background-color: colors.$green-color-2;
+
+            @include mixins.set_border_radius($top-left: variables.$border-radius-w1,
+                                              $top-right: variables.$border-radius-w1);
+
+            &:hover {
+                @include mixins.hover_on_main_menu();
+            }
+        }
+    }
+
+    div.logo-company {
+        h1 {
+            display: inline-block; // wrap link to inline width size, not full grid item width
+        }
+    }
+
+    div.hamburger-menu {
+        display: none; // hide hamburger menu by default for wider screens when main menu is present
+
+        font-size: variables.$hamburger-size;
+
+        @media only screen and (max-width: variables.$media-size-2) {
+            display: block; // show this block for small screens
+        }
+
+        a {
+            &:hover {
+                color: colors.$hamburger-hover;
+            }
+        }
+    }
+}
+
+div.header-article-wrapper {
+    background-color: colors.$green-color-3;
+    line-height: variables.$line-height-1;
+
+    @include mixins.set_box_shadow();
+
+    a {
+        color: colors.$silver-color-1;
+    }
+}
+
+div.header-article {
+    @include mixins.set_grid_template($grid-template-columns: 65% 30%); // 95% for content, 5% for gaps
+    //@include mixins.set_grid_gaps($gap: 5%); // css bug, don't use percentages for row gaps
+    @include mixins.align_grid($justify-content: space-between); // instead of gaps
+
+    @media only screen and (max-width: variables.$media-size-3) {
+        @include mixins.set_grid_template($grid-template-columns: 1fr); // set one column without picture
+    }
+
+    article {
+        margin-left: variables.$margin-size-1;
+
+        // create default grid with rows to align read more link button to the right edge of container
+        @include mixins.set_grid_template();
+
+        @media only screen and (max-width: variables.$media-size-3) {
+            margin-right: variables.$margin-size-2;
+        }
+
+        h2 {
+            font-size: variables.$font-size-1;
+            letter-spacing: variables.$letter-spacing-1;
+            font-style: italic;
+            line-height: variables.$line-height-2;
+            margin-bottom: 0;
+
+            @media only screen and (max-width: variables.$media-size-4) {
+                font-size: variables.$font-size-2;
+            }
+        }
+
+        p {
+            margin-right: variables.$margin-size-2;
+        }
+
+        a.read-more {
+            @include mixins.align_grid($jusify-self: right, // align link button to the right
+                                       $align-self: start); // fix position of button to row's top regardless of row height change
+
+            font-weight: bold;
+            background-color: colors.$black-color-1;
+            padding: variables.$padding-2;
+            
+            @include mixins.set_border_radius($border-radius: variables.$border-radius-w1);
+
+            &:hover {
+                background-color: colors.$black-color-2;
+            }
+        }
+    }
+
+    a.header-article-image {
+        margin-right: variables.$margin-size-1;
+
+        @media only screen and (max-width: variables.$media-size-3) {
+            display: none;
+        }
+
+        img { // resize image to full grid item size to be fluid
+            width: variables.$full-size;
+            height: variables.$full-size;
+        }
+    }
+}

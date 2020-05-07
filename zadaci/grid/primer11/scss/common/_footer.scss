@@ -1,0 +1,31 @@
+/* footer */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+
+footer {
+    a {
+        color: colors.$green-color-2;
+    }
+}
+
+div.footer-wrapper {
+    @include mixins.set_grid_template($grid-template-columns: repeat(2, max-content)); // create layout without breaking content
+    @include mixins.set_grid_gaps($gap: variables.$gap-size-2); // set gaps between row/cols
+    @include mixins.align_grid($justify-content: space-between); // justify content to the edges of grid container
+
+    @media only screen and (max-width: variables.$media-size-7) { // change grid layout to one column
+        @include mixins.set_grid_template($grid-template-columns: 1fr);
+        @include mixins.set_grid_gaps($gap: 0); // remove gaps between rows
+    }
+
+    div.footer-subscribe {
+        text-align: right;
+
+        @media only screen and (max-width: variables.$media-size-7) { // align text to left for this one column layout
+            text-align: left;
+        }
+    }
+}
