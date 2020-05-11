@@ -1,0 +1,23 @@
+/* global */
+
+@use '../global/colors';
+@use '../global/variables';
+
+body {
+    margin: 0;
+    font-family: variables.$font-family-1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    min-width: variables.$min-page-width;
+}
+
+.content {
+    margin: 0 auto;
+    padding: variables.$padding-1;
+    max-width: variables.$max-page-width;
+}

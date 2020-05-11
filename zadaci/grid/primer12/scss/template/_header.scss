@@ -1,0 +1,247 @@
+/* header */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+@use 'sass:meta';
+
+div.main-menu-wrapper {
+    background-color: colors.$blue-color-2;
+
+    @include mixins.set_block_color($color: colors.$white-color);
+    @include mixins.set_borders($border-bottom-style: solid,
+                                $border-bottom-color: colors.$white-color,
+                                $border-bottom-width: variables.$border-size-1);
+}
+
+nav.main-menu {
+    padding: 0;
+
+    ul {
+        @include mixins.reset_list();
+        @include mixins.set_grid_template(
+            $grid-template-columns: repeat(auto-fit, minmax(variables.$col-w-1, 1fr)));
+        
+        // margin is reset in mixins.reset_list(), this must come after
+        margin-left: variables.$margin-size-6;
+
+        @media only screen and (max-width: variables.$media-br-1) {
+            display: none; // hide standard menu
+        }
+
+        li {
+            @include mixins.set_borders($border-left-style: solid,
+                                        $border-left-color: colors.$white-color,
+                                        $border-left-width: variables.$border-size-1);
+
+            // container for globe icon generated before li item
+            position: relative;
+
+            &::before {
+                // insert icon image here
+                // path is generated relative to generated css folder, not this sass file
+                // this is the reason why we put different path (related to primer12/css folder)
+                content: url(../../../../slike/zadaci/primer12/globe-3a.png);
+
+                // container is list item
+                position: absolute;
+                left: variables.$globe-left;
+                top: variables.$globe-top;
+            }
+
+            a {
+                display: block; // set as block to alter height
+                padding: variables.$padding-2;
+                font-weight: bold;
+                font-size: variables.$font-size-1; // increase font size
+                text-align: center;
+
+                &:hover {
+                    background-color: colors.$blue-color-3;
+                }
+            }
+        }
+    }
+
+    div.main-hamburger {
+        display: none;
+
+        @media only screen and (max-width: variables.$media-br-1) {
+            display: block; // show hamburger menu
+            height: variables.$hamburger-height-1;
+
+            @include mixins.set_grid_template(); // set grid to align hamburger menu
+            @include mixins.align_grid($align-items: center, $justify-items: left); // align hamburger menu
+        }
+
+        a {
+            margin-left: variables.$hamburger-margin-1;
+
+            &:hover {
+                color: colors.$hamburger-hover;
+            }
+
+            i {
+                font-size: variables.$hamburger-size-1;
+            }
+        }
+    }
+}
+
+div.header-content-wrapper {
+    // background image path is relative to primer12/css folder, not this sass file location
+    // because final css is generated in primer12/css folder and this path will be forwarded there
+    background-image: url("../../../../slike/zadaci/primer12/globe_4.jpg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mixins.set_block_color($color: colors.$white-color);
+
+    div.header-content {
+        @include mixins.set_grid_template($grid-template-rows: variables.$row-size-1 variables.$row-size-2,
+                                          //$grid-template-columns: 25% 70%);
+
+                                          // it's better to use fractions instead of percentages, because
+                                          // they are delivered for free avaible space, so it's not overflow with gaps
+                                          // or something else
+                                          // if percentages are used, but gap increased, then percentages must be
+                                          // calculated and every other change must calculate again percentages
+                                          // fractions are automaticaly calculated and it will never overflow container
+                                          $grid-template-columns: variables.$row-size-1 variables.$row-size-3);
+    
+        // set gaps, but to not overflow 100% width (template-columns take close to full width)
+        @include mixins.set_grid_gaps($gap: variables.$gap-size-1);
+    
+        // justify-content on main axis to spread grid items to full width
+        @include mixins.align_grid($justify-content: space-between);
+    
+        padding: 0; // reset paddings for header with background image
+        font-style: italic;
+
+        @media only screen and (max-width: variables.$media-br-2) {
+            // add additional row for hamburger submenu
+            @include mixins.set_grid_template($grid-template-rows: max-content variables.$row-size-1 variables.$row-size-2,
+                                              $grid-template-columns: variables.$row-size-1);
+        }
+    }
+}
+
+div.header-logo {
+    @include mixins.attach_rows_cols($grid-row: 1,
+                                     $grid-column: 1 / span 2);
+
+    @media only screen and (max-width: variables.$media-br-2) {
+        @include mixins.attach_rows_cols($grid-row: 2,
+                                         $grid-column: 1);
+    }
+
+    a {
+        display: inline-block;
+        margin-left: variables.$margin-size-1;
+
+        h1 {
+            margin-bottom: 0;
+
+            span.dot-com {
+                color: colors.$blue-color-4;
+            }
+        }
+    }
+}
+
+nav.aside-menu {
+    @include mixins.attach_rows_cols($grid-row: 2,
+                                     $grid-column: meta.inspect(1 / 2));
+
+    background-color: colors.$black-color-1;
+
+    @media only screen and (max-width: variables.$media-br-2) {
+        display: none; // hide navigation menu
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        padding-right: variables.$padding-3;
+        margin-top: variables.$margin-size-4;
+        margin-bottom: variables.$margin-size-2;
+
+        li {
+            // set bottom border
+            @include mixins.set_borders($border-bottom-style: solid,
+                                        $border-bottom-color: colors.$black-color-2,
+                                        $border-bottom-width: variables.$border-size-2);
+
+            a {
+                display: block; // spread link to full list item width
+                margin-left: variables.$margin-size-2;
+                padding: variables.$padding-5 0;
+
+                span.link-content {
+                    margin-left: variables.$margin-size-3;
+                }
+
+                &:hover {
+                    color: colors.$silver-color;
+                }
+            }
+        }
+    }
+}
+
+div.header-headings {
+    @include mixins.attach_rows_cols($grid-row: 2,
+                                     $grid-column: meta.inspect(2 / 3));
+
+    @include mixins.align_grid_item($justify-self: center,  // center grid item content
+                                    $align-self: center);   // center verticaly also
+
+    margin: variables.$margin-size-5;
+
+    @media only screen and (max-width: variables.$media-br-2) {
+        @include mixins.attach_rows_cols($grid-row: 3,
+                                         $grid-column: 1);
+    }
+
+    // change size of text for very small devices
+    @media only screen and (max-width: variables.$media-br-3) {
+        font-size: variables.$font-size-2;
+    }
+
+    h2 {
+        margin: 0;
+
+        &:nth-of-type(2) {
+            margin-left: variables.$margin-size-4;
+        }
+
+        span.grow-business {
+            color:colors.$blue-color-4;
+        }
+    }
+}
+
+div.submenu-hamburger {
+    display: none; // hide hamburger submenu by default
+
+    margin: variables.$margin-size-5;
+    margin-bottom: 0;
+    font-size: variables.$font-size-1;
+
+    a {
+        &:hover {
+            color: colors.$blue-color-4;
+        }
+    }
+
+    @media only screen and (max-width: variables.$media-br-2) {
+        display: block; // show hamburger submenu
+
+        @include mixins.attach_rows_cols($grid-row: 1,
+                                         $grid-column: 1);
+
+        @include mixins.align_grid_item($justify-self: right,
+                                        $align-self: start);
+    }
+}

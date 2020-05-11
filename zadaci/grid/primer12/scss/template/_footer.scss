@@ -1,0 +1,14 @@
+/* footer */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+footer {
+    background-color: colors.$black-color-1;
+    color: colors.$silver-color;
+
+    a {
+        color: colors.$blue-color-5;
+    }
+}

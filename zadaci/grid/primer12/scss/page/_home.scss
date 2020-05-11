@@ -1,0 +1,78 @@
+/* home page */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+main {
+    color: colors.$white-color;
+    background-color: colors.$black-color-1;
+
+    @include mixins.set_borders($border-bottom-style: solid,
+                                $border-bottom-color: colors.$white-color,
+                                $border-bottom-width: variables.$border-size-1);
+
+    a {
+        color: colors.$blue-color-5;
+    }
+
+    div.main-content {
+        padding: 0; // reset paddings
+
+        @include mixins.set_grid_template(
+                $grid-template-columns: variables.$row-size-1 variables.$row-size-3);
+    }
+}
+
+aside.main-aside {
+    padding: variables.$padding-3;
+    background-color: colors.$black-color-3;
+
+    article {
+        // set grid container to align link a.view-details
+        @include mixins.set_grid_template();
+
+        h2 {
+            font-style: italic;
+            font-weight: normal;
+            font-size: variables.$font-size-3;
+            color: colors.$blue-color-5;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-style: italic;
+            font-weight: normal;
+            font-size: variables.$font-size-1;
+        }
+
+        p {
+            margin-left: variables.$margin-size-5;
+        }
+
+        a.view-details {
+            @include mixins.align_grid_item($justify-self: right);
+
+            span.right-tee-arrow {
+                color: colors.$white-color;
+            }
+
+            span.view-details-content {
+                text-decoration: underline;
+            }
+
+            &:hover {
+                span.view-details-content {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+section.main-welcome {
+    @include mixins.set_borders($border-bottom-style: solid,
+                                $border-bottom-color: colors.$white-color,
+                                $border-bottom-width: variables.$border-size-1);
+}
