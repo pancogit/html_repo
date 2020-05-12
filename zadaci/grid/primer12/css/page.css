@@ -14,7 +14,7 @@ a {
 
 .content {
   margin: 0 auto;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   max-width: 75rem;
 }
 
@@ -34,10 +34,24 @@ main div.main-content {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
+@media only screen and (max-width: 65.5rem) {
+  main div.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
 
 aside.main-aside {
   padding: 1rem;
   background-color: #1b1b1b;
+}
+@media only screen and (max-width: 65.5rem) {
+  aside.main-aside {
+    order: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 2rem;
+  }
 }
 aside.main-aside article {
   display: grid;
@@ -71,10 +85,129 @@ aside.main-aside article a.view-details:hover span.view-details-content {
   text-decoration: none;
 }
 
+div.main-welcome-info h2 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 2rem;
+}
+div.main-welcome-info h3 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+div.main-welcome-info img {
+  border-style: solid;
+  border-color: white;
+  border-width: 0.25rem;
+  width: 95%;
+  height: auto;
+}
+
 section.main-welcome {
   border-bottom-style: solid;
   border-bottom-color: white;
   border-bottom-width: 0.25rem;
+  padding: 1rem 2rem;
+}
+@media only screen and (max-width: 65.5rem) {
+  section.main-welcome {
+    padding: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+section.main-welcome span.h-business {
+  font-size: 2.5rem;
+}
+@media only screen and (max-width: 43rem) {
+  section.main-welcome span.h-business {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 43rem) {
+  section.main-welcome h2 {
+    font-size: 1.5rem;
+  }
+}
+
+div.welcome-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+}
+@media only screen and (max-width: 43rem) {
+  div.welcome-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+div.welcome-content div.welcome-text p:first-child {
+  margin-top: 0;
+}
+div.welcome-content div.welcome-text p .underline {
+  text-decoration: underline;
+}
+div.welcome-content div.welcome-image a {
+  display: block;
+}
+
+div.main-info {
+  padding: 2rem;
+  background-color: #184867;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(21.5rem, 1fr));
+  gap: 1rem;
+}
+@media only screen and (max-width: 25.5rem) {
+  div.main-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  }
+}
+@media only screen and (max-width: 65.5rem) {
+  div.main-info {
+    padding: 2rem 1rem;
+  }
+}
+
+div.main-article {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+@media only screen and (max-width: 29rem) {
+  div.main-article {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+div.main-article div.info-text {
+  grid-row: 2;
+  grid-column: 2;
+}
+@media only screen and (max-width: 29rem) {
+  div.main-article div.info-text {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+div.main-article div.info-text a.info-link {
+  text-decoration: underline;
+}
+div.main-article div.info-text a.info-link:hover {
+  text-decoration: none;
+}
+div.main-article div.info-heading {
+  align-self: center;
+}
+div.main-article div.info-heading h2 {
+  margin: 0;
+}
+div.main-article div.info-heading h3 {
+  margin: 0;
+  color: white;
+}
+div.main-article div.info-image a {
+  display: block;
 }
 
 /* header */
@@ -150,7 +283,7 @@ nav.main-menu div.main-hamburger a i {
 }
 
 div.header-content-wrapper {
-  background-image: url("../../../../slike/zadaci/primer12/globe_4.jpg");
+  background-image: url("../../../../slike/zadaci/primer12/globe_2a.jpg");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -285,6 +418,46 @@ footer {
 }
 footer a {
   color: #2cb9de;
+}
+footer div.footer-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media only screen and (max-width: 36.5rem) {
+  footer div.footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+footer div.footer-wrapper div.copy {
+  justify-self: right;
+  text-align: right;
+}
+@media only screen and (max-width: 36.5rem) {
+  footer div.footer-wrapper div.copy {
+    text-align: left;
+    justify-self: center;
+  }
+}
+
+nav.footer-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+nav.footer-menu ul a {
+  font-weight: bold;
+}
+nav.footer-menu ul a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=page.css.map */

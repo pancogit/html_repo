@@ -27,6 +27,9 @@
 
 // set borders
 @mixin set_borders($border: null,
+                   $border-style: null,
+                   $border-color: null,
+                   $border-width: null,
 
                    $border-top-style: null,
                    $border-top-color: null,
@@ -45,6 +48,11 @@
                    $border-right-width: null) {
     @if $border != null { // set shorthand or individual properties
         border: $border;
+    }
+    @else if ($border-style != null) or ($border-color != null) or ($border-width != null) {
+        border-style: $border-style;
+        border-color: $border-color;
+        border-width: $border-width;
     }
     @else {
         border-top-style: $border-top-style;
