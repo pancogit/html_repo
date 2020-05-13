@@ -1,14 +1,49 @@
 /* global */
 body {
   margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #53a2e1;
 }
 
 a {
   text-decoration: none;
 }
 
+.wrapper {
+  min-width: 20rem;
+  color: white;
+}
+.wrapper a {
+  color: white;
+}
+
+.content {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
 /* header */
+.header-logo-wrapper {
+  background-color: #183e72;
+}
+
+.header-menu-wrapper {
+  background-color: #0f63a5;
+}
+
 /* homepage */
+.main-subscribe {
+  background-color: #2e76af;
+}
+
+.main-contact {
+  background-color: #205086;
+}
+
 /* footer */
+.footer-wrapper {
+  background-color: #10294b;
+}
 
 /*# sourceMappingURL=page.css.map */

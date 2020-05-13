@@ -1,1 +1,13 @@
 /* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.main-subscribe {
+    background-color: colors.$blue-color-4;
+}
+
+.main-contact {
+    background-color: colors.$blue-color-5;
+}

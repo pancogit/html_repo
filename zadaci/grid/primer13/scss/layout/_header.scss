@@ -1,1 +1,13 @@
 /* header */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.header-logo-wrapper {
+    background-color: colors.$blue-color-1;
+}
+
+.header-menu-wrapper {
+    background-color: colors.$blue-color-2;
+}

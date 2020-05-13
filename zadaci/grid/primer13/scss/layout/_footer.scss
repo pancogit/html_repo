@@ -1,1 +1,9 @@
 /* footer */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.footer-wrapper {
+    background-color: colors.$blue-color-6;
+}
