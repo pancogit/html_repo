@@ -6,4 +6,86 @@
 
 .footer-wrapper {
     background-color: colors.$blue-color-6;
+
+    // set borders
+    @include mixins.set_borders($border-top-style: variables.$border-style-1,
+                                $border-top-color: colors.$blue-color-6,
+                                $border-top-width: variables.$border-width-1,
+                                
+                                $border-bottom-style: variables.$border-style-1,
+                                $border-bottom-color: colors.$blue-color-6,
+                                $border-bottom-width: variables.$border-width-1);
+
+    ul {
+        @include mixins.reset_list();
+
+        line-height: variables.$line-height-1;
+
+        a {
+            // spread link to be clickable to full width
+            display: block;
+
+            color: colors.$blue-color-9;
+
+            &:hover {
+                text-decoration: underline;
+                color: colors.$white-color-1;
+            }
+        }
+    }
+
+    p {
+        color: colors.$blue-color-9;
+    }
+
+    .footer-sections {
+        margin-bottom: variables.$margin-3;
+
+        // set flexible grid with automaticaly wrapping items
+        @include mixins.set_grid_template(
+                $grid-template-columns: repeat(auto-fit, minmax(variables.$width-7, variables.$width-2)));
+        @include mixins.set_grid_gaps($gap: variables.$gap-1);
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+            // change layout to one column for small screens
+            @include mixins.set_grid_template($grid-template-columns: variables.$width-2);
+        }
+    }
+
+    .footer-policy {
+        // this section is 2 column wide from automaticaly placed position
+        @include mixins.attach_rows_cols($grid-column: auto / span 2);
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+            // when layout is changed to one column, this section should be 1 column wide
+            // to not automaticaly create new grid column because of that
+            // start column is column where is grid item automaticaly placed,
+            // end column is first column next to start column
+            @include mixins.attach_rows_cols($grid-column: auto);
+        }
+
+        .images {
+            .link {
+                // set links to wrap whole pictures, but inline
+                display: inline-block;
+            }
+        }
+    }
+
+    .footer-copy {
+        .footer-copy-content {
+            text-align: center;
+        }
+
+        .link {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+                color: colors.$blue-color-9;
+            }
+        }
+    }
 }

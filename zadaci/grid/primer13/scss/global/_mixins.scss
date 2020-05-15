@@ -80,6 +80,24 @@
     }
 }
 
+// set text decoration with shorthand or by individual properties
+@mixin set_text_decoration($text-decoration: null,
+                           $text-decoration-line: null,
+                           $text-decoration-style: null,
+                           $text-decoration-color: null) {
+
+    // set by shorthand
+    @if $text-decoration != null {
+        text-decoration: $text-decoration;
+    }
+    // or set by individual properties
+    @else {
+        text-decoration-line: $text-decoration-line;
+        text-decoration-style: $text-decoration-style;
+        text-decoration-color: $text-decoration-color;
+    }
+}
+
 // set grid template
 @mixin set_grid_template($grid: grid,
                          $grid-template-areas: null,

@@ -20,6 +20,22 @@ a {
     text-decoration: none;
 }
 
+// justify paragraph content
+p {
+    text-align: justify;
+    line-height: variables.$line-height-1;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: variables.$font-size-2;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: variables.$font-size-1;
+}
+
 .wrapper {
     min-width: variables.$min-width-1;
 
@@ -27,10 +43,15 @@ a {
     @include mixins.set_block_color(colors.$white-color-1);
 }
 
-
-
+// centered content on page
 .content {
     max-width: variables.$max-width-1;
     margin: 0 auto;
-    padding: variables.$padding-3;
+}
+
+// default paddings for content
+.content-padding {
+    // it looks better on wide screens, but on small screens
+    // left/right paddings should be half width
+    padding: variables.$padding-1;
 }
