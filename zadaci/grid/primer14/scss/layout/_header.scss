@@ -1,0 +1,120 @@
+/* header */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.header-logo-wrapper {
+    background-color: colors.$black-color-1;
+
+    .link {
+        display: inline-block;
+        color: colors.$white-color-1;
+    }
+
+    .header-logo {
+        // create two columns with maximum content without line breaking
+        @include mixins.set_grid_template($grid-template-columns: repeat(2, max-content));
+        @include mixins.set_grid_gaps($gap: variables.$grid-gap-1);
+        // spread grid items to the edges of grid container and center them verticaly
+        @include mixins.align_grid($justify-content: space-between, $align-items: center);
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-break-1) {
+            // one column layout for small screens
+            @include mixins.set_grid_template($grid-template-columns: max-content);
+        }
+
+        .header-mobile {
+            .heading {
+                // display as inline, but act like a block to keep hamburger
+                // menu in the same line
+                display: inline-block;
+
+                // responsive web design
+                @include mixins.responsive_design($device-range: "max",
+                                                  $breakpoints: variables.$media-break-1) {
+                    // hide headings for small screens, it look better without
+                    display: none;
+                }
+            }
+
+            .hamburger-menu {
+                @include mixins.set_borders($border-style: solid,
+                                            $border-color: colors.$gold-color-1,
+                                            $border-width: variables.$border-width-1);
+
+                border-radius: variables.$border-radius-1;
+                padding: variables.$padding-2;
+                font-size: variables.$font-size-2;
+                margin-left: variables.$margin-1;
+            }
+        }
+    }
+}
+
+.header-logo-content {
+    .link {
+        // change font family for logo in header
+        font-family: variables.$font-family-2;
+        font-size: variables.$font-size-1;
+        font-weight: normal;
+
+        .heading {
+            margin: 0;
+
+            .logo {
+                color: colors.$silver-color-1;
+            }
+        }
+    }
+}
+
+// gold track should be global to be reused for footer also
+.gold-track {
+    height: variables.$height-1;
+    background-color: colors.$gold-color-2;
+
+    @include mixins.set_borders($border-top-style: solid,
+                                $border-top-color: colors.$gold-color-3,
+                                $border-top-width: variables.$border-width-1,
+                                
+                                $border-bottom-style: solid,
+                                $border-bottom-color: colors.$gold-color-3,
+                                $border-bottom-width: variables.$border-width-1);
+}
+
+.header-image-wrapper {
+    // image path is related to css folder, where generated css file is created by sass
+    // because of that, image path will not be referenced from this file,
+    // but from page.css file from css folder
+    background-image: url("../../../../slike/zadaci/primer14/museum-header.jpg");
+    background-position: center;
+    background-size: cover;
+
+    .header-image {
+        height: variables.$height-2;
+
+        // container for absolute positioning element .header-slides
+        position: relative;
+
+        .header-slides {
+            position: absolute;
+            bottom: variables.$margin-2;
+            right: variables.$margin-3;
+
+            .link {
+                // if links are inline, then icons will no be well wrapped,
+                // and first link will be wider than secon
+                display: inline-block;
+
+                color: colors.$white-color-2;
+                background-color: colors.$black-color-2;
+                font-size: variables.$font-size-3;
+                padding: variables.$padding-2 variables.$padding-3;
+                border-radius: variables.$border-radius-1;
+            }
+        }
+    }
+}

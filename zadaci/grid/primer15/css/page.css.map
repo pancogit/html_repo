@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/layout/_global.scss","../scss/global/_variables.scss","../scss/layout/_header.scss","../scss/layout/_home.scss","../scss/layout/_footer.scss"],"names":[],"mappings":"AAAA;AAMA;EACI;;;AAGJ;EACI;;;AAIJ;EACI,WCJU;;;ADQd;EACI,WCRU;EDSV;;;AAIJ;EACI,SCXQ;;;AChBZ;ACAA;ACAA","file":"page.css"}

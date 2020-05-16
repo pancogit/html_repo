@@ -1,0 +1,29 @@
+/* global */
+
+@use '../global/variables';
+@use '../global/colors';
+@use '../global/mixins';
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+// page wrapper
+.wrapper {
+    min-width: variables.$min-width-1;
+}
+
+// centered content on page
+.content {
+    max-width: variables.$max-width-1;
+    margin: 0 auto;
+}
+
+// default paddings for content
+.content-padding {
+    padding: variables.$padding-1;
+}

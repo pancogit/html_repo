@@ -1,0 +1,46 @@
+// variables
+
+// devices
+$device-types: "screen", "print";
+$device-range: "min", "range", "max";
+
+// list of valid values for units
+$unit-valid-values: "em", "ex", "ch", "rem", "vh", "vw", "vmin", "vmax",
+                    "cm", "mm", "in", "px", "pt", "pc",
+                    "dpi", "dpcm", "dppx";
+
+// page width
+$min-width-1: 20rem;
+$max-width-1: 75rem;
+
+// padding
+$padding-1: 1rem 0.5rem;
+$padding-2: 0.2rem;
+$padding-3: 0.5rem;
+
+// font
+$font-family-1: Tahoma, Verdana, sans-serif;
+$font-family-2: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$font-size-1: 2rem;
+$font-size-2: 1.5rem;
+$font-size-3: 1.8rem;
+
+// grid
+$grid-width-1: 17.5rem;
+$grid-gap-1: 1rem;
+
+// border
+$border-width-1: 0.1rem;
+$border-radius-1: 0.2rem;
+
+// margin
+$margin-1: 0.3rem;
+$margin-2: 0.7rem;
+$margin-3: 20%;
+
+// media breakpoints
+$media-break-1: 29.25rem;
+
+// height
+$height-1: 1.5rem;
+$height-2: 15rem;

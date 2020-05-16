@@ -1,0 +1,17 @@
+// variables
+
+// devices
+$device-types: "screen", "print";
+$device-range: "min", "range", "max";
+
+// list of valid values for units
+$unit-valid-values: "em", "ex", "ch", "rem", "vh", "vw", "vmin", "vmax",
+                    "cm", "mm", "in", "px", "pt", "pc",
+                    "dpi", "dpcm", "dppx";
+
+// page width
+$min-width-1: 20rem;
+$max-width-1: 75rem;
+
+// padding
+$padding-1: 1rem 0.5rem;

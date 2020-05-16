@@ -1,0 +1,10 @@
+/* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.main-wrapper {
+    background-color: colors.$black-color-1;
+    color: colors.$silver-color-2;
+}

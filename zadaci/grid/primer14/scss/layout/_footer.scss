@@ -1,0 +1,14 @@
+/* footer */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.footer-content-wrapper {
+    background-color: colors.$brown-color-5;
+    color: colors.$brown-color-6;
+
+    .link {
+        color: colors.$white-color-5;
+    }
+}

@@ -1,0 +1,27 @@
+/* global */
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  min-width: 20rem;
+}
+
+.content {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.content-padding {
+  padding: 1rem 0.5rem;
+}
+
+/* header */
+/* homepage */
+/* footer */
+
+/*# sourceMappingURL=page.css.map */

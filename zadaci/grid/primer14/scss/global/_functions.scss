@@ -1,0 +1,104 @@
+// functions
+
+@use 'variables';
+@use 'sass:meta';
+@use 'sass:math';
+
+// find element in list
+@function list_search($item,
+                      $list) {
+    $found: false;
+
+    @if $item == null {
+        @error "Function list_search() error: $item cannot be null!";
+    }
+
+    @if $list == null {
+        @error "Function list_search() error: $list cannot be null!";
+    }
+
+    $N: count_elements($item);
+
+    @if $N != 1 {
+        @error "Function list_search() error: $item can only have 1 element passed, " + 
+               "but it has passed #{$N} instead [$item = (#{$item})]!";
+    }
+
+    @each $var in $list {
+        @if $var == $item {
+            $found: true;
+        }
+    }
+
+    @return $found;
+}
+
+// count elements in some variable
+@function count_elements($element) {
+
+    @if $element == null {
+        @error "Function count_elements() error: $element cannot be null!";
+    }
+
+    $N: 0;
+
+    @each $var in $element {
+        $N: $N + 1;
+    }
+
+    @return $N;
+}
+
+// check for number
+@function is_number($value) {
+    @if $value == null {
+        @error "Function is_number() error: Given parameter $value is null!";
+    }
+
+    @return meta.type-of($value) == number;
+}
+
+// check if number has unit
+@function has_unit($value) {
+    @if $value == null {
+        @error "Function has_unit() error: Given parameter $value is null!";
+    }
+
+    // math.is_unitless() returns if value doesn't has unit, but this function returns opposite
+    // returned boolean must be negated
+    @return not math.is_unitless($value);
+}
+
+// check if number has valid unit
+@function has_valid_unit($value) {
+    @if $value == null {
+        @error "Function has_valid_unit() error: Given parameter $value is null!";
+    }
+
+    // check if unit exists
+    @if has_unit($value) != true {
+        @error "Function has_valid_unit() error: Given parameter $value (= #{$value}) doesn't have unit!";
+    }
+
+    // extract unit from parametar value
+    $unit: math.unit($value);
+
+    // check for valid units
+    // search for valid units in list and if it's found, then unit is valid
+    // otherwise, it's not valid
+    @return list_search($item: $unit, 
+                        $list: variables.$unit-valid-values);
+}
+
+// check if numbers have compatible units
+@function are_compatible($value-1, $value-2) {
+    @if $value-1 == null {
+        @error "Function are_compatible() error: Given parameter $value-1 is null!";
+    }
+
+    @if $value-2 == null {
+        @error "Function are_compatible() error: Given parameter $value-2 is null!";
+    }
+
+    @return math.compatible($value-1, $value-2);
+}
