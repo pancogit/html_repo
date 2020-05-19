@@ -50,6 +50,13 @@
                 font-size: variables.$font-size-2;
                 margin-left: variables.$margin-1;
             }
+
+            // something happens when hover over link
+            .link {
+                &:hover {
+                    color: colors.$silver-color-1;
+                }
+            }
         }
     }
 }
@@ -58,11 +65,11 @@
     .link {
         // change font family for logo in header
         font-family: variables.$font-family-2;
-        font-size: variables.$font-size-1;
         font-weight: normal;
 
         .heading {
             margin: 0;
+            font-size: variables.$font-size-9;
 
             .logo {
                 color: colors.$silver-color-1;
@@ -110,10 +117,43 @@
                 display: inline-block;
 
                 color: colors.$white-color-2;
+
+                // fallback color for Edge
+                background-color: colors.$black-color-2-fall;
                 background-color: colors.$black-color-2;
+
                 font-size: variables.$font-size-3;
                 padding: variables.$padding-2 variables.$padding-3;
                 border-radius: variables.$border-radius-1;
+
+                &:hover {
+                    background-color: colors.$black-color-1;
+                }
+            }
+        }
+
+        // hamburger menu for .main-navigation
+        .header-hamburger {
+            display: none;
+
+            position: absolute;
+            left: variables.$padding-3;
+            bottom: variables.$margin-7;
+
+            // responsive web design
+            @include mixins.responsive_design($device-range: "max", 
+                                              $breakpoints: variables.$media-break-2) {
+                display: inline-block;
+            }
+
+            .link {
+                display: inline-block;
+                color: colors.$white-color-1;
+                font-size: variables.$font-size-4;
+
+                &:hover {
+                    color: colors.$silver-color-1;
+                }
             }
         }
     }

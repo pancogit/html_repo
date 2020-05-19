@@ -7,8 +7,14 @@
 .footer-content-wrapper {
     background-color: colors.$brown-color-5;
     color: colors.$brown-color-6;
+    text-align: center;
 
     .link {
         color: colors.$white-color-5;
+
+        &:hover {
+            color: colors.$brown-color-6;
+            text-decoration: underline;
+        }
     }
 }
