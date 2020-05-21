@@ -117,7 +117,7 @@
                      $column-gap: null) {
 
     // set either gaps shorthand or individualy rows/cols
-    @if $gap != normal { 
+    @if $gap != normal and $gap != null { 
         gap: $gap;
     }
     @else {

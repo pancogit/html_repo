@@ -6,6 +6,8 @@
 
 body {
     margin: 0;
+    font-family: variables.$font-family-1;
+    background-color: colors.$gray-color-1;
 }
 
 a {
@@ -15,15 +17,42 @@ a {
 // page wrapper
 .wrapper {
     min-width: variables.$min-width-1;
-}
 
-// centered content on page
-.content {
-    max-width: variables.$max-width-1;
-    margin: 0 auto;
-}
+    // centered content on page
+    &__content {
+        max-width: variables.$max-width-1;
+        margin: 0 auto;
+    }
 
-// default paddings for content
-.content-padding {
-    padding: variables.$padding-1;
+    &__content--border-top {
+        // set borders as content wrapper
+        @include mixins.set_borders($border-style: solid,
+                                    $border-color: colors.$white-color-1,
+                                    $border-width: variables.$border-width-1);
+
+        @include mixins.set_borders($border-bottom-style: none);
+    }
+
+    &__content--border-bottom {
+        // set borders as content wrapper
+        @include mixins.set_borders($border-style: solid,
+                                    $border-color: colors.$white-color-1,
+                                    $border-width: variables.$border-width-1);
+                                    
+        @include mixins.set_borders($border-top-style: none);
+    }
+
+    // default paddings for content
+    &__content--padding {
+        padding: variables.$padding-1;
+    }
+
+    &__track {
+        background-color: colors.$gray-color-1;
+    }
+
+    // modifier for &__track
+    &__track--green {
+        background-color: colors.$green-color-1;
+    }
 }

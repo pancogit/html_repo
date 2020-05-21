@@ -4,3 +4,95 @@
 @use '../global/variables';
 @use '../global/mixins';
 
+.footer {
+    padding: variables.$padding-1;
+    padding-top: variables.$padding-3;
+    background-color: colors.$black-color-2;
+    color: colors.$brown-color-1;
+
+    &__link {
+        color: colors.$brown-color-1;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__copy {
+        text-align: right;
+
+        // for small screens, center copyright part
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-5) {
+            text-align: center;
+        }
+    }
+
+    &__paragraph {
+
+    }
+}
+
+.navigation-dot {
+
+    &__list {
+        @include mixins.reset_list();
+
+        // set 5 columns with maximum content width without breaking text to new line
+        @include mixins.set_grid_template($grid-template-columns: repeat(5, max-content));
+
+        // align grid content to the right
+        @include mixins.align_grid($justify-content: right);
+
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-5) {
+
+            // for small screens, change grid layout to one column
+            @include mixins.set_grid_template($grid-template-columns: variables.$grid-size-2);
+
+            // add row gaps for small screens
+            @include mixins.set_grid_gaps($row-gap: variables.$grid-gap-3);
+
+            // align text to the center, while list items stays full width
+            text-align: center;
+        }
+    }
+
+    &__list-item {
+        // insert generated content
+        &::after {
+            // &middot is html entity for middle dot
+            // css representation is unicode code \00B7
+            content: "\00B7";
+
+            margin-right: variables.$margin-9;
+            color: colors.$brown-color-1;
+
+            // for small screens remove generated middle dots
+            @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-5) {
+                content: none;
+            }
+        }
+
+        // remove generated content from last child
+        &:last-child::after {
+            content: none;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$brown-color-1;
+
+        // for small screens, set link as block to spread to full width, to be clickable in whole row
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-5) {
+            display: block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
