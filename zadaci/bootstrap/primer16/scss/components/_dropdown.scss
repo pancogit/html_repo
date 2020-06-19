@@ -1,0 +1,48 @@
+/********************************* dropdown **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.dropdown {
+
+    &:hover {
+        .dropdown__list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__menu {
+         // insert dropdown cap as generated content
+         &::after {
+            content: "\0002C5";
+            margin: 0 variables.$margin-width-4;
+            font-size: variables.$font-size-3;
+            vertical-align: middle;
+        }
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        background-color: colors.$black-color-1;
+
+        // hide by default dropdown menu
+        display: none;
+        position: absolute;
+
+        // z-index must be set, because submenu will drop inside 
+        // bootstrap column layer from bottom
+        z-index: variables.$z-index-1;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        display: block;
+        padding: variables.$padding-2 variables.$padding-3;
+    }
+}

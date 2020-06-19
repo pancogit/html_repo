@@ -1,0 +1,30 @@
+/******************************** navigation *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.navigation {
+
+    height: variables.$width-1;
+    display: flex;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        width: variables.$width-1;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        display: block;
+        padding: variables.$padding-2 variables.$padding-3;
+        text-transform: uppercase;
+    }
+}
