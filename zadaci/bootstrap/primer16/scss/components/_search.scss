@@ -1,0 +1,31 @@
+/********************************** search ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.search {
+
+    display: flex;
+
+    &__input {
+        // flex grow/shrink, basis to zero
+        flex: 1;
+        min-width: variables.$min-width-1;
+        padding: variables.$padding-8 variables.$padding-6;
+        border-style: solid;
+        border-color: colors.$silver-color-3;
+        border-width: variables.$border-width-2;
+        border-right-width: 0;
+        border-top-left-radius: variables.$border-radius-1;
+        border-bottom-left-radius: variables.$border-radius-1;
+
+        &::placeholder {
+            color: colors.$silver-color-2;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0px 0px 1px 1px colors.$silver-color-4;
+        }
+    }
+}

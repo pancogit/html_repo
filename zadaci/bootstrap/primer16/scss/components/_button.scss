@@ -1,0 +1,37 @@
+/********************************** button ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.button {
+
+    padding: variables.$padding-5;
+    background-color: colors.$black-color-7;
+    color: colors.$white-color-1;
+    border: none;
+    outline: none;
+
+    // add small transition on buttons
+    transition: 0.2s;
+
+    &:hover {
+        background-color: colors.$green-color-1;
+    }
+
+    &--read-more {
+        
+        // insert generated content as arrow on read more buttons
+        &::after {
+            content: "\2192";
+            margin-left: variables.$margin-width-4;
+        }
+    }
+
+    &--small {
+        padding: variables.$padding-7;
+    }
+
+    &--search {
+        padding: variables.$padding-6 variables.$padding-2;
+    }
+}

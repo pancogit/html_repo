@@ -1,0 +1,26 @@
+/********************************** social ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.social {
+    padding: variables.$padding-4 0;
+
+    &__link {
+        display: inline-block;
+        padding: variables.$padding-2;
+        color: colors.$black-color-7;
+
+        // add small transition
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            background-color: colors.$green-color-1;
+            color: colors.$white-color-1;
+        }
+    }
+
+    &__icon {
+
+    }
+}
