@@ -1,0 +1,40 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H O M E P A G E *********************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.main {
+    &__heading {
+        margin-top: variables.$margin-4;
+        margin-bottom: 0;
+        color: colors.$white-color-1;
+        font-size: variables.$font-size-4;
+        font-weight: normal;
+        text-align: center;
+
+        @include bootstrap.media-breakpoint-down(sm) {
+            font-size: variables.$font-size-5;
+            margin-top: variables.$margin-6;
+        }
+    }
+
+    &__link {
+        color: colors.$white-color-1;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__paragraph {
+        color: colors.$blue-color-6;
+        text-align: center;
+        line-height: variables.$line-height-1;
+    }
+}

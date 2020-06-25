@@ -1,0 +1,35 @@
+/******************************** navigation *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.navigation {
+    display: flex;
+    align-items: flex-end;
+    height: variables.$width-1;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: variables.$margin-3;
+        padding: 0;
+        list-style-type: none;
+        align-items: center;
+    }
+
+    &__item {
+        padding: variables.$padding-2 variables.$padding-3;
+    }
+
+    &__link {
+        display: block;
+        color: colors.$white-color-1;
+        font-weight: bold;
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+}

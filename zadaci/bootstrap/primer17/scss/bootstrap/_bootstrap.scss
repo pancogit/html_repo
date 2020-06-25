@@ -1,0 +1,21 @@
+
+// put your bootstrap override here
+
+$grid-breakpoints: (
+  xs: 0,
+  xs-2: 350px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  xs-2: 320px,
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+@import "../../../../../framework/bootstrap-4.5.0/scss/bootstrap-grid.scss"

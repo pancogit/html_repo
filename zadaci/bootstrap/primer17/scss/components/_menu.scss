@@ -1,0 +1,37 @@
+/************************************ menu ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.menu {
+    display: grid;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(variables.$grid-width-2, variables.$grid-width-1));
+    gap: variables.$gap-2;
+
+    // center items acros main axis
+    justify-items: center;
+
+    &__icon {
+        align-self: center;
+        margin-bottom: variables.$margin-7;
+        font-size: variables.$font-size-3;
+    }
+
+    &__item {
+        font-size: variables.$font-size-6;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        padding: variables.$padding-2;
+        color: colors.$white-color-1;
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+}
