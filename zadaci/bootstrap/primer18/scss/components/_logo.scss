@@ -1,0 +1,18 @@
+/*********************************** logo ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: variables.$logo-height;
+
+    &__image {
+        display: inline-block;
+    }
+
+    &__link {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,34 @@
+/********************************** search ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.search {
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__input {
+        // set flex item to grow/shrink
+        flex: 1;
+
+        // set form input to be responsive to full width
+        // set minimum width to zero for mozilla
+        width: variables.$search-input-width;
+        min-width: 0;
+
+        padding: variables.$search-input-padding;
+        outline: none;
+
+        // add small transition
+        transition: variables.$search-input-transition;
+
+        @include mixins.set_borders($border-style: solid,
+                                    $border-color: colors.$search-input-border-color,
+                                    $border-width: variables.$search-input-border-width);
+
+        &:focus {
+            border-color: colors.$header-border-color;
+        }
+    }
+}

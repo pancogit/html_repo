@@ -1,0 +1,37 @@
+/************************************* ad ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.ad {
+
+    // block modifier which add bottom margin for articles...
+    &--margin-bottom {
+        margin-bottom: variables.$ad-margin-bottom;
+    }
+
+    &__heading {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: variables.$ad-heading-font-size;
+        font-weight: normal;
+        color: colors.$ad-heading-color;
+    }
+
+    &__image {
+        display: block;
+
+        // responsive images
+        width: variables.$ad-image-width;
+
+        // add borders around image
+        @include mixins.set_borders($border-style: solid,
+                                    $border-color: black,
+                                    $border-width: variables.$ad-border-width);
+    }
+    
+    &__link {
+        display: block;
+    }
+}

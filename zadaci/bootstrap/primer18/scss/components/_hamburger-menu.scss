@@ -1,0 +1,46 @@
+/******************************* hamburger-menu ******************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.hamburger-menu {
+    margin-left: variables.$hamburger-menu-margin-left;
+
+    &--flex-grow {
+        // if flex grow modifier is set, then align link to the right
+        // for this purpose, this must be also flex container
+        display: flex;
+        justify-content: flex-end;
+
+        // change flex grow property for different screens
+        @include bootstrap.media-breakpoint-up(sm) {
+            flex: 0.2;
+        }
+
+        @include bootstrap.media-breakpoint-up(md) {
+            flex: 0.7;
+        }
+
+        @include bootstrap.media-breakpoint-up(lg) {
+            flex: 1;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: white;
+
+        // add small transition on link
+        transition: variables.$navigation-link-transition;
+
+        // element modifier for link
+        &:hover {
+            color: colors.$navigation-active-link;
+        }
+    }
+
+    &__icon {
+        font-size: variables.$hamburger-menu-icon-size;
+    }
+}

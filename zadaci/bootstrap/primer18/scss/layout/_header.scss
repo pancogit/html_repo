@@ -1,0 +1,45 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H E A D E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.header {
+
+    &__nav {
+        
+    }
+
+    &__logo {
+        background-color: colors.$header-logo-background-color;
+
+        // borders are not set for smallest screen (mobile first way)
+        border: none;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            // set borders
+            @include mixins.set_border_bottom($border-bottom-color: colors.$header-border-color,
+                                              $border-bottom-width: variables.$header-border-width);
+
+            @include mixins.set_border_right($border-right-color: colors.$header-border-color,
+                                             $border-right-width: variables.$header-border-width);
+        }
+    }
+
+    &__navbar {
+        background-color: colors.$header-navbar-background-color;
+
+        // set borders
+        @include mixins.set_border_top($border-top-color: colors.$header-border-color,
+                                       $border-top-width: variables.$header-border-width);
+    }
+
+    &__ads {
+        background-color: colors.$header-ads-background-color;
+    }
+}
