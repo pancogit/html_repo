@@ -6,10 +6,35 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../bootstrap/bootstrap';
 
 .main {
 
     &__content {
+        padding: variables.$homepage-padding;
         background-color: white;
+
+        // show border radius on left side for two columns layout
+        @include bootstrap.media-breakpoint-up(md) {
+            border-top-left-radius: variables.$homepage-border-radius;
+        }
+
+        // show border radius on right side just for extra large screens
+        @include bootstrap.media-breakpoint-up(xl) {
+            border-top-right-radius: variables.$homepage-border-radius;
+        }
+    }
+
+    &__heading {
+        font-weight: normal;
+        margin: variables.$homepage-heading-margin;
+
+        // for smallest screens set normal font size
+        font-size: variables.$homepage-heading-font-size-normal;
+
+        // increase font size for small screens and wider
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$homepage-heading-font-size-large;
+        }
     }
 }

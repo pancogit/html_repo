@@ -1,0 +1,57 @@
+/********************************* categories ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.categories {
+
+    padding-top: variables.$categories-padding-top;
+    
+    &__body {
+        margin-top: variables.$categories-body-margin;
+        padding: variables.$categories-body-padding;
+        border-radius: variables.$categories-body-border-radius;
+        
+        // fallback color if gradients are not supported
+        background-color: colors.$categories-body-background-color;
+        background-image: colors.$categories-body-gradient;
+
+        // add small box shadow to better look
+        box-shadow: colors.$categories-body-box-shadow;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: white;
+        font-size: variables.$categories-heading-font-size;
+    }
+
+    &__item {
+        line-height: variables.$categories-item-line-height;
+    }
+
+    &__link {
+        color: white;
+        font-size: variables.$categories-link-font-size;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__list {
+        padding-left: variables.$categories-list-padding;
+        margin: 0;
+        color: white;
+    }
+
+    &__winner {
+        display: inline-block;
+        color: colors.$categories-winner-color;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

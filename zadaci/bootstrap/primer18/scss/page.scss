@@ -15,10 +15,16 @@
 @use 'components/hamburger-menu';
 @use 'components/ad';
 @use 'components/subscribe';
-
-// empty components
 @use 'components/menu';
+@use 'components/tabs';
+@use 'components/hamburger-aside';
+@use 'components/article';
+@use 'components/pagination';
+@use 'components/figure';
+@use 'components/categories';
+@use 'components/social';
 @use 'components/page';
+
 
 // layout
 @use 'layout/global';

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
 
     <!-- include bootstrap and custom css -->
-    <link href="../css/page.css" rel="stylesheet" type="text/css" />
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
 
     <!-- font awesome for icons -->
     <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
@@ -112,10 +112,10 @@
         <main class="main">
             <div class="container-xl">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="d-none d-md-block col-md-3 px-0">
                         <nav class="menu">
                             <ul class="menu__list">
-                                <li class="menu__item">
+                                <li class="menu__item menu__item--border-top-none">
                                     <a href="index.html" class="menu__link">Home</a>
                                 </li>
                                 <li class="menu__item">
@@ -181,8 +181,14 @@
                         </nav>
                     </div>
 
-                    <div class="col-9">
+                    <div class="col-12 col-md-9 px-0">
                         <div class="main__content">
+                            <nav class="hamburger-aside d-md-none">
+                                <a href="index.html" class="hamburger-aside__link">
+                                    <i class="fas fa-bars hamburger-aside__icon"></i>
+                                </a>
+                            </nav>
+
                             <section class="tabs">
                                 <h2 class="tabs__heading">Photography</h2>
                                 <nav class="tabs__navigation">
@@ -216,58 +222,19 @@
                             <h2 class="main__heading">Photo of the Day</h2>
 
                             <div class="row">
-                                <div class="col-8">
-                                    <div class="article">
+                                <div class="col-lg-8 px-md-4">
+                                    <div class="article mb-4">
                                         <div class="article__info">
                                             <p class="article__date">February 17, 2008</p>
                                             <div class="pagination">
                                                 <ul class="pagination__list">
                                                     <li class="pagination__item">
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--prev">Previous</a>
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--next">Next</a>
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
                                                     </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <div class="article__body">
-                                            <div class="figure">
-                                                <img src="../../../../slike/zadaci/primer18/photo-1.jpg"
-                                                    alt="image photo" width="400" class="figure__image" />
-                                                <div class="figure__footer">
-                                                    <a href="index.html" class="figure__link">
-                                                        <i
-                                                            class="fas fa-search-plus fa-flip-horizontal figure__icon"></i>
-                                                        <span class="figure__text">Enlarge</span>
-                                                    </a>
-                                                    <a href="index.html" class="figure__link">
-                                                        <span class="figure__box">
-                                                            <i class="fas fa-mouse-pointer 
-                                                              figure__icon figure__icon--positioned"></i>
-                                                        </span>
-                                                        <span class="figure__text">Wallpaper</span>
-                                                    </a>
-                                                    <a href="mailto:" class="figure__link">
-                                                        <i class="fas fa-envelope figure__icon"></i>
-                                                        <span class="figure__text">Email a Friend</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="article">
-                                        <div class="article__info">
-                                            <p class="article__date">January 25, 2008</p>
-                                            <div class="pagination">
-                                                <ul class="pagination__list">
                                                     <li class="pagination__item">
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--prev">Previous</a>
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--next">Next</a>
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -275,7 +242,7 @@
 
                                         <div class="article__body">
                                             <div class="figure">
-                                                <img src="../../../../slike/zadaci/primer18/photo-2.jpg"
+                                                <img src="../../../../slike/zadaci/primer18/photo-1b.jpg"
                                                     alt="image photo" width="400" class="figure__image" />
                                                 <div class="figure__footer">
                                                     <a href="index.html" class="figure__link">
@@ -299,16 +266,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="article">
+                                    <div class="article mb-4">
                                         <div class="article__info">
-                                            <p class="article__date">December 5, 2007</p>
+                                            <p class="article__date">January 25, 2008</p>
                                             <div class="pagination">
                                                 <ul class="pagination__list">
                                                     <li class="pagination__item">
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--prev">Previous</a>
-                                                        <a href="index.html"
-                                                            class="pagination__link pagination__link--next">Next</a>
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -316,7 +285,7 @@
 
                                         <div class="article__body">
                                             <div class="figure">
-                                                <img src="../../../../slike/zadaci/primer18/photo-3.jpg"
+                                                <img src="../../../../slike/zadaci/primer18/photo-2b.jpg"
                                                     alt="image photo" width="400" class="figure__image" />
                                                 <div class="figure__footer">
                                                     <a href="index.html" class="figure__link">
@@ -327,7 +296,50 @@
                                                     <a href="index.html" class="figure__link">
                                                         <span class="figure__box">
                                                             <i class="fas fa-mouse-pointer 
-                                                                      figure__icon figure__icon--positioned"></i>
+                                                                  figure__icon figure__icon--positioned"></i>
+                                                        </span>
+                                                        <span class="figure__text">Wallpaper</span>
+                                                    </a>
+                                                    <a href="mailto:" class="figure__link">
+                                                        <i class="fas fa-envelope figure__icon"></i>
+                                                        <span class="figure__text">Email a Friend</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="article mb-4">
+                                        <div class="article__info">
+                                            <p class="article__date">December 5, 2007</p>
+                                            <div class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item">
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="article__body">
+                                            <div class="figure">
+                                                <img src="../../../../slike/zadaci/primer18/photo-3b.jpg"
+                                                    alt="image photo" width="400" class="figure__image" />
+                                                <div class="figure__footer">
+                                                    <a href="index.html" class="figure__link">
+                                                        <i
+                                                            class="fas fa-search-plus fa-flip-horizontal figure__icon"></i>
+                                                        <span class="figure__text">Enlarge</span>
+                                                    </a>
+                                                    <a href="index.html" class="figure__link">
+                                                        <span class="figure__box">
+                                                            <i class="fas fa-mouse-pointer 
+                                                                  figure__icon figure__icon--positioned"></i>
                                                         </span>
                                                         <span class="figure__text">Wallpaper</span>
                                                     </a>
@@ -341,72 +353,86 @@
                                     </div>
                                 </div>
 
-                                <div class="col-4">
-                                    <div class="categories">
-                                        <a href="index.html" class="categories__winner">See Today's Photo of the Day</a>
-                                        <div class="categories__body">
-                                            <ul class="categories__list">
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Adventure &
-                                                        Explotation</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Black & White</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Landscapes</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">People & Culture</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Travel</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Archive by Date</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Animals</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">History</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Nature & Weather</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Science & Space</a>
-                                                </li>
-                                                <li class="categories__item">
-                                                    <a href="index.html" class="categories__link">Underwater</a>
-                                                </li>
-                                            </ul>
+                                <div class="d-none d-sm-block col-lg-4 px-md-4">
+                                    <div class="row">
+                                        <div class="col col-lg-12 mb-4">
+                                            <div class="categories">
+                                                <a href="index.html" class="categories__winner">
+                                                    See Today's Photo of the Day
+                                                </a>
+                                                <div class="categories__body">
+                                                    <h2 class="categories__heading">Photo of the Day Categories:</h2>
+                                                    <ul class="categories__list">
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Adventure &
+                                                                Explotation</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Black &
+                                                                White</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Landscapes</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">People &
+                                                                Culture</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Travel</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Archive by
+                                                                Date</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Animals</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">History</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Nature &
+                                                                Weather</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Science &
+                                                                Space</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Underwater</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col order-first order-lg-0 col-lg-12">
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-2b.png"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
+
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-3b.png"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
+
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-4b.jpg"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
                                         </div>
                                     </div>
-
-                                    <section class="ad ad--margin-bottom">
-                                        <h3 class="ad__heading">Advertisement</h3>
-                                        <a href="https://www.google.com" target="_blank" class="ad__link">
-                                            <img src="../../../../slike/zadaci/primer18/ads-2.png" alt="ad picture"
-                                                width="250" class="ad__image" />
-                                        </a>
-                                    </section>
-
-                                    <section class="ad ad--margin-bottom">
-                                        <h3 class="ad__heading">Advertisement</h3>
-                                        <a href="https://www.google.com" target="_blank" class="ad__link">
-                                            <img src="../../../../slike/zadaci/primer18/ads-3.png" alt="ad picture"
-                                                width="250" class="ad__image" />
-                                        </a>
-                                    </section>
-
-                                    <section class="ad ad--margin-bottom">
-                                        <h3 class="ad__heading">Advertisement</h3>
-                                        <a href="https://www.google.com" target="_blank" class="ad__link">
-                                            <img src="../../../../slike/zadaci/primer18/ads-4.jpg" alt="ad picture"
-                                                width="250" class="ad__image" />
-                                        </a>
-                                    </section>
                                 </div>
                             </div>
                         </div>
@@ -419,7 +445,7 @@
             <div class="footer__links">
                 <div class="container-xl">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
                             <h2 class="footer__heading">About Us</h2>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -464,7 +490,7 @@
                             </ul>
                         </div>
 
-                        <div class="col">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
                             <h2 class="footer__heading">Our Sites</h2>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -497,7 +523,7 @@
                             </ul>
                         </div>
 
-                        <div class="col">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
                             <h2 class="footer__heading">Join Us</h2>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -521,27 +547,27 @@
                             </ul>
                         </div>
 
-                        <div class="col">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-sm-3">
                             <h2 class="footer__heading">Follow Us</h2>
-                            <ul class="footer__list">
-                                <li class="footer__item">
-                                    <a href="https://www.facebook.com" target="_blank" class="footer__link">
-                                        <i class="fab fa-facebook-square footer__icon"></i>
+                            <ul class="social">
+                                <li class="social__item">
+                                    <a href="https://www.facebook.com" target="_blank" class="social__link">
+                                        <i class="fab fa-facebook-square social__icon"></i>
                                     </a>
                                 </li>
-                                <li class="footer__item">
-                                    <a href="https://www.twitter.com" target="_blank" class="footer__link">
-                                        <i class="fab fa-twitter footer__icon"></i>
+                                <li class="social__item">
+                                    <a href="https://www.twitter.com" target="_blank" class="social__link">
+                                        <i class="fab fa-twitter social__icon"></i>
                                     </a>
                                 </li>
-                                <li class="footer__item">
-                                    <a href="https://www.instagram.com" target="_blank" class="footer__link">
-                                        <i class="fab fa-instagram footer__icon"></i>
+                                <li class="social__item">
+                                    <a href="https://www.instagram.com" target="_blank" class="social__link">
+                                        <i class="fab fa-instagram social__icon"></i>
                                     </a>
                                 </li>
-                                <li class="footer__item">
-                                    <a href="https://www.snapchat.com" target="_blank" class="footer__link">
-                                        <i class="fab fa-snapchat-ghost footer__icon"></i>
+                                <li class="social__item">
+                                    <a href="https://www.snapchat.com" target="_blank" class="social__link">
+                                        <i class="fab fa-snapchat-ghost social__icon"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -552,17 +578,17 @@
 
             <div class="footer__copyright">
                 <div class="container-xl">
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row align-items-center">
+                        <div class="d-none d-md-block col-md-3 col-xl-2">
                             <div class="logo">
                                 <a href="index.html" class="logo__link">
-                                    <img src="../../../../slike/zadaci/primer18/logo-black-2.png" alt="logo" width="150"
+                                    <img src="../../../../slike/zadaci/primer18/logo-black-2.png" alt="logo" width="180"
                                         class="logo__image">
                                 </a>
                             </div>
                         </div>
 
-                        <div class="col-8">
+                        <div class="col col-md-9 col-xl-10">
                             <p class="footer__paragraph">
                                 <span class="footer__text">Copyright &copy; 1996-2015 National
                                     Geographic Society

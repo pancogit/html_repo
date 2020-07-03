@@ -1,0 +1,47 @@
+/************************************ tabs ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.tabs {
+
+    &__heading {
+        margin: 0;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: variables.$tabs-link-font-size;
+        margin-right: variables.$tabs-link-margin-right;
+        margin-top: variables.$tabs-link-margin-top;
+        color: colors.$tabs-link-color;
+
+        &--active, &:hover {
+            color: black;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        // reset list
+        @include mixins.reset_list();
+
+        // set bottom border
+        @include mixins.set_border_bottom($border-bottom-color: colors.$tabs-border-bottom-color,
+                                          $border-bottom-width: variables.$tabs-border-bottom-width);
+    }
+
+    &__navigation {
+
+    }
+}

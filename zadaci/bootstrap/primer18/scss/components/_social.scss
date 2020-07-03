@@ -1,0 +1,32 @@
+/*********************************** social **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+
+    // reset list
+    @include mixins.reset_list();
+
+    &__item {
+        
+    }
+
+    &__link {
+        display: inline-block;
+        margin-right: variables.$social-link-margin;
+        margin-bottom: variables.$social-link-margin;
+        color: white;
+
+        &:hover {
+            color: colors.$social-icon-hover;
+        }
+    }
+
+    &__icon {
+        font-size: variables.$social-icon-font-size;
+    }
+}

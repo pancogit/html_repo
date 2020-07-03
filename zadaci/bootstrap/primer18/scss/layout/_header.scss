@@ -10,6 +10,7 @@
 @use '../bootstrap/bootstrap';
 
 .header {
+    margin-bottom: variables.$header-margin;
 
     &__nav {
         
@@ -32,7 +33,9 @@
     }
 
     &__navbar {
-        background-color: colors.$header-navbar-background-color;
+        // background gradients color is used on whole page rather than separated color tracks
+        // .page component is filled with gradients color for this effect
+        // background-color: colors.$header-navbar-background-color;
 
         // set borders
         @include mixins.set_border_top($border-top-color: colors.$header-border-color,
@@ -40,6 +43,8 @@
     }
 
     &__ads {
-        background-color: colors.$header-ads-background-color;
+        // background gradients color is used on whole page rather than separated color tracks
+        // .page component is filled with gradients color for this effect
+        // background-color: colors.$header-ads-background-color;
     }
 }

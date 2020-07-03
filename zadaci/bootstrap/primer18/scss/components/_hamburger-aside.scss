@@ -1,0 +1,26 @@
+/****************************** hamburger-aside ******************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.hamburger-aside {
+    padding-bottom: variables.$hamburger-aside-padding-bottom;
+
+    &__link {
+        display: inline-block;
+        color: colors.$hamburger-aside-color;
+
+        // add small transition on link
+        transition: variables.$navigation-link-transition;
+
+        // element modifier for link
+        &:hover {
+            color: black;
+        }
+    }
+
+    &__icon {
+        font-size: variables.$hamburger-menu-icon-size;
+    }
+}

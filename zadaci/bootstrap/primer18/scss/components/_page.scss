@@ -4,4 +4,10 @@
 @use '../base/variables';
 
 .page {
+    // fallback color if browser doesn't support gradients
+    background: colors.$page-background;
+
+    // color gradients with mixture of three colors for better look and
+    // smooth transition between colors
+    background: colors.$page-background-gradient;
 }

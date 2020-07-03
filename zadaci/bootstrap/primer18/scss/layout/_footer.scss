@@ -6,6 +6,69 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
 
 .footer {
+    background-color: black;
+    color: white;
+
+    &__links {
+        padding-top: variables.$footer-links-padding;
+
+        // change padding for larger screens
+        @include bootstrap.media-breakpoint-up(lg) {
+            padding-bottom: variables.$footer-links-padding;
+        }
+
+        // set bottom border for medium screens and above
+        @include bootstrap.media-breakpoint-up(md) {
+            @include mixins.set_border_bottom($border-bottom-color: colors.$footer-links-border-bottom-color,
+                                              $border-bottom-width: variables.$footer-links-border-bottom-width);
+        }
+    }
+
+    &__copyright {
+
+    }
+
+    &__divider {
+        display: inline-block;
+        margin: variables.$footer-divider-margin;
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        font-size: variables.$footer-heading-font-size;
+        letter-spacing: variables.$footer-heading-letter-spacing;
+
+    }
+
+    &__item {
+        margin-bottom: variables.$footer-item-margin;
+    }
+
+    &__link {
+        color: white;
+        font-size: variables.$footer-link-font-size;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__paragraph {
+        color: colors.$footer-paragraph-color;
+        line-height: variables.$footer-paragraph-line-height;
+        font-size: variables.$footer-paragraph-font-size;
+    }
+
+    &__text {
+
+    }
 }

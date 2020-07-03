@@ -2,6 +2,47 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../base/mixins';
 
 .menu {
+    margin-bottom: variables.$menu-margin-bottom;
+
+    &__item {
+        @include mixins.set_border_bottom($border-bottom-color: #9b9b9b,
+                                          $border-bottom-width: 0.2rem);
+
+        &:first-child {
+            @include mixins.set_border_top($border-top-color: #9b9b9b,
+                                           $border-top-width: 0.2rem);
+        }
+
+        // element modifier which removes top border
+        // because :first-child pseudoelement is used, it inreases selector specificity
+        // and that's the reason why important is used there
+        &--border-top-none {
+            border-top: none !important;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: variables.$menu-link-padding;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: variables.$menu-link-font-size;
+
+        // same properties on both hover state and active link
+        &:hover, &--active {
+            background-color: white;
+            color: colors.$menu-link-hover-active-color;
+        }
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+
+        margin-top: variables.$menu-list-margin-top;
+    }
 }
