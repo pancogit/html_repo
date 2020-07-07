@@ -1,0 +1,66 @@
+// variables
+
+// global
+$global-font-family: 'Times New Roman', Times, serif;
+
+// generic width, height
+$width-full: 100%;
+
+// header
+$header-z-index: 1000;
+
+// navigation
+$navigation-link-padding: 1rem;
+$navigation-link-transition: border-top 0.2s;
+
+// location
+$location-link-font-size: 0.85rem;
+$location-link-margin-bottom: 0.7rem;
+$location-icon-margin-right: 0.3rem;
+$location-offer-padding: 0.5rem;
+$location-telephone-transition: 0.5s;
+$location-telephone-margin-right: 1rem;
+$location-call-margin-right: 0.5rem;
+
+// hamburger-menu
+$hamburger-menu-padding: 0.2rem 0.5rem;
+$hamburger-menu-font-size: 2rem;
+$hamburger-menu-border-width: 0.1rem;
+
+// location-mobile
+$location-mobile-marker-margin: 1rem;
+$location-mobile-offer-flex-basis: 14rem;
+$location-mobile-offer-border-width: 0.1rem;
+
+// main
+$main-padding-bottom-1: 4rem;
+$main-padding-bottom-2: 8rem;
+$main-heading-level-1-font-size-1: 2.5rem;
+$main-heading-level-1-font-size-2: 5rem;
+$main-heading-level-2-font-size: 2rem;
+$main-heading-level-3-font-size: 1.4rem;
+$main-heading-level-3-margin-top: 1rem;
+$main-heading-level-3-margin-bottom: 4rem;
+
+// sign-in
+$sing-in-margin-bottom: 1rem;
+$sing-in-font-size-1: 1.5rem;
+$sing-in-font-size-2: 2.2rem;
+$sign-in-font-size: 0.7rem;
+$sign-in-form-input-padding: 0.8rem 1rem;
+
+// for ie width must be smaller
+$sign-in-form-input-width: 40%;
+
+$sign-in-form-input-margin: 0.6rem;
+$sign-in-privacy-margin-top: 1.2rem;
+$sign-in-button-font-size: 1.2rem;
+
+// footer
+$footer-border-top-width: 0.25rem;
+$footer-sign-in-margin-1: 2.5rem 0;
+$footer-sign-in-margin-2: 4.5rem 0;
+$footer-copy-border-top-width: 0.05rem;
+$footer-paragraph-margin-top: 2rem;
+$footer-paragraph-margin-bottom: 3rem;
+$footer-paragraph-font-size: 0.85rem;

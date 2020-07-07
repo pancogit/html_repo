@@ -1,0 +1,16 @@
+/******************************* location-mobile *****************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.location-mobile {
+
+    &__icon {
+        margin-right: variables.$location-icon-margin-right;
+        color: colors.$yellow-theme-color;
+    }
+
+    &__text {
+        color: colors.$white-theme-color;
+    }
+}

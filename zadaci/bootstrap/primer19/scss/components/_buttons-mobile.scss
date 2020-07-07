@@ -1,0 +1,67 @@
+/******************************** buttons-mobile *****************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.buttons-mobile {
+    // buttons should be sticky positioned to look like navigation menu as 
+    // user scroll down the page
+    position: sticky;
+    top: 0;
+    z-index: variables.$header-z-index;
+
+    &__buttons {
+        // set container for buttons flexbox and center them vertically
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__offer {
+
+        // flex items should be full width for smallest screens and without left borders
+        // for normal and larger screens, flex items should be half a width with left borders
+        @include bootstrap.media-breakpoint-up(xs) {
+            flex: 1 1 variables.$width-full;
+        }
+
+        // spread flex item to free remaining space with flex grow
+        // set flex item to shrink and with equal width (starting and wrapping width 14rem)
+        @include bootstrap.media-breakpoint-up(sm) {
+            flex: 1 1 variables.$location-mobile-offer-flex-basis;
+        }
+
+        // set left border for every element except first, but for normal and larger screens
+        + .buttons-mobile__offer {
+            @include bootstrap.media-breakpoint-up(sm) {
+                @include mixins.set_border_left($border-left-color: colors.$black-theme-color,
+                                                $border-left-width: variables.$location-mobile-offer-border-width);
+            }            
+        }
+        
+        // set flex container to center text inside
+        display: flex;
+
+        padding: variables.$location-offer-padding;
+        color: colors.$black-theme-color;
+        background-color: colors.$yellow-theme-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: variables.$location-telephone-transition;
+
+        &:hover {
+            background-color: colors.$location-offer-background-color;
+        }
+    }
+
+    &__offer-text {
+        // center flex item with automatic margins
+        margin: 0 auto;
+    }
+
+    &__marker {
+        margin-right: variables.$location-mobile-marker-margin;
+    }
+}

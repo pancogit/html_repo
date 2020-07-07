@@ -1,0 +1,23 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H E A D E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.header {
+
+    @include bootstrap.media-breakpoint-up(md) {
+        // set header to sticky positioning to move as user scroll mouse down
+        position: sticky;
+        top: 0;
+
+        // set z-index to not overlap text from other page parts
+        z-index: variables.$header-z-index;
+    }
+
+    background-color: colors.$black-theme-color;
+}
