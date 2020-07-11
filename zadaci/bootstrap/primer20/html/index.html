@@ -20,10 +20,10 @@
 
     <div class="page">
         <div class="container-xl page__content">
-            <header class="header">
+            <header class="header mb-md-3">
                 <div class="header__logo">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-5 col-lg-4 mb-3 mb-md-0">
                             <div class="logo">
                                 <a href="index.html" class="logo__link">
                                     <h1 class="logo__heading">Home Projects</h1>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="offset-md-2 col-md-5 offset-lg-4 col-lg-4">
                             <form class="search">
                                 <input type="search" name="search-input" class="search__input" />
                                 <input type="submit" value="Search this site" class="search__button" />
@@ -40,15 +40,19 @@
                     </div>
                 </div>
 
-                <div class="header__image">
+                <div class="header__image mt-md-2">
                     <div class="row">
-                        <div class="col">
-                            <a href="index.html" class="header__link">
-                                <h2 class="header__project">My Own Project Center</h2>
+                        <div class="col-12 col-md-auto">
+                            <a href="index.html" class="header__badge">
+                                <h2 class="header__project">
+                                    <span class="header__heading header__heading--normal">My Own</span>
+                                    <span class="header__heading header__heading--large">Project</span>
+                                    <span class="header__heading header__heading--normal">Center</span>
+                                </h2>
                             </a>
                         </div>
 
-                        <div class="col">
+                        <div class="col-sm-12 col-md d-none d-sm-block">
                             <div class="header__background-image">
                                 <!-- background image here -->
 
@@ -64,12 +68,12 @@
                     </div>
                 </div>
 
-                <div class="header__track"></div>
+                <div class="header__track mt-md-2 d-none d-md-block"></div>
             </header>
 
             <main class="main">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-3">
                         <div class="main__nav">
                             <nav class="navigation">
                                 <ul class="navigation__list">
@@ -100,7 +104,7 @@
                                 </ul>
                             </nav>
 
-                            <div class="vacation">
+                            <div class="vacation vacation--negative-top-margin">
                                 <p class="vacation__number">221</p>
                                 <p class="vacation__days">days until</p>
                                 <p class="vacation__family">Family Vacation</p>
@@ -139,6 +143,14 @@
                                 <img src="../../../../slike/zadaci/primer20/certified-logo-1.jpg"
                                     alt="certificate picture" width="150" class="certificate__image" />
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col d-none">
+                        <div class="hamburger">
+                            <a href="index.html" class="hamburger__link">
+                                <i class="fas fa-bars hamburger__icon"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -250,8 +262,9 @@
                                         </p>
 
                                         <div class="calendar__header">
-                                            <button class="button">Today</button>
-                                            <div class="pagination">
+                                            <button
+                                                class="button button--margin-right button--margin-bottom">Today</button>
+                                            <div class="pagination pagination--margin-right pagination--margin-bottom">
                                                 <a href="index.html" class="pagination__arrow">
                                                     <i class="fas fa-caret-left pagination__icon"></i>
                                                 </a>
@@ -259,7 +272,7 @@
                                                     <i class="fas fa-caret-right pagination__icon"></i>
                                                 </a>
                                             </div>
-                                            <select name="month" class="month">
+                                            <select name="month" class="month month--margin-right month--margin-bottom">
                                                 <option value="january" class="month__item">January
                                                     2010</option>
                                                 <option value="february" class="month__item">February
@@ -285,14 +298,16 @@
                                                 <option value="december" class="month__item">December
                                                     2010</option>
                                             </select>
-                                            <div class="printer">
+                                            <div class="printer printer--margin-right printer--margin-bottom">
                                                 <a href="index.html" class="printer__link">
                                                     <img src="../../../../slike/zadaci/primer20/printer-1.png"
                                                         alt="printer picture" width="25" class="printer__icon" />
                                                     <span class="printer__text">Print</span>
                                                 </a>
                                             </div>
-                                            <a href="index.html" class="calendar__week">Week &darr;</a>
+                                            <a href="index.html"
+                                                class="calendar__week calendar__week--margin-right calendar__week--margin-bottom">Week
+                                                &darr;</a>
                                         </div>
 
                                         <div class="calendar__body">

@@ -4225,7 +4225,278 @@ html {
   }
 }
 /************************************ page ***********************************************/
+.page__content {
+  background-color: #ececec;
+}
+@media (max-width: 767.98px) {
+  .page__content {
+    padding: 0;
+  }
+}
+
 /************************************ logo ***********************************************/
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.logo__heading {
+  margin: 0;
+  font-weight: normal;
+  font-size: 2.5rem;
+  color: #494949;
+}
+.logo__link {
+  display: inline-block;
+}
+
+/*********************************** search **********************************************/
+.search {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.search__button {
+  padding: 0.42rem 0.5rem;
+  margin-left: -2px;
+  font-weight: bold;
+  background-color: #7f4307;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  outline: none;
+}
+.search__button:hover {
+  background-color: #6a3807;
+}
+.search__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.65rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-style: solid;
+  border-color: #e6e6e6;
+  border-width: 2px;
+  outline: none;
+}
+.search__input:focus {
+  border-color: #7f4307;
+}
+
+/********************************* navigation ********************************************/
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.navigation__link {
+  display: block;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #9c5f20;
+}
+.navigation__link:hover {
+  background-color: #b56a22;
+  color: white;
+}
+
+/********************************** vacation *********************************************/
+.vacation {
+  text-align: center;
+  color: #525252;
+}
+.vacation--negative-top-margin {
+  margin-top: -1rem;
+}
+.vacation__number {
+  margin: 0;
+  font-size: 6rem;
+  font-weight: bold;
+}
+.vacation__days {
+  margin-top: -0.5rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+.vacation__family {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/********************************** activity *********************************************/
+.activity__edit {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  color: #515151;
+}
+.activity__heading {
+  padding: 0.5rem;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #515151;
+}
+.activity__item {
+  padding: 0.5rem;
+}
+.activity__item--view-all {
+  padding-bottom: 0.8rem;
+  border-top-style: solid;
+  border-top-color: #515151;
+  border-top-width: 0.1rem;
+  border-bottom-style: solid;
+  border-bottom-color: #515151;
+  border-bottom-width: 0.5rem;
+}
+.activity__link {
+  font-size: 1.1rem;
+  color: #ad5901;
+  text-decoration: underline;
+}
+.activity__link:hover {
+  text-decoration: none;
+}
+.activity__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/******************************** certificate ********************************************/
+.certificate {
+  padding: 1rem;
+  text-align: center;
+}
+/********************************** reminder *********************************************/
+.reminder {
+  margin-bottom: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.reminder__content {
+  vertical-align: top;
+}
+.reminder__data {
+  padding: 0.5rem;
+  color: #515151;
+}
+.reminder__header {
+  color: white;
+  background-color: #b46c22;
+}
+.reminder__heading {
+  padding: 0.5rem;
+}
+.reminder__important {
+  font-weight: bold;
+}
+.reminder__link {
+  color: #ad5901;
+  text-decoration: underline;
+}
+.reminder__link:hover {
+  text-decoration: none;
+}
+.reminder__row {
+  border-bottom-style: solid;
+  border-bottom-color: #515151;
+  border-bottom-width: 0.1rem;
+}
+.reminder__summary {
+  padding: 0.5rem;
+  color: #515151;
+}
+
+/********************************** calendar *********************************************/
+.calendar__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.calendar__week--margin-right {
+  margin-right: 0.5rem;
+}
+.calendar__week--margin-bottom {
+  margin-bottom: 0.5rem;
+}
+
+/*********************************** button **********************************************/
+.button {
+  padding: 0.2rem 0.5rem;
+  font-size: 1.1rem;
+  border: 0;
+  outline: none;
+  background-color: #7f4307;
+  color: white;
+  border-radius: 3px;
+}
+.button:hover {
+  background-color: #6a3807;
+}
+.button--margin-right {
+  margin-right: 0.5rem;
+}
+.button--margin-bottom {
+  margin-bottom: 0.5rem;
+}
+
+/********************************* pagination ********************************************/
+.pagination {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.pagination--margin-right {
+  margin-right: 0.5rem;
+}
+.pagination--margin-bottom {
+  margin-bottom: 0.5rem;
+}
+.pagination__arrow {
+  display: flex;
+  align-items: center;
+  margin-right: 0.2rem;
+  background-color: #769abd;
+  padding: 0.1rem 1rem;
+  border-radius: 2px;
+}
+.pagination__arrow:hover {
+  background-color: #6085a9;
+}
+.pagination__icon {
+  font-size: 1.3rem;
+  color: white;
+}
+
+/*********************************** month ***********************************************/
+.month {
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+.month--margin-right {
+  margin-right: 0.5rem;
+}
+.month--margin-bottom {
+  margin-bottom: 0.5rem;
+}
+/********************************** printer **********************************************/
+.printer--margin-right {
+  margin-right: 0.5rem;
+}
+.printer--margin-bottom {
+  margin-bottom: 0.5rem;
+}
+.printer__link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
 /*****************************************************************************************/
 /*****************************************************************************************/
 /*************************** G L O B A L *************************************************/
@@ -4233,6 +4504,9 @@ html {
 /*****************************************************************************************/
 body {
   margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: #515151;
+  background: linear-gradient(90deg, #515151 0%, #2a2a2a 100%);
 }
 
 a {
@@ -4244,6 +4518,67 @@ a {
 /*************************** H E A D E R *************************************************/
 /*****************************************************************************************/
 /*****************************************************************************************/
+.header__logo {
+  background-color: white;
+  padding: 1rem;
+}
+.header__badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: 100%;
+  background-color: #7f4307;
+  color: white;
+}
+.header__project {
+  margin: 0;
+  text-align: center;
+  transform: rotateZ(-15deg);
+  padding: 1rem;
+}
+.header__heading {
+  display: block;
+  margin-bottom: -0.5rem;
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.1rem;
+}
+.header__heading--normal {
+  font-size: 1.2rem;
+}
+.header__heading--large {
+  font-size: 2rem;
+}
+.header__background-image {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-image: url("../../../../slike/zadaci/primer20/nature-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.header__background-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 70%, white 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 76%, white 100%);
+  color: white;
+  text-align: center;
+}
+.header__text {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.header__track {
+  height: 2rem;
+  background-color: #313131;
+  background: linear-gradient(0deg, #232323 0%, #313131 51%);
+}
+
 /*****************************************************************************************/
 /*****************************************************************************************/
 /*************************** F O O T E R *************************************************/
@@ -4254,5 +4589,39 @@ a {
 /*************************** H O M E P A G E *********************************************/
 /*****************************************************************************************/
 /*****************************************************************************************/
+.main {
+  padding: 0.2rem 1rem;
+  background-color: white;
+  border-style: solid;
+  border-color: #cacaca;
+  border-width: 0.1rem;
+}
+.main__heading {
+  margin-top: 0;
+  color: #723802;
+}
+.main__content {
+  padding-top: 0.5rem;
+}
+.main__image {
+  width: 100%;
+}
+.main__note {
+  margin-top: 0;
+  font-style: italic;
+  color: #727272;
+}
+.main__tip {
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-size: 1.3rem;
+}
+.main__how-to {
+  text-decoration: underline;
+  color: #9c1d2f;
+}
+.main__how-to:hover {
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=page.css.map */

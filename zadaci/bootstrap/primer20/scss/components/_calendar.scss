@@ -1,0 +1,69 @@
+/********************************** calendar *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.calendar {
+
+    &__body {
+
+    }
+
+    &__box {
+
+    }
+
+    &__data {
+
+    }
+
+    &__day {
+
+        &--other {
+
+        }
+    }
+
+    &__header {
+        // create flex container and vertically align all flex items inside it
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__header-row {
+
+    }
+
+    &__record {
+
+    }
+
+    &__table {
+
+    }
+
+    &__tbody {
+
+    }
+
+    &__th {
+
+    }
+
+    &__thead {
+
+    }
+
+    &__week {
+
+        &--margin-right {
+            margin-right: variables.$calendar-heading-margin;
+        }
+    
+        &--margin-bottom {
+            margin-bottom: variables.$calendar-heading-margin;
+        }
+    }
+}

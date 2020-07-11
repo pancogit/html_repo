@@ -1,0 +1,22 @@
+/********************************** printer **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.printer {
+
+    &--margin-right {
+        margin-right: variables.$calendar-heading-margin;
+    }
+
+    &--margin-bottom {
+        margin-bottom: variables.$calendar-heading-margin;
+    }
+
+    &__link {
+        // create flex container and vertically align all flex items inside it
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}

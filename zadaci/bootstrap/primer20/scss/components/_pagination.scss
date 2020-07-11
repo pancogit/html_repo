@@ -1,0 +1,38 @@
+/********************************* pagination ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.pagination {
+    display: flex;
+    flex-wrap: nowrap;
+
+    // block modifier classes for creating space horizontally and vertically if needed
+    &--margin-right {
+        margin-right: variables.$calendar-heading-margin;
+    }
+
+    &--margin-bottom {
+        margin-bottom: variables.$calendar-heading-margin;
+    }
+
+    &__arrow {
+        // create flexbox container to vertically align icons
+        display: flex;
+        align-items: center;
+
+        margin-right: variables.$pagination-arrow-margin-right;
+        background-color: colors.$pagination-arrow-background-color;
+        padding: variables.$pagination-arrow-padding;
+        border-radius: variables.$pagination-arrow-border-radius;
+
+        &:hover {
+            background-color: colors.$pagination-arrow-background-color-hover;
+        }
+    }
+
+    &__icon {
+        font-size: variables.$pagination-icon-font-size;
+        color: colors.$pagination-icon-color;
+    }
+}

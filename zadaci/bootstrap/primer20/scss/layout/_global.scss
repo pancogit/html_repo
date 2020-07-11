@@ -9,6 +9,9 @@
 
 body {
     margin: 0;
+    font-family: variables.$global-font-family;
+    background: colors.$global-background-fallback;
+    background: colors.$global-background;
 }
 
 a {

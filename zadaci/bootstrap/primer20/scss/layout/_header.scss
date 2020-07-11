@@ -8,4 +8,93 @@
 @use '../base/variables';
 
 .header {
+
+    &__logo {
+        background-color: colors.$header-logo-background-color;
+        padding: variables.$header-logo-padding;
+    }
+
+    &__badge {
+        // center items on both axis
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: variables.$header-badge-padding;
+        height: variables.$width-full;
+        background-color: colors.$header-badge-background-color;
+        color: colors.$header-badge-color;
+    }
+
+    &__project {
+        margin: 0;
+        text-align: center;
+
+        // rotate element a little on Z axis
+        transform: variables.$header-project-transform;
+
+        // when item is rotated it can get closer to edges of container
+        // add paddings for this
+        padding: variables.$header-project-padding;
+    }
+
+    &__heading {
+        // display every heading in new line
+        display: block;
+
+        // put negative bottom margin to compress lines between headings
+        margin-bottom: variables.$header-heading-margin-bottom;
+
+        text-transform: uppercase;
+        font-family: variables.$header-heading-font-family;
+        letter-spacing: variables.$header-heading-letter-spacing;
+
+        &--normal {
+            font-size: variables.$header-heading-font-size-normal;
+            
+        }
+
+        &--large {
+            font-size: variables.$header-heading-font-size-large;
+        }
+    }
+
+    &__background-image {
+        // stretch element to full height with flex container and height set
+        display: flex;
+        flex-direction: column;
+        height: variables.$width-full;
+
+        // set background image
+        background-image: url("../../../../slike/zadaci/primer20/nature-1.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__background-color {
+        // set flex items in column and center them on main axis (columns in this case)
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding: variables.$header-background-color-padding;
+        height: variables.$width-full;
+        background: colors.$header-background-color-gradient-1;
+        background: colors.$header-background-color-gradient-2;
+        color: colors.$header-background-color;
+        text-align: center;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: variables.$header-text-font-size;
+    }
+
+    &__track {
+        height: variables.$header-track-height;
+
+        // main gradient and fallback color for non-supported gradients
+        background-color: colors.$header-track-background-color;
+        background: colors.$header-track-gradient;
+    }
 }

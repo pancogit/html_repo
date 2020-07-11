@@ -1,3 +1,81 @@
 // variables
 
 // global
+$global-font-family: Georgia, 'Times New Roman', Times, serif;
+
+// width, height
+$width-full: 100%;
+
+// header
+$header-logo-padding: 1rem;
+$header-heading-font-family: 'Courier New', Courier, monospace;
+$header-heading-margin-bottom: -0.5rem;
+$header-heading-letter-spacing: 0.1rem;
+$header-heading-font-size-normal: 1.2rem;
+$header-heading-font-size-large: 2rem;
+$header-badge-padding: 0.5rem;
+$header-project-transform: rotateZ(-15deg);
+$header-project-padding: 1rem;
+$header-text-font-size: 1.5rem;
+$header-background-color-padding: 1rem 0.5rem;
+$header-track-height: 2rem;
+
+// logo
+$logo-heading-font-size: 2.5rem;
+
+// search
+$search-input-border-width: 2px;
+$search-input-padding: 0.3rem 0.65rem;
+$search-border-radius: 10px;
+$search-button-padding: 0.42rem 0.5rem;
+$search-button-margin-left: -2px;
+
+// homepage
+$main-border-width: 0.1rem;
+$main-padding: 0.2rem 1rem;
+$main-content-padding-top: 0.5rem;
+$main-tip-margin-bottom: 0.7rem;
+$main-tip-font-size: 1.3rem;
+
+// navigation
+$navigation-link-padding: 0.5rem;
+
+// vacation
+$vacation-negative-margin-top: -1rem;
+$vacation-number-font-size: 6rem;
+$vacation-days-font-size: 1.2rem;
+$vacation-days-margin-top: -0.5rem;
+
+// activity
+$activity-heading-padding: 0.5rem;
+$activity-heading-font-size: 1.2rem;
+$activity-edit-margin-top: 0.5rem;
+$activity-link-font-size: 1.1rem;
+$activity-item-view-all-border-top-width: 0.1rem;
+$activity-item-view-all-border-bottom-width: 0.5rem;
+$activity-item-view-all-padding-bottom: 0.8rem;
+
+// certificate
+$certificate-padding: 1rem;
+
+// reminder
+$reminder-margin-bottom: 1rem;
+$reminder-data-padding: 0.5rem;
+$reminder-row-border-bottom-width: 0.1rem;
+
+// button
+$button-padding: 0.2rem 0.5rem;
+$button-font-size: 1.1rem;
+$button-border-radius: 3px;
+
+// pagination
+$pagination-arrow-margin-right: 0.2rem;
+$pagination-arrow-padding: 0.1rem 1rem;
+$pagination-arrow-border-radius: 2px;
+$pagination-icon-font-size: 1.3rem;
+
+// month
+$month-font-size: 1.2rem;
+
+// calendar
+$calendar-heading-margin: 0.5rem;

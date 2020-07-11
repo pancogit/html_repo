@@ -1,0 +1,27 @@
+/*********************************** button **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.button {
+    padding: variables.$button-padding;
+    font-size: variables.$button-font-size;
+    border: 0;
+    outline: none;
+    background-color: colors.$button-background-color;
+    color: colors.$button-color;
+    border-radius: variables.$button-border-radius;
+
+    &:hover {
+        background-color: colors.$button-background-color-hover;
+    }
+
+    // add block modifiers when needed to separate elements in row and column
+    &--margin-right {
+        margin-right: variables.$calendar-heading-margin;
+    }
+
+    &--margin-bottom {
+        margin-bottom: variables.$calendar-heading-margin;
+    }
+}

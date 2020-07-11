@@ -4,4 +4,19 @@
 @use '../base/variables';
 
 .logo {
+    // set flex container and verticaly center flex items
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+
+    &__heading {
+        margin: 0;
+        font-weight: normal;
+        font-size: variables.$logo-heading-font-size;
+        color: colors.$logo-heading-color;
+    }
+
+    &__link {
+        display: inline-block;
+    }
 }

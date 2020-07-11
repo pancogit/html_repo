@@ -1,0 +1,33 @@
+/********************************** vacation *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.vacation {
+    text-align: center;
+    color: colors.$vacation-color;
+
+    // add this block modifier in case that user need to get vacation number closer to top,
+    // because huge font for number makes some space (without margin) by default
+    &--negative-top-margin {
+        margin-top: variables.$vacation-negative-margin-top;
+    }
+
+    &__number {
+        margin: 0;
+        font-size: variables.$vacation-number-font-size;
+        font-weight: bold;
+    }
+
+    &__days {
+        margin-top: variables.$vacation-days-margin-top;
+        margin-bottom: 0;
+        font-size: variables.$vacation-days-font-size;
+    }
+
+    &__family {
+        margin: 0;
+        font-size: variables.$vacation-days-font-size;
+        font-weight: bold;
+    }
+}

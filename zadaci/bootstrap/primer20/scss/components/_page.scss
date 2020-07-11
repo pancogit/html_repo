@@ -2,6 +2,16 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../bootstrap/bootstrap';
 
 .page {
+
+    &__content {
+        background-color: colors.$page-content-background-color;
+
+        // for smaller screens, remove paddings from container to look better
+        @include bootstrap.media-breakpoint-down(sm) {
+            padding: 0;
+        }
+    }
 }

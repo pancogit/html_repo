@@ -9,6 +9,17 @@
 // components
 @use 'components/page';
 @use 'components/logo';
+@use 'components/search';
+@use 'components/navigation';
+@use 'components/vacation';
+@use 'components/activity';
+@use 'components/certificate';
+@use 'components/reminder';
+@use 'components/calendar';
+@use 'components/button';
+@use 'components/pagination';
+@use 'components/month';
+@use 'components/printer';
 
 // layout
 @use 'layout/global';

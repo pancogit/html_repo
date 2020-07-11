@@ -1,0 +1,23 @@
+/*********************************** month ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.month {
+    font-weight: bold;
+    font-size: variables.$month-font-size;
+    border: none;
+    outline: none;
+
+    &--margin-right {
+        margin-right: variables.$calendar-heading-margin;
+    }
+
+    &--margin-bottom {
+        margin-bottom: variables.$calendar-heading-margin;
+    }
+
+    &__item {
+       
+    }
+}

@@ -1,0 +1,29 @@
+/********************************* navigation ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.navigation {
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        display: block;
+        padding: variables.$navigation-link-padding;
+        font-weight: bold;
+        color: colors.$navigation-link-color;
+
+        &:hover {
+            background-color: colors.$navigation-link-background-color-hover;
+            color: colors.$navigation-link-color-hover;
+        }
+    }
+}
