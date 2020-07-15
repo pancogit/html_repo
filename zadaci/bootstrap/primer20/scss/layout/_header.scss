@@ -6,12 +6,13 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../bootstrap/bootstrap';
 
 .header {
 
     &__logo {
-        background-color: colors.$header-logo-background-color;
         padding: variables.$header-logo-padding;
+        background-color: colors.$header-logo-background-color;
     }
 
     &__badge {
@@ -66,7 +67,7 @@
         height: variables.$width-full;
 
         // set background image
-        background-image: url("../../../../slike/zadaci/primer20/nature-1.jpg");
+        background-image: url("../../../../slike/zadaci/primer20/nature-1b.jpg");
         background-size: cover;
         background-position: center;
     }
@@ -96,5 +97,23 @@
         // main gradient and fallback color for non-supported gradients
         background-color: colors.$header-track-background-color;
         background: colors.$header-track-gradient;
+    }
+
+    &__image {
+
+    }
+
+    &__row {
+        // for smaller screens, remove negative margins from row in header with background image
+        @include bootstrap.media-breakpoint-down(sm) {
+            margin: 0;
+        }
+    }
+
+    &__col {
+        // for smaller screens, remove paddings from column in header with background image
+        @include bootstrap.media-breakpoint-down(sm) {
+            padding: 0;
+        }
     }
 }

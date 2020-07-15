@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
 
     <!-- include bootstrap and custom css -->
-    <link href="../css/page.css" rel="stylesheet" type="text/css" />
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
 
     <!-- font awesome for icons -->
     <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
@@ -41,8 +41,8 @@
                 </div>
 
                 <div class="header__image mt-md-2">
-                    <div class="row">
-                        <div class="col-12 col-md-auto">
+                    <div class="row header__row">
+                        <div class="col-12 col-md-auto header__col">
                             <a href="index.html" class="header__badge">
                                 <h2 class="header__project">
                                     <span class="header__heading header__heading--normal">My Own</span>
@@ -52,7 +52,7 @@
                             </a>
                         </div>
 
-                        <div class="col-sm-12 col-md d-none d-sm-block">
+                        <div class="col-sm-12 col-md d-none d-sm-block header__col">
                             <div class="header__background-image">
                                 <!-- background image here -->
 
@@ -72,8 +72,16 @@
             </header>
 
             <main class="main">
+                <div class="my-2 d-md-none">
+                    <div class="hamburger">
+                        <a href="index.html" class="hamburger__link">
+                            <i class="fas fa-bars hamburger__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-auto d-none d-md-block">
                         <div class="main__nav">
                             <nav class="navigation">
                                 <ul class="navigation__list">
@@ -146,23 +154,15 @@
                         </div>
                     </div>
 
-                    <div class="col d-none">
-                        <div class="hamburger">
-                            <a href="index.html" class="hamburger__link">
-                                <i class="fas fa-bars hamburger__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
                     <div class="col">
                         <div class="main__content">
                             <h1 class="main__heading">Home</h1>
-                            <img src="../../../../slike/zadaci/primer20/nature-1.jpg" alt="nature picture" width="500"
+                            <img src="../../../../slike/zadaci/primer20/nature-1b.jpg" alt="nature picture" width="500"
                                 class="main__image" />
                             <p class="main__note">Note: This template is meant to be a nonpublic site.</p>
 
                             <div class="row">
-                                <div class="col">
+                                <div class="col-lg">
                                     <table class="reminder">
                                         <thead class="reminder__header">
                                             <tr class="reminder__header-row">
@@ -254,7 +254,7 @@
                                     </table>
                                 </div>
 
-                                <div class="col">
+                                <div class="col-lg d-none d-sm-block">
                                     <div class="calendar">
                                         <p class="main__tip">Tip:
                                             <a href="index.html" class="main__how-to">How to replace this
@@ -324,13 +324,13 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody class="calendar__tbody">
-                                                    <tr class="calendar__week">
+                                                    <tr class="calendar__row">
                                                         <td class="calendar__data">
                                                             <div class="calendar__day calendar__day--other">28</div>
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                         <td class="calendar__data">
-                                                            <div class="calendar__day">Mar 1</div>
+                                                            <div class="calendar__day">1</div>
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                         <td class="calendar__data">
@@ -354,7 +354,7 @@
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                     </tr>
-                                                    <tr class="calendar__week">
+                                                    <tr class="calendar__row">
                                                         <td class="calendar__data">
                                                             <div class="calendar__day">7</div>
                                                             <div class="calendar__box"></div>
@@ -384,7 +384,7 @@
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                     </tr>
-                                                    <tr class="calendar__week">
+                                                    <tr class="calendar__row">
                                                         <td class="calendar__data">
                                                             <div class="calendar__day">14</div>
                                                             <div class="calendar__box">
@@ -420,7 +420,7 @@
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                     </tr>
-                                                    <tr class="calendar__week">
+                                                    <tr class="calendar__row">
                                                         <td class="calendar__data">
                                                             <div class="calendar__day">21</div>
                                                             <div class="calendar__box"></div>
@@ -450,7 +450,7 @@
                                                             <div class="calendar__box"></div>
                                                         </td>
                                                     </tr>
-                                                    <tr class="calendar__week">
+                                                    <tr class="calendar__row">
                                                         <td class="calendar__data">
                                                             <div class="calendar__day">28</div>
                                                             <div class="calendar__box"></div>
@@ -492,7 +492,7 @@
             </main>
 
             <footer class="footer">
-                <section class="footer__links">
+                <section class="footer__links d-none d-lg-block">
                     <h2 class="footer__heading">Partner Sites:</h2>
                     <ul class="footer__list">
                         <li class="footer__item">
@@ -513,7 +513,7 @@
                     </ul>
                 </section>
 
-                <section class="footer__links">
+                <section class="footer__links d-none d-lg-block">
                     <h2 class="footer__heading">HomeProjects International:</h2>
                     <ul class="footer__list">
                         <li class="footer__item">
@@ -537,12 +537,13 @@
                     </ul>
                 </section>
 
-                <nav class="menu">
+                <nav class="menu menu--margin-bottom d-lg-none">
                     <ul class="menu__list">
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">
                                 <span class="menu__content">HomeProjects Services</span>
-                                <span class="menu__plus">+</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
                             </a>
                             <div class="menu__dropdown">
                                 <ul class="list">
@@ -561,7 +562,8 @@
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">
                                 <span class="menu__content">HomeProjects Resources</span>
-                                <span class="menu__plus">+</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
                             </a>
                             <div class="menu__dropdown">
                                 <ul class="list">
@@ -592,7 +594,8 @@
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">
                                 <span class="menu__content">For Service Professionals</span>
-                                <span class="menu__plus">+</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
                             </a>
                             <div class="menu__dropdown">
                                 <ul class="list">
@@ -617,7 +620,8 @@
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">
                                 <span class="menu__content">About HomeProjects</span>
-                                <span class="menu__plus">+</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
                             </a>
                             <div class="menu__dropdown">
                                 <ul class="list">
@@ -651,10 +655,11 @@
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">
                                 <span class="menu__content">Partner Sites</span>
-                                <span class="menu__plus">+</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
                             </a>
                             <div class="menu__dropdown">
-                                <ul class="list">
+                                <ul class="list list--margin-bottom">
                                     <li class="list__item">
                                         <h2 class="list__heading">Partner Sites</h2>
                                     </li>
@@ -703,7 +708,7 @@
                     </ul>
                 </nav>
 
-                <div class="social">
+                <div class="social d-lg-none">
                     <h2 class="social__heading">Follow Us</h2>
                     <ul class="social__list">
                         <li class="social__item">
@@ -748,7 +753,7 @@
                             <a href="index.html" class="footer__link">California Privacy</a>
                         </li>
                     </ul>
-                    <a href="index.html" class="footer__link">By using HomeProjects, you agree to our
+                    <a href="index.html" class="footer__link footer__link--line-height">By using HomeProjects, you agree to our
                         <span class="footer__terms">Terms & Conditions</span>
                     </a>
                 </div>

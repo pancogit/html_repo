@@ -19,4 +19,13 @@
         flex-wrap: nowrap;
         align-items: center;
     }
+
+    &__icon {
+        margin-right: variables.$printer-icon-margin-right;
+    }
+
+    &__text {
+        color: colors.$printer-text-color;
+        font-size: variables.$printer-text-font-size;
+    }
 }

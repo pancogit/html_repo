@@ -7,9 +7,11 @@
 @use '../base/colors';
 @use '../base/variables';
 @use '../base/mixins';
+@use '../bootstrap/bootstrap';
 
 .main {
     padding: variables.$main-padding;
+
     background-color: colors.$main-background-color;
 
     @include mixins.set_borders($border-color: colors.$main-border-color,
@@ -31,6 +33,14 @@
 
     &__note {
         margin-top: 0;
+
+        margin-bottom: variables.$main-note-margin-bottom-large;
+
+        // change bottom margin for small screens and larger
+        @include bootstrap.media-breakpoint-up(sm) {
+            margin-bottom: variables.$main-note-margin-bottom-normal;
+        }
+
         font-style: italic;
         color: colors.$main-note-color;
     }

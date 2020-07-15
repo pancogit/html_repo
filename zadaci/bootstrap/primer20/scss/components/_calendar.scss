@@ -7,21 +7,64 @@
 .calendar {
 
     &__body {
-
+        padding: variables.$calendar-body-padding;
+        background-color: colors.$calendar-body-background-color;
+        border-radius: variables.$calendar-body-border-radius;
     }
 
     &__box {
+        text-align: center;
+        background-color: colors.$calendar-box-background-color;
 
+        // set fixed height for box part of calendar
+        height: variables.$calendar-box-height;
     }
 
     &__data {
 
+        // calendar data contain calendar box with can be filled with some
+        // links, stickers and so on
+        // when calendar box content inreases, it can overflow calendar data field
+        // because of this behavior, add overflow to be sure that nothing bad will happen
+        overflow: hidden;
+
+        
+        &:hover {
+            // change overflow property when use hovers over calendar data
+            // user should see whole content when hover over table data, so remove overflow
+            overflow: visible;
+
+            // change background colors of cell parts when table cell is hovered
+            .calendar__day {
+                background-color: colors.$calendar-day-background-color-hover;
+
+                &--other {
+                    background-color: colors.$calendar-day-other-background-color;
+                }
+            }
+
+            .calendar__box {
+                background-color: colors.$calendar-box-background-color-hover;
+            }
+        }
     }
 
     &__day {
+        // vertically/horizontally align box with date number using flexbox
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
 
+        padding-top: variables.$calendar-day-padding-top;
+        padding-bottom: variables.$calendar-day-padding-bottom;
+        padding-right: variables.$calendar-day-padding-right;
+
+        background-color: colors.$calendar-day-background-color;
+
+        // element modifier class
         &--other {
-
+            background-color: colors.$calendar-day-other-background-color;
+            color: colors.$calendar-day-other-color;
         }
     }
 
@@ -37,26 +80,60 @@
     }
 
     &__record {
+        // to change vertically properties (top/bottom paddings/margins, etc)
+        // set display to inline-block for sure
+        display: inline-block;
 
+        margin: variables.$calendar-record-margin;
+        padding: variables.$calendar-record-padding;
+        background-color: colors.$calendar-record-background-color;
+        color: colors.$calendar-record-color;
+        border-radius: variables.$calendar-record-border-radius;
     }
 
     &__table {
+        // set collapsed table model, there are no spaces between rows/cols
+        border-collapse: collapse;
 
+        // table layout is set to auto by default, which means that width of every table column
+        // will be automatically set by width of widest cell in that column
+        // cell width's can vary in length, so this is not good table layout for calendar
+        // where all data cells should be the same width
+        // for this purpose, fixed layout is used, which means that every column in table has
+        // the same width
+        table-layout: fixed;
+
+        // when text inside table cell is larger than it would, overflow can occur
+        // thus text can wrap into new lines changing height of element inside table cell
+        // to disable that wrapping and overflow, set property white space to nowrap
+        white-space: nowrap;
+
+        // set fluid width for responsive table
+        width: variables.$width-full;
     }
 
     &__tbody {
-
+        // by default, table cells inside table body are vertically aligned to center
+        // change this by vertically align cells to top
+        vertical-align: top;
     }
 
     &__th {
-
+        padding: variables.$calendar-th-padding;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: normal;
     }
 
     &__thead {
-
+        color: colors.$calendar-thead-color;
     }
 
     &__week {
+        padding: variables.$calendar-week-padding;
+        background-color: colors.$calendar-week-background-color;
+        color: colors.$calendar-week-color;
+        font-size: variables.$calendar-week-font-size;
 
         &--margin-right {
             margin-right: variables.$calendar-heading-margin;
@@ -65,5 +142,9 @@
         &--margin-bottom {
             margin-bottom: variables.$calendar-heading-margin;
         }
+    }
+
+    &__row {
+
     }
 }

@@ -1,0 +1,31 @@
+/************************************ list ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.list {
+    padding-left: variables.$list-padding-left;
+    text-align: left;
+    list-style-type: none;
+
+    // block modifier for list
+    &--margin-bottom {
+        margin-bottom: variables.$list-margin-bottom;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$list-heading-color;
+        font-size: variables.$list-heading-font-size;
+    }
+
+    &__item {
+        margin: variables.$list-item-margin;
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$list-link-color;
+        font-size: variables.$list-link-font-size;
+    }
+}

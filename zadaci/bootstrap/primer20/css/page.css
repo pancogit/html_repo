@@ -4225,6 +4225,9 @@ html {
   }
 }
 /************************************ page ***********************************************/
+.page {
+  min-width: 20rem;
+}
 .page__content {
   background-color: #ececec;
 }
@@ -4412,10 +4415,80 @@ html {
 }
 
 /********************************** calendar *********************************************/
+.calendar__body {
+  padding: 0 0.5rem 0.5rem;
+  background-color: #c3d9ff;
+  border-radius: 4px;
+}
+.calendar__box {
+  text-align: center;
+  background-color: white;
+  height: 2.5rem;
+}
+.calendar__data {
+  overflow: hidden;
+}
+.calendar__data:hover {
+  overflow: visible;
+}
+.calendar__data:hover .calendar__day {
+  background-color: #bbccdc;
+}
+.calendar__data:hover .calendar__day--other {
+  background-color: #ececdc;
+}
+.calendar__data:hover .calendar__box {
+  background-color: #fffecd;
+}
+.calendar__day {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.2rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.4rem;
+  background-color: #e7eef6;
+}
+.calendar__day--other {
+  background-color: #ececdc;
+  color: #775e5e;
+}
 .calendar__header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+}
+.calendar__record {
+  display: inline-block;
+  margin: 0.15rem;
+  padding: 0.4rem;
+  background-color: #5d89cc;
+  color: white;
+  border-radius: 4px;
+}
+.calendar__table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+  width: 100%;
+}
+.calendar__tbody {
+  vertical-align: top;
+}
+.calendar__th {
+  padding: 0.2rem;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: normal;
+}
+.calendar__thead {
+  color: #3e42c2;
+}
+.calendar__week {
+  padding: 0.5rem;
+  background-color: #e9eef7;
+  color: #3e42c2;
+  font-size: 1.2rem;
 }
 .calendar__week--margin-right {
   margin-right: 0.5rem;
@@ -4423,7 +4496,6 @@ html {
 .calendar__week--margin-bottom {
   margin-bottom: 0.5rem;
 }
-
 /*********************************** button **********************************************/
 .button {
   padding: 0.2rem 0.5rem;
@@ -4496,6 +4568,132 @@ html {
   flex-wrap: nowrap;
   align-items: center;
 }
+.printer__icon {
+  margin-right: 0.4rem;
+}
+.printer__text {
+  color: black;
+  font-size: 1.2rem;
+}
+
+/********************************* hamburger *********************************************/
+.hamburger__link {
+  display: inline-block;
+  color: #7f4307;
+}
+.hamburger__link:hover {
+  color: #6a3807;
+}
+.hamburger__icon {
+  font-size: 1.7rem;
+}
+
+/************************************ menu ***********************************************/
+.menu--margin-bottom {
+  margin-bottom: 3rem;
+}
+.menu__content {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: left;
+}
+.menu__dropdown {
+  display: none;
+  border-top-style: solid;
+  border-top-color: #8c8c8c;
+  border-top-width: 0.1rem;
+  margin-top: 1rem;
+}
+.menu__item {
+  padding: 1rem 0;
+  border-bottom-style: solid;
+  border-bottom-color: #8c8c8c;
+  border-bottom-width: 0.1rem;
+}
+.menu__item:first-of-type {
+  border-top-style: solid;
+  border-top-color: #8c8c8c;
+  border-top-width: 0.1rem;
+}
+.menu__item:hover .menu__dropdown {
+  display: block;
+}
+.menu__item:hover .menu__plus {
+  display: none;
+}
+.menu__item:hover .menu__minus {
+  display: inline-block;
+}
+.menu__link {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.menu__plus {
+  display: inline-block;
+  font-size: 2rem;
+}
+.menu__minus {
+  display: none;
+  font-size: 2rem;
+}
+
+/************************************ list ***********************************************/
+.list {
+  padding-left: 1.6rem;
+  text-align: left;
+  list-style-type: none;
+}
+.list--margin-bottom {
+  margin-bottom: 2rem;
+}
+.list__heading {
+  margin-top: 0;
+  color: #8c8c8c;
+  font-size: 1.3rem;
+}
+.list__item {
+  margin: 0.8rem 0;
+}
+.list__link {
+  display: inline-block;
+  color: white;
+  font-size: 1.15rem;
+}
+
+/*********************************** social **********************************************/
+.social__heading {
+  color: #8c8c8c;
+  font-size: 1.3rem;
+}
+.social__icon {
+  font-size: 3rem;
+}
+.social__item {
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+.social__link {
+  display: inline-block;
+  color: white;
+}
+.social__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2.5rem 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 /*****************************************************************************************/
 /*****************************************************************************************/
@@ -4513,14 +4711,18 @@ a {
   text-decoration: none;
 }
 
+main, header, footer, nav, section, article, aside {
+  display: block;
+}
+
 /*****************************************************************************************/
 /*****************************************************************************************/
 /*************************** H E A D E R *************************************************/
 /*****************************************************************************************/
 /*****************************************************************************************/
 .header__logo {
-  background-color: white;
   padding: 1rem;
+  background-color: white;
 }
 .header__badge {
   display: flex;
@@ -4554,7 +4756,7 @@ a {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-image: url("../../../../slike/zadaci/primer20/nature-1.jpg");
+  background-image: url("../../../../slike/zadaci/primer20/nature-1b.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -4578,19 +4780,76 @@ a {
   background-color: #313131;
   background: linear-gradient(0deg, #232323 0%, #313131 51%);
 }
+@media (max-width: 767.98px) {
+  .header__row {
+    margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .header__col {
+    padding: 0;
+  }
+}
 
 /*****************************************************************************************/
 /*****************************************************************************************/
 /*************************** F O O T E R *************************************************/
 /*****************************************************************************************/
 /*****************************************************************************************/
+.footer {
+  padding: 2.5rem 1rem 1rem;
+  background-color: #1e2533;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .footer {
+    margin-top: 1rem;
+  }
+}
+.footer__copy {
+  color: #8c8c8c;
+  line-height: 1.5rem;
+}
+.footer__heading {
+  margin-top: 0;
+  color: #8c8c8c;
+  font-weight: normal;
+  font-size: 1rem;
+}
+.footer__item {
+  margin-bottom: 0.5rem;
+}
+.footer__item + .footer__item::before {
+  content: "|";
+  display: inline-block;
+  color: white;
+  margin-left: 0.3rem;
+}
+.footer__link {
+  display: inline-block;
+  color: white;
+}
+.footer__link--line-height {
+  line-height: 1.5rem;
+}
+.footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+.footer__terms {
+  text-decoration: underline;
+}
+
 /*****************************************************************************************/
 /*****************************************************************************************/
 /*************************** H O M E P A G E *********************************************/
 /*****************************************************************************************/
 /*****************************************************************************************/
 .main {
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 1rem 2rem;
   background-color: white;
   border-style: solid;
   border-color: #cacaca;
@@ -4608,8 +4867,14 @@ a {
 }
 .main__note {
   margin-top: 0;
+  margin-bottom: 2rem;
   font-style: italic;
   color: #727272;
+}
+@media (min-width: 576px) {
+  .main__note {
+    margin-bottom: 1rem;
+  }
 }
 .main__tip {
   margin-top: 0;

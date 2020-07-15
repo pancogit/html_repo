@@ -5,6 +5,7 @@
 @use '../bootstrap/bootstrap';
 
 .page {
+    min-width: variables.$page-min-width;
 
     &__content {
         background-color: colors.$page-content-background-color;

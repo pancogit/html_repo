@@ -20,6 +20,10 @@
 @use 'components/pagination';
 @use 'components/month';
 @use 'components/printer';
+@use 'components/hamburger';
+@use 'components/menu';
+@use 'components/list';
+@use 'components/social';
 
 // layout
 @use 'layout/global';

@@ -1,0 +1,92 @@
+/************************************ menu ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.menu {
+
+    // block modifier for bottom margin
+    &--margin-bottom {
+        margin-bottom: variables.$menu-margin-bottom;
+    }
+
+    &__content {
+        display: inline-block;
+        margin-right: variables.$menu-content-margin-right;
+        font-weight: bold;
+        font-size: variables.$menu-content-font-size;
+        text-align: left;
+    }
+
+    // dropdown menu should just be shown to collapse, not to overlay text behind them
+    // because of this, absolute positioning is not used for dropdown menu, just simple block
+    // by default dropdown is not displayed, but when list item is hovered it's shown
+    &__dropdown {
+        display: none;
+
+        // set top border for dropdown to look like separated content inside list item
+        @include mixins.set_border_top($border-top-color: colors.$menu-item-border-color,
+                                       $border-top-width: variables.$menu-item-border-width);
+
+        // add top margin to separate menu link and dropdown
+        margin-top: variables.$menu-dropdown-margin-top;
+    }
+
+    &__item {
+        padding: variables.$menu-item-padding;
+
+        // set borders as separators between list items
+        // set bottom border on every list item
+        @include mixins.set_border_bottom($border-bottom-color: colors.$menu-item-border-color,
+                                          $border-bottom-width: variables.$menu-item-border-width);
+
+        // set top border just on first list item
+        &:first-of-type {
+            @include mixins.set_border_top($border-top-color: colors.$menu-item-border-color,
+                                           $border-top-width: variables.$menu-item-border-width);
+        }
+
+        &:hover {
+            // when list item is hovered, show dropdown menu
+            .menu__dropdown {
+                display: block;
+            }
+
+            // also, when list item is hovered, hide plus (compressed) 
+            // and show minus (expanded) indicator
+            .menu__plus {
+                display: none;
+            }
+
+            .menu__minus {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__link {
+        // set flex container to spread flex items at edges of container
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        color: colors.$menu-link-color;
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__plus {
+        display: inline-block;
+        font-size: variables.$menu-plus-font-size;
+    }
+
+    &__minus {
+        display: none;
+        font-size: variables.$menu-plus-font-size;
+    }
+}
