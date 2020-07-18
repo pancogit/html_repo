@@ -1,0 +1,30 @@
+/********************************* hamburger *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.hamburger {
+    // center vertically hamburger menu and move them to the right edge of container
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: variables.$width-full;
+
+    &__link {
+        display: inline-block;
+        color: colors.$hamburger-link-color;
+
+        // element modifier class for bottom margin when needed
+        &--margin-bottom {
+            margin-bottom: variables.$hamburger-link-margin-bottom;
+        }
+
+        &:hover {
+            color: colors.$theme-gray-color-hover;
+        }
+    }
+    
+    &__icon {
+        font-size: variables.$hamburger-icon-font-size;
+    }
+}

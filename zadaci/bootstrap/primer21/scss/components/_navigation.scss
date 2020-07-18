@@ -1,0 +1,38 @@
+/********************************* navigation ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.navigation {
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+    
+    &__item {
+        margin-right: variables.$navigation-item-margin-right;
+    }
+
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        color: colors.$theme-gray-color;
+        font-size: variables.$navigation-link-font-size;
+
+        &:hover {
+            color: colors.$theme-gray-color-hover;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        // set responsive width
+        width: variables.$width-full;
+
+        // reset list
+        @include mixins.reset_list();
+    }
+}

@@ -1,0 +1,196 @@
+/********************************** sign-up **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.sign-up {
+
+    &__button {
+        display: block;
+        padding: variables.$sign-up-button-padding;
+        width: variables.$width-full;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: variables.$sign-up-button-font-size;
+        letter-spacing: variables.$sign-up-button-letter-spacing;
+        border: none;
+        border-radius: variables.$sign-up-button-border-radius;
+        outline: none;
+        background-color: colors.$sign-up-button-background-color;
+        color: colors.$sign-up-button-color;
+
+        // set cursor to look like pointer
+        cursor: pointer;
+
+        &:hover {
+            background-color: colors.$sign-up-button-background-color-hover;
+        }
+    }
+
+    &__checkbox {
+        margin-right: variables.$sign-up-checkbox-margin-right;
+    }
+
+    &__count {
+        font-weight: bold;
+    }
+
+    &__form {
+        padding: variables.$sign-up-form-padding;
+
+        // for smallest screens, background color is white
+        // left and right margins are set to -15px to counteract bootstrap col paddings
+        // and to stretch form to full width from left edge to right edge of container
+        margin-left: variables.$sign-up-form-margin;
+        margin-right: variables.$sign-up-form-margin;
+        background-color: colors.$sign-up-form-background-color;
+
+        // for small screens and larger screens change background color and set borders
+        // reset negative margins because they are not needed
+        @include bootstrap.media-breakpoint-up(sm) {
+            margin: 0;
+            background-color: colors.$sign-up-form-background-color-sm-up;
+
+            // set borders
+            @include mixins.set_borders($border-color: colors.$sign-up-form-border-color,
+                                        $border-width: variables.$sign-up-form-border-width);
+            border-radius: variables.$sign-up-form-border-radius;
+        }
+    }
+
+    &__have-account {
+        display: inline-block;
+        margin: variables.$sign-up-have-account-margin;
+        padding: variables.$sign-up-have-account-padding;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        font-size: variables.$sign-up-have-account-font-size;
+        letter-spacing: variables.$sign-up-have-account-letter-spacing;
+        background-color: colors.$sign-up-have-account-background-color;
+        color: colors.$sign-up-have-account-color;
+
+        &:hover {
+            background-color: colors.$sign-up-have-account-background-color-hover;
+        }
+    }
+
+    &__redirect {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__heading {
+        margin-bottom: 0;
+        text-align: center;
+        font-size: variables.$sign-up-heading-font-size;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$sign-up-heading-font-size-sm-up;
+        }
+    }
+
+    &__info {
+        margin-top: variables.$sign-up-info-margin-top;
+        margin-bottom: variables.$sign-up-info-margin-bottom;
+        text-align: center;
+        font-size: variables.$sign-up-info-font-size;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$sign-up-info-font-size-sm-up;
+        }
+    }
+
+    &__input {
+        margin-bottom: variables.$sign-up-input-margin-bottom;
+        padding: variables.$sign-up-input-padding;
+        width: variables.$width-full;
+        background-color: white;
+
+        // set cursor to look like pointer
+        cursor: pointer;
+
+        // remove outline line because of border radius
+        outline: none;
+
+        // set borders
+        @include mixins.set_borders($border-color: colors.$sign-up-form-border-color,
+                                    $border-width: variables.$sign-up-form-border-width);
+        border-radius: variables.$sign-up-input-border-radius;
+
+        &:focus {
+            border-color: colors.$sign-up-input-border-color-focus;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-left: variables.$sign-up-label-margin-left;
+        margin-bottom: variables.$sign-up-label-margin-bottom;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: variables.$sign-up-label-font-size;
+
+        // set cursor to look like pointer
+        cursor: pointer;
+    }
+
+    &__confirm {
+        // set flex container, vertically center and don't wrap flex items
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        margin-bottom: variables.$sign-up-confirm-margin-bottom;
+    }
+
+    &__age {
+        font-size: variables.$sign-up-age-font-size;
+        font-weight: bold;
+    }
+
+    &__option {
+
+    }
+
+    &__password {
+        // set right padding to be sure that user will not overlap 
+        // show/hide text while typing
+        padding-right: variables.$sign-up-password-padding-right;
+    }
+
+    &__input-wrapper {
+        // wrapper for input element because show/hide text is positioned inside input
+        // positioning container for show/hide text
+        position: relative;
+    }
+
+    &__show, &__hide {
+        // set absolute positioning for show/hide text
+        // wrapper is set for input element and it's positioned relative as container
+        // move show/hide text relative to input's container
+        position: absolute;
+        display: inline-block;
+        top: variables.$sign-up-show-top;
+        right: variables.$sign-up-show-right;
+
+        font-size: variables.$sign-up-show-font-size;
+        font-weight: bold;
+        color: colors.$sign-up-show-color;
+
+        &:hover {
+            color: colors.$sign-up-show-color-hover;
+        }
+    }
+
+    &__hide {
+        // by default, hide text is not displayed
+        display: none;
+    }
+
+    &__show {
+
+    }
+}
