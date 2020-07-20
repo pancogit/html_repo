@@ -6,7 +6,108 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
 
 .footer {
-    
+    padding-top: variables.$footer-padding-top;
+    padding-bottom: variables.$footer-padding-bottom;
+
+    &__navigation {
+        margin-top: variables.$footer-navigation-margin;
+        margin-bottom: variables.$footer-navigation-margin;
+        padding-bottom: variables.$footer-navigation-padding-bottom;
+
+        // set bottom border
+        @include mixins.set_border_bottom($border-bottom-color: colors.$footer-navigation-border-color,
+                                          $border-bottom-width: variables.$footer-navigation-border-width);
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+
+        // element modifier for list
+        &--inline {
+            text-align: center;
+
+            @include bootstrap.media-breakpoint-up(sm) {
+                // set inline list with flexbox
+                display: flex;
+            }
+
+            @include bootstrap.media-breakpoint-between(sm, sm) {
+                justify-content: center;
+            }
+
+            @include bootstrap.media-breakpoint-up(md) {
+                text-align: left;
+            }
+
+            // when list is inline, change properties of list items except first list item
+            .footer__item + .footer__item {
+                &::before {
+
+                    @include bootstrap.media-breakpoint-up(sm) {
+                        // put generated content as circle dot symbol
+                        content: "\002B24";
+
+                        margin-left: variables.$footer-item-marker-dot-margin-left;
+                        margin-right: variables.$footer-item-marker-dot-margin-right;
+                        font-size: variables.$footer-item-marker-dot-font-size;
+                        vertical-align: middle;
+                        color: colors.$footer-item-marker-dot-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item {
+        margin-bottom: variables.$footer-item-margin-bottom;
+    }
+
+    &__link {
+        font-size: variables.$footer-link-font-size;
+        color: colors.$theme-gray-color;
+
+        &:hover {
+            color: colors.$theme-gray-color-hover;
+        }
+    }
+
+    &__heading {
+        margin: 0;
+        font-size: variables.$footer-heading-font-size;
+        color: colors.$footer-heading-color;
+    }
+
+    &__copy {
+        color: colors.$theme-gray-color-hover;
+        text-align: center;
+        font-size: variables.$fooer-copy-font-size;
+        line-height: variables.$fooer-copy-line-height;
+    }
+
+    &__email {
+        font-size: variables.$footer-heading-font-size;
+        font-weight: bold;
+        color: colors.$footer-email-color;
+
+        &:hover {
+            color: colors.$footer-email-color-hover;
+        }
+    }
+
+    &__heart {
+        
+    }
+
+    &__currency {
+        text-align: center;
+
+        @include bootstrap.media-breakpoint-up(md) {
+            text-align: right;
+        }
+    }
 }

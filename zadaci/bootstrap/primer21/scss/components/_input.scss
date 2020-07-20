@@ -1,0 +1,39 @@
+/*********************************** input ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.input {
+    padding: variables.$input-padding;
+    width: variables.$width-full;
+    background-color: colors.$input-background-color;
+
+    // for mozilla set minimum width to zero to be responsive and to not fix input width
+    min-width: 0;
+
+    // set cursor to look like pointer
+    cursor: pointer;
+
+    // remove outline line because of border radius
+    outline: none;
+
+    // set borders
+    @include mixins.set_borders($border-color: colors.$input-border-color,
+                                $border-width: variables.$input-border-width);
+
+    &:focus {
+        border-color: colors.$input-border-color-focus;
+    }
+
+    // for form input set placeholder properties using pseudo-element ::placeholder
+    // placeholder text for form input can be styled with ::placeholder pseudo-element
+    &::placeholder {
+        font-size: variables.$input-placeholder-font-size;
+
+        // on mozilla colors are look lighter, set opacity to 1 to solve this
+        color: colors.$input-placeholder-color; 
+        opacity: 1;
+    }
+}

@@ -42,11 +42,7 @@ $sign-up-have-account-margin: 2.5rem 0;
 $sign-up-have-account-padding: 0.7rem 1rem;
 $sign-up-have-account-font-size: 0.8rem;
 $sign-up-have-account-letter-spacing: 0.08rem;
-$sign-up-form-padding: 1rem;
 $sign-up-form-margin: -15px;
-$sign-up-form-border-width: 0.05rem;
-$sign-up-form-border-radius: 5px;
-$sign-up-input-padding: 1rem 0.5rem;
 $sign-up-input-border-radius: 5px;
 $sign-up-input-margin-bottom: 0.8rem;
 $sign-up-label-margin-left: 0.1rem;
@@ -54,12 +50,70 @@ $sign-up-label-margin-bottom: 0.4rem;
 $sign-up-label-font-size: 0.75rem;
 $sign-up-age-font-size: 0.7rem;
 $sign-up-checkbox-margin-right: 0.5rem;
-$sign-up-button-padding: 1rem;
-$sign-up-button-font-size: 1.2rem;
-$sign-up-button-letter-spacing: 0.1rem;
 $sign-up-button-border-radius: 4px;
 $sign-up-confirm-margin-bottom: 0.8rem;
 $sign-up-password-padding-right: 65px;
 $sign-up-show-top: 15px;
 $sign-up-show-right: 10px;
 $sign-up-show-font-size: 0.85rem;
+
+// input
+$input-placeholder-font-size: 0.9rem;
+$input-padding: 1rem 0.5rem;
+$input-border-width: 0.05rem;
+
+// form
+$form-border-width: 0.05rem;
+$form-padding: 1rem;
+$form-border-radius: 5px;
+
+// button
+$button-padding: 1rem;
+$button-font-size: 1.2rem;
+$button-letter-spacing: 0.1rem;
+
+// footer
+$footer-padding-top: 2.5rem;
+$footer-padding-bottom: 1rem;
+$footer-link-font-size: 0.9rem;
+$footer-heading-font-size: 0.9rem;
+$footer-email-font-size: 0.9rem;
+$fooer-copy-font-size: 0.8rem;
+$fooer-copy-line-height: 1.2rem;
+$footer-item-margin-bottom: 0.7rem;
+$footer-item-marker-dot-margin-left: 0.85rem;
+$footer-item-marker-dot-margin-right: 0.6rem;
+$footer-item-marker-dot-font-size: 0.3rem;
+$footer-navigation-margin: 2.5rem;
+$footer-navigation-padding-bottom: 3rem;
+$footer-navigation-border-width: 0.1rem;
+
+// subscribe
+$subscribe-border-width: 0.05rem;
+$subscribe-border-radius: 5px;
+$subscribe-padding: 2rem;
+$subscribe-heading-margin-bottom: 0.1rem;
+$subscribe-heading-font-size: 0.9rem;
+$subscribe-heading-font-size-sm: 1rem;
+$subscribe-info-margin-top: 0.8rem;
+$subscribe-info-margin-left: 0.2rem;
+$subscribe-info-font-size: 0.7rem;
+$subscribe-submit-border-radius: 4px;
+$subrscribe-submit-font-size: 0.9rem;
+$subscribe-name-border-radius: 4px;
+
+// social
+$social-icon-font-size: 1.4rem;
+$social-item-margin-right: 1.3rem;
+$social-item-margin-bottom: 0.75rem;
+
+// currency
+$currency-padding-top: 0.7rem;
+$currency-padding-bottom: 0.7rem;
+$currency-padding-left: 2.7rem;
+$currency-padding-right: 2rem;
+$currency-font-size: 1rem;
+$currency-background-size: 25px;
+$currency-background-position: 7% 50%;
+$currency-border-width: 0.1rem;
+$currency-border-radius: 3px;

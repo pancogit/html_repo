@@ -1,0 +1,128 @@
+/********************************* subscribe *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.subscribe {
+    padding: variables.$subscribe-padding;
+    background-color: colors.$subscribe-background-color;
+
+    // set borders
+    @include mixins.set_borders($border-color: colors.$subscribe-border-color,
+                                $border-width: variables.$subscribe-border-width);
+    border-radius: variables.$subscribe-border-radius;
+    
+    &__form {
+        display: flex;
+
+        // by default, wrap flex items
+        // inputs and buttons are set to full width (100%) and with flex items
+        // wrapping property, they will stay in one column layout to their full container width
+        flex-wrap: wrap;
+
+        // for small screens and wider, don't wrap inputs and buttons which will cause
+        // to spread items along main axis on one line
+        @include bootstrap.media-breakpoint-up(sm) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__name {
+        // by default, for one column layout, set border radius to top left/right corners
+        border-top-left-radius: variables.$subscribe-name-border-radius;
+        border-top-right-radius: variables.$subscribe-name-border-radius;
+
+        // for small sized screens and wider, set border radius on the left side
+        @include bootstrap.media-breakpoint-up(sm) {
+
+            // reset if border radius is already set
+            border-radius: 0;
+
+            border-top-left-radius: variables.$subscribe-name-border-radius;
+            border-bottom-left-radius: variables.$subscribe-name-border-radius;
+        }
+        
+    }
+
+    &__submit {
+        font-size: variables.$subrscribe-submit-font-size;
+
+        // by default, for one column layout, set border radius to bottom left/right corners
+        border-bottom-left-radius: variables.$subscribe-submit-border-radius;
+        border-bottom-right-radius: variables.$subscribe-submit-border-radius;
+
+        // for small sized screens and wider, set border radius on the right side
+        @include bootstrap.media-breakpoint-up(sm) {
+            
+            // reset if border radius is already set
+            border-radius: 0;
+
+            border-top-right-radius: variables.$subscribe-submit-border-radius;
+            border-bottom-right-radius: variables.$subscribe-submit-border-radius;
+        }
+    }
+
+    &__heading-group {
+        // set heading group as flex container and align items according to screen size
+        display: flex;
+        flex-direction: column;
+        height: variables.$width-full;
+        text-align: center;
+
+        // align items on main axis (y for column flex direction)
+        justify-content: center;
+
+        // align items on cross axis (x for column flex direction)
+        align-items: center;
+
+        // for large screens, change aligning to the left on cross axis
+        @include bootstrap.media-breakpoint-up(lg) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__heading {
+        margin-top: 0;
+        margin-bottom: variables.$subscribe-heading-margin-bottom;
+        font-size: variables.$subscribe-heading-font-size;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$subscribe-heading-font-size-sm;
+        }
+    }
+
+    &__subheading {
+        margin: 0;
+        font-weight: normal;
+        font-size: variables.$subscribe-heading-font-size;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$subscribe-heading-font-size-sm;
+        }
+    }
+
+    &__info {
+        margin-top: variables.$subscribe-info-margin-top;
+        font-size: variables.$subscribe-info-font-size;
+        color: colors.$theme-gray-color-hover;
+        text-align: center;
+
+        // for large screens and wider, align text to the left and set small left margin
+        @include bootstrap.media-breakpoint-up(lg) {
+            text-align: left;
+            margin-left: variables.$subscribe-info-margin-left;
+        }
+    }
+
+    &__link {
+        color: colors.$theme-gray-color-hover;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

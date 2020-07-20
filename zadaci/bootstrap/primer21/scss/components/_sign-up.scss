@@ -8,25 +8,8 @@
 .sign-up {
 
     &__button {
-        display: block;
-        padding: variables.$sign-up-button-padding;
-        width: variables.$width-full;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: variables.$sign-up-button-font-size;
-        letter-spacing: variables.$sign-up-button-letter-spacing;
-        border: none;
+        // set border radius for sign-up button
         border-radius: variables.$sign-up-button-border-radius;
-        outline: none;
-        background-color: colors.$sign-up-button-background-color;
-        color: colors.$sign-up-button-color;
-
-        // set cursor to look like pointer
-        cursor: pointer;
-
-        &:hover {
-            background-color: colors.$sign-up-button-background-color-hover;
-        }
     }
 
     &__checkbox {
@@ -38,25 +21,23 @@
     }
 
     &__form {
-        padding: variables.$sign-up-form-padding;
-
         // for smallest screens, background color is white
         // left and right margins are set to -15px to counteract bootstrap col paddings
         // and to stretch form to full width from left edge to right edge of container
         margin-left: variables.$sign-up-form-margin;
         margin-right: variables.$sign-up-form-margin;
-        background-color: colors.$sign-up-form-background-color;
+
+        // just for bs screen size, change background color, remove borders and border radius
+        @include bootstrap.media-breakpoint-down(bs) {
+            background-color: colors.$sign-up-form-background-color;
+            border: none;
+            border-radius: 0;
+        }
 
         // for small screens and larger screens change background color and set borders
         // reset negative margins because they are not needed
         @include bootstrap.media-breakpoint-up(sm) {
             margin: 0;
-            background-color: colors.$sign-up-form-background-color-sm-up;
-
-            // set borders
-            @include mixins.set_borders($border-color: colors.$sign-up-form-border-color,
-                                        $border-width: variables.$sign-up-form-border-width);
-            border-radius: variables.$sign-up-form-border-radius;
         }
     }
 
@@ -104,25 +85,9 @@
     }
 
     &__input {
+        // set bottom margin and border radius for sign-up input
         margin-bottom: variables.$sign-up-input-margin-bottom;
-        padding: variables.$sign-up-input-padding;
-        width: variables.$width-full;
-        background-color: white;
-
-        // set cursor to look like pointer
-        cursor: pointer;
-
-        // remove outline line because of border radius
-        outline: none;
-
-        // set borders
-        @include mixins.set_borders($border-color: colors.$sign-up-form-border-color,
-                                    $border-width: variables.$sign-up-form-border-width);
         border-radius: variables.$sign-up-input-border-radius;
-
-        &:focus {
-            border-color: colors.$sign-up-input-border-color-focus;
-        }
     }
 
     &__label {

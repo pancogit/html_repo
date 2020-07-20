@@ -11,7 +11,13 @@
 @use 'components/logo';
 @use 'components/navigation';
 @use 'components/hamburger';
+@use 'components/form';
+@use 'components/input';
+@use 'components/button';
 @use 'components/sign-up';
+@use 'components/subscribe';
+@use 'components/social';
+@use 'components/currency';
 
 // layout
 @use 'layout/global';

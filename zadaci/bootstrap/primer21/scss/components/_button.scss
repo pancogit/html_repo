@@ -1,0 +1,27 @@
+/*********************************** button **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.button {
+    display: block;
+    padding: variables.$button-padding;
+    width: variables.$width-full;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: variables.$button-font-size;
+    letter-spacing: variables.$button-letter-spacing;
+    border: none;
+    outline: none;
+    background-color: colors.$button-background-color;
+    color: colors.$button-color;
+
+    // set cursor to look like pointer
+    cursor: pointer;
+
+    &:hover {
+        background-color: colors.$button-background-color-hover;
+    }
+}

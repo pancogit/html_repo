@@ -83,24 +83,25 @@
                                             class="sign-up__count">222,121</span>
                                         incredible members.
                                     </p>
-                                    <form action="login.html" method="post" class="sign-up__form">
+                                    <form action="login.html" method="post" class="sign-up__form form">
                                         <label for="full-name-id" class="sign-up__label">Full Name</label>
                                         <input id="full-name-id" type="text" name="name"
-                                            placeholder="Enter your full name" class="sign-up__input"
+                                            placeholder="Enter your full name" class="sign-up__input input"
                                             required="required" />
                                         <label for="email-id" class="sign-up__label">Email</label>
                                         <input id="email-id" type="email" name="email" placeholder="Enter your email"
-                                            class="sign-up__input" required="required" />
+                                            class="sign-up__input input" required="required" />
                                         <label for="password-id" class="sign-up__label">Password</label>
                                         <div class="sign-up__input-wrapper">
                                             <input id="password-id" type="password" name="pass"
-                                                placeholder="Enter a password" class="sign-up__input sign-up__password"
-                                                required="required" />
+                                                placeholder="Enter a password"
+                                                class="sign-up__input sign-up__password input" required="required" />
                                             <span class="sign-up__show">Show</span>
                                             <span class="sign-up__hide">Hide</span>
                                         </div>
                                         <label for="select-id" class="sign-up__label">I'm Fundraising...</label>
-                                        <select id="select-id" name="select" class="sign-up__input" required="required">
+                                        <select id="select-id" name="select" class="sign-up__input input"
+                                            required="required">
                                             <option value="" class="sign-up__option" selected="selected"
                                                 disabled="disabled">
                                                 Choose one
@@ -125,7 +126,7 @@
                                                 consent to
                                                 join</label>
                                         </div>
-                                        <input type="submit" value="Sign Up" class="sign-up__button" />
+                                        <input type="submit" value="Sign Up" class="sign-up__button button" />
                                     </form>
                                     <div class="sign-up__redirect">
                                         <a href="login.html" class="sign-up__have-account">Allready Have an Account?
@@ -140,22 +141,24 @@
 
             <div class="container-xl">
                 <footer class="footer">
-                    <div class="subscribe">
+                    <div class="subscribe form">
                         <div class="row">
-                            <div class="col">
-                                <h3 class="subscribe__heading">Add Impact To Your Inbox</h3>
-                                <h3 class="subscribe__subheading">Get our emails to stay in the know</h3>
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <div class="subscribe__heading-group">
+                                    <h3 class="subscribe__heading">Add Impact To Your Inbox</h3>
+                                    <h3 class="subscribe__subheading">Get our emails to stay in the know</h3>
+                                </div>
                             </div>
 
-                            <div class="col">
+                            <div class="col-lg">
                                 <form action="login.html" method="post" class="subscribe__form">
                                     <input type="text" name="footer-name" placeholder="First name"
-                                        class="subscribe__input" required="required" />
-                                    <input type="text" name="footer-surname" placeholder="Last name"
-                                        class="subscribe__input" required="required" />
-                                    <input type="email" name="footer-email" placeholder="Email" class="subscribe__input"
+                                        class="subscribe__name input" required="required" />
+                                    <input type="text" name="footer-surname" placeholder="Last name" class="input"
                                         required="required" />
-                                    <input type="submit" value="Subscribe" class="subscribe__submit" />
+                                    <input type="email" name="footer-email" placeholder="Email" class="input"
+                                        required="required" />
+                                    <input type="submit" value="Subscribe" class="subscribe__submit button" />
                                 </form>
                                 <p class="subscribe__info">This site is protected by reCAPTCHA and the Google
                                     <a href="index.html" class="subscribe__link">Privacy Policy</a> and
@@ -167,7 +170,8 @@
 
                     <nav class="footer__navigation">
                         <div class="row">
-                            <div class="col">
+                            <div
+                                class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-md-0 text-align-center">
                                 <ul class="footer__list">
                                     <li class="footer__item">
                                         <h3 class="footer__heading">get to know us</h3>
@@ -187,7 +191,7 @@
                                 </ul>
                             </div>
 
-                            <div class="col">
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-md-0">
                                 <ul class="footer__list">
                                     <li class="footer__item">
                                         <h3 class="footer__heading">connect</h3>
@@ -207,7 +211,7 @@
                                 </ul>
                             </div>
 
-                            <div class="col">
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-sm-0">
                                 <ul class="footer__list">
                                     <li class="footer__item">
                                         <h3 class="footer__heading">get involved</h3>
@@ -227,7 +231,7 @@
                                 </ul>
                             </div>
 
-                            <div class="col">
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md">
                                 <ul class="footer__list">
                                     <li class="footer__item">
                                         <h3 class="footer__heading">donate</h3>
@@ -249,9 +253,9 @@
                         </div>
                     </nav>
 
-                    <div class="row">
-                        <div class="col">
-                            <div class="social">
+                    <div class="row mb-5 mb-md-4">
+                        <div class="col-md mb-3 mb-md-0">
+                            <div class="social mb-3">
                                 <ul class="social__list">
                                     <li class="social__item">
                                         <a href="https://www.twitter.com" target="_blank" class="social__link">
@@ -302,13 +306,16 @@
                             </ul>
                         </div>
 
-                        <div class="col">
-                            <select name="currency-value" class="currency">
-                                <option selected="selected" value="ser">Serbian dinar</option>
-                                <option value="en">English pound</option>
-                                <option value="us">US dollar</option>
-                                <option value="ger">German euro</option>
-                            </select>
+                        <div class="col-md-auto">
+                            <div class="footer__currency">
+                                <select name="currency-value" class="currency">
+                                    <option selected="selected" value="ser" class="currency__value">Serbian dinar
+                                    </option>
+                                    <option value="en" class="currency__value">English pound</option>
+                                    <option value="us" class="currency__value">US dollar</option>
+                                    <option value="ger" class="currency__value">German euro</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 

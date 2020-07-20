@@ -1,0 +1,33 @@
+/********************************** currency *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.currency {
+    padding-top: variables.$currency-padding-top;
+    padding-bottom: variables.$currency-padding-bottom;
+    padding-left: variables.$currency-padding-left;
+    padding-right: variables.$currency-padding-right;
+    font-size: variables.$currency-font-size;
+    outline: none;
+
+    // set flag as background image and center image vertically
+    background-image: url("../../../../slike/zadaci/primer21/flag.svg");
+    background-size: variables.$currency-background-size;
+    background-repeat: no-repeat;
+    background-position: variables.$currency-background-position;
+
+    // set borders
+    @include mixins.set_borders($border-color: colors.$currency-border-color,
+                                $border-width: variables.$currency-border-width);
+    border-radius: variables.$currency-border-radius;
+
+    &:focus {
+        border-color: colors.$currency-border-color-hover;
+    }
+    
+    &__value {
+        
+    }
+}
