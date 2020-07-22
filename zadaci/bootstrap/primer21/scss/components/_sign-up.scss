@@ -158,4 +158,139 @@
     &__show {
 
     }
+
+    &__donate {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: variables.$sign-up-donate-margin-bottom;
+
+        @include bootstrap.media-breakpoint-up(bs) {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__goal {
+        // for one column layout, set full width for flex items
+        flex: variables.$width-full;
+
+        @include bootstrap.media-breakpoint-up(bs) {
+            // set flex item to grow, shrink and with basis of 50%
+            flex: variables.$width-full / 2;
+        }
+        
+        // container for dollar and USD currency inside input
+        position: relative;
+    }
+
+    &__dollar {
+        // absolute positioning inside sign-up__goal input container
+        position: absolute;
+        top: variables.$sign-up-dollar-top;
+        left: variables.$sign-up-dollar-left;
+        font-size: variables.$sign-up-dollar-font-size;
+        font-weight: bold;
+        color: colors.$sign-up-price-color;
+    }
+
+    &__usd {
+        // absolute positioning inside sign-up__goal input container
+        position: absolute;
+        top: variables.$sign-up-usd-top;
+        right: variables.$sign-up-usd-right;
+        font-size: variables.$sign-up-usd-font-size;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: colors.$sign-up-price-color;
+    }
+
+    &__price {
+        // set left and right paddings to not overlap input content 
+        // with dollar and usd markers
+        padding-left: variables.$sign-up-price-padding-left;
+        padding-right: variables.$sign-up-price-padding-right;
+
+        border-top-left-radius: variables.$sign-up-price-border-radius;
+        border-top-right-radius: variables.$sign-up-price-border-radius;
+
+        @include bootstrap.media-breakpoint-up(bs) {
+            // reset border radius first
+            border-radius: 0;
+
+            border-top-left-radius: variables.$sign-up-price-border-radius;
+            border-bottom-left-radius: variables.$sign-up-price-border-radius;
+        }
+
+        // set height to 100% because when element right to this element grow up in height
+        // this element must also follow that growing
+        height: variables.$width-full;
+    }
+
+    &__water {
+        // for one column layout, set full width for flex items
+        flex: variables.$width-full;
+
+        @include bootstrap.media-breakpoint-up(bs) {
+            // set flex item to grow, shrink and with basis of 50%
+            flex: variables.$width-full / 2;
+        }
+
+        // set flex container to arrange items inside and don't wrap flex items,
+        // they must be in the same flex line
+        // vertically center flex items
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        padding: variables.$sign-up-water-padding;
+        background-color: colors.$sign-up-water-background-color;
+
+        // set borders
+        @include mixins.set_borders($border-color: colors.$sign-up-water-border-color,
+                                    $border-width: variables.$sign-up-water-border-width);
+
+        border-bottom-left-radius: variables.$sign-up-water-border-radius;
+        border-bottom-right-radius: variables.$sign-up-water-border-radius;
+
+        @include bootstrap.media-breakpoint-up(bs) {
+            // reset border radius first
+            border-radius: 0;
+            
+            border-top-right-radius: variables.$sign-up-water-border-radius;
+            border-bottom-right-radius: variables.$sign-up-water-border-radius;
+        }
+    }
+
+    &__man {
+        margin-right: variables.$sign-up-man-margin-right;
+        color: colors.$sign-up-water-color;
+        font-size: variables.$sign-up-man-font-size;
+    }
+
+    &__people {
+        color: colors.$sign-up-water-color;
+        font-size: variables.$sign-up-people-font-size;
+    }
+
+    &__number {
+        font-weight: bold;
+    }
+
+    &__campaign-team {
+        margin-top: variables.$sign-up-campaign-team-margin-top;
+        margin-bottom: variables.$sign-up-campaign-team-margin-bottom;
+        text-align: center;
+    }
+
+    &__team {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: variables.$sign-up-team-font-size;
+        font-weight: bold;
+        letter-spacing: variables.$sign-up-team-letter-spacing;
+        color: colors.$sign-up-team-color;
+
+        &:hover {
+            color: colors.$sign-up-team-color-hover;
+        }
+    }
 }

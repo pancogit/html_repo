@@ -1,6 +1,7 @@
 // variables
 
 // page
+$page-min-width: 20rem;
 $page-max-width: 1140px * 2;
 $page-wallpaper-height-xl: 2207px;
 $page-wallpaper-height-lg: 1500px;
@@ -56,6 +57,26 @@ $sign-up-password-padding-right: 65px;
 $sign-up-show-top: 15px;
 $sign-up-show-right: 10px;
 $sign-up-show-font-size: 0.85rem;
+$sign-up-dollar-top: 28%;
+$sign-up-dollar-left: 8px;
+$sign-up-dollar-font-size: 1rem;
+$sign-up-usd-top: 30%;
+$sign-up-usd-right: 10px;
+$sign-up-usd-font-size: 0.95rem;
+$sign-up-price-padding-left: 1.7rem;
+$sign-up-price-padding-right: 3.2rem;
+$sign-up-price-border-radius: 5px;
+$sign-up-donate-margin-bottom: 0.8rem;
+$sign-up-campaign-team-margin-top: 1rem;
+$sign-up-campaign-team-margin-bottom: 0.3rem;
+$sign-up-team-font-size: 0.85rem;
+$sign-up-team-letter-spacing: 0.05rem;
+$sign-up-water-border-width: 0.05rem;
+$sign-up-water-padding: 0.5rem 1rem;
+$sign-up-water-border-radius: 5px;
+$sign-up-man-margin-right: 0.6rem;
+$sign-up-man-font-size: 2rem;
+$sign-up-people-font-size: 0.8rem;
 
 // input
 $input-placeholder-font-size: 0.9rem;
@@ -89,8 +110,6 @@ $footer-navigation-padding-bottom: 3rem;
 $footer-navigation-border-width: 0.1rem;
 
 // subscribe
-$subscribe-border-width: 0.05rem;
-$subscribe-border-radius: 5px;
 $subscribe-padding: 2rem;
 $subscribe-heading-margin-bottom: 0.1rem;
 $subscribe-heading-font-size: 0.9rem;

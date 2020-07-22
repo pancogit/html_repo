@@ -6,13 +6,10 @@
 @use '../bootstrap/bootstrap';
 
 .subscribe {
-    padding: variables.$subscribe-padding;
-    background-color: colors.$subscribe-background-color;
-
-    // set borders
-    @include mixins.set_borders($border-color: colors.$subscribe-border-color,
-                                $border-width: variables.$subscribe-border-width);
-    border-radius: variables.$subscribe-border-radius;
+    
+    @include bootstrap.media-breakpoint-up(bs) {
+        padding: variables.$subscribe-padding;
+    }
     
     &__form {
         display: flex;
