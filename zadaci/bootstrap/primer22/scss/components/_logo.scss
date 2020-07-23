@@ -1,0 +1,32 @@
+/************************************ logo ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.logo {
+    // create flexbox container and vertically center logo
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+
+    // for smallest screens, horizontally center logo
+    // align text inside box to center if text is wrapping
+    @include bootstrap.media-breakpoint-down(xs) {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: variables.$logo-link-font-size-normal;
+        font-weight: bold;
+        color: colors.$logo-link-color;
+
+        // increase font size for small screens and wider
+        @include bootstrap.media-breakpoint-up(sm) {
+            font-size: variables.$logo-link-font-size-large;
+        }
+    }
+}

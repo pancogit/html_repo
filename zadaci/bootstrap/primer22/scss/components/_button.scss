@@ -1,0 +1,26 @@
+/*********************************** button **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.button {
+    display: inline-block;
+    padding: variables.$button-padding-normal;
+    color: colors.$button-color;
+    background-color: colors.$button-background-color;
+    border-radius: variables.$button-border-radius;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+        background-color: colors.$button-background-color-hover;
+    }
+
+    // just for smallest screens spread button to whole width
+    @include bootstrap.media-breakpoint-down(xs) {
+        padding: variables.$button-padding-small;
+        width: variables.$width-full;
+        text-align: center;
+    }
+}

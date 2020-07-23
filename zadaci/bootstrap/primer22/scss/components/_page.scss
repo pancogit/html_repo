@@ -1,0 +1,8 @@
+/************************************ page ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.page {
+    min-width: variables.$page-min-width;
+}
