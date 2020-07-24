@@ -28,10 +28,11 @@ $hamburger-icon-font-size: 1.5rem;
 
 // homepage
 $main-padding-large: 3.5rem 0;
-$main-padding-normal: 2rem 0;
+$main-padding-normal: 1.5rem 0;
 $main-welcome-padding-large: 1.7rem;
 $main-welcome-padding-normal: 1rem;
 $main-welcome-border-radius: 7px;
+$main-welcome-negative-margins: 0 -15px;
 $main-heading-font-size-large: 2.3rem;
 $main-heading-font-size-normal: 1.8rem;
 $main-paragraph-line-height: 1.3rem;
@@ -45,3 +46,40 @@ $button-border-radius: 5px;
 
 // page
 $page-min-width: 20rem;
+
+// card
+$card-negative-margins: 0 -15px;
+$card-content-padding-normal: 1.5rem;
+$card-content-padding-small: 1rem;
+$card-content-border-width: 0.1rem;
+$card-header-padding-normal: 1.5rem;
+$card-header-padding-small: 1rem;
+$card-header-font-size: 0.7rem;
+$card-header-border-radius: 5px;
+$card-paragraph-line-height: 1.35rem;
+
+// recent
+$recent-line-height: 1.35rem;
+
+// calendar
+$calendar-navigation-height: 14rem;
+$calendar-info-padding: 1rem;
+$calendar-info-font-size: 1.4rem;
+$calendar-info-letter-spacing: 0.1rem;
+$calendar-slide-padding: 1rem;
+$calendar-slide-width: 4rem;
+$calendar-arrow-font-size: 1.3rem;
+$calendar-month-margin-bottom: 0.3rem;
+$calendar-lead-padding: 1rem;
+$calendar-lead-font-size: 0.9rem;
+$calendar-day-padding: 1rem;
+$calendar-day-border-radius: 50%;
+$calendar-day-border-width: 0.15rem;
+
+// footer
+$footer-padding: 1.5rem;
+$footer-heading-font-size-normal: 1.1rem;
+$footer-heading-font-size-smaller: 1rem;
+$footer-heading-letter-spacing: 0.05rem;
+$footer-item-font-size: 0.85rem;
+$footer-link-padding: 0.25rem 0;

@@ -29,6 +29,7 @@
         padding: variables.$navigation-link-padding;
         color: colors.$navigation-link-color;
         font-size: variables.$navigation-link-font-size;
+        font-weight: bold;
 
         &:hover {
             text-decoration: underline;

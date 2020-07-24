@@ -11,7 +11,7 @@
 .main {
     padding: variables.$main-padding-large;
 
-    @include bootstrap.media-breakpoint-down(xs) {
+    @include bootstrap.media-breakpoint-down(sm) {
         padding: variables.$main-padding-normal;
     }
     
@@ -22,6 +22,16 @@
         // fallback background color and background image as gradient
         background: colors.$main-welcome-background;
         background: colors.$main-welcome-background-gradient;
+
+        // for smallest screen, move element to edges of container with
+        // negative margins for better look
+        // those margins will counteract paddings from container
+        // remove border radius because rounded corners doesn't look good
+        // when element is spread to the edges of container
+        @include bootstrap.media-breakpoint-down(xs) {
+            margin: variables.$main-welcome-negative-margins;
+            border-radius: 0;
+        }
 
         @include bootstrap.media-breakpoint-down(xs) {
             padding: variables.$main-welcome-padding-normal;

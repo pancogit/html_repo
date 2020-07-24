@@ -4,12 +4,19 @@
 @use '../base/variables';
 
 .recent {
+    line-height: variables.$recent-line-height;
     
     &__link {
+        color: colors.$recent-link-color;
+        font-weight: bold;
+        text-decoration: underline;
 
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     &__text {
-        
+        margin-top: 0;
     }
 }

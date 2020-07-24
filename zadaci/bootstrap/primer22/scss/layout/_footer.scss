@@ -6,7 +6,51 @@
 
 @use '../base/colors';
 @use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
 
 .footer {
+    padding: variables.$footer-padding;
+    background-color: colors.$footer-background-color;
+
+    @include bootstrap.media-breakpoint-down(xs) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$footer-heading-color;
+        text-transform: uppercase;
+        font-size: variables.$footer-heading-font-size-normal;
+        letter-spacing: variables.$footer-heading-letter-spacing;
+
+        @include bootstrap.media-breakpoint-down(sm) {
+            font-size: variables.$footer-heading-font-size-smaller;
+        }
+    }
     
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__item {
+        font-size: variables.$footer-item-font-size;
+    }
+
+    &__link {
+        // spread links to full width
+        display: block;
+        padding: variables.$footer-link-padding;
+        color: colors.$footer-link-color;
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            display: inline-block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
