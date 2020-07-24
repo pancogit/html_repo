@@ -1,0 +1,22 @@
+/************************************ logo ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+
+    &__image {
+
+    }
+
+    &__link {
+        display: inline-block;
+    }
+
+    &--align-top {
+        align-items: flex-start;
+    }
+}

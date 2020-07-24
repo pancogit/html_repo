@@ -1,0 +1,91 @@
+// mixins
+
+@use 'variables';
+
+// set grid template
+@mixin set_grid_template($grid-kind: grid, 
+                         $row-template: null, 
+                         $column-template: null,
+                         $template-areas: null) {
+    @if ($grid-kind != grid and $grid-kind != inline-grid) {
+        @error "Grid must be set inline or block (=#{$grid-kind})!";
+    }
+
+    display: $grid-kind;
+    grid-template-rows: $row-template;
+    grid-template-columns: $column-template;
+    grid-template-areas: $template-areas;
+}
+
+// assign element to grid
+@mixin assign_to_grid($grid-row-start: null,
+                      $grid-row-end: null,
+                      $grid-column-start: null,
+                      $grid-column-end: null,
+                      $grid-row: null,
+                      $grid-column: null,
+                      $grid-area: null) {
+    grid-row-start: $grid-row-start;
+    grid-row-end: $grid-row-end;
+    grid-column-start: $grid-column-start;
+    grid-column-end: $grid-column-end;
+    grid-row: $grid-row;
+    grid-column: $grid-column;
+    grid-area: $grid-area;
+}
+
+// set border properties
+@mixin set_borders($border-style: solid,
+                   $border-width: 1px,
+                   $border-color: variables.$black-color) {
+    border-style: $border-style;
+    border-color: $border-color;
+    border-width: $border-width;
+}
+
+// set grid auto placement properties
+@mixin set_grid_auto($grid-auto-flow: row,
+                     $grid-auto-rows: auto,
+                     $grid-auto-columns: auto) {
+    grid-auto-flow: $grid-auto-flow;
+    grid-auto-rows: $grid-auto-rows;
+    grid-auto-columns: $grid-auto-columns;
+}
+
+// set grid gaps
+@mixin set_grid_gaps($row-gap: normal,
+                     $column-gap: normal,
+                     $gap: normal) {
+    // set eight gap or row/column properties, to not override each other
+    @if $gap != normal {
+        gap: $gap;
+    }
+    @else {
+        row-gap: $row-gap;
+        column-gap: $column-gap;
+    }
+}
+
+// set self align properties
+@mixin set_align_properties($justify-self: auto,
+                            $align-self: auto) {
+    @if $justify-self != auto { // set on main axis
+        justify-self: $justify-self;
+        align-self: auto; // reset another property
+    }
+    @else { // or if it's not set on main, ask for cross axis if possible
+        @if $align-self != auto {
+            align-self: $align-self;
+            justify-self: auto; // reset another property
+        }
+    }
+}
+
+// set background color, color and font weight
+@mixin set_colors_font_w($background-color: null,
+                         $color: null,
+                         $font-weight: 400) {
+    background-color: $background-color;
+    color: $color;
+    font-weight: $font-weight;
+}

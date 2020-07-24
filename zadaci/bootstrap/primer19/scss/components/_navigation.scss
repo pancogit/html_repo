@@ -1,0 +1,40 @@
+/********************************* navigation ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.navigation {
+    // center navigation using flexbox container and full height
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        display: inline-block;
+        padding: variables.$navigation-link-padding;
+        color: colors.$white-theme-color;
+        transition: variables.$navigation-link-transition;
+
+        // set top border and set to be invisible by setting the same color as background
+        // when link is hovered, change color of top border to show effect
+        @include mixins.set_border_top($border-top-color: colors.$black-theme-color,
+                                       $border-top-width: 0.2rem);
+
+        &:hover {
+            border-top-color: colors.$yellow-theme-color;
+        }
+    }
+}

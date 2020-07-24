@@ -1,0 +1,148 @@
+/********************************** calendar *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.calendar {
+
+    &__navigation {
+        // set as flex container
+        display: flex;
+        flex-wrap: nowrap;
+
+        height: variables.$calendar-navigation-height;
+
+        background-color: colors.$calendar-navigation-background-color;
+    }
+
+    &__info {
+        // set as flex container in column direction and center 
+        // content horizontally and vertically
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+
+        padding: variables.$calendar-info-padding;
+        text-transform: uppercase;
+        font-size: variables.$calendar-info-font-size;
+        letter-spacing: variables.$calendar-info-letter-spacing;
+
+        // info content should growing, not slides
+        // set flex grow for info
+        flex: 1;
+
+        color: colors.$calendar-info-color;
+    }
+
+    &__slide {
+        // set as flex container to horizontally and vertically center arrows
+        // in cases where height is increased, content will stay centered
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+
+        padding: variables.$calendar-slide-padding;
+        width: variables.$calendar-slide-width;
+
+        color: colors.$calendar-slide-color;
+
+        &:hover {
+            // set transparent color when link is hovered
+            background-color: colors.$calendar-slide-background-color;
+        }
+    }
+
+    &__arrow {
+        font-size: variables.$calendar-arrow-font-size;
+    }
+
+    &__month {
+       margin-top: 0;
+       margin-bottom: variables.$calendar-month-margin-bottom;
+    }
+
+    &__year {
+        margin: 0;
+    }
+
+    &__header {
+        // set flex container
+        display: flex;
+        flex-wrap: nowrap;
+
+        background-color: colors.$calendar-header-background-color;
+    }
+
+    &__lead {
+        // set flex container and horizontally and vertically center flex items
+        // in cases where height is increased, content will stay centered
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // set flex item to grow to fill free space
+        flex: 1;
+
+        margin: 0;
+        padding: variables.$calendar-lead-padding;
+        font-size: variables.$calendar-lead-font-size;
+
+        &:hover {
+            color: colors.$calendar-lead-color-hover;
+            background-color: colors.$calendar-lead-background-color-hover;
+        }
+    }
+
+    &__content {
+        background-color: colors.$calendar-content-background-color;
+    }
+
+    &__week {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    &__day {
+        // set flex container and horizontally and vertically center flex items
+        // in cases where height is increased, content will stay centered
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // set flex item to grow to fill remaining space on main axis
+        flex: 1;
+
+        margin: 0;
+        padding: variables.$calendar-day-padding;
+        border-radius: variables.$calendar-day-border-radius;
+
+        // set borders with transparent color to hide borders
+        // without borders, if user hover over calendar day and show borders, then
+        // height and width of calendar day will be changed which is not good
+        // because of that, set borders as default, but without visible borders 
+        // (transparent border color)
+        // when user hover over calendar day, border color will be changed 
+        // and borders will be visible
+        @include mixins.set_borders($border-color: colors.$calendar-day-border-color,
+                                    $border-width: variables.$calendar-day-border-width);
+
+        &:hover {
+            border-color: colors.$calendar-day-color-hover;
+            color: colors.$calendar-day-color-hover;
+            background-color: colors.$calendar-day-background-color-hover;
+        }
+
+        // element modifier for calendar day
+        &--out {
+
+            // disable pointer events
+            // when mouse is hovered over out days (days which are not in current month)
+            // then nothing will happen
+            pointer-events: none;
+        }
+    }
+}

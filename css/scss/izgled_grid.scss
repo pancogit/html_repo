@@ -1,0 +1,19 @@
+// main sass file
+
+@use 'global/variables';
+@use 'global/mixins';
+@use 'global/functions';
+
+@use 'page/page_body';
+@use 'page/page_chapter_1';
+@use 'page/page_chapter_2';
+@use 'page/page_chapter_3';
+@use 'page/page_chapter_4';
+@use 'page/page_chapter_5';
+@use 'page/page_chapter_6';
+@use 'page/page_chapter_7';
+@use 'page/page_chapter_8';
+@use 'page/page_chapter_9';
+@use 'page/page_chapter_10';
+@use 'page/ad';
+@use 'page/footer';

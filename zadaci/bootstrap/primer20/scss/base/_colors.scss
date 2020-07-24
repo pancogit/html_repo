@@ -1,0 +1,106 @@
+// colors
+
+// global
+$global-background-fallback: rgb(81,81,81);
+$global-background: linear-gradient(90deg, rgba(81,81,81,1) 0%, rgba(42,42,42,1) 100%);
+
+// page
+$page-content-background-color: #ececec;
+
+// header
+$header-logo-background-color: white;
+$header-badge-background-color: #7f4307;
+$header-badge-color: white;
+$header-background-color-gradient-1: linear-gradient(90deg, 
+                                                 rgba(255,255,255,0) 0%, 
+                                                 rgba(255,255,255,0) 70%, 
+                                                 rgba(255,255,255,1) 100%);
+$header-background-color-gradient-2: linear-gradient(90deg, 
+                                                   rgba(0,0,0,0.1) 0%, 
+                                                   rgba(0,0,0,0.5) 76%, 
+                                                   rgba(255,255,255,1) 100%);
+$header-background-color: white;
+$header-track-background-color: #313131;
+$header-track-gradient: linear-gradient(0deg, rgba(35,35,35,1) 0%, rgba(49,49,49,1) 51%);
+
+// logo
+$logo-heading-color: #494949;
+
+// search
+$search-input-border-color: #e6e6e6;
+$search-border-color-focus: #7f4307;
+$search-button-background-color-focus: #6a3807;
+
+// homepage
+$main-background-color: white;
+$main-border-color: #cacaca;
+$main-heading-color: #723802;
+$main-note-color: #727272;
+$main-how-to-color: #9c1d2f;
+
+// navigation
+$navigation-link-color: #9c5f20;
+$navigation-link-background-color-hover: #b56a22;
+$navigation-link-color-hover: white;
+
+// vacation
+$vacation-color: #525252;
+
+// activity
+$activity-heading-color: white;
+$activity-heading-background-color: #515151;
+$activity-link-color: #ad5901;
+
+// reminder
+$reminder-header-color: white;
+$reminder-header-background-color: #b46c22;
+$reminder-data-color: #515151;
+$reminder-link-color: #ad5901;
+
+// button
+$button-background-color: #7f4307;
+$button-background-color-hover: #6a3807;
+$button-color: white;
+
+// pagination
+$pagination-arrow-background-color: #769abd;
+$pagination-arrow-background-color-hover: #6085a9;
+$pagination-icon-color: white;
+
+// printer
+$printer-text-color: black;
+
+// calendar
+$calendar-week-background-color: #e9eef7;
+$calendar-week-color: #3e42c2;
+$calendar-body-background-color: #c3d9ff;
+$calendar-thead-color: #3e42c2;
+$calendar-box-background-color: white;
+$calendar-box-background-color-hover: #fffecd;
+$calendar-day-background-color: #e7eef6;
+$calendar-day-background-color-hover: #bbccdc;
+$calendar-day-other-background-color: #ececdc;
+$calendar-day-other-color: #775e5e;
+$calendar-record-background-color: #5d89cc;
+$calendar-record-color: white;
+
+// hamburger
+$hamburger-link-color: #7f4307;
+$hamburger-link-color-hover: #6a3807;
+
+// footer
+$footer-background-color: #1e2533;
+$footer-color: #8c8c8c;
+$footer-link-color: white;
+
+// menu
+$menu-link-color: white;
+$menu-item-border-color: #8c8c8c;
+
+// list
+$list-link-color: white;
+$list-heading-color: #8c8c8c;
+
+// social
+$social-heading-color: #8c8c8c;
+$social-link-color: white;

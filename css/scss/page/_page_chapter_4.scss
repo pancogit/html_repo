@@ -1,0 +1,416 @@
+/* page - chapter 4 */
+
+@use '../global/mixins';
+@use '../global/variables';
+@use 'sass:meta';
+@use 'sass:string';
+
+div.primer-40 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(5, 5em),
+                                      $column-template: repeat(10, 5em));
+    .one {
+        @include mixins.assign_to_grid($grid-row-start: 2,
+                                       $grid-row-end: 4,
+                                       $grid-column-start: 2,
+                                       $grid-column-end: 4);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row-start: 1,
+                                       $grid-row-end: 3,
+                                       $grid-column-start: 5,
+                                       $grid-column-end: 10);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row-start: 4,
+                                       $grid-column-start: 6);
+        background-color: variables.$yellow-color;
+    }
+}
+
+div.primer-41 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(5, 5em),
+                                      $column-template: repeat(10, 5em));
+    .one {
+        @include mixins.assign_to_grid($grid-row-start: 2,
+                                       $grid-row-end: span 2,
+                                       $grid-column-start: 2,
+                                       $grid-column-end: span 2);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row-start: 1,
+                                       $grid-row-end: span 2,
+                                       $grid-column-start: 5,
+                                       $grid-column-end: span 5);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row-start: 4,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: 6,
+                                       $grid-column-end: span 1);
+        background-color: variables.$yellow-color;
+    }
+}
+
+div.primer-42 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(4, 2em),
+                                      $column-template: repeat(5, 5em));
+    .one {
+        @include mixins.assign_to_grid($grid-row-start: 1,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: 3,
+                                       $grid-column-end: span 2);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row-start: 2,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: 1,
+                                       $grid-column-end: span 2);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row-start: 3,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: 1,
+                                       $grid-column-end: -1);
+        background-color: variables.$yellow-color;
+    }
+
+    .four {
+        @include mixins.assign_to_grid($grid-row-start: 4,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: span 1,
+                                       $grid-column-end: 5);
+        background-color: variables.$green-color;
+    }
+}
+
+div.primer-43 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(5, [R] 4em),
+                                      $column-template: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em);
+    .one {
+        @include mixins.assign_to_grid($grid-row-start: R 2,
+                                       $grid-row-end: span 3,
+                                       $grid-column-start: col-B,
+                                       $grid-column-end: span 2);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row-start: R,
+                                       $grid-row-end: span 2,
+                                       $grid-column-start: col-A 3,
+                                       $grid-column-end: span 2 col-A);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row-start: R 4,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: col-A 4,
+                                       $grid-column-end: span 1);
+        background-color: variables.$yellow-color;
+    }
+}
+
+div.primer-44 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(3, 4em),
+                                      $column-template: repeat(4, 1fr),
+                                      $template-areas: "header   header  header  header"
+                                                       "leftside content content rightside"
+                                                       "leftside footer  footer  footer");
+    .masthead {
+        @include mixins.assign_to_grid($grid-row-start: header-start,
+                                       $grid-row-end: header-end,
+                                       $grid-column-start: header-start,
+                                       $grid-column-end: header-end);
+        background-color: variables.$red-color;
+    }
+
+    .sidebar {
+        @include mixins.assign_to_grid($grid-row-start: leftside,
+                                       $grid-row-end: leftside,
+                                       $grid-column-start: leftside,
+                                       $grid-column-end: leftside);
+        background-color: variables.$orange-color;
+    }
+
+    .main {
+        @include mixins.assign_to_grid($grid-row-start: content-start,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: content-start,
+                                       $grid-column-end: span 2);
+        background-color: variables.$yellow-color;
+    }
+
+    .navbar {
+        @include mixins.assign_to_grid($grid-row-start: content-start,
+                                       $grid-row-end: span 1,
+                                       $grid-column-start: rightside,
+                                       $grid-column-end: rightside-end);
+        background-color: variables.$green-color;
+    }
+
+    .footer {
+        @include mixins.assign_to_grid($grid-row-start: footer-start,
+                                       $grid-row-end: footer-end,
+                                       $grid-column-start: 2,
+                                       $grid-column-end: footer);
+        background-color: variables.$blue-color;
+    }
+}
+
+div.primer-45 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(10, [R] 1.5em),
+                                      $column-template: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em);
+    .one {
+        @include mixins.assign_to_grid($grid-row: R 3 / 7,
+                                       $grid-column: col-B / span 2);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row: R / span 2 R,
+                                       $grid-column: col-A 3 / span 2 col-A);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row: 4 R / span 1,
+                                       $grid-column: 4 col-A / span 1);
+        background-color: variables.$yellow-color;
+    }
+}
+
+div.primer-46 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: auto 5em auto,
+                                      $column-template: 25% 75%,
+                                      $template-areas: "header header"
+                                                       "sidebar content"
+                                                       "footer footer");
+    .header {
+        @include mixins.assign_to_grid($grid-row: header / header,
+                                       $grid-column: header);
+        background-color: variables.$red-color;
+    }
+
+    .footer {
+        @include mixins.assign_to_grid($grid-row: footer,
+                                       $grid-column: footer-start / footer-end);
+        background-color: variables.$orange-color;
+    }
+}
+
+div.primer-47 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: 4em 5em [footer] 5em [footer] 4em,
+                                      $column-template: 25% 75%,
+                                      $template-areas: "header header"
+                                                       "sidebar content"
+                                                       "footer footer"
+                                                       "legal legal");
+
+    .footer {
+        @include mixins.assign_to_grid($grid-row: footer,
+                                       $grid-column: footer);
+        background-color: variables.$orange-color;
+    }
+}
+
+div.primer-48 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(2, 2em),
+                                      $column-template: repeat(6, 4em));
+
+    .one {
+        @include mixins.assign_to_grid($grid-row: meta.inspect(1 / 4),
+                                       $grid-column: string.unquote("1 / 2"));
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row: 3 / span 2,
+                                       $grid-column: 2 / auto);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row: 1 / span 2,
+                                       $grid-column: 3);
+        background-color: variables.$yellow-color;
+    }
+
+    .four {
+        @include mixins.assign_to_grid($grid-row: 1 / span 4,
+                                       $grid-column: 4);
+        background-color: variables.$green-color;
+    }
+
+    .five {
+        @include mixins.assign_to_grid($grid-row: span 6 / 5,
+                                       $grid-column: 5);
+        background-color: variables.$blue-color;
+    }
+
+    .six {
+        @include mixins.assign_to_grid($grid-row: -1 / span 3,
+                                       $grid-column: 6);
+        background-color: variables.$purple-color;
+    }
+
+    .seven {
+        @include mixins.assign_to_grid($grid-row: span 3 / -1,
+                                       $grid-column: 7);
+        background-color: variables.$black-color;
+        color: variables.$white-color;
+    }
+}
+
+div.primer-49 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: [begin] 5em [middle] 5em [end],
+                                      $column-template: repeat(5, 5em));
+
+    .one {
+        @include mixins.assign_to_grid($grid-row: middle / span 2,
+                                       $grid-column: 1);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-row: middle / span 2,
+                                       $grid-column: 2 / auto);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        @include mixins.assign_to_grid($grid-row: begin / span 4,
+                                       $grid-column: 3);
+        background-color: variables.$yellow-color;
+    }
+
+    .four {
+        @include mixins.assign_to_grid($grid-row: span 3 / end,
+                                       $grid-column: 4);
+        background-color: variables.$green-color;
+    }
+
+    .five {
+        @include mixins.assign_to_grid($grid-row: span 2 / begin,
+                                       $grid-column: 5);
+        background-color: variables.$blue-color;
+    }
+}
+
+div.primer-50 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: 200px 1fr 3em,
+                                      $column-template: 20em 1fr 1fr 10em,
+                                      $template-areas: "header   header  header  header"
+                                                       "leftside content content rightside"
+                                                       "leftside footer  footer  footer");
+    .masthead {
+        @include mixins.assign_to_grid($grid-area: header);
+        background-color: variables.$red-color;
+    }
+
+    .sidebar {
+        @include mixins.assign_to_grid($grid-area: leftside);
+        background-color: variables.$orange-color;
+    }
+
+    .main {
+        @include mixins.assign_to_grid($grid-area: content);
+        background-color: variables.$yellow-color;
+    }
+
+    .navbar {
+        @include mixins.assign_to_grid($grid-area: rightside);
+        background-color: variables.$green-color;
+    }
+
+    .footer {
+        @include mixins.assign_to_grid($grid-area: footer);
+        background-color: variables.$blue-color;
+    }
+}
+
+div.primer-51 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: [row-1-start] 2em [row-1-end row-2-start] 5em [row-2-end],
+                                      $column-template: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end]);
+
+    .one {
+        @include mixins.assign_to_grid($grid-area: row-1-start / col-2-start / row-1-end / col-2-end);
+        background-color: variables.$red-color;
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-area: row-2 / col-1-start / row-2 / col-2-end);
+        background-color: variables.$orange-color;
+    }
+
+    .three {
+        //@include mixins.assign_to_grid($grid-area: row-1-start / col-1-start / row-1-end / col-1-end);
+        @include mixins.assign_to_grid($grid-area: meta.inspect(1 / 1 / 2 / 2));
+        background-color: variables.$yellow-color;
+    }
+}
+
+div.primer-52 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(2, 5em),
+                                      $column-template: repeat(2, 5em));
+
+    .one {
+        @include mixins.assign_to_grid($grid-area: meta.inspect(1 / 1 / 2 / 3));
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.5rem);
+    }
+
+    .two {
+        @include mixins.assign_to_grid($grid-area: meta.inspect(1 / 2 / 3 / 3));
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.5rem);
+    }
+}
+
+div.primer-53 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $template-areas: "header header"
+                                                       "sidebar .."
+                                                       "footer footer",
+                                      $row-template: 3em 10em 3em,
+                                      $column-template: 20% 80%);
+
+    .header {
+        @include mixins.assign_to_grid($grid-area: header);
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.5rem);
+    }
+
+    .sidebar {
+        //@include mixins.assign_to_grid($grid-area: sidebar / sidebar / footer / sidebar);
+        @include mixins.assign_to_grid($grid-area: sidebar-start / sidebar-start / footer-end / sidebar-end);
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.5rem);
+    }
+
+    .footer {
+        @include mixins.assign_to_grid($grid-area: footer);
+        @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.5rem);
+    }
+}

@@ -1,0 +1,20 @@
+/********************************* hamburger *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.hamburger {
+    
+    &__link {
+        display: inline-block;
+        color: colors.$hamburger-link-color;
+
+        &:hover {
+            color: colors.$hamburger-link-color-hover;
+        }
+    }
+
+    &__icon {
+        font-size: variables.$hamburger-icon-font-size;
+    }
+}

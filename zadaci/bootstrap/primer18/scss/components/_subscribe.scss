@@ -1,0 +1,71 @@
+/********************************** subscribe ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: variables.$subscribe-height;
+
+    &__cost {
+        font-size: variables.$subscribe-cost-font-size;
+    }
+
+    &__dollar {
+        margin-top: variables.$subscribe-dollar-margin-top;
+        font-size: variables.$subscribe-dollar-font-size;
+    }
+
+    &__heading {
+        display: inline-block;
+        margin: 0;
+        font-size: variables.$subscribe-heading-font-size;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+    &__info {
+        margin: 0;
+        color: white;
+    }
+
+    &__image {
+        // don't wrap elements inside flex container
+        display: flex;
+        flex-wrap: nowrap;
+
+        // don't shrink image with when resized width get smaller
+        // also don't grow image when width get larger
+        flex: 0 0 auto;
+
+        // center flex items for both main and cross axis
+        justify-content: center;
+        align-items: center;
+
+        background-image: url("../../../../slike/zadaci/primer18/circle.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-weight: bold;
+        color: white;
+        margin-left: variables.$subscribe-image-margin-left;
+
+        // set width and height for image
+        height: variables.$subscribe-image-width;
+        width: variables.$subscribe-image-width;
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$subscribe-link-color;
+
+    }
+
+    &__text {
+        text-align: right;
+    }
+}

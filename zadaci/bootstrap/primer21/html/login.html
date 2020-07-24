@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <title>Zadaci Bootstrap primer 21</title>
+    <meta charset="utf-8" />
+
+    <!-- responsive design meta tag for viewport change -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+    <!-- include bootstrap and custom css -->
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- font awesome for icons -->
+    <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="page__container">
+            <div class="container-xl">
+                <header class="header">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 col-lg-7 mb-3 mb-sm-0">
+                            <div class="row">
+                                <div class="col col-lg-4 mt-1">
+                                    <div class="logo">
+                                        <a href="index.html" class="logo__link">
+                                            <img src="../../../../slike/zadaci/primer21/logo.png"
+                                                alt="charity water logo" width="150" class="logo__image" />
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col col-lg-7 d-none d-lg-block">
+                                    <nav class="navigation">
+                                        <ul class="navigation__list">
+                                            <li class="navigation__item">
+                                                <a href="index.html" class="navigation__link">Why Water?</a>
+                                            </li>
+                                            <li class="navigation__item">
+                                                <a href="index.html" class="navigation__link">Our Work</a>
+                                            </li>
+                                            <li class="navigation__item">
+                                                <a href="index.html" class="navigation__link">About Us</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-5 mr-n4">
+                            <div class="header__buttons">
+                                <a href="index.html" class="header__button header__button--border">Donate</a>
+                                <a href="index.html"
+                                    class="header__button header__button--border d-none d-md-inline-block">Fundraise</a>
+                                <a href="index.html" class="header__button d-none d-md-inline-block">Sign In</a>
+                            </div>
+                        </div>
+
+                        <div class="col-auto d-lg-none">
+                            <div class="hamburger">
+                                <a href="index.html" class="hamburger__link hamburger__link--margin-bottom">
+                                    <i class="fas fa-bars hamburger__icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            <div class="page__wallpaper">
+                <div class="container-xl">
+                    <main class="login-page">
+                        <div class="row">
+                            <div class="offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+                                <div class="sign-up">
+                                    <h1 class="sign-up__heading">Let's Go!</h1>
+                                    <p class="sign-up__info"><span class="sign-up__count">61,775</span>
+                                        people have started campaigns
+                                    </p>
+                                    <form action="index.html" method="post" class="sign-up__form form">
+                                        <label for="campaign-name-id" class="sign-up__label">Campaign Name</label>
+                                        <input id="campaign-name-id" type="text" name="campaign-name"
+                                            placeholder="Give your campaign a name" class="sign-up__input input"
+                                            required="required" />
+                                        <label for="campaign-goal-id" class="sign-up__label">Campaign Goal</label>
+                                        <div class="sign-up__donate">
+                                            <div class="sign-up__goal">
+                                                <input id="campaign-goal-id" type="number" name="campaign-goal"
+                                                    placeholder="Enter price" class="sign-up__price input"
+                                                    required="required" />
+                                                <span class="sign-up__dollar">&dollar;</span>
+                                                <span class="sign-up__usd">usd</span>
+                                            </div>
+                                            <div class="sign-up__water">
+                                                <i class="fas fa-male sign-up__man"></i>
+                                                <div class="sign-up__people">
+                                                    <span class="sign-up__number">11</span> people will get access
+                                                    to clean water
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Create Campaign" class="sign-up__button button" />
+                                        <div class="sign-up__campaign-team">
+                                            <a href="login.html" class="sign-up__team">Want to campaign as a team?</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <div class="container-xl">
+                <footer class="footer">
+                    <div class="subscribe form">
+                        <div class="row">
+                            <div class="col-lg-4 mb-4 mb-lg-0">
+                                <div class="subscribe__heading-group">
+                                    <h3 class="subscribe__heading">Add Impact To Your Inbox</h3>
+                                    <h3 class="subscribe__subheading">Get our emails to stay in the know</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-lg">
+                                <form action="index.html" method="post" class="subscribe__form">
+                                    <input type="text" name="footer-name" placeholder="First name"
+                                        class="subscribe__name input" required="required" />
+                                    <input type="text" name="footer-surname" placeholder="Last name" class="input"
+                                        required="required" />
+                                    <input type="email" name="footer-email" placeholder="Email" class="input"
+                                        required="required" />
+                                    <input type="submit" value="Subscribe" class="subscribe__submit button" />
+                                </form>
+                                <p class="subscribe__info">This site is protected by reCAPTCHA and the Google
+                                    <a href="index.html" class="subscribe__link">Privacy Policy</a> and
+                                    <a href="index.html" class="subscribe__link">Terms of Service</a> apply.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav class="footer__navigation">
+                        <div class="row">
+                            <div
+                                class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-md-0 text-align-center">
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <h3 class="footer__heading">get to know us</h3>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">about us</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">see our financials</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">meet the team</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">careers</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-md-0">
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <h3 class="footer__heading">connect</h3>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">contact us</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">help center</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">request a speaker</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">shop our store</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md mb-3 mb-sm-0">
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <h3 class="footer__heading">get involved</h3>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">fundraise</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">brand partnerships</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">volunteer</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">students & teachers</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="offset-1 offset-bs-1 col-bs-5 offset-md-0 col-md">
+                                <ul class="footer__list">
+                                    <li class="footer__item">
+                                        <h3 class="footer__heading">donate</h3>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">join the spring</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">give to a campaign</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">give in someone's honor</a>
+                                    </li>
+                                    <li class="footer__item">
+                                        <a href="index.html" class="footer__link">sponsor a community</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="row mb-5 mb-md-4">
+                        <div class="col-md mb-3 mb-md-0">
+                            <div class="social mb-3">
+                                <ul class="social__list">
+                                    <li class="social__item">
+                                        <a href="https://www.twitter.com" target="_blank" class="social__link">
+                                            <i class="fab fa-twitter social__icon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.facebook.com" target="_blank" class="social__link">
+                                            <i class="fab fa-facebook-f social__icon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.instagram.com" target="_blank" class="social__link">
+                                            <i class="fab fa-instagram social__icon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.snapchat.com" target="_blank" class="social__link">
+                                            <i class="fab fa-snapchat-ghost social__icon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.youtube.com" target="_blank" class="social__link">
+                                            <i class="fab fa-youtube social__icon"></i>
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a href="https://www.linkedin.com" target="_blank" class="social__link">
+                                            <i class="fab fa-linkedin social__icon"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <ul class="footer__list footer__list--inline">
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">privacy policy</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">made with
+                                        <i class="fas fa-heart footer__heart"></i>
+                                        in nyc
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__email">get our emails</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-auto">
+                            <div class="footer__currency">
+                                <select name="currency-value" class="currency">
+                                    <option selected="selected" value="ser" class="currency__value">Serbian dinar
+                                    </option>
+                                    <option value="en" class="currency__value">English pound</option>
+                                    <option value="us" class="currency__value">US dollar</option>
+                                    <option value="ger" class="currency__value">German euro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="footer__copy">&copy; 2020 | 40 Worth St. NY, NY 10013 | 1 Devonshire St, London
+                        W1W 5DR | Charity Global, Inc., a US 501 (c)(3) public charity, EIN 22-3936753. Charity
+                        Global UK Limited is a dual-qualified charity registered in England and Wales, charity
+                        number 1169228. Charity Global UK Limited is wholly owned by Charity Global, Inc.
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

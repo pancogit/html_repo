@@ -1,0 +1,100 @@
+/* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+main {
+    line-height: variables.$line-height-3;
+
+    a {
+        color: colors.$green-color-2;
+    }
+
+    .main-headings {
+        color: colors.$green-color-4;
+    }
+}
+
+div.main-section {
+    // make fluid automatic responsive grid
+    @include mixins.set_grid_template(
+        $grid-template-columns: repeat(auto-fit, minmax(variables.$min-grid-item-1, 1fr)));
+    
+    //@include mixins.set_grid_gaps($gap: 3%);  // css bug, don't use percentages for row gaps
+    @include mixins.set_grid_gaps($gap: variables.$gap-size-2); // set gaps between row/cols
+
+    .main-headings {
+        img {
+            vertical-align: sub;
+            margin-right: variables.$margin-size-3;
+        }
+    }
+}
+
+section.services-overview {
+    ul {
+        @include mixins.remove_list_styles();
+
+        a {
+            display: block; // spread link to full width of list item
+            color: colors.$silver-color-1;
+            font-size: variables.$font-size-3;
+            line-height: variables.$line-height-2; // increase line height for this list
+
+            &:hover {
+                color: colors.$hamburger-hover;
+
+                i {
+                    color: colors.$hamburger-hover;
+                }
+            }
+
+            i {
+                margin-right: variables.$margin-size-3;
+                color: colors.$green-color-4;
+            }
+        }
+    }
+}
+
+div.main-welcome-clients-wrapper {
+    background-color: colors.$blue-color-1;
+
+    @include mixins.set_box_shadow($y-offset: 0px, $spread: 3px); // bottom and top box shadow
+
+    div.main-welcome-clients {
+        padding-bottom: variables.$padding-3;  // increase bottom padding
+
+        @include mixins.set_grid_template($grid-template-columns: 65% 30%); // make one third for second column
+        //@include mixins.set_grid_gaps($gap: 4%); // css bug, don't use percentages for row gaps
+        @include mixins.set_grid_gaps($gap: variables.$gap-size-3); // set gaps between row/cols
+
+        @media only screen and (max-width: variables.$media-size-5) {
+            @include mixins.set_grid_template($grid-template-columns: 1fr); // make one column
+            @include mixins.set_grid_gaps($gap: 0); // remove gaps for better look
+        }
+    }
+}
+
+section.main-clients {
+    div.icons {
+        @include mixins.set_grid_template(
+            $grid-template-columns: repeat(auto-fit, minmax(variables.$col-width-3, 1fr)));
+        @include mixins.align_grid($justify-items: center); // center all icons in grid
+        @include mixins.set_grid_gaps($row-gap: variables.$gap-size-4); // set just row gaps
+
+        a {
+            font-size: variables.$font-size-4; // increase icon font size
+            color: colors.$blue-color-2;
+
+            @media only screen and (max-width: variables.$media-size-6) {
+                font-size: variables.$font-size-5; // decrease icon font size for small screens
+            }
+
+            &:hover {
+                color: colors.$blue-color-3;
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+/* page - chapter 3 */
+
+@use '../global/mixins';
+
+div.primer-5 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $row-template: [start masterhead] 3em [content] calc(100% - 3em - 2em) [footer] 2em [row-end stop end],
+                                      $column-template: [start col-1] 200px [col-2] 50% [col-3] 100px [col-end last end]);
+    height: 200px;
+}
+
+div.primer-6 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 1fr 1fr 1fr 1fr 1fr);
+}
+
+div.primer-7 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 1fr 1fr 3fr 1fr);
+}
+
+div.primer-8 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 15em 1fr 10%);
+}
+
+div.primer-9 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 15em 4.5fr 3fr 10%);
+}
+
+div.primer-10 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 15em 4.5fr minmax(5em, 3fr) 10%);
+}
+
+div.primer-11 {
+    @include mixins.set_grid_template($grid-kind: grid, 
+                                      $column-template: 15em 1fr minmax(0, 500px) 10%);
+}
+
+div.primer-12 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: 3em minmax(5em, 1fr) 2em,
+                                      $column-template: 15em 1fr minmax(0, 500px) 10%);
+}
+
+div.primer-13, div.primer-14, div.primer-15 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: max-content max-content max-content,
+                                      $column-template: max-content max-content max-content max-content);
+}
+
+div.primer-16 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: max-content max-content max-content,
+                                      $column-template: minmax(0, max-content) minmax(0, max-content) 
+                                                        minmax(0, max-content) minmax(0, max-content));
+}
+
+div.primer-15, div.primer-16, div.primer-17 {
+    width: 250px;
+}
+
+figure {
+    margin: 0.5rem;
+}
+
+div.primer-17 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: max-content max-content max-content,
+                                      $column-template: minmax(min-content, max-content) 
+                                                        minmax(min-content, max-content)
+                                                        minmax(min-content, max-content) 
+                                                        minmax(min-content, max-content));
+}
+
+div.primer-18 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 1fr fit-content(150px) 2fr);
+}
+
+div.primer-19 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 2fr fit-content(50%) 1fr);
+}
+
+div.primer-20 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: fit-content(50ch));
+}
+
+div.primer-21, div.primer-22 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: fit-content(50ch)
+                                                        fit-content(50ch)
+                                                        fit-content(50ch));
+    width: 120ch;
+}
+
+.monospace-font {
+    font-family: monospace;
+}
+
+div.primer-23 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(10, 5em));
+}
+
+div.primer-24 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 10em repeat(10, 5em));
+}
+
+div.primer-25 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, 2em 1fr 1fr));
+}
+
+div.primer-26 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, 2em 1fr 1fr) 2em);
+}
+
+div.primer-27 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(4, 10px [col-start] 250px [col-end] 10px));
+}
+
+div.primer-28 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, [top] 5em [bottom]));
+}
+
+div.primer-29-pattern {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: repeat(auto-fill, [top] 5em [bottom]));
+}
+
+div.primer-29 {
+    height: 11em;
+}
+
+div.primer-30 {
+    height: 18em;
+}
+
+div.primer-31 {
+    height: 21em;
+}
+
+div.primer-32 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, 20em) repeat(auto-fill, 2em));
+}
+
+div.primer-33 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(auto-fit, 5em));
+}
+
+div.primer-34 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(auto-fill, 5em));
+}
+
+div.primer-35 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $template-areas: "h h h h" 
+                                                       "l c c r"
+                                                       "l f f f");
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $template-areas: "header   header  header  header" 
+                                                       "leftside content content rightside"
+                                                       "leftside footer  footer  footer");
+}
+
+div.primer-36 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $template-areas: "header   header  header  header" 
+                                                       "left     .       .....   right"
+                                                       "left     footer  footer  footer",
+                                      $row-template: 40px 10em 3em 20px,
+                                      $column-template: 1fr repeat(2, 20em) 1fr 1fr);
+}
+
+div.primer-37 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $template-areas: "header   header  header  header" 
+                                                       "left     ...     ...     right"
+                                                       "footer   footer  footer  footer",
+                                      $row-template: 40px [content] 1fr 3em 20px,
+                                      $column-template: [begin] 1fr repeat(2, 20em) 1fr 1fr);
+}
+
+div.primer-38 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: [header-start] 3em 
+                                                     [header-end content-start] 1fr 
+                                                     [content-end footer-start] 3em [footer-end],
+                                      $column-template: [header-start footer-start] 1fr 
+                                                        [content-start] 1fr 
+                                                        [content-end] 1fr [header-end footer-end]);
+}
+
+div.primer-39 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: 3em 1fr 3em,
+                                      $column-template: 1fr [content-start] 1fr [content-end] 1fr);
+}

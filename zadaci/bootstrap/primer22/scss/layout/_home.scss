@@ -1,0 +1,71 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H O M E P A G E *********************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.main {
+    padding: variables.$main-padding-large;
+
+    @include bootstrap.media-breakpoint-down(sm) {
+        padding: variables.$main-padding-normal;
+    }
+    
+    &__welcome {
+        padding: variables.$main-welcome-padding-large;
+        border-radius: variables.$main-welcome-border-radius;
+
+        // fallback background color and background image as gradient
+        background: colors.$main-welcome-background;
+        background: colors.$main-welcome-background-gradient;
+
+        // for smallest screen, move element to edges of container with
+        // negative margins for better look
+        // those margins will counteract paddings from container
+        // remove border radius because rounded corners doesn't look good
+        // when element is spread to the edges of container
+        @include bootstrap.media-breakpoint-down(xs) {
+            margin: variables.$main-welcome-negative-margins;
+            border-radius: 0;
+        }
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            padding: variables.$main-welcome-padding-normal;
+        }
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$main-heading-color;
+        font-size: variables.$main-heading-font-size-large;
+        font-weight: normal;
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            font-size: variables.$main-heading-font-size-normal;
+            text-align: center;
+        }
+    }
+
+    &__intranet {
+        color: colors.$main-intranet-color;
+    }
+
+    &__paragraph {
+        color: colors.$main-paragraph-color;
+        line-height: variables.$main-paragraph-line-height;
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            font-size: variables.$main-paragraph-font-size-small;
+        }
+    }
+
+    &__button {
+        display: block;
+        margin-top: variables.$main-button-margin-top;
+        text-align: right;
+    }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <title>Zadaci Bootstrap primer 19</title>
+    <meta charset="utf-8" />
+
+    <!-- responsive design meta tag for viewport change -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+    <!-- include bootstrap and custom css -->
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- font awesome for icons -->
+    <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- set icon for page (favicon) -->
+    <link href="../../../../slike/zadaci/primer19/icon.png" rel="icon" type="image/png" />
+</head>
+
+<body>
+
+    <div class="page">
+        <!-- background image of house -->
+
+        <header class="header">
+            <div class="container-xl">
+                <div class="row py-3">
+                    <div class="col-sm-10 col-md-4 col-lg-3">
+                        <div class="logo">
+                            <a href="index.html" class="logo__link">
+                                <img src="../../../../slike/zadaci/primer19/logo.svg" alt="logo picture" width="200"
+                                    class="logo__image" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 d-none d-xl-block">
+                        <nav class="navigation">
+                            <ul class="navigation__list">
+                                <li class="navigation__item">
+                                    <a href="index.html" class="navigation__link">How it Works</a>
+                                </li>
+                                <li class="navigation__item">
+                                    <a href="index.html" class="navigation__link">About</a>
+                                </li>
+                                <li class="navigation__item">
+                                    <a href="index.html" class="navigation__link">Testimonials</a>
+                                </li>
+                                <li class="navigation__item">
+                                    <a href="index.html" class="navigation__link">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-7 col-lg-8 col-xl-4 d-none d-md-block">
+                        <div class="location">
+                            <a class="location__link">
+                                <i class="fas fa-map-marker-alt location__icon"></i>
+                                <span class="location__text">Located in Goshen, Inidiana</span>
+                            </a>
+                            <div class="location__buttons">
+                                <a href="index.html" class="location__telephone">
+                                    <i class="fas fa-phone-alt location__call"></i>
+                                    <span class="location__number">574-294-5678</span>
+                                </a>
+                                <a href="index.html" class="location__offer">Get My Cash Offer</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 col-md-1 d-xl-none order-last order-sm-0 mb-2 mb-sm-0">
+                        <nav class="hamburger-menu">
+                            <a href="index.html" class="hamburger-menu__link">
+                                <i class="fas fa-bars hamburger-menu__icon"></i>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="col-12 mt-3 mb-4 mb-sm-5 d-md-none">
+                        <div class="location-mobile">
+                            <div class="location-mobile__info">
+                                <i class="fas fa-map-marker-alt location-mobile__icon"></i>
+                                <span class="location-mobile__text">Located in Goshen, Inidiana</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 
+            sticky positioned element relative to whole page
+            if it's put inside header, it will only "stick" while we header is scrolled,
+            and after that it's not sticking anymore
+            because of that, it must be relative to whole page to stick to whole page
+            as user scroll down the page
+            this element is shown for small screens, so it's not neccessary to put
+            them into centered container on page, it will spread to whole width anyway
+        -->
+        <div class="buttons-mobile d-md-none">
+            <div class="buttons-mobile__buttons">
+                <a href="index.html" class="buttons-mobile__offer">
+                    <i class="fas fa-arrow-right buttons-mobile__marker"></i>
+                    <span class="buttons-mobile__offer-text">Get My Cash Offer</span>
+                </a>
+                <a href="index.html" class="buttons-mobile__offer">
+                    <i class="fas fa-phone-alt buttons-mobile__marker"></i>
+                    <span class="buttons-mobile__offer-text">Call Today</span>
+                </a>
+            </div>
+        </div>
+
+        <main class="main">
+            <!-- background transparent color over house image -->
+
+            <div class="container-xl">
+                <div class="row">
+                    <div class="col-sm-10 col-md-9 col-lg-7 col-xl-6">
+                        <h1 class="main__heading-level-1">Sell Your House Now</h1>
+                        <h2 class="main__heading-level-2">To The Area's Most Trusted Cash Buyer</h2>
+                        <h3 class="main__heading-level-3">Any house, any condition, any price range.</h3>
+
+                        <div class="sign-in">
+                            <h2 class="sign-in__heading">Get An Offer Today</h2>
+
+                            <form action="https://www.example.com/sign-in-page.asp" class="sign-in__form">
+                                <input type="text" name="name" placeholder="Name" class="sign-in__name sign-in__input"
+                                    required="required" />
+                                <input type="text" name="phone" placeholder="Phone"
+                                    class="sign-in__phone sign-in__input" required="required" />
+                                <input type="text" name="zip" class="sign-in__zip sign-in__input"
+                                    placeholder="(Street, City, State, ZIP)" required="required" />
+                                <input type="submit" class="sign-in__button sign-in__input" value="Get My Cash Offer" />
+                            </form>
+
+                            <p class="sign-in__privacy">Your privacy is important to us! Your information
+                                is confidential and will never be sold to third parties.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container-xl">
+                <div class="footer__sign-in">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-5 col-xl-6 mb-3 mb-md-0">
+                            <div class="logo logo--align-top">
+                                <a href="index.html" class="logo__link">
+                                    <img src="../../../../slike/zadaci/primer19/logo.svg" width="200" alt="logo picture"
+                                        class="logo__image" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-lg-7 col-xl-6">
+                            <div class="sign-in">
+                                <form action="https://www.example.com/sign-in-page.asp" class="sign-in__form">
+                                    <input type="text" name="name-footer" class="sign-in__name sign-in__input"
+                                        placeholder="Name" required="required" />
+                                    <input type="text" name="phone-footer" class="sign-in__phone sign-in__input"
+                                        placeholder="Phone" required="required" />
+                                    <input type="text" name="zip-footer" class="sign-in__zip sign-in__input"
+                                        placeholder="(Street, City, State, ZIP)" required="required" />
+                                    <input type="submit" class="sign-in__button sign-in__input"
+                                        value="Get My Cash Offer" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__copy">
+                    <p class="footer__paragraph">Copyright 2018 &copy; All rights Reserved. Design by
+                        <a href="index.html" class="footer__link">NoName</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

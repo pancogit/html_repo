@@ -1,0 +1,289 @@
+/* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.main-wrapper {
+    background-color: colors.$black-color-1;
+    color: colors.$silver-color-2;
+
+    .main {
+        padding-top: 0;
+        padding-bottom: variables.$padding-5;
+
+        @include mixins.set_grid_template(
+            $grid-template-columns: variables.$grid-width-2 variables.$grid-width-3 variables.$grid-width-2);
+        @include mixins.set_grid_gaps($gap: variables.$grid-gap-2);
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", 
+                                          $breakpoints: variables.$media-break-2) {
+            // change layout to two column
+            @include mixins.set_grid_template($grid-template-columns: variables.$grid-width-3 
+                                                                      variables.$grid-width-2);
+
+            // increase gaps for one column layout
+            @include mixins.set_grid_gaps($gap: variables.$grid-gap-3);
+        }
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", 
+                                          $breakpoints: variables.$media-break-3) {
+            // change layout to one column
+            @include mixins.set_grid_template($grid-template-columns: variables.$grid-width-2);
+        }
+
+        .heading {
+            color: colors.$white-color-1;
+            margin-bottom: 0;
+        }
+
+        .fa-arrow-right {
+            padding: variables.$padding-6;
+            margin-right: variables.$margin-1;
+            font-size: variables.$font-size-5;
+            color: colors.$white-color-3;
+            background-color: colors.$blue-color-1;
+            border-radius: variables.$border-radius-1;
+
+            // vertical align icon related to text next to them
+            vertical-align: bottom;
+        }
+    }
+}
+
+// this is global class which is reusable
+.image {
+    .link {
+        // spread link as image wrapper to full width
+        display: block;
+
+        img {
+            // resize image proportionaly to link container width
+            width: variables.$grid-width-4;
+
+            // set border around image
+            @include mixins.set_borders($border-style: solid,
+                                        $border-color: colors.$white-color-4,
+                                        $border-width: variables.$border-width-2);
+
+            // because widht is set to 100%, include also paddings and borders
+            // in that math, to not overflow container
+            box-sizing: border-box;
+        }
+    }
+}
+
+.main-navigation-content {
+    margin-bottom: variables.$margin-4;
+
+    .list {
+        @include mixins.reset_list();
+
+        .list-item {
+            @include mixins.set_borders($border-bottom-style: solid,
+                                        $border-bottom-color: colors.$brown-color-1,
+                                        $border-bottom-width: variables.$border-width-1);
+
+            .link {
+                // spread link to full container width
+                display: block;
+
+                color: colors.$white-color-1;
+                font-weight: bold;
+                padding: variables.$padding-4;
+
+                &:hover {
+                    color: colors.$brown-color-2;
+                }
+            }
+        }
+    }
+}
+
+.main-navigation {
+    // set grid rows with maximum content for navigation list and image and remaining
+    // space for top arrow to allow sticky positioning inside that grid item
+    // when height is increasing (responsive), remaining free space will be distributed to the
+    // third row and it is page top arrow
+    // then there will be space for sticky positioning top arrow to move from bottom to top
+    @include mixins.set_grid_template(
+        $grid-template-rows: repeat(2, max-content) variables.$grid-width-2);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", 
+                                      $breakpoints: variables.$media-break-2) {
+        display: none;
+    }
+
+    .page-top {
+        // positioning container for nested .link
+        // nested .link is sticky positioned and this position container is not needed
+        // but for every case it's still there
+        position: relative;
+
+        // this grid item also should be grid container to align nested .link 
+        // to the bottom of grid container using auto margins
+        @include mixins.set_grid_template();
+
+        padding-top: variables.$padding-5;
+        
+        .link {
+            // center grid item with auto margins and push grid item to the bottom
+            // using auto margins
+            margin: 0 auto;
+            margin-top: auto;
+
+            display: inline-block;
+            padding: variables.$padding-3;
+            font-size: variables.$font-size-2;
+            color: colors.$white-color-3;
+            background-color: colors.$brown-color-3;
+            border-radius: variables.$border-radius-2;
+        
+            @include mixins.set_borders($border-style: solid,
+                                        $border-color: colors.$white-color-3,
+                                        $border-width: variables.$border-width-2);        
+        
+            // set sticky position to "stick" to the container edges and not go over container
+            // when height of container is changed, position of element will always stick 
+            // to the bottom in this case
+            position: sticky;
+
+            // when sticky element is moving from bottom to top of grid container
+            // it's better not to touch bottom edges, it's looks better
+            bottom: variables.$margin-5;
+        }
+    }
+}
+
+.main-content {
+    .text {
+        line-height: variables.$line-height-1;
+        margin-top: 0;
+        margin-bottom: variables.$margin-1;
+        padding-bottom: variables.$padding-3;
+
+        @include mixins.set_borders($border-bottom-style: solid,
+                                    $border-bottom-color: colors.$silver-color-2,
+                                    $border-bottom-width: variables.$border-width-3);
+    }
+
+    .link {
+        color: colors.$brown-color-2;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .heading {
+        font-size: variables.$font-size-4;
+        font-weight: normal;
+    }
+
+    .website-template {
+        margin-bottom: variables.$margin-4;
+    }
+
+    .learn-more {
+        display: inline-block;
+
+        .learn-more-content {
+            font-weight: bold;
+            font-size: variables.$font-size-6;
+            color: colors.$blue-color-2;
+        }
+    }
+}
+
+.main-sidebar {
+    .text {
+        margin-top: 0;
+    }
+
+    .main-social {
+        color: colors.$gold-color-4;
+
+        p {
+            font-size: variables.$font-size-7;
+            margin-bottom: 0;
+        }
+
+        .link {
+            display: inline-block;
+            font-size: variables.$font-size-8;
+
+            .fa-facebook-square {
+                color: colors.$blue-color-3;
+            }
+
+            .fa-twitter-square {
+                color: colors.$blue-color-4;
+            }
+
+            .fa-linkedin {
+                color: colors.$blue-color-5;
+            }
+
+            .fa-instagram-square {
+                color: colors.$blue-color-6;
+            }
+        }
+    }
+
+    .main-sidebar-area {
+        .list {
+            @include mixins.reset_list();
+
+            margin-bottom: variables.$margin-6;
+
+            .list-item {
+                margin-bottom: variables.$margin-2;
+
+                .link {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .orange {
+        font-weight: bold;
+        color: colors.$brown-color-4;
+
+        .fa-arrow-right {
+            background-color: colors.$brown-color-4;
+        }
+    }
+
+    .black {
+        font-weight: normal;
+        color: colors.$silver-color-2;
+
+        .fa-arrow-right {
+            background-color: colors.$black-color-3;
+        }
+    }
+
+    .blue {
+        font-weight: normal;
+        color: colors.$silver-color-2;
+    }
+
+    .blue-orange {
+        font-weight: bold;
+        color: colors.$brown-color-4;
+    }
+}
+
+.box {
+    height: variables.$height-3;
+    margin-top: variables.$margin-5;
+
+    @include mixins.set_borders($border-style: solid,
+                                $border-color: colors.$silver-color-2,
+                                $border-width: variables.$border-width-3);
+}

@@ -1,0 +1,121 @@
+// mixins
+
+@use 'colors';
+
+// set borders
+@mixin set_borders($border-style: null,
+                   $border-top-style: null,
+                   $border-bottom-style: null,
+                   $border-left-style: null,
+                   $border-right-style: null,
+
+                   $border-color: null,
+                   $border-top-color: null,
+                   $border-bottom-color: null,
+                   $border-left-color: null,
+                   $border-right-color: null,
+
+                   $border-width: null,
+                   $border-top-width: null,
+                   $border-bottom-width: null,
+                   $border-left-width: null,
+                   $border-right-width: null) {
+    border-style: $border-style;
+    border-top-style: $border-top-style;
+    border-bottom-style: $border-bottom-style;
+    border-left-style: $border-left-style;
+    border-right-style: $border-right-style;
+
+    border-color: $border-color;
+    border-top-color: $border-top-color;
+    border-bottom-color: $border-bottom-color;
+    border-left-color: $border-left-color;
+    border-right-color: $border-right-color;
+
+    border-width: $border-width;
+    border-top-width: $border-top-width;
+    border-bottom-width: $border-bottom-width;
+    border-left-width: $border-left-width;
+    border-right-width: $border-right-width;
+}
+
+// set grid template
+@mixin set_grid_template($grid: grid,
+                         $grid-template-rows: null,
+                         $grid-template-columns: null,
+                         $grid-template-areas: null) {
+    display: $grid;
+    grid-template-rows: $grid-template-rows;
+    grid-template-columns: $grid-template-columns;
+    grid-template-areas: $grid-template-areas;
+}
+
+// align grid, both items and container lines
+@mixin align_grid($justify-content: null,
+                  $justify-items: null,
+                  $jusify-self: null,
+
+                  $align-content: null,
+                  $align-items: null,
+                  $align-self: null) {
+    justify-content: $justify-content;
+    justify-items: $justify-items;
+    justify-self: $jusify-self;
+
+    align-content: $align-content;
+    align-items: $align-items;
+    align-self: $align-self;
+}
+
+// set grid gaps
+@mixin set_grid_gaps($gap: null,
+                     $row-gap: null,
+                     $column-gap: null) {
+    @if $gap != null { // set either gap or individual row/col gaps
+        gap: $gap;
+    }
+    @else {
+        row-gap: $row-gap;
+        column-gap: $column-gap;
+    }
+}
+
+// remove list styles, margins and paddings
+@mixin remove_list_styles() {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+// set rounded borders
+@mixin set_border_radius($border-radius: null,
+                         $top-left: null,
+                         $top-right: null,
+                         $bottom-left: null,
+                         $bottom-right: null) {
+
+    @if $border-radius != null { // set all edges at once
+        border-radius: $border-radius;
+    }
+    @else { // or set individual edges
+        border-top-left-radius: $top-left;
+        border-top-right-radius: $top-right;
+        border-bottom-left-radius: $bottom-left;
+        border-bottom-right-radius: $bottom-right;
+    }
+}
+
+// hover on main menu items
+@mixin hover_on_main_menu() {
+    background-color: colors.$white-color;
+    color: colors.$black-color-2;
+}
+
+// set box shadow
+@mixin set_box_shadow($x-ofset: 0px,
+                      $y-offset: 4px,
+                      $blur: 7px,
+                      $spread: 0px,
+                      $color: black) {
+    box-shadow: $x-ofset $y-offset $blur $spread $color;
+}

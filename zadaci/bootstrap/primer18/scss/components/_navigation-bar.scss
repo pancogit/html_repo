@@ -1,0 +1,22 @@
+/****************************** navigation-bar *******************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.navigation-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: variables.$navigation-bar-padding 0;
+
+    &__item {
+
+        &--flex-grow-normal {
+            flex: 1;
+        }
+
+        &--flex-grow-larger {
+            flex: 1.5;
+        }
+    }
+}

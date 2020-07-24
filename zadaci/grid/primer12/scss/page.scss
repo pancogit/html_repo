@@ -1,0 +1,9 @@
+@use 'global/colors';
+@use 'global/variables';
+@use 'global/mixins';
+
+@use 'page/global';
+@use 'page/home';
+
+@use 'template/header';
+@use 'template/footer';

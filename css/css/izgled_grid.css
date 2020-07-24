@@ -1,23 +1,1434 @@
+/* page body */
 body {
-	background-color: #adffb4;
-	background-color: hsla(125, 100%, 84%, 1);
+  background-color: #adffb4;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
+/* page - chapter 1 */
+div.primer-1 {
+  display: grid;
+}
 
-/* futer */
+/* definisi pozadinu grid kontejnera za primere */
+.grid {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: silver;
+}
 
+div.primer-2 {
+  display: grid;
+}
+div.primer-2 p {
+  display: grid;
+}
+
+div.primer-3 {
+  display: grid;
+}
+div.primer-3 span {
+  display: inline-grid;
+  background-color: white;
+}
+
+/* page - chapter 2 */
+div.primer-4 {
+  display: grid;
+  grid-template-rows: 4rem;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+/* page - chapter 3 */
+div.primer-5 {
+  display: grid;
+  grid-template-rows: [start masterhead] 3em [content] calc(100% - 3em - 2em) [footer] 2em [row-end stop end];
+  grid-template-columns: [start col-1] 200px [col-2] 50% [col-3] 100px [col-end last end];
+  height: 200px;
+}
+
+div.primer-6 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+div.primer-7 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
+}
+
+div.primer-8 {
+  display: grid;
+  grid-template-columns: 15em 1fr 10%;
+}
+
+div.primer-9 {
+  display: grid;
+  grid-template-columns: 15em 4.5fr 3fr 10%;
+}
+
+div.primer-10 {
+  display: grid;
+  grid-template-columns: 15em 4.5fr minmax(5em, 3fr) 10%;
+}
+
+div.primer-11 {
+  display: grid;
+  grid-template-columns: 15em 1fr minmax(0, 500px) 10%;
+}
+
+div.primer-12 {
+  display: grid;
+  grid-template-rows: 3em minmax(5em, 1fr) 2em;
+  grid-template-columns: 15em 1fr minmax(0, 500px) 10%;
+}
+
+div.primer-13, div.primer-14, div.primer-15 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: max-content max-content max-content max-content;
+}
+
+div.primer-16 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: minmax(0, max-content) minmax(0, max-content) minmax(0, max-content) minmax(0, max-content);
+}
+
+div.primer-15, div.primer-16, div.primer-17 {
+  width: 250px;
+}
+
+figure {
+  margin: 0.5rem;
+}
+
+div.primer-17 {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content) minmax(min-content, max-content);
+}
+
+div.primer-18 {
+  display: grid;
+  grid-template-columns: 1fr fit-content(150px) 2fr;
+}
+
+div.primer-19 {
+  display: grid;
+  grid-template-columns: 2fr fit-content(50%) 1fr;
+}
+
+div.primer-20 {
+  display: grid;
+  grid-template-columns: fit-content(50ch);
+}
+
+div.primer-21, div.primer-22 {
+  display: grid;
+  grid-template-columns: fit-content(50ch) fit-content(50ch) fit-content(50ch);
+  width: 120ch;
+}
+
+.monospace-font {
+  font-family: monospace;
+}
+
+div.primer-23 {
+  display: grid;
+  grid-template-columns: repeat(10, 5em);
+}
+
+div.primer-24 {
+  display: grid;
+  grid-template-columns: 10em repeat(10, 5em);
+}
+
+div.primer-25 {
+  display: grid;
+  grid-template-columns: repeat(3, 2em 1fr 1fr);
+}
+
+div.primer-26 {
+  display: grid;
+  grid-template-columns: repeat(3, 2em 1fr 1fr) 2em;
+}
+
+div.primer-27 {
+  display: grid;
+  grid-template-columns: repeat(4, 10px [col-start] 250px [col-end] 10px);
+}
+
+div.primer-28 {
+  display: grid;
+  grid-template-columns: repeat(3, [top] 5em [bottom]);
+}
+
+div.primer-29-pattern {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, [top] 5em [bottom]);
+}
+
+div.primer-29 {
+  height: 11em;
+}
+
+div.primer-30 {
+  height: 18em;
+}
+
+div.primer-31 {
+  height: 21em;
+}
+
+div.primer-32 {
+  display: grid;
+  grid-template-columns: repeat(3, 20em) repeat(auto-fill, 2em);
+}
+
+div.primer-33 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 5em);
+}
+
+div.primer-34 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 5em);
+}
+
+div.primer-35 {
+  display: grid;
+  grid-template-areas: "h h h h" "l c c r" "l f f f";
+  display: grid;
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+
+div.primer-36 {
+  display: grid;
+  grid-template-rows: 40px 10em 3em 20px;
+  grid-template-columns: 1fr repeat(2, 20em) 1fr 1fr;
+  grid-template-areas: "header   header  header  header" "left     .       .....   right" "left     footer  footer  footer";
+}
+
+div.primer-37 {
+  display: grid;
+  grid-template-rows: 40px [content] 1fr 3em 20px;
+  grid-template-columns: [begin] 1fr repeat(2, 20em) 1fr 1fr;
+  grid-template-areas: "header   header  header  header" "left     ...     ...     right" "footer   footer  footer  footer";
+}
+
+div.primer-38 {
+  display: grid;
+  grid-template-rows: [header-start] 3em [header-end content-start] 1fr [content-end footer-start] 3em [footer-end];
+  grid-template-columns: [header-start footer-start] 1fr [content-start] 1fr [content-end] 1fr [header-end footer-end];
+}
+
+div.primer-39 {
+  display: grid;
+  grid-template-rows: 3em 1fr 3em;
+  grid-template-columns: 1fr [content-start] 1fr [content-end] 1fr;
+}
+
+/* page - chapter 4 */
+div.primer-40 {
+  display: grid;
+  grid-template-rows: repeat(5, 5em);
+  grid-template-columns: repeat(10, 5em);
+}
+div.primer-40 .one {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  background-color: red;
+}
+div.primer-40 .two {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 5;
+  grid-column-end: 10;
+  background-color: orange;
+}
+div.primer-40 .three {
+  grid-row-start: 4;
+  grid-column-start: 6;
+  background-color: yellow;
+}
+
+div.primer-41 {
+  display: grid;
+  grid-template-rows: repeat(5, 5em);
+  grid-template-columns: repeat(10, 5em);
+}
+div.primer-41 .one {
+  grid-row-start: 2;
+  grid-row-end: span 2;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-41 .two {
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-column-start: 5;
+  grid-column-end: span 5;
+  background-color: orange;
+}
+div.primer-41 .three {
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  grid-column-start: 6;
+  grid-column-end: span 1;
+  background-color: yellow;
+}
+
+div.primer-42 {
+  display: grid;
+  grid-template-rows: repeat(4, 2em);
+  grid-template-columns: repeat(5, 5em);
+}
+div.primer-42 .one {
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-42 .two {
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  background-color: orange;
+}
+div.primer-42 .three {
+  grid-row-start: 3;
+  grid-row-end: span 1;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  background-color: yellow;
+}
+div.primer-42 .four {
+  grid-row-start: 4;
+  grid-row-end: span 1;
+  grid-column-start: span 1;
+  grid-column-end: 5;
+  background-color: green;
+}
+
+div.primer-43 {
+  display: grid;
+  grid-template-rows: repeat(5, [R] 4em);
+  grid-template-columns: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em;
+}
+div.primer-43 .one {
+  grid-row-start: R 2;
+  grid-row-end: span 3;
+  grid-column-start: col-B;
+  grid-column-end: span 2;
+  background-color: red;
+}
+div.primer-43 .two {
+  grid-row-start: R;
+  grid-row-end: span 2;
+  grid-column-start: col-A 3;
+  grid-column-end: span 2 col-A;
+  background-color: orange;
+}
+div.primer-43 .three {
+  grid-row-start: R 4;
+  grid-row-end: span 1;
+  grid-column-start: col-A 4;
+  grid-column-end: span 1;
+  background-color: yellow;
+}
+
+div.primer-44 {
+  display: grid;
+  grid-template-rows: repeat(3, 4em);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+div.primer-44 .masthead {
+  grid-row-start: header-start;
+  grid-row-end: header-end;
+  grid-column-start: header-start;
+  grid-column-end: header-end;
+  background-color: red;
+}
+div.primer-44 .sidebar {
+  grid-row-start: leftside;
+  grid-row-end: leftside;
+  grid-column-start: leftside;
+  grid-column-end: leftside;
+  background-color: orange;
+}
+div.primer-44 .main {
+  grid-row-start: content-start;
+  grid-row-end: span 1;
+  grid-column-start: content-start;
+  grid-column-end: span 2;
+  background-color: yellow;
+}
+div.primer-44 .navbar {
+  grid-row-start: content-start;
+  grid-row-end: span 1;
+  grid-column-start: rightside;
+  grid-column-end: rightside-end;
+  background-color: green;
+}
+div.primer-44 .footer {
+  grid-row-start: footer-start;
+  grid-row-end: footer-end;
+  grid-column-start: 2;
+  grid-column-end: footer;
+  background-color: blue;
+}
+
+div.primer-45 {
+  display: grid;
+  grid-template-rows: repeat(10, [R] 1.5em);
+  grid-template-columns: 2em repeat(5, [col-A] 5em [col-B] 5em) 2em;
+}
+div.primer-45 .one {
+  grid-row: R 3/7;
+  grid-column: col-B/span 2;
+  background-color: red;
+}
+div.primer-45 .two {
+  grid-row: R/span 2 R;
+  grid-column: col-A 3/span 2 col-A;
+  background-color: orange;
+}
+div.primer-45 .three {
+  grid-row: 4 R/span 1;
+  grid-column: 4 col-A/span 1;
+  background-color: yellow;
+}
+
+div.primer-46 {
+  display: grid;
+  grid-template-rows: auto 5em auto;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "header header" "sidebar content" "footer footer";
+}
+div.primer-46 .header {
+  grid-row: header/header;
+  grid-column: header;
+  background-color: red;
+}
+div.primer-46 .footer {
+  grid-row: footer;
+  grid-column: footer-start/footer-end;
+  background-color: orange;
+}
+
+div.primer-47 {
+  display: grid;
+  grid-template-rows: 4em 5em [footer] 5em [footer] 4em;
+  grid-template-columns: 25% 75%;
+  grid-template-areas: "header header" "sidebar content" "footer footer" "legal legal";
+}
+div.primer-47 .footer {
+  grid-row: footer;
+  grid-column: footer;
+  background-color: orange;
+}
+
+div.primer-48 {
+  display: grid;
+  grid-template-rows: repeat(2, 2em);
+  grid-template-columns: repeat(6, 4em);
+}
+div.primer-48 .one {
+  grid-row: 1/4;
+  grid-column: 1 / 2;
+  background-color: red;
+}
+div.primer-48 .two {
+  grid-row: 3/span 2;
+  grid-column: 2/auto;
+  background-color: orange;
+}
+div.primer-48 .three {
+  grid-row: 1/span 2;
+  grid-column: 3;
+  background-color: yellow;
+}
+div.primer-48 .four {
+  grid-row: 1/span 4;
+  grid-column: 4;
+  background-color: green;
+}
+div.primer-48 .five {
+  grid-row: span 6/5;
+  grid-column: 5;
+  background-color: blue;
+}
+div.primer-48 .six {
+  grid-row: -1/span 3;
+  grid-column: 6;
+  background-color: purple;
+}
+div.primer-48 .seven {
+  grid-row: span 3/-1;
+  grid-column: 7;
+  background-color: black;
+  color: white;
+}
+
+div.primer-49 {
+  display: grid;
+  grid-template-rows: [begin] 5em [middle] 5em [end];
+  grid-template-columns: repeat(5, 5em);
+}
+div.primer-49 .one {
+  grid-row: middle/span 2;
+  grid-column: 1;
+  background-color: red;
+}
+div.primer-49 .two {
+  grid-row: middle/span 2;
+  grid-column: 2/auto;
+  background-color: orange;
+}
+div.primer-49 .three {
+  grid-row: begin/span 4;
+  grid-column: 3;
+  background-color: yellow;
+}
+div.primer-49 .four {
+  grid-row: span 3/end;
+  grid-column: 4;
+  background-color: green;
+}
+div.primer-49 .five {
+  grid-row: span 2/begin;
+  grid-column: 5;
+  background-color: blue;
+}
+
+div.primer-50 {
+  display: grid;
+  grid-template-rows: 200px 1fr 3em;
+  grid-template-columns: 20em 1fr 1fr 10em;
+  grid-template-areas: "header   header  header  header" "leftside content content rightside" "leftside footer  footer  footer";
+}
+div.primer-50 .masthead {
+  grid-area: header;
+  background-color: red;
+}
+div.primer-50 .sidebar {
+  grid-area: leftside;
+  background-color: orange;
+}
+div.primer-50 .main {
+  grid-area: content;
+  background-color: yellow;
+}
+div.primer-50 .navbar {
+  grid-area: rightside;
+  background-color: green;
+}
+div.primer-50 .footer {
+  grid-area: footer;
+  background-color: blue;
+}
+
+div.primer-51 {
+  display: grid;
+  grid-template-rows: [row-1-start] 2em [row-1-end row-2-start] 5em [row-2-end];
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 1fr [col-2-end];
+}
+div.primer-51 .one {
+  grid-area: row-1-start/col-2-start/row-1-end/col-2-end;
+  background-color: red;
+}
+div.primer-51 .two {
+  grid-area: row-2/col-1-start/row-2/col-2-end;
+  background-color: orange;
+}
+div.primer-51 .three {
+  grid-area: 1/1/2/2;
+  background-color: yellow;
+}
+
+div.primer-52 {
+  display: grid;
+  grid-template-rows: repeat(2, 5em);
+  grid-template-columns: repeat(2, 5em);
+}
+div.primer-52 .one {
+  grid-area: 1/1/2/3;
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+div.primer-52 .two {
+  grid-area: 1/2/3/3;
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+
+div.primer-53 {
+  display: grid;
+  grid-template-rows: 3em 10em 3em;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "header header" "sidebar .." "footer footer";
+}
+div.primer-53 .header {
+  grid-area: header;
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+div.primer-53 .sidebar {
+  grid-area: sidebar-start/sidebar-start/footer-end/sidebar-end;
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+div.primer-53 .footer {
+  grid-area: footer;
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.5rem;
+}
+
+/* page - chapter 5 */
+.primer-54, .primer-55, .primer-56 {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 4em);
+  grid-template-columns: repeat(auto-fit, 15em);
+  list-style-type: none;
+  width: 45em;
+  height: 8em;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+.primer-54 li, .primer-55 li, .primer-56 li {
+  grid-row: auto;
+  grid-column: auto;
+}
+.primer-54 li:nth-of-type(1), .primer-55 li:nth-of-type(1), .primer-56 li:nth-of-type(1) {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+.primer-54 li:nth-of-type(2), .primer-55 li:nth-of-type(2), .primer-56 li:nth-of-type(2) {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+.primer-54 li:nth-of-type(3), .primer-55 li:nth-of-type(3), .primer-56 li:nth-of-type(3) {
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.5rem;
+}
+.primer-54 li:nth-of-type(4), .primer-55 li:nth-of-type(4), .primer-56 li:nth-of-type(4) {
+  border-style: solid;
+  border-color: green;
+  border-width: 0.5rem;
+}
+.primer-54 li:nth-of-type(5), .primer-55 li:nth-of-type(5), .primer-56 li:nth-of-type(5) {
+  border-style: solid;
+  border-color: blue;
+  border-width: 0.5rem;
+}
+
+.primer-55, .primer-56 {
+  grid-auto-flow: column;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+.primer-56 li {
+  width: 7em;
+  height: 1.5em;
+}
+
+div.primer-57, div.primer-58 {
+  display: grid;
+  grid-template-rows: repeat(3, 50px);
+  grid-template-columns: repeat(4, 50px);
+  grid-auto-flow: row;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}
+div.primer-57 img, div.primer-58 img {
+  grid-row: auto;
+  grid-column: auto;
+}
+
+div.primer-58 img.wide {
+  grid-column: auto/span 2;
+}
+div.primer-58 img.tall {
+  grid-row: auto/span 2;
+}
+
+div.primer-59, div.primer-67, div.primer-61, div.primer-60, div.primer-68, div.primer-62 {
+  display: grid;
+  grid-template-rows: repeat(3, 50px);
+  grid-template-columns: repeat(4, 50px);
+  grid-auto-flow: row;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}
+div.primer-59 .one, div.primer-67 .one, div.primer-61 .one, div.primer-60 .one, div.primer-68 .one, div.primer-62 .one {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.2rem;
+}
+div.primer-59 .two, div.primer-67 .two, div.primer-61 .two, div.primer-60 .two, div.primer-68 .two, div.primer-62 .two {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.2rem;
+  grid-column: auto/span 2;
+}
+div.primer-59 .three, div.primer-67 .three, div.primer-61 .three, div.primer-60 .three, div.primer-68 .three, div.primer-62 .three {
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.2rem;
+}
+div.primer-59 .four, div.primer-67 .four, div.primer-61 .four, div.primer-60 .four, div.primer-68 .four, div.primer-62 .four {
+  border-style: solid;
+  border-color: green;
+  border-width: 0.2rem;
+}
+div.primer-59 .five, div.primer-67 .five, div.primer-61 .five, div.primer-60 .five, div.primer-68 .five, div.primer-62 .five {
+  border-style: solid;
+  border-color: blue;
+  border-width: 0.2rem;
+}
+div.primer-59 .six, div.primer-67 .six, div.primer-61 .six, div.primer-60 .six, div.primer-68 .six, div.primer-62 .six {
+  border-style: solid;
+  border-color: purple;
+  border-width: 0.2rem;
+}
+div.primer-59 .seven, div.primer-67 .seven, div.primer-61 .seven, div.primer-60 .seven, div.primer-68 .seven, div.primer-62 .seven {
+  border-style: solid;
+  border-color: #4ac24a;
+  border-width: 0.2rem;
+}
+div.primer-59 .eight, div.primer-67 .eight, div.primer-61 .eight, div.primer-60 .eight, div.primer-68 .eight, div.primer-62 .eight {
+  border-style: solid;
+  border-color: #66e4de;
+  border-width: 0.2rem;
+  grid-row: auto/span 2;
+}
+div.primer-59 .nine, div.primer-67 .nine, div.primer-61 .nine, div.primer-60 .nine, div.primer-68 .nine, div.primer-62 .nine {
+  border-style: solid;
+  border-color: #2eb7b1;
+  border-width: 0.2rem;
+}
+div.primer-59 .ten, div.primer-67 .ten, div.primer-61 .ten, div.primer-60 .ten, div.primer-68 .ten, div.primer-62 .ten {
+  border-style: solid;
+  border-color: #063680;
+  border-width: 0.2rem;
+}
+div.primer-59 .eleven, div.primer-67 .eleven, div.primer-61 .eleven, div.primer-60 .eleven, div.primer-68 .eleven, div.primer-62 .eleven {
+  border-style: solid;
+  border-color: #194bde;
+  border-width: 0.2rem;
+  grid-row: auto/span 2;
+  grid-column: auto/span 2;
+}
+div.primer-59 .twelve, div.primer-67 .twelve, div.primer-61 .twelve, div.primer-60 .twelve, div.primer-68 .twelve, div.primer-62 .twelve {
+  border-style: solid;
+  border-color: #ba0aba;
+  border-width: 0.2rem;
+}
+div.primer-59 .thirteen, div.primer-67 .thirteen, div.primer-61 .thirteen, div.primer-60 .thirteen, div.primer-68 .thirteen, div.primer-62 .thirteen {
+  border-style: solid;
+  border-color: pink;
+  border-width: 0.2rem;
+}
+div.primer-59 .fourteen, div.primer-67 .fourteen, div.primer-61 .fourteen, div.primer-60 .fourteen, div.primer-68 .fourteen, div.primer-62 .fourteen {
+  border-style: solid;
+  border-color: #d97f8f;
+  border-width: 0.2rem;
+}
+div.primer-59 .fifteen, div.primer-67 .fifteen, div.primer-61 .fifteen, div.primer-60 .fifteen, div.primer-68 .fifteen, div.primer-62 .fifteen {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.2rem;
+}
+div.primer-59 .sixteen, div.primer-67 .sixteen, div.primer-61 .sixteen, div.primer-60 .sixteen, div.primer-68 .sixteen, div.primer-62 .sixteen {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.2rem;
+}
+
+div.primer-60, div.primer-68, div.primer-62 {
+  grid-auto-flow: column;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}
+
+div.primer-61 {
+  grid-auto-flow: row dense;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}
+
+div.primer-62 {
+  grid-auto-flow: column dense;
+  grid-auto-rows: 50px;
+  grid-auto-columns: 50px;
+}
+
+/* page - chapter 6 */
+div.primer-63, div.primer-65, div.primer-66, div.primer-64 {
+  display: grid;
+  grid-template-rows: repeat(2, 80px);
+  grid-template-columns: repeat(2, 80px);
+}
+div.primer-63 .one, div.primer-65 .one, div.primer-66 .one, div.primer-64 .one {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.2rem;
+}
+div.primer-63 .two, div.primer-65 .two, div.primer-66 .two, div.primer-64 .two {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.2rem;
+}
+div.primer-63 .three, div.primer-65 .three, div.primer-66 .three, div.primer-64 .three {
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.2rem;
+}
+div.primer-63 .four, div.primer-65 .four, div.primer-66 .four, div.primer-64 .four {
+  border-style: solid;
+  border-color: green;
+  border-width: 0.2rem;
+}
+div.primer-63 .five, div.primer-65 .five, div.primer-66 .five, div.primer-64 .five {
+  border-style: solid;
+  border-color: blue;
+  border-width: 0.2rem;
+}
+div.primer-63 .six, div.primer-65 .six, div.primer-66 .six, div.primer-64 .six {
+  border-style: solid;
+  border-color: purple;
+  border-width: 0.2rem;
+}
+
+div.primer-64 {
+  grid-auto-flow: row;
+  grid-auto-rows: 80px;
+  grid-auto-columns: auto;
+}
+
+div.primer-65, div.primer-66 {
+  width: 200px;
+  grid-auto-flow: column;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+div.primer-66 {
+  grid-auto-flow: column;
+  grid-auto-rows: auto;
+  grid-auto-columns: 80px;
+}
+
+div.primer-67 {
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+div.primer-68 {
+  grid-auto-flow: column;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+div.primer-69 {
+  max-width: 40rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  grid-auto-flow: row dense;
+  grid-auto-rows: 5em;
+  grid-auto-columns: 5em;
+}
+div.primer-69 img {
+  width: 100%;
+  height: 100%;
+}
+div.primer-69 img.small {
+  grid-row: auto/span 1;
+  grid-column: auto/span 1;
+}
+div.primer-69 img.medium {
+  grid-row: auto/span 2;
+  grid-column: auto;
+}
+div.primer-69 img.large {
+  grid-row: auto/span 2;
+  grid-column: auto/span 2;
+}
+
+/* page - chapter 7 */
+div.primer-70, div.primer-71 {
+  display: grid;
+  grid: "header header  header  header" 3em ".      content sidebar ." 1fr "footer footer  footer  footer" 5em/2em 3fr minmax(10em, 1fr) 2em;
+}
+
+div.primer-71 {
+  grid-auto-flow: column dense;
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+div.primer-72 {
+  display: grid;
+  grid: "header header  header  header" 3em [main-start] ".      content sidebar ." 1fr [main-end] "footer footer  footer  footer" 5em [page-end]/2em [a] 3fr [b] minmax(10em, 1fr) 2em;
+}
+div.primer-72 .three {
+  background-color: blue;
+  color: white;
+  grid-area: main-start/a/main-end/b;
+}
+
+div.primer-73, div.primer-74 {
+  display: grid;
+  grid: auto-flow 2em/minmax(1em, 3em);
+}
+
+div.primer-74 {
+  grid: 2em/auto-flow dense minmax(1em, 3em);
+}
+
+/* page - chapter 8 */
+div.primer-75, div.primer-79, div.primer-78, div.primer-76 {
+  display: grid;
+  grid-template-rows: repeat(2, 5em);
+  grid-template-columns: 15% repeat(2, 1fr);
+  row-gap: normal;
+  column-gap: 1em;
+}
+div.primer-75 .one, div.primer-79 .one, div.primer-78 .one, div.primer-76 .one, div.primer-75 .nine, div.primer-79 .nine, div.primer-78 .nine, div.primer-76 .nine {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+}
+div.primer-75 .two, div.primer-79 .two, div.primer-78 .two, div.primer-76 .two {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+}
+div.primer-75 .three, div.primer-79 .three, div.primer-78 .three, div.primer-76 .three, div.primer-75 .eight, div.primer-79 .eight, div.primer-78 .eight, div.primer-76 .eight {
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.5rem;
+}
+div.primer-75 .four, div.primer-79 .four, div.primer-78 .four, div.primer-76 .four {
+  border-style: solid;
+  border-color: green;
+  border-width: 0.5rem;
+}
+div.primer-75 .five, div.primer-79 .five, div.primer-78 .five, div.primer-76 .five, div.primer-75 .seven, div.primer-79 .seven, div.primer-78 .seven, div.primer-76 .seven {
+  border-style: solid;
+  border-color: blue;
+  border-width: 0.5rem;
+}
+div.primer-75 .six, div.primer-79 .six, div.primer-78 .six, div.primer-76 .six {
+  border-style: solid;
+  border-color: purple;
+  border-width: 0.5rem;
+}
+div.primer-76 {
+  row-gap: 1em;
+  column-gap: normal;
+}
+
+div.primer-77 {
+  height: 500px;
+  display: grid;
+  grid-template-rows: 100px repeat(2, 1fr) 75px;
+  row-gap: 15px;
+  column-gap: normal;
+}
+
+div.primer-78 {
+  gap: 12px 2px;
+}
+
+div.primer-79 {
+  gap: 0;
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(2, 200px);
+}
+div.primer-79 .two {
+  margin: 25px;
+}
+div.primer-79 .three, div.primer-79 .eight {
+  margin: -25px 0;
+}
+
+div.primer-80, div.primer-81 {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 200px;
+}
+div.primer-80 .exel, div.primer-81 .exel {
+  width: 150px;
+  height: 100px;
+  padding: 0;
+  border: 0;
+  margin: 10px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-81 .exel {
+  margin-left: auto;
+}
+
+div.primer-82 {
+  display: grid;
+  grid-template-rows: repeat(2, 100px);
+  grid-template-columns: repeat(3, 200px);
+  gap: 1rem;
+}
+div.primer-82 .img-6, div.primer-82 .img-5, div.primer-82 .img-4, div.primer-82 .img-3, div.primer-82 .img-2, div.primer-82 .img-1 {
+  margin: 10px;
+}
+div.primer-82 .img-2 {
+  margin-left: auto;
+}
+div.primer-82 .img-3 {
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.primer-82 .img-4 {
+  margin: auto;
+}
+div.primer-82 .img-5 {
+  margin-right: auto;
+  margin-top: auto;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+div.primer-82 .img-6 {
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+}
+
+div.primer-83, div.primer-84 {
+  display: grid;
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(5, 200px);
+  position: relative;
+}
+div.primer-83 .exel, div.primer-84 .exel {
+  padding: 0;
+  border: 0;
+  grid-row: 2/4;
+  grid-column: 2/5;
+  position: absolute;
+  top: 1em;
+  bottom: 15%;
+  left: 35px;
+  right: 1rem;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-84 .exel {
+  grid-row: 1/auto;
+  grid-column: 2/auto;
+}
+
+/* page - chapter 9 */
+div.primer-85 {
+  display: grid;
+  grid-template-rows: 10rem;
+  grid-template-columns: repeat(8, 1fr);
+  row-gap: normal;
+  column-gap: 1rem;
+}
+div.primer-85 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+div.primer-85 .start {
+  justify-self: start;
+  align-self: auto;
+}
+div.primer-85 .end {
+  justify-self: end;
+  align-self: auto;
+}
+div.primer-85 .center {
+  justify-self: center;
+  align-self: auto;
+}
+div.primer-85 .left {
+  justify-self: left;
+  align-self: auto;
+}
+div.primer-85 .right {
+  justify-self: right;
+  align-self: auto;
+}
+div.primer-85 .self-start-rtl {
+  justify-self: self-start;
+  align-self: auto;
+  width: min-content;
+  direction: rtl;
+}
+div.primer-85 .self-end-rtl {
+  justify-self: self-end;
+  align-self: auto;
+  width: min-content;
+  direction: rtl;
+}
+div.primer-85 .stretch {
+  justify-self: stretch;
+  align-self: auto;
+}
+
+div.primer-86 {
+  display: grid;
+  grid-template-rows: 10rem;
+  grid-template-columns: repeat(8, 1fr);
+  row-gap: normal;
+  column-gap: 1rem;
+}
+div.primer-86 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+div.primer-86 .start {
+  align-self: start;
+  justify-self: auto;
+}
+div.primer-86 .end {
+  align-self: end;
+  justify-self: auto;
+}
+div.primer-86 .center {
+  align-self: center;
+  justify-self: auto;
+}
+div.primer-86 .flex-start {
+  align-self: flex-start;
+  justify-self: auto;
+}
+div.primer-86 .flex-end {
+  align-self: flex-end;
+  justify-self: auto;
+}
+div.primer-86 .self-start-rtl {
+  align-self: self-start;
+  justify-self: auto;
+  direction: rtl;
+}
+div.primer-86 .self-end-rtl {
+  align-self: self-end;
+  justify-self: auto;
+  direction: rtl;
+}
+div.primer-86 .stretch {
+  align-self: stretch;
+  justify-self: auto;
+}
+
+div.primer-87 {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(5em, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+div.primer-87 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-88, div.primer-90, div.primer-89 {
+  display: grid;
+  grid-template-rows: 4em;
+  grid-template-columns: repeat(5, 6em);
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  width: auto;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  gap: 0.75em 0.5em;
+  justify-content: space-between;
+}
+div.primer-88 div, div.primer-90 div, div.primer-89 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-89 {
+  justify-content: space-around;
+}
+
+div.primer-90 {
+  justify-content: space-evenly;
+}
+
+div.primer-91, div.primer-93, div.primer-92 {
+  display: grid;
+  grid-template-rows: repeat(4, 3em);
+  grid-template-columns: 5em;
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  height: 500px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  gap: 0.75em 0.5em;
+  align-content: space-between;
+}
+div.primer-91 div, div.primer-93 div, div.primer-92 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-92 {
+  align-content: space-around;
+}
+
+div.primer-93 {
+  align-content: space-evenly;
+}
+
+div.primer-94, div.primer-98, div.primer-97, div.primer-96, div.primer-95 {
+  display: grid;
+  grid-template-rows: repeat(2, 3em);
+  grid-template-columns: repeat(4, 5em);
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  gap: 0.75em 0.5em;
+  justify-content: start;
+}
+div.primer-94 div, div.primer-98 div, div.primer-97 div, div.primer-96 div, div.primer-95 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-95 {
+  justify-content: end;
+}
+
+div.primer-96 {
+  justify-content: left;
+}
+
+div.primer-97 {
+  justify-content: right;
+}
+
+div.primer-98 {
+  justify-content: center;
+}
+
+div.primer-100, div.primer-104, div.primer-103, div.primer-102, div.primer-101 {
+  display: grid;
+  grid-template-rows: repeat(3, 3em);
+  grid-template-columns: repeat(2, 5em);
+  padding: 0.5em;
+  margin: 0.5em 1em;
+  height: 300px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  gap: 0.75em 0.5em;
+  align-content: start;
+}
+div.primer-100 div, div.primer-104 div, div.primer-103 div, div.primer-102 div, div.primer-101 div {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+div.primer-101 {
+  align-content: end;
+}
+
+div.primer-102 {
+  align-content: flex-start;
+}
+
+div.primer-103 {
+  align-content: flex-end;
+}
+
+div.primer-104 {
+  align-content: center;
+}
+
+/* page - chapter 10 */
+div.primer-105, div.primer-107, div.primer-106 {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  width: 80%;
+  height: 20em;
+}
+div.primer-105 .box01, div.primer-107 .box01, div.primer-106 .box01 {
+  border-style: solid;
+  border-color: red;
+  border-width: 0.5rem;
+  grid-row: 1/span 4;
+  grid-column: 1/span 4;
+}
+div.primer-105 .box02, div.primer-107 .box02, div.primer-106 .box02 {
+  border-style: solid;
+  border-color: orange;
+  border-width: 0.5rem;
+  grid-row: 4/span 4;
+  grid-column: 4/span 4;
+}
+div.primer-105 .box03, div.primer-107 .box03, div.primer-106 .box03 {
+  border-style: solid;
+  border-color: yellow;
+  border-width: 0.5rem;
+  grid-row: 7/span 4;
+  grid-column: 7/span 4;
+}
+div.primer-105 .box04, div.primer-107 .box04, div.primer-106 .box04 {
+  border-style: solid;
+  border-color: green;
+  border-width: 0.5rem;
+  grid-row: 4/span 7;
+  grid-column: 3/span 2;
+}
+div.primer-105 .box05, div.primer-107 .box05, div.primer-106 .box05 {
+  border-style: solid;
+  border-color: blue;
+  border-width: 0.5rem;
+  grid-row: 2/span 3;
+  grid-column: 4/span 5;
+}
+
+div.primer-106 .box02 {
+  z-index: 2;
+}
+
+div.primer-107 .box02 {
+  order: 2;
+}
+
+div.primer-108 {
+  display: grid;
+  grid-template-rows: 5em;
+  grid-template-columns: repeat(5, minmax(5em, 1fr));
+}
+div.primer-108 .box01 {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+div.primer-108 .box02 {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  order: 2;
+}
+div.primer-108 .box03 {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+}
+div.primer-108 .box04 {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+}
+div.primer-108 .box05 {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+
+/* ad example */
+.ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+  background-color: #1b45ae;
+  font-weight: bold;
+  color: white;
+  /* move ad out of screen and with hover move him transitionaly at original position */
+  position: absolute;
+  bottom: 0;
+  left: -9.5rem;
+  /* put small transition when hover is closed with mouse - out transition */
+  transition: 1s 0.2s;
+}
+.ad:hover {
+  left: 0;
+  bottom: 2rem;
+  /* put small transition on hover - in transition */
+  transition: 1s 0.2s;
+}
+.ad p {
+  margin: 0;
+  width: 50%;
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+/* footer */
 div.futer {
-	margin-top: 20px;
-	padding: 10px;
-	background-color: orange;
-	color: white;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: orange;
+  color: white;
+  /* make slow transition just for fun - transition from hovered to normal state */
+  transition: 5s 1s;
+}
+div.futer:hover {
+  background-color: #2cc42c;
+  margin-left: -20rem;
+  /* make slow transition just for fun */
+  transition: 5s 1s;
+}
+div.futer a {
+  color: blue;
+  font-weight: bold;
+  /* put small transition for this hover - transition from hovered to normal state */
+  transition: 0.5s 0.2s;
+}
+div.futer a:hover {
+  /* put small transition for this hover */
+  transition: 0.5s 0.2s;
+  padding: 0.5rem;
+  color: black;
+  background-color: white;
+  font-weight: bold;
 }
 
-div.futer a {
-	color: blue;
-	font-weight: bold;
-}
+/*# sourceMappingURL=izgled_grid.css.map */

@@ -1,0 +1,271 @@
+/* page - chapter 9 */
+
+@use '../global/variables';
+@use '../global/mixins';
+
+div.primer-85 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(8, 1fr),
+                                      $row-template: 10rem);
+
+    @include mixins.set_grid_gaps($column-gap: 1rem);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    .start {
+        @include mixins.set_align_properties($justify-self: start);
+    }
+
+    .end {
+        @include mixins.set_align_properties($justify-self: end);
+    }
+
+    .center {
+        @include mixins.set_align_properties($justify-self: center);
+    }
+
+    .left {
+        @include mixins.set_align_properties($justify-self: left);
+    }
+
+    .right {
+        @include mixins.set_align_properties($justify-self: right);
+    }
+
+    .self-start-rtl {
+        @include mixins.set_align_properties($justify-self: self-start);
+        width: min-content;
+        direction: rtl;
+    }
+
+    .self-end-rtl {
+        @include mixins.set_align_properties($justify-self: self-end);
+        width: min-content;
+        direction: rtl;
+    }
+
+    .stretch {
+        @include mixins.set_align_properties($justify-self: stretch);
+    }
+}
+
+div.primer-86 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(8, 1fr),
+                                      $row-template: 10rem);
+
+    @include mixins.set_grid_gaps($column-gap: 1rem);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    .start {
+        @include mixins.set_align_properties($align-self: start);
+    }
+
+    .end {
+        @include mixins.set_align_properties($align-self: end);
+    }
+
+    .center {
+        @include mixins.set_align_properties($align-self: center);
+    }
+
+    .flex-start {
+        @include mixins.set_align_properties($align-self: flex-start);
+    }
+
+    .flex-end {
+        @include mixins.set_align_properties($align-self: flex-end);
+    }
+
+    .self-start-rtl {
+        @include mixins.set_align_properties($align-self: self-start);
+        direction: rtl;
+    }
+
+    .self-end-rtl {
+        @include mixins.set_align_properties($align-self: self-end);
+        direction: rtl;
+    }
+
+    .stretch {
+        @include mixins.set_align_properties($align-self: stretch);
+    }
+}
+
+div.primer-87 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, 1fr),
+                                      $row-template: repeat(2, minmax(5em, 1fr)));
+    align-items: center;
+    justify-items: center;
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+}
+
+div.primer-88 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(5, 6em),
+                                      $row-template: 4em);
+
+    padding: 0.5em;
+    margin: 0.5em 1em;
+    width: auto;
+
+    @include mixins.set_borders();
+    @include mixins.set_grid_gaps($gap: 0.75em 0.5em);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    justify-content: space-between;
+}
+
+div.primer-89 {
+    @extend .primer-88;
+
+    justify-content: space-around;
+}
+
+div.primer-90 {
+    @extend .primer-88;
+
+    justify-content: space-evenly;
+}
+
+div.primer-91 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 5em,
+                                      $row-template: repeat(4, 3em));
+
+    padding: 0.5em;
+    margin: 0.5em 1em;
+    height: 500px;
+
+    @include mixins.set_borders();
+    @include mixins.set_grid_gaps($gap: 0.75em 0.5em);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    align-content: space-between;
+}
+
+div.primer-92 {
+    @extend .primer-91;
+
+    align-content: space-around;
+}
+
+div.primer-93 {
+    @extend .primer-91;
+
+    align-content: space-evenly;
+}
+
+div.primer-94 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(4, 5em),
+                                      $row-template: repeat(2, 3em));
+
+    padding: 0.5em;
+    margin: 0.5em 1em;
+
+    @include mixins.set_borders();
+    @include mixins.set_grid_gaps($gap: 0.75em 0.5em);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    justify-content: start;
+}
+
+div.primer-95 {
+    @extend .primer-94;
+
+    justify-content: end;
+}
+
+div.primer-96 {
+    @extend .primer-94;
+
+    justify-content: left;
+}
+
+div.primer-97 {
+    @extend .primer-94;
+
+    justify-content: right;
+}
+
+div.primer-98 {
+    @extend .primer-94;
+
+    justify-content: center;
+}
+
+div.primer-100 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(2, 5em),
+                                      $row-template: repeat(3, 3em));
+
+    padding: 0.5em;
+    margin: 0.5em 1em;
+    height: 300px;
+
+    @include mixins.set_borders();
+    @include mixins.set_grid_gaps($gap: 0.75em 0.5em);
+
+    div {
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+
+    align-content: start;
+}
+
+div.primer-101 {
+    @extend .primer-100;
+
+    align-content: end;
+}
+
+div.primer-102 {
+    @extend .primer-100;
+
+    align-content: flex-start;
+}
+
+div.primer-103 {
+    @extend .primer-100;
+
+    align-content: flex-end;
+}
+
+div.primer-104 {
+    @extend .primer-100;
+
+    align-content: center;
+}

@@ -1,0 +1,32 @@
+/*********************************** card ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.card {
+    
+    background-color: colors.$white-color-1;
+    margin-bottom: variables.$margin-width-5;
+    line-height: variables.$line-height-1;
+
+    &__body {
+        padding: variables.$padding-3;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$black-color-4;
+    }
+
+    &__media {
+        // make videos/pictures responsive
+        width: variables.$width-1;
+
+        // remove borders from embedded videos
+        border: none;
+    }
+
+    &__text {
+        color: colors.$black-color-5;
+    }
+}

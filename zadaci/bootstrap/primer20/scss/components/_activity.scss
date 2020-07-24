@@ -1,0 +1,51 @@
+/********************************** activity *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.activity {
+
+    &__edit {
+        margin-top: variables.$activity-edit-margin-top;
+        margin-bottom: 0;
+        color: colors.$activity-heading-background-color;
+    }
+
+    &__heading {
+        padding: variables.$activity-heading-padding;
+        margin-bottom: 0;
+        font-size: variables.$activity-heading-font-size;
+        color: colors.$activity-heading-color;
+        background-color: colors.$activity-heading-background-color;
+    }
+
+    &__item {
+        padding: variables.$activity-heading-padding;
+
+        // for view all item, add top and bottom borders as separator
+        &--view-all {
+            padding-bottom: variables.$activity-item-view-all-padding-bottom;
+
+            @include mixins.set_border_top($border-top-color: colors.$activity-heading-background-color,
+                                           $border-top-width: variables.$activity-item-view-all-border-top-width);
+            @include mixins.set_border_bottom($border-bottom-color: colors.$activity-heading-background-color,
+                                              $border-bottom-width: variables.$activity-item-view-all-border-bottom-width);
+        }
+    }
+
+    &__link {
+        font-size: variables.$activity-link-font-size;
+        color: colors.$activity-link-color;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+    }
+}

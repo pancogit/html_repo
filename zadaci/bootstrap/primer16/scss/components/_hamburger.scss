@@ -1,0 +1,20 @@
+/********************************* hamburger *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.hamburger {
+    display: flex;
+
+    // spread component to full height of parent (col in this case)
+    height: variables.$width-1;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    &__link {
+        display: inline-block;
+        color: colors.$white-color-1;
+        font-size: variables.$font-size-4;
+    }
+}

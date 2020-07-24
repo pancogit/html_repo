@@ -1,0 +1,48 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** F O O T E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.footer {
+    background-color: colors.$black-theme-color;
+
+    // set top border
+    @include mixins.set_border_top($border-top-color: colors.$yellow-theme-color,
+                                   $border-top-width: variables.$footer-border-top-width);
+
+    &__paragraph {
+        margin-top: variables.$footer-paragraph-margin-top;
+        margin-bottom: variables.$footer-paragraph-margin-bottom;
+        color: colors.$footer-copy-color;
+        font-size: variables.$footer-paragraph-font-size;
+        text-align: center;
+        
+        @include bootstrap.media-breakpoint-up(md) {
+            text-align: right;
+        }
+    }
+
+    &__link {
+        color: colors.$footer-copy-color;
+    }
+
+    &__sign-in {
+        margin: variables.$footer-sign-in-margin-1;
+
+        @include bootstrap.media-breakpoint-up(md) {
+            margin: variables.$footer-sign-in-margin-2;
+        }
+    }
+
+    &__copy {
+        // set top border
+        @include mixins.set_border_top($border-top-color: colors.$footer-copy-color,
+                                       $border-top-width: variables.$footer-copy-border-top-width);
+    }
+}

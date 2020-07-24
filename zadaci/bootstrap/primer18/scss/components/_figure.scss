@@ -1,0 +1,117 @@
+/************************************ figure *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.figure {
+    display: flex;
+    flex-direction: column;
+
+    // set background color on figure, because sometimes header footer can
+    // add some whiteness when zoomed in-out
+    // with this background color, black color will be visible when this happens
+    background-color: black;
+
+    // add borders around figure
+    @include mixins.set_borders($border-color: black,
+                                $border-width: variables.$figure-border-width);
+
+    &__box {
+        // right margin should be the same as figure icon
+        margin-right: variables.$figure-icon-margin-right;
+
+        background-color: colors.$figure-box-background-color;
+        
+        // add borders around figure box
+        @include mixins.set_borders($border-color: colors.$figure-box-border-color,
+                                    $border-width: variables.$figure-border-width);
+
+        // positioning container for figure icon (--positioned)
+        // set also width and height for this container because when positioned icon
+        // will be absolute positioned, then there will not be content and box
+        // will shrink to minimum size
+        position: relative;
+        width: variables.$figure-box-width;
+        height: variables.$figure-box-height;
+
+        transition: variables.$figure-link-transition;
+    }
+
+    &__icon {
+        margin-right: variables.$figure-icon-margin-right;
+        font-size: variables.$figure-icon-font-size;
+
+        // element modifier for css positioning
+        &--positioned {
+            position: absolute;
+
+            // positioning must be constant, not changed, and pixels are used
+            // instead of relative em's
+            top: variables.$figure-icon-positioned-top;
+            right: variables.$figure-icon-positioned-right;
+            margin-right: 0;
+
+            color: black;
+        }
+    }
+
+    &__footer {
+        // if items inside footer are not the same size, then footer will not look good
+        // when flex container is set, and aligned items on cross axis to center, it is
+        // not problem anymore
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        // fallback color if gradients are not supported
+        background-color: colors.$figure-footer-background-color;
+        background-image: colors.$figure-footer-gradient;
+
+        // add border on top for figure footer
+        @include mixins.set_border_top($border-top-color: black,
+                                       $border-top-width: variables.$figure-border-width);
+    }
+
+    &__link {
+        // figure link contain figure icon and text
+        // figure icon can change in size and thus to bottom align text
+        // because of this, link should be flex container to verticaly align icon and text
+        // flex container should be inline, to set links next to each other
+        display: inline-flex;
+        align-items: center;
+
+        // don't wrap figure icon and text, they should be in the same line
+        flex-wrap: nowrap;
+
+        margin: variables.$figure-link-margin;
+        color: white;
+        text-transform: uppercase;
+        font-size: variables.$figure-link-font-size;
+
+        // add small transition for transition hovering effect
+        transition: variables.$figure-link-transition;
+
+        &:hover { 
+            color: colors.$figure-link-hover-color;
+
+            // when link is hovered, change border color
+            .figure__box {
+                border-color: white;
+            }
+        }
+    }
+
+    &__image {
+        width: variables.$figure-image-width;
+
+        // for IE height must be set for picture alone, because picture 
+        // will stretch too much vertically
+        // this is for flex items set in column with pictures
+        height: variables.$figure-image-width;
+    }
+
+    &__text {
+
+    }
+}

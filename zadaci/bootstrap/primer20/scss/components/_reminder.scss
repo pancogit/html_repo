@@ -1,0 +1,72 @@
+/********************************** reminder *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.reminder {
+    margin-bottom: variables.$reminder-margin-bottom;
+
+    // make table responsive
+    width: variables.$width-full;
+
+    // make table with merged table cells without any spacing as in separate model
+    border-collapse: collapse;
+
+    text-align: left;
+
+    &__content {
+        vertical-align: top;
+    }
+
+    &__data {
+        padding: variables.$reminder-data-padding;
+        color: colors.$reminder-data-color;
+    }
+
+    &__footer {
+
+        &--row {
+
+        }
+    }
+
+    &__header {
+        color: colors.$reminder-header-color;
+        background-color: colors.$reminder-header-background-color;
+
+        &--row {
+
+        }
+    }
+
+    &__heading {
+        padding: variables.$reminder-data-padding;
+    }
+
+    &__important {
+        font-weight: bold;
+    }
+
+    &__link {
+        color: colors.$reminder-link-color;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__row {
+        // set bottom border for table row
+        // this is possible because table is collapsed model, not separate
+        // if table would be separate model, then border must be set for each table cell
+        @include mixins.set_border_bottom($border-bottom-color: colors.$reminder-data-color,
+                                          $border-bottom-width: variables.$reminder-row-border-bottom-width);
+    }
+
+    &__summary {
+        padding: variables.$reminder-data-padding;
+        color: colors.$reminder-data-color;
+    }
+}

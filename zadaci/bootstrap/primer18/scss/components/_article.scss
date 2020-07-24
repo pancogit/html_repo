@@ -1,0 +1,22 @@
+/*********************************** article *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.article {
+
+    &__body {
+
+    }
+
+    &__date {
+        margin-top: variables.$article-date-margin-top;
+        font-size: variables.$article-date-font-size;
+    }
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}

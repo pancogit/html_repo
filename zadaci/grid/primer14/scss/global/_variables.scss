@@ -1,0 +1,75 @@
+// variables
+
+// devices
+$device-types: "screen", "print";
+$device-range: "min", "range", "max";
+
+// list of valid values for units
+$unit-valid-values: "em", "ex", "ch", "rem", "vh", "vw", "vmin", "vmax",
+                    "cm", "mm", "in", "px", "pt", "pc",
+                    "dpi", "dpcm", "dppx";
+
+// page width
+$min-width-1: 20rem;
+$max-width-1: 75rem;
+
+// padding
+$padding-1: 1rem 0.5rem;
+$padding-2: 0.2rem;
+$padding-3: 0.5rem;
+$padding-4: 1rem;
+$padding-5: 2rem;
+$padding-6: 0.4rem;
+
+// font
+$font-family-1: Tahoma, Verdana, sans-serif;
+$font-family-2: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$font-size-1: 2rem;
+$font-size-2: 1.5rem;
+$font-size-3: 1.8rem;
+$font-size-4: 1.7rem;
+$font-size-5: 0.7rem;
+$font-size-6: 1.2rem;
+$font-size-7: 0.85rem;
+$font-size-8: 2.5rem;
+$font-size-9: 3rem;
+
+// grid
+$grid-width-1: 17.5rem;
+$grid-width-2: 1fr;
+$grid-width-3: 2fr;
+$grid-width-4: 100%;
+$grid-width-5: 1.3rem;
+$grid-width-6: 1.8rem;
+$grid-gap-1: 1rem;
+$grid-gap-2: 2rem;
+$grid-gap-3: 3rem;
+
+// border
+$border-width-1: 0.1rem;
+$border-width-2: 0.2rem;
+$border-width-3: 0.05rem;
+$border-radius-1: 0.2rem;
+$border-radius-2: 50%;
+
+// margin
+$margin-1: 0.3rem;
+$margin-2: 0.7rem;
+$margin-3: 20%;
+$margin-4: 3rem;
+$margin-5: 1rem;
+$margin-6: 2rem;
+$margin-7: 0.9rem;
+
+// media breakpoints
+$media-break-1: 29.25rem;
+$media-break-2: 52rem;
+$media-break-3: 39rem;
+
+// height
+$height-1: 1.5rem;
+$height-2: 15rem;
+$height-3: 0.25rem;
+
+// line height
+$line-height-1: 1.8rem;

@@ -1,0 +1,25 @@
+/*********************************** list ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins/border';
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        color: colors.$black-color-5;
+        padding: variables.$padding-6 0;
+
+        @include border.set_border_bottom($border-bottom-color: colors.$silver-color-5,
+                                          $border-bottom-width: variables.$border-width-1);
+
+        // add small transition
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+}

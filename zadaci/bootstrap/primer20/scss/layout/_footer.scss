@@ -1,0 +1,76 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** F O O T E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.footer {
+    @include bootstrap.media-breakpoint-up(md) {
+        margin-top: variables.$footer-margin-top;
+    }
+
+    padding: variables.$footer-padding;
+    
+    background-color: colors.$footer-background-color;
+    text-align: center;
+
+    &__copy {
+        color: colors.$footer-color;
+        line-height: variables.$footer-copy-line-height;
+    }
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$footer-color;
+        font-weight: normal;
+        font-size: variables.$footer-heading-font-size;
+    }
+
+    &__item {
+        margin-bottom: variables.$footer-item-margin-bottom;
+
+        // add divider before every list item except first
+        + .footer__item::before {
+            content: "|";
+
+            display: inline-block;
+            color: colors.$footer-link-color;
+            margin-left: variables.$footer-item-divider-margin-left;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$footer-link-color;
+
+        // element modifier class
+        &--line-height {
+            line-height: variables.$footer-copy-line-height;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__links {
+
+    }
+
+    &__privacy {
+
+    }
+
+    &__terms {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,75 @@
+/************************************ card ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.card {
+
+    // for smallest screen, move element to edges of column with
+    // negative margins for better look
+    // those margins will counteract paddings from column
+    @include bootstrap.media-breakpoint-down(xs) {
+        margin: variables.$card-negative-margins;
+    }
+
+    &__content {
+        padding: variables.$card-content-padding-normal;
+
+        // remove borders for smallest screens because element is spread
+        // through full width of column and borders will touch edges of column
+        @include bootstrap.media-breakpoint-down(xs) {
+            border: none;
+        }
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            padding: variables.$card-content-padding-small;
+        }
+
+        // set borders around card content
+        @include mixins.set_borders($border-color: colors.$card-content-border-color,
+                                    $border-width: variables.$card-content-border-width);
+        border-top-style: none;
+    }
+
+    &__header {
+        padding: variables.$card-header-padding-normal;
+        color: colors.$card-header-color;
+        font-size: variables.$card-header-font-size;
+        border-top-left-radius: variables.$card-header-border-radius;
+        border-top-right-radius: variables.$card-header-border-radius;
+
+        // remove border radius because rounded corners doesn't look good
+        // when element is spread to the edges of column
+        @include bootstrap.media-breakpoint-down(xs) {
+            border-radius: 0;
+        }
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            padding: variables.$card-header-padding-small;
+        }
+
+        // element modifiers for background colors
+        &--blue {
+            background-color: colors.$card-header-color-blue;
+        }
+
+        &--gray {
+            background-color: colors.$card-header-color-gray;
+        }
+
+        &--green {
+            background-color: colors.$card-header-color-green;
+        }
+    }
+
+    &__heading {
+        margin: 0;
+    }
+    
+    &__paragraph {
+        margin-top: 0;
+        line-height: variables.$card-paragraph-line-height;
+    }
+}

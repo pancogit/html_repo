@@ -1,0 +1,10 @@
+/************************************ page ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.page {
+    background-image: url("../../../../slike/zadaci/primer19/house-2.jpg");
+    background-size: cover;
+    background-position: center top;
+}

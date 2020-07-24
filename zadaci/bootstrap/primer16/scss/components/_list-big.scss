@@ -1,0 +1,33 @@
+/********************************* list-big **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.list-big {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &__item {
+        @include mixins.set_border_bottom($border-bottom-style: solid,
+                                          $border-bottom-color: colors.$black-color-3,
+                                          $border-bottom-width: variables.$border-width-1);
+    }
+
+    &__link {
+        // spread link to full width of list item
+        display: block;
+
+        color: colors.$white-color-1;
+        background-color: colors.$black-color-2;
+        padding: variables.$padding-2;
+
+        // add small transition
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            background-color: colors.$green-color-1;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+/********************************** button ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.button {
+    // don't wrap elements inside button
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    padding-left: variables.$button-padding-left;
+    padding-right: variables.$button-padding-right;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+
+    // add small transition
+    transition: variables.$button-transition;
+
+    // remove borders
+    border: 0;
+        
+    &:hover {
+        background-color: silver;
+    }
+
+    // block modifier for submit button
+    &--submit {
+        border-top-right-radius: variables.$button-submit-border-radius;
+        border-bottom-right-radius: variables.$button-submit-border-radius;
+    }
+
+    &__icon {
+        margin-right: variables.$button-icon-margin-right;
+        font-size: variables.$button-icon-font-size;
+    }
+
+    &__text {
+
+    }
+}

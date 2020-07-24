@@ -1,0 +1,29 @@
+/*********************************** tags ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.tags {
+    display: grid;
+    gap: variables.$gap-1;
+
+    // set grid with maximum content size without breaking to new line
+    grid-template-columns: repeat(5, max-content);
+
+    @include bootstrap.media-breakpoint-down(md) {
+        // change grid layout to fit medium screen sizes
+        grid-template-columns: repeat(3, max-content);
+    }
+
+    @include bootstrap.media-breakpoint-down(sm) {
+        // change grid layout to fit small screen sizes
+        grid-template-columns: repeat(2, max-content);
+    }
+
+    @include bootstrap.media-breakpoint-down(xs) {
+        // change grid layout to fit smallest screen sizes
+        // set grid items to grow to full width
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,57 @@
+/* global */
+
+@use '../global/variables';
+@use '../global/colors';
+@use '../global/mixins';
+
+body {
+    margin: 0;
+    font-family: variables.$font-family-1;
+
+    // if margins are used for header, then area before header will not be filled
+    // with background color, because it's not defined
+    // it's not working if we apply to .wrapper class also, only works on body
+    // it doesn't matter what margins are used to separate html elements,
+    // basic background color will be the same
+    background-color: colors.$blue-color-3;
+}
+
+a {
+    text-decoration: none;
+}
+
+// justify paragraph content
+p {
+    text-align: justify;
+    line-height: variables.$line-height-1;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: variables.$font-size-2;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: variables.$font-size-1;
+}
+
+.wrapper {
+    min-width: variables.$min-width-1;
+
+    // set white color for elements and links
+    @include mixins.set_block_color(colors.$white-color-1);
+}
+
+// centered content on page
+.content {
+    max-width: variables.$max-width-1;
+    margin: 0 auto;
+}
+
+// default paddings for content
+.content-padding {
+    // it looks better on wide screens, but on small screens
+    // left/right paddings should be half width
+    padding: variables.$padding-1;
+}

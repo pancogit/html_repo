@@ -1,0 +1,275 @@
+// mixins
+
+@use 'variables';
+@use 'functions';
+@use 'sass:list';
+
+// set color on all elements and links
+@mixin set_block_color($color: null) {
+    color: $color;
+
+    a {
+        color: $color;
+    }
+}
+
+// reset list
+@mixin reset_list() {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+// set width and height to full - don't use this if paddings are set to not overflow box
+@mixin set_width_height_full($width: 100%,
+                             $height: 100%) {
+
+    // set element to be block to alter box dimensions
+    display: block;
+
+    width: $width;
+    height: $height;
+}
+
+// set borders
+@mixin set_borders($border: null,
+                   $border-style: null,
+                   $border-color: null,
+                   $border-width: null,
+
+                   $border-top-style: null,
+                   $border-top-color: null,
+                   $border-top-width: null,
+
+                   $border-bottom-style: null,
+                   $border-bottom-color: null,
+                   $border-bottom-width: null,
+
+                   $border-left-style: null,
+                   $border-left-color: null,
+                   $border-left-width: null,
+
+                   $border-right-style: null,
+                   $border-right-color: null,
+                   $border-right-width: null) {
+    // set shorthand or individual properties
+    @if $border != null {
+        border: $border;
+    }
+    @else if ($border-style != null) or ($border-color != null) or ($border-width != null) {
+        border-style: $border-style;
+        border-color: $border-color;
+        border-width: $border-width;
+    }
+    @else {
+        border-top-style: $border-top-style;
+        border-top-color: $border-top-color;
+        border-top-width: $border-top-width;
+
+        border-bottom-style: $border-bottom-style;
+        border-bottom-color: $border-bottom-color;
+        border-bottom-width: $border-bottom-width;
+
+        border-left-style: $border-left-style;
+        border-left-color: $border-left-color;
+        border-left-width: $border-left-width;
+
+        border-right-style: $border-right-style;
+        border-right-color: $border-right-color;
+        border-right-width: $border-right-width;
+    }
+}
+
+// set text decoration with shorthand or by individual properties
+@mixin set_text_decoration($text-decoration: null,
+                           $text-decoration-line: null,
+                           $text-decoration-style: null,
+                           $text-decoration-color: null) {
+
+    // set by shorthand
+    @if $text-decoration != null {
+        text-decoration: $text-decoration;
+    }
+    // or set by individual properties
+    @else {
+        text-decoration-line: $text-decoration-line;
+        text-decoration-style: $text-decoration-style;
+        text-decoration-color: $text-decoration-color;
+    }
+}
+
+// set grid template
+@mixin set_grid_template($grid: grid,
+                         $grid-template-areas: null,
+                         $grid-template-rows: null,
+                         $grid-template-columns: null) {
+
+    display: $grid;
+
+    grid-template-areas: $grid-template-areas;
+    grid-template-rows: $grid-template-rows;
+    grid-template-columns: $grid-template-columns;
+}
+
+// set grid gaps
+@mixin set_grid_gaps($gap: null,
+                     $row-gap: null,
+                     $column-gap: null) {
+
+    // set either gaps shorthand or individualy rows/cols
+    @if $gap != normal and $gap != null { 
+        gap: $gap;
+    }
+    @else {
+        row-gap: $row-gap;
+        column-gap: $column-gap;
+    }
+}
+
+// align grid container
+@mixin align_grid($justify-content: null,
+                  $justify-items: null,
+                  $align-content: null,
+                  $align-items: null) {
+    justify-content: $justify-content;
+    justify-items: $justify-items;
+
+    align-content: $align-content;
+    align-items: $align-items;
+}
+
+// align grid item
+@mixin align_grid_item($justify-self: null,
+                       $align-self: null) {
+    justify-self: $justify-self;
+    align-self: $align-self;
+}
+
+// attach grid elements to grid rows/cols
+@mixin attach_rows_cols($grid-row-start: null,
+                        $grid-row-end: null,
+                        $grid-row: null,
+                        
+                        $grid-column-start: null,
+                        $grid-column-end: null,
+                        $grid-column: null) {
+    grid-row-start: $grid-row-start;
+    grid-row-end: $grid-row-end;
+    grid-row: $grid-row;
+    
+    grid-column-start: $grid-column-start;
+    grid-column-end: $grid-column-end;
+    grid-column: $grid-column;
+}
+
+// media blocks for responsive web design
+@mixin responsive_design($device-type: list.nth(variables.$device-types, 1),
+                         $device-range,
+                         $breakpoints) {
+
+    @if $device-type == null {
+        @error "$device-type cannot be null!";
+    }
+
+    @if $device-range == null {
+        @error "$device-range cannot be null!";
+    }
+
+    @if $breakpoints == null {
+        @error "$breakpoints cannot be null!";
+    }
+
+    @if functions.list_search($device-type, variables.$device-types) != true {
+        @error "Passed device-type (= #{$device-type}) is not good!. " + 
+               "The only valid values for device-type are (#{variables.$device-types}).";
+    }
+
+    @if functions.list_search($device-range, variables.$device-range) != true {
+        @error "Passed device-range (= #{$device-range}) is not good! " +
+               "The only valid values for device-range are (#{variables.$device-range}).";
+    }
+
+    $N: functions.count_elements($breakpoints);
+
+    // construct media block with given correct arguments
+    @if $device-range == "min" {
+        @if $N != 1 {
+            @error "Breakpoints can have only 1 value for $device-range = min " +
+                   "instead of #{$N} values [$breakpoints = (#{$breakpoints})]!";
+        }
+
+        @media only #{$device-type} and (min-width: $breakpoints) {
+            @content;
+        }
+    }
+    @else if $device-range == "max" {
+        @if $N != 1 {
+            @error "Breakpoints can have only 1 value for $device-range = max " +
+                   "instead of #{$N} values [$breakpoints = (#{$breakpoints})]!";
+        }
+
+        @media only #{$device-type} and (max-width: $breakpoints) {
+            @content;
+        }
+    }
+    @else if $device-range == "range" {
+        @if $N != 2 {
+            @error "Breakpoints must have exactly 2 value for $device-range = range " +
+                   "instead of #{$N} [$breakpoints = (#{$breakpoints})]!";
+        }
+
+        $min-width: list.nth($breakpoints, 1);
+        $max-width: list.nth($breakpoints, 2);
+
+        // check if breakpoints are numerical values with units and with compatible unit types
+
+        // check for numerical values
+        @if functions.is_number($min-width) != true {
+            @error "Given breakpoint is not numerical value (= #{$min-width})!";
+        }
+
+        @if functions.is_number($max-width) != true {
+            @error "Given breakpoint is not numerical value (= #{$max-width})!";
+        }
+
+        // check for units
+        @if functions.has_unit($min-width) != true {
+            @error "Given breakpoint doesn't have unit (= #{$min-width})!";
+        }
+
+        @if functions.has_unit($max-width) != true {
+            @error "Given breakpoint doesn't have unit (= #{$max-width})!";
+        }
+
+        // units exists, but check if they are valid
+        @if functions.has_valid_unit($min-width) != true {
+            @error "Given breakpoint doesn't have valid unit (= #{$min-width})!";
+        }
+
+        @if functions.has_valid_unit($max-width) != true {
+            @error "Given breakpoint doesn't have valid unit (= #{$max-width})!";
+        }
+
+        // units are valid, check for their compatibility
+        @if functions.are_compatible($min-width, $max-width) != true {
+            @error "Given breakpoints are not compatible (#{$min-width}, #{$max-width})!";
+        }
+
+        // breakpoints are numberical values with the same compatible units
+        // and comparation can be safely made now
+        @if $min-width == $max-width {
+            @error "Breakpoints for minimum and maximum cannot be the same (= #{$min-width})!";
+        }
+        
+        // swap values if they are not passed in correct order
+        @if $min-width > $max-width {
+            $temp: $min-width;
+            $min-width: $max-width;
+            $max-width: $temp;
+        }
+
+        @media only #{$device-type} and (min-width: $min-width) and (max-width: $max-width) {
+            @content;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+// variables
+
+// content
+$content-padding: 1rem 0.5rem;
+$content-max-width: 80rem;
+
+// wrapper
+$wrapper-min-width: 20rem;
+
+// header top track
+$header-top-track-margin-right: 1rem;
+$header-top-track-font-size: 0.8rem;
+
+// borders
+$border-width-1: 0.1rem;
+
+// fonts
+$font-family-1: Georgia, 'Times New Roman', Times, serif;
+$font-family-2: 'Times New Roman', Times, serif;
+$font-family-3: Arial, Helvetica, sans-serif;
+$font-family-4: Verdana, Geneva, Tahoma, sans-serif;
+
+// font sizes
+$font-size-1: 1.8rem;
+$font-size-2: 1.4rem;
+$font-size-3: 1.2rem;
+$font-size-4: 4rem;
+$font-size-5: 3rem;
+
+// letter spacing
+$letter-spacing-1: 0.1rem;
+
+// grid template
+$col-width-1: 10rem;
+$col-width-2: 9rem;
+$col-width-3: 7rem;
+// don't use percentages for row-gaps, it's bug in css grid (overflow height problem)
+$gap-size-1: 0.1rem;
+$gap-size-2: 1.5rem;
+$gap-size-3: 3rem;
+$gap-size-4: 2rem;
+
+// border radius
+$border-radius-w1: 0.5rem;
+
+// paddings
+$padding-1: 0.5rem;
+$padding-2: 0.5rem 1rem;
+$padding-3: 2rem;
+
+// media devices size
+$media-size-1: 68rem;
+$media-size-2: 47.5rem;
+$media-size-3: 40rem;
+$media-size-4: 23rem;
+$media-size-5: 53rem;
+$media-size-6: 24rem;
+$media-size-7: 48rem;
+
+// hamburger menu
+$hamburger-size: 1.7rem;
+
+// line heights
+$line-height-1: 1.6rem;
+$line-height-2: 2rem;
+$line-height-3: 1.5rem;
+
+// margins
+$margin-size-1: 2rem;
+$margin-size-2: 1rem;
+$margin-size-3: 0.5rem;
+
+$full-size: 100%;
+
+// grid sizes
+$min-grid-item-1: 19rem; // minimum width for 320px screen size

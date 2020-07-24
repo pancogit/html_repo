@@ -1,0 +1,36 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H E A D E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.header {
+
+    &__intranet {
+        // set as flex container and vertically center items, 
+        // horizontally move to the right
+        // set height to 100% to make sure that item is centered if header height is increased
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: variables.$width-full;
+
+        margin: 0;
+        text-align: right;
+        font-size: variables.$header-intranet-font-size;
+        color: colors.$header-intranet-color;
+    }
+
+    &__navigation {
+        padding: variables.$header-navigation-padding-large;
+        background-color: colors.$header-navigation-background-color;
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            padding: variables.$header-navigation-padding-normal;
+        }
+    }
+}

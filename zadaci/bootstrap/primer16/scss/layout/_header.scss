@@ -1,0 +1,53 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H E A D E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.header {
+    &__top {
+        background-color: colors.$black-color-1;
+        padding: variables.$padding-1 0;
+
+        @include mixins.set_border_bottom($border-bottom-style: solid,
+                                          $border-bottom-color: colors.$black-color-3,
+                                          $border-bottom-width: variables.$border-width-1);
+    }
+
+    &__bottom {
+        background-color: colors.$black-color-2;
+    }
+
+    &__heading {
+        color: colors.$white-color-1;
+        font-size: variables.$font-size-1;
+        margin: variables.$margin-width-1 0;
+
+        @include bootstrap.media-breakpoint-down(md) {
+            font-size: variables.$font-size-2;
+            margin: variables.$margin-width-2 0;
+        }
+
+        @include bootstrap.media-breakpoint-down(sm) {
+            text-align: center;
+        }
+    }
+
+    &__link {
+        color: colors.$white-color-1;
+        transition: variables.$transition-time-1;
+    
+        &:hover {
+            color: colors.$green-color-1;
+        }
+
+        &--active {
+            color: colors.$green-color-1;
+        }
+    }
+}

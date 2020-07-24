@@ -1,0 +1,11 @@
+/* page body */
+
+@use '../global/variables';
+
+body {
+	background-color: variables.$body-background;
+}
+
+a {
+	text-decoration: none;
+}

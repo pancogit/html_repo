@@ -1,0 +1,27 @@
+/*********************************** keys ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins/border';
+
+.keys {
+    display: inline-block;
+    padding: variables.$padding-9;
+    background-color: colors.$silver-color-6;
+    position: fixed;
+    top: variables.$position-width-1;
+    z-index: variables.$z-index-2;
+
+    @include border.set_borders($border-color: colors.$silver-color-4,
+                                $border-width: variables.$border-width-2);
+
+    &__link {
+        display: inline-block;
+        font-size: variables.$font-size-4;
+        color: colors.$black-color-4;
+    }
+
+    &__icon {
+
+    }
+}

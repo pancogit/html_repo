@@ -1,0 +1,42 @@
+/*********************************** social **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.social {
+    
+    &__icon {
+        font-size: variables.$social-icon-font-size;
+    }
+
+    &__item {
+        margin-right: variables.$social-item-margin-right;
+
+        @include bootstrap.media-breakpoint-down(xs) {
+            margin-bottom: variables.$social-item-margin-bottom;
+        }
+    }
+
+    &__link {
+        color: colors.$theme-gray-color;
+
+        &:hover {
+            color: colors.$theme-gray-color-hover;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include bootstrap.media-breakpoint-up(md) {
+            justify-content: flex-start;
+        }
+
+        // reset list
+        @include mixins.reset_list();
+    }
+}

@@ -1,0 +1,28 @@
+/*********************************** info ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.info {
+
+    color: colors.$black-color-6;
+
+    &__entry {
+        margin-top: 0;
+    }
+
+    &__bold {
+        font-weight: bold;
+    }
+
+    &__link {
+        color: colors.$black-color-6;
+
+        // add small transition on links
+        transition: 0.2s;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+}

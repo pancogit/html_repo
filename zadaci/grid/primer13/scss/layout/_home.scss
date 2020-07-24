@@ -1,0 +1,344 @@
+/* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.main {
+    // fix second column to not shrink, just shrink first column with remaining free space
+    @include mixins.set_grid_template($grid-template-columns: variables.$width-2 variables.$width-4);
+    @include mixins.set_grid_gaps($gap: variables.$gap-1);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // change layout to one column
+        @include mixins.set_grid_template($grid-template-columns: variables.$width-2);
+    }
+
+    // reset paddings
+    padding: 0;
+
+    h2 {
+        padding-bottom: variables.$padding-2;
+
+        @include mixins.set_borders($border-bottom-style: variables.$border-style-2,
+                                    $border-bottom-color: colors.$white-color-1,
+                                    $border-bottom-width: variables.$border-width-2)
+    }
+}
+
+.main-content {
+    padding-bottom: variables.$padding-9;
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.main-welcome-text {
+    .image {
+        display: inline-block;
+        float: left;
+        margin-right: variables.$margin-3;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+            // remove floating images for small screens and remove right margin
+            float: none;
+            margin-right: 0;
+        }
+
+        .link {
+            display: inline-block;
+
+            img {
+                @include mixins.set_borders($border-style: solid,
+                                            $border-color: colors.$white-color-1,
+                                            $border-width: variables.$border-width-1);
+
+                // responsive web design
+                @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+                    // for small screens spread images to full width
+                    // and with automaticaly height to keep good image ratio
+                    width: variables.$width-6;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.main-templates-text {
+    .image {
+        display: inline-block;
+        float: right;
+        margin-left: variables.$margin-3;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+            // remove floating images for small screens and remove left margin
+            float: none;
+            margin-left: 0;
+        }
+
+        .link {
+            display: inline-block;
+
+            img {
+                @include mixins.set_borders($border-style: solid,
+                                            $border-color: colors.$white-color-1,
+                                            $border-width: variables.$border-width-1);
+
+                // responsive web design
+                @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+                    // for small screens spread images to full width
+                    // and with automaticaly height to keep good image ratio
+                    width: variables.$width-6;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    ol {
+        margin: variables.$margin-4 0;
+        padding-left: variables.$padding-7;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+            // for small screens set left padding smaller
+            padding-left: variables.$padding-10;
+        }
+
+        li {
+            line-height: variables.$line-height-2;
+        }
+    }
+
+    .read-more {
+        // act as block to be clickable only in "button" area
+        display: inline-block;
+
+        padding: variables.$padding-2 variables.$padding-6;
+        text-decoration: none;
+        background-color: colors.$blue-color-1;
+
+        &:hover {
+            background-color: colors.$blue-color-6;
+        }
+    }
+}
+
+.main-aside {
+    // fix both columns to not change width of second track .main-contact, 
+    // because upper track .main-contact-track in header is the same width
+    @include mixins.set_grid_template($grid-template-columns: repeat(2, variables.$width-5));
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // change layout to two equal fluid column
+        @include mixins.set_grid_template($grid-template-columns: repeat(2, variables.$width-2));
+    }
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+        // change layout to one column for small screens
+        @include mixins.set_grid_template($grid-template-columns: variables.$width-2);
+    }
+}
+
+.main-subscribe {
+    padding: variables.$padding-6 variables.$padding-5;
+    padding-bottom: variables.$padding-9;
+
+    background-color: colors.$blue-color-4;
+
+    // set borders
+    @include mixins.set_borders($border-left-style: variables.$border-style-1,
+                                $border-left-color: colors.$blue-color-4,
+                                $border-left-width: variables.$border-width-1);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // when layout is changed, and when .subscribe and .contact blocks are "moved" from
+        // top header track to their corresponding tracks, add top border to emulate tracks
+        // .main-subscribe and .main-contact
+        @include mixins.set_borders($border-top-style: variables.$border-style-1,
+                                    $border-top-color: colors.$blue-color-4,
+                                    $border-top-width: variables.$border-width-1);
+    }
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-2) {
+        // when this grid item is placed alone in grid row, then right border should be added
+        @include mixins.set_borders($border-right-style: variables.$border-style-1,
+                                    $border-right-color: colors.$blue-color-4,
+                                    $border-right-width: variables.$border-width-1);
+    }
+
+    ul {
+        @include mixins.reset_list();
+
+        line-height: variables.$line-height-3;
+
+        a {
+            // spread link to be clickable to full width
+            display: block;
+
+            color: colors.$blue-color-9;
+
+            &:hover {
+                text-decoration: underline;
+                color: colors.$white-color-1;
+            }
+        }
+    }
+
+    .subscribe {
+        // by default, this block is hidden before layout is changed
+        // actualy, before track which contain this block is moved
+        // away into own row, far away from header
+        display: none;
+
+        margin-bottom: variables.$margin-4;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+            // show block
+            display: block;
+        }
+    }
+}
+
+.main-contact {
+    padding: variables.$padding-6 variables.$padding-5;
+    padding-bottom: variables.$padding-9;
+
+    background-color: colors.$blue-color-5;
+
+    // set borders
+    @include mixins.set_borders($border-left-style: variables.$border-style-1,
+                                $border-left-color: colors.$blue-color-5,
+                                $border-left-width: variables.$border-width-1,
+                                
+                                $border-right-style: variables.$border-style-1,
+                                $border-right-color: colors.$blue-color-5,
+                                $border-right-width: variables.$border-width-1);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // when layout is changed, and when .subscribe and .contact blocks are "moved" from
+        // top header track to their corresponding tracks, add top border to emulate tracks
+        // .main-subscribe and .main-contact
+        @include mixins.set_borders($border-top-style: variables.$border-style-1,
+                                    $border-top-color: colors.$blue-color-5,
+                                    $border-top-width: variables.$border-width-1);
+    }
+
+    .search {
+        .search-form {
+            @include mixins.set_grid_template($grid-template-columns: variables.$width-2);
+            @include mixins.set_grid_gaps($gap: variables.$gap-3);
+        }
+    }
+
+    // this input field is common
+    .input {
+        // set full width to not overflow grid container
+        width: variables.$width-6;
+
+        padding: variables.$padding-4;
+
+        // when width is set to full width (100%) any paddings/borders will
+        // overflow container and this is not good
+        // to calculate whole width for box including paddings/borders
+        // box properties must be changed
+        // this is default behavior for inputs such buttons, submit and search
+        // but for other inputs it is not the case
+        // that's the reason why it is set there
+        box-sizing: border-box;
+
+        &::placeholder {
+            color: colors.$black-color-1;
+        }
+    }
+
+    // this submit button is common
+    .submit {
+        @include mixins.align_grid_item($justify-self: right);
+
+        border-radius: variables.$border-radius-1;
+        outline: none;
+    }
+
+    .topics {
+        margin-top: variables.$margin-4;
+
+        .heading {
+            font-size: variables.$font-size-4;
+        }
+
+        .article {
+            margin-bottom: variables.$margin-1;
+
+            color: colors.$blue-color-9;
+
+            @include mixins.set_borders($border-bottom-style: variables.$border-style-2,
+                                        $border-bottom-color: colors.$black-color-1,
+                                        $border-bottom-width: variables.$border-width-2);
+
+            .link {
+                color: colors.$blue-color-9;
+                text-decoration: underline;
+                line-height: variables.$line-height-1;
+
+                &:hover {
+                    color: colors.$white-color-1;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .quick-contact {
+        margin-top: variables.$margin-4;
+
+        .heading {
+            font-size: variables.$font-size-4;
+        }
+
+        .quick-contact-form {
+            @include mixins.set_grid_template($grid-template-columns: variables.$width-2);
+            @include mixins.set_grid_gaps($gap: variables.$gap-4);
+
+            .textarea {
+                // set to fixed size, not allowed to resize nor horizontaly nor verticaly
+                resize: none;
+                font-family: variables.$font-family-1;
+            }
+
+            .email {
+                margin-bottom: variables.$margin-5;
+            }
+        }
+    }
+
+    .contact {
+        // by default, this block is hidden before layout is changed
+        // actualy, before track which contain this block is moved
+        // away into own row, far away from header
+        display: none;
+
+        margin-bottom: variables.$margin-4;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+            // show block
+            display: block;
+        }
+    }
+}

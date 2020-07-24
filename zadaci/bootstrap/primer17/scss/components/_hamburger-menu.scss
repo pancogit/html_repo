@@ -1,0 +1,26 @@
+/******************************* hamburger-menu ******************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.hamburger-menu {
+    display: flex;
+    height: variables.$width-1;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__link {
+        display: inline-block;
+        color: colors.$white-color-1;
+        transition: variables.$transition-time-1;
+        font-size: variables.$font-size-3;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+
+    &__icon {
+
+    }
+}

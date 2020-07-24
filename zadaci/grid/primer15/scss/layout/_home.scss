@@ -1,0 +1,310 @@
+/* homepage */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+
+.navigation {
+    background-color: colors.$gray-color-3;
+
+    // set borders top/bottom
+    @include mixins.set_borders($border-top-style: solid,
+                                $border-top-color: colors.$silver-color-4,
+                                $border-top-width: variables.$border-width-2,
+                                
+                                $border-bottom-style: solid,
+                                $border-bottom-color: colors.$silver-color-4,
+                                $border-bottom-width: variables.$border-width-2);
+
+    &__list {
+        @include mixins.reset_list();
+        @include mixins.set_grid_template(
+            $grid-template-columns: repeat(auto-fit, minmax(variables.$grid-size-1, variables.$grid-size-2)));
+
+        // hide navigation
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-3) {
+            display: none;
+        }
+    }
+
+    &__list-item {
+
+    }
+
+    &__link {
+        // spread link to full width
+        display: block;
+
+        padding: variables.$padding-2;
+        text-align: center;
+        color: colors.$white-color-2;
+        font-size: variables.$font-size-4;
+
+        &:hover {
+            color: colors.$white-color-3;
+            background-color: colors.$gray-color-2;
+        }
+    }
+
+    &__link--active {
+        color: colors.$white-color-3;
+        background-color: colors.$gray-color-2;
+    }
+}
+
+.hamburger-menu {
+    // hide hamburger menu by default
+    display: none;
+
+    padding: variables.$padding-1;
+
+    @include mixins.responsive_design($device-range: "max",
+                                      $breakpoints: variables.$media-breakpoint-3) {
+        // show hamburger menu
+        display: block;
+    }
+
+    &__link {
+        // don't spread link to full width
+        display: inline-block;
+
+        color: colors.$white-color-3;
+        font-size: variables.$font-size-5;
+
+        &:hover {
+            color: colors.$white-color-2;
+        }
+    }
+
+    &__bars {
+
+    }
+}
+
+.main {
+
+    color: colors.$brown-color-1;
+
+    &__content {
+        background-color: colors.$brown-color-2;
+        padding: variables.$padding-2 variables.$padding-3;
+
+        // set smaller paddings
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-3) {
+            padding: variables.$padding-1;
+        }
+    }
+
+    &__heading {
+        font-weight: normal;
+    } 
+    
+    &__heading--h2 {
+        color: colors.$yellow-color-2;
+        font-size: variables.$font-size-5;
+
+        // for small screens, set smaller font
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-5) {
+            font-size: variables.$font-size-4;
+        }
+
+        // for very small screens, set more smaller font
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-6) {
+            font-size: variables.$font-size-6;
+        }
+    }
+
+    &__heading--h3 {
+        color: colors.$yellow-color-3;
+        font-size: variables.$font-size-4;
+    }
+
+    &__image {
+
+    }
+
+    &__image--vertical-align {
+        vertical-align: middle;
+        margin-left: variables.$margin-7;
+    }
+
+    &__image--responsive {
+        width: variables.$width-1;
+    }
+
+    &__heading-content {
+        margin-left: variables.$margin-6;
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$brown-color-1;
+    }
+
+    &__link--float-left {
+        float: left;
+        width: variables.$width-2;
+        margin: variables.$margin-3;
+        margin-top: 0;
+    } 
+    
+    &__link--full-width {
+
+        // remote image floating, spread image to full width without margins
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-4) {
+            width: variables.$width-1;
+            margin: 0;
+            float: none;
+        }
+    }
+
+    &__link--bold {
+        font-weight: bold;
+    }
+
+    &__link--site {
+        color: colors.$yellow-color-4;
+    }
+
+    &__link-content {
+
+    }
+
+    // spread links to full width
+    &__link--full-width {
+        display: block;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__date {
+        font-weight: bold;
+    }
+
+    &__paragraph {
+        line-height: variables.$line-height-1;
+        text-align: justify;
+    }
+
+    &__info {
+        background-color: colors.$brown-color-3;
+
+        @include mixins.set_borders($border-bottom-style: solid,
+                                    $border-bottom-color: colors.$brown-color-4,
+                                    $border-bottom-width: variables.$border-width-2);
+
+        padding: 0 variables.$padding-3;
+
+        // set three column grid layout
+        @include mixins.set_grid_template($grid-template-columns: repeat(3, variables.$grid-size-2));
+
+        // set grid gaps
+        @include mixins.set_grid_gaps($gap: variables.$grid-gap-1);
+
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-7) {
+            // set two column grid layout
+            @include mixins.set_grid_template($grid-template-columns: repeat(2, variables.$grid-size-2));
+            
+            // increase bottom padding for two column layout
+            padding-bottom: variables.$padding-3;
+        }
+
+        // set smaller paddings
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-3) {
+            padding-left: variables.$padding-5;
+            padding-right: variables.$padding-5;
+        }
+
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-8) {
+            // set one column grid layout
+            @include mixins.set_grid_template($grid-template-columns: variables.$grid-size-2);
+
+            // set smaller grid gaps
+            @include mixins.set_grid_gaps($gap: variables.$grid-gap-2);
+
+            // clear paddings
+            padding: 0;
+        }
+    }
+
+    &__card {
+        padding: 0;
+
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-8) {
+            // for one column layout, set paddings as other sections of page
+            padding: 0 variables.$padding-5;
+        }
+    }
+
+    &__card--box-shadow {
+        padding-left: variables.$padding-3;
+        padding-right: variables.$padding-3;
+        padding-bottom: variables.$padding-4;
+        box-shadow: variables.$box-shadow-1;
+
+        @include mixins.responsive_design($device-range: "max",
+                                          $breakpoints: variables.$media-breakpoint-8) {
+            // change the order of grid elements, this grid item comes last
+            order: 1;
+
+            // change padding
+            padding-left: variables.$padding-5;
+            padding-right: variables.$padding-5;
+        }
+    }
+
+    &__list {
+        @include mixins.reset_list();
+
+        padding-left: variables.$padding-6;
+    }
+
+    &__list-item {
+        line-height: variables.$line-height-2;
+        list-style-image: url("../../../../slike/zadaci/primer15/list-item-marker.gif");
+    }
+
+    // Read More link
+    &__read-more {
+        font-weight: bold;
+        background-color: colors.$brown-color-2;
+        padding: variables.$padding-5 variables.$padding-2;
+        border-radius: variables.$border-radius-1;
+    }
+
+    &__telephone {
+        margin-bottom: 0;
+    }
+
+    &__fax {
+        margin: variables.$margin-8 0;
+    }
+
+    &__email {
+        margin-top: 0;
+    }
+}
+
+.w3c-logos {
+
+    &__link {
+        display: inline-block;
+        margin-left: variables.$margin-3;
+    }
+
+    &__image {
+
+    }
+}

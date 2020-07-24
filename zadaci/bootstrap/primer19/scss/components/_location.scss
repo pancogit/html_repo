@@ -1,0 +1,76 @@
+/********************************** location *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: variables.$width-full;
+
+    &__buttons {
+        // set container for buttons flexbox and center them vertically
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    &__call {
+        margin-right: variables.$location-call-margin-right;
+    }
+
+    &__link {
+        margin-bottom: variables.$location-link-margin-bottom;
+        font-size: variables.$location-link-font-size;
+
+        &:hover {
+            .location__icon {
+                color: colors.$white-theme-color;
+            }
+        }
+    }
+
+    &__icon {
+        margin-right: variables.$location-icon-margin-right;
+        color: colors.$yellow-theme-color;
+    }
+
+    &__text {
+        color: colors.$white-theme-color;
+    }
+
+    &__number {
+    }
+
+    &__offer {
+        padding: variables.$location-offer-padding;
+        color: colors.$location-offer-color;
+        background-color: colors.$yellow-theme-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: variables.$location-telephone-transition;
+
+        &:hover {
+            background-color: colors.$location-offer-background-color;
+        }
+    }
+
+    &__telephone {
+        // set as flexbox container because telephone icon should be vertically aligned
+        display: flex;
+        align-items: center;
+
+        margin-right: variables.$location-telephone-margin-right;
+        padding: variables.$location-offer-padding;
+        color: colors.$white-theme-color;
+        background-color: colors.$location-telephone-background-color;
+        transition: variables.$location-telephone-transition;
+
+        &:hover {
+            color: colors.$location-telephone-color-hover;
+            background-color: colors.$location-telephone-background-color-hover;
+        }
+    }
+}

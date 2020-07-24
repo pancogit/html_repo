@@ -1,0 +1,58 @@
+/*********************************** search **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.search {
+    // set flex container and verticaly center flex items
+    display: flex;
+    align-items: center;
+    height: variables.$width-full;
+    
+    &__button {
+        padding: variables.$search-button-padding;
+        margin-left: variables.$search-button-margin-left;
+        font-weight: bold;
+        background-color: colors.$search-border-color-focus;
+        color: white;
+
+        // set border radius
+        @include mixins.set_border_radius($top-right: variables.$search-border-radius,
+                                          $bottom-right: variables.$search-border-radius);
+
+        // remove borders and line over button
+        border: none;
+        outline: none;
+
+        &:hover {
+            background-color: colors.$search-button-background-color-focus;
+        }
+    }
+
+    &__input {
+        // make this flex item to grow
+        flex: 1;
+
+        // set minimium width to zero, because by default fixed input width is set
+        min-width: 0;
+
+        padding: variables.$search-input-padding;
+
+        // set border radius
+        @include mixins.set_border_radius($top-left: variables.$search-border-radius,
+                                          $bottom-left: variables.$search-border-radius);
+
+        // set borders
+        @include mixins.set_borders($border-color: colors.$search-input-border-color,
+                                    $border-width: variables.$search-input-border-width);
+
+        // change border color, when input is focused
+        &:focus {
+            border-color: colors.$search-border-color-focus;
+        }
+
+        // remove line when input is focused
+        outline: none;
+    }
+}

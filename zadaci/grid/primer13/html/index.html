@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="sr-RS">
+
+<head>
+	<meta charset="utf-8">
+	<!-- meta tag for responsive web design -->
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+	<title>Zadaci grid primer 13</title>
+	<link href="../css/page.min.css" type="text/css" rel="stylesheet" />
+	<!-- font awesome -->
+	<link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<header>
+			<div class="header-aside-wrapper content">
+				<aside class="subscribe">
+					<a href="index.html" class="link">
+						<span>Subscribe</span>
+						<img src="../../../../slike/zadaci/primer13/rss.png" 
+						     alt="rss icon" width="44" class="image" />
+					</a>
+				</aside><!-- subscribe -->
+			
+				<aside class="contact">
+					<a href="index.html" class="link">
+						<span>Contact</span>
+						<img src="../../../../slike/zadaci/primer13/contact-2.png" 
+						     alt="contact icon" width="44" class="image" />
+					</a>
+				</aside><!-- contact -->
+			</div><!-- header-aside-wrapper -->
+
+			<div class="header-logo-wrapper">
+				<section class="header-logo content content-padding">
+					<a href="index.html" class="header-logo-link">
+						<h1 class="heading">Sky Blue</h1>
+						<h2 class="heading css-template">free css template</h2>
+					</a>
+				</section><!-- header-logo -->
+			</div><!-- header-logo-wrapper -->
+	
+			<div class="header-menu-wrapper">
+				<nav class="header-menu content">
+					<ul>
+						<li><a href="index.html"><span class="link-content active">Home</span></a></li>
+						<li><a href="index.html"><span class="link-content">About</span></a></li>
+						<li><a href="index.html"><span class="link-content">Portfolio</span></a></li>
+						<li><a href="index.html"><span class="link-content">Gallery</span></a></li>
+						<li><a href="index.html"><span class="link-content">Awards</span></a></li>
+						<li><a href="index.html"><span class="link-content">Testimonials</span></a></li>
+					</ul>
+					<!-- this track is used to simulate .main-contact block in navigation area -->
+					<div class="main-contact-track"></div>
+
+					<div class="hamburger-menu">
+						<a href="index.html" class="link">
+							<i class="fas fa-bars"></i>
+						</a>
+					</div><!-- hamburger-menu -->
+				</nav><!-- header-menu -->
+			</div><!-- header-menu-wrapper -->
+		</header>
+	
+		<main>
+			<div class="main content content-padding">
+				<div class="main-content content-padding">
+					<section class="main-welcome" id="main-welcome-id">
+						<h2>Welcome to Sky Blue</h2>
+						<div class="main-welcome-text">
+							<div class="image">
+								<a href="#main-welcome-id" class="link">
+									<img src="../../../../slike/zadaci/primer13/greece-1a.jpg" 
+									     alt="greece wallpaper zakyntos" width="200" />
+								</a>
+							</div><!-- image -->
+							<p>Sky Blue is a
+								<a href="index.html">Free CSS Template</a>
+								and it is provided by
+								<a href="https://templatemo.com/" target="_blank">templatemo.com</a>
+								for anyone. Feel free to download and use this template
+								for your websites. Credit goes to
+								<a href="#main-welcome-id">Free Photos</a> for photos. Lorem ipsum
+								dolor sit amet, consectetur adipiscing elit. Maecenas vitae turpis
+								quis dui pellentesque semper. Suspendisse potenti. Fusce ullamcorper
+								pellentesque lacinia.
+							</p>
+						</div><!-- main-welcome-text -->
+					</section><!-- main-welcome -->
+			
+					<section class="main-templates" id="main-templates-id">
+						<h2>Best Website Templates</h2>
+						<div class="main-templates-text">
+							<div class="image">
+								<a href="#main-templates-id" class="link">
+									<img src="../../../../slike/zadaci/primer13/greece-2a.jpg" 
+									     alt="greece wallpaper thassos" width="200" />
+								</a>
+							</div><!-- image -->
+							<p>Validate
+								<a href="https://www.w3.org/" target="_blank">XHTML</a> &
+								<a href="https://www.w3.org/" target="_blank">CSS</a>.
+								Nulla tellus nisl, malesuada eu dictum blandit, feugiat ac sem.
+								Morbi justo lorem, dapibus sed aliquet id, aliquam eu justo.
+								Etiam urna nisi, hendrerit eu pellentesque quis, aliquet nec
+								velit. Etiam at justo et isus feugiat ullamcorper ac non ligula.
+								Morbi dapibus, ipsusm eu laoreet fermentum, mauris mauris
+								sollicitidin ante, ac ultricies velit lectus at justo. Etiam mi
+								lacus faucibus eu egestas eget, lacinia in libero. Aeanean libero
+								mauris, convallis tristique molestie at, vehicula feugiat neque.
+								Morbi fermentum, eros eget pulvinar sollicitudin, risus purus
+								iaculis turpis, varius consectetur eros leo eget ipsum.
+							</p>
+							<ol>
+								<li>Maecenas malesuada conque nisi in interdum.</li>
+								<li>Donec mattis urna id lorem blandit vitae pulvinar risus aliquam.</li>
+								<li>Vestibulum suscipit erat vitae libero varius aliquam. Phasellus
+									at tortor dui, ac elementum mauris.
+								</li>
+							</ol>
+							<a href="#main-templates-id" class="read-more">Read more</a>
+						</div><!-- main-templates-text -->
+					</section><!-- main-templates -->
+				</div><!-- main-content -->
+			
+				<aside class="main-aside">
+					<aside class="main-subscribe" id="main-subscribe-id">
+					
+						<!-- this block is hidden by default, and it will be shown when
+							 layout is changed, when .main-subscribe and. main-contact
+							 will be alone in the row
+							 this means that block .subscribe from header which emulates
+							 track .main-subscribe will be hidden when this block is shown
+							 this way it is emulated that tracks .main-subscribe and. main-contact
+							 are moving away partly from header to their own rows
+						-->
+						<aside class="subscribe">
+							<a href="index.html" class="link">
+								<span>Subscribe</span>
+								<img src="../../../../slike/zadaci/primer13/rss.png" 
+								     alt="rss icon" width="44" class="image" />
+							</a>
+						</aside><!-- subscribe -->
+					
+						<section class="categories">
+							<h2>Categories</h2>
+							<ul>
+								<li><a href="#main-subscribe-id">Lorem ipsum dolor</a></li>
+								<li><a href="#main-subscribe-id">Donec mattis egestas</a></li>
+								<li><a href="#main-subscribe-id">Phasellus id purus</a></li>
+								<li><a href="#main-subscribe-id">Nulla consequat</a></li>
+								<li><a href="#main-subscribe-id">Mauris varius risus</a></li>
+								<li><a href="#main-subscribe-id">Aenean vulputate</a></li>
+								<li><a href="#main-subscribe-id">Etiam ultricies</a></li>
+								<li><a href="#main-subscribe-id">Fusce quis diam sit</a></li>
+								<li><a href="#main-subscribe-id">Sed pellentesque</a></li>
+								<li><a href="#main-subscribe-id">Donec euismod enim</a></li>
+							</ul>
+						</section><!-- categories -->
+			
+						<section class="partners">
+							<h2>Partners</h2>
+							<ul>
+								<li><a href="https://templated.co/" target="_blank">CSS Templates</a></li>
+								<li><a href="http://www.flashmo.com/" target="_blank">Flash templates</a></li>
+								<li><a href="https://www.awwwards.com/websites/gallery/" target="_blank">Websites Gallery</a>
+								</li>
+								<li><a href="https://webflow.com/blog" target="_blank">Web Design Blog</a></li>
+							</ul>
+						</section><!-- partners -->
+					</aside><!-- main-subscribe -->
+			
+					<aside class="main-contact" id="main-contact-id">
+
+						<!-- this block is hidden by default, and it will be shown when
+							 layout is changed, when .main-subscribe and. main-contact
+							 will be alone in the row
+							 this means that block .contact from header which emulates
+							 track .main-contact will be hidden when this block is shown
+							 this way it is emulated that tracks .main-subscribe and. main-contact
+							 are moving away partly from header to their own rows
+						-->
+						<aside class="contact">
+							<a href="index.html" class="link">
+								<span>Contact</span>
+								<img src="../../../../slike/zadaci/primer13/contact-2.png" 
+								     alt="contact icon" width="44" class="image" />
+							</a>
+						</aside><!-- contact -->
+					
+						<section class="search">
+							<h2>Search</h2>
+							<div class="search-form">
+								<input type="search" name="search-input" placeholder="Enter keyword here..." class="input" />
+								<input type="button" name="search-button" value="Search" class="submit" />
+							</div><!-- search-form -->
+						</section><!-- search -->
+			
+						<section class="topics" id="topics-id">
+							<h2 class="heading">Popular topics</h2>
+							<div class="article">
+								<a href="#topics-id" class="link">Lorem ipsum dolor sit amet consectetur</a>
+								<p>Maecenas tellus erat, dictum vel semper a, dapibus ac elit.
+									Nunc rutrum pretium porta.
+								</p>
+							</div><!-- article -->
+			
+							<div class="article">
+								<a href="#topics-id" class="link">Aenean feugiat mattis est nec eqestas</a>
+								<p>Donec pede justo, fringilla vel, aliquet nec, vulputate
+									eget, arcu.
+								</p>
+							</div><!-- article -->
+						</section><!-- topics -->
+			
+						<section class="quick-contact">
+							<h2 class="heading">Quick Contact</h2>
+							<form action="https://www.example.com/quick-contact.asp" class="quick-contact-form">
+								<input type="text" name="quick-name" placeholder="Enter your name" class="input" />
+								<input type="email" name="quick-email" placeholder="Enter your email" class="email input" />
+								<textarea rows="7" name="quick-textarea" class="textarea input"></textarea>
+								<input type="submit" name="quick-button" value="Submit" class="submit" />
+							</form><!-- quick-contact-form -->
+						</section><!-- quick-contact -->
+					</aside><!-- main-contact -->
+				</aside><!-- main-aside -->
+			</div><!-- main -->
+		</main>
+	
+		<footer class="footer-wrapper" id="footer-id">
+			<div class="footer content content-padding">
+				<div class="footer-sections">
+					<section class="footer-services">
+						<h2>Services</h2>
+						<ul>
+							<li><a href="#footer-id">Lorem ipsum dolor</a></li>
+							<li><a href="#footer-id">Dum sociis</a></li>
+							<li><a href="#footer-id">Donec quam</a></li>
+							<li><a href="#footer-id">Nulla consequat</a></li>
+							<li><a href="#footer-id">In enim justo</a></li>
+						</ul>
+					</section><!-- footer-services -->
+			
+					<section class="footer-support">
+						<h2>Support</h2>
+						<ul>
+							<li><a href="#footer-id">Nullam quis</a></li>
+							<li><a href="#footer-id">Sed consequat</a></li>
+							<li><a href="#footer-id">Cras dapibus</a></li>
+							<li><a href="#footer-id">Lorem ipsum dolor</a></li>
+							<li><a href="#footer-id">Dum sociis</a></li>
+						</ul>
+					</section><!-- footer-support -->
+			
+					<section class="footer-about">
+						<h2>About</h2>
+						<ul>
+							<li><a href="#footer-id">Aenea dulputate</a></li>
+							<li><a href="#footer-id">Etiam ultricies</a></li>
+							<li><a href="#footer-id">Nullam quis</a></li>
+							<li><a href="#footer-id">Sed consequat</a></li>
+							<li><a href="#footer-id">Cras dapibus</a></li>
+						</ul>
+					</section><!-- footer-about -->
+					<section class="footer-policy">
+						<h2>Privacu Policy</h2>
+						<p>Lorem ipsum dolor sit amet, consescteur adipiscing elit. Ut non dutrum
+							abru. Vestibulum ornaritis dolor eget leo placerate sed tincidunt
+							dolor interdum.
+						</p>
+						<div class="images">
+							<a href="https://www.w3.org/" target="_blank" class="link">
+								<img src="../../../../slike/zadaci/primer13/xhtml.png" alt="xhtml logo" width="100" />
+							</a>
+							<a href="https://www.w3.org/" target="_blank" class="link">
+								<img src="../../../../slike/zadaci/primer13/css.png" alt="xhtml logo" width="100" />
+							</a>
+						</div><!-- images -->
+					</section><!-- footer-policy -->
+				</div> <!-- footer-sections -->
+
+				<div class="footer-copy">
+					<p class="footer-copy-content">Copyright &copy; 2048
+						<a href="#footer-id" class="link">Your Company Name</a> |
+						<a href="#footer-id" class="link">Website Templates</a> by
+						<a href="index.html" class="link">Free CSS Templates</a>
+					</p>
+				</div><!-- footer-copy -->
+			</div><!-- footer -->
+		</footer> <!-- footer-wrapper -->
+	</div><!-- wrapper -->
+
+</body>
+
+</html>

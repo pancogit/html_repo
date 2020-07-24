@@ -1,0 +1,35 @@
+/* global */
+
+@use '../global/variables';
+@use '../global/colors';
+@use '../global/mixins';
+
+body {
+    margin: 0;
+    font-family: variables.$font-family-1;
+
+    // when page is zoomed-out, then remaining height space will be white
+    // which creates crop on page
+    // for this reason, color body as black also
+    background-color: colors.$black-color-1;
+}
+
+a {
+    text-decoration: none;
+}
+
+// page wrapper
+.wrapper {
+    min-width: variables.$min-width-1;
+}
+
+// centered content on page
+.content {
+    max-width: variables.$max-width-1;
+    margin: 0 auto;
+}
+
+// default paddings for content
+.content-padding {
+    padding: variables.$padding-1;
+}

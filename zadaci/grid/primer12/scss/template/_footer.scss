@@ -1,0 +1,61 @@
+/* footer */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+footer {
+    background-color: colors.$black-color-1;
+    color: colors.$silver-color;
+
+    a {
+        color: colors.$blue-color-5;
+    }
+
+    div.footer-wrapper {
+        @include mixins.set_grid_template($grid-template-columns: variables.$row-size-2 variables.$row-size-1);
+        @include mixins.set_grid_gaps($gap: variables.$gap-size-1);
+
+        // center items verticaly
+        @include mixins.align_grid($align-items: center);
+
+        padding-top: variables.$padding-2;
+        padding-bottom: variables.$padding-2;
+
+        @media only screen and (max-width: variables.$media-br-4) {
+            @include mixins.set_grid_template($grid-template-columns: variables.$row-size-1); // create one column
+        }
+
+        div.copy {
+            // center this grid item horizontaly
+            @include mixins.align_grid_item($justify-self: right);
+
+            // when text wraps, align them to the right
+            text-align: right;
+
+            @media only screen and (max-width: variables.$media-br-4) {
+                text-align: left; // align text to left with single column layout
+
+                @include mixins.align_grid_item($justify-self: center); // looks better when centered
+            }
+        }
+    }
+}
+
+nav.footer-menu {
+    ul {
+        @include mixins.reset_list();
+        @include mixins.set_grid_template(
+            $grid-template-columns: repeat(auto-fit, minmax(variables.$col-w-2, 1fr)));
+        @include mixins.set_grid_gaps($gap: variables.$gap-size-1);
+        @include mixins.align_grid($justify-items: center);
+
+        a {
+            font-weight: bold;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

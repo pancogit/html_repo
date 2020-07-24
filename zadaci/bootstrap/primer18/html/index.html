@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <title>Zadaci Bootstrap primer 18</title>
+    <meta charset="utf-8" />
+
+    <!-- responsive design meta tag for viewport change -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+    <!-- include bootstrap and custom css -->
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- font awesome for icons -->
+    <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- import icon for document -->
+    <link href="../../../../slike/zadaci/primer18/icon.png" type="image/png" rel="icon" />
+</head>
+
+<body>
+
+    <div class="page">
+        <header class="header">
+            <div class="header__nav">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-sm-4 col-md-3 col-xl-2 header__logo">
+                            <div class="logo">
+                                <a href="index.html" class="logo__link">
+                                    <img src="../../../../slike/zadaci/primer18/logo.png" alt="logo" width="150"
+                                        class="logo__image" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-8 col-md-9 col-xl-10 header__navbar">
+                            <div class="navigation-bar">
+                                <form class="search navigation-bar__item navigation-bar__item--flex-grow-normal">
+                                    <input type="search" name="search-input" class="search__input" />
+                                    <button class="button button--submit">
+                                        <i class="fas fa-caret-right button__icon"></i>
+                                        <span class="button__text">Search</span>
+                                    </button>
+                                </form>
+
+                                <nav
+                                    class="navigation navigation-bar__item navigation-bar__item--flex-grow-larger d-none d-xl-block">
+                                    <ul class="navigation__list">
+                                        <li class="navigation__item">
+                                            <a href="index.html" class="navigation__link">Site Index</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="index.html"
+                                                class="navigation__link navigation__link--active">Subscriptions</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="index.html" class="navigation__link">Shop</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="index.html" class="navigation__link">Newsletters</a>
+                                        </li>
+                                        <li class="navigation__item">
+                                            <a href="index.html" class="navigation__link">Our Mission</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                                <nav class="hamburger-menu hamburger-menu--flex-grow navigation-bar__item d-xl-none">
+                                    <a href="index.html" class="hamburger-menu__link">
+                                        <i class="fas fa-bars hamburger-menu__icon"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header__ads">
+                <div class="container-xl">
+                    <div class="row">
+                        <div class="d-none d-sm-block col-sm-12 px-sm-0 col-xl-8">
+                            <div class="ad">
+                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                    <img src="../../../../slike/zadaci/primer18/ads-1a.jpg" alt="ad picture" width="700"
+                                        class="ad__image" />
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="d-none d-sm-block col-sm-12 my-sm-3 col-xl-4">
+                            <div class="subscribe">
+                                <div class="subscribe__text">
+                                    <a href="index.html" class="subscribe__link">
+                                        <h1 class="subscribe__heading">Subscribe now!</h1>
+                                    </a>
+                                    <h2 class="subscribe__info">National Geographic Magazine</h2>
+                                </div>
+                                <div class="subscribe__image">
+                                    <span class="subscribe__dollar">&dollar;</span>
+                                    <span class="subscribe__cost">15</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container-xl">
+                <div class="row">
+                    <div class="d-none d-md-block col-md-3 px-0">
+                        <nav class="menu">
+                            <ul class="menu__list">
+                                <li class="menu__item menu__item--border-top-none">
+                                    <a href="index.html" class="menu__link">Home</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Animals</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Daily News</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Green Guide</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">History</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Kids</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Maps</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Music</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">People & Places</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link menu__link--active">Photography</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Science & Space</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Video</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <nav class="menu">
+                            <ul class="menu__list">
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">National Geographic Magazine</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Magazines</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Shop</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Subscriptions</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">TV & Film</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Travel with Us</a>
+                                </li>
+                                <li class="menu__item">
+                                    <a href="index.html" class="menu__link">Our Mission</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-12 col-md-9 px-0">
+                        <div class="main__content">
+                            <nav class="hamburger-aside d-md-none">
+                                <a href="index.html" class="hamburger-aside__link">
+                                    <i class="fas fa-bars hamburger-aside__icon"></i>
+                                </a>
+                            </nav>
+
+                            <section class="tabs">
+                                <h2 class="tabs__heading">Photography</h2>
+                                <nav class="tabs__navigation">
+                                    <ul class="tabs__list">
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Main</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Photo Galleries</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Wallpapers</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link tabs__link--active">Photo of the
+                                                Day</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Photo Shooters</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Photo Tips</a>
+                                        </li>
+                                        <li class="tabs__item">
+                                            <a href="index.html" class="tabs__link">Buy Prints</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </section>
+
+                            <h2 class="main__heading">Photo of the Day</h2>
+
+                            <div class="row">
+                                <div class="col-lg-8 px-md-4">
+                                    <div class="article mb-4">
+                                        <div class="article__info">
+                                            <p class="article__date">February 17, 2008</p>
+                                            <div class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item">
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="article__body">
+                                            <div class="figure">
+                                                <img src="../../../../slike/zadaci/primer18/photo-1b.jpg"
+                                                    alt="image photo" width="400" class="figure__image" />
+                                                <div class="figure__footer">
+                                                    <a href="index.html" class="figure__link">
+                                                        <i
+                                                            class="fas fa-search-plus fa-flip-horizontal figure__icon"></i>
+                                                        <span class="figure__text">Enlarge</span>
+                                                    </a>
+                                                    <a href="index.html" class="figure__link">
+                                                        <span class="figure__box">
+                                                            <i class="fas fa-mouse-pointer 
+                                                                  figure__icon figure__icon--positioned"></i>
+                                                        </span>
+                                                        <span class="figure__text">Wallpaper</span>
+                                                    </a>
+                                                    <a href="mailto:" class="figure__link">
+                                                        <i class="fas fa-envelope figure__icon"></i>
+                                                        <span class="figure__text">Email a Friend</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="article mb-4">
+                                        <div class="article__info">
+                                            <p class="article__date">January 25, 2008</p>
+                                            <div class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item">
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="article__body">
+                                            <div class="figure">
+                                                <img src="../../../../slike/zadaci/primer18/photo-2b.jpg"
+                                                    alt="image photo" width="400" class="figure__image" />
+                                                <div class="figure__footer">
+                                                    <a href="index.html" class="figure__link">
+                                                        <i
+                                                            class="fas fa-search-plus fa-flip-horizontal figure__icon"></i>
+                                                        <span class="figure__text">Enlarge</span>
+                                                    </a>
+                                                    <a href="index.html" class="figure__link">
+                                                        <span class="figure__box">
+                                                            <i class="fas fa-mouse-pointer 
+                                                                  figure__icon figure__icon--positioned"></i>
+                                                        </span>
+                                                        <span class="figure__text">Wallpaper</span>
+                                                    </a>
+                                                    <a href="mailto:" class="figure__link">
+                                                        <i class="fas fa-envelope figure__icon"></i>
+                                                        <span class="figure__text">Email a Friend</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="article mb-4">
+                                        <div class="article__info">
+                                            <p class="article__date">December 5, 2007</p>
+                                            <div class="pagination">
+                                                <ul class="pagination__list">
+                                                    <li class="pagination__item">
+                                                        <i class="fas fa-caret-left pagination__marker"></i>
+                                                        <a href="index.html" class="pagination__link">Previous</a>
+                                                    </li>
+                                                    <li class="pagination__item">
+                                                        <a href="index.html" class="pagination__link">Next</a>
+                                                        <i class="fas fa-caret-right pagination__marker"></i>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="article__body">
+                                            <div class="figure">
+                                                <img src="../../../../slike/zadaci/primer18/photo-3b.jpg"
+                                                    alt="image photo" width="400" class="figure__image" />
+                                                <div class="figure__footer">
+                                                    <a href="index.html" class="figure__link">
+                                                        <i
+                                                            class="fas fa-search-plus fa-flip-horizontal figure__icon"></i>
+                                                        <span class="figure__text">Enlarge</span>
+                                                    </a>
+                                                    <a href="index.html" class="figure__link">
+                                                        <span class="figure__box">
+                                                            <i class="fas fa-mouse-pointer 
+                                                                  figure__icon figure__icon--positioned"></i>
+                                                        </span>
+                                                        <span class="figure__text">Wallpaper</span>
+                                                    </a>
+                                                    <a href="mailto:" class="figure__link">
+                                                        <i class="fas fa-envelope figure__icon"></i>
+                                                        <span class="figure__text">Email a Friend</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-none d-sm-block col-lg-4 px-md-4">
+                                    <div class="row">
+                                        <div class="col col-lg-12 mb-4">
+                                            <div class="categories">
+                                                <a href="index.html" class="categories__winner">
+                                                    See Today's Photo of the Day
+                                                </a>
+                                                <div class="categories__body">
+                                                    <h2 class="categories__heading">Photo of the Day Categories:</h2>
+                                                    <ul class="categories__list">
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Adventure &
+                                                                Explotation</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Black &
+                                                                White</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Landscapes</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">People &
+                                                                Culture</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Travel</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Archive by
+                                                                Date</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Animals</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">History</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Nature &
+                                                                Weather</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Science &
+                                                                Space</a>
+                                                        </li>
+                                                        <li class="categories__item">
+                                                            <a href="index.html" class="categories__link">Underwater</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col order-first order-lg-0 col-lg-12">
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-2b.png"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
+
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-3b.png"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
+
+                                            <section class="ad ad--margin-bottom">
+                                                <h3 class="ad__heading">Advertisement</h3>
+                                                <a href="https://www.google.com" target="_blank" class="ad__link">
+                                                    <img src="../../../../slike/zadaci/primer18/ads-4b.jpg"
+                                                        alt="ad picture" width="250" class="ad__image" />
+                                                </a>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer" id="footer-id">
+            <div class="footer__links">
+                <div class="container-xl">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
+                            <h2 class="footer__heading">About Us</h2>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">National Geographics Partners</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">National Geographics Society</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">About Nielsen Measurement</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Ad Choices</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Advertise With Us</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Contact Us</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Cookie Policy</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Do Not Sell My Personal Information</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">GDPR FAQs</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Press Room</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Privacy Policy - UPDATED</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Terms of Use</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Your California Privacy Rights</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
+                            <h2 class="footer__heading">Our Sites</h2>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Attend a Live Event</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Book a Trip</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Buy & Licence Photos</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Buy Maps</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Geno DNA Ancestry Kit</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Inspire Your Kids</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Shop the Store</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Visit the D.C. Museum</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Watch TV</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-3">
+                            <h2 class="footer__heading">Join Us</h2>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Subscribe</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Renew Subscription</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Manage Your Subscription</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Sign In</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Jobs</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="index.html" class="footer__link">Newsletter Signup</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg mb-sm-3">
+                            <h2 class="footer__heading">Follow Us</h2>
+                            <ul class="social">
+                                <li class="social__item">
+                                    <a href="https://www.facebook.com" target="_blank" class="social__link">
+                                        <i class="fab fa-facebook-square social__icon"></i>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="https://www.twitter.com" target="_blank" class="social__link">
+                                        <i class="fab fa-twitter social__icon"></i>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="https://www.instagram.com" target="_blank" class="social__link">
+                                        <i class="fab fa-instagram social__icon"></i>
+                                    </a>
+                                </li>
+                                <li class="social__item">
+                                    <a href="https://www.snapchat.com" target="_blank" class="social__link">
+                                        <i class="fab fa-snapchat-ghost social__icon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__copyright">
+                <div class="container-xl">
+                    <div class="row align-items-center">
+                        <div class="d-none d-md-block col-md-3 col-xl-2">
+                            <div class="logo">
+                                <a href="index.html" class="logo__link">
+                                    <img src="../../../../slike/zadaci/primer18/logo-black-2.png" alt="logo" width="180"
+                                        class="logo__image">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col col-md-9 col-xl-10">
+                            <p class="footer__paragraph">
+                                <span class="footer__text">Copyright &copy; 1996-2015 National
+                                    Geographic Society
+                                </span>
+                                <span class="footer__divider">|</span>
+                                <span class="footer__text">Copyright &copy; 2015-2020 National
+                                    Geographic Partners, LLC. All rights reserved
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

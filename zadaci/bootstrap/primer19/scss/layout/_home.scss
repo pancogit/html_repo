@@ -1,0 +1,46 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H O M E P A G E *********************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.main {
+    padding-bottom: variables.$main-padding-bottom-1;
+
+    @include bootstrap.media-breakpoint-up(md) {
+        padding-bottom: variables.$main-padding-bottom-2;
+    }
+
+    color: colors.$white-theme-color;
+
+    // set transparent background color to hover a little over .page background image
+    background-color: colors.$main-background-color;
+
+    &__heading-level-1 {
+        margin-bottom: 0;
+        color: colors.$yellow-theme-color;
+        text-transform: uppercase;
+        font-size: variables.$main-heading-level-1-font-size-1;
+
+        @include bootstrap.media-breakpoint-up(md) {
+            font-size: variables.$main-heading-level-1-font-size-2;
+        }
+    }
+
+    &__heading-level-2 {
+        margin: 0;
+        font-weight: normal;
+        font-size: variables.$main-heading-level-2-font-size;
+    }
+
+    &__heading-level-3 {
+        margin-top: variables.$main-heading-level-3-margin-top;
+        margin-bottom: variables.$main-heading-level-3-margin-bottom;
+        font-weight: normal;
+        font-size: variables.$main-heading-level-3-font-size;
+    }
+}

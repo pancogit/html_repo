@@ -1,0 +1,38 @@
+/********************************* navigation ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.navigation {
+    padding: variables.$navigation-padding;
+    background-color: colors.$navigation-background-color;
+    border-radius: variables.$navigation-border-radius;
+    box-shadow: variables.$navigation-box-shadow;
+    
+    &__list {
+        // set flex container and spread items through the main axis
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        // reset list
+        @include mixins.reset_list();
+    }
+
+    &__item {
+        margin-right: variables.$navigation-item-margin-right;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: variables.$navigation-link-padding;
+        color: colors.$navigation-link-color;
+        font-size: variables.$navigation-link-font-size;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H E A D E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.header {
+    padding-top: variables.$header-padding-top;
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        height: variables.$width-full;
+    }
+
+    &__button {
+        margin-right: variables.$header-button-margin-right;
+        margin-bottom: variables.$header-button-margin-bottom;
+        padding: variables.$header-button-padding;
+        text-transform: uppercase;
+        color: colors.$theme-gray-color;
+        font-size: variables.$header-button-font-size;
+
+        &:hover {
+            color: colors.$theme-gray-color-hover;
+        }
+
+        // element modifier for borders around the button
+        &--border {
+            @include mixins.set_borders($border-color: colors.$theme-gray-color,
+                                        $border-width: variables.$header-button-border-width);
+            border-radius: variables.$header-button-border-radius;
+
+            &:hover {
+                border-color: colors.$theme-gray-color-hover;
+            }
+        }
+    }
+}

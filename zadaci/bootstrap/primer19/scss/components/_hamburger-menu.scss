@@ -1,0 +1,32 @@
+/******************************* hamburger-menu ******************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: variables.$width-full;
+    
+    &__link {
+        display: inline-block;
+        padding: variables.$hamburger-menu-padding;
+        color: colors.$yellow-theme-color;
+        font-size: variables.$hamburger-menu-font-size;
+
+        // set borders around hamburger menu link
+        @include mixins.set_borders($border-color: colors.$yellow-theme-color,
+                                    $border-width: variables.$hamburger-menu-border-width);
+
+        &:hover {
+            color: colors.$white-theme-color;
+            border-color: colors.$white-theme-color;
+        }
+    }
+
+    &__icon {
+
+    }
+}

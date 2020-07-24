@@ -1,0 +1,28 @@
+/*********************************** logo ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.logo {
+    display: inline-block;
+    margin-bottom: variables.$margin-3;
+
+    &__image {
+
+    }
+
+    &__heading {
+        margin-top: variables.$margin-1;
+        margin-bottom: 0;
+        font-weight: normal;
+        font-size: variables.$font-size-1;
+        align-self: flex-end;
+        margin-right: variables.$margin-2;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        color: colors.$white-color-1;
+    }
+}

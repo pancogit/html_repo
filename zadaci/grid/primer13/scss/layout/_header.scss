@@ -1,0 +1,229 @@
+/* header */
+
+@use '../global/colors';
+@use '../global/variables';
+@use '../global/mixins';
+
+.header-aside-wrapper {
+    // create two column fixed layout and push them to the right edge of grid container
+    // to emulate tracks .main-subscribe and .main-contact
+    @include mixins.set_grid_template($grid-template-columns: repeat(2, variables.$width-5));
+    @include mixins.align_grid($justify-content: right);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // hide block
+        display: none;
+    }
+
+    .subscribe {
+        // set same color as track .main-subscribe to simulate that track in the header
+        background-color: colors.$blue-color-4;
+
+        // set borders
+        @include mixins.set_borders($border-style: variables.$border-style-1,
+                                    $border-color: colors.$blue-color-4,
+                                    $border-width: variables.$border-width-1);
+
+        // reset bottom and right border
+        @include mixins.set_borders($border-bottom-style: none);
+        @include mixins.set_borders($border-right-style: none);
+    }
+
+    .contact {
+        // set same color as track .main-contact to simulate that track in the header
+        background-color: colors.$blue-color-5;
+
+        // set borders
+        @include mixins.set_borders($border-style: variables.$border-style-1,
+                                    $border-color: colors.$blue-color-5,
+                                    $border-width: variables.$border-width-1);
+
+        // reset bottom border
+        @include mixins.set_borders($border-bottom-style: none);
+    }
+
+    // these properties are not for reusing because they are used just in this case
+    // that's the reason why it's moved from global scope into nested scope
+    .subscribe, .contact {
+        padding-left: variables.$padding-1;
+        padding-right: variables.$padding-1;
+        padding-top: variables.$padding-2;
+        padding-bottom: variables.$padding-4;
+    }
+}
+
+// these blocks are reused to another parts of page, they must be alone, out of nesting
+.subscribe, .contact {
+    text-align: right;
+
+    .link {
+        // act like a block to be full clickable
+        display: inline-block;
+
+        .image {
+            vertical-align: middle;
+            margin-left: variables.$margin-2;
+        }
+    }
+}
+
+.header-logo-wrapper {
+    background-color: colors.$blue-color-1;
+
+    // set borders
+    @include mixins.set_borders($border-top-style: variables.$border-style-1,
+                                $border-top-color: colors.$blue-color-1,
+                                $border-top-width: variables.$border-width-1,
+                                
+                                $border-bottom-style: variables.$border-style-1,
+                                $border-bottom-color: colors.$blue-color-1,
+                                $border-bottom-width: variables.$border-width-1);
+
+    .header-logo-link {
+        display: inline-block;
+        margin: variables.$margin-1 0;
+
+        .heading {
+            // remove margins
+            margin: 0;
+        }
+
+        .css-template {
+            font-size: variables.$font-size-5;
+            color: colors.$blue-color-7;
+        }
+    }
+}
+
+.header-menu-wrapper {
+    background-color: colors.$blue-color-2;
+
+     // responsive web design
+     @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // add bottom border now
+        @include mixins.set_borders($border-bottom-style: variables.$border-style-1,
+                                    $border-bottom-color: colors.$blue-color-2,
+                                    $border-bottom-width: variables.$border-width-1);
+    }
+}
+
+.header-menu {
+    // clear paddings to spread links to full height of navigation bar
+    padding: 0;
+
+    @include mixins.set_grid_template($grid-template-columns: variables.$width-2 variables.$width-5);
+
+    // responsive web design
+    @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+        // remove grid layout when menu is hidden and hamburger menu will be shown
+        display: block;
+    }
+
+    ul {
+        @include mixins.reset_list();
+        
+        // set grid template with column widths between minimum content value and
+        // given maximum upper bound value
+        // this way no one grid item will overflow grid cell
+        // when grid items content are shrinking, they will not shrink any more than
+        // their minimum content value because of min-content minimum bound
+        @include mixins.set_grid_template(
+            $grid-template-columns: repeat(auto-fit, minmax(min-content, variables.$width-1)));
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+            // hide block
+            display: none;
+        }
+
+        a {
+            // spread link to full list item width
+            display: block;
+            font-size: variables.$font-size-5;
+            padding: 1rem;
+            color: colors.$blue-color-8;
+
+            &:hover {
+                color: colors.$white-color-1;
+
+                // when link is hovered, change color of bottom border to display border
+                .link-content {
+                    @include mixins.set_borders($border-bottom-color: colors.$white-color-1);
+                }
+            }
+        }
+
+        // must come before .active to not override border color (css cascade problem)
+        .link-content {
+            // set as block to add bottom margins
+            display: inline-block;
+
+            @include mixins.set_borders(
+                                        // bottom border must be always there, 
+                                        // because if it's not defined,
+                                        // when defined it will change height of 
+                                        // navigation bar and it is noticable
+                                        $border-bottom-style: dotted,
+
+                                        // border color is the same as navigation 
+                                        // background to be "hidden" when not hovered
+                                        $border-bottom-color: colors.$blue-color-2,
+                                        $border-bottom-width: variables.$border-width-2);
+
+            // add bottom padding to add space between link content and "underline"
+            padding-bottom: variables.$padding-2;
+        }
+
+        // display bottom border for active link as "underline" with space added 
+        // between link content and "underline"
+        .active {
+            color: colors.$white-color-1;
+
+            // border color is the same as navigation background to be "hidden" when not hovered
+            // for active link, change color to white to be visible
+            @include mixins.set_borders($border-bottom-color: colors.$white-color-1,
+                                        $border-bottom-width: variables.$border-width-2);
+        }
+    }
+
+    // this track is used to emulate track from .main-contact
+    .main-contact-track {
+        background-color: colors.$blue-color-5;
+
+        // set borders
+        @include mixins.set_borders($border-left-style: variables.$border-style-1,
+                                    $border-left-color: colors.$blue-color-5,
+                                    $border-left-width: variables.$border-width-1,
+                                    
+                                    $border-right-style: variables.$border-style-1,
+                                    $border-right-color: colors.$blue-color-5,
+                                    $border-right-width: variables.$border-width-1);
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+            // hide block
+            display: none;
+        }
+    }
+
+    .hamburger-menu {
+        // hide hamburger menu by default
+        display: none;
+        padding: variables.$padding-1; 
+        font-size: variables.$font-size-1;
+
+        // responsive web design
+        @include mixins.responsive_design($device-range: "max", $breakpoints: variables.$media-break-1) {
+            // show block when main menu is hidden
+            // display like inline blocks, because it should not be spread to full width of header
+            display: inline-block;
+        }
+
+        .link {
+            &:hover {
+                color: colors.$blue-color-7;
+            }
+        }
+    }
+}

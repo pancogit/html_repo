@@ -1,0 +1,44 @@
+/************************************ page ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.page {
+    min-width: variables.$page-min-width;
+
+    &__container {
+        // center page container and set maximum width
+        margin: 0 auto;
+        max-width: variables.$page-max-width;
+    }
+
+    &__wallpaper {
+        background-image: url("../../../../slike/zadaci/primer21/wallpaper-1.jpg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+
+        // set height for page wallpaper, because there are no more content to stretch
+        // height of the page wallpaper
+        // set height for smallest screen first
+        height: variables.$page-wallpaper-height-xs;
+
+        // change height for different screens
+        @include bootstrap.media-breakpoint-up(sm) {
+            height: variables.$page-wallpaper-height-sm;
+        }
+
+        @include bootstrap.media-breakpoint-up(md) {
+            height: variables.$page-wallpaper-height-md;
+        }
+
+        @include bootstrap.media-breakpoint-up(lg) {
+            height: variables.$page-wallpaper-height-lg;
+        }
+
+        @include bootstrap.media-breakpoint-up(xl) {
+            height: variables.$page-wallpaper-height-xl;
+        }
+    }
+}

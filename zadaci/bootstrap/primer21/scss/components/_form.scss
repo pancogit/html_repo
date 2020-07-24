@@ -1,0 +1,16 @@
+/*********************************** form ************************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.form {
+    padding: variables.$form-padding;
+    background-color: colors.$form-background-color;
+
+    // set borders
+    @include mixins.set_borders($border-color: colors.$form-border-color,
+                                $border-width: variables.$form-border-width);
+    border-radius: variables.$form-border-radius;
+}

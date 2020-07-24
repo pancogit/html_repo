@@ -1,0 +1,54 @@
+/*********************************** login ***********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.login {
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, variables.$grid-width-1);
+        gap: variables.$gap-1;
+
+        @include bootstrap.media-breakpoint-down(sm) {
+            // one column layout
+            grid-template-columns: variables.$grid-width-1;
+        }
+    }
+
+    &__input {
+        padding: variables.$padding-3;
+        border-radius: variables.$border-radius-1;
+        border: none;
+        min-width: 0;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__info {
+        color: colors.$blue-color-6;
+        text-align: center;
+    }
+
+    &__submit {
+        font-weight: bold;
+        color: colors.$white-color-1;
+        background-color: colors.$green-color-2;
+        transition: variables.$transition-time-1;
+
+        // span 2 columns
+        grid-column: span 2;
+
+        @include bootstrap.media-breakpoint-down(sm) {
+            // span 1 columns
+            grid-column: span 1;
+        }
+
+        &:hover {
+            background-color: colors.$green-color-3;
+        }
+    }
+}

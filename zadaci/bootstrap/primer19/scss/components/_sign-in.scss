@@ -1,0 +1,83 @@
+/*********************************** sign-in *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../bootstrap/bootstrap';
+
+.sign-in {
+    
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__name {
+        // set one column layout for mobile first smallest screen
+        flex: 1 1 variables.$width-full;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            // set right margin for two column layout
+            margin-right: variables.$sign-in-form-input-margin;
+
+            // for two column layout change flex item properties
+            flex: 1 1 variables.$sign-in-form-input-width;
+        }
+    }
+
+    &__phone {
+        // set one column layout for mobile first smallest screen
+        flex: 1 1 variables.$width-full;
+
+        // set top margin for one column layout (mobile first way)
+        margin-top: variables.$sign-in-form-input-margin;
+
+        @include bootstrap.media-breakpoint-up(sm) {
+            // remove top margin for two column layout
+            margin-top: 0;
+
+            // for two column layout change flex item properties
+            flex: 1 1 variables.$sign-in-form-input-width;
+        }
+    }
+
+    &__zip {
+        flex: 1 1 variables.$width-full;
+        margin: variables.$sign-in-form-input-margin 0;
+    }
+
+    &__button {
+        flex: 1 1 variables.$width-full;
+        background-color: colors.$yellow-theme-color;
+        border: 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: variables.$sign-in-button-font-size;
+
+        &:hover {
+            background-color: colors.$location-offer-background-color;
+        }
+    }
+
+    &__input {
+        padding: variables.$sign-in-form-input-padding;
+        min-width: 0;
+        outline: none;
+    }
+
+    &__heading {
+        margin-bottom: variables.$sing-in-margin-bottom;
+        text-transform: uppercase;
+        font-size: variables.$sing-in-font-size-1;
+
+        @include bootstrap.media-breakpoint-up(md) {
+            font-size: variables.$sing-in-font-size-2;
+        }
+    }
+
+    &__privacy {
+        margin-top: variables.$sign-in-privacy-margin-top;
+        color: colors.$sign-in-color;
+        font-weight: bold;
+        font-size: variables.$sign-in-font-size;
+    }
+}

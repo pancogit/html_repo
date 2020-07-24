@@ -1,0 +1,136 @@
+// variables
+
+// global
+$global-font-family: Georgia, 'Times New Roman', Times, serif;
+
+// width, height
+$width-full: 100%;
+
+// header
+$header-logo-padding: 1rem;
+$header-heading-font-family: 'Courier New', Courier, monospace;
+$header-heading-margin-bottom: -0.5rem;
+$header-heading-letter-spacing: 0.1rem;
+$header-heading-font-size-normal: 1.2rem;
+$header-heading-font-size-large: 2rem;
+$header-badge-padding: 0.5rem;
+$header-project-transform: rotateZ(-15deg);
+$header-project-padding: 1rem;
+$header-text-font-size: 1.5rem;
+$header-background-color-padding: 1rem 0.5rem;
+$header-track-height: 2rem;
+
+// logo
+$logo-heading-font-size: 2.5rem;
+
+// search
+$search-input-border-width: 2px;
+$search-input-padding: 0.3rem 0.65rem;
+$search-border-radius: 10px;
+$search-button-padding: 0.42rem 0.5rem;
+$search-button-margin-left: -2px;
+
+// homepage
+$main-border-width: 0.1rem;
+$main-padding: 0.2rem 1rem 2rem;
+$main-content-padding-top: 0.5rem;
+$main-tip-margin-bottom: 0.7rem;
+$main-tip-font-size: 1.3rem;
+$main-note-margin-bottom-large: 2rem;
+$main-note-margin-bottom-normal: 1rem;
+
+// navigation
+$navigation-link-padding: 0.5rem;
+
+// vacation
+$vacation-negative-margin-top: -1rem;
+$vacation-number-font-size: 6rem;
+$vacation-days-font-size: 1.2rem;
+$vacation-days-margin-top: -0.5rem;
+
+// activity
+$activity-heading-padding: 0.5rem;
+$activity-heading-font-size: 1.2rem;
+$activity-edit-margin-top: 0.5rem;
+$activity-link-font-size: 1.1rem;
+$activity-item-view-all-border-top-width: 0.1rem;
+$activity-item-view-all-border-bottom-width: 0.5rem;
+$activity-item-view-all-padding-bottom: 0.8rem;
+
+// certificate
+$certificate-padding: 1rem;
+
+// reminder
+$reminder-margin-bottom: 1rem;
+$reminder-data-padding: 0.5rem;
+$reminder-row-border-bottom-width: 0.1rem;
+
+// button
+$button-padding: 0.2rem 0.5rem;
+$button-font-size: 1.1rem;
+$button-border-radius: 3px;
+
+// pagination
+$pagination-arrow-margin-right: 0.2rem;
+$pagination-arrow-padding: 0.1rem 1rem;
+$pagination-arrow-border-radius: 2px;
+$pagination-icon-font-size: 1.3rem;
+
+// month
+$month-font-size: 1.2rem;
+
+// printer
+$printer-icon-margin-right: 0.4rem;
+$printer-text-font-size: 1.2rem;
+
+// calendar
+$calendar-heading-margin: 0.5rem;
+$calendar-week-padding: 0.5rem;
+$calendar-week-font-size: 1.2rem;
+$calendar-body-padding: 0 0.5rem 0.5rem;
+$calendar-body-border-radius: 4px;
+$calendar-box-height: 2.5rem;
+$calendar-record-margin: 0.15rem;
+$calendar-record-padding: 0.4rem;
+$calendar-record-border-radius: 4px;
+$calendar-th-padding: 0.2rem;
+$calendar-day-padding-top: 0.2rem;
+$calendar-day-padding-bottom: 0.4rem;
+$calendar-day-padding-right: 0.4rem;
+
+// hamburger
+$hamburger-icon-font-size: 1.7rem;
+
+// footer
+$footer-heading-font-size: 1rem;
+$footer-margin-top: 1rem;
+$footer-padding: 2.5rem 1rem 1rem;
+$footer-item-divider-margin-left: 0.3rem;
+$footer-item-margin-bottom: 0.5rem;
+$footer-copy-line-height: 1.5rem;
+
+// page
+$page-min-width: 20rem;
+
+// menu
+$menu-margin-bottom: 3rem;
+$menu-content-margin-right: 1rem;
+$menu-content-font-size: 1.3rem;
+$menu-plus-font-size: 2rem;
+$menu-item-border-width: 0.1rem;
+$menu-item-padding: 1rem 0;
+$menu-dropdown-margin-top: 1rem;
+
+// list
+$list-padding-left: 1.6rem;
+$list-margin-bottom: 2rem;
+$list-link-font-size: 1.15rem;
+$list-item-margin: 0.8rem 0;
+$list-heading-font-size: 1.3rem;
+
+// social
+$social-heading-font-size: 1.3rem;
+$social-icon-font-size: 3rem;
+$social-list-margin: 2.5rem 0;
+$social-item-margin-right: 1rem;
+$social-item-margin-bottom: 0.5rem;

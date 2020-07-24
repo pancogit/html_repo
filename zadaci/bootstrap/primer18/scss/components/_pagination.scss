@@ -1,0 +1,52 @@
+/********************************* pagination ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.pagination {
+    
+    &__item {
+        // set as flex container and align all flex items inside
+        // if pagination marker is larger than links, than everything will be
+        // verticaly aligned
+        display: flex;
+        align-items: center;
+
+        // insert generated content before every list item, 
+        // but not before first list item
+        + .pagination__item::before {
+            content: "|";
+            margin: variables.$pagination-list-item-divider-margin;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        text-transform: uppercase;
+        color: colors.$pagination-link-color;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__list {
+        // reset list
+        @include mixins.reset_list();
+
+        // align flex items on center on cross axis
+        display: flex;
+        align-items: center;
+
+        height: variables.$pagination-list-height;
+    }
+
+    &__marker {
+        // same color as pagination link
+        color: colors.$pagination-link-color;
+        font-size: variables.$pagination-marker-font-size;
+        margin: variables.$pagination-marker-margin;
+    }
+}

@@ -1,0 +1,200 @@
+/* page - chapter 8 */
+
+@use '../global/variables';
+@use '../global/mixins';
+@use 'sass:meta';
+
+div.primer-75 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 15% repeat(2, 1fr),
+                                      $row-template: repeat(2, 5em));
+
+    @include mixins.set_grid_gaps($column-gap: 1em);
+
+    .one {
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.5rem);
+    }
+
+    .two {
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.5rem);
+    }
+
+    .three {
+        @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.5rem);
+    }
+
+    .four {
+        @include mixins.set_borders($border-color: variables.$green-color, $border-width: 0.5rem);
+    }
+
+    .five {
+        @include mixins.set_borders($border-color: variables.$blue-color, $border-width: 0.5rem);
+    }
+
+    .six {
+        @include mixins.set_borders($border-color: variables.$purple-color, $border-width: 0.5rem);
+    }
+
+    .seven {
+        @extend .five;
+    }
+
+    .eight {
+        @extend .three;
+    }
+
+    .nine {
+        @extend .one;
+    }
+}
+
+div.primer-76 {
+    @extend .primer-75;
+
+    @include mixins.set_grid_gaps($row-gap: 1em);
+}
+
+div.primer-77 {
+    height: 500px;
+
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $row-template: 100px repeat(2, 1fr) 75px);
+
+    @include mixins.set_grid_gaps($row-gap: 15px);
+}
+
+div.primer-78 {
+    @extend .primer-75;
+
+    @include mixins.set_grid_gaps($gap: 12px 2px);
+}
+
+div.primer-79 {
+    @extend .primer-75; // extend grid items colors
+
+    @include mixins.set_grid_gaps($gap: 0);
+
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(2, 200px),
+                                      $row-template: repeat(2, 100px));
+
+    .two {
+        margin: 25px;
+    }
+
+    .three {
+        margin: -25px 0;
+    }
+}
+
+div.primer-80 {
+    margin-top: 3rem;
+
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: 200px,
+                                      $row-template: 100px);
+
+    .exel {
+        width: 150px;
+        height: 100px;
+        padding: 0;
+        border: 0;
+        margin: 10px;
+
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+}
+
+div.primer-81 {
+    @extend .primer-80;
+
+    .exel {
+        margin-left: auto;
+    }
+}
+
+div.primer-82 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(3, 200px),
+                                      $row-template: repeat(2, 100px));
+
+    @include mixins.set_grid_gaps($gap: 1rem);
+
+    %img-margin {
+        margin: 10px;
+    }
+
+    .img-1 {
+        @extend %img-margin;
+    }
+
+    .img-2 {
+        @extend %img-margin;
+        margin-left: auto; // push element to the right edge of grid item
+    }
+
+    .img-3 {
+        @extend %img-margin;
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .img-4 {
+        @extend %img-margin;
+        margin: auto;
+    }
+
+    .img-5 {
+        @extend %img-margin;
+        margin-right: auto;
+        margin-top: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .img-6 {
+        @extend %img-margin;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+    }
+}
+
+div.primer-83 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(5, 200px),
+                                      $row-template: repeat(3, 100px));
+
+    position: relative;
+
+    .exel {
+        padding: 0;
+        border: 0;
+
+        @include mixins.assign_to_grid($grid-row: meta.inspect(2 / 4),
+                                       $grid-column: meta.inspect(2 / 5));
+
+        position: absolute;
+        top: 1em;
+        bottom: 15%;
+        left: 35px;
+        right: 1rem;
+
+        @include mixins.set_colors_font_w($background-color: variables.$blue-color,
+                                          $color: variables.$white-color,
+                                          $font-weight: bold);
+    }
+}
+
+div.primer-84 {
+    @extend .primer-83;
+
+    .exel {
+        @include mixins.assign_to_grid($grid-row: 1 / auto,
+                                       $grid-column: 2 / auto);
+    }
+}

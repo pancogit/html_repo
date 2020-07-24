@@ -1,0 +1,48 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** F O O T E R *************************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.footer {
+    padding-bottom: variables.$padding-4;
+    background-color: colors.$black-color-1;
+    color: colors.$white-color-1;
+
+    &__link {
+        color: colors.$white-color-1;
+
+        // add small transition
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            color: colors.$green-color-1;
+        }
+    }
+
+    &__social {
+        margin-top: variables.$margin-width-6;
+        background-color: colors.$black-color-2;
+
+        @include mixins.set_border_top($border-top-style: solid,
+                                       $border-top-color: colors.$black-color-3,
+                                       $border-top-width: variables.$border-width-1);
+
+        @include mixins.set_border_bottom($border-bottom-style: solid,
+                                          $border-bottom-color: colors.$black-color-3,
+                                          $border-bottom-width: variables.$border-width-1);
+    }
+
+    &__text {
+        line-height: variables.$line-height-1;
+        margin-top: 0;
+    }
+
+    &__date {
+        margin-bottom: variables.$margin-width-4;
+    }
+}

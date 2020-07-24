@@ -1,0 +1,62 @@
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+/*************************** H O M E P A G E *********************************************/ 
+/*****************************************************************************************/ 
+/*****************************************************************************************/ 
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+@use '../bootstrap/bootstrap';
+
+.main {
+    padding: variables.$main-padding;
+
+    background-color: colors.$main-background-color;
+
+    @include mixins.set_borders($border-color: colors.$main-border-color,
+                                $border-width: variables.$main-border-width);
+
+    &__heading {
+        margin-top: 0;
+        color: colors.$main-heading-color;
+    }
+
+    &__content {
+        padding-top: variables.$main-content-padding-top;
+    }
+
+    &__image {
+        // make image responsive
+        width: variables.$width-full;
+    }
+
+    &__note {
+        margin-top: 0;
+
+        margin-bottom: variables.$main-note-margin-bottom-large;
+
+        // change bottom margin for small screens and larger
+        @include bootstrap.media-breakpoint-up(sm) {
+            margin-bottom: variables.$main-note-margin-bottom-normal;
+        }
+
+        font-style: italic;
+        color: colors.$main-note-color;
+    }
+
+    &__tip {
+        margin-top: 0;
+        margin-bottom: variables.$main-tip-margin-bottom;
+        font-size: variables.$main-tip-font-size;
+    }
+
+    &__how-to {
+        text-decoration: underline;
+        color: colors.$main-how-to-color;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

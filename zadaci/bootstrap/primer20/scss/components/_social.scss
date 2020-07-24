@@ -1,0 +1,37 @@
+/*********************************** social **********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.social {
+
+    &__heading {
+        color: colors.$social-heading-color;
+        font-size: variables.$social-heading-font-size;
+    }
+
+    &__icon {
+        font-size: variables.$social-icon-font-size;
+    }
+
+    &__item {
+        margin-right: variables.$social-item-margin-right;
+        margin-bottom: variables.$social-item-margin-bottom;
+    }
+
+    &__link {
+        display: inline-block;
+        color: colors.$social-link-color;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin: variables.$social-list-margin;
+        padding: 0;
+        list-style-type: none;
+    }
+}

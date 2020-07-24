@@ -1,0 +1,23 @@
+// import bootstrap files first
+@use 'bootstrap/bootstrap';
+
+// base files
+@use 'base/variables';
+@use 'base/colors';
+@use 'base/mixins';
+
+// components
+@use 'components/page';
+@use 'components/logo';
+@use 'components/navigation';
+@use 'components/location';
+@use 'components/hamburger-menu';
+@use 'components/location-mobile';
+@use 'components/buttons-mobile';
+@use 'components/sign-in';
+
+// layout
+@use 'layout/global';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/home';

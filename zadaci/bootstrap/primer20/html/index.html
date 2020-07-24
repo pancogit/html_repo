@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+<head>
+    <title>Zadaci Bootstrap primer 20</title>
+    <meta charset="utf-8" />
+
+    <!-- responsive design meta tag for viewport change -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+
+    <!-- include bootstrap and custom css -->
+    <link href="../css/page.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- font awesome for icons -->
+    <link href="../../../../font/fontawesome-free-5.12.1-web/css/all.min.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="container-xl page__content">
+            <header class="header mb-md-3">
+                <div class="header__logo">
+                    <div class="row">
+                        <div class="col-md-5 col-lg-4 mb-3 mb-md-0">
+                            <div class="logo">
+                                <a href="index.html" class="logo__link">
+                                    <h1 class="logo__heading">Home Projects</h1>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="offset-md-2 col-md-5 offset-lg-4 col-lg-4">
+                            <form class="search">
+                                <input type="search" name="search-input" class="search__input" />
+                                <input type="submit" value="Search this site" class="search__button" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__image mt-md-2">
+                    <div class="row header__row">
+                        <div class="col-12 col-md-auto header__col">
+                            <a href="index.html" class="header__badge">
+                                <h2 class="header__project">
+                                    <span class="header__heading header__heading--normal">My Own</span>
+                                    <span class="header__heading header__heading--large">Project</span>
+                                    <span class="header__heading header__heading--normal">Center</span>
+                                </h2>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-12 col-md d-none d-sm-block header__col">
+                            <div class="header__background-image">
+                                <!-- background image here -->
+
+                                <div class="header__background-color">
+                                    <!-- background color over background image here -->
+                                    <p class="header__text">To change this image, go to More Actions > Manage Site >
+                                        Colors and Fonts.
+                                    </p>
+                                    <p class="header__text">Scroll Down to "Site header background image".</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__track mt-md-2 d-none d-md-block"></div>
+            </header>
+
+            <main class="main">
+                <div class="my-2 d-md-none">
+                    <div class="hamburger">
+                        <a href="index.html" class="hamburger__link">
+                            <i class="fas fa-bars hamburger__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-auto d-none d-md-block">
+                        <div class="main__nav">
+                            <nav class="navigation">
+                                <ul class="navigation__list">
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Home</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">My Project List</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Files</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Important Documents</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Insurance Photo Gallery</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Calendar</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Personal Page</a>
+                                    </li>
+                                    <li class="navigation__item">
+                                        <a href="index.html" class="navigation__link">Sitemap</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <div class="vacation vacation--negative-top-margin">
+                                <p class="vacation__number">221</p>
+                                <p class="vacation__days">days until</p>
+                                <p class="vacation__family">Family Vacation</p>
+                            </div>
+
+                            <div class="activity">
+                                <h2 class="activity__heading">Recent site activity</h2>
+                                <ul class="activity__list">
+                                    <li class="activity__item">
+                                        <a href="index.html" class="activity__link">Home</a>
+                                        <p class="activity__edit">edited by Some User</p>
+                                    </li>
+                                    <li class="activity__item">
+                                        <a href="index.html" class="activity__link">Calendar</a>
+                                        <p class="activity__edit">edited by Some User</p>
+                                    </li>
+                                    <li class="activity__item">
+                                        <a href="index.html" class="activity__link">Personal Page</a>
+                                        <p class="activity__edit">edited by Some User</p>
+                                    </li>
+                                    <li class="activity__item">
+                                        <a href="index.html" class="activity__link">Home</a>
+                                        <p class="activity__edit">edited by Some User</p>
+                                    </li>
+                                    <li class="activity__item">
+                                        <a href="index.html" class="activity__link">Important Documents</a>
+                                        <p class="activity__edit">edited by Some User</p>
+                                    </li>
+                                    <li class="activity__item activity__item--view-all">
+                                        <a href="index.html" class="activity__link">View All</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="certificate">
+                                <img src="../../../../slike/zadaci/primer20/certified-logo-1.jpg"
+                                    alt="certificate picture" width="150" class="certificate__image" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="main__content">
+                            <h1 class="main__heading">Home</h1>
+                            <img src="../../../../slike/zadaci/primer20/nature-1b.jpg" alt="nature picture" width="500"
+                                class="main__image" />
+                            <p class="main__note">Note: This template is meant to be a nonpublic site.</p>
+
+                            <div class="row">
+                                <div class="col-lg">
+                                    <table class="reminder">
+                                        <thead class="reminder__header">
+                                            <tr class="reminder__header-row">
+                                                <th class="reminder__heading">Project List Owner</th>
+                                                <th class="reminder__heading">Description</th>
+                                                <th class="reminder__heading">Complete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="reminder__content">
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">Dad</td>
+                                                <td class="reminder__data">Fix Bathroom Sink</td>
+                                                <td class="reminder__data"></td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">Mom</td>
+                                                <td class="reminder__data">Clean out the garage</td>
+                                                <td class="reminder__data"></td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">Kids</td>
+                                                <td class="reminder__data">Clean their rooms</td>
+                                                <td class="reminder__data"></td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="reminder__footer">
+                                            <tr class="reminder__footer-row">
+                                                <td colspan="3" class="reminder__summary">
+                                                    Showing <span class="reminder__important">3</span> items from page
+                                                    <a href="index.html" class="reminder__link">My Project List</a>
+                                                    sorted by time.
+                                                    <a href="index.html" class="reminder__link">View more &raquo;</a>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                    <table class="reminder">
+                                        <thead class="reminder__header">
+                                            <tr class="reminder__header-row">
+                                                <th class="reminder__heading">Important numbers</th>
+                                                <th class="reminder__heading">Owner</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="reminder__content">
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">(404) 546-9600</td>
+                                                <td class="reminder__data">Police department</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">(404) 546-7004</td>
+                                                <td class="reminder__data">Fire department</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">800-222-1222</td>
+                                                <td class="reminder__data">Poison control</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">30309</td>
+                                                <td class="reminder__data">Hospital</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">(404) 546-0311</td>
+                                                <td class="reminder__data">Water company</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">(404) 574-811</td>
+                                                <td class="reminder__data">Doctor</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">888-660-5890</td>
+                                                <td class="reminder__data">Power company</td>
+                                            </tr>
+                                            <tr class="reminder__row">
+                                                <td class="reminder__data">(770) 693-8480</td>
+                                                <td class="reminder__data">Local EMS</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot class="reminder__footer">
+                                            <tr class="reminder__footer-row">
+                                                <td colspan="2" class="reminder__summary">
+                                                    Showing <span class="reminder__important">8</span> items from page
+                                                    <a href="index.html" class="reminder__link">Files</a>
+                                                    sorted by time.
+                                                    <a href="index.html" class="reminder__link">View more &raquo;</a>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+
+                                <div class="col-lg d-none d-sm-block">
+                                    <div class="calendar">
+                                        <p class="main__tip">Tip:
+                                            <a href="index.html" class="main__how-to">How to replace this
+                                                calendar</a>
+                                        </p>
+
+                                        <div class="calendar__header">
+                                            <button
+                                                class="button button--margin-right button--margin-bottom">Today</button>
+                                            <div class="pagination pagination--margin-right pagination--margin-bottom">
+                                                <a href="index.html" class="pagination__arrow">
+                                                    <i class="fas fa-caret-left pagination__icon"></i>
+                                                </a>
+                                                <a href="index.html" class="pagination__arrow">
+                                                    <i class="fas fa-caret-right pagination__icon"></i>
+                                                </a>
+                                            </div>
+                                            <select name="month" class="month month--margin-right month--margin-bottom">
+                                                <option value="january" class="month__item">January
+                                                    2010</option>
+                                                <option value="february" class="month__item">February
+                                                    2010</option>
+                                                <option value="march" class="month__item" selected="selected">March
+                                                    2010</option>
+                                                <option value="april" class="month__item">April
+                                                    2010</option>
+                                                <option value="may" class="month__item">May
+                                                    2010</option>
+                                                <option value="jun" class="month__item">Jun
+                                                    2010</option>
+                                                <option value="july" class="month__item">July
+                                                    2010</option>
+                                                <option value="august" class="month__item">August
+                                                    2010</option>
+                                                <option value="september" class="month__item">September
+                                                    2010</option>
+                                                <option value="october" class="month__item">October
+                                                    2010</option>
+                                                <option value="november" class="month__item">November
+                                                    2010</option>
+                                                <option value="december" class="month__item">December
+                                                    2010</option>
+                                            </select>
+                                            <div class="printer printer--margin-right printer--margin-bottom">
+                                                <a href="index.html" class="printer__link">
+                                                    <img src="../../../../slike/zadaci/primer20/printer-1.png"
+                                                        alt="printer picture" width="25" class="printer__icon" />
+                                                    <span class="printer__text">Print</span>
+                                                </a>
+                                            </div>
+                                            <a href="index.html"
+                                                class="calendar__week calendar__week--margin-right calendar__week--margin-bottom">Week
+                                                &darr;</a>
+                                        </div>
+
+                                        <div class="calendar__body">
+                                            <table class="calendar__table">
+                                                <thead class="calendar__thead">
+                                                    <tr class="calendar__header-row">
+                                                        <th class="calendar__th">Sun</th>
+                                                        <th class="calendar__th">Mon</th>
+                                                        <th class="calendar__th">Tue</th>
+                                                        <th class="calendar__th">Wed</th>
+                                                        <th class="calendar__th">Thu</th>
+                                                        <th class="calendar__th">Fri</th>
+                                                        <th class="calendar__th">Sat</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="calendar__tbody">
+                                                    <tr class="calendar__row">
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day calendar__day--other">28</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">1</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">2</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">3</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">4</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">5</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">6</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="calendar__row">
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">7</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">8</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">9</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">10</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">11</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">12</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">13</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="calendar__row">
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">14</div>
+                                                            <div class="calendar__box">
+                                                                <a href="index.html" class="calendar__record">
+                                                                    Daylight</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">15</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">16</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">17</div>
+                                                            <div class="calendar__box">
+                                                                <a href="index.html" class="calendar__record">
+                                                                    St Gerasimos</a>
+                                                            </div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">18</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">19</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">20</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="calendar__row">
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">21</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">22</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">23</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">24</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">25</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">26</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">27</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="calendar__row">
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">28</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">29</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">30</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day">31</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day calendar__day--other">1</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day calendar__day--other">2</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                        <td class="calendar__data">
+                                                            <div class="calendar__day calendar__day--other">3</div>
+                                                            <div class="calendar__box"></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <section class="footer__links d-none d-lg-block">
+                    <h2 class="footer__heading">Partner Sites:</h2>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Expedia</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">ImproveNet</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">mHelpDesk</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Handy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Angie's List</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="footer__links d-none d-lg-block">
+                    <h2 class="footer__heading">HomeProjects International:</h2>
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Canada: HomeStars</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">France: 123Devis & Travaux</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Germany: MyHammer</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Italy: Instapro</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Netherlands: Werkspot</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">UK: MyBuilder</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <nav class="menu menu--margin-bottom d-lg-none">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">
+                                <span class="menu__content">HomeProjects Services</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
+                            </a>
+                            <div class="menu__dropdown">
+                                <ul class="list">
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Find Pros</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Browse Pro Directory</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Fixed Price Services</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">
+                                <span class="menu__content">HomeProjects Resources</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
+                            </a>
+                            <div class="menu__dropdown">
+                                <ul class="list">
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">My Account</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">True Cost Guide</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Resource Center</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Refer a Pro</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Pros Near Me</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">A Note from Our Team</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Licensing Requirements</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">
+                                <span class="menu__content">For Service Professionals</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
+                            </a>
+                            <div class="menu__dropdown">
+                                <ul class="list">
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Service Professional Log In</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Join our Pro Network</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Pro Resource Center</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Contractor Leads</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">National Accounts</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">
+                                <span class="menu__content">About HomeProjects</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
+                            </a>
+                            <div class="menu__dropdown">
+                                <ul class="list">
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Code of Conducts</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Contact Us</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">How it Works</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Help and FAQs</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Screening Process</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">About the Company</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Careers</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Advertise with Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">
+                                <span class="menu__content">Partner Sites</span>
+                                <span class="menu__plus">&plus;</span>
+                                <span class="menu__minus">&minus;</span>
+                            </a>
+                            <div class="menu__dropdown">
+                                <ul class="list list--margin-bottom">
+                                    <li class="list__item">
+                                        <h2 class="list__heading">Partner Sites</h2>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Improvenet</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">mHelpDesk</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Angie's List</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Handy</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Expedia</a>
+                                    </li>
+                                </ul>
+
+                                <ul class="list">
+                                    <li class="list__item">
+                                        <h2 class="list__heading">HomeProjects International</h2>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Canda: HomeStars</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">France: 123Devic & Travaux</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Germany: MyHammer</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Italy: Instapro</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">Netherlands: Werkspot</a>
+                                    </li>
+                                    <li class="list__item">
+                                        <a href="index.html" class="list__link">UK: MyBuilder</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="social d-lg-none">
+                    <h2 class="social__heading">Follow Us</h2>
+                    <ul class="social__list">
+                        <li class="social__item">
+                            <a href="https://www.facebook.com" class="social__link" target="_blank">
+                                <i class="fab fa-facebook-square social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.instagram.com" class="social__link" target="_blank">
+                                <i class="fab fa-instagram-square social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.linkedin.com" class="social__link" target="_blank">
+                                <i class="fab fa-linkedin social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.pinterest.com" class="social__link" target="_blank">
+                                <i class="fab fa-pinterest-square social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.twitter.com" class="social__link" target="_blank">
+                                <i class="fab fa-twitter-square social__icon"></i>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="https://www.youtube.com" class="social__link" target="_blank">
+                                <i class="fab fa-youtube-square social__icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__privacy">
+                    <ul class="footer__list">
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">Privacy Policy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="index.html" class="footer__link">California Privacy</a>
+                        </li>
+                    </ul>
+                    <a href="index.html" class="footer__link footer__link--line-height">By using HomeProjects, you agree to our
+                        <span class="footer__terms">Terms & Conditions</span>
+                    </a>
+                </div>
+
+                <p class="footer__copy">&copy; Copyright 1989 - 2010 HomeProjects, Inc.
+                    All Rights Reserved
+                </p>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

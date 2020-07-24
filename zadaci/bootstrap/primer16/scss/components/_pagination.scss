@@ -1,0 +1,21 @@
+/******************************** pagination *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.pagination {
+
+    &__item {
+        display: inline-block;
+        padding: variables.$padding-2;
+        color: colors.$white-color-1;
+        background-color: colors.$black-color-7;
+
+        // add small transition
+        transition: variables.$transition-time-1;
+
+        &:hover {
+            background-color: colors.$green-color-1;
+        }
+    }
+}

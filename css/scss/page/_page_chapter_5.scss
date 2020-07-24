@@ -1,0 +1,178 @@
+/* page - chapter 5 */
+
+@use '../global/mixins';
+@use '../global/variables';
+
+.primer-54 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(auto-fit, 15em),
+                                      $row-template: repeat(auto-fit, 4em));
+
+    list-style-type: none;
+    width: 45em;
+    height: 8em;
+
+    @include mixins.set_grid_auto();
+
+    li {
+        @include mixins.assign_to_grid($grid-row: auto,
+                                       $grid-column: auto);
+
+        &:nth-of-type(1) {
+            @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.5rem);
+        }
+
+        &:nth-of-type(2) {
+            @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.5rem);
+        }
+
+        &:nth-of-type(3) {
+            @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.5rem);
+        }
+
+        &:nth-of-type(4) {
+            @include mixins.set_borders($border-color: variables.$green-color, $border-width: 0.5rem);
+        }
+
+        &:nth-of-type(5) {
+            @include mixins.set_borders($border-color: variables.$blue-color, $border-width: 0.5rem);
+        }
+    }
+}
+
+.primer-55 {
+    @extend .primer-54;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column);
+}
+
+.primer-56 {
+    @extend .primer-55;
+
+    li {
+        width: 7em;
+        height: 1.5em;
+    }
+}
+
+div.primer-57 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(4, 50px),
+                                      $row-template: repeat(3, 50px));
+
+    @include mixins.set_grid_auto($grid-auto-rows: 50px, $grid-auto-columns: 50px);
+
+    img {
+        @include mixins.assign_to_grid($grid-row: auto, $grid-column: auto);
+    }
+}
+
+div.primer-58 {
+    @extend .primer-57;
+
+    img {
+        &.wide {
+            grid-column: auto / span 2;
+        }
+    
+        &.tall {
+            grid-row: auto / span 2;
+        }
+    }
+}
+
+div.primer-59 {
+    @include mixins.set_grid_template($grid-kind: grid,
+                                      $column-template: repeat(4, 50px),
+                                      $row-template: repeat(3, 50px));
+
+    @include mixins.set_grid_auto($grid-auto-rows: 50px, $grid-auto-columns: 50px);
+
+    .one {
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.2rem);
+    }
+
+    .two {
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.2rem);
+        @include mixins.assign_to_grid($grid-column: auto / span 2);
+    }
+
+    .three {
+        @include mixins.set_borders($border-color: variables.$yellow-color, $border-width: 0.2rem);
+    }
+
+    .four {
+        @include mixins.set_borders($border-color: variables.$green-color, $border-width: 0.2rem);
+    }
+
+    .five {
+        @include mixins.set_borders($border-color: variables.$blue-color, $border-width: 0.2rem);
+    }
+
+    .six {
+        @include mixins.set_borders($border-color: variables.$purple-color, $border-width: 0.2rem);
+    }
+
+    .seven {
+        @include mixins.set_borders($border-color: variables.$green-color-2, $border-width: 0.2rem);
+    }
+
+    .eight {
+        @include mixins.set_borders($border-color: variables.$blue-color-2, $border-width: 0.2rem);
+        @include mixins.assign_to_grid($grid-row: auto / span 2);
+    }
+
+    .nine {
+        @include mixins.set_borders($border-color: variables.$blue-color-3, $border-width: 0.2rem);
+    }
+
+    .ten {
+        @include mixins.set_borders($border-color: variables.$blue-color-4, $border-width: 0.2rem);
+    }
+
+    .eleven {
+        @include mixins.set_borders($border-color: variables.$blue-color-5, $border-width: 0.2rem);
+        @include mixins.assign_to_grid($grid-row: auto / span 2, $grid-column: auto / span 2);
+    }
+
+    .twelve {
+        @include mixins.set_borders($border-color: variables.$purple-color-2, $border-width: 0.2rem);
+    }
+
+    .thirteen {
+        @include mixins.set_borders($border-color: variables.$pink-color, $border-width: 0.2rem);
+    }
+
+    .fourteen {
+        @include mixins.set_borders($border-color: variables.$pink-color-2, $border-width: 0.2rem);
+    }
+
+    .fifteen {
+        @include mixins.set_borders($border-color: variables.$red-color, $border-width: 0.2rem);
+    }
+
+    .sixteen {
+        @include mixins.set_borders($border-color: variables.$orange-color, $border-width: 0.2rem);
+    }
+}
+
+div.primer-60 {
+    @extend .primer-59;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column, 
+                                  $grid-auto-rows: 50px, $grid-auto-columns: 50px);
+}
+
+div.primer-61 {
+    @extend .primer-59;
+
+    @include mixins.set_grid_auto($grid-auto-flow: row dense, 
+                                  $grid-auto-rows: 50px, $grid-auto-columns: 50px);
+}
+
+div.primer-62 {
+    @extend .primer-60;
+
+    @include mixins.set_grid_auto($grid-auto-flow: column dense, 
+                                  $grid-auto-rows: 50px, $grid-auto-columns: 50px);
+}

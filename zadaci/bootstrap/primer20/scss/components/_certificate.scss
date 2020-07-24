@@ -1,0 +1,13 @@
+/******************************** certificate ********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+
+.certificate {
+    padding: variables.$certificate-padding;
+    text-align: center;
+
+    &__image {
+
+    }
+}

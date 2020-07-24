@@ -1,0 +1,41 @@
+/******************************** navigation *********************************************/
+
+@use '../base/colors';
+@use '../base/variables';
+@use '../base/mixins';
+
+.navigation {
+
+    &__item {
+
+    }
+
+    &__link {
+        display: block;
+        padding: variables.$navigation-link-padding;
+        font-weight: bold;
+        color: white;
+
+        // add small transition on link for better look
+        transition: variables.$navigation-link-transition;
+
+        // element modifier for link
+        &--active {
+            color: colors.$navigation-active-link;
+        }
+
+        &:hover {
+            color: colors.$navigation-active-link;
+        }
+
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        // reset list
+       @include mixins.reset_list();
+    }
+}
